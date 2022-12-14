@@ -1,0 +1,94 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+}
+button {
+    background: none;
+    font-size: 1em;
+    font-family: inherit;
+    border: none;
+    color: var(--fg-0);
+    cursor: pointer;
+}
+:root {
+    --light-bg-0: #efefef;
+    --light-bg-1: #fafafa;
+    --light-fg-0: #212121;
+    --light-fg-1: #555;
+    --dark-bg-0: #333333;
+    --dark-bg-1: #4a4a4a;
+    --dark-fg-0: #ededed;
+    --dark-fg-1: #b6b6b6;
+    --fs-40: 1rem;
+    --fs-50: 1.1rem;
+    --fs-60: 1.4rem;
+    --fs-65: 1.7rem;
+    --fs-70: 2rem;
+    --fs-80: 4rem;
+    --pad: 1rem;
+
+    --fg-2: var(--dark-fg-0);
+    --bg-2: var(--dark-bg-1);
+}
+@media (min-width: 50rem) {
+    :root {
+        --fs-40: 1rem;
+        --fs-50: 1.15rem;
+        --fs-60: 1.5rem;
+        --fs-65: 1.8rem;
+        --fs-70: 2.5rem;
+        --fs-80: 4.5rem;
+        --pad: max(2rem, 8vw);
+    }
+    .on-sm {
+        display: none;
+    }
+}
+[data-theme="light"] {
+    --bg-0: var(--light-bg-0);
+    --bg-1: var(--light-bg-1);
+    --bg-2: var(--dark-bg-1);
+    --fg-0: var(--light-fg-0);
+    --fg-1: var(--light-fg-1);
+    --fg-2: var(--dark-fg-0);
+    --fg-sel: var(--light-bg-1);
+    --fg-link: var(--accent-50);
+    --accent-text: hsl(19,85%,47.5%);
+    --accent-fig: hsl(19,100%,50%);
+    --bg-sel: hsl(19,100%,60%);
+}
+[data-theme="dark"] {
+    --bg-0: var(--dark-bg-0);
+    --bg-1: var(--dark-bg-1);
+    --fg-0: var(--dark-fg-0);
+    --fg-1: var(--dark-fg-1);
+    --fg-link: var(--accent-20);
+    --accent-text: hsl(19,95%,65%);
+    --accent-fig: hsl(19,85%,55%);
+    --bg-sel: hsl(19,95%,42%);
+}
+h1 {
+    font-size: var(--fs-80);
+    font-weight: 700;
+}
+h2 {
+    font-size: var(--fs-70);
+    font-weight: 700;
+}
+a {
+    color: var(--accent-text);
+    text-decoration-color: currentColor;
+}
+.nav-entry {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: var(--fg-0);
+    font-weight: 500;
+}
+.nav-entry.current {
+    border-bottom: 2px solid var(--accent-fig);
+}
