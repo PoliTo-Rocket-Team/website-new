@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48">
+    <defs>
+        <mask id="email-mask">
+            <rect width="48" height="48" fill="white" />
+            <!-- <path d="M6,12.5 L21,21 C23,22,25,22,27,21 L42,12.5" fill="white" stroke="black" stroke-width="3.5" /> -->
+            <path d="M0,13 L21,23 Q24,24.4,27,23 L48,13" fill="white" stroke="black" stroke-width="4" />
+            <path d="M7,48 L21,23" fill="white" stroke="black" stroke-width="2" />
+            <path d="M41,48 L27,23" fill="white" stroke="black" stroke-width="2" />
+        </mask>
+    </defs>
+    <rect fill="red" x="6" y="10" width="36" height="28" rx="5" ry="5" mask="url(#email-mask)" />
+</svg>
