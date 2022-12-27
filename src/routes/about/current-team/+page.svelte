@@ -1,5 +1,8 @@
 <script>
     import Executive from "./Executive.svelte";
+    import Lead from "./Lead.svelte";
+    import Member from "../Member.svelte";
+    import members from "./members.json";
 </script>
 
 <main>
@@ -27,17 +30,143 @@
             </Executive>
         </ul>
     </section>
+    <section aria-labelledby="chiefs">
+        <h2 class="section-title center" id="chiefs">Chief Engineers</h2>
+        <ul class="lead-list">
+            <Lead 
+                name="Fabio Meloni" 
+                role="Chief Engineer" 
+                scope="Project Cavour"
+                mail="fabio.meloni@studenti.polito.it" 
+                linkedin="fabioski01"
+                img="Meloni.jpg" />
+            <Lead 
+                name="Matteo Crachi" 
+                role="Chief Engineer" 
+                scope="Project Efesto"
+                mail="matteo.crachi@polito.it" 
+                linkedin="matteo-crachi-37a060161"
+                img="Crachi.svg" />
+        </ul>
+    </section>
+    <section aria-labelledby="leads">
+        <h2 class="center" id="leads">Division and Group Leads</h2>
+        <ul class="lead-list">
+            <Lead 
+                name="Francesca Bracaglia" 
+                role="Aerostructures Lead Engineer" 
+                scope="Project Cavour"
+                mail="francesca.bracaglia@studenti.polito.it" 
+                linkedin="francesca-bracaglia-a1000b214" 
+                img="Bracaglia.jpg" />
+            <Lead 
+                name="Federico Guglielmi" 
+                role="IT Manager" 
+                mail="federico.guglielmi@studenti.polito.it"
+                linkedin="Fedesky25"
+                img="Guglielmi.jpg" />
+            <Lead 
+                cofounder
+                name="Salvatore Lagrasta" 
+                role="Avionics Lead Engineer" 
+                scope="Project Cavour"
+                mail="salvatore.lagrasta@studenti.polito.it" 
+                linkedin="salvatore-lagrasta"
+                img="Lagrasta.jfif" />
+            <Lead 
+                name="Luca Loiodice" 
+                role="CAD & Additive Manufacturing Lead Engineer"
+                scope="Project Cavour" 
+                mail="luca.loiodice@studenti.polito.it" 
+                linkedin="luca-loiodice-01l10"
+                img="Loiodice.jpg" />
+            <Lead 
+                cofounder
+                name="Cristian Manfredi" 
+                role="Liquid Propulsion Coordinator"
+                scope="Project Efesto" 
+                mail="cristian.manfredi@studenti.polito.it" 
+                linkedin="cristian-manfredi-478b82194" 
+                img="Manfredi.jpeg" />
+            <Lead 
+                name="Pier Luigi Mercadante" 
+                role="Liquid Propulsion Coordinator"
+                scope="Project Efesto" 
+                mail="pierluigi.mercadante@studenti.polito.it" 
+                linkedin="pier-luigi-mercadante-b43125234" 
+                img="Mercadante.png" />
+            <Lead 
+                name="Marco Prodan" 
+                role="Recovery & Manufacturing Lead Engineer"
+                scope="Project Cavour" 
+                linkedin="marcoprodan"
+                mail="marco.prodan@studenti.polito.it" 
+                img="Prodan.jpg" />
+            <Lead 
+                cofounder
+                name="Mattia Saba" 
+                role="Mission Analysis Lead Engineer" 
+                scope="Project Cavour"
+                mail="mattia.saba@studenti.polito.it"          
+                linkedin="mattia-saba-5b6638258" 
+                img="Saba.jpg" />
+            <Lead 
+                name="Edoardo Viglietti" 
+                role="FEA Group Lead Engineer" 
+                scope="Project Cavour"
+                mail="edo.viglietti@studenti.polito.it" 
+                linkedin="edoardoviglietti" 
+                img="Viglietti.jpg" />
+        </ul>
+    </section>
+    <section aria-labelledby="members">
+        <h2 id="members">Core members</h2>
+        <img loading="lazy" src="/img/team.jpg" alt="Members after the first general meeting of the team">
+        <ul class="cols no-list">
+            {#each members as member}
+                <Member name={member[0]} role={member[1]} />
+            {/each}
+        </ul>
+    </section>
 </main>
 
 <style>
     p {
         margin-top: 0.7rem;
     }
+    img {
+        max-width: 100%;
+        margin-bottom: 2rem;
+        border-radius: 0.7rem;
+    }
+    .cols {
+        column-width: 25ch;
+        column-gap: 4rem;
+        column-rule: dashed 2px var(--fg-1);
+    }
+    @media (min-width: 50rem) {
+        .lead-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3ch;
+        }
+        h2.center {text-align: center;}
+    }
     @media (min-width: 70rem) {
         .executive-list {
             display: grid;
             grid-template-columns: repeat(3,1fr);
             gap: 2rem;
+        }
+    }
+    @media (min-width: 85rem) {
+        section {
+            max-width: 85rem;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h2 {
+            text-align: center;
         }
     }
 </style>
