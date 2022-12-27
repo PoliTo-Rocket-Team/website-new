@@ -1,4 +1,8 @@
 <script lang="ts">
+    import "@fontsource/plus-jakarta-sans";
+    import "@fontsource/plus-jakarta-sans/500.css";
+    import "@fontsource/plus-jakarta-sans/700.css";
+
     import { page } from "$app/stores";
     import { browser } from "$app/environment";
     import LinkCombo, { type ComboRoute } from "$lib/LinkCombo.svelte";
@@ -132,7 +136,9 @@
 </div>
 
 <style lang="scss">
-    @use "$lib/consts";
+    :global(*) {
+        font-family: 'Plus Jakarta Sans', sans-serif;
+    }
 
     $nav-trans: 350ms ease;
     .nav-container {

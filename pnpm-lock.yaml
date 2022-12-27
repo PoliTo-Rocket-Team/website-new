@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/plus-jakarta-sans': ^4.5.10
   '@sveltejs/adapter-static': 1.0.0-next.49
   '@sveltejs/kit': 1.0.1
   sass: ^1.56.2
@@ -9,6 +10,9 @@ specifiers:
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
+
+dependencies:
+  '@fontsource/plus-jakarta-sans': 4.5.10
 
 devDependencies:
   '@sveltejs/adapter-static': 1.0.0-next.49
@@ -219,6 +223,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fontsource/plus-jakarta-sans/4.5.10:
+    resolution: {integrity: sha512-WWyrjO6qyL7j3itLJUEE/rHRyDfypsoIvpvI6Ld0vyEae49P613cm5UBRe5zMnPjNC7dXBQ8/fjbszbifkL6BA==}
+    dev: false
 
   /@jridgewell/resolve-uri/3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}
