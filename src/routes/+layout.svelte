@@ -40,6 +40,8 @@
         hide = currentY > lastY;
         lastY = currentY;
     }
+
+    $: if(browser) document.body.dataset.theme = $theme;
 </script>
 
 <svelte:head>
@@ -48,7 +50,7 @@
 
 <svelte:window on:scroll={throttle(20, onScroll)} on:popstate={() => open = history.state === OPEN_STATE} />
 
-<div class="nav-container" data-theme={$theme}>
+<div class="nav-container">
     <nav id="page-nav" class:hide class:down>
         <a href="/" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 118.2842712" width="50" height="59.14213562">
@@ -116,7 +118,7 @@
         </button>
     </nav>
 </div>
-<div id="page-content" data-theme={$theme} class:unfocus={open} on:click={close} on:keydown={() => {}}>
+<div id="page-content" class:unfocus={open} on:click={close} on:keydown={() => {}}>
     <slot></slot>
     <svg class="divider" viewBox="0 0 1000 200" width="1000" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">
         <rect x="0" y="0" width="1000" height="200" fill="transparent"></rect>
