@@ -71,17 +71,35 @@ button {
     --accent-fig: hsl(19,85%,55%);
     --bg-sel: hsl(19,95%,42%);
 }
+body {
+    color: var(--fg-0);
+    background-color: var(--bg-0);
+}
+main {
+    padding: var(--pad);
+    padding-top: max(6.5rem, var(--pad));
+}
+section {
+    margin-top: max(7rem, var(--pad));
+}
 h1 {
     font-size: var(--fs-80);
     font-weight: 700;
+    margin-bottom: .5em;
 }
 h2 {
     font-size: var(--fs-70);
     font-weight: 700;
+    margin-bottom: 2rem;
+    margin-bottom: clamp(2rem, 3vw, 4rem);
 }
 a {
     color: var(--accent-text);
     text-decoration-color: currentColor;
+}
+::selection {
+    color: var(--light-bg-0);
+    background-color: var(--accent-fig);
 }
 .nav-entry {
     text-decoration: none;
@@ -92,3 +110,4 @@ a {
 .nav-entry.current {
     border-bottom: 2px solid var(--accent-fig);
 }
+.stop-growth { max-width: 50ch; }
