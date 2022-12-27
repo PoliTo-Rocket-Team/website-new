@@ -111,3 +111,4 @@ a {
     border-bottom: 2px solid var(--accent-fig);
 }
 .stop-growth { max-width: 50ch; }
+.no-list {list-style: none;}
