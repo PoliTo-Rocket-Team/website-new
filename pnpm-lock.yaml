@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/anonymous-pro': ^4.5.9
   '@fontsource/plus-jakarta-sans': ^4.5.10
   '@sveltejs/adapter-static': 1.0.0-next.49
   '@sveltejs/kit': 1.0.1
@@ -11,10 +12,9 @@ specifiers:
   typescript: ^4.9.3
   vite: ^4.0.0
 
-dependencies:
-  '@fontsource/plus-jakarta-sans': 4.5.10
-
 devDependencies:
+  '@fontsource/anonymous-pro': 4.5.9
+  '@fontsource/plus-jakarta-sans': 4.5.10
   '@sveltejs/adapter-static': 1.0.0-next.49
   '@sveltejs/kit': 1.0.1_svelte@3.54.0+vite@4.0.0
   sass: 1.56.2
@@ -224,9 +224,13 @@ packages:
     dev: true
     optional: true
 
+  /@fontsource/anonymous-pro/4.5.9:
+    resolution: {integrity: sha512-3DLmwLhWYWTHuHlPlcaWQ65rJOMtR08B71Ec14+w2VoedMkUWK3x2AuBGW81E/oFqELcr5p5q0tEDe76Y+hHhQ==}
+    dev: true
+
   /@fontsource/plus-jakarta-sans/4.5.10:
     resolution: {integrity: sha512-WWyrjO6qyL7j3itLJUEE/rHRyDfypsoIvpvI6Ld0vyEae49P613cm5UBRe5zMnPjNC7dXBQ8/fjbszbifkL6BA==}
-    dev: false
+    dev: true
 
   /@jridgewell/resolve-uri/3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}
