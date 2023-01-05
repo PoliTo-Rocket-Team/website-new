@@ -1,5 +1,6 @@
 <script lang="ts">
-    import "@fontsource/plus-jakarta-sans";
+    import "$lib/global.css";
+    import "@fontsource/plus-jakarta-sans/400.css";
     import "@fontsource/plus-jakarta-sans/500.css";
     import "@fontsource/plus-jakarta-sans/700.css";
 
@@ -47,10 +48,6 @@
 
     $: if(browser) document.body.dataset.theme = $theme;
 </script>
-
-<svelte:head>
-    <link rel="stylesheet" href="/global.css">
-</svelte:head>
 
 <svelte:window on:scroll={throttle(20, onScroll)} on:popstate={() => open = history.state === OPEN_STATE} />
 
