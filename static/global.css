@@ -48,6 +48,11 @@ button {
         display: none;
     }
 }
+@media (max-width: 50rem) {
+    .on-lg {
+        display: none;
+    }
+}
 [data-theme="light"] {
     --bg-0: var(--light-bg-0);
     --bg-1: var(--light-bg-1);
@@ -112,3 +117,13 @@ a {
 }
 .stop-growth { max-width: 50ch; }
 .no-list {list-style: none;}
+hr.subtle {
+    font-size: var(--fs-80);
+    margin-top: .5em;
+    margin-bottom: .5em;
+    border-bottom: 2px solid #8883;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    height: 0;
+}
