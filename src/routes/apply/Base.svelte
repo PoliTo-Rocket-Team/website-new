@@ -82,7 +82,7 @@
     @media (min-width: 50rem) {
         summary {
             display: grid;
-            grid-template-columns: 2fr 1fr 1fr 0.8fr auto $marker-dim;
+            grid-template-columns: $details-columns;
             grid-auto-flow: dense;
             align-items: center;
             column-gap: $gap;
