@@ -21,6 +21,7 @@
     }
 </script>
 
+<svelte:window on:scroll={() => open = false} />
 <svelte:body on:click={onBodyClick} />
 
 <li class="wrapper" bind:this={container}>
@@ -85,14 +86,17 @@
             width: max-content;
             bottom: -.6rem;
             left: 50%;
-            transform: translate(-50%, 100%);
             align-items: center;
             padding: .6rem .75rem;
             background-color: var(--bg-1);
-            border-radius: .45rem;
-            border: 2px solid #aaa;
-            clip-path: inset(-7px 0 calc(100% + 7px) 0);
-            transition: clip-path .15s ease;
+            border-radius: .4rem;
+            border: 2px solid #aaa8;
+            
+            opacity: 0;
+            transform: translate(-50%, calc(100% + 1rem));
+            transition: transform .25s ease, opacity .25s ease;
+            /* clip-path: inset(-7px 0 calc(100% + 7px) 0);
+            transition: clip-path .15s ease; */
         }
         ul::after {
             content: '';
@@ -109,7 +113,9 @@
             margin-top: .45rem;
         }
         ul.open {
-            clip-path: inset(-7px 0 0 0);
+            /* clip-path: inset(-7px 0 0 0); */
+            transform: translate(-50%, 100%);
+            opacity: 1;
         }
     }
 </style>
