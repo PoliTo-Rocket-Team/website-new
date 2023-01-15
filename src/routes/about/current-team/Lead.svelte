@@ -1,5 +1,5 @@
 <script lang="ts">
-    import Icon from "$lib/icons/Icon.svelte";
+    import IconLink from "$lib/icons/IconLink.svelte";
 
     export let name: string;
     export let role: string;
@@ -22,12 +22,8 @@
             <span>{scope}</span>
         {/if}
         <div class="socials">
-            <a href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer" aria-label="LinkedIn" title="LinkedIn">
-                <Icon icon="linkedin" />
-            </a>
-            <a href="mailto:{mail}" target="_blank" rel="noreferrer" aria-label="Email" title="Email">
-                <Icon icon="email" />
-            </a>
+            <IconLink icon="LinkedIn" id={linkedin} />
+            <IconLink icon="Email" id={mail} />
         </div>
     </div>
 </li>
@@ -65,16 +61,10 @@
         display: flex;
         margin-left: -.22rem;
         margin-right: -.22rem;
-    }
-    a {
+
         --icon-clr: rgba(160,160,160,0.7);
         --icon-size: 2.2rem;
-        margin-left: .15rem;
-        margin-right: .15rem;
-    }
-    a:hover {
-        --icon-clr: var(--accent-fig);
-        opacity: 0.9;
+        --icon-hover: var(--accent-fig);
     }
     @media (min-width: 50rem) {
         li:global(:nth-child(2n-1)) {

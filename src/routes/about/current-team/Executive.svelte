@@ -17,8 +17,8 @@
             <slot />
         </div>
         <div class="contacts">
-            <a href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer"><Icon icon="linkedin" /><span>LinkedIn</span></a>
-            <a href="mailto:{mail}" target="_blank" rel="noreferrer"><Icon icon="email" /><span>Email</span></a>
+            <a href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer"><Icon icon="LinkedIn" /><span>LinkedIn</span></a>
+            <a href="mailto:{mail}" target="_blank" rel="noreferrer"><Icon icon="Email" /><span>Email</span></a>
         </div>
     </div>
 </li>
@@ -60,6 +60,7 @@
     a {
         display: flex;
         align-items: center;
+        width: fit-content;
     }
     a:hover {
         --icon-clr: var(--accent-fig)
