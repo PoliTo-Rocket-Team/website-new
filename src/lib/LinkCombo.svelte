@@ -15,20 +15,21 @@
     let open = false;
     $: active = $page.url.pathname.startsWith('/'+base);
 
+    function close() {open = false;}
     function onBodyClick(e: Event) {
         if(container === e.target || container.contains(e.target as Node)) return;
         open = false;
     }
 </script>
 
-<svelte:window on:scroll={() => open = false} />
+<svelte:window on:scroll={close} />
 <svelte:body on:click={onBodyClick} />
 
 <li class="wrapper" bind:this={container}>
     <button class="nav-entry" class:active on:click={() => open = !open}>{base}</button>
     <ul class:open>
         {#each routes as route}
-            <li><a href="/{base}/{route.url}">{route.name}</a></li>
+            <li><a href="/{base}/{route.url}" on:click={close}>{route.name}</a></li>
         {/each}
     </ul>
 </li>
