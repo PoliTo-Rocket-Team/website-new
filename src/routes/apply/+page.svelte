@@ -141,7 +141,7 @@
         width: fit-content;
         text-decoration: none;
         font-weight: 600;
-        margin-top: 1rem;
+        margin: 2rem auto;
     }
     .btn:focus {
         text-decoration: underline;

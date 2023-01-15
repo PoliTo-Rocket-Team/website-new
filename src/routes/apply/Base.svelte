@@ -100,5 +100,11 @@
             transform: translateX(-1px);
             transition: transform 150ms;
         }
+        .disclaimer {
+            max-width: 55ch;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
     }
 </style>
