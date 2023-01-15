@@ -11,13 +11,13 @@
     import { throttle } from "$lib/timing";
 
     const aboutCombo: ComboRoute[] = [
-        {url: "mission-vision", name: "mission"},
-        {url: "current-team", name: "the team"},
-        {url: "past-teams", name: "past teams"}
+        {url: "mission-vision", name: "Mission"},
+        {url: "current-team", name: "The Team"},
+        {url: "past-teams", name: "Past Teams"}
     ];
     const projectsCombo: ComboRoute[] = [
         {url: "cavour", name: "Cavour"},
-        {url: "liquid-propulsion", name: "Liquid Propulsion"}
+        {url: "Efesto", name: "Efesto"}
     ];
 
     $: pathname = $page.url.pathname;
@@ -193,6 +193,7 @@
     }
 
     #page-content {
+        height: 100%;
         // overflow-x: hidden;
         background-color: var(--bg-0);
         transition: transform $nav-trans, filter $nav-trans;
