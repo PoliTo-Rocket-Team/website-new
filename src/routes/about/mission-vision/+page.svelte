@@ -14,7 +14,7 @@
             <li>We believe in the simple, not the complex.</li>
             <li>We are engineers: if it works...</li>
         </ul>
-        <span class="signature">Fabio Meloni, 2022</span>
+        <p class="signature">Fabio Meloni, 2022</p>
     </div>
 </main>
 
@@ -42,7 +42,8 @@
         font-weight: 500;
     }
     .signature {
-        margin-top: 2rem;
+        margin-top: 2.5rem;
         font-style: italic;
+        text-align: right;
     }
 </style>
