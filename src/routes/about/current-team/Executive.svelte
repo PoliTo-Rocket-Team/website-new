@@ -46,6 +46,7 @@
         background-color: var(--bg-1);
         border-radius: .6rem;
         overflow: hidden;
+        height: 100%;
     }
     img {
         max-width: 100%;
@@ -117,6 +118,7 @@
             margin-bottom: 1.5rem;
         }
         .container {
+            margin-bottom: 0;
             transform: 
                 translateX(calc(var(--x) * 0.5rem))
                 translateY(calc(var(--y) * 0.5rem))
