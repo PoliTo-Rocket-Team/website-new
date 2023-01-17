@@ -22,7 +22,6 @@
     .text-cols {
         column-width: 35ch;
         column-gap: 4rem;
-
     }
     p, 
     ul {
