@@ -8,7 +8,10 @@
 <main>
     <div>
         <h1>The Team</h1>
-        <p class="stop-growth">At the beginning of the 2022-2023 Academic Year, the Team is composed of more than 70 between undergraduate students, graduate students, and PhD candidates. Most of the Team members come from the aerospace, mechanical, electronic and computer engineering courses of Politecnico di Torino.</p>
+        <div class="stop-growth">
+            <hr class="subtle">
+            <p>At the beginning of the 2022-2023 Academic Year, the Team is composed of more than 70 between undergraduate students, graduate students, and PhD candidates. Most of the Team members come from the aerospace, mechanical, electronic and computer engineering courses of Politecnico di Torino.</p>
+        </div>
     </div>
     <section aria-labelledby="executive">
         <h2 id="executive">Executive</h2>
