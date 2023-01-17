@@ -1,6 +1,6 @@
 <script lang="ts">
     import { spring } from "svelte/motion";
-    import trackmouse from "$lib/trackmouse";
+    import { trackmouse } from "$lib/trackmouse";
 
     interface SponsorImage {
         url: string;

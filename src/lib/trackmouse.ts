@@ -1,3 +1,5 @@
+import { spring } from "svelte/motion";
+
 function NO_FN() {}
 
 interface MouseTRackingOptions {
@@ -6,7 +8,7 @@ interface MouseTRackingOptions {
     leave?(): void;
 }
 
-export default function trackmouse(element: Element, options: MouseTRackingOptions) {
+export function trackmouse(element: HTMLElement, options: MouseTRackingOptions) {
     const onenter = options.enter || NO_FN;
     const onleave = options.leave || NO_FN;
     const onmove = options.move || NO_FN;
@@ -19,7 +21,6 @@ export default function trackmouse(element: Element, options: MouseTRackingOptio
 
     function enter() {
         req = null;
-        //@ts-ignore
         element.addEventListener("mousemove", mousemove);
         element.addEventListener("mouseleave", leave, { once: true });
         onenter();
@@ -39,9 +40,34 @@ export default function trackmouse(element: Element, options: MouseTRackingOptio
         if(req == null) req = requestAnimationFrame(signal);
     }
     function leave() {
-        //@ts-ignore
         element.removeEventListener("mousemove", mousemove);
         if(req != null) cancelAnimationFrame(req);
         onleave();
+    }
+}
+
+interface SpringOptions {
+    stiffness?: number;
+    damping?: number;
+    precision?: number;
+}
+
+export function springytrack(element: HTMLElement, options: SpringOptions) {
+    const x = spring(0, options);
+    const y = spring(0, options);
+    trackmouse(element, {
+        leave() {
+            x.set(0);
+            y.set(0);
+        },
+        move(_x, _y, rect) {
+            x.set(2*_x/rect.width - 1);
+            y.set(2*_y/rect.height - 1);
+        },
+    });
+    const ux = x.subscribe(v => element.style.setProperty("--x", v.toFixed(5)));
+    const uy = y.subscribe(v => element.style.setProperty("--y", v.toFixed(5)));
+    return {
+        destroy() {ux(); uy();}
     }
 }

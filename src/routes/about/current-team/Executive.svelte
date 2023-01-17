@@ -1,30 +1,45 @@
 <script lang="ts">
-    import Icon from "$lib/icons/Icon.svelte"
+    import { trackmouse } from "$lib/trackmouse";
+    import { spring } from "svelte/motion";
+    import Icon from "$lib/icons/Icon.svelte";
 
     export let name: string;
     export let role: string;
     export let mail: string;
     export let linkedin: string;
     export let img: string;
+
+    const x = spring(0);
+    const y = spring(0);
+    function leave() {
+        x.set(0);
+        y.set(0);
+    }
+    function move(_x: number, _y: number, rect: DOMRect) {
+        x.set(2*_x/rect.width - 1);
+        y.set(2*_y/rect.height - 1);
+    }
 </script>
 
 <li>
-    <img src="/members/{img}" alt="{name} nicely dressed">
-    <div class="body">
-        <div class="text">
-            <h3>{name}</h3>
-            <span class="role">{role}</span>
-            <slot />
-        </div>
-        <div class="contacts">
-            <a href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer"><Icon icon="LinkedIn" /><span>LinkedIn</span></a>
-            <a href="mailto:{mail}" target="_blank" rel="noreferrer"><Icon icon="Email" /><span>Email</span></a>
+    <div class="container" style="--x: {$x}; --y: {$y};" use:trackmouse={{move, leave}}>
+        <img src="/members/{img}" alt="{name} nicely dressed">
+        <div class="body">
+            <div class="text">
+                <h3>{name}</h3>
+                <span class="role">{role}</span>
+                <slot />
+            </div>
+            <div class="contacts">
+                <a href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer"><Icon icon="LinkedIn" /><span>LinkedIn</span></a>
+                <a href="mailto:{mail}" target="_blank" rel="noreferrer"><Icon icon="Email" /><span>Email</span></a>
+            </div>
         </div>
     </div>
 </li>
 
 <style>
-    li {
+    .container {
         display: flex;
         flex-direction: column;
         margin-bottom: 2rem;
@@ -69,10 +84,27 @@
         animation: shake .25s ease;
     }
 
+    @media (min-width: 30rem) {
+        li {
+            perspective: 35rem;
+        }
+        .container {
+            transform-origin: center;
+            transform-style: preserve-3d;
+        }
+    }
+
     @media (min-width: 30rem) and (max-width: 70rem) {
-        li { flex-direction: row; }
         img { width: 40%; }
         .body { width: 60%; }
+        .container {
+            flex-direction: row;
+            transform: 
+                translateX(calc(var(--x) * 0.5rem))
+                translateY(calc(var(--y) * 0.5rem))
+                rotateY(calc(var(--x) * -1deg))
+                rotateX(calc(var(--y) * 2deg));
+        }
     }
     @media (min-width: 70rem) {
         .body {
@@ -83,6 +115,13 @@
         }
         .text {
             margin-bottom: 1.5rem;
+        }
+        .container {
+            transform: 
+                translateX(calc(var(--x) * 0.5rem))
+                translateY(calc(var(--y) * 0.5rem))
+                rotateY(calc(var(--x) * -2deg))
+                rotateX(calc(var(--y) * 1deg));
         }
     }
 </style>

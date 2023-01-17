@@ -12,7 +12,7 @@
     </div>
     <section aria-labelledby="executive">
         <h2 id="executive">Executive</h2>
-        <ul class="executive-list">
+        <ul class="executive-list no-list">
             <Executive name="Fabio Meloni" role="President" mail="president@politorocketteam.it" img="Meloni.jpg" linkedin="fabioski01">
                 <p>Fabio has been the Team's President since its foundation in 2022, during his second year of undergraduate studies, and he is now a third-year Bachelor's student in Aerospace Engineering at Politecnico di Torino.</p>
                 <p>During his presidency, Fabio expanded the Team from 6 to 75+ members, involving undergraduate, graduate, and doctoral students. Besides directing the Team, he manages the relations with academia, private partners, and other institutions.</p>
