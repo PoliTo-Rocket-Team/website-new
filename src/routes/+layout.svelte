@@ -17,7 +17,7 @@
     ];
     const projectsCombo: ComboRoute[] = [
         {url: "cavour", name: "Cavour"},
-        {url: "Efesto", name: "Efesto"}
+        {url: "efesto", name: "Efesto"}
     ];
 
     $: pathname = $page.url.pathname;
