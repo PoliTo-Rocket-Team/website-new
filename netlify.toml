@@ -1,6 +1,6 @@
 [build]
     publish = "build/"
-    command = "pnpm build
+    command = "pnpm build"
 
 [build.processing]
     skip_processing = false
