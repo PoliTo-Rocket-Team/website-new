@@ -139,11 +139,11 @@ import Icon from "$lib/icons/IconLink.svelte";
                 </li>
                 <li class="member">
                     <div class="socials">
-                        <a href="https://mohammad-yousefi.jimdosite.com/" target="_blank" rel="noreferrer" aria-label="Personal website" title="Personal website">
+                        <!-- <a href="https://mohammad-yousefi.jimdosite.com/" target="_blank" rel="noreferrer" aria-label="Personal website" title="Personal website">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 48 48">
                                 <use href="#extern-icon"></use>
                             </svg>
-                        </a>
+                        </a> -->
                         <IconLink icon="LinkedIn" id="mohammad-yousefi-1804ba189" />
                     </div>
                     <span class="name">Mohammad Yousefi</span>
