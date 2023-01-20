@@ -54,7 +54,6 @@ const { post } = getWorker<WorkerMessage, HostMessage>(msg => {
             break;
         }
         case "dark": {
-            console.log("theme");
             setSceneBg(msg.data);
             break;
         }
