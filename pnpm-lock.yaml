@@ -5,9 +5,11 @@ specifiers:
   '@fontsource/plus-jakarta-sans': ^4.5.10
   '@sveltejs/adapter-static': 1.0.0-next.49
   '@sveltejs/kit': 1.0.1
+  '@types/three': ^0.148.0
   sass: ^1.56.2
   svelte: ^3.54.0
   svelte-check: ^2.9.2
+  three: ^0.148.0
   tslib: ^2.4.1
   typescript: ^4.9.3
   vite: ^4.0.0
@@ -17,9 +19,11 @@ devDependencies:
   '@fontsource/plus-jakarta-sans': 4.5.10
   '@sveltejs/adapter-static': 1.0.0-next.49
   '@sveltejs/kit': 1.0.1_svelte@3.54.0+vite@4.0.0
+  '@types/three': 0.148.0
   sass: 1.56.2
   svelte: 3.54.0
   svelte-check: 2.10.2_sass@1.56.2+svelte@3.54.0
+  three: 0.148.0
   tslib: 2.4.1
   typescript: 4.9.4
   vite: 4.0.0_sass@1.56.2
@@ -340,6 +344,16 @@ packages:
     resolution: {integrity: sha512-BPdoIt1lfJ6B7rw35ncdwBZrAssjcwzI5LByIrYs+tpXlj/CAkuVdRsgZDdP4lq5EjyWzwxZCqAoFyHKFwp32g==}
     dependencies:
       '@types/node': 18.11.12
+    dev: true
+
+  /@types/three/0.148.0:
+    resolution: {integrity: sha512-1GiErjt1pJMadO8EhaxNrtULzdn+f3BbM3YTukiiXBVeRvvx4CXc2rpYdEuEBU/ouCX7Rc95j1HoVG9kFQXQJw==}
+    dependencies:
+      '@types/webxr': 0.5.0
+    dev: true
+
+  /@types/webxr/0.5.0:
+    resolution: {integrity: sha512-IUMDPSXnYIbEO2IereEFcgcqfDREOgmbGqtrMpVPpACTU6pltYLwHgVkrnYv0XhWEcjio9sYEfIEzgn3c7nDqA==}
     dev: true
 
   /anymatch/3.1.3:
@@ -950,6 +964,10 @@ packages:
   /svelte/3.54.0:
     resolution: {integrity: sha512-tdrgeJU0hob0ZWAMoKXkhcxXA7dpTg6lZGxUeko5YqvPdJBiyRspGsCwV27kIrbrqPP2WUoSV9ca0gnLlw8YzQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /three/0.148.0:
+    resolution: {integrity: sha512-8uzVV+qhTPi0bOFs/3te3RW6hb3urL8jYEl6irjCWo/l6sr8MPNMcClFev/MMYeIxr0gmDcoXTy/8LXh/LXkfw==}
     dev: true
 
   /tiny-glob/0.2.9:

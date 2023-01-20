@@ -1,8 +1,52 @@
 <script lang="ts">
+    import rocket from "./rocket.ts?worker&url";
+    import { createWorker, type Poster } from "$lib/conditional-worker";
+    import type { HostMessage, WorkerMessage } from "$lib/three-msg";
+    import { throttle } from "$lib/timing";
     import Event from "./Event.svelte";
+    import { onMount } from "svelte";
+    import { theme } from "$lib/theme";
+    import { get } from "svelte/store";
     let main: HTMLElement;
+
+    let post: Poster<HostMessage> = ()=>{};
+
+    let progress = 0;
+    function three_listener(msg: WorkerMessage) {
+        switch(msg.type) {
+            case "load":
+                progress = msg.data;
+                break;
+            case "done":
+                progress = 0;
+                break;
+        }
+    }
+
+    function rocketify(canvas: HTMLCanvasElement) {
+        const supported = !!canvas.transferControlToOffscreen;
+        const worker = createWorker<HostMessage, WorkerMessage>(supported, rocket, three_listener);
+        post = worker.post;
+        const destroy = theme.subscribe(t => post({type: "dark", data: t === "dark"}))
+        if(worker.isWorker) {
+            const c = canvas.transferControlToOffscreen();
+            post({type: "canvas", data: [c,window.innerWidth, window.innerHeight, window.devicePixelRatio]}, [c]);
+        } else {
+            post({type: "canvas", data: [canvas,window.innerWidth, window.innerHeight, window.devicePixelRatio]})
+        }
+        return { destroy };
+    } 
 </script>
 
+<svelte:window 
+    on:resize={throttle(20, () => post({type: "resize", data: [window.innerWidth, window.innerHeight]}))}
+    on:scroll={throttle(10, () => post({type: "scroll", data: -window.scrollY/700}))}
+></svelte:window>
+
+<div class="scene-progress" style="--p: {progress};"></div>
+<div id="canvas-container">
+    <canvas use:rocketify></canvas>
+</div>
 <header>
     <h1><span class="slide-up" style="animation-delay: 0ms;">PoliTo</span> <span class="slide-up" style="animation-delay: 75ms;">Rocket</span> <span class="slide-up" style="animation-delay: 150ms;">Team</span></h1>
     <p class="slide-down after-title">Born for Space</p>
@@ -87,6 +131,25 @@
 </main>
 
 <style lang="scss">
+    .scene-progress {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background-color: var(--accent-fig);
+        clip-path: inset(0 calc(100% * (1 - var(--p,0))) 0 0);
+    }
+    #canvas-container {
+        z-index: -1;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+    }
     header {
         min-height: 100%;
         height: 100%;
@@ -174,6 +237,11 @@
     }
     main p + p {
         margin-top: 1rem;
+    }
+    section p,
+    section h2 {
+        background-color: rgba(var(--bg-0-rgb), 0.8);
+        backdrop-filter: blur(2px);
     }
     .btns {
         display: flex;
