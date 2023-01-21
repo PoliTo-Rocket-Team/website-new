@@ -37,8 +37,6 @@ const { post } = getWorker<WorkerMessage, HostMessage>(msg => {
     switch(msg.type) {
         case "canvas": {
             const [ canvas, width, height, ratio ] = msg.data;
-            //@ts-ignore
-            if (!canvas.style) canvas.style = { width, height }
             renderer = new WebGLRenderer({canvas, antialias: true});
             setSizes(width, height);
             renderer.setPixelRatio(ratio);
@@ -61,7 +59,7 @@ const { post } = getWorker<WorkerMessage, HostMessage>(msg => {
 });
 
 function setSizes(w: number, h: number) {
-    renderer.setSize(w,h);
+    renderer.setSize(w,h,false);
     camera.aspect = w/h;
     camera.updateProjectionMatrix();
 }
