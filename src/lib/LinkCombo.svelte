@@ -98,6 +98,7 @@
             transition: transform .25s ease, opacity .25s ease;
             /* clip-path: inset(-7px 0 calc(100% + 7px) 0);
             transition: clip-path .15s ease; */
+            pointer-events: none;
         }
         ul::after {
             content: '';
@@ -117,6 +118,7 @@
             /* clip-path: inset(-7px 0 0 0); */
             transform: translate(-50%, 100%);
             opacity: 1;
+            pointer-events: auto;
         }
     }
 </style>
