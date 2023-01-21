@@ -194,7 +194,7 @@
     }
 
     #page-content {
-        height: 100%;
+        // height: 100%;
         // overflow-x: hidden;
         background-color: var(--bg-0);
         transition: transform $nav-trans, filter $nav-trans;

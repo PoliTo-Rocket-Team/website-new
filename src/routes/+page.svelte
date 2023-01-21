@@ -4,13 +4,13 @@
     import type { HostMessage, WorkerMessage } from "$lib/three-msg";
     import { throttle } from "$lib/timing";
     import Event from "./Event.svelte";
-    import { onMount } from "svelte";
     import { theme } from "$lib/theme";
-    import { get } from "svelte/store";
+    import { browser } from "$app/environment";
     let main: HTMLElement;
+    const deltaH = browser ? document.documentElement.clientHeight - window.innerHeight : 0;
+    let headerHeight = browser ? window.innerHeight : 100000;
 
     let post: Poster<HostMessage> = ()=>{};
-
     let progress = 0;
     function three_listener(msg: WorkerMessage) {
         switch(msg.type) {
@@ -28,26 +28,30 @@
         const worker = createWorker<HostMessage, WorkerMessage>(supported, rocket, three_listener);
         post = worker.post;
         const destroy = theme.subscribe(t => post({type: "dark", data: t === "dark"}))
+        const w = window.innerWidth, h = document.documentElement.clientHeight;
         if(worker.isWorker) {
             const c = canvas.transferControlToOffscreen();
-            post({type: "canvas", data: [c,window.innerWidth, window.innerHeight, window.devicePixelRatio]}, [c]);
+            post({type: "canvas", data: [c,w,h, window.devicePixelRatio]}, [c]);
         } else {
-            post({type: "canvas", data: [canvas,window.innerWidth, window.innerHeight, window.devicePixelRatio]})
+            post({type: "canvas", data: [canvas,w,h, window.devicePixelRatio]});
         }
         return { destroy };
     } 
+    function onResize() {
+        const h = document.documentElement.clientHeight;
+        post({type: "resize", data: [window.innerWidth,h]});
+        headerHeight = h - deltaH;
+    }
 </script>
 
 <svelte:window 
-    on:resize={throttle(20, () => post({type: "resize", data: [window.innerWidth, window.innerHeight]}))}
+    on:resize={throttle(20, onResize)}
     on:scroll={throttle(10, () => post({type: "scroll", data: -window.scrollY/700}))}
 ></svelte:window>
 
 <div class="scene-progress" style="--p: {progress};"></div>
-<div id="canvas-container">
-    <canvas use:rocketify></canvas>
-</div>
-<header>
+<canvas use:rocketify></canvas>
+<header style="--h: {headerHeight}px">
     <h1><span class="slide-up" style="animation-delay: 0ms;">PoliTo</span> <span class="slide-up" style="animation-delay: 75ms;">Rocket</span> <span class="slide-up" style="animation-delay: 150ms;">Team</span></h1>
     <p class="slide-down after-title">Born for Space</p>
     <button type="button" class="fade-in after-title" on:click={() => main.scrollIntoView({behavior: "smooth"})}>See more</button>
@@ -146,19 +150,18 @@
         background-color: var(--accent-fig);
         clip-path: inset(0 calc(100% * (1 - var(--p,0))) 0 0);
     }
-    #canvas-container {
-        z-index: -1;
+    canvas {
+        z-index: 0;
         position: fixed;
-        top: 0;
-        left: 0;
-        right: 0;
         bottom: 0;
+        left: 0;
         width: 100%;
-        height: 100%;
+    }
+    header, main {
+        z-index: 1;
     }
     header {
-        min-height: 100%;
-        height: 100%;
+        height: min(100vh, var(--h));
         display: grid;
         grid-template-rows: 1fr auto auto 3fr auto;
         padding: var(--pad);
@@ -245,7 +248,7 @@
     main p + p {
         margin-top: 1rem;
     }
-    $sec-space: 1rem;
+    $sec-space: 0.9rem;
     .blur-behind {position: relative;}
     .blur-behind::before {
         content: '';
@@ -254,8 +257,10 @@
         inset: -$sec-space;
         width: calc(100% + 2*$sec-space);
         height: calc(100% + 2*$sec-space);
-        background-color: rgba(var(--bg-0-rgb), 0.4);
-        backdrop-filter: blur(4px);
+        background-color: rgba(var(--bg-0-rgb), 0.55);
+        // box-shadow: 0 0 1rem rgba(var(--bg-0-rgb), 1);
+        // backdrop-filter: blur(4px);
+        filter: blur(6px);
         border-radius: 1.5*$sec-space;
     }
     .btns {
@@ -361,6 +366,9 @@
         header h1,
         header p {
             justify-self: start;
+        }
+        header button {
+            margin-bottom: 1.5rem;
         }
     }
     @media (min-width: 50rem) {
