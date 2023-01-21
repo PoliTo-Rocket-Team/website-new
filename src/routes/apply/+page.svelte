@@ -107,14 +107,6 @@
 <style lang="scss">
     @use "./consts.scss" as *;
     
-    .position-labels {
-        padding: $details-pad-y $details-pad-x;
-        display: grid;
-        grid-template-columns: $details-columns;
-        grid-auto-flow: dense;
-        align-items: center;
-        column-gap: $gap;
-    }
     .code-label {
         font-family: 'Anonymous Pro', monospace;
         width: 11ch;
@@ -148,5 +140,13 @@
     }
     @media (min-width: 50rem) {
         h2 {text-align: center;}
+        .position-labels {
+            padding: $details-pad-y $details-pad-x;
+            display: grid;
+            grid-template-columns: $details-columns;
+            grid-auto-flow: dense;
+            align-items: center;
+            column-gap: $gap;
+        }
     }
 </style>
