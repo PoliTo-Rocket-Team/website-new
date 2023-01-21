@@ -13,7 +13,7 @@
 		"@fontsource/anonymous-pro": "^4.5.9",
 		"@fontsource/plus-jakarta-sans": "^4.5.10",
 		"@sveltejs/adapter-static": "1.0.0-next.49",
-		"@sveltejs/kit": "1.0.1",
+		"@sveltejs/kit": "^1.2.2",
 		"@types/three": "^0.148.0",
 		"sass": "^1.56.2",
 		"svelte": "^3.54.0",

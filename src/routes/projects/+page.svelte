@@ -11,12 +11,12 @@
             <img data-render="cavour" src="img/Render_Cavour.png" alt="Render of the Cavout rocket">
             <h2>Project Cavour</h2>
             <p>PRT's first rocket</p>
-            <a href="/projects/cavour">Explore</a>
+            <a href="projects/cavour">Explore</a>
         </article>
         <article>
             <h2>Project Efesto</h2>
             <p>Liquid rocket engine</p>
-            <a href="/projects/efesto">Explore</a>
+            <a href="projects/efesto">Explore</a>
         </article>
     </div>
 </main>
