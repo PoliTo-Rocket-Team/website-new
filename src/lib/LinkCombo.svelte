@@ -55,6 +55,7 @@
     @media (max-width: 50rem) {
         .wrapper {
             margin-top: 1.25rem;
+            margin-bottom: 1.25rem;
         }
         button {
             text-align: right;
@@ -62,7 +63,7 @@
             width: fit-content;
             margin-left: auto;
             margin-bottom: .3rem;
-            
+            font-size: var(--fs-60);
         }
         ul {
             list-style: none;
