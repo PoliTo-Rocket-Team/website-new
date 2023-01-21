@@ -21,6 +21,7 @@
     ];
 
     $: pathname = $page.url.pathname;
+    $: pathname && (open = false);
 
     const OPEN_STATE = "PRT-nav-open";
     let open = false;
