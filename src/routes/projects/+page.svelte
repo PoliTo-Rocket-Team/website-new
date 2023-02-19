@@ -22,20 +22,12 @@
 </main>
 
 
-<style>
-    /* main {
-        padding: 0;
-    }
-    .padded {
-        padding: var(--pad);
-        padding-top: max(6.5rem, var(--pad));
-    } */
+<style lang="scss">
     .grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
         margin-top: 6rem;
+        display: flex;
     }
+    $size: 25rem;
     article {
         background-color: var(--bg-1);
         display: flex;
@@ -43,7 +35,8 @@
         align-items: center;
         justify-content: center;
         padding: 2rem;
-        min-height: 25rem;
+        min-height: $size;
+        max-height: $size;
         border-radius: .5rem;
         position: relative;
         overflow: hidden;
@@ -60,16 +53,46 @@
         font-size: 1.3rem;
         font-weight: 500;
         text-decoration: none;
+        padding: .4rem .8rem;
+        border-radius: .2rem;
+        background-color: rgba(var(--bg-1-rgb), 0.6);
+        backdrop-filter: blur(2px);
+        box-shadow: 0 0 10px rgba(var(--bg-1-rgb), 0.6);
     }
 
-    [data-render="cavour"] {
+    [data-render] {
         z-index: 0;
         position: absolute;
+    }
+    [data-render="cavour"] {
         bottom: 0;
         left: 0;
         width: 4rem;
         height: auto;
         transform-origin: bottom;
         transform: rotate(45deg) translateY(5rem);
+    }
+
+    @media (max-width: 50rem) {
+        .grid {
+            flex-direction: column;
+            align-items: center;
+        }
+        article {
+            margin-bottom: 4rem;
+            width: $size;
+            max-width: 100%;
+        }
+    }
+    @media (min-width: 50rem) {
+        .grid {
+            flex-wrap: wrap;
+        }
+        article {
+            margin: 2rem;
+            max-width: $size;
+            min-width: 18rem;
+            flex-grow: 1;
+        }
     }
 </style>
