@@ -260,7 +260,7 @@
         background-color: rgba(var(--bg-0-rgb), 0.55);
         // box-shadow: 0 0 1rem rgba(var(--bg-0-rgb), 1);
         // backdrop-filter: blur(4px);
-        filter: blur(6px);
+        // filter: blur(6px);
         border-radius: 1.5*$sec-space;
     }
     .btns {
