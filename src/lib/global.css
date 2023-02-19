@@ -15,13 +15,15 @@ button {
     cursor: pointer;
 }
 :root {
-    --light-bg-0: #efefef;
     --light-bg-0-rgb: 239, 239, 239;
+    --light-bg-1-rgb: 250, 250, 250;
+    --light-bg-0: #efefef;
     --light-bg-1: #fafafa;
     --light-fg-0: #212121;
     --light-fg-1: #555;
-    --dark-bg-0: #121212;
     --dark-bg-0-rgb: 18, 18, 18;
+    --dark-bg-1-rgb: 40, 40, 40;
+    --dark-bg-0: #121212;
     --dark-bg-1: #282828;
     --dark-fg-0: #dfdfdf;
     --dark-fg-1: #c6c6c6;
@@ -57,6 +59,7 @@ button {
 }
 [data-theme="light"] {
     --bg-0-rgb: var(--light-bg-0-rgb);
+    --bg-1-rgb: var(--light-bg-1-rgb);
     --bg-0: var(--light-bg-0);
     --bg-1: var(--light-bg-1);
     --bg-2: var(--dark-bg-1);
@@ -71,6 +74,7 @@ button {
 }
 [data-theme="dark"] {
     --bg-0-rgb: var(--dark-bg-0-rgb);
+    --bg-1-rgb: var(--dark-bg-1-rgb);
     --bg-0: var(--dark-bg-0);
     --bg-1: var(--dark-bg-1);
     --fg-0: var(--dark-fg-0);
