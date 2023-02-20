@@ -3,13 +3,14 @@
 </script>
 
 <script lang="ts">
-    export let date: string;
+    export let year: number;
+    export let month: number;
     export let title: string;
     export let ch: number;
 </script>
 
 <article>
-    <time datetime={date}>{formatter.format(new Date(date))}</time>
+    <time datetime="{year}-{month}">{formatter.format(new Date(year, month-1))}</time>
     <div style="max-width: {ch}ch;">
         <h3>{title}</h3>
         <p><slot /></p>

@@ -85,11 +85,11 @@
                 <div class="base"></div>
             </div>
             <div class="timeline__body">
-                <Event title="The beginning" ch={45} date="2021-10">Inspired by <a href="https://www.uscrpl.com/" target="_blank" rel="noreferrer">USCRPL</a> and <a href="https://www.skywarder.eu/blog/" target="_blank" rel="noreferrer">Skyward Experimental Rocketry</a>, a group of friends started designing an experimental sounding rocket.</Event>
-                <Event date="2022-6" title="Team approval and start of Project Cavour" ch={41}>On June 7th 2022, Politecnico di Torino officially approved the Team, which started working on <a href="https://www.politorocketteam.it/projects">Project Cavour</a>.</Event>
-                <Event date="2023-1" title="Start of Project Efesto" ch={51}>After the first general recruitment, <a href="https://www.politorocketteam.it/projects">Project Efesto</a> was started to research and develop a Liquid Rocket Engine for the Team's rockets.</Event>
-                <Event date="2023-4" title="Cavour launch" ch={38}>Planned test launch of the Team's first rocket: <a href="https://www.politorocketteam.it/projects">Cavour</a>.</Event>
-                <Event date="2023-6" title="2023 Spaceport America Cup" ch={53}>We will represent Politecnico and Italy as the first Italian team at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>, the largest intercollegiate rocketry competition on the planet.</Event>
+                <Event year={2021} month={10} ch={45} title="The beginning">Inspired by <a href="https://www.uscrpl.com/" target="_blank" rel="noreferrer">USCRPL</a> and <a href="https://www.skywarder.eu/blog/" target="_blank" rel="noreferrer">Skyward Experimental Rocketry</a>, a group of friends started designing an experimental sounding rocket.</Event>
+                <Event year={2022} month={6} ch={41} title="Team approval and start of Project Cavour">On June 7th 2022, Politecnico di Torino officially approved the Team, which started working on <a href="/projects">Project Cavour</a>.</Event>
+                <Event year={2023} month={1} ch={51} title="Start of Project Efesto">After the first general recruitment, <a href="/projects">Project Efesto</a> was started to research and develop a Liquid Rocket Engine for the Team's rockets.</Event>
+                <Event year={2023} month={4} ch={38} title="Cavour launch">Planned test launch of the Team's first rocket: <a href="/projects">Cavour</a>.</Event>
+                <Event year={2023} month={6} ch={53} title="2023 Spaceport America Cup">We will represent Politecnico and Italy as the first Italian team at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>, the largest intercollegiate rocketry competition on the planet.</Event>
             </div>
         </div>
     </section>
