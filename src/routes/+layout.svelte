@@ -48,6 +48,7 @@
     }
 
     $: if(browser) document.body.dataset.theme = $theme;
+    $: if(browser) document.body.classList.toggle("no-scroll", open);
 </script>
 
 <svelte:window on:scroll={throttle(20, onScroll)} on:popstate={() => open = history.state === OPEN_STATE} />
@@ -138,6 +139,9 @@
     :global(*) {
         font-family: 'Plus Jakarta Sans', sans-serif;
     }
+    :global(body.no-scroll) {
+        overflow-y: hidden;
+    }
 
     $nav-trans: 350ms ease;
     .nav-container {
@@ -224,6 +228,10 @@
         padding: var(--pad);
         padding-top: 0;
         text-align: center;
+    }
+    svg.divider,
+    footer {
+        z-index: 10;
     }
 
     .theme {
