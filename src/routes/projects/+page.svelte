@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Projects - PoliTo Rocket Team</title>
+</svelte:head>
+
 <main>
     <div class="padded">
         <h1>Projects</h1>

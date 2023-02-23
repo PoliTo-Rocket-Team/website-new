@@ -2,6 +2,10 @@
     import "@fontsource/plus-jakarta-sans/400-italic.css";
 </script>
 
+<svelte:head>
+    <title>Mission & Vision - PoliTo Rocket Team</title>
+</svelte:head>
+
 <main>
     <h1>Mission & Vision</h1>
     <div class="text-cols">

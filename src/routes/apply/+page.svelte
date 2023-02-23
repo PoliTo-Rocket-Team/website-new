@@ -4,6 +4,10 @@
     import FAQs from "./FAQs.svelte";
 </script>
 
+<svelte:head>
+    <title>Apply - PoliTo Rocket Team</title>
+</svelte:head>
+
 <main>
     <h1>Apply</h1>
     <div class="stop-growth">

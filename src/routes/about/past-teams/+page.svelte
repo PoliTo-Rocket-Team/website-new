@@ -1,7 +1,11 @@
 <script>
     import IconLink from "$lib/icons/IconLink.svelte";
-import Icon from "$lib/icons/IconLink.svelte";
+    import Icon from "$lib/icons/IconLink.svelte";
 </script>
+
+<svelte:head>
+    <title>Past Teams - PoliTo Rocket Team</title>
+</svelte:head>
 
 <main>
     <h1>Past Teams</h1>

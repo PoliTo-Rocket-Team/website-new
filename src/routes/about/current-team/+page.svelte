@@ -5,6 +5,10 @@
     import members from "./members.json";
 </script>
 
+<svelte:head>
+    <title>Team - PoliTo Rocket Team</title>
+</svelte:head>
+
 <main>
     <div>
         <h1>The Team</h1>

@@ -49,6 +49,10 @@
     on:scroll={throttle(10, () => post({type: "scroll", data: -window.scrollY/700}))}
 ></svelte:window>
 
+<svelte:head>
+    <title>PoliTo Rocket Team</title>
+</svelte:head>
+
 <div class="scene-progress" style="--p: {progress};"></div>
 <canvas use:rocketify></canvas>
 <header style="--h: {headerHeight}px">

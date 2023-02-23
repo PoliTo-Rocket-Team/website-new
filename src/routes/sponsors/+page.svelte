@@ -2,6 +2,10 @@
     import Sponsor from "./Sponsor.svelte";
 </script>
 
+<svelte:head>
+    <title>Sponsors - PoliTo Rocket Team</title>
+</svelte:head>
+
 <main>
     <h1>Sponsors</h1>
     <div class="stop-growth">
