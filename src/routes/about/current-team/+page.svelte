@@ -124,6 +124,12 @@
                 mail="edo.viglietti@studenti.polito.it" 
                 linkedin="edoardoviglietti" 
                 img="Viglietti.jpg" />
+            <Lead 
+                name="Alessandro Di Nuzzo" 
+                role="Media Manager" 
+                mail="alessandro.dinuzzo@studenti.polito.it"
+                linkedin="alessandro-di-nuzzo-999886254"
+                img="DiNuzzo.jpg" />
         </ul>
     </section>
     <section aria-labelledby="members">
