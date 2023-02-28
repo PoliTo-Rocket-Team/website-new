@@ -28,7 +28,6 @@
             <p>The role of the web developer is to manage the website in all its aspects, in order to present the team at the best. In particular, you will work with web technologies (SCSS, TypeScript, Svelte) to design, create, and mantain all the website sections, based on the team directives.</p>
             <p>Short-mid term tasks would be:</p>
             <ul>
-                <li>Migrate to SvelteKit</li>
                 <li>Improve the projects page</li>
                 <li>Create page transition effects</li>
                 <li>Enhance the overall user experience and interactions</li>
