@@ -2,13 +2,13 @@ import { spring } from "svelte/motion";
 
 function NO_FN() {}
 
-interface MouseTRackingOptions {
-    move?(x: number, y: number, rect: DOMRect): void;
-    enter?(): void;
-    leave?(): void;
+interface MouseTRackingOptions<T extends HTMLElement> {
+    move?(this: T, x: number, y: number, rect: DOMRect): void;
+    enter?(this: T): void;
+    leave?(this: T): void;
 }
 
-export function trackmouse(element: HTMLElement, options: MouseTRackingOptions) {
+export function trackmouse<E extends HTMLElement>(element: E, options: MouseTRackingOptions<E>) {
     const onenter = options.enter || NO_FN;
     const onleave = options.leave || NO_FN;
     const onmove = options.move || NO_FN;
@@ -23,11 +23,12 @@ export function trackmouse(element: HTMLElement, options: MouseTRackingOptions) 
         req = null;
         element.addEventListener("mousemove", mousemove);
         element.addEventListener("mouseleave", leave, { once: true });
-        onenter();
+        onenter.call(element);
     }
     function signal() {
         const rect = element.getBoundingClientRect();
-        onmove(
+        onmove.call(
+            element,
             x - rect.left - window.scrollX,
             y - rect.top - window.scrollY,
             rect
@@ -42,7 +43,7 @@ export function trackmouse(element: HTMLElement, options: MouseTRackingOptions) 
     function leave() {
         element.removeEventListener("mousemove", mousemove);
         if(req != null) cancelAnimationFrame(req);
-        onleave();
+        onleave.call(element);
     }
 }
 
