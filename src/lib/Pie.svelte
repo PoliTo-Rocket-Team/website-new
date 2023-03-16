@@ -117,6 +117,7 @@
     .pie-slice:hover text {transform: scale(0);}
 
     .label {
+        z-index: 1;
         position: absolute;
         left: 0;
         top: 0;
