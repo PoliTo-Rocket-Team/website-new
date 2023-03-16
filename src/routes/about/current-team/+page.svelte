@@ -1,6 +1,7 @@
 <script>
     import Executive from "./Executive.svelte";
     import Lead from "./Lead.svelte";
+    import Pie from "$lib/Pie.svelte";
     import Member from "../Member.svelte";
     import members from "./members.json";
 </script>
@@ -132,6 +133,27 @@
                 img="DiNuzzo.jpg" />
         </ul>
     </section>
+    <section aria-labelledby="stats">
+        <h2 id="stats">Statistics</h2>
+        <div class="pies">
+            <Pie title="Members by program" threshold={2} rotate={255} slices={[
+                { value: 16, label: "Aerospace Engineering", color: "#3bdb84" },
+                { value: 1, label: "Electronic Engineering", color: "#dd4991" },
+                { value: 3, label: "Mechanical Engineering", color: "#dd0011" },
+                { value: 1, label: "Physics Engineering", color: "#2479cf" },
+                { value: 1, label: "Other non-Engineering", color: "#e1a463" },
+            ]} />
+            <Pie title="Members by level" threshold={0} slices={[
+                { value: 11, label: "Bachelor's", color: "#4e7bc1" },
+                { value: 9, label: "Master's", color: "#e1a463" },
+                { value: 1, label: "Ph.D.", color: "#3bdb84" }
+            ]} />
+            <Pie title="International students rate" threshold={0} slices={[
+                { value: 19, label: "Domestic", color: "#dd4991" },
+                { value: 2, label: "International", color: "#e1a463" },
+            ]} />
+        </div>
+    </section>
     <section aria-labelledby="members">
         <h2 id="members">Core members</h2>
         <img loading="lazy" src="/img/team.jpg" alt="Members after the first general meeting of the team">
@@ -157,6 +179,10 @@
         column-gap: 4rem;
         column-rule: dashed 2px var(--fg-1);
     }
+    .pies {
+        --pie-size: 16rem;
+        --reverse: initial;
+    }
     @media (min-width: 50rem) {
         .lead-list {
             display: grid;
@@ -164,6 +190,11 @@
             gap: 3ch;
         }
         h2.center {text-align: center;}
+        .pies {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, 36rem);
+            gap: 3.5rem;
+        }
     }
     @media (min-width: 70rem) {
         .executive-list {
@@ -180,6 +211,12 @@
         }
         h2 {
             text-align: center;
+        }
+        .pies {
+            grid-template-columns: 1fr 1fr;
+        }
+        .pies > :global(:nth-child(2n+1)) {
+            --reverse: ;
         }
     }
 </style>
