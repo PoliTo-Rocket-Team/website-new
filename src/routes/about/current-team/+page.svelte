@@ -136,21 +136,23 @@
     <section aria-labelledby="stats">
         <h2 id="stats">Statistics</h2>
         <div class="pies">
-            <Pie title="Members by program" threshold={2} rotate={255} slices={[
-                { value: 16, label: "Aerospace Engineering", color: "#3bdb84" },
-                { value: 1, label: "Electronic Engineering", color: "#dd4991" },
-                { value: 3, label: "Mechanical Engineering", color: "#dd0011" },
-                { value: 1, label: "Physics Engineering", color: "#2479cf" },
-                { value: 1, label: "Other non-Engineering", color: "#e1a463" },
+            <Pie title="Members by program" threshold={4} rotate={255} slices={[
+                { value: 49, label: "Aerospace Engineering", color: "#316B83" },
+                { value: 11, label: "Mechanical Engineering", color: "#DE8971" },
+                { value: 5, label: "Computer Engineering", color: "#70AF85" },
+                { value: 3, label: "Electronic Engineering", color: "#CD5D7D" },
+                { value: 2, label: "Physics Engineering", color: "#6096B4" },
+                { value: 3, label: "Other Engineering", color: "#C6D57E" },
+                { value: 3, label: "Non-PoliTo", color: "#D3DEDC" },
             ]} />
-            <Pie title="Members by level" threshold={0} slices={[
-                { value: 11, label: "Bachelor's", color: "#4e7bc1" },
-                { value: 9, label: "Master's", color: "#e1a463" },
-                { value: 1, label: "Ph.D.", color: "#3bdb84" }
+            <Pie title="Members by level" threshold={5} slices={[
+                { value: 37, label: "Bachelor's", color: "#4e7bc1" },
+                { value: 32, label: "Master's", color: "#e1a463" },
+                { value: 4, label: "Ph.D.", color: "#3bdb84" }
             ]} />
-            <Pie title="International students rate" threshold={0} slices={[
-                { value: 19, label: "Domestic", color: "#dd4991" },
-                { value: 2, label: "International", color: "#e1a463" },
+            <Pie title="International students rate" rotate={30} threshold={0} slices={[
+                { value: 58, label: "Domestic", color: "#DE8971" },
+                { value: 15, label: "International", color: "#A7D0CD" },
             ]} />
         </div>
     </section>
