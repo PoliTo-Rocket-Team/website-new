@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Project Cavour - PoliTo Rocket Team</title>
+</svelte:head>
+
 <main>
     <div class="container">
         <h1>Project Cavour</h1>
