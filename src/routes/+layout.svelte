@@ -16,8 +16,8 @@
         {url: "past-teams", name: "Past Teams"}
     ];
     const projectsCombo: ComboRoute[] = [
-        {url: "cavour", name: "Cavour"},
-        {url: "efesto", name: "Efesto"}
+        {url: "Cavour", name: "Cavour"},
+        {url: "Efesto", name: "Efesto"}
     ];
 
     $: pathname = $page.url.pathname;
@@ -77,8 +77,7 @@
         <ul class="links" class:open>
             <li class:current={pathname === "/"}><a class="nav-entry" href="/">Home</a></li>
             <LinkCombo base="about" routes={aboutCombo} />
-            <!-- <LinkCombo base="projects" routes={projectsCombo} /> -->
-            <li class:current={pathname === "/projects"}><a class="nav-entry" href="/projects">Projects</a></li>
+            <LinkCombo base="projects" routes={projectsCombo} />
             <li class:current={pathname === "/sponsors"}><a class="nav-entry" href="/sponsors">Sponsors</a></li>
             <li class:current={pathname === "/apply"}><a class="nav-entry" href="/apply">Apply</a></li>
         </ul>
