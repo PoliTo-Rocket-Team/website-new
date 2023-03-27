@@ -30,23 +30,23 @@
     </div>
 </section>
 <section>
-    <ul class="cards">
-        <li>
+    <ul class="cards scrollable">
+        <li class="card">
             <h2>Cost-effective <br>and durable</h2> 
             <p>It is the first rocket of the Team, and it must be proven that with the least possible budget the group is capable of designing and manufacturing a durable rocket which can sustain a high-powered flight while fulfilling the mission objectives.</p>
         </li>
-        <li>
+        <li class="card">
             <h2>Reconfigurable</h2>
             <p>The Cavour Rocket structure design is modular, able to mount different motors, of different classes, lengths and diameters. Multiple versions of the rocket can be launched with different mission objectives, such as different apogee targets, payload launch and deployment, or system testing.</p>
         </li>
-        <li>
+        <li class="card">
             <h2>Reusable</h2>
             <p>Using a drogue chute and a main parachute, the rocket is designed to land without inflicting any damage to its airframe or to the environment. This allows the rocket to perform multiple launches without developing major structural damage, managing to be cheaper to operate and maintain, while maintaining the capability of a high-powered flight.</p>
         </li>
     </ul>
 </section>
 <section>
-    <h2>The numbers</h2>
+    <h2>Models</h2>
     <!-- <table>
         <tr>
             <td class="no-border"></td>
@@ -98,62 +98,64 @@
             <td>1500m</td>
         </tr>
     </table> -->
-    <table>
-        <tr>
-            <td class="no-border"></td>
-            <th scope="col">CVR 100-75-3</th>
-            <th scope="col">CVR 100-75-4</th>
-            <th scope="col">CVR 100-75-54</th>
-            <th scope="col">Unit</th>
-        </tr>
-        <tr>
-            <th scope="row">Diameter</th>
-            <td colspan="3">104</td>
-            <td rowspan="2">mm</td>
-        </tr>
-        <tr>
-            <th scope="row">Lenght</th>
-            <td>2167</td>
-            <td colspan="2">2347</td>
-        </tr>
-        <tr>
-            <th scope="row">Dry mass (no motor case)</th>
-            <td>8.2</td>
-            <td>8.7</td>
-            <td>5.5</td>
-            <td rowspan="2">kg</td>
-        </tr>
-        <tr>
-            <th scope="row">Wet mass</th>
-            <td>11.8</td>
-            <td>12.3</td>
-            <td>6.9</td>
-        </tr>
-        <tr>
-            <th scope="row">Motor manufacturer</th>
-            <td colspan="2">Cesaroni Pro75</td>
-            <td>Cesaroni Pro54</td>
-            <td rowspan="3"><span style="opacity: 0.4;">/</span></td>
-        </tr>
-        <tr>
-            <th scope="row">Motor model</th>
-            <td colspan="2">L1350</td>
-            <td>K940</td>
-        </tr>
-        <tr>
-            <th scope="row">Liftoff Thrust-Weight ratio</th>
-            <td>12.3</td>
-            <td>11.8</td>
-            <td>14.9</td>
-        </tr>
-        <tr>
-            <th scope="row">Target apogee</th>
-            <td>3000</td>
-            <td>&gt;3000</td>
-            <td>1500</td>
-            <td>m</td>
-        </tr>
-    </table>
+    <div class="scrollable">
+        <table>
+            <tr>
+                <td class="no-border"></td>
+                <th scope="col">CVR 100-75-3</th>
+                <th scope="col">CVR 100-75-4</th>
+                <th scope="col">CVR 100-75-54</th>
+                <th scope="col">Unit</th>
+            </tr>
+            <tr>
+                <th scope="row">Diameter</th>
+                <td colspan="3">104</td>
+                <td rowspan="2">mm</td>
+            </tr>
+            <tr>
+                <th scope="row">Lenght</th>
+                <td>2167</td>
+                <td colspan="2">2347</td>
+            </tr>
+            <tr>
+                <th scope="row">Dry mass (no motor case)</th>
+                <td>8.2</td>
+                <td>8.7</td>
+                <td>5.5</td>
+                <td rowspan="2">kg</td>
+            </tr>
+            <tr>
+                <th scope="row">Wet mass</th>
+                <td>11.8</td>
+                <td>12.3</td>
+                <td>6.9</td>
+            </tr>
+            <tr>
+                <th scope="row">Motor manufacturer</th>
+                <td colspan="2">Cesaroni Pro75</td>
+                <td>Cesaroni Pro54</td>
+                <td rowspan="3"><span style="opacity: 0.4;">/</span></td>
+            </tr>
+            <tr>
+                <th scope="row">Motor model</th>
+                <td colspan="2">L1350</td>
+                <td>K940</td>
+            </tr>
+            <tr>
+                <th scope="row">Liftoff Thrust-Weight ratio</th>
+                <td>12.3</td>
+                <td>11.8</td>
+                <td>14.9</td>
+            </tr>
+            <tr>
+                <th scope="row">Target apogee</th>
+                <td>3000</td>
+                <td>&gt;3000</td>
+                <td>1500</td>
+                <td>m</td>
+            </tr>
+        </table>
+    </div>
 </section>
 
 <style>
@@ -172,14 +174,11 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 2.5rem;
     }
-    .cards > * {
-        background-color: var(--bg-1);
-        padding: 1rem 1rem;
-        border-radius: .8rem;
+    .card {
         min-width: 25ch;
     }
     @media (max-width: 70rem) {
-        .cards {
+        .scrollable {
             overflow-x: scroll;
             padding-left: var(--pad);
             padding-right: var(--pad);
@@ -191,22 +190,20 @@
             scrollbar-width: thin;
             scrollbar-color: var(--bg-1) var(--bg-0);
         }
-        .cards::-webkit-scrollbar {
+        .scrollable::-webkit-scrollbar {
             height: .5rem;
         }
-        .cards::-webkit-scrollbar-track {
+        .scrollable::-webkit-scrollbar-track {
             background-color: transparent;
             margin-left: 2rem;
             margin-right: 2rem;
         }
-        .cards::-webkit-scrollbar-thumb {
+        .scrollable::-webkit-scrollbar-thumb {
             background-color: #8883;
             border-radius: .25rem;
         }
     }
     h2 {
-        font-size: 1.8rem;
-        margin-bottom: .7rem;
         position: relative;
         padding-top: 8px;
     }
@@ -231,6 +228,8 @@
     th {
         text-align: right;
         font-weight: 500;
+        width: max-content;
+        white-space: nowrap;
     }
     td { text-align: center; }
     .no-border {
