@@ -54,7 +54,7 @@
                 scope="Project Efesto"
                 mail="matteo.crachi@polito.it" 
                 linkedin="matteo-crachi-37a060161"
-                img="Crachi.svg" />
+                img="Crachi.jpg" />
         </ul>
     </section>
     <section aria-labelledby="leads">
