@@ -7,6 +7,8 @@
 </script>
 
 <script lang="ts">
+    import { browser } from "$app/environment";
+
     import { page } from "$app/stores";
 
     export let base: string;
@@ -25,9 +27,9 @@
     $: if(open) {
         if(closeLast) closeLast();
         closeLast = close;
-        document.body.addEventListener("click", onBodyClick);
+        if(browser) document.body.addEventListener("click", onBodyClick);
     } else {
-        document.body.removeEventListener("click", onBodyClick);
+        if(browser) document.body.removeEventListener("click", onBodyClick);
     }
     function onMouseEnter() {
         if(closeLast) {
