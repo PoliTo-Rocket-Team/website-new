@@ -43,5 +43,19 @@
             padding: 1rem 1rem;
             border-radius: .8rem;
         }
+        :global(.smudge) {
+            position: relative;
+            padding-top: 8px;
+        }
+        :global(.smudge)::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            background-color: var(--accent-fig);
+            width: 2.5rem;
+            height: 4px;
+            border-radius: 2px;
+        }
     }
 </style>
