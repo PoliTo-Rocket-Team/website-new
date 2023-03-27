@@ -3,6 +3,7 @@
         url: string;
         name: string;
     }
+    let closeLast: (() => void) | null = null;
 </script>
 
 <script lang="ts">
@@ -18,14 +19,27 @@
     function close() {open = false;}
     function onBodyClick(e: Event) {
         if(container === e.target || container.contains(e.target as Node)) return;
+        closeLast = null;
         open = false;
+    }
+    $: if(open) {
+        if(closeLast) closeLast();
+        closeLast = close;
+        document.body.addEventListener("click", onBodyClick);
+    } else {
+        document.body.removeEventListener("click", onBodyClick);
+    }
+    function onMouseEnter() {
+        if(closeLast) {
+            closeLast();
+            closeLast = null;
+        }
     }
 </script>
 
 <svelte:window on:scroll={close} />
-<svelte:body on:click={onBodyClick} />
 
-<li class="wrapper" bind:this={container}>
+<li class="wrapper" bind:this={container} on:mouseenter={onMouseEnter}>
     <button class="nav-entry" class:active on:click={() => open = !open}>{base}</button>
     <ul class:open>
         {#each routes as route}
@@ -36,7 +50,6 @@
 
 <style>
     .wrapper {
-        list-style: none;
         display: flex;
         flex-direction: column;
     }
@@ -83,41 +96,59 @@
         .wrapper {
             position: relative;
         }
+        button {
+            z-index: 4;
+        }
         ul {
+            z-index: 3;
             position: absolute;
             width: max-content;
-            bottom: -.6rem;
-            left: 50%;
-            align-items: center;
-            padding: .6rem .75rem;
-            background-color: var(--bg-1);
-            border-radius: .4rem;
-            border: 2px solid #aaa8;
+            top: 0;
+            left: -.5ch;
+            align-items: start;
+
             
+            padding-left: .5ch;
+            padding-right: .2ch;
+            padding-top: 1.6rem;
+            padding-bottom: .15rem;
+
             opacity: 0;
-            transform: translate(-50%, calc(100% + 1rem));
-            transition: transform .25s ease, opacity .25s ease;
-            /* clip-path: inset(-7px 0 calc(100% + 7px) 0);
-            transition: clip-path .15s ease; */
+            clip-path: inset(0 -2rem 100% -2rem);
+            transition: clip-path .25s ease, opacity .25s ease;
             pointer-events: none;
         }
-        ul::after {
+        ul::before {
             content: '';
             position: absolute;
-            top: 0px;
-            left: 50%;
-            transform: translate(-50%, -100%);
-            height: 6px;
-            width: 12px;
-            background-color: #aaa;
-            clip-path: polygon(50% 0, 100% 100%, 0% 100%);
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            border-radius: 1px;
+            background-color: var(--accent-fig);
         }
-        ul li + li {
-            margin-top: .45rem;
+        ul::after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            bottom: -0.8rem;
+            left: -0.8rem;
+            width: calc(100% + 1.6rem);
+            height: 100%;
+            border-radius: 0.8rem;
+            background-color: rgba(var(--bg-0-rgb), 0.7);
+            backdrop-filter: blur(2px);
+            filter: blur(.2rem);
         }
+        ul li {
+            margin-top: .1rem;
+            opacity: 0.9;
+        }
+        .wrapper:hover > ul,
         ul.open {
-            /* clip-path: inset(-7px 0 0 0); */
-            transform: translate(-50%, 100%);
+            /* transform: translateY(100%); */
+            clip-path: inset(0 -2rem -2rem -2rem);
             opacity: 1;
             pointer-events: auto;
         }
