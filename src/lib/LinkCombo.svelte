@@ -21,7 +21,6 @@
     function close() {open = false;}
     function onBodyClick(e: Event) {
         if(container === e.target || container.contains(e.target as Node)) return;
-        closeLast = null;
         open = false;
     }
     $: if(open) {
@@ -29,19 +28,14 @@
         closeLast = close;
         if(browser) document.body.addEventListener("click", onBodyClick);
     } else {
+        if(closeLast === close) closeLast = null;
         if(browser) document.body.removeEventListener("click", onBodyClick);
-    }
-    function onMouseEnter() {
-        if(closeLast) {
-            closeLast();
-            closeLast = null;
-        }
     }
 </script>
 
 <svelte:window on:scroll={close} />
 
-<li class="wrapper" bind:this={container} on:mouseenter={onMouseEnter}>
+<li class="wrapper" bind:this={container}>
     <button class="nav-entry" class:active on:click={() => open = !open}>{base}</button>
     <ul class:open>
         {#each routes as route}
@@ -147,12 +141,24 @@
             margin-top: .1rem;
             opacity: 0.9;
         }
-        .wrapper:hover > ul,
-        ul.open {
-            /* transform: translateY(100%); */
-            clip-path: inset(0 -2rem -2rem -2rem);
-            opacity: 1;
-            pointer-events: auto;
+        /* .wrapper:hover > ul, */
+
+        @media (hover: none) {
+            ul.open {
+                clip-path: inset(0 -2rem -2rem -2rem);
+                opacity: 1;
+                pointer-events: auto;
+            }
+        }
+        @media (hover: hover) {
+            button {
+                cursor: auto;
+            }
+            .wrapper:hover > ul {
+                clip-path: inset(0 -2rem -2rem -2rem);
+                opacity: 1;
+                pointer-events: auto;
+            }
         }
     }
 </style>
