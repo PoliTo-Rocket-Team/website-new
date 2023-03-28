@@ -70,6 +70,7 @@
             <Lead 
                 name="Federico Guglielmi" 
                 role="IT Manager" 
+                scope="Operations"
                 mail="federico.guglielmi@studenti.polito.it"
                 linkedin="Fedesky25"
                 img="Guglielmi.jpg" />
@@ -128,6 +129,7 @@
             <Lead 
                 name="Alessandro Di Nuzzo" 
                 role="Media Manager" 
+                scope="Operations"
                 mail="alessandro.dinuzzo@studenti.polito.it"
                 linkedin="alessandro-di-nuzzo-999886254"
                 img="DiNuzzo.jpg" />
