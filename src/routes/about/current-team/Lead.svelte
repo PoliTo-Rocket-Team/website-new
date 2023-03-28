@@ -12,9 +12,7 @@
 
 
 <li>
-    <div class="img">
-        <img src="/members/{img}" alt="Face of {name}">
-    </div>
+    <img src="/members/{img}" alt="Face of {name}">
     <div class="info">
         <span class="name">{name}</span>
         <span class="title">{#if cofounder}Cofounder | {/if}{role}</span>
@@ -35,8 +33,8 @@
         max-width: 100%;
     }
     img {
-        width: 6rem;
-        height: 6rem;
+        width: 7.2rem;
+        height: 7.2rem;
         object-fit: cover;
         border-radius: 50%;
         margin-right: 1rem;
