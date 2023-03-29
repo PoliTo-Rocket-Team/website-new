@@ -53,7 +53,7 @@
                 <td class="no-border"></td>
                 <th scope="col">CVR 100-75-3</th>
                 <th scope="col">CVR 100-75-4</th>
-                <th scope="col">CVR 100-75-54</th>
+                <th scope="col">CVR 100-54-6</th>
                 <th scope="col">Unit</th>
             </tr>
             <tr>
@@ -68,16 +68,15 @@
             </tr>
             <tr>
                 <th scope="row">Dry mass (no motor case)</th>
-                <td>8.2</td>
-                <td>8.7</td>
-                <td>5.5</td>
+                <td>4.2</td>
+                <td colspan="2">4.5</td>
                 <td rowspan="2">kg</td>
             </tr>
             <tr>
                 <th scope="row">Wet mass</th>
-                <td>11.8</td>
-                <td>12.3</td>
-                <td>6.9</td>
+                <td>7.8</td>
+                <td>8.3</td>
+                <td>5.9</td>
             </tr>
             <tr>
                 <th scope="row">Motor manufacturer</th>
