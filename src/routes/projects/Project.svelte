@@ -18,12 +18,13 @@
         x.set(2*_x/rect.width - 1);
         y.set(2*_y/rect.height - 1);
     }
+    $: angle = 5*Math.hypot($x,$y);
 </script>
 
 <div class="perspective">
-    <article style="--x: {$x}; --y: {$y};" use:trackmouse={{move, leave}}>
+    <article style="transform: rotate3d({$y},{-$x},0,{angle}deg);" use:trackmouse={{move, leave}}>
         <div class="clip">
-            <div class="anti">
+            <div class="anti" style="transform: rotate3d({$y},{-$x},0,{-angle}deg);">
                 <slot />
             </div>
         </div>
@@ -40,14 +41,10 @@
     }
     article {
         position: relative;
-        border: 2px solid #8883;
+        outline: 2px solid #8883;
         aspect-ratio: 1/1;
         border-radius: 1rem;
         transform-style: preserve-3d;
-        transform: 
-            rotateY(calc(var(--x) * -5deg))
-            rotateX(calc(var(--y) * 5deg));
-        /* overflow: hidden; */
     }
     .clip, .anti {
         position: absolute;
@@ -62,10 +59,6 @@
     }
     .anti {
         transform-style: preserve-3d;
-        transform:
-            translateZ(0px)
-            rotateX(calc(var(--y) * -5deg))
-            rotateY(calc(var(--x) * 5deg));
     }
     a {
         height: 100%;
