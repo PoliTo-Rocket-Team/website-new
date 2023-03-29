@@ -66,8 +66,9 @@
         <div class="blur-behind">
             <p>We are the rocketry student team of Politecnico di Torino, entirely dedicated to the design and construction of high-powered experimental rockets with scientific payload capability. We are a group of more than 75 undergraduate, graduate and doctoral engineering students with great plans for the future.</p>
             <div class="btns">
-                <a href="./about/mission-vision" class="btn">Mission & Vision</a>
-                <a href="./about/current-team" class="btn">The Team</a>
+                <a href="/projects" class="btn">Our Projects</a>
+                <a href="/about/mission-vision" class="btn">Mission & Vision</a>
+                <a href="/about/current-team" class="btn">The Team</a>
             </div>
         </div>
     </section>
