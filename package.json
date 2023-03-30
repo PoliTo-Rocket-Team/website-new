@@ -6,7 +6,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
-		"noIndex": "vite build && echo 'User-agent: *\nDisallow: /' > dist/robots.txt",
+		"noIndex": "vite build && echo 'User-agent: *\nDisallow: /' > build/robots.txt",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
 	},
