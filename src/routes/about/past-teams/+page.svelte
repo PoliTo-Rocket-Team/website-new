@@ -5,6 +5,7 @@
 
 <svelte:head>
     <title>Past Teams - PoliTo Rocket Team</title>
+    <meta name="description" content="List of all the members of the team, grouped by year" />
 </svelte:head>
 
 <main>

@@ -4,6 +4,7 @@
 
 <svelte:head>
     <title>Sponsors - PoliTo Rocket Team</title>
+    <meta name="description" content="Meet our partners and sponsors which allow us to keep working on our projects" />
 </svelte:head>
 
 <main>

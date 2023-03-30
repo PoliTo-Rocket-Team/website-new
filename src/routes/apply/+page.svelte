@@ -6,6 +6,7 @@
 
 <svelte:head>
     <title>Apply - PoliTo Rocket Team</title>
+    <meta name="description" content="" />
 </svelte:head>
 
 <main>

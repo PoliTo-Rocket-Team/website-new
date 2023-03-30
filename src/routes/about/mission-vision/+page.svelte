@@ -4,6 +4,7 @@
 
 <svelte:head>
     <title>Mission & Vision - PoliTo Rocket Team</title>
+    <meta name="description" content="The Mission and Vision of the PoliTo Rocket Team" />
 </svelte:head>
 
 <main>

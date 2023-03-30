@@ -51,6 +51,7 @@
 
 <svelte:head>
     <title>PoliTo Rocket Team</title>
+    <meta name="description" content="We are the rocketry student team of Politecnico di Torino, entirely dedicated to the design and construction of high-powered experimental rockets with scientific payload capability." />
 </svelte:head>
 
 <div class="scene-progress" style="--p: {progress};"></div>

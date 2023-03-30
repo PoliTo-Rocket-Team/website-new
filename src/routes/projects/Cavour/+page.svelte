@@ -4,6 +4,7 @@
 
 <svelte:head>
     <title>Project Cavour - PoliTo Rocket Team</title>
+    <meta name="description" content="Cavour is a single-stage, 2.25m long, solid propelled rocket, with a variable target altitude and mission profile. Discover all its characteristics here!" />
 </svelte:head>
 
 <h1>Project Cavour</h1>

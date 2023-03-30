@@ -8,6 +8,7 @@
 
 <svelte:head>
     <title>Team - PoliTo Rocket Team</title>
+    <meta name="description" content="Discover the team! Look at the statistics about team composition, and meet the members, Executive, Chief Engineers, and Division Leads" />
 </svelte:head>
 
 <main>

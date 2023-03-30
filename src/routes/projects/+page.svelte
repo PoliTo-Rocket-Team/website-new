@@ -2,6 +2,11 @@
     import Project from "./Project.svelte";
 </script>
 
+<svelte:head>
+    <title>Projects - Polito Rocket Team</title>
+    <meta name="description" content="The complete list of all the team projects" />
+</svelte:head>
+
 <h1>Projects</h1>
 <div class="grid">
     <Project name="Cavour" desc="The team's first rocket" href="projects/Cavour">
