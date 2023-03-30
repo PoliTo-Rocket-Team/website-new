@@ -21,6 +21,10 @@
     $: angle = 5*Math.hypot($x,$y);
 </script>
 
+<svelte:head>
+    <title>Projects - Polito Rocket Team</title>
+</svelte:head>
+
 <div class="perspective">
     <article style="transform: rotate3d({$y},{-$x},0,{angle}deg);" use:trackmouse={{move, leave}}>
         <div class="clip">
