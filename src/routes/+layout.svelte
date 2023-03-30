@@ -78,7 +78,7 @@
             <li class:current={pathname === "/"}><a class="nav-entry" href="/">Home</a></li>
             <LinkCombo base="about" routes={aboutCombo} />
             <LinkCombo base="projects" routes={projectsCombo} />
-            <li class:current={pathname === "/sponsors"}><a class="nav-entry" href="/sponsors">Sponsors</a></li>
+            <li class:current={pathname === "/partners"}><a class="nav-entry" href="/partners">Partners</a></li>
             <li class:current={pathname === "/apply"}><a class="nav-entry" href="/apply">Apply</a></li>
         </ul>
         <div class="theme">

@@ -3,12 +3,12 @@
 </script>
 
 <svelte:head>
-    <title>Sponsors - PoliTo Rocket Team</title>
-    <meta name="description" content="Meet our partners and sponsors which allow us to keep working on our projects" />
+    <title>Partners - PoliTo Rocket Team</title>
+    <meta name="description" content="Meet the partners which allow us to keep working on our projects" />
 </svelte:head>
 
 <main>
-    <h1>Sponsors</h1>
+    <h1>Partners</h1>
     <div class="stop-growth">
         <hr class="subtle">
         <p>Building rockets does not come easy. If you wish to become our partner with financial, technical, or material support, or with any other service provision, contact us at <a href="mailto:info@politorocketteam.it">info@politorocketteam.it</a></p>
