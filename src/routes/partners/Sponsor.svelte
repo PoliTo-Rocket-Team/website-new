@@ -25,10 +25,11 @@
         x.set(2*_x/rect.width - 1);
         y.set(2*_y/rect.height - 1);
     }
+    $: angle = -4*Math.hypot($x,$y);
 </script>
 
 <div class="perspective">
-    <article style="--x: {$x}; --y: {$y}" use:trackmouse={{move, leave}}>
+    <article style="transform: translate({-$x*2.5}%,{-$y*2.5}%) rotate3d({-$y},{$x},0,{angle}deg);" use:trackmouse={{move, leave}}>
         <img src="img/sponsors/{si.url}" alt="{name} logo" data-bg={si.background} style="padding: {si.padding}px;">
         <div class="body">
             <h3><a href={link} target="_blank" rel="noreferrer">{name}</a></h3>
@@ -95,14 +96,8 @@
             --scale: 1;
 
             display: block;
-            transform-origin: center;
+            transform-origin: center center;
             transform-style: preserve-3d;
-            // transition: transform 250ms ease;
-            transform: 
-                translateX(calc(var(--x) * 3%))
-                translateY(calc(var(--y) * 3%))
-                rotateY(calc(var(--x) * -5deg))
-                rotateX(calc(var(--y) * 5deg));
             background-color: var(--bg-1);
             border-radius: $card-padding*0.75;
             padding: $card-padding;
