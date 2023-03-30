@@ -2,6 +2,9 @@
     publish = "build/"
     command = "pnpm build"
 
+[context.branch-deploy]
+    command = "pnpm noIndex"
+
 [build.processing]
     skip_processing = false
 [build.processing.css]
