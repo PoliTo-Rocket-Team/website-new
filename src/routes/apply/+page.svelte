@@ -27,11 +27,12 @@
         <Position role="Web Developer" subteam="Operations" division="IT" code="OPS-ITC-001">
             <h4>Description</h4>
             <p>The role of the web developer is to manage the website in all its aspects, in order to present the team at the best. In particular, you will work with web technologies (SCSS, TypeScript, Svelte) to design, create, and mantain all the website sections, based on the team directives.</p>
-            <p>Short-mid term tasks would be:</p>
+            <p>Mid term tasks could be:</p>
             <ul>
-                <li>Improve the projects page</li>
-                <li>Create page transition effects</li>
-                <li>Enhance the overall user experience and interactions</li>
+                <li>Improve the projects page,</li>
+                <li>Create page transition effects,</li>
+                <li>Create and maintain the outreach page,</li>
+                <li>Enhance the overall user experience and interactions with better animations and with 3D models.</li>
             </ul>
             <p>A relatively big, possible future project could be the development of a backend that handles recruitment, renders pages based on information from (admin) lead engineers, and possibly receives and stores data collected during flights. </p>
             <h4>Required skills</h4>
