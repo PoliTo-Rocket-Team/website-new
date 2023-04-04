@@ -6,7 +6,7 @@
 
 <svelte:head>
     <title>Apply - PoliTo Rocket Team</title>
-    <meta name="description" content="" />
+    <meta name="description" content="Get Involved! PoliTo Rocket Team has numerous positions available for undergraduate and graduate students of Politecnico di Torino" />
 </svelte:head>
 
 <main>
@@ -73,23 +73,6 @@
             </ul>
             <a class="btn" href="https://forms.gle/JtC9MrEwYkUEYk7t5" target="_blank" rel="noreferrer">Apply</a>
         </Position>
-        <Position role="Computer/Electronic Engineer" subteam="Efesto" division="Engine Control Strategy" code="EFS-ECS-001">
-            <h4>Main tasks</h4>
-            <ul>
-                <li>Coding and designing the interfaces between software and hardware</li>
-                <li>Developing the main engine control software</li>
-                <li>Designing an integration system of sensors</li>
-                <li>Testing and validating signals from sensors</li>
-            </ul>
-            
-            <h4>Required skills</h4>
-            <ul>
-                <li>Programming skills</li>
-                <li>Strong electronic knowledge</li>
-                <li>Strong knowledge of theory of signals</li>
-            </ul>
-            <a class="btn" href="https://docs.google.com/forms/d/e/1FAIpQLSewYXBL7c3bV02y85bSRkuNjvNRHVfNVW3mHETOLfCgt9fwZQ/viewform?usp=sf_link" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
         <Position role="Graphics Designer" subteam="Operations" division="Media" code="OPS-MDA-001" >
             <h4>Description & Responsibilities</h4>
             <p>As a Graphic Designer, you will be in charge of designing the Team’s mission patches and logos, and help design the external coating of the Team’s rockets. You will design social media posts and website UI & UX in tight collaboration with photographers, video makers, rendering specialists, and web developers, leveraging modern design styles and patterns.</p>
@@ -122,6 +105,14 @@
                 <li>Knowledge of Google Suite</li>
             </ul>
             <a class="btn" href="https://forms.gle/bzTseETDcFmjXek86" target="_blank" rel="noreferrer">Apply</a>
+        </Position>
+        <Position role="Software Engineer" subteam="Cavour" division="Recovery & Mission Analysis" group="Mission Analysis" code="CVR-RMA-003">
+            <h4>Description</h4>
+            <p>We are seeking software engineers to join our team and design and create a model in Simulink to simulate and analyze the team’s rockets. Hence the task focuses on creating an accurate virtual model that can simulate the behavior of the rockets under different conditions. This will involve selecting appropriate physical models and parameters to represent the rocket's propulsion, aerodynamics, and control systems. Furthermore the created model must ensure that the simulation is  accurate and that it can be used to analyze the rocket's performance.</p>
+            <h4>Skills</h4>
+            <p>Experience in software engineering and testing of open/closed loop controls and system dynamics, and very good knowledge of MATLAB/SIMULINK is required.</p>
+            <p>In addition to the technical skills required for the task, proficiency in the English language, experience with LaTeX and the ability to work well in a team are also desirable.</p>
+            <a class="btn" href="https://forms.gle/W5KnsSJPYFKawjs96" target="_blank" rel="noreferrer">Apply</a>
         </Position>
     </section>
     <section aria-labelledby="faqs">
