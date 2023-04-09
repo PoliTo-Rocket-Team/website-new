@@ -129,9 +129,6 @@
         padding: .3em .6em;
         border-radius: .3em;
     }
-    .label.show {
-        transform: translate(var(--mx), var(--my)) translate(1.5ch, -50%);
-    }
 
 
     @media (max-width: 50rem) {
@@ -142,6 +139,9 @@
         .legend {
             margin-top: 1rem;
             max-width: var(--pie-size, 16rem);
+        }
+        .label.show {
+            transform: translate(var(--mx), var(--my)) translate(-50%, -3rem);
         }
     }
     @media (min-width: 50rem) {
@@ -156,6 +156,9 @@
             margin-right: var(--mr, 0rem);
             --ml: var(--reverse) 0rem;
             margin-left: var(--ml, 2rem);
+        }
+        .label.show {
+            transform: translate(var(--mx), var(--my)) translate(1.5ch, -50%);
         }
     }
 </style>
