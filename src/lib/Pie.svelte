@@ -26,19 +26,20 @@
     const sins = angles.map(Math.sin);
     const center = radius*scale;
 
-    let mx = 0, my=0;
+    let mx = 0, my=0, left=0;
     let hovered: SVGElement|null = null;
     function enter(this: SVGElement) { hovered = this; }
     function leave(this: SVGElement) { if(hovered == this) hovered = null; }
     function move(x: number, y: number, rect: DOMRect) {
         if(!hovered) return;
         mx = x; my = y;
+        left = x+rect.left;
     }
 </script>
 
 <div class="pie-chart">
     <div class="svg-wrapper" use:trackmouse={{move}}>
-        <div class="label" style="--mx: {mx}px; --my: {my}px;" class:show={hovered}>{hovered?.getAttribute("data-label")}</div>
+        <div class="label" style="--mx: {mx}px; --my: {my}px; --left: {left}px;" class:show={hovered}>{hovered?.getAttribute("data-label")}</div>
         <svg viewBox="0 0 {2*scale*radius} {2*scale*radius}" >
             {#each slices as slice, i}
                 {@const p = slice.value/total}
@@ -141,7 +142,10 @@
             max-width: var(--pie-size, 16rem);
         }
         .label.show {
-            transform: translate(var(--mx), var(--my)) translate(-50%, -3rem);
+            transform: translate(
+                calc(var(--mx) - min(50%, var(--left) - .5rem) - max(.1px, 50% + .5rem + var(--left) - 100vw)), 
+                calc(var(--my) - 100% - 1rem)
+            );
         }
     }
     @media (min-width: 50rem) {
