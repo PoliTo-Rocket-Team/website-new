@@ -18,7 +18,7 @@
         <h2 class="m-top smudge">Technical characteristics</h2>
         <p>Cavour is a single-stage, 2.25m long, solid propelled rocket, with a variable target altitude and mission profile. It is composed of three compartments:</p>
         <ul class="list">
-            <li>Motor bay, holding the commercial solid motor;</li>
+            <li>Motor bay, holding the COTS solid motor;</li>
             <li>Avionics bay with the electronics and the telemetry system;</li>
             <li>Recovery bay, which contains the parachutes and the other recovery components.</li>
         </ul>    
@@ -26,7 +26,7 @@
     </div>
     <div>
         <h2 class="m-top smudge">Current state</h2>
-        <p>Cavour has completed its design phase and the Team has completed the construction of the first prototype. The mission objectives of Cavour’s first launch are the validation of flight simulations and the testing of the rocket's integrated systems.</p>
+        <p>Cavour has completed its design and construction phases. Two twin prototypes have been built and are being ground tested. The mission objectives of Cavour’s first launch are the validation of flight simulations and the testing of the rocket's integrated systems.</p>
         <p>At the end of June 2023, Cavour will be launched in New Mexico’s desert during the Spaceport America Cup 2023, with a 4kg-heavy scientific payload. Project Cavour will evolve towards a future reusable rocket with a larger payload capacity, capable of conducting scientific experiments inexpensively and reliably at a precise predetermined apogee.</p>
     </div>
 </section>
@@ -34,7 +34,7 @@
     <ul class="cards scrollable">
         <li class="card">
             <h2 class="smudge">Cost-effective <br>and durable</h2> 
-            <p>It is the first rocket of the Team, and it must be proven that with the least possible budget the group is capable of designing and manufacturing a durable rocket which can sustain a high-powered flight while fulfilling the mission objectives.</p>
+            <p>Cavour is the first rocket of the Team, and it must be proven that with the least possible budget the group is capable of designing and manufacturing a durable rocket which can sustain a high-powered flight while fulfilling the mission objectives.</p>
         </li>
         <li class="card">
             <h2 class="smudge">Reconfigurable</h2>
