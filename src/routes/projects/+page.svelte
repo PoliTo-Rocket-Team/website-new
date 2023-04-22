@@ -4,7 +4,7 @@
 
 <svelte:head>
     <title>Projects - Polito Rocket Team</title>
-    <meta name="description" content="The complete list of all the team projects" />
+    <meta name="description" content="There are two projects the team is working on: Cavour, the our first rocket, and Efesto, our liquid propulsion engine" />
 </svelte:head>
 
 <h1>Projects</h1>
