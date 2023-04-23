@@ -18,11 +18,15 @@
 </div>
 
 <style>
-    .container { display: grid; }
+    .container {
+        display: grid;
+        grid-template-columns: 100%;
+    }
     .view {
         grid-row: 1;
         grid-column: 1;
         transition: opacity var(--dur) ease;
+        overflow: visible;
     }
     .view.faded { opacity: 0; }
     .view.hidden { transform: scale(0); }
