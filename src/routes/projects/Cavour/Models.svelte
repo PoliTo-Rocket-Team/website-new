@@ -1,13 +1,11 @@
 <script lang="ts">
+    import SmoothContidional from "$lib/SmoothConditional.svelte";
     import Field from "./Field.svelte";
     import { models, fields } from "./models.json";
     import { writable } from "svelte/store";
     import { browser } from "$app/environment";
-    import { transitional } from "./delayed-store";
 
     export let view: string;
-    const selection = transitional(70);
-    $: selection.set(view === "table");
 
     type SpannedValue<T> = [value: T, count: number];
 
@@ -52,7 +50,7 @@
     const observer = !browser ? null : new IntersectionObserver(entries => entries.forEach(entry => {
         const cb = intersectionCallbacks.get(entry.target as HTMLElement);
         cb && cb(entry.isIntersecting);
-    }));
+    }), {rootMargin: "0px 0px -80px 0px"});
     function observe(node: HTMLElement, cb: (v: boolean) => void) {
         intersectionCallbacks.set(node, cb);
         observer!.observe(node);
@@ -63,8 +61,8 @@
     }
 </script>
 
-<div class="container">
-    <div class="showcase view" class:faded={$selection > 0} class:hidden={$selection === 2} aria-hidden="true">
+<SmoothContidional selection={view === "table"} ms={70}>
+    <svelte:fragment slot="false">
         <div class="model-sel">
             <button title="previous" on:click={() => {$I = ($I === 0 ? num : $I)-1;}}>
                 <span class="hidden">previous</span>
@@ -81,8 +79,8 @@
                 <Field {field} selection={I} {observe} />
             {/each}
         </div>
-    </div>
-    <div class="scrollable view" class:faded={$selection < 0} class:hidden={$selection === -2}>
+    </svelte:fragment>
+    <div class="scrollable" slot="true">
         <table>
             <tr>
                 <td class="no-border"></td>
@@ -105,17 +103,9 @@
             {/each}
         </table>
     </div>
-</div>
+</SmoothContidional>
 
 <style>
-    .container {display: grid;}
-    .view {
-        grid-row: 1;
-        grid-column: 1;
-        transition: opacity 70ms ease;
-    }
-    .view.faded { opacity: 0; }
-    .view.hidden { transform: scale(0); }
     .model-sel {
         display: flex;
         align-items: center;
