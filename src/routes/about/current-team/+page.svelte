@@ -40,7 +40,7 @@
         </ul>
     </section>
     <section aria-labelledby="cavour-leads">
-        <h2 class="center" id="cavour-leads">Cavour Division Leads</h2>
+        <h2 class="center" id="cavour-leads">Project Cavour Leads</h2>
         <ul class="lead-list">
             <Lead 
                 highlight
@@ -64,7 +64,7 @@
                 img="Lagrasta.jfif" />
             <Lead 
                 name="Luca Loiodice" 
-                role="CAD & Additive Manufacturing"
+                role="Design & Additive Manufacturing"
                 mail="luca.loiodice@studenti.polito.it" 
                 linkedin="luca-loiodice-01l10"
                 img="Loiodice.jpg" />
@@ -83,7 +83,7 @@
                 img="Saba.jpg" />
             <Lead 
                 name="Edoardo Viglietti" 
-                role="FEA Group" 
+                role="Finite Element Analysis" 
                 mail="edo.viglietti@studenti.polito.it" 
                 linkedin="edoardoviglietti" 
                 img="Viglietti.jpg" />
@@ -91,7 +91,7 @@
         </ul>
     </section>
     <section aria-labelledby="efesto-leads">
-        <h2 class="center" id="efesto-leads">Efesto Division Leads</h2>
+        <h2 class="center" id="efesto-leads">Project Efesto Leads</h2>
         <ul class="lead-list">
             <Lead 
                 highlight
@@ -128,7 +128,7 @@
             <Lead 
                 name="Gloria Nallo" 
                 role="Thrust Chamber Assembly" 
-                mail="s315420@studenti.polito.it" 
+                mail="gloria.nallo@studenti.polito.it" 
                 linkedin="gloria-nallo-19a277169" 
                 img="nallo.jpg" />
             <Lead 
@@ -140,8 +140,14 @@
         </ul>
     </section>
     <section aria-labelledby="operations-leads">
-        <h2 class="section-title center" id="operations-leads">Operations Division leads</h2>
+        <h2 class="section-title center" id="operations-leads">Operations Leads</h2>
         <ul class="lead-list">
+            <Lead 
+                name="Elena Dilorenzo" 
+                role="Logistics Manager" 
+                mail="elena.dilorenzo@studenti.polito.it"
+                linkedin="elena-dilorenzo-294b5a20b"
+                img="Dilorenzo.jpg" />
             <Lead 
                 name="Federico Guglielmi" 
                 role="IT Manager" 
@@ -154,6 +160,42 @@
                 mail="alessandro.dinuzzo@studenti.polito.it"
                 linkedin="alessandro-di-nuzzo-999886254"
                 img="DiNuzzo.jpg" />
+        </ul>
+    </section>
+    <section aria-labelledby="advisors">
+        <h2 class="section-title center" id="advisors">Advisor Board</h2>
+        <ul class="lead-list">
+            <Lead 
+                name="Gregorio Torchia" 
+                role="Legal Advisor" 
+                mail="gregorio.torchia@studenti.polito.it"
+                linkedin="gregorio-torchia-6514b8210" />
+            <Lead 
+                name="Mattia Trombini" 
+                role="Engineering Advisor" 
+                mail="mattia.trombini@polito.it"
+                linkedin="mattia-trombini-01357a168" />
+            <Lead 
+                name="Rebecca Masia" 
+                role="Engineering Advisor" 
+                mail="rebecca.masia@polito.it"
+                linkedin="rebecca-masia" />
+            <Lead 
+                name="Gianluca Porta" 
+                role="Strategy Advisor" 
+                mail="gianluca.porta@studenti.polito.it"
+                linkedin="gianluca-porta-4639b8180" />
+            <Lead 
+                name="Flora Punzi" 
+                role="Senior FEA analyst & Counselor" 
+                mail="flora.punzi@studenti.polito.it"
+                linkedin="fpunzi" />
+            <Lead 
+                name="Francesca Bracaglia" 
+                role="FEA Advisor" 
+                mail="francesca.bracaglia@studenti.polito.it"
+                linkedin="francesca-bracaglia-a1000b214"
+                img="Bracaglia.jpg" />
         </ul>
     </section>
     <section aria-labelledby="stats">
@@ -208,9 +250,13 @@
         --pie-size: 16rem;
         --reverse: initial;
     }
+    .lead-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--pad);
+    }
     @media (min-width: 50rem) {
         .lead-list {
-            display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3ch;
         }

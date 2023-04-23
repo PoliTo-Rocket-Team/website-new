@@ -5,16 +5,18 @@
     export let name: string;
     export let role: string;
     export let scope: string|null = null;
-    export let img: string;
+    export let img: string | null = null;
     export let mail: string;
     export let linkedin: string;
     export let cofounder: boolean = false;
     export let highlight = false;
+
+    $: src = img ? "/members/"+img : "https://api.dicebear.com/6.x/open-peeps/svg?face=cute,smile,contempt&seed="+name;
 </script>
 
 
 <li>
-    <img src="/members/{img}" alt="Face of {name}">
+    <img {src} alt="Face of {name}">
     <div class="info">
         <span class="name">{name}</span>
         <span class="title" class:colored={highlight}>{#if cofounder}<em>Cofounder</em> <span class="divisor">|</span> {/if}{role}</span>
