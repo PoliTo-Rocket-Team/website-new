@@ -3,8 +3,11 @@
     import { models, fields } from "./models.json";
     import { writable } from "svelte/store";
     import { browser } from "$app/environment";
+    import { transitional } from "./delayed-store";
 
     export let view: string;
+    const selection = transitional(70);
+    $: selection.set(view === "table");
 
     type SpannedValue<T> = [value: T, count: number];
 
@@ -60,54 +63,59 @@
     }
 </script>
 
-<div class="showcase fade" class:hidden={view !== "showcase"} aria-hidden="true">
-    <div class="model-sel">
-        <button title="previous" on:click={() => {$I = ($I === 0 ? num : $I)-1;}}>
-            <span class="hidden">previous</span>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><path fill="none" stroke="#888" stroke-width="15" stroke-linecap="round" d="M67.67767,7.32233 L32.32233,50 L67.67767,92.67767" /></svg>
-        </button>
-        <div>{models[$I]}</div>
-        <button title="next" on:click={() => {$I = $I === num-1 ? 0 : $I+1;}}>
-            <span class="hidden">next</span>
-            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><path fill="none" stroke="#888" stroke-width="15" stroke-linecap="round" d="M32.32233,7.32233 L67.67767,50 L32.32233,92.67767" /></svg>
-        </button>
+<div class="container">
+    <div class="showcase view" class:faded={$selection > 0} class:hidden={$selection === 2} aria-hidden="true">
+        <div class="model-sel">
+            <button title="previous" on:click={() => {$I = ($I === 0 ? num : $I)-1;}}>
+                <span class="hidden">previous</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><path fill="none" stroke="#888" stroke-width="15" stroke-linecap="round" d="M67.67767,7.32233 L32.32233,50 L67.67767,92.67767" /></svg>
+            </button>
+            <div>{models[$I]}</div>
+            <button title="next" on:click={() => {$I = $I === num-1 ? 0 : $I+1;}}>
+                <span class="hidden">next</span>
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100"><path fill="none" stroke="#888" stroke-width="15" stroke-linecap="round" d="M32.32233,7.32233 L67.67767,50 L32.32233,92.67767" /></svg>
+            </button>
+        </div>
+        <div class="fields">
+            {#each fields as field}
+                <Field {field} selection={I} {observe} />
+            {/each}
+        </div>
     </div>
-    <div class="fields">
-        {#each fields as field}
-            <Field {field} selection={I} {observe} />
-        {/each}
-    </div>
-</div>
-<div class="scrollable fade" class:hidden={view !== "table"}>
-    <table>
-        <tr>
-            <td class="no-border"></td>
-            <th scope="col">CVR 100-75-3</th>
-            <th scope="col">CVR 100-75-4</th>
-            <th scope="col">CVR 100-54-6</th>
-            <th scope="col">Unit</th>
-        </tr>
-        {#each fields as f, i}
-            {@const unit = units[i]}
+    <div class="scrollable view" class:faded={$selection < 0} class:hidden={$selection === -2}>
+        <table>
             <tr>
-                <th scope="row">{f.name}</th>
-                {#each squish(f.values) as sq}
-                    <td colspan={sq[1]}>{sq[0]}</td>
-                {/each}
-                {#if unit}
-                    <td rowspan="{unit[1]}" class:low={!unit[0]}>{unit[0] || "/"}</td>
-                {/if}
+                <td class="no-border"></td>
+                <th scope="col">CVR 100-75-3</th>
+                <th scope="col">CVR 100-75-4</th>
+                <th scope="col">CVR 100-54-6</th>
+                <th scope="col">Unit</th>
             </tr>
-        {/each}
-    </table>
+            {#each fields as f, i}
+                {@const unit = units[i]}
+                <tr>
+                    <th scope="row">{f.name}</th>
+                    {#each squish(f.values) as sq}
+                        <td colspan={sq[1]}>{sq[0]}</td>
+                    {/each}
+                    {#if unit}
+                        <td rowspan="{unit[1]}" class:low={!unit[0]}>{unit[0] || "/"}</td>
+                    {/if}
+                </tr>
+            {/each}
+        </table>
+    </div>
 </div>
 
 <style>
-    .hidden {
-        position: absolute;
-        transform: scale(0);
-        opacity: 0;
+    .container {display: grid;}
+    .view {
+        grid-row: 1;
+        grid-column: 1;
+        transition: opacity 70ms ease;
     }
+    .view.faded { opacity: 0; }
+    .view.hidden { transform: scale(0); }
     .model-sel {
         display: flex;
         align-items: center;
@@ -122,6 +130,11 @@
         text-align: center;
         font-size: 1.2rem;
         font-weight: 500;
+    }
+    .model-sel span {
+        position: absolute;
+        transform: scale(0);
+        opacity: 0;
     }
     button {
         border-radius: 50%;
