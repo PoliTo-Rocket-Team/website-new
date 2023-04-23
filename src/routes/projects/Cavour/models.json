@@ -7,11 +7,6 @@
             "values": [104, 104, 104]
         },
         {
-            "name": "Diameter", 
-            "unit": "mm", 
-            "values": [104, 104, 104]
-        },
-        {
             "name": "Lenght", 
             "unit": "mm", 
             "values": [2167, 2347, 2347]
