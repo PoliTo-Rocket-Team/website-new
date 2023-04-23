@@ -1,0 +1,50 @@
+{
+    "models": ["CVR 100-75-3", "CVR 100-75-4", "CVR 100-54-6"],
+    "fields": [
+        {
+            "name": "Diameter",
+            "unit": "mm",
+            "values": [104, 104, 104]
+        },
+        {
+            "name": "Diameter", 
+            "unit": "mm", 
+            "values": [104, 104, 104]
+        },
+        {
+            "name": "Lenght", 
+            "unit": "mm", 
+            "values": [2167, 2347, 2347]
+        },
+        {
+            "name": "Dry mass (no motor case)", 
+            "unit": "kg", 
+            "values": [4.2, 4.5, 4.5]
+        },
+        {
+            "name": "Wet mass", 
+            "unit": "kg", 
+            "values": [7.8, 8.3, 5.9]
+        },
+        {
+            "name": "Motor manufacturer", 
+            "unit": null, 
+            "values": ["Cesaroni Pro75", "Cesaroni Pro75", "Cesaroni Pro54"]
+        },
+        {
+            "name": "Motor model", 
+            "unit": null, 
+            "values": ["L1350", "L1350", "K940"]
+        },
+        {
+            "name": "Liftoff Thrust-Weight ratio", 
+            "unit": null, 
+            "values": [12.3, 11.8, 14.9]
+        },
+        {
+            "name": "Target apogee", 
+            "unit": "m", 
+            "values": [3000, ">3000", 1500]
+        }
+    ]
+}

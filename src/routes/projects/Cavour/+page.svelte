@@ -1,6 +1,8 @@
-<!-- <script>
-    import "@fontsource/anonymous-pro/700.css";
-</script> -->
+<script>
+    // import "@fontsource/anonymous-pro/700.css";
+    import Models from "./Models.svelte";
+    let model_view = "showcase";
+</script>
 
 <svelte:head>
     <title>Project Cavour - PoliTo Rocket Team</title>
@@ -47,64 +49,22 @@
     </ul>
 </section>
 <section>
-    <h2 class="smudge">Models</h2>
-    <div class="scrollable">
-        <table>
-            <tr>
-                <td class="no-border"></td>
-                <th scope="col">CVR 100-75-3</th>
-                <th scope="col">CVR 100-75-4</th>
-                <th scope="col">CVR 100-54-6</th>
-                <th scope="col">Unit</th>
-            </tr>
-            <tr>
-                <th scope="row">Diameter</th>
-                <td colspan="3">104</td>
-                <td rowspan="2">mm</td>
-            </tr>
-            <tr>
-                <th scope="row">Lenght</th>
-                <td>2167</td>
-                <td colspan="2">2347</td>
-            </tr>
-            <tr>
-                <th scope="row">Dry mass (no motor case)</th>
-                <td>4.2</td>
-                <td colspan="2">4.5</td>
-                <td rowspan="2">kg</td>
-            </tr>
-            <tr>
-                <th scope="row">Wet mass</th>
-                <td>7.8</td>
-                <td>8.3</td>
-                <td>5.9</td>
-            </tr>
-            <tr>
-                <th scope="row">Motor manufacturer</th>
-                <td colspan="2">Cesaroni Pro75</td>
-                <td>Cesaroni Pro54</td>
-                <td rowspan="3"><span style="opacity: 0.4;">/</span></td>
-            </tr>
-            <tr>
-                <th scope="row">Motor model</th>
-                <td colspan="2">L1350</td>
-                <td>K940</td>
-            </tr>
-            <tr>
-                <th scope="row">Liftoff Thrust-Weight ratio</th>
-                <td>12.3</td>
-                <td>11.8</td>
-                <td>14.9</td>
-            </tr>
-            <tr>
-                <th scope="row">Target apogee</th>
-                <td>3000</td>
-                <td>&gt;3000</td>
-                <td>1500</td>
-                <td>m</td>
-            </tr>
-        </table>
-    </div>
+    <h2 class="smudge">
+        Models
+        <div class="switch" aria-hidden="true">
+            <label>
+                <span>showcase</span>
+                <input type="radio" name="model-view" value="showcase" bind:group={model_view}>
+                <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M3.25 5.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM7 6a1 1 0 0 0 0 2h12a1 1 0 1 0 0-2H7zm0 5a1 1 0 1 0 0 2h14a1 1 0 1 0 0-2H7zm-1 6a1 1 0 0 1 1-1h10a1 1 0 1 1 0 2H7a1 1 0 0 1-1-1zm-4-5a1.25 1.25 0 1 1 2.5 0A1.25 1.25 0 0 1 2 12zm1.25 3.75a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5z" fill="var(--clr)"/></svg>
+            </label>
+            <label>
+                <span>table</span>
+                <input type="radio" name="model-view" value="table" bind:group={model_view}>
+                <svg width="800" height="800" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path id="Vector" d="M4 15V16.8002C4 17.9203 4 18.4801 4.21799 18.9079C4.40973 19.2842 4.71547 19.5905 5.0918 19.7822C5.5192 20 6.07899 20 7.19691 20H12M4 15V9M4 15H12M4 9V7.2002C4 6.08009 4 5.51962 4.21799 5.0918C4.40973 4.71547 4.71547 4.40973 5.0918 4.21799C5.51962 4 6.08009 4 7.2002 4H12M4 9H12M12 4H16.8002C17.9203 4 18.4801 4 18.9079 4.21799C19.2842 4.40973 19.5905 4.71547 19.7822 5.0918C20 5.5192 20 6.07899 20 7.19691V9M12 4V9M12 9V15M12 9H20M12 15V20M12 15H20M12 20H16.8036C17.9215 20 18.4805 20 18.9079 19.7822C19.2842 19.5905 19.5905 19.2842 19.7822 18.9079C20 18.4805 20 17.9215 20 16.8036V15M20 15V9" stroke="var(--clr)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </label>
+        </div>
+    </h2>
+    <Models view={model_view} />
 </section>
 
 <style>
@@ -127,7 +87,7 @@
         min-width: 25ch;
     }
     @media (max-width: 70rem) {
-        .scrollable {
+        :global(.scrollable) {
             overflow-x: scroll;
             padding-left: var(--pad);
             padding-right: var(--pad);
@@ -139,41 +99,46 @@
             scrollbar-width: thin;
             scrollbar-color: var(--bg-1) var(--bg-0);
         }
-        .scrollable::-webkit-scrollbar {
+        :global(.scrollable)::-webkit-scrollbar {
             height: .5rem;
         }
-        .scrollable::-webkit-scrollbar-track {
+        :global(.scrollable)::-webkit-scrollbar-track {
             background-color: transparent;
             margin-left: 2rem;
             margin-right: 2rem;
         }
-        .scrollable::-webkit-scrollbar-thumb {
+        :global(.scrollable)::-webkit-scrollbar-thumb {
             background-color: #8883;
             border-radius: .25rem;
         }
     }
-    table {
-        border-collapse: collapse;
-        font-size: 1.1rem;
+
+    .switch {
+        display: inline-flex;
+        background-color: var(--bg-1);
+        border-radius: .7rem;
+        padding: .15rem;
+        vertical-align: middle;
+        margin-left: 0.5ch;
     }
-    th, td {
-        padding: .125em .45em;
-        border: 1px solid #8883;
+    .switch label {
+        padding: .1rem;
+        cursor: pointer;
     }
-    th {
-        text-align: right;
-        font-weight: 500;
-        width: max-content;
-        white-space: nowrap;
+    .switch span,
+    .switch input {
+        position: absolute;
+        transform: scale(0);
+        opacity: 0;
     }
-    td { text-align: center; }
-    .no-border {
-        border: none;
+    .switch svg {
+        display: block;
+        width: 2rem;
+        height: 2rem;
+        --clr: var(--fg-1);
     }
-    /* .code {
-        font-family: 'Anonymous Pro', monospace;
-        color: var(--accent-text);
-        font-size: 1.1em;
-        font-weight: 700;
-    } */
+    .switch input:checked + svg {
+        --clr: var(--accent-fig);
+        opacity: 0.8;
+    }
 </style>
