@@ -1,5 +1,6 @@
 <script lang="ts">
     import IconLink from "$lib/icons/IconLink.svelte";
+    import "@fontsource/plus-jakarta-sans/400-italic.css";
 
     export let name: string;
     export let role: string;
@@ -8,6 +9,7 @@
     export let mail: string;
     export let linkedin: string;
     export let cofounder: boolean = false;
+    export let highlight = false;
 </script>
 
 
@@ -15,7 +17,7 @@
     <img src="/members/{img}" alt="Face of {name}">
     <div class="info">
         <span class="name">{name}</span>
-        <span class="title">{#if cofounder}Cofounder | {/if}{role}</span>
+        <span class="title" class:colored={highlight}>{#if cofounder}<em>Cofounder</em> <span class="divisor">|</span> {/if}{role}</span>
         {#if scope}
             <span>{scope}</span>
         {/if}
@@ -40,6 +42,15 @@
         margin-right: 1rem;
         border: 2px solid #8884;
         flex-shrink: 0;
+        text-align: center;
+        vertical-align: middle;
+    }
+    .colored {
+        color: var(--accent-text);
+    }
+    .divisor {
+        opacity: 0.4;
+        font-weight: 700;
     }
     .info {
         display: flex;
