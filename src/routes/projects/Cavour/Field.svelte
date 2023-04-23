@@ -21,7 +21,6 @@
     function onvisible(visible: boolean) {
         if(!numeric) return;
         unsub && unsub();
-        console.log(field.name, visible);
         if(visible) unsub = selection.subscribe(i => smooth!.set(field.values[i]));
         else {
             smooth!.set(0);
