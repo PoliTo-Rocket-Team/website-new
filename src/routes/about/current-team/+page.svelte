@@ -67,7 +67,8 @@
                 name="Mattia Trombini" 
                 role="Engineering Advisor" 
                 mail="mattia.trombini@polito.it"
-                linkedin="mattia-trombini-01357a168" />
+                linkedin="mattia-trombini-01357a168"
+                img="advisors/Trombini.jpg" />
             <Lead 
                 name="Rebecca Masia" 
                 role="Engineering Advisor" 
