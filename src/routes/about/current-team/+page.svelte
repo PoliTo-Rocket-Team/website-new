@@ -39,6 +39,58 @@
             </Executive>
         </ul>
     </section>
+    <section aria-labelledby="advisors">
+        <h2 class="section-title center" id="advisors">Advisor Board</h2>
+        <h3 class="center">Faculty</h3>
+        <ul class="lead-list">
+            <Lead 
+            name="Alfonso Pagani" 
+            role="Primary Faculty Advisors" 
+            mail="alfonso.pagani@polito.it"
+            linkedin="alfonsopagani"
+            img="advisors/Pagani.jpg" />
+        <Lead 
+            name="Enrico Zappino" 
+            role="MUL2 Lab Advisor" 
+            mail="enrico.zappino@polito.it"
+            linkedin="enrico-zappino-4a762326"
+            img="advisors/Zappino.jpg" />
+        </ul>
+        <h3 class="center">Academic</h3>
+        <ul class="lead-list">
+            <Lead 
+                name="Gregorio Torchia" 
+                role="Legal Advisor" 
+                mail="gregorio.torchia@studenti.polito.it"
+                linkedin="gregorio-torchia-6514b8210" />
+            <Lead 
+                name="Mattia Trombini" 
+                role="Engineering Advisor" 
+                mail="mattia.trombini@polito.it"
+                linkedin="mattia-trombini-01357a168" />
+            <Lead 
+                name="Rebecca Masia" 
+                role="Engineering Advisor" 
+                mail="rebecca.masia@polito.it"
+                linkedin="rebecca-masia" />
+            <Lead 
+                name="Gianluca Porta" 
+                role="Strategy Advisor" 
+                mail="gianluca.porta@studenti.polito.it"
+                linkedin="gianluca-porta-4639b8180" />
+            <Lead 
+                name="Flora Punzi" 
+                role="Senior FEA analyst & Counselor" 
+                mail="flora.punzi@studenti.polito.it"
+                linkedin="fpunzi" />
+            <Lead 
+                name="Francesca Bracaglia" 
+                role="FEA Advisor" 
+                mail="francesca.bracaglia@studenti.polito.it"
+                linkedin="francesca-bracaglia-a1000b214"
+                img="Bracaglia.jpg" />
+        </ul>
+    </section>
     <section aria-labelledby="cavour-leads">
         <h2 class="center" id="cavour-leads">Project Cavour Leads</h2>
         <ul class="lead-list">
@@ -156,42 +208,6 @@
                 img="DiNuzzo.jpg" />
         </ul>
     </section>
-    <section aria-labelledby="advisors">
-        <h2 class="section-title center" id="advisors">Advisor Board</h2>
-        <ul class="lead-list">
-            <Lead 
-                name="Gregorio Torchia" 
-                role="Legal Advisor" 
-                mail="gregorio.torchia@studenti.polito.it"
-                linkedin="gregorio-torchia-6514b8210" />
-            <Lead 
-                name="Mattia Trombini" 
-                role="Engineering Advisor" 
-                mail="mattia.trombini@polito.it"
-                linkedin="mattia-trombini-01357a168" />
-            <Lead 
-                name="Rebecca Masia" 
-                role="Engineering Advisor" 
-                mail="rebecca.masia@polito.it"
-                linkedin="rebecca-masia" />
-            <Lead 
-                name="Gianluca Porta" 
-                role="Strategy Advisor" 
-                mail="gianluca.porta@studenti.polito.it"
-                linkedin="gianluca-porta-4639b8180" />
-            <Lead 
-                name="Flora Punzi" 
-                role="Senior FEA analyst & Counselor" 
-                mail="flora.punzi@studenti.polito.it"
-                linkedin="fpunzi" />
-            <Lead 
-                name="Francesca Bracaglia" 
-                role="FEA Advisor" 
-                mail="francesca.bracaglia@studenti.polito.it"
-                linkedin="francesca-bracaglia-a1000b214"
-                img="Bracaglia.jpg" />
-        </ul>
-    </section>
     <section aria-labelledby="stats">
         <h2 id="stats">Statistics</h2>
         <div class="pies">
@@ -244,6 +260,11 @@
         --pie-size: 16rem;
         --reverse: initial;
     }
+    h3 {
+        font-size: var(--fs-65);
+        margin-top: 2.5rem;
+        margin-bottom: 1.2rem;
+    }
     .lead-list {
         display: grid;
         grid-template-columns: 1fr;
@@ -254,7 +275,7 @@
             grid-template-columns: 1fr 1fr;
             gap: 3ch;
         }
-        h2.center {text-align: center;}
+        .center {text-align: center;}
         .pies {
             display: grid;
             grid-template-columns: repeat(auto-fit, 36rem);
