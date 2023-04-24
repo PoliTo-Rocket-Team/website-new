@@ -76,7 +76,10 @@
         align-items: center;
     }
     .hidden {display: none;}
-    h3 {margin-bottom: .5rem;}
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: .5rem;
+    }
     ul {list-style: none;}
     li::after,
     li::before {
