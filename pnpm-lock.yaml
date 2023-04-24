@@ -9,6 +9,7 @@ specifiers:
   sass: ^1.56.2
   svelte: ^3.54.0
   svelte-check: ^2.9.2
+  svelvet: ^7.0.24
   three: ^0.148.0
   tslib: ^2.4.1
   typescript: ^4.9.3
@@ -23,6 +24,7 @@ devDependencies:
   sass: 1.56.2
   svelte: 3.54.0
   svelte-check: 2.10.2_sass@1.56.2+svelte@3.54.0
+  svelvet: 7.0.24_svelte@3.54.0
   three: 0.148.0
   tslib: 2.4.1
   typescript: 4.9.4
@@ -964,6 +966,14 @@ packages:
   /svelte/3.54.0:
     resolution: {integrity: sha512-tdrgeJU0hob0ZWAMoKXkhcxXA7dpTg6lZGxUeko5YqvPdJBiyRspGsCwV27kIrbrqPP2WUoSV9ca0gnLlw8YzQ==}
     engines: {node: '>= 8'}
+    dev: true
+
+  /svelvet/7.0.24_svelte@3.54.0:
+    resolution: {integrity: sha512-NpAqmPRJPXM6p+fRmY45ztFxmlgc5NN9SwQDhLE8ak/3m6F6yh+pTq1PJWrxc7fr/cJRFKv16t0PNFgrGCISig==}
+    peerDependencies:
+      svelte: ^3.54.0
+    dependencies:
+      svelte: 3.54.0
     dev: true
 
   /three/0.148.0:

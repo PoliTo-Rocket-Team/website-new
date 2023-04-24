@@ -4,6 +4,8 @@
     import Pie from "$lib/Pie.svelte";
     import Member from "../Member.svelte";
     import members from "./members.json";
+
+    import OrganizationChart from "./OrganizationChart.svelte";
 </script>
 
 <svelte:head>
@@ -19,6 +21,10 @@
             <p>During the 2022-2023 Academic Year, the Team is composed of more than 85 between undergraduate students, graduate students, and PhD candidates. Most of the Team members come from the aerospace, mechanical, electronic and computer engineering courses of Politecnico di Torino.</p>
         </div>
     </div>
+    <section>
+        <h2>Organization Chart</h2>
+        <OrganizationChart />
+    </section>
     <section aria-labelledby="executive">
         <h2 id="executive">Executive</h2>
         <ul class="executive-list no-list">
