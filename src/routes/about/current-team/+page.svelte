@@ -50,12 +50,6 @@
                 linkedin="fabioski01"
                 img="Meloni.jpg" />
             <Lead 
-                name="Francesca Bracaglia" 
-                role="Aerostructures" 
-                mail="francesca.bracaglia@studenti.polito.it" 
-                linkedin="francesca-bracaglia-a1000b214" 
-                img="Bracaglia.jpg" />
-            <Lead 
                 cofounder
                 name="Salvatore Lagrasta" 
                 role="Avionics" 
