@@ -109,7 +109,7 @@
         <img loading="lazy" src="/img/team.jpg" alt="Members after the first general meeting of the team">
         <ul class="cols no-list">
             {#each members as member}
-                <Member name={member[0]} role={member[1]} />
+                <Member {...member} />
             {/each}
         </ul>
     </section>
