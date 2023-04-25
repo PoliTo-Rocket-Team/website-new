@@ -108,5 +108,46 @@
             "linkedin": "alessandro-di-nuzzo-999886254",
             "img": "DiNuzzo.jpg"
         }
+    ],
+    "advisors": [
+        { 
+            "name": "Gregorio Torchia",
+            "role": "Legal Advisor",
+            "mail": "gregorio.torchia@studenti.polito.it",
+            "linkedin": "gregorio-torchia-6514b8210"
+        },{ 
+            "name": "Mattia Trombini",
+            "role": "Engineering Advisor",
+            "mail": "mattia.trombini@polito.it",
+            "linkedin": "mattia-trombini-01357a168"
+        },{ 
+            "name": "Rebecca Masia",
+            "role": "Engineering Advisor",
+            "mail": "rebecca.masia@polito.it",
+            "linkedin": "rebecca-masia"
+        },{ 
+            "name": "Gianluca Porta" ,
+            "role": "Strategy Advisor" ,
+            "mail": "gianluca.porta@studenti.polito.it",
+            "linkedin": "gianluca-porta-4639b8180"
+        },{ 
+            "name": "Flora Punzi",
+            "role": "Senior FEA analyst & Counselor",
+            "mail": "flora.punzi@studenti.polito.it",
+            "linkedin": "fpunzi",
+            "img": "Punzi.jpg" 
+        },{ 
+            "name": "Francesca Bracaglia",
+            "role": "FEA Advisor",
+            "mail": "francesca.bracaglia@studenti.polito.it",
+            "linkedin": "francesca-bracaglia-a1000b214",
+            "img": "Bracaglia.jpg" 
+        },{ 
+            "name": "Luca Santoro",
+            "role": "Head of Stategy",
+            "mail": "luca.santoro@polito.it",
+            "linkedin": "luca-santoro-b16699151",
+            "img": "Santoro.jpg" 
+        }
     ]
 }

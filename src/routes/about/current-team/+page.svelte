@@ -47,9 +47,8 @@
             </Executive>
         </ul>
     </section>
-    <section aria-labelledby="advisors">
-        <h2 class="section-title center" id="advisors">Advisor Board</h2>
-        <h3 class="center">Faculty</h3>
+    <section aria-labelledby="faculty-advisors">
+        <h2 class="section-title center" id="faculty-advisors">Faculty Advisors</h2>
         <ul class="lead-list">
             <Lead 
             name="Alfonso Pagani" 
@@ -62,47 +61,13 @@
             mail="enrico.zappino@polito.it"
             linkedin="enrico-zappino-4a762326" />
         </ul>
-        <h3 class="center">Academic</h3>
-        <ul class="lead-list">
-            <Lead 
-                name="Gregorio Torchia" 
-                role="Legal Advisor" 
-                mail="gregorio.torchia@studenti.polito.it"
-                linkedin="gregorio-torchia-6514b8210" />
-            <Lead 
-                name="Mattia Trombini" 
-                role="Engineering Advisor" 
-                mail="mattia.trombini@polito.it"
-                linkedin="mattia-trombini-01357a168" />
-            <Lead 
-                name="Rebecca Masia" 
-                role="Engineering Advisor" 
-                mail="rebecca.masia@polito.it"
-                linkedin="rebecca-masia" />
-            <Lead 
-                name="Gianluca Porta" 
-                role="Strategy Advisor" 
-                mail="gianluca.porta@studenti.polito.it"
-                linkedin="gianluca-porta-4639b8180" />
-            <Lead 
-                name="Flora Punzi" 
-                role="Senior FEA analyst & Counselor" 
-                mail="flora.punzi@studenti.polito.it"
-                linkedin="fpunzi"
-                img="Punzi.jpg" />
-            <Lead 
-                name="Francesca Bracaglia" 
-                role="FEA Advisor" 
-                mail="francesca.bracaglia@studenti.polito.it"
-                linkedin="francesca-bracaglia-a1000b214"
-                img="Bracaglia.jpg" />
-        </ul>
     </section>
     <section>
         <HTabbed expand={ww + "px"} data={[
             { title: "Project Cavour Leads", leads: leads.Cavour },
             { title: "Project Efesto Leads", leads: leads.Efesto },
             { title: "Operations Leads", leads: leads.Operations },
+            { title: "Advisor Board", leads: leads.advisors },
         ]} let:title let:leads>
             <div class="lead-panel">
                 <h2 class="center">{title}</h2>
@@ -114,123 +79,6 @@
             </div>
         </HTabbed>
     </section>
-    <!-- <section aria-labelledby="cavour-leads">
-        <h2 class="center" id="cavour-leads">Project Cavour Leads</h2>
-        <ul class="lead-list">
-            <Lead 
-                highlight
-                name="Fabio Meloni" 
-                role="Chief Engineer" 
-                mail="fabio.meloni@studenti.polito.it" 
-                linkedin="fabioski01"
-                img="Meloni.jpg" />
-            <Lead 
-                cofounder
-                name="Salvatore Lagrasta" 
-                role="Avionics" 
-                mail="salvatore.lagrasta@studenti.polito.it" 
-                linkedin="salvatore-lagrasta"
-                img="Lagrasta.jfif" />
-            <Lead 
-                name="Luca Loiodice" 
-                role="Design & Additive Manufacturing"
-                mail="luca.loiodice@studenti.polito.it" 
-                linkedin="luca-loiodice-01l10"
-                img="Loiodice.jpg" />
-            <Lead 
-                name="Marco Prodan" 
-                role="Recovery & Manufacturing"
-                linkedin="marcoprodan"
-                mail="marco.prodan@studenti.polito.it" 
-                img="Prodan.jpg" />
-            <Lead 
-                cofounder
-                name="Mattia Saba" 
-                role="Mission Analysis" 
-                mail="mattia.saba@studenti.polito.it"          
-                linkedin="mattia-saba-5b6638258" 
-                img="Saba.jpg" />
-            <Lead 
-                name="Edoardo Viglietti" 
-                role="Finite Element Analysis" 
-                mail="edo.viglietti@studenti.polito.it" 
-                linkedin="edoardoviglietti" 
-                img="Viglietti.jpg" />
-
-        </ul>
-    </section>
-    <section aria-labelledby="efesto-leads">
-        <h2 class="center" id="efesto-leads">Project Efesto Leads</h2>
-        <ul class="lead-list">
-            <Lead 
-                highlight
-                name="Matteo Crachi" 
-                role="Chief Engineer" 
-                mail="matteo.crachi@polito.it" 
-                linkedin="matteo-crachi-37a060161"
-                img="Crachi.jpg" />
-            <Lead 
-                cofounder
-                name="Cristian Manfredi" 
-                role="Coordinator" 
-                mail="cristian.manfredi@studenti.polito.it" 
-                linkedin="cristian-manfredi-478b82194" 
-                img="Manfredi.jpeg" />
-            <Lead 
-                name="Pier Luigi Mercadante" 
-                role="Coordinator" 
-                mail="pierluigi.mercadante@studenti.polito.it" 
-                linkedin="pier-luigi-mercadante-b43125234" 
-                img="Mercadante.png" />
-            <Lead 
-                name="Luca Barnobi" 
-                role="Test Bench" 
-                mail="s281648@studenti.polito.it" 
-                linkedin="luca-barnobi-b21547182" 
-                img="barnobi.jpg" />
-            <Lead 
-                name="Daniele Boccacciari" 
-                role="Liquid System Architecture" 
-                mail="s308229@studenti.polito.it" 
-                linkedin="daniele-boccacciari-637405222" 
-                img="boccacciari.jpg" />
-            <Lead 
-                name="Gloria Nallo" 
-                role="Thrust Chamber Assembly" 
-                mail="gloria.nallo@studenti.polito.it" 
-                linkedin="gloria-nallo-19a277169" 
-                img="nallo.jpg" />
-            <Lead 
-                name="Lorenzo Guarino" 
-                role="Engine Cycle" 
-                mail="s295327@studenti.polito.it" 
-                linkedin="lorenzo-guarino-563806246" 
-                img="guarino.jpg" />
-        </ul>
-    </section>
-    <section aria-labelledby="operations-leads">
-        <h2 class="section-title center" id="operations-leads">Operations Leads</h2>
-        <ul class="lead-list">
-            <Lead 
-                name="Elena Dilorenzo" 
-                role="Logistics Manager" 
-                mail="elena.dilorenzo@studenti.polito.it"
-                linkedin="elena-dilorenzo-294b5a20b"
-                img="Dilorenzo.jpg" />
-            <Lead 
-                name="Federico Guglielmi" 
-                role="IT Manager" 
-                mail="s281952@studenti.polito.it"
-                linkedin="Fedesky25"
-                img="Guglielmi.jpg" />
-            <Lead 
-                name="Alessandro Di Nuzzo" 
-                role="Media Manager" 
-                mail="alessandro.dinuzzo@studenti.polito.it"
-                linkedin="alessandro-di-nuzzo-999886254"
-                img="DiNuzzo.jpg" />
-        </ul>
-    </section> -->
     <section aria-labelledby="stats">
         <h2 id="stats">Statistics</h2>
         <div class="pies">
