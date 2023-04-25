@@ -45,16 +45,14 @@
         <ul class="lead-list">
             <Lead 
             name="Alfonso Pagani" 
-            role="Primary Faculty Advisors" 
+            role="Primary Faculty Advisor" 
             mail="alfonso.pagani@polito.it"
-            linkedin="alfonsopagani"
-            img="advisors/Pagani.jpg" />
+            linkedin="alfonsopagani" />
         <Lead 
             name="Enrico Zappino" 
-            role="MUL2 Lab Advisor" 
+            role="Laboratory Advisor" 
             mail="enrico.zappino@polito.it"
-            linkedin="enrico-zappino-4a762326"
-            img="advisors/Zappino.jpg" />
+            linkedin="enrico-zappino-4a762326" />
         </ul>
         <h3 class="center">Academic</h3>
         <ul class="lead-list">
@@ -67,8 +65,7 @@
                 name="Mattia Trombini" 
                 role="Engineering Advisor" 
                 mail="mattia.trombini@polito.it"
-                linkedin="mattia-trombini-01357a168"
-                img="advisors/Trombini.jpg" />
+                linkedin="mattia-trombini-01357a168" />
             <Lead 
                 name="Rebecca Masia" 
                 role="Engineering Advisor" 
@@ -83,7 +80,8 @@
                 name="Flora Punzi" 
                 role="Senior FEA analyst & Counselor" 
                 mail="flora.punzi@studenti.polito.it"
-                linkedin="fpunzi" />
+                linkedin="fpunzi"
+                img="Punzi.jpg" />
             <Lead 
                 name="Francesca Bracaglia" 
                 role="FEA Advisor" 
