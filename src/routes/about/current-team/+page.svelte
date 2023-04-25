@@ -4,7 +4,15 @@
     import Pie from "$lib/Pie.svelte";
     import Member from "../Member.svelte";
     import members from "./members.json";
+    import leads from "./leads.json";
+    import HTabbed from "$lib/HTabbed.svelte";
+    import { browser } from "$app/environment";
+    import { throttle } from "$lib/timing";
+
+    let ww = browser ? document.body.clientWidth-2 : 0;
 </script>
+
+<svelte:window on:resize={throttle(30, () => ww = document.body.clientWidth-2)} />
 
 <svelte:head>
     <title>Team - PoliTo Rocket Team</title>
@@ -90,7 +98,23 @@
                 img="Bracaglia.jpg" />
         </ul>
     </section>
-    <section aria-labelledby="cavour-leads">
+    <section>
+        <HTabbed expand={ww + "px"} data={[
+            { title: "Project Cavour Leads", leads: leads.Cavour },
+            { title: "Project Efesto Leads", leads: leads.Efesto },
+            { title: "Operations Leads", leads: leads.Operations },
+        ]} let:title let:leads>
+            <div class="lead-panel">
+                <h2 class="center">{title}</h2>
+                <ul class="lead-list">
+                    {#each leads as lead}
+                        <Lead {...lead} />
+                    {/each}
+                </ul>
+            </div>
+        </HTabbed>
+    </section>
+    <!-- <section aria-labelledby="cavour-leads">
         <h2 class="center" id="cavour-leads">Project Cavour Leads</h2>
         <ul class="lead-list">
             <Lead 
@@ -206,7 +230,7 @@
                 linkedin="alessandro-di-nuzzo-999886254"
                 img="DiNuzzo.jpg" />
         </ul>
-    </section>
+    </section> -->
     <section aria-labelledby="stats">
         <h2 id="stats">Statistics</h2>
         <div class="pies">

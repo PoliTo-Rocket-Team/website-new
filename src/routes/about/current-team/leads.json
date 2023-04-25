@@ -1,0 +1,112 @@
+{
+    "Cavour": [
+        { 
+            "highlight": true,
+            "name": "Fabio Meloni" ,
+            "role": "Chief Engineer" ,
+            "mail": "fabio.meloni@studenti.polito.it" ,
+            "linkedin": "fabioski01",
+            "img": "Meloni.jpg"
+        },{ 
+            "cofounder": true,
+            "name": "Salvatore Lagrasta",
+            "role": "Avionics",
+            "mail": "salvatore.lagrasta@studenti.polito.it",
+            "linkedin": "salvatore-lagrasta",
+            "img": "Lagrasta.jfif"
+        },{ 
+            "name": "Luca Loiodice" ,
+            "role": "Design & Additive Manufacturing",
+            "mail": "luca.loiodice@studenti.polito.it" ,
+            "linkedin": "luca-loiodice-01l10",
+            "img": "Loiodice.jpg"
+        },{ 
+            "name": "Marco Prodan" ,
+            "role": "Recovery & Manufacturing",
+            "linkedin": "marcoprodan",
+            "mail": "marco.prodan@studenti.polito.it" ,
+            "img": "Prodan.jpg" 
+        },{ 
+            "cofounder": true,
+            "name": "Mattia Saba" ,
+            "role": "Mission Analysis" ,
+            "mail": "mattia.saba@studenti.polito.it",
+            "linkedin": "mattia-saba-5b6638258" ,
+            "img": "Saba.jpg"
+        },{ 
+            "name": "Edoardo Viglietti" ,
+            "role": "Finite Element Analysis" ,
+            "mail": "edo.viglietti@studenti.polito.it" ,
+            "linkedin": "edoardoviglietti" ,
+            "img": "Viglietti.jpg" 
+        }
+    ],
+    "Efesto": [
+        { 
+            "highlight": true,
+            "name": "Matteo Crachi",
+            "role": "Chief Engineer",
+            "mail": "matteo.crachi@polito.it",
+            "linkedin": "matteo-crachi-37a060161",
+            "img": "Crachi.jpg"
+        },{ 
+            "cofounder": true,
+            "name": "Cristian Manfredi",
+            "role": "Coordinator",
+            "mail": "cristian.manfredi@studenti.polito.it",
+            "linkedin": "cristian-manfredi-478b82194",
+            "img": "Manfredi.jpeg"
+        },{ 
+            "name": "Pier Luigi Mercadante",
+            "role": "Coordinator",
+            "mail": "pierluigi.mercadante@studenti.polito.it",
+            "linkedin": "pier-luigi-mercadante-b43125234",
+            "img": "Mercadante.png"
+        },{ 
+            "name": "Luca Barnobi",
+            "role": "Test Bench",
+            "mail": "s281648@studenti.polito.it",
+            "linkedin": "luca-barnobi-b21547182",
+            "img": "barnobi.jpg"
+        },{ 
+            "name": "Daniele Boccacciari",
+            "role": "Liquid System Architecture",
+            "mail": "s308229@studenti.polito.it",
+            "linkedin": "daniele-boccacciari-637405222",
+            "img": "boccacciari.jpg"
+        },{ 
+            "name": "Gloria Nallo",
+            "role": "Thrust Chamber Assembly",
+            "mail": "gloria.nallo@studenti.polito.it",
+            "linkedin": "gloria-nallo-19a277169",
+            "img": "nallo.jpg"
+        },{ 
+            "name": "Lorenzo Guarino",
+            "role": "Engine Cycle",
+            "mail": "s295327@studenti.polito.it",
+            "linkedin": "lorenzo-guarino-563806246",
+            "img": "guarino.jpg"
+        }
+    ],
+    "Operations": [
+        { 
+            "name": "Elena Dilorenzo",
+            "role": "Logistics Manager",
+            "mail": "elena.dilorenzo@studenti.polito.it",
+            "linkedin": "elena-dilorenzo-294b5a20b",
+            "img": "Dilorenzo.jpg"
+        },{ 
+            "name": "Federico Guglielmi",
+            "role": "IT Manager",
+            "mail": "s281952@studenti.polito.it",
+            "linkedin": "Fedesky25",
+            "img": "Guglielmi.jpg"
+        },{ 
+            "name": "Alessandro Di Nuzzo",
+            "role": "Media Manager",
+            "mail": "alessandro.dinuzzo@studenti.polito.it",
+            "linkedin": "alessandro-di-nuzzo-999886254",
+            "img": "DiNuzzo.jpg"
+        }
+    ]
+}
