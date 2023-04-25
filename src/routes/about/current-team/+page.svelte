@@ -7,12 +7,12 @@
     import leads from "./leads.json";
     import HTabbed from "$lib/HTabbed.svelte";
     import { browser } from "$app/environment";
-    import { throttle } from "$lib/timing";
+    import { frameThrottle } from "$lib/timing";
 
     let ww = browser ? document.body.clientWidth-2 : 0;
 </script>
 
-<svelte:window on:resize={throttle(30, () => ww = document.body.clientWidth-2)} />
+<svelte:window on:resize={frameThrottle(() => ww = document.body.clientWidth-2)} />
 
 <svelte:head>
     <title>Team - PoliTo Rocket Team</title>
