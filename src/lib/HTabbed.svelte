@@ -19,15 +19,17 @@
 </script>
 
 <div class="container">
-    <div class="expanded" style:--size={expand}>
-        <div class="large" style:--num={data.length}>
-            <div class="slider" style:--index={selected}>
-                {#each data as d,i}
-                <!-- svelte-ignore a11y-click-events-have-key-events -->
-                <div class="section" data-index={i} class:selected={selected === i} on:click={selectMe}>
-                    <slot {...d} />
+    <div class="shift" style:--size={expand}>
+        <div class="clip-zone">
+            <div class="large" style:--num={data.length}>
+                <div class="slider" style:--index={selected}>
+                    {#each data as d,i}
+                    <!-- svelte-ignore a11y-click-events-have-key-events -->
+                    <div class="section" data-index={i} class:selected={selected === i} on:click={selectMe}>
+                        <slot {...d} />
+                    </div>
+                    {/each}
                 </div>
-                {/each}
             </div>
         </div>
     </div>
@@ -53,12 +55,15 @@
             max-width: 100%;
             position: relative;
         }
-        .expanded {
+        .shift {
+            transform: translateX(calc(50% - 0.5*var(--size)));
+            width: 100%;
+            overflow-x: visible;
+        }
+        .clip-zone {
             overflow: hidden;
             display: flex;
             justify-content: center;
-            position: relative;
-            left: calc(50% - 0.5*var(--size));
             width: var(--size);
         }
         .large {
