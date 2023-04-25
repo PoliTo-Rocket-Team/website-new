@@ -131,11 +131,6 @@
         --pie-size: 16rem;
         --reverse: initial;
     }
-    h3 {
-        font-size: var(--fs-65);
-        margin-top: 2.5rem;
-        margin-bottom: 1.2rem;
-    }
     .lead-list {
         display: grid;
         grid-template-columns: 1fr;
