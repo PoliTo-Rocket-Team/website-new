@@ -11,12 +11,20 @@
     export let cofounder: boolean = false;
     export let highlight = false;
 
-    $: src = img ? "/members/"+img : "https://api.dicebear.com/6.x/open-peeps/svg?face=cute,smile,contempt&seed="+name;
+    // $: src = img ? "/members/"+img : "https://api.dicebear.com/6.x/open-peeps/svg?face=cute,smile,contempt&seed="+name;
 </script>
 
 
 <li>
-    <img {src} alt="Face of {name}">
+    {#if img}
+    <img class="img" src="/members/{img}" alt="Face of {name}">
+    {:else}
+        <div class="img">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 118.2842712" width="50" height="59.14213562">
+                <use href="#prt-logo" />
+            </svg>
+        </div>
+    {/if}
     <div class="info">
         <span class="name">{name}</span>
         <span class="title" class:colored={highlight}>{#if cofounder}<em>Cofounder</em> <span class="divisor">|</span> {/if}{role}</span>
@@ -36,7 +44,7 @@
         align-items: center;
         max-width: 100%;
     }
-    img {
+    .img {
         width: 7.2rem;
         height: 7.2rem;
         object-fit: cover;
@@ -45,7 +53,16 @@
         border: 2px solid #8884;
         flex-shrink: 0;
         text-align: center;
-        vertical-align: middle;
+        display: block;
+    }
+    svg {
+        display: block;
+        height: 4rem;
+        width: auto;
+        margin: auto;
+        opacity: 0.8;
+        filter: saturate(0.25) ;
+        transform: translateY(1.4rem) translateY(-2px);
     }
     .colored {
         color: var(--accent-text);
@@ -81,7 +98,7 @@
         li:global(:nth-child(2n-1)) {
             flex-direction: row-reverse;
             
-            img {
+            .img {
                 margin-right: 0;
                 margin-left: 1rem;
             }

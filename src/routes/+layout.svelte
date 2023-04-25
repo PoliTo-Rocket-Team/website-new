@@ -57,21 +57,22 @@
     <nav id="page-nav" class:hide class:down>
         <a href="/" class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 118.2842712" width="50" height="59.14213562">
-                <mask id="logo-mask-1">
-                    <rect x="0" y="0" width="100" height="116.75" fill="black" />
-                    <path d="M0,0 L0,116.75,100,116.75,100,48.2842712,70,48.2842712 A68.2842712,68.2842712,90,0,0,1.71572875,-20" fill="white" />
-                </mask>
-                <mask id="logo-mask-2">
-                    <rect x="0" y="0" width="100" height="116.75" fill="black" />
-                    <path d="M100,0 L100,116.75,0,116.75,0,48.2842712,30,48.2842712 A68.2842712,68.2842712,90,0,1,98.2842712,-20" fill="white" />
-                </mask>
-                <path fill="none" stroke="currentColor" stroke-width="8" mask="url(#logo-mask-2)" d="M100,112.75 A66,66,90,0,1,34,48.2842712" />
-                <path fill="none" stroke="currentColor" stroke-width="8" mask="url(#logo-mask-2)" d="M100,096.75 A50,50,90,0,1,50,48.2842712 A48.2842712,48.2842712,90,0,0,1.71572875,0" />
-                <path fill="none" stroke="currentColor" stroke-width="8" mask="url(#logo-mask-2)" d="M100,080.75 A34,34,90,0,1,66,48.2842712 A64.2842712,64.2842712,90,0,0,1.71572875,-16" />
-            
-                <path fill="none" stroke="var(--accent-fig)" stroke-width="8" mask="url(#logo-mask-1)" d="M0,112.75 A66,66,90,0,0,66,48.2842712 A32.2842712,32.2842712,90,0,1,98.2842712,16" />
-                <path fill="none" stroke="var(--accent-fig)" stroke-width="8" mask="url(#logo-mask-1)" d="M0,096.75 A50,50,90,0,0,50,48.2842712 A48.2842712,48.2842712,90,0,1,98.2842712,0" />
-                <path fill="none" stroke="var(--accent-fig)" stroke-width="8" mask="url(#logo-mask-1)" d="M0,080.75 A34,34,90,0,0,34,48.2842712 A64.2842712,64.2842712,90,0,1,98.2842712,-16" />
+                <g id="prt-logo">
+                    <mask id="logo-mask-1">
+                        <rect x="0" y="0" width="100" height="116.75" fill="black" />
+                        <path d="M0,0 L0,116.75,100,116.75,100,48.2842712,70,48.2842712 A68.2842712,68.2842712,90,0,0,1.71572875,-20" fill="white" />
+                    </mask>
+                    <mask id="logo-mask-2">
+                        <rect x="0" y="0" width="100" height="116.75" fill="black" />
+                        <path d="M100,0 L100,116.75,0,116.75,0,48.2842712,30,48.2842712 A68.2842712,68.2842712,90,0,1,98.2842712,-20" fill="white" />
+                    </mask>
+                    <path fill="none" stroke="currentColor" stroke-width="8" mask="url(#logo-mask-2)" d="M100,112.75 A66,66,90,0,1,34,48.2842712" />
+                    <path fill="none" stroke="currentColor" stroke-width="8" mask="url(#logo-mask-2)" d="M100,096.75 A50,50,90,0,1,50,48.2842712 A48.2842712,48.2842712,90,0,0,1.71572875,0" />
+                    <path fill="none" stroke="currentColor" stroke-width="8" mask="url(#logo-mask-2)" d="M100,080.75 A34,34,90,0,1,66,48.2842712 A64.2842712,64.2842712,90,0,0,1.71572875,-16" />
+                    <path fill="none" stroke="var(--accent-fig)" stroke-width="8" mask="url(#logo-mask-1)" d="M0,112.75 A66,66,90,0,0,66,48.2842712 A32.2842712,32.2842712,90,0,1,98.2842712,16" />
+                    <path fill="none" stroke="var(--accent-fig)" stroke-width="8" mask="url(#logo-mask-1)" d="M0,096.75 A50,50,90,0,0,50,48.2842712 A48.2842712,48.2842712,90,0,1,98.2842712,0" />
+                    <path fill="none" stroke="var(--accent-fig)" stroke-width="8" mask="url(#logo-mask-1)" d="M0,080.75 A34,34,90,0,0,34,48.2842712 A64.2842712,64.2842712,90,0,1,98.2842712,-16" />
+                </g>
             </svg>
         </a>
         <ul class="links" class:open>
