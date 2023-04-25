@@ -20,13 +20,15 @@
 
 <div class="container">
     <div class="expanded" style:--size={expand}>
-        <div class="slider" style:--num={data.length} style:--index={selected}>
-            {#each data as d,i}
-            <!-- svelte-ignore a11y-click-events-have-key-events -->
-            <div class="section" data-index={i} class:selected={selected === i} on:click={selectMe}>
-                <slot {...d} />
+        <div class="large" style:--num={data.length}>
+            <div class="slider" style:--index={selected}>
+                {#each data as d,i}
+                <!-- svelte-ignore a11y-click-events-have-key-events -->
+                <div class="section" data-index={i} class:selected={selected === i} on:click={selectMe}>
+                    <slot {...d} />
+                </div>
+                {/each}
             </div>
-            {/each}
         </div>
     </div>
     <button style="left: 0;" on:click={previous} disabled={selected === 0}>
@@ -46,29 +48,34 @@
     }
 
     @media (prefers-reduced-motion: no-preference) and (min-width: 50rem) {
+        /* *{ outline: 1px solid red;} */
         .container {
             max-width: 100%;
             position: relative;
         }
         .expanded {
-            perspective: 300px;
             overflow: hidden;
             display: flex;
             justify-content: center;
             position: relative;
-            width: var(--size);
             left: calc(50% - 0.5*var(--size));
+            width: var(--size);
+        }
+        .large {
+            perspective: 18rem;
+            width: calc(100% * var(--num));
         }
         .slider {
+            margin-right: auto;
+            margin-left: auto;
             width: max-content;
             display: grid;
             grid-template-columns: repeat(var(--num), 1fr);
             justify-items: center;
             align-items: center;
 
-            --shift: 50% * (1 - 1/var(--num));
             transform-style: preserve-3d;
-            transform: translateZ(-100px) translateX(calc(var(--shift) - var(--index) * 100% / var(--num)));
+            transform: translateX(calc(50% - (50% + var(--index) * 100%) / var(--num))) translateZ(-6rem);
             transition: transform .2s ease;
         }
         .section + .section {
@@ -76,7 +83,6 @@
         }
         .section {
             width: max-content;
-            flex-shrink: 0;
             cursor: pointer;
             opacity: 0.5;
             transform: translateZ(0px);
@@ -85,7 +91,7 @@
         .section.selected {
             cursor: auto;
             opacity: 1;
-            transform: translateZ(100px);
+            transform: translateZ(6rem);
         }
         .section:not(.selected) {
             filter: blur(2px);
