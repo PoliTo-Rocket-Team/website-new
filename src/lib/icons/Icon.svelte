@@ -12,6 +12,7 @@
     svg {
         width: var(--icon-size, 1em);
         height: var(--icon-size, 1em);
-        display: inline-block;
+        display: block;
+        color: var(--icon-clr);
     }
 </style>

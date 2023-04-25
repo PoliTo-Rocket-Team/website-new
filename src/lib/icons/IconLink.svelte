@@ -1,7 +1,7 @@
 <script lang="ts">
-    import { paths, type Icon } from "./internal";
+    import { paths, type LinkedIcon } from "./internal";
     import IconCmp from "./Icon.svelte";
-    export let icon: Icon;
+    export let icon: LinkedIcon;
     export let id: string;
 </script>
 

@@ -1,4 +1,5 @@
-export type Icon = "LinkedIn"|"GitHub"|"Email";
+export type LinkedIcon = "LinkedIn"|"GitHub"|"Email";
+export type Icon = LinkedIcon|"previous"|"next";
 export const register = new Set<Icon>();
 
 interface IconSymbol {
@@ -17,10 +18,19 @@ export const symbols: Record<Icon, IconSymbol> = {
     Email: {
         size: 48,
         body: `<defs><mask id="email-mask"><rect width="48" height="48" fill="white" /><path d="M0,13 L21,23 Q24,24.4,27,23 L48,13" fill="white" stroke="black" stroke-width="4" /><path d="M7,48 L21,23" fill="white" stroke="black" stroke-width="2" /><path d="M41,48 L27,23" fill="white" stroke="black" stroke-width="2" /></mask></defs><rect x="6" y="10" width="36" height="28" rx="5" ry="5" mask="url(#email-mask)" />`
+    },
+    previous: {
+        size: 100,
+        body: '<path transform="translate(-5 0)" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round" d="M67.67767,7.32233 L32.32233,50 L67.67767,92.67767" />'
+    },
+    next: {
+        size: 100,
+        body: '<path transform="translate(5 0)" fill="none" stroke="currentColor" stroke-width="15" stroke-linecap="round" d="M32.32233,7.32233 L67.67767,50 L32.32233,92.67767" />'
     }
-}
-export const paths: Record<Icon, string> = {
+};
+
+export const paths: Record<LinkedIcon,string> = {
     LinkedIn: "http://www.linkedin.com/in/",
     GitHub: "https://github.com/",
     Email: "mailto:",
-}
+};
