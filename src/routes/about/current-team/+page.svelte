@@ -8,8 +8,10 @@
     import HTabbed from "$lib/HTabbed.svelte";
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
+    import { onMount } from "svelte";
 
     let ww = browser ? document.body.clientWidth-2 : 0;
+    onMount(() => ww = document.body.clientWidth-2);
 </script>
 
 <svelte:window on:resize={frameThrottle(() => ww = document.body.clientWidth-2)} />
