@@ -53,15 +53,17 @@
         <h2 class="section-title center" id="faculty-advisors">Faculty Advisors</h2>
         <ul class="lead-list">
             <Lead 
-            name="Alfonso Pagani" 
+            name="Prof. Alfonso Pagani" 
             role="Primary Faculty Advisor" 
             mail="alfonso.pagani@polito.it"
-            linkedin="alfonsopagani" />
+            linkedin="alfonsopagani"
+            img="advisors/Pagani.jpg" />
         <Lead 
-            name="Enrico Zappino" 
-            role="Laboratory Advisor" 
+            name="Prof. Enrico Zappino" 
+            role="Faculty Advisor" 
             mail="enrico.zappino@polito.it"
-            linkedin="enrico-zappino-4a762326" />
+            linkedin="enrico-zappino-4a762326"
+            img="advisors/Zappino.jpg" />
         </ul>
     </section>
     <section>
