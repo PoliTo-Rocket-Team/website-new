@@ -154,7 +154,7 @@
                 <Event year={2021} month={10} ch={45} title="The beginning">Inspired by <a href="https://www.uscrpl.com/" target="_blank" rel="noreferrer">USCRPL</a> and <a href="https://www.skywarder.eu/blog/" target="_blank" rel="noreferrer">Skyward Experimental Rocketry</a>, a group of friends started designing an experimental sounding rocket.</Event>
                 <Event year={2022} month={6} day={7} ch={41} title="Team approval and start of Project Cavour">On June 7th 2022, Politecnico di Torino officially approved the Team, which started working on <a href="/projects/Cavour">Project Cavour</a>.</Event>
                 <Event year={2023} month={1} ch={51} title="Start of Project Efesto">After the first general recruitment, <a href="/projects/Efesto">Project Efesto</a> was started to research and develop a Liquid Rocket Engine for the Team's rockets.</Event>
-                <Event year={2023} month={4} day={28} ch={35} title="First Cavour launch">
+                <Event year={2023} month={4} day={29} ch={35} title="First Cavour launch">
                     Germany, 19:53:42 CET: test launch successful 
                     <a href="https://www.instagram.com/p/CroYBp9t8Sr/?igshid=ZWIzMWE5ZmU3Zg==" target="_blank" rel="noreferrer" class="play" title="See the video" aria-label="See the video">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
