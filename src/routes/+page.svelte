@@ -45,7 +45,7 @@
         post({type: "resize", data: [window.innerWidth,h]});
         headerHeight = h - deltaH;
     }
-    onMount(() => window.scrollTo(0,3000));
+    // onMount(() => window.scrollTo(0,3000));
 </script>
 
 <svelte:window 
