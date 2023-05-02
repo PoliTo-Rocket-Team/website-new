@@ -27,8 +27,13 @@
         <p>The airframe has an internal diameter of 100mm and makes extended use of novel composites materials and advanced additive-manufactured carbon-reinforced polymers.</p>
     </div>
     <div>
-        <h2 class="m-top smudge">Current state</h2>
-        <p>Cavour has completed its design and construction phases. Two twin prototypes have been built and are being ground tested. The mission objectives of Cavour’s first launch are the validation of flight simulations and the testing of the rocket's integrated systems.</p>
+        <h2 class="m-top smudge">First launch</h2>
+        <p>On Saturday, April 29th, our Cavour rocket was successfully launched from a launch site in Bavaria, Germany.</p>
+        <p>Due to the launch site apogee limitation, Cavour had to be launched with a small and less powerful K-class COTS CTI solid motor, that provided a maximum thrust of 1120.8N. The rocket reached an apogee of 1331.2m, staying under the launch site vertical limit. Cavour flew with a maximum velocity of 162.7 m/s, around Mach 0.5, with a maximum boost acceleration of 9.79G.</p>
+        <p>The drogue pilot parachute was deployed at apogee, while the main parachute was deployed at high altitudes earlier than anticipated probably due to the malfunctioning of a COTS TD-2 tether, which will be investigated. The rocket descended to the ground with a velocity of 6.9 m/s and landed softly on the German green grass. Cavour landed at around 1.2km from the launch site and was found in perfect condition with all airframe components intact: it is now ready to be reused.</p>
+    </div>
+    <div>
+        <h2 class="m-top smudge">Future plans</h2>
         <p>At the end of June 2023, Cavour will be launched in New Mexico’s desert during the Spaceport America Cup 2023, with a 4kg-heavy scientific payload. Project Cavour will evolve towards a future reusable rocket with a larger payload capacity, capable of conducting scientific experiments inexpensively and reliably at a precise predetermined apogee.</p>
     </div>
 </section>
