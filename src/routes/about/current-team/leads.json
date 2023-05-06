@@ -4,39 +4,39 @@
             "highlight": true,
             "name": "Fabio Meloni" ,
             "role": "Chief Engineer" ,
-            "mail": "fabio.meloni@studenti.polito.it" ,
+            "mail": "fabio.meloni" ,
             "linkedin": "fabioski01",
             "img": "Meloni.jpg"
         },{ 
             "cofounder": true,
             "name": "Salvatore Lagrasta",
             "role": "Avionics",
-            "mail": "salvatore.lagrasta@studenti.polito.it",
+            "mail": "salvatore.lagrasta",
             "linkedin": "salvatore-lagrasta",
             "img": "Lagrasta.jfif"
         },{ 
             "name": "Luca Loiodice" ,
             "role": "Design & Additive Manufacturing",
-            "mail": "luca.loiodice@studenti.polito.it" ,
+            "mail": "luca.loiodice" ,
             "linkedin": "luca-loiodice-01l10",
             "img": "Loiodice.jpg"
         },{ 
             "name": "Marco Prodan" ,
             "role": "Recovery & Manufacturing",
             "linkedin": "marcoprodan",
-            "mail": "marco.prodan@studenti.polito.it" ,
+            "mail": "marco.prodan" ,
             "img": "Prodan.jpg" 
         },{ 
             "cofounder": true,
             "name": "Mattia Saba" ,
             "role": "Mission Analysis" ,
-            "mail": "mattia.saba@studenti.polito.it",
+            "mail": "mattia.saba",
             "linkedin": "mattia-saba-5b6638258" ,
             "img": "Saba.jpg"
         },{ 
             "name": "Edoardo Viglietti" ,
             "role": "Finite Element Analysis" ,
-            "mail": "edo.viglietti@studenti.polito.it" ,
+            "mail": "edo.viglietti" ,
             "linkedin": "edoardoviglietti" ,
             "img": "Viglietti.jpg" 
         }
@@ -46,44 +46,44 @@
             "highlight": true,
             "name": "Matteo Crachi",
             "role": "Chief Engineer",
-            "mail": "matteo.crachi@polito.it",
+            "mail": "matteo.crachi",
             "linkedin": "matteo-crachi-37a060161",
             "img": "Crachi.jpg"
         },{ 
             "cofounder": true,
             "name": "Cristian Manfredi",
             "role": "Coordinator",
-            "mail": "cristian.manfredi@studenti.polito.it",
+            "mail": "cristian.manfredi",
             "linkedin": "cristian-manfredi-478b82194",
             "img": "Manfredi.jpeg"
         },{ 
             "name": "Pier Luigi Mercadante",
             "role": "Coordinator",
-            "mail": "pierluigi.mercadante@studenti.polito.it",
+            "mail": "pierluigi.mercadante",
             "linkedin": "pier-luigi-mercadante-b43125234",
             "img": "Mercadante.png"
         },{ 
             "name": "Luca Barnobi",
             "role": "Test Bench",
-            "mail": "s281648@studenti.polito.it",
+            "mail": "luca.barnobi",
             "linkedin": "luca-barnobi-b21547182",
             "img": "barnobi.jpg"
         },{ 
             "name": "Daniele Boccacciari",
             "role": "Liquid System Architecture",
-            "mail": "s308229@studenti.polito.it",
+            "mail": "daniele.boccacciari",
             "linkedin": "daniele-boccacciari-637405222",
             "img": "Boccacciari.png"
         },{ 
             "name": "Gloria Nallo",
             "role": "Thrust Chamber Assembly",
-            "mail": "gloria.nallo@studenti.polito.it",
+            "mail": "gloria.nallo",
             "linkedin": "gloria-nallo-19a277169",
             "img": "nallo.jpg"
         },{ 
             "name": "Lorenzo Guarino",
             "role": "Engine Cycle",
-            "mail": "s295327@studenti.polito.it",
+            "mail": "lorenzo.guarino",
             "linkedin": "lorenzo-guarino-563806246",
             "img": "guarino.jpg"
         }
@@ -92,19 +92,19 @@
         { 
             "name": "Elena Dilorenzo",
             "role": "Logistics Manager",
-            "mail": "elena.dilorenzo@studenti.polito.it",
+            "mail": "elena.dilorenzo",
             "linkedin": "elena-dilorenzo-294b5a20b",
             "img": "Dilorenzo.jpg"
         },{ 
             "name": "Federico Guglielmi",
             "role": "IT Manager",
-            "mail": "s281952@studenti.polito.it",
+            "mail": "federico.guglielmi",
             "linkedin": "Fedesky25",
             "img": "Guglielmi.jpg"
         },{ 
             "name": "Alessandro Di Nuzzo",
             "role": "Media Manager",
-            "mail": "alessandro.dinuzzo@studenti.polito.it",
+            "mail": "alessandro.dinuzzo",
             "linkedin": "alessandro-di-nuzzo-999886254",
             "img": "DiNuzzo.jpg"
         }
@@ -113,39 +113,39 @@
         { 
             "name": "Gregorio Torchia",
             "role": "Legal Advisor",
-            "mail": "gregorio.torchia@studenti.polito.it",
+            "mail": "gregorio.torchia",
             "linkedin": "gregorio-torchia-6514b8210"
         },{ 
             "name": "Mattia Trombini",
             "role": "Engineering Advisor",
-            "mail": "mattia.trombini@polito.it",
+            "mail": "mattia.trombini",
             "linkedin": "mattia-trombini-01357a168"
         },{ 
             "name": "Rebecca Masia",
             "role": "Engineering Advisor",
-            "mail": "rebecca.masia@polito.it",
+            "mail": "rebecca.masia",
             "linkedin": "rebecca-masia"
         },{ 
             "name": "Gianluca Porta" ,
             "role": "Strategy Advisor" ,
-            "mail": "gianluca.porta@studenti.polito.it",
+            "mail": "gianluca.porta",
             "linkedin": "gianluca-porta-4639b8180"
         },{ 
             "name": "Flora Punzi",
             "role": "Senior FEA analyst & Counselor",
-            "mail": "flora.punzi@studenti.polito.it",
+            "mail": "flora.punzi",
             "linkedin": "fpunzi",
             "img": "Punzi.jpg" 
         },{ 
             "name": "Francesca Bracaglia",
             "role": "FEA Advisor",
-            "mail": "francesca.bracaglia@studenti.polito.it",
+            "mail": "francesca.bracaglia",
             "linkedin": "francesca-bracaglia-a1000b214",
             "img": "Bracaglia.jpg" 
         },{ 
             "name": "Luca Santoro",
             "role": "Head of Stategy",
-            "mail": "luca.santoro@polito.it",
+            "mail": "luca.santoro",
             "linkedin": "luca-santoro-b16699151",
             "img": "Santoro.jpg" 
         }

@@ -4,7 +4,7 @@
 
     export let name: string;
     export let role: string;
-    export let scope: string|null = null;
+    export let scope: string | null = null;
     export let img: string | null = null;
     export let mail: string;
     export let linkedin: string;
@@ -33,7 +33,7 @@
         {/if}
         <div class="socials">
             <IconLink icon="LinkedIn" id={linkedin} />
-            <IconLink icon="Email" id={mail} />
+            <IconLink icon="Email" id="{mail}@politorocketteam.it" />
         </div>
     </div>
 </li>
