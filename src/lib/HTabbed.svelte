@@ -80,7 +80,7 @@
             align-items: center;
 
             transform-style: preserve-3d;
-            transform: translateX(calc(50% - (50% + var(--index) * 100%) / var(--num))) translateZ(-6rem);
+            transform: translateX(calc(50% - (50% + var(--index) * 100%) / var(--num)));
             transition: transform .2s ease;
         }
         .section + .section {
@@ -90,13 +90,13 @@
             width: max-content;
             cursor: pointer;
             opacity: 0.5;
-            transform: translateZ(0px);
+            transform: translateZ(-6rem);
             transition: transform .2s ease, opacity .2s ease;
         }
         .section.selected {
             cursor: auto;
             opacity: 1;
-            transform: translateZ(6rem);
+            transform: translateZ(0px);
         }
         .section:not(.selected) {
             filter: blur(2px);
