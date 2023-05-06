@@ -13,6 +13,7 @@
 
     export let base: string;
     export let routes: ComboRoute[];
+    export let replace: boolean;
 
     let container: HTMLElement;
     let open = false;
@@ -35,14 +36,14 @@
 
 <svelte:window on:scroll={close} />
 
-<li class="wrapper" bind:this={container}>
+<div class="wrapper" bind:this={container}>
     <button class="nav-entry" class:active on:click={() => open = !open}>{base}</button>
     <ul class:open>
         {#each routes as route}
-            <li><a href="/{base}/{route.url}" on:click={close}>{route.name}</a></li>
+            <li><a data-sveltekit-replacestate={replace || null} href="/{base}/{route.url}" on:click={close}>{route.name}</a></li>
         {/each}
     </ul>
-</li>
+</div>
 
 <style>
     .wrapper {
@@ -62,10 +63,6 @@
     }
     
     @media (max-width: 50rem) {
-        .wrapper {
-            margin-top: 1.25rem;
-            margin-bottom: 1.25rem;
-        }
         button {
             text-align: right;
             display: block;

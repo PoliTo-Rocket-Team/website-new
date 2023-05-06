@@ -6,6 +6,7 @@
 
     import { page } from "$app/stores";
     import { browser } from "$app/environment";
+    import { beforeNavigate, afterNavigate, goto } from "$app/navigation";
     import LinkCombo, { type ComboRoute } from "$lib/LinkCombo.svelte";
     import { preference, theme } from "$lib/theme"
     import { throttle } from "$lib/timing";
@@ -19,22 +20,18 @@
         {url: "Cavour", name: "Cavour"},
         {url: "Efesto", name: "Efesto"}
     ];
-
-    $: pathname = $page.url.pathname;
-    $: pathname && (open = false);
-
+    
     const OPEN_STATE = "PRT-nav-open";
     let open = false;
+
     function close() {
         if(history.state === OPEN_STATE) history.back();
     }
     function toggle() {
         if(open) history.back();
-        else {
-            history.pushState(OPEN_STATE, '');
-            open = true;
-        }
+        else goto($page.url, {state: { navbar: true }});
     }
+    afterNavigate(() => open = history.state.navbar === true);
 
     let lastY = browser ? window.scrollY : 0;
     let down = lastY > 100;
@@ -51,7 +48,7 @@
     $: if(browser) document.body.classList.toggle("no-scroll", open);
 </script>
 
-<svelte:window on:scroll={throttle(20, onScroll)} on:popstate={() => open = history.state === OPEN_STATE} />
+<svelte:window on:scroll={throttle(20, onScroll)} />
 
 <div class="nav-container">
     <nav id="page-nav" class:hide class:down>
@@ -76,11 +73,12 @@
             </svg>
         </a>
         <ul class="links" class:open>
-            <li class:current={pathname === "/"}><a class="nav-entry" href="/">Home</a></li>
-            <LinkCombo base="about" routes={aboutCombo} />
-            <LinkCombo base="projects" routes={projectsCombo} />
-            <li class:current={pathname === "/partners"}><a class="nav-entry" href="/partners">Partners</a></li>
-            <li class:current={pathname === "/apply"}><a class="nav-entry" href="/apply">Apply</a></li>
+            <li><a data-sveltekit-replacestate={open || null} class="nav-entry" href="/">Home</a></li>
+            <li><LinkCombo replace={open} base="about" routes={aboutCombo} /></li>
+            <li><LinkCombo replace={open} base="projects" routes={projectsCombo} /></li>
+            <li><a data-sveltekit-replacestate={open || null} class="nav-entry" href="/partners">Partners</a></li>
+            <li><a data-sveltekit-replacestate={open || null} class="nav-entry" href="/apply">Apply</a></li>
+            <li><a data-sveltekit-replacestate={open || null} class="nav-entry" href="/outreach">Outeach</a></li>
         </ul>
         <div class="theme">
             <label>
