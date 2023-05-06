@@ -24,8 +24,6 @@
 <style lang="scss">
     @use "./consts.scss" as *;
 
-    $marker-dim: .3rem;
-
     summary {
         padding: $details-pad-y $details-pad-x;
     }
