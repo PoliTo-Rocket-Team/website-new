@@ -106,7 +106,7 @@
             </ul>
             <a class="btn" href="https://forms.gle/bzTseETDcFmjXek86" target="_blank" rel="noreferrer">Apply</a>
         </Position>
-        <Position role="Software Engineer" subteam="Cavour" division="Mission Analysis" code="CVR-MSA-001">
+        <Position role="Mission Analyst/Software Engineer" subteam="Cavour" division="Mission Analysis" code="CVR-MSA-001">
             <h4>Description</h4>
             <p>We are seeking software engineers to join our team and design and create a model in Simulink to simulate and analyze the team’s rockets. Hence the task focuses on creating an accurate virtual model that can simulate the behavior of the rockets under different conditions. This will involve selecting appropriate physical models and parameters to represent the rocket's propulsion, aerodynamics, and control systems. Furthermore the created model must ensure that the simulation is  accurate and that it can be used to analyze the rocket's performance.</p>
             <h4>Skills</h4>
