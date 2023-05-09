@@ -78,16 +78,16 @@
         </div>
     </section>
     <section aria-labelledby="iress">
+        <h2 id="iress">Italian Rocket Engineering <br class="on-lg"> Student Summit</h2>
         <div class="with-flyer">
             <div class="body blur-behind">
-                <h2 id="iress">Italian Rocket Engineering Student Summit</h2>
-                <p>PoliTo Rocket Team is pleased to invite you to the 1st IRESS &mdash; Italian Rocket Engineering Student Summit &mdash; that will be held on the 2<sup>nd</sup> of May 2023, from 3pm to 7pm in Aula Magna &ldquo;Giovanni Agnelli&rdquo; of Politecnico di Torino.</p>
-                <p>The IRESS will gather for the first time Rocket Teams from major Italian Universities in order to present an overview of Rocket Engineering realities and challenges, from the intercollegiate point of view and more.</p>
-                <p>Along with the students speeches, relevant personalities from aerospace companies will present their work as engineers concerning Propulsion and Rocket Engineering.</p>
+                <p>We are thrilled to announce the successful conclusion of the 1st IRESS &mdash; Italian Rocket Engineering Student Summit &mdash; held on the 2<sup>nd</sup> of May 2023 at Politecnico di Torino. It was a great pleasure to host this event, bringing together Rocket Teams from major Italian universities, promoting collaboration and networking among students, professionals, and industry leaders in the field of Rocket and Space Engineering.</p>
+                <p>We would like to thank all the student teams who participated today: your dedication and hard work are truly inspiring, and we were honored to have you showcase them. In addition to the student speeches, we were honored to host relevant personalities from aerospace companies who shared their work as engineers in Propulsion and Rocket Engineering</p>
+                <p>Everybody's presence and support today made the event a huge success, and we are thankful for the opportunity to learn from each other and share our passion. As such, we look forward to future events and collaborations.</p>
             </div>
             <div class="flyer">
                 <Follow3D tranform={(x,y) => `translate(${x*0.2}rem,${y*0.2}rem) rotate3d(${-y},${x},0,${-3*Math.hypot(x,y)}deg)`}>
-                    <img src="/img/IRESS.jpg" alt="Flyer IRESS" style="width: 15rem; max-width: 100%;">
+                    <img src="/img/IRESS.jpg" alt="Flyer IRESS" style="width: 16rem; max-width: 100%;">
                 </Follow3D>
             </div>
         </div>
@@ -130,6 +130,10 @@
                 <li>
                     <span class="semi-bold">Davide Barbero</span><br>
                     <span class="low">RCS Propulsion Lead Engineer for Space Rider Re-entry module</span>
+                </li>
+                <li>
+                    <span class="semi-bold">Andrea Tronzano</span><br>
+                    <span class="low">Regione Piemonte assessor</span>
                 </li>
             </ul>
         </div>
