@@ -22,7 +22,6 @@
         req = null;
         this.addEventListener("mousemove", mousemove);
         this.addEventListener("mouseleave", leave, { once: true });
-        console.log("enter")
     }
     function signal() {
         const rect = element.getBoundingClientRect();
