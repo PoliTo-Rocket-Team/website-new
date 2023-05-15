@@ -72,7 +72,7 @@
                 <p>Everybody's presence and support today made the event a huge success, and we are thankful for the opportunity to learn from each other and share our passion. As such, we look forward to future events and collaborations.</p>
             </div>
             <div class="flyer">
-                <Follow3D tranform={(x,y) => `translate(${x*0.2}rem,${y*0.2}rem) rotate3d(${-y},${x},0,${-3*Math.hypot(x,y)}deg)`}>
+                <Follow3D transform={(x,y) => `translate(${x*0.2}rem,${y*0.2}rem) rotate3d(${-y},${x},0,${-3*Math.hypot(x,y)}deg)`}>
                     <img src="/img/IRESS.jpg" alt="Flyer IRESS" style="width: 16rem; max-width: 100%;">
                 </Follow3D>
             </div>
