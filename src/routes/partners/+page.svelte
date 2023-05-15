@@ -29,12 +29,17 @@
                 <p>BETA CAE Systems provides material support with the ANSA and META software suites, as well as technical support to the Team.</p>
             </Sponsor>
             <Sponsor name="ASSOCAM Scuola Camerana" link="https://www.scuolacamerana.it/" img={{url: "Camerana.png", padding: 10, background: "light"}}>
-                <p>ASSOCAM Scuola Camerana, is a Turin-based organisation rooted in the city's industrial fabric that has been providing post-diploma training since 1959. It brings together experienced technicians and teachers, as well as a large number of laboratories and machinery for students. In particular, it is a training agency of Unione Industriali and Camera di Commercio of Turin (the Turin Chamber of Commerce) with a focus on technological training applied to industrial processes.</p>
+                <p>ASSOCAM Scuola Camerana, is a Turin-based organisation rooted in the city's industrial fabric that has been providing post-diploma training since 1959. It brings together experienced technicians and teachers, as well as a large number of laboratories and machinery for students. In particular, it is a training agency of Unione Industriali and Camera di Commercio of Turin with a focus on technological training applied to industrial processes.</p>
                 <p>Assocam Scuola Camerana provides the team with the necessary mechanical machining and components for its activities.</p>
             </Sponsor>
             <Sponsor name="The Exploration Company" link="https://www.exploration.space/" img={{url: "ExplorationCompany.png", padding: 12, background: "dark"}}>
                 <p>The Exploration Company is a space engineering firm based in Wessling, Germany. Their efforts are concentrated in the developement of Nyx, a modular, reusable and in-orbit refuelable space vehicle. It is set to have its earth orbit demo flight in 2024, and its first lunar mission is expected to take place in 2028. Their services will be available to serve a wide range of industries.</p>
                 <p>The Exploration Company is in a technical partnership with PRT's Project Efesto, involved in the research and development of our first liquid rocket engine.</p>
+            </Sponsor>
+            <Sponsor name="BLU Electronic" link="http://www.bluelectronic.com/" img="BLU_Electronic.jpg">
+                <p>With over two decades of experience, Blu Electronic is a leading provider of electronic boards and equipment for the space and avionics industries.</p>
+                <p>Blu Electronic's Aero activities commenced in 2007, and in 2009, the company achieved the UNI EN9100 certification, which it still maintains today. In 2010, it became part of Lombardia Aerospace and continues to provide cutting-edge solutions for space, avionics, and aerospace systems.</p>
+                <p>Blue Electronic will provide our team with technical and material support.</p>
             </Sponsor>
         </div>
     </section>
@@ -46,10 +51,18 @@
         text-align: justify;
     }
 
+    /* .cards {
+        column-width: 30ch;
+        column-gap: 2rem;
+    }
+    .cards > :global(*) {
+        break-inside: avoid;
+        margin-bottom: 2rem;
+    } */
+    
     .cards {
         display: grid;
     }
-
     @media (max-width: 50rem) {
         .cards {
             grid-auto-flow: row;
