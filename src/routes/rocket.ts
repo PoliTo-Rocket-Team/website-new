@@ -2,8 +2,8 @@ import { AmbientLight, ArrowHelper, Color, DirectionalLight, Euler, Object3D, Pe
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { wait } from "$lib/timing";
 
-import { getWorker } from "$lib/conditional-worker";
-import type { WorkerMessage, HostMessage } from "$lib/three-msg";
+import { getCanvasWorker } from "$lib/conditional-worker";
+import type { HostMessageMap, WorkerMessageMap } from "./worker-msg";
 
 const liftoff_heigth = 20;
 const liftoff_coefficient = 4e-3;
@@ -33,29 +33,18 @@ function randomDisplacement(w: number = 3e-3) { return (Math.random()-0.5)*w; }
 let renderer: WebGLRenderer;
 let yshift = 0
 
-const { post } = getWorker<WorkerMessage, HostMessage>(msg => {
-    switch(msg.type) {
-        case "canvas": {
-            const [ canvas, width, height, ratio ] = msg.data;
-            renderer = new WebGLRenderer({canvas, antialias: true});
-            setSizes(width, height);
-            renderer.setPixelRatio(ratio);
-            loadScene();
-            break;
-        }
-        case "resize": {
-            setSizes(msg.data[0], msg.data[1]);
-            break;
-        }
-        case "scroll": {
-            yshift = msg.data;
-            break;
-        }
-        case "dark": {
-            setSceneBg(msg.data);
-            break;
-        }
-    }
+const post = getCanvasWorker<WorkerMessageMap,HostMessageMap>(data => {
+    renderer = new WebGLRenderer({canvas: data.canvas, antialias: true});
+    setSizes(data.width, data.height);
+    renderer.setPixelRatio(data.pixelRatio);
+    loadScene();
+}, {
+    resize(data) {
+        setSizes(data[0], data[1]);
+        renderer.setPixelRatio(data[2]);
+    },
+    scroll(data) { yshift = data; },
+    dark: setSceneBg
 });
 
 function setSizes(w: number, h: number) {
@@ -92,13 +81,13 @@ function addAxisArrows(origin?: Vector3) {
 }
 
 export async function loadScene() {
-    await wait(200);
+    await wait(100);
     try {
         // addAxisArrows();
         // addAxisArrows(new Vector3(0,0,liftoff_heigth));
 
         const loader = new GLTFLoader();
-        const gltf = await loader.loadAsync("/assets/Rocket.glb", e => post({type: "load", data: e.loaded/e.total}));
+        const gltf = await loader.loadAsync("/assets/Rocket.glb", e => post("load", e.loaded/e.total));
         const rocket = gltf.scene;
         rocket.scale.multiplyScalar(4);
         rocket.rotateX(Math.PI/2);
@@ -106,8 +95,8 @@ export async function loadScene() {
         // console.dir(rocket);
         startAnimation(rocket);
 
-        await wait(200);
-        post({type: "done",data: null})
+        await wait(100);
+        post("done", void 0);
     } catch(e) {
         console.log("Couldn't load the rocket");
         console.dir(e);

@@ -1,8 +1,7 @@
 <script lang="ts">
     import "@fontsource/plus-jakarta-sans/400-italic.css";
     import rocket from "./rocket.ts?worker&url";
-    import { createWorker, type Poster } from "$lib/conditional-worker";
-    import type { HostMessage, WorkerMessage } from "$lib/three-msg";
+    import { alleviateCanvas, type CanvasPoster } from "$lib/conditional-worker";
     import { throttle } from "$lib/timing";
     import Event from "./Event.svelte";
     import { theme } from "$lib/theme";
@@ -11,44 +10,32 @@
     const deltaH = browser ? document.documentElement.clientHeight - window.innerHeight : 0;
     let headerHeight = browser ? window.innerHeight : 100000;
 
-    let post: Poster<HostMessage> = ()=>{};
-    let progress = 0;
-    function three_listener(msg: WorkerMessage) {
-        switch(msg.type) {
-            case "load":
-                progress = msg.data;
-                break;
-            case "done":
-                progress = 0;
-                break;
-        }
-    }
 
+    import type { HostMessageMap, WorkerMessageMap } from "./worker-msg";
+    let post: CanvasPoster<HostMessageMap>;
+    let progress = 0;
+    let canvas: HTMLCanvasElement;
+            
     function rocketify(canvas: HTMLCanvasElement) {
-        const supported = !!canvas.transferControlToOffscreen;
-        const worker = createWorker<HostMessage, WorkerMessage>(supported, rocket, three_listener);
-        post = worker.post;
-        const destroy = theme.subscribe(t => post({type: "dark", data: t === "dark"}))
-        const w = window.innerWidth, h = document.documentElement.clientHeight;
-        if(worker.isWorker) {
-            const c = canvas.transferControlToOffscreen();
-            post({type: "canvas", data: [c,w,h, window.devicePixelRatio]}, [c]);
-        } else {
-            post({type: "canvas", data: [canvas,w,h, window.devicePixelRatio]});
-        }
+        post = alleviateCanvas<HostMessageMap, WorkerMessageMap>(canvas, rocket, {
+            done() { progress = 0; },
+            load(data) { progress = data; },
+        });
+        const destroy = theme.subscribe(t => post("dark", t === "dark"));
         return { destroy };
     } 
     function onResize() {
-        const h = document.documentElement.clientHeight;
-        post({type: "resize", data: [window.innerWidth,h]});
-        headerHeight = h - deltaH;
+        post("resize", [canvas.clientWidth, canvas.clientHeight, window.devicePixelRatio]);
+        headerHeight = document.documentElement.clientHeight - deltaH;
     }
-    // onMount(() => window.scrollTo(0,2000));
+     
+    // import { onMount } from "svelte";
+    // onMount(() => window.scrollTo(0,3000));
 </script>
 
 <svelte:window 
     on:resize={throttle(20, onResize)}
-    on:scroll={throttle(10, () => post({type: "scroll", data: -window.scrollY/700}))}
+    on:scroll={throttle(10, () => post("scroll", -window.scrollY/700))}
 ></svelte:window>
 
 <svelte:head>
@@ -57,7 +44,7 @@
 </svelte:head>
 
 <div class="scene-progress" style="--p: {progress};"></div>
-<canvas use:rocketify></canvas>
+<canvas use:rocketify bind:this={canvas}></canvas>
 <header style="--h: {headerHeight}px">
     <h1><span class="slide-up" style="animation-delay: 0ms;">PoliTo</span> <span class="slide-up" style="animation-delay: 75ms;">Rocket</span> <span class="slide-up" style="animation-delay: 150ms;">Team</span></h1>
     <p class="slide-down after-title">Born for Space</p>
@@ -170,6 +157,7 @@
         bottom: 0;
         left: 0;
         width: 100%;
+        height: 100vh;
     }
     header, main {
         z-index: 1;

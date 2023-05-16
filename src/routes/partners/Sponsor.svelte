@@ -1,6 +1,10 @@
+<script context="module" lang="ts">
+    const opts = { stiffness: 0.15, damping: 0.8, precision: 0.001 };
+    const transform = (x: number, y: number) => `translate(${-x*2.5}%,${-y*2.5}%) rotate3d(${-y},${x},0,${-3*Math.hypot(x,y)}deg)`;
+</script>
+
 <script lang="ts">
-    import { spring } from "svelte/motion";
-    import { trackmouse } from "$lib/trackmouse";
+    import Follow3D from "$lib/Follow3D.svelte";
 
     interface SponsorImage {
         url: string;
@@ -12,31 +16,17 @@
     export let link: string;
     export let img: string|SponsorImage;
     const si: SponsorImage = typeof img === "object" ? img : { url: img, padding: 0, background: null };
-
-    const opts = { stiffness: 0.15, damping: 0.8, precision: 0.001 };
-    const x = spring(0, opts);
-    const y = spring(0, opts);
-
-    function leave() {
-        x.set(0);
-        y.set(0);
-    }
-    function move(_x: number, _y: number, rect: DOMRect) {
-        x.set(2*_x/rect.width - 1);
-        y.set(2*_y/rect.height - 1);
-    }
-    $: angle = -4*Math.hypot($x,$y);
 </script>
 
-<div class="perspective">
-    <article style="transform: translate({-$x*2.5}%,{-$y*2.5}%) rotate3d({-$y},{$x},0,{angle}deg);" use:trackmouse={{move, leave}}>
+<Follow3D options={opts} {transform}>
+    <article>
         <img src="img/sponsors/{si.url}" alt="{name} logo" data-bg={si.background} style="padding: {si.padding}px;">
         <div class="body">
             <h3><a href={link} target="_blank" rel="noreferrer">{name}</a></h3>
             <slot />
         </div>
     </article>
-</div>
+</Follow3D>
 
 <style lang="scss">
 
@@ -89,12 +79,7 @@
     }
 
     @media (min-width: 50rem) {
-        .perspective {
-            perspective: 30rem;
-        }
         article {
-            --scale: 1;
-
             display: block;
             transform-origin: center center;
             transform-style: preserve-3d;

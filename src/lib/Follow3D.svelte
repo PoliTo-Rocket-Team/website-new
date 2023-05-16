@@ -1,3 +1,11 @@
+<script lang="ts" context="module">
+    export interface SpringOpt {
+        damping?: number;
+        precision?: number;
+        stiffness?: number;
+    }
+</script>
+
 <script lang="ts">
     import { spring } from "svelte/motion";
 
@@ -6,13 +14,8 @@
     let req: number|null = null;
     let element: HTMLElement;
 
-    interface SpringOpt {
-        damping?: number;
-        precision?: number;
-        stiffness?: number;
-    }
     export let options: SpringOpt | undefined = undefined;
-    export let tranform: (x: number, y: number) => string;
+    export let transform: (x: number, y: number) => string;
     export let perspective: string|null = null;
 
     const xs = spring(0, options);
@@ -22,7 +25,6 @@
         req = null;
         this.addEventListener("mousemove", mousemove);
         this.addEventListener("mouseleave", leave, { once: true });
-        console.log("enter")
     }
     function signal() {
         const rect = element.getBoundingClientRect();
@@ -46,7 +48,7 @@
 </script>
 
 <div class="outer" on:mouseenter={enter} bind:this={element} style:--perspective={perspective}>
-    <div class="inner" style="transform: {tranform($xs,$ys)};">
+    <div class="inner" style="transform: {transform($xs,$ys)};">
         <slot />
     </div>
 </div>
