@@ -150,12 +150,18 @@
         @media (hover: hover) {
             button {
                 cursor: auto;
+                -moz-user-focus: ignore;
             }
             .wrapper:hover > ul {
                 clip-path: inset(0 -2rem -2rem -2rem);
                 opacity: 1;
                 pointer-events: auto;
             }
+        }
+        ul:focus-within {
+            clip-path: inset(0 -2rem -2rem -2rem);
+            opacity: 1;
+            pointer-events: auto;
         }
     }
 </style>
