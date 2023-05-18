@@ -33,7 +33,9 @@
         {/if}
         <div class="socials">
             <IconLink icon="LinkedIn" id={linkedin} />
-            <IconLink icon="Email" id="{mail}@politorocketteam.it" />
+            {#if mail !== "NONE"}
+            <IconLink icon="Email" id={mail.includes('@') ? mail : mail + "@politorocketteam.it" } />
+            {/if}
         </div>
     </div>
 </li>
