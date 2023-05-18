@@ -1,5 +1,9 @@
 <script>
+    // @ts-nocheck
+    // no check to make partners img type compatible
     import Sponsor from "./Sponsor.svelte";
+    import partners from "./partners.json";
+    import Masonry from "$lib/Masonry.svelte";
 </script>
 
 <svelte:head>
@@ -15,33 +19,13 @@
     </div>
     <section aria-labelledby="main-partners">
         <h2 id="main-partners">Main partners</h2>
-        <div class="cards">
-            <Sponsor name="Politecnico di Torino" link="https://www.polito.it/" img={{url: "poli.svg", padding: 12, background: "dark"}}>
-                <p>Politecnico di Torino (Polytechnic University of Turin) is the oldest public technical university of Italy, located in Turin. Consistently ranked as one of the best universities in Italy and in Europe, as of 2022 PoliTo is ranked by QS World University Rankings 33rd among the engineering and technology universities in the world.</p>
-                <p>Politecnico's Department of Mechanical and Aerospace Engineering (DIMEAS) is the main financial partner of the Team.</p>
+        <Masonry data={partners} let:name let:link let:img let:texts>
+            <Sponsor {name} {link} {img}>
+                {#each texts as text}
+                    <p>{text}</p>
+                {/each}
             </Sponsor>
-            <Sponsor name="Mul2 Research Group" img="mul2_ter.png" link="http://www.mul2.polito.it/">
-                <p>Mul2 Research Group is a research project within Politecnico di Torino's Dept. of Mechanical and Aerospace Engineering, devoted to the development of advanced structural models for MULSs with particular attention given to the multifield analysis and the fluid-structure interactions.</p>
-                <p>Mul2 provides material support, with 3D printers and 3D printing materials, along with technical support for the additive manufacturing processes.</p>
-            </Sponsor>
-            <Sponsor name="BETA CAE Systems" link="https://www.beta-cae.com/" img={{url: "BETA_CAE_Systems.svg", padding: 0, background: "light"}}>
-                <p>BETA CAE Systems transformed CAE by introducing revolutionary automation software tools and practices into Simulation and Analysis processes almost 30 years ago. Today, BETA CAE Systems is a world leader of Engineering Simulation, thanks to their softwares deployed in the Aerospace, Defense, Automotive, Biomechanics, Electronics, Energy and other Industries.</p>
-                <p>BETA CAE Systems provides material support with the ANSA and META software suites, as well as technical support to the Team.</p>
-            </Sponsor>
-            <Sponsor name="ASSOCAM Scuola Camerana" link="https://www.scuolacamerana.it/" img={{url: "Camerana.png", padding: 10, background: "light"}}>
-                <p>ASSOCAM Scuola Camerana, is a Turin-based organisation rooted in the city's industrial fabric that has been providing post-diploma training since 1959. It brings together experienced technicians and teachers, as well as a large number of laboratories and machinery for students. In particular, it is a training agency of Unione Industriali and Camera di Commercio of Turin with a focus on technological training applied to industrial processes.</p>
-                <p>Assocam Scuola Camerana provides the team with the necessary mechanical machining and components for its activities.</p>
-            </Sponsor>
-            <Sponsor name="The Exploration Company" link="https://www.exploration.space/" img={{url: "ExplorationCompany.png", padding: 12, background: "dark"}}>
-                <p>The Exploration Company is a space engineering firm based in Wessling, Germany. Their efforts are concentrated in the developement of Nyx, a modular, reusable and in-orbit refuelable space vehicle. It is set to have its earth orbit demo flight in 2024, and its first lunar mission is expected to take place in 2028. Their services will be available to serve a wide range of industries.</p>
-                <p>The Exploration Company is in a technical partnership with PRT's Project Efesto, involved in the research and development of our first liquid rocket engine.</p>
-            </Sponsor>
-            <Sponsor name="BLU Electronic" link="http://www.bluelectronic.com/" img="BLU_Electronic.jpg">
-                <p>With over two decades of experience, Blu Electronic is a leading provider of electronic boards and equipment for the space and avionics industries.</p>
-                <p>Blu Electronic's Aero activities commenced in 2007, and in 2009, the company achieved the UNI EN9100 certification, which it still maintains today. In 2010, it became part of Lombardia Aerospace and continues to provide cutting-edge solutions for space, avionics, and aerospace systems.</p>
-                <p>Blue Electronic will provide our team with technical and material support.</p>
-            </Sponsor>
-        </div>
+        </Masonry>
     </section>
 </main>
 
@@ -50,29 +34,8 @@
         margin-top: 0.8em;
         text-align: justify;
     }
-
-    /* .cards {
-        column-width: 30ch;
-        column-gap: 2rem;
-    }
-    .cards > :global(*) {
-        break-inside: avoid;
-        margin-bottom: 2rem;
-    } */
-    
-    .cards {
-        display: grid;
-    }
-    @media (max-width: 50rem) {
-        .cards {
-            grid-auto-flow: row;
-            gap: 3.5rem;
-        }
-    }
-    @media (min-width: 50rem) {
-        .cards {
-            grid-template-columns: repeat(auto-fill, minmax(30ch, 1fr));
-            gap: 2rem;
-        }
+    section {
+        --masonry-cols: repeat(auto-fill, minmax(30ch, 1fr));
+        --masonry-gap: 2rem;
     }
 </style>
