@@ -14,7 +14,7 @@
                 <p>Along with the students speeches, relevant personalities from aerospace companies will present their work as engineers concerning Propulsion and Rocket Engineering.</p>
             </div>
             <div class="flyer">
-                <Follow3D tranform={(x,y) => `translate(${x*0.2}rem,${y*0.2}rem) rotate3d(${-y},${x},0,${-3*Math.hypot(x,y)}deg)`}>
+                <Follow3D transform={(x,y) => `translate(${x*0.2}rem,${y*0.2}rem) rotate3d(${-y},${x},0,${-3*Math.hypot(x,y)}deg)`}>
                     <img src="/img/IRESS.jpg" alt="Flyer IRESS" style="width: 15rem; max-width: 100%;">
                 </Follow3D>
             </div>
