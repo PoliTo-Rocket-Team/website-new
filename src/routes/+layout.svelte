@@ -164,7 +164,7 @@
         background-color: var(--bg-0);
         transition: transform 200ms ease, background-color 350ms ease;
 
-        &.hide {
+        &.hide:not(:focus-within) {
             transform: translateY(-100%);
             overflow-y: hidden;
         }
