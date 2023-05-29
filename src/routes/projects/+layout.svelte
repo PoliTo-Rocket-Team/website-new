@@ -27,13 +27,16 @@
             margin-top: .7em;
         }
         :global(p + ul) {
-            margin-top: .3rem;
+            margin-top: .5rem;
+        }
+        :global(li + li) {
+            margin-top: .2rem;
         }
         :global(.m-top) {
             margin-top: $space;
         }
         :global(.list) {
-            padding-left: 3ch;
+            padding-left: 2.5ch;
         }
         :global(.list > ::marker) {
             color: var(--accent-fig);
