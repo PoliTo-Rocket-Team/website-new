@@ -80,7 +80,7 @@
 
 <style>
     main {
-        max-width: 90ch;
+        max-width: 100ch;
         margin: 0 auto;
         padding: var(--pad);
     }
