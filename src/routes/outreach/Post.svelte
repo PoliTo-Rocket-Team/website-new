@@ -17,18 +17,19 @@
         <div class="body">
             <slot />
         </div>
-        <a href={url} class="cta" target="_blank" rel="noopener">Read more</a>
+        <a href={url} class="cta" target="_blank" rel="noopener">See more</a>
     </div>
 </article>
 
 <style>
     article {
         background-color: var(--bg-1);
-        border-radius: 0.5rem;
+        border-radius: 0.6rem;
+        color: var(--fg-1);
     }
     .img {
         display: block;
-        border-radius: 0.5rem;
+        border-radius: 0.6rem;
         overflow: hidden;
     }
     .text {
@@ -44,16 +45,21 @@
     img:hover {
         transform: scale(1.05);
     }
+    time {
+        color: rgb(var(--fg-1-rgb), 0.8);
+    }
     h3 {
         font-size: var(--fs-65);
-        margin-bottom: .8rem;
+        margin-bottom: .7rem;
+        margin-top: -0.2rem;
     }
     .cta {
         display: block;
         width: fit-content;
-        margin-top: .8rem;
+        margin-top: 1.3rem;
         text-decoration: none;
         padding: .4rem .8rem;
         border: 2px solid var(--accent-fig);
+        font-weight: 500;
     }
 </style>
