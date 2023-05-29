@@ -18,13 +18,15 @@
     </div>
     <div>
         <h2 class="m-top smudge">Technical characteristics</h2>
-        <p>Cavour is a single-stage, 2.25m long, solid propelled rocket, with a variable target altitude and mission profile. It is composed of three compartments:</p>
+        <p>Cavour is a single stage rocket with a solid COTS motor and an internal diameter of 100mm (3.94in), with a variable target altitude.</p>
+        <p>It is composed of two body tubes and a coupler, and of four compartments plus the nose cone. The structure is made of lightweight composite materials, and all its internal components are high-performance 3D-printed carbon-reinforced polymers. Starting from the bottom, the rocket’s compartments are:</p>
         <ul class="list">
             <li>Motor bay, holding the COTS solid motor;</li>
             <li>Avionics bay with the electronics and the telemetry system;</li>
-            <li>Recovery bay, which contains the parachutes and the other recovery components.</li>
-        </ul>    
-        <p>The airframe has an internal diameter of 100mm and makes extended use of novel composites materials and advanced additive-manufactured carbon-reinforced polymers.</p>
+            <li>Payload bay, containing with the mission’s scientific payload;</li>
+            <li>Recovery bay, which contains the parachutes and the other recovery components;</li>
+            <li>Nose cone.</li>
+        </ul>
     </div>
     <div>
         <h2 class="m-top smudge">First launch</h2>
@@ -49,7 +51,7 @@
         </li>
         <li class="card">
             <h2 class="smudge">Reusable</h2>
-            <p>Using a drogue chute and a main parachute, the rocket is designed to land without inflicting any damage to its airframe or to the environment. This allows the rocket to perform multiple launches without developing major structural damage, managing to be cheaper to operate and maintain, while maintaining the capability of a high-powered flight.</p>
+            <p>Using a drogue chute and a main parachute, the rocket is designed to land without inflicting any damage to its airframe or to the environment. This allows the rocket to perform multiple launches without inflicting any damage to its airframe or to the environment, so that the rocket is capable of being flown again without any major repair after just some refueling.</p>
         </li>
     </ul>
 </section>

@@ -7,7 +7,7 @@
             "values": [104, 104, 104]
         },
         {
-            "name": "Lenght", 
+            "name": "Length", 
             "unit": "mm", 
             "values": [2167, 2347, 2347]
         },
@@ -29,7 +29,7 @@
         {
             "name": "Motor model", 
             "unit": null, 
-            "values": ["L1350", "L1350", "K940"]
+            "values": ["CTI L1350", "CTI L1350", "CTI K940"]
         },
         {
             "name": "Liftoff Thrust-Weight ratio", 
