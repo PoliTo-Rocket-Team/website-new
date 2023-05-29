@@ -55,7 +55,7 @@
     <section aria-labelledby="identity-title">
         <h2 id="identity-title">Who are we?</h2>
         <div class="blur-behind">
-            <p>We are the rocket engineering student team of Politecnico di Torino, entirely dedicated to the design and construction of high-powered experimental rockets with scientific payload capability. We are a group of more than 85 undergraduate, graduate and doctoral engineering students with great plans for the future.</p>
+            <p>We are the rocket engineering student team of Politecnico di Torino, entirely dedicated to the research, design, and construction of rocket engines and experimental rockets with scientific payload capability. We are a group of more than 85 undergraduate, graduate and doctoral engineering students with great plans for the future.</p>
             <div class="btns">
                 <a href="/projects" class="btn">Our Projects</a>
                 <a href="/about/mission-vision" class="btn">Mission & Vision</a>
@@ -131,7 +131,7 @@
             <p>PoliTo Rocket Team will be the first Italian rocketry team to participate at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>!</p>
             <p>The Team's first rocket, Cavour, will be launched at the end of June 2023 from Spaceport America, a private commercial spaceport located in southern New Mexico (USA), during the Spaceport America Cup.</p>
             <p>The Spaceport America Cup (SA Cup) is designed for student rocketry teams from all over the world. With over 150 teams from colleges and universities in 24 countries from 6 continents, the SA Cup is the world's largest intercollegiate rocket engineering competition. At SA Cup, students launch solid, liquid, and hybrid rockets to target altitudes of 10,000 and 30,000 feet (3,000 and 9,100 m).</p>
-            <p>PoliTo Rocket Team will be participating in the 10k-COTS All propulsion types, with a target apogee of around 3km. </p>
+            <p>PoliTo Rocket Team will be participating with the <a href="/projects/Cavour">Cavour rocket</a> in the 10k-COTS All propulsion types, with a target apogee of around 3km. </p>
         </div>
     </section>
     <section aria-labelledby="timeline-title">
