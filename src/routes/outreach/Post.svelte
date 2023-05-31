@@ -9,7 +9,7 @@
 
 <article>
     <a href={url} tabindex="-1" class="img" target="_blank" rel="noopener">
-        <img src={img} alt="Post image of {title}">
+        <img src={img} alt="Post image of {title}" loading="lazy">
     </a>
     <div class="text">
         <time datetime={date}>{formatter.format(new Date(date))}</time>
