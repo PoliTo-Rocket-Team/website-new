@@ -9,22 +9,17 @@
         {
             "name": "Length", 
             "unit": "mm", 
-            "values": [2167, 2347, 2347]
+            "values": [2167, 2527, 2527]
         },
         {
             "name": "Dry mass (no motor case)", 
             "unit": "kg", 
-            "values": [4.2, 4.5, 4.5]
+            "values": [4.8, 5.1, 5.1]
         },
         {
             "name": "Wet mass", 
             "unit": "kg", 
-            "values": [7.8, 8.3, 5.9]
-        },
-        {
-            "name": "Motor manufacturer", 
-            "unit": null, 
-            "values": ["Cesaroni Pro75", "Cesaroni Pro75", "Cesaroni Pro54"]
+            "values": [8.4, 9.3, 6.9]
         },
         {
             "name": "Motor model", 
@@ -34,12 +29,22 @@
         {
             "name": "Liftoff Thrust-Weight ratio", 
             "unit": null, 
-            "values": [12.3, 11.8, 14.9]
+            "values": [13.7, 12.9, 15.3]
+        },
+        {
+            "name": "Maximum thrust",
+            "values": [1672.5, 1672.5, 1120.8],
+            "unit": "N"
+        },
+        {
+            "name": "Maximum speed",
+            "values": [320, 295, 201],
+            "unit": "m/s"
         },
         {
             "name": "Target apogee", 
-            "unit": "m", 
-            "values": [3000, ">3000", 1500]
+            "values": [3000, 3000, 1500],
+            "unit": "m"
         }
     ]
 }
