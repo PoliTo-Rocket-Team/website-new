@@ -7,10 +7,10 @@
 
 <main>
     <h1>Outreach</h1>
-    <hr class="subtle">
-    <section aria-labelledby="events">
+    <hr class="subtle stop-growth">
+    <section aria-labelledby="events" class="sm-c">
         <h2 id="events">Events</h2>
-        <article class="sm-c" aria-labelledby="iress">
+        <article aria-labelledby="iress">
             <div class="with-flyer">
                 <div class="body blur-behind">
                     <h3 id="iress">Italian Rocket Engineering Student Summit</h3>
@@ -68,7 +68,7 @@
             </div>
         </article>
     </section>
-    <section aria-labelledby="posts">
+    <section aria-labelledby="posts" style="max-width: 100ch;">
         <h2 id="posts">Posts</h2>
         <Masonry data={posts} let:date let:title let:img let:url let:body>
             <Post {title} {date} {img} {url}>
@@ -79,11 +79,6 @@
 </main>
 
 <style>
-    main {
-        max-width: 100ch;
-        margin: 0 auto;
-        padding: var(--pad);
-    }
     h2 {
         font-size: calc(1.3 * var(--fs-70));
         margin-bottom: 1em;
@@ -93,6 +88,8 @@
         margin-bottom: 1rem;
     }
     section {
+        margin-left: auto;
+        margin-right: auto;
         margin-top: 10rem;
         --masonry-gap: 2rem;
         --masonry-cols: repeat(auto-fill, minmax(28ch,1fr))
@@ -140,8 +137,8 @@
         }
     }
     @media (min-width: 50rem) {
-        main {
-            padding: var(--pad) 0;
+        h2 {
+            text-align: center;
         }
         .with-flyer {
             display: grid;
