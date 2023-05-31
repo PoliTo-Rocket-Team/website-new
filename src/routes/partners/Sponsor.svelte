@@ -15,7 +15,8 @@
     export let name: string;
     export let link: string;
     export let img: string|SponsorImage;
-    const si: SponsorImage = typeof img === "object" ? img : { url: img, padding: 0, background: null };
+    let si: SponsorImage;
+    $: si = typeof img === "object" ? img : { url: img, padding: 0, background: null };
 </script>
 
 <Follow3D options={opts} {transform}>

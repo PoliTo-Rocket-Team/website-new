@@ -5,7 +5,6 @@
     import { throttle } from "$lib/timing";
     import Event from "./Event.svelte";
     import { theme } from "$lib/theme";
-    import Follow3D from "$lib/Follow3D.svelte";
     import { browser } from "$app/environment";
     let main: HTMLElement;
     const deltaH = browser ? document.documentElement.clientHeight - window.innerHeight : 0;
@@ -61,67 +60,6 @@
                 <a href="/about/mission-vision" class="btn">Mission & Vision</a>
                 <a href="/about/current-team" class="btn">The Team</a>
             </div>
-        </div>
-    </section>
-    <section aria-labelledby="iress">
-        <h2 id="iress">Italian Rocket Engineering <br class="on-lg"> Student Summit</h2>
-        <div class="with-flyer">
-            <div class="body blur-behind">
-                <p>We are thrilled to announce the successful conclusion of the 1st IRESS &mdash; Italian Rocket Engineering Student Summit &mdash; held on the 2<sup>nd</sup> of May 2023 at Politecnico di Torino. It was a great pleasure to host this event, bringing together Rocket Teams from major Italian universities, promoting collaboration and networking among students, professionals, and industry leaders in the field of Rocket and Space Engineering.</p>
-                <p>We would like to thank all the student teams who participated today: your dedication and hard work are truly inspiring, and we were honored to have you showcase them. In addition to the student speeches, we were honored to host relevant personalities from aerospace companies who shared their work as engineers in Propulsion and Rocket Engineering</p>
-                <p>Everybody's presence and support today made the event a huge success, and we are thankful for the opportunity to learn from each other and share our passion. As such, we look forward to future events and collaborations.</p>
-            </div>
-            <div class="flyer">
-                <Follow3D transform={(x,y) => `translate(${x*0.2}rem,${y*0.2}rem) rotate3d(${-y},${x},0,${-3*Math.hypot(x,y)}deg)`}>
-                    <img src="/img/IRESS.jpg" alt="Flyer IRESS" style="width: 16rem; max-width: 100%;">
-                </Follow3D>
-            </div>
-        </div>
-        <div class="split">
-            <ul class="center">
-                <li>
-                    <span class="semi-bold">PoliTo Rocket Team</span><br>
-                    <span class="low">Politecnico di Torino</span>
-                </li>
-                <li>
-                    <span class="semi-bold">DARE</span><br>
-                    <span class="low"> Delft University of Technology</span>
-                </li>
-                <li>
-                    <span class="semi-bold">Skyward Experimental Rocketry</span><br>
-                    <span class="low">Politecnico di Milano</span>
-                </li>
-                <li>
-                    <span class="semi-bold">THRUST</span><br>
-                    <span class="low">Università degli Studi di Padova</span>
-                </li>
-                <li>
-                    <span class="semi-bold">Icarus</span><br>
-                    <span class="low">Politecnico di Torino</span>
-                </li>
-                <li>
-                    <span class="semi-bold">Unina Rockets</span><br>
-                    <span class="low">Università Federico II di Napoli</span>
-                </li>
-            </ul>
-            <ul class="center">
-                <li>
-                    <span class="semi-bold">Ing. Marino Fragnito</span><br>
-                    <span class="low">Senior Vice President Vega Business Unit at ArianeSpace</span>
-                </li>
-                <li>
-                    <span class="semi-bold">Ing. Francesca Romana Alvino</span><br>
-                    <span class="low">GNC engineer for VEGA launch vehicles at Avio</span>
-                </li>
-                <li>
-                    <span class="semi-bold">Davide Barbero</span><br>
-                    <span class="low">RCS Propulsion Lead Engineer for Space Rider Re-entry module</span>
-                </li>
-                <li>
-                    <span class="semi-bold">Andrea Tronzano</span><br>
-                    <span class="low">Regione Piemonte assessor</span>
-                </li>
-            </ul>
         </div>
     </section>
     <section aria-labelledby="spac">
@@ -309,7 +247,6 @@
         margin: 0 auto;
         padding: var(--pad);
     }
-    .split,
     main p + p {
         margin-top: 1rem;
     }
@@ -347,33 +284,6 @@
             // outline: 2px solid var(--accent-fig);
             // outline-offset: 3px;
         }
-    }
-
-    .with-flyer {
-        display: grid;
-        column-gap: 2ch;
-        row-gap: 1rem;
-    }
-    .flyer img { 
-        display: block;
-        border-radius: .6rem;
-    }
-    ul.center {
-        list-style: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    ul li + li {
-        margin-top: 0.75rem;
-    }
-    .semi-bold {
-        font-weight: 500;
-    }
-    .low {
-        color: rgba(var(--fg-1-rgb), 0.85);
-        font-style: italic;
     }
 
     $contour: 1px;
@@ -473,12 +383,6 @@
         header button {
             margin-bottom: 1.5rem;
         }
-        .split > * {
-            margin-bottom: 1rem;
-        }
-        .flyer {
-            justify-self: center;
-        }
     }
     @media (min-width: 50rem) {
         main {
@@ -493,20 +397,6 @@
         .timeline {
             padding-left: .5ch;
             // column-gap: max(1rem, 3vw);
-        }
-        .with-flyer {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            column-gap: 2ch;
-        }
-        .split {
-            column-count: 2;
-            column-gap: 4rem;
-            column-rule: 2px dashed #8888;
-            margin-top: 2.5rem;
-        }
-        .split > * {
-            break-inside: avoid;
         }
     }
 </style>
