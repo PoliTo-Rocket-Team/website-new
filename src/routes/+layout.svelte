@@ -76,9 +76,9 @@
             <li><a data-sveltekit-replacestate={open || null} class="nav-entry" href="/">Home</a></li>
             <li><LinkCombo replace={open} base="about" routes={aboutCombo} /></li>
             <li><LinkCombo replace={open} base="projects" routes={projectsCombo} /></li>
+            <li><a data-sveltekit-replacestate={open || null} class="nav-entry" href="/outreach">Outreach</a></li>
             <li><a data-sveltekit-replacestate={open || null} class="nav-entry" href="/partners">Partners</a></li>
             <li><a data-sveltekit-replacestate={open || null} class="nav-entry" href="/apply">Apply</a></li>
-            <li><a data-sveltekit-replacestate={open || null} class="nav-entry" href="/outreach">Outreach</a></li>
         </ul>
         <div class="theme">
             <label>
