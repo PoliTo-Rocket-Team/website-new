@@ -20,7 +20,7 @@
 
 <svelte:head>
     <title>Project Efesto - PoliTo Rocket Team</title>
-    <meta name="description" content="Efesto is our fully reusable liquid rocket engine: discover its characteristics, and the technology behing it!" />
+    <meta name="description" content="Efesto is our fully reusable liquid rocket engine: discover its characteristics, and the technology behind it!" />
 </svelte:head>
 
 <h1>Project Efesto</h1>
