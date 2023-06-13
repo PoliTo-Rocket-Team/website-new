@@ -5,6 +5,11 @@
     import posts from "./posts.json";
 </script>
 
+<svelte:head>
+    <title>Outreach - PoliTo Rocket Team</title>
+    <meta name="description" content="See the outreach activity of the team" />
+</svelte:head>
+
 <main>
     <h1>Outreach</h1>
     <hr class="subtle stop-growth">
