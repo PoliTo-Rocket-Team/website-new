@@ -30,7 +30,7 @@
     }
      
     // import { onMount } from "svelte";
-    // onMount(() => window.scrollTo(0,3000));
+    // onMount(() => window.scrollTo(0,2600));
 </script>
 
 <svelte:window 
@@ -90,7 +90,8 @@
                         </svg>
                     </a>
                 </Event>
-                <Event year={2023} month={6} ch={53} title="2023 Spaceport America Cup">We will represent Politecnico and Italy as the first Italian team at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>, the largest intercollegiate rocketry competition on the planet.</Event>
+                <Event year={2023} month={6} ch={59} title="2023 Spaceport America Cup">With <a href="/projects/Cavour">Project Cavour</a>, we will represent Politecnico and Italy as the first Italian team at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>, the largest intercollegiate rocketry competition on the planet.</Event>
+                <Event year={2023} month={10} ch={50} title="2023 European Rocketry Challenge">We will be the first team from Politecnico to compete with Project Cavour at the 2023 <a href="https://euroc.pt/" target="_blank" rel="noreferrer">EuRoC</a>, Europe’s major rocket engineering competition.</Event>
             </div>
         </div>
     </section>
