@@ -21,7 +21,7 @@
                     <h3 id="iress">Italian Rocket Engineering Student Summit</h3>
                     <p>PoliTo Rocket Team is pleased to invite you to the 1st IRESS &mdash; Italian Rocket Engineering Student Summit &mdash; that will be held on the 2<sup>nd</sup> of May 2023, from 3pm to 7pm in Aula Magna &ldquo;Giovanni Agnelli&rdquo; of Politecnico di Torino.</p>
                     <p>The IRESS will gather for the first time Rocket Teams from major Italian Universities in order to present an overview of Rocket Engineering realities and challenges, from the intercollegiate point of view and more.</p>
-                    <p>Along with the students speeches, relevant personalities from aerospace companies will present their work as engineers concerning Propulsion and Rocket Engineering.</p>
+                    <p>Along with the students' speeches, relevant personalities from aerospace companies will present their work as engineers concerning Propulsion and Rocket Engineering.</p>
                 </div>
                 <div class="flyer">
                     <Follow3D transform={(x,y) => `translate(${x*0.2}rem,${y*0.2}rem) rotate3d(${-y},${x},0,${-3*Math.hypot(x,y)}deg)`}>
