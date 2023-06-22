@@ -32,7 +32,7 @@ You can preview the production build with `pnpm preview` afterwards.
 
 > This is a future feature. Here it's explained how it would work
 
-The idea is to allow leads as admins with custom permissions to edit some texts of the website. In order to achieve this while keeping a fully static generation, we could leverage SvelteKit's `+page.sever.ts` and Netlify build hooks. For each page that requires this sort of synamic text, the following steps can be followed:
+The idea is to allow leads as admins with custom permissions to edit some texts of the website. In order to achieve this while keeping a fully static generation, we could leverage SvelteKit's [`+page.sever.ts`](https://kit.svelte.dev/docs/routing#page) and [Netlify build hooks](https://docs.netlify.com/configure-builds/build-hooks/). For each page that requires this sort of synamic text, the following steps can be followed:
 
  * create `+page.sever.ts` that export a `load` function that queries a server api endpoint and returns its result. This query is done only once during the build process: the text goes directly in the html, and the eventual hydration won't query the API (thus faster navigation)
 
