@@ -50,7 +50,7 @@ export const load = (async ({ fetch }) => {
 }) satisfies PageServerLoad;
 ```
 
- * inside `+page.svelte` export a prop with type `PageData` imported from `./$types` (hidden ts declaration file silently created by SvelteKit to have)
+ * inside `+page.svelte` export a prop with type `PageData` imported from `./$types` (hidden ts declaration file silently created by SvelteKit to have) and use its value around the page
 
 ```html
 <!-- +page.svelte -->
@@ -61,3 +61,5 @@ export const load = (async ({ fetch }) => {
 </script>
 <!-- use data in the document -->
 ``` 
+
+ * After some texts are modified, the server can request Netlify to rebuild the website trough a POST request to `https://api.netlify.com/build_hooks/<id>?trigger_title=<name>` where the `id` is given when creating a new Netlify build hook, an `name` is an optional name for tracking purposes.
