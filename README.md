@@ -26,6 +26,38 @@ To create a production version of your app:
 pnpm build
 ```
 
-You can preview the production build with `pnpm preview`.
+You can preview the production build with `pnpm preview` afterwards.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## External text server
+
+> This is a future feature. Here it's explained how it would work
+
+The idea is to allow leads as admins with custom permissions to edit some texts of the website. In order to achieve this while keeping a fully static generation, we could leverage SvelteKit's `+page.sever.ts` and Netlify build hooks. For each page that requires this sort of synamic text, the following steps can be followed:
+
+ * create `+page.sever.ts` that export a `load` function that queries a server api endpoint and returns its result. This query is done only once during the build process: the text goes directly in the html, and the eventual hydration won't query the API (thus faster navigation)
+
+```ts
+// +page.server.ts
+
+import type { PageServerLoad } from './$types';
+
+interface Texts { /* definition */ }
+
+export const load = (async ({ fetch }) => {
+    const res = await fetch("<api endpoint>");
+    const data: Texts = await res.json();
+    return data; // or do some processing
+}) satisfies PageServerLoad;
+```
+
+ * inside `+page.svelte` export a prop with type `PageData` imported from `./$types` (hidden ts declaration file silently created by SvelteKit to have)
+
+```html
+<!-- +page.svelte -->
+<script lang="ts">
+    import type { PageData } from "./$types";
+    export let data: PageData;
+    // PageData is inferred from return type of load function
+</script>
+<!-- use data in the document -->
+``` 
