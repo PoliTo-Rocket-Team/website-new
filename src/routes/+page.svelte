@@ -63,13 +63,16 @@
         </div>
     </section>
     <section aria-labelledby="spac">
-        <h2 id="spac">New Mexico: here we come!</h2>
+        <h2 id="spac">New Mexico: mission accomplished</h2>
         <div class="blur-behind">
             <img src="/img/Spaceport-America-Cup.png" alt="Spaceport America Cup" class="float">
-            <p>PoliTo Rocket Team will be the first Italian rocketry team to participate at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>!</p>
-            <p>The Team's first rocket, Cavour, will be launched at the end of June 2023 from Spaceport America, a private commercial spaceport located in southern New Mexico (USA), during the Spaceport America Cup.</p>
-            <p>The Spaceport America Cup (SA Cup) is designed for student rocketry teams from all over the world. With over 150 teams from colleges and universities in 24 countries from 6 continents, the SA Cup is the world's largest intercollegiate rocket engineering competition. At SA Cup, students launch solid, liquid, and hybrid rockets to target altitudes of 10,000 and 30,000 feet (3,000 and 9,100 m).</p>
-            <p>PoliTo Rocket Team will be participating with the <a href="/projects/Cavour">Cavour rocket</a> in the 10k-COTS All propulsion types, with a target apogee of around 3km. </p>
+            <p>PoliTo Rocket Team was the first Italian rocketry team to have participated at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>!</p>
+
+            <p>The Team's first rocket, Cavour, was  launched on Thursday June 22nd from the launchpad B2 from the Vertical Launch Area of Spaceport America, at 9:20 local time. The launch was a success! The flight was nominal and the rocket was recovered in good conditions and it can be reused</p>
+
+            <p>The Spaceport America Cup (SA Cup) is a competition for student rocketry teams from all over the world. With over 150 teams from colleges and universities in 24 countries from 6 continents, the SA Cup is the world's largest intercollegiate rocket engineering competition. At SA Cup, students launch solid, liquid, and hybrid rockets to target altitudes of 10,000 and 30,000 feet (3,000 and 9,100 m).</p>
+            <p>PoliTo Rocket Team has competed with the <a href="/projects/Cavour">Cavour rocket</a> in the 10 ft apogee AGL-COTS category All propulsion types, with a target apogee of around 3km.The Team ranked 13th in its category and 20th overall with 119 teams participating.
+            </p>
         </div>
     </section>
     <section aria-labelledby="timeline-title">
@@ -90,8 +93,13 @@
                         </svg>
                     </a>
                 </Event>
-                <Event year={2023} month={6} ch={59} title="2023 Spaceport America Cup">With <a href="/projects/Cavour">Project Cavour</a>, we will represent Politecnico and Italy as the first Italian team at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>, the largest intercollegiate rocketry competition on the planet.</Event>
-                <Event year={2023} month={10} ch={50} title="2023 European Rocketry Challenge">We will be the first team from Politecnico to compete with Project Cavour at the 2023 <a href="https://euroc.pt/" target="_blank" rel="noreferrer">EuRoC</a>, Europe’s major rocket engineering competition.</Event>
+
+
+                <Event year={2023} month={6} ch={59} title="2023 Spaceport America Cup and second Cavour launch">With <a href="/projects/Cavour">Project Cavour</a>, we represented Politecnico and Italy as the first Italian team at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>, the largest intercollegiate rocketry competition on the planet.Cavour launch was a success!
+                </Event>
+
+                <Event year={2023} month={10} ch={50} title="2023 European Rocketry Challenge">We will be the first team from Politecnico to compete with Project Cavour at the 2023 <a href="https://euroc.pt/" target="_blank" rel="noreferrer">EuRoC</a>, Europe’s major rocket engineering competition.
+                </Event>
             </div>
         </div>
     </section>
