@@ -73,7 +73,7 @@
         </div>
     </section>
     <section aria-labelledby="timeline-title">
-        <h2 id="timeline-title">Our timeline</h2>
+        <h2 id="timeline-title">Our timeline </h2>
         <div class="timeline">
             <div class="timeline__track">
                 <div class="base"></div>
