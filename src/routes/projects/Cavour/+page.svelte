@@ -29,14 +29,22 @@
         </ul>
     </div>
     <div>
-        <h2 class="m-top smudge">First launch</h2>
-        <p>On Saturday, April 29th, our Cavour rocket was successfully launched from a launch site in Bavaria, Germany.</p>
+        <h2 class="m-top smudge">Test launch</h2>
+        <p>On Saturday, April 29th, our Cavour rocket was successfully launched for the first time from a launch site in Bavaria, Germany.</p>
         <p>Due to the launch site apogee limitation, Cavour had to be launched with a small and less powerful K-class COTS CTI solid motor, that provided a maximum thrust of 1120.8N. The rocket reached an apogee of 1331.2m, staying under the launch site vertical limit. Cavour flew with a maximum velocity of 162.7 m/s, around Mach 0.5, with a maximum boost acceleration of 9.79G.</p>
         <p>The drogue pilot parachute was deployed at apogee, while the main parachute was deployed at high altitudes earlier than anticipated probably due to the malfunctioning of a COTS TD-2 tether, which will be investigated. The rocket descended to the ground with a velocity of 6.9 m/s and landed softly on the German green grass. Cavour landed at around 1.2km from the launch site and was found in perfect condition with all airframe components intact: it is now ready to be reused.</p>
     </div>
-    <div>
-        <h2 class="m-top smudge">Future plans</h2>
+    <!-- <div>
+        <h2 class="m-top smudge">2023 Spaceport America Cup</h2>
         <p>At the end of June 2023, Cavour will be launched in New Mexico’s desert during the Spaceport America Cup 2023, with a 4kg-heavy scientific payload. Project Cavour will evolve towards a future reusable rocket with a larger payload capacity, capable of conducting scientific experiments inexpensively and reliably at a precise predetermined apogee.</p>
+        <p>After its first successful flight in April 2023, Cavour will be launched again at the end of June 2023 from2023, Cavour will be launched in from the New Mexico’s desert during the Spaceport America Cup 2023. PoliTo Rocket Team will be the first Italian team to compete at the world’s largest rocketry competition, and the Cavour rocket will fly with a student researched and developed 4kg-heavy scientific payload.
+        </p>
+    </div> -->
+    <div>
+        <h2 class="m-top smudge">Current and Future plans</h2>
+        <p>Cavour has been completely designed, constructed, ground-tested, and launched. Two twin prototypes have been built and the functionality of their integrated systems has been validated.</p>
+        <p>In October 2023 Cavour will fly again in Portugal, representing for the first time ever the Politecnico di Torino at the European Rocketry Challenge, during its 2023 edition.</p>
+        <p>Project Cavour will evolve towards a future reusable rocket with a larger payload capacity, capable of conducting scientific experiments inexpensively and reliably at an even higher precise apogee.</p>
     </div>
 </section>
 <section>
