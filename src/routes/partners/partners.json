@@ -53,5 +53,18 @@
             "Blu Electronic's Aero activities commenced in 2007, and in 2009, the company achieved the UNI EN9100 certification, which it still maintains today. In 2010, it became part of Lombardia Aerospace and continues to provide cutting-edge solutions for space, avionics, and aerospace systems.",
             "Blue Electronic will provide our team with technical and material support."
         ]
+    },
+    {
+        "name": "TekRevolution",
+        "link": "https://www.tekrevolution.it/",
+        "img": {
+            "url":"Tek.svg",
+            "padding": 25,
+            "background": "dark"
+        },
+        "texts": [
+            "TekRevolution is an esteemed Italian engineering company, renowned for their meticulous understanding of technical needs and delivery of exceptional results. The company operates in different industrial sectors, thanks to its multidisciplinary team of highly qualified experts. They have extensive experience in technology integration and project management.",
+            "TekRevolution provides technical support to the Team. The company lends their expertise and training to ensure the success of our groundbreaking projects."
+        ]
     }
 ]
