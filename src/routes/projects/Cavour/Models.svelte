@@ -145,6 +145,9 @@
     table {
         border-collapse: collapse;
         font-size: 1.1rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
     }
     th, td {
         padding: .125em .45em;
