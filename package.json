@@ -13,6 +13,9 @@
 	"devDependencies": {
 		"@fontsource/anonymous-pro": "^4.5.9",
 		"@fontsource/plus-jakarta-sans": "^4.5.10",
+		"@slidy/animation": "^1.0.7",
+		"@slidy/core": "^3.7.4",
+		"@slidy/easing": "^1.0.5",
 		"@sveltejs/adapter-static": "1.0.0-next.49",
 		"@sveltejs/kit": "^1.2.2",
 		"@types/three": "^0.148.0",
