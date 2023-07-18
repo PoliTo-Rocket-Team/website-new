@@ -3,14 +3,18 @@
     import Models from "./Models.svelte";
     let model_view = "showcase";
     import Launch from "./Launch.svelte";
-    import { MiddleScreenPool, whenVisible } from "$lib/visibility";
-    import { onDestroy } from "svelte";
-
-    const pool = new MiddleScreenPool((el, focus) => el.classList.toggle("focus",focus), 4/9);
-    onDestroy(() => pool.clear());
-    function trackNearest(node: HTMLElement) {
-        return whenVisible("0px 0px 0px 0px", node, visible => pool.run(visible));
-    }
+    
+    // https://gist.github.com/Pigamo/6ad9d769a23bbdc07a9ef6f7226cbb55
+    const test = Object.values(import.meta.glob("/src/img/cavour/test/*.{jpg,png}", {as: "url", eager: true})); 
+    const spac = Object.values(import.meta.glob("/src/img/cavour/spac23/*.{jpg,png}", {as: "url", eager: true})); 
+    
+    // import { MiddleScreenPool, whenVisible } from "$lib/visibility";
+    // import { onDestroy } from "svelte";
+    // const pool = new MiddleScreenPool((el, focus) => el.classList.toggle("focus",focus), 4/9);
+    // onDestroy(() => pool.clear());
+    // function trackNearest(node: HTMLElement) {
+    //     return whenVisible("0px 0px 0px 0px", node, visible => pool.run(visible));
+    // }
 </script>
 
 <svelte:head>
@@ -81,16 +85,16 @@
     <Models view={model_view} />
 </section>
 
-<section use:trackNearest>
+<section>
     <h2 class="m-top center-lg">
         <span class="smudge">Launch History</span>
     </h2>
-    <Launch name="Test Launch" date="2023-4-29" {pool}>
+    <Launch name="Test Launch" date="2023-4-29" images={test}>
         <p>On Saturday, April 29th, our Cavour rocket was successfully launched for the first time from a launch site in Bavaria, Germany.</p>
         <p>Due to the launch site apogee limitation, Cavour had to be launched with a small and less powerful K-class COTS CTI solid motor, that provided a maximum thrust of 1120.8N. The rocket reached an apogee of 1331.2m, staying under the launch site vertical limit. Cavour flew with a maximum velocity of 162.7 m/s, around Mach 0.5, with a maximum boost acceleration of 9.79G.</p>
         <p>The drogue pilot parachute was deployed at apogee, while the main parachute was deployed at high altitudes earlier than anticipated probably due to the malfunctioning of a COTS TD-2 tether, which will be investigated. The rocket descended to the ground with a velocity of 6.9 m/s and landed softly on the German green grass. Cavour landed at around 1.2km from the launch site and was found in perfect condition with all airframe components intact: it is now ready to be reused.</p>
     </Launch>
-    <Launch name="2023 Spaceport America Cup" date="2023-6-22" {pool}>
+    <Launch name="2023 Spaceport America Cup" date="2023-6-22" images={spac}>
         <p>On Thursday, June 22nd, with moderate wind conditions, the Cavour rocket was launched from launchpad B2 of the Vertical Launch Area of Spaceport America, the world's first commercial spaceport located in the Jornada del Muerto desert, approximately 90km from Las Cruces.</p>
         <p>The launch was a success, and the rocket reached an apogee of 3142.8m AGL, with a maximum velocity of around 295.4 m/s and a maximum boost acceleration of 17.3G. The apogee was very close to the target apogee (3048m) and to the simulated one. The flight proceeded under nominal conditions, except for an early deployment of the main parachute. This minor malfunction in the recovery subsystem simply drifted the rocket away and did not compromise the integrity of the rocket in any way, as  it can be reused for a new launch.</p>
         <p>Despite having only one year of experience and being at the first participation in a competition, the Team ranked 20th overall out of the 119 participating universities and 13th in the 10k ft apogee AGL with COTS propulsion category</p>

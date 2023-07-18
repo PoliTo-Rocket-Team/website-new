@@ -3,27 +3,29 @@
 </script>
 
 <script lang="ts">
-    import type { MiddleScreenPool } from "$lib/visibility";
+    import Carousel from "./Carousel.svelte";
+    
     export let name: string;
     export let date: string;
-    export let pool: MiddleScreenPool;
-
-    function addPadding(node: HTMLElement) {
-        const c = node.children.item(0)!;
-        node.style.paddingTop = c.clientHeight*0.5 + "px"
-    }
-    function track(node: HTMLElement) {pool.add(node);}
+    export let images: string[];
+    
+    // import type { MiddleScreenPool } from "$lib/visibility";
+    // export let pool: MiddleScreenPool;
+    // function track(node: HTMLElement) {pool.add(node);}
 </script>
 
-<article use:track>
-    <div use:addPadding>
-        <div class="sticky-center">
+<article>
+    <div class="title">
+        <div>
             <h3>{name}</h3>
             <span>{formatter.format(new Date(date))}</span>
         </div>
     </div>
-    <div class="right">
+    <div class="desc">
         <slot />
+    </div>
+    <div class="carousel">
+        <Carousel {images} />
     </div>
 </article>
 
@@ -38,21 +40,36 @@
     }
     article {
         margin-top: 6rem;
-        margin-bottom: 8rem;
+        margin-bottom: 12rem;
+        display: grid;
+    }
+    @media (max-width: 50rem) {
+        article {
+            grid-template-columns: 100%;
+        }
+        .carousel {
+            grid-row: 2;
+        }
+        .desc {
+            grid-row: 3;
+        }
     }
     @media (min-width: 50rem) {
         article {
-            display: grid;
             grid-template-columns: 1fr 1fr;
+            align-items: center;
             gap: 3ch;
         }
-        .sticky-center {
+        .carousel {
+            grid-column: 1/3;
+        }
+        /* article:global(:not(.focus)) {
+            opacity: 0.6;
+        } */
+        /* .sticky-center {
             position: sticky;
             top: 50vh;
             transform: translateY(-50%);
-        }
-        article:global(:not(.focus)) {
-            opacity: 0.6;
-        }
+        } */
     }
 </style>
