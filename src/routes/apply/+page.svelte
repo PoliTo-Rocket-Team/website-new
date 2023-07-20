@@ -24,6 +24,55 @@
             <span>Division</span>
             <div class="code-label"><span>Code</span></div>
         </div>
+        <Position role="Sponsoring Manager" subteam="Operations" division="Logistics" code="OPS-LOG-001">
+            <h4>Description</h4>
+            <p>The Sponsoring Manager is responsible for finding new sponsors and keeping contacts with the present ones. You will have to select companies who could be interested in sponsoring the team, organize meetings with them and draw up sponsoring contracts. As a member of the Logistics Division, other logistics tasks, non concerning the sponsoring field, could be assigned to the Sponsoring Manager if necessary.</p>
+            <h4>Desirable skills</h4>
+            <ul>
+                <li>Communication skills</li>
+                <li>Good writing skills in both Italian and English</li>
+                <li>Teamwork skills</li>
+                <li>Resourcefulness</li>
+                <li>Flexibility</li>
+            </ul>
+            <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
+        </Position>
+        <Position role="Facility Manager" subteam="Operations" division="Logistics" code="OPS-LOG-002">
+            <h4>Description</h4>
+            <p>The Facility Manager would be responsible for the inventory management system. You will have to keep track of all the materials and equipment that enter or leave the laboratory. You will also have to make sure that anyone who needs to access the laboratory or other DIMEAS rooms has the proper habilitation, and keep track of the accesses. As a member of the Logistics Division, other logistics tasks, non concerning the facilities and inventory management, could be assigned to the Facility Manager if necessary.</p>
+            <h4>Desirable skills</h4>
+            <ul>
+                <li>Experience in inventories management (preferred, not required)</li>
+                <li>Knowledge of the Office Suite</li>
+                <li>Attention to details</li>
+            </ul>
+            <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
+        </Position>
+        <Position role="Events Specialist" subteam="Operations" division="Logistics" code="OPS-LOG-003">
+            <h4>Description</h4>
+            <p>The Events Specialist is responsible for the organization of team events, including conferences and team building events. You may be asked by the Team Leads to help them organize Division, Subteam and Plenary meetings, and related events. You will have to come up with your own team building events ideas. The Events Specialist is also responsible for the process of registration for the events. As a member of the Logistics Division, other logistics tasks, non concerning the events organization, could be assigned to the Events Specialist if necessary.</p>
+            <h4>Desirable skills</h4>
+            <ul>
+                <li>Communication skills</li>
+                <li>Teamwork skills</li>
+                <li>Resourcefulness</li>
+                <li>Flexibility</li>
+                <li>Proactivity</li>
+            </ul>
+            <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
+        </Position>
+        <Position role="Operational Excellence Specialist" subteam="Operations" division="Logistics" code="OPS-LOG-004">
+            <h4>Description</h4>
+            <p>The Operational Excellence Specialist is responsible for the GANNT chart of the team, using Microsoft Project. You will have to check the meeting minutes of the divisions you will be asked to support, and keep the chart updated. As a member of the Logistics Division, other logistics tasks, non concerning the GANNT, could be assigned to the Events Specialist if necessary.</p>
+            <h4>Desirable skills</h4>
+            <ul>
+                <li>Experience with Microsoft Project (not required, but highly recommended)</li>
+                <li>Communication skills</li>
+                <li>Teamwork skills</li>
+                <li>Flexibility and availability</li>
+            </ul>
+            <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
+        </Position>
         <Position role="Web Developer" subteam="Operations" division="IT" code="OPS-ITC-001">
             <h4>Description</h4>
             <p>The role of the web developer is to manage the website in all its aspects, in order to present the team at the best. In particular, you will work with web technologies (SCSS, TypeScript, Svelte) to design, create, and mantain all the website sections, based on the team directives.</p>
@@ -57,22 +106,6 @@
             </ul>
             <a class="btn" href="https://forms.gle/arcXaamqyvxy4FYE7" target="_blank" rel="noreferrer">Apply</a>
         </Position>
-        <Position role="Hardware/Embedded Software Engineer" subteam="Cavour" division="Avionics" code="CVR-AVN-001">
-            <h4>Description</h4>
-            <ul>
-                <li>Design, prototyping, manufacture and testing of printed circuit boards and electrical circuits</li>
-                <li>Design, development and testing of on-board software</li>
-            </ul>
-            <h4>Desireable skills</h4>
-            <ul>
-                <li>Knowledge in circuit theory and electronics</li>
-                <li>Prior experience with embedded systems and microcontrollers</li>
-                <li>Familiarity with PCB CAD software (e.g. KiCAD)</li>
-                <li>Good programming skills in C/C++</li>
-                <li>Good interdisciplinary communication skills</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/JtC9MrEwYkUEYk7t5" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
         <Position role="Graphics Designer" subteam="Operations" division="Media" code="OPS-MDA-001" >
             <h4>Description & Responsibilities</h4>
             <p>As a Graphic Designer, you will be in charge of designing the Team’s mission patches and logos, and help design the external coating of the Team’s rockets. You will design social media posts and website UI & UX in tight collaboration with photographers, video makers, rendering specialists, and web developers, leveraging modern design styles and patterns.</p>
@@ -105,6 +138,22 @@
                 <li>Knowledge of Google Suite</li>
             </ul>
             <a class="btn" href="https://forms.gle/bzTseETDcFmjXek86" target="_blank" rel="noreferrer">Apply</a>
+        </Position>
+        <Position role="Hardware/Embedded Software Engineer" subteam="Cavour" division="Avionics" code="CVR-AVN-001">
+            <h4>Description</h4>
+            <ul>
+                <li>Design, prototyping, manufacture and testing of printed circuit boards and electrical circuits</li>
+                <li>Design, development and testing of on-board software</li>
+            </ul>
+            <h4>Desireable skills</h4>
+            <ul>
+                <li>Knowledge in circuit theory and electronics</li>
+                <li>Prior experience with embedded systems and microcontrollers</li>
+                <li>Familiarity with PCB CAD software (e.g. KiCAD)</li>
+                <li>Good programming skills in C/C++</li>
+                <li>Good interdisciplinary communication skills</li>
+            </ul>
+            <a class="btn" href="https://forms.gle/JtC9MrEwYkUEYk7t5" target="_blank" rel="noreferrer">Apply</a>
         </Position>
         <Position role="Mission Analyst/Software Engineer" subteam="Cavour" division="Mission Analysis" code="CVR-MSA-001">
             <h4>Description</h4>
