@@ -120,6 +120,7 @@
         </button>
     </nav>
 </div>
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div id="page-content" class:unfocus={open} on:click={close} on:keydown={() => {}}>
     <slot></slot>
     <svg class="divider" viewBox="0 0 1000 200" width="1000" height="200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1">

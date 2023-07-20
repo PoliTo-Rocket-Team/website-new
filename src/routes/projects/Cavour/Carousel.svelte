@@ -1,5 +1,7 @@
+<!-- Typescript errors here are due to the poor typing of slidy -->
+
 <script context="module" lang="ts">
-    import { linear, sine } from "@slidy/easing";
+    import { sine } from "@slidy/easing";
     import { stairs } from "@slidy/animation";
     import type { Options, SlidyInstance } from "@slidy/core";
 

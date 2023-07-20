@@ -76,6 +76,7 @@
 
 <div class="container" use:observe>
     {#each faqs as faq, i}
+        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         <article bind:this={elements[i]} on:click={bringIntoView} on:keyup={() => {}}>
             <h3><FormatLine text={faq.question} /></h3>
             <div class="answer">

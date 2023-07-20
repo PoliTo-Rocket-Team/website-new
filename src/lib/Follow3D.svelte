@@ -47,6 +47,7 @@
     }
 </script>
 
+<!-- svelte-ignore a11y-no-static-element-interactions -->
 <div class="outer" on:mouseenter={enter} bind:this={element} style:--perspective={perspective}>
     <div class="inner" style="transform: {transform($xs,$ys)};">
         <slot />

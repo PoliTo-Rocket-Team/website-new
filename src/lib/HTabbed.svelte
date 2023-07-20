@@ -25,6 +25,7 @@
                 <div class="slider" style:--index={selected}>
                     {#each data as d,i}
                     <!-- svelte-ignore a11y-click-events-have-key-events -->
+                    <!-- svelte-ignore a11y-no-static-element-interactions -->
                     <div class="section" data-index={i} class:selected={selected === i} on:click={selectMe}>
                         <slot {...d} />
                     </div>

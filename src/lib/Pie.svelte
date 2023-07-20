@@ -46,10 +46,10 @@
                 {@const p_str = (p*100).toFixed(1) + '%'}
                 {@const d = `M${center},${center} L${radius*(scale + coss[i])},${radius*(scale + sins[i])} A${radius},${radius},${p*360},${+(p>0.5)},1,${radius*(scale + coss[i+1])},${radius*(scale + sins[i+1])}Z`}
                 {#if slice.value < threshold}
-                    <path {d} fill={slice.color} class="pie-slice" data-label="{slice.label} - {p_str}" style="--p: {p};" on:mouseenter={enter} on:mouseleave={leave} />
+                    <path {d} fill={slice.color} class="pie-slice" data-label="{slice.label} - {p_str}" style="--p: {p};" on:mouseenter={enter} on:mouseleave={leave} role="presentation" />
                 {:else}
                     {@const df = 0.85*radius*(1 - Math.min(p*p*12, 0.5))}
-                    <g class="pie-slice" data-label="{slice.label} - {p_str}" style="--p: {p};" on:mouseenter={enter} on:mouseleave={leave}>
+                    <g class="pie-slice" data-label="{slice.label} - {p_str}" style="--p: {p};" on:mouseenter={enter} on:mouseleave={leave} role="presentation">
                         <path {d} fill={slice.color} />
                         <text x={center + df*Math.cos(angles[i] + p*Math.PI)} y={center + df*Math.sin(angles[i] + p*Math.PI)} text-anchor="middle" dominant-baseline="central" fill="white">{p_str}</text>
                     </g>
