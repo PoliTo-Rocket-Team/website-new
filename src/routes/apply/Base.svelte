@@ -98,6 +98,9 @@
             transform: translateX(-1px);
             transition: transform 150ms;
         }
+        details[open] summary::after {
+            transform: translateX(1px) rotate(-90deg);
+        }
         .disclaimer {
             max-width: 55ch;
             text-align: center;
