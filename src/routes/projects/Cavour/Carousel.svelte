@@ -62,18 +62,16 @@
         flex-flow: row nowrap;
         align-items: center;
         justify-content: center;
-        width: 100%;
-        height: var(--carousel-height, 30rem);
         padding-bottom: 0.5rem;
+        width: 100%;
     }
     li {
         flex: 0 0;
-        height: 100%;
-        padding: 0 3.5rem;
+        padding: 0 clamp(1rem, 5vw, 3rem);
     }
     img {
         max-width: 80vw;
-        max-height: 100%;
+        max-height: 30rem; /* var(--carousel-height) */
         width: auto;
         height: auto;
         border-radius: .5rem;
