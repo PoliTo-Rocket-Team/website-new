@@ -24,7 +24,7 @@
             <span>Division</span>
             <div class="code-label"><span>Code</span></div>
         </div>
-        <Position role="Sponsoring Manager" subteam="Operations" division="Logistics" code="OPS-LOG-001">
+        <Position role="Sponsoring Manager" subteam="Operations" division="Logistics" code="OPS-LGS-001">
             <h4>Description</h4>
             <p>The Sponsoring Manager is responsible for finding new sponsors and keeping contacts with the present ones. You will have to select companies who could be interested in sponsoring the team, organize meetings with them and draw up sponsoring contracts. As a member of the Logistics Division, other logistics tasks, non concerning the sponsoring field, could be assigned to the Sponsoring Manager if necessary.</p>
             <h4>Desirable skills</h4>
@@ -37,7 +37,7 @@
             </ul>
             <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
         </Position>
-        <Position role="Facility Manager" subteam="Operations" division="Logistics" code="OPS-LOG-002">
+        <Position role="Facility Manager" subteam="Operations" division="Logistics" code="OPS-LGS-002">
             <h4>Description</h4>
             <p>The Facility Manager would be responsible for the inventory management system. You will have to keep track of all the materials and equipment that enter or leave the laboratory. You will also have to make sure that anyone who needs to access the laboratory or other DIMEAS rooms has the proper habilitation, and keep track of the accesses. As a member of the Logistics Division, other logistics tasks, non concerning the facilities and inventory management, could be assigned to the Facility Manager if necessary.</p>
             <h4>Desirable skills</h4>
@@ -48,7 +48,7 @@
             </ul>
             <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
         </Position>
-        <Position role="Events Specialist" subteam="Operations" division="Logistics" code="OPS-LOG-003">
+        <Position role="Events Specialist" subteam="Operations" division="Logistics" code="OPS-LGS-003">
             <h4>Description</h4>
             <p>The Events Specialist is responsible for the organization of team events, including conferences and team building events. You may be asked by the Team Leads to help them organize Division, Subteam and Plenary meetings, and related events. You will have to come up with your own team building events ideas. The Events Specialist is also responsible for the process of registration for the events. As a member of the Logistics Division, other logistics tasks, non concerning the events organization, could be assigned to the Events Specialist if necessary.</p>
             <h4>Desirable skills</h4>
@@ -61,7 +61,7 @@
             </ul>
             <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
         </Position>
-        <Position role="Operational Excellence Specialist" subteam="Operations" division="Logistics" code="OPS-LOG-004">
+        <Position role="Operational Excellence Specialist" subteam="Operations" division="Logistics" code="OPS-LGS-004">
             <h4>Description</h4>
             <p>The Operational Excellence Specialist is responsible for the GANNT chart of the team, using Microsoft Project. You will have to check the meeting minutes of the divisions you will be asked to support, and keep the chart updated. As a member of the Logistics Division, other logistics tasks, non concerning the GANNT, could be assigned to the Events Specialist if necessary.</p>
             <h4>Desirable skills</h4>
