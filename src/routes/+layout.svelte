@@ -129,7 +129,7 @@
     </svg>
     <footer>
         <div class="center-lg">
-            PoliTo Rocket Team &trade; 2022
+            PoliTo Rocket Team &trade; 2023
         </div>
     </footer>
 </div>

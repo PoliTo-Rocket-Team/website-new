@@ -1,6 +1,10 @@
 <script>
     import IconLink from "$lib/icons/IconLink.svelte";
     import Icon from "$lib/icons/IconLink.svelte";
+    
+    import team from './22-23.json';
+
+    // console.log(team.Cavour[0].name);
 </script>
 
 <svelte:head>
@@ -10,6 +14,29 @@
 
 <main>
     <h1>Past Teams</h1>
+    <section aria-labelledby="team-22-23">
+        <h2 id="team-21-22">2022/2023</h2>
+        <div class="cols">
+            {#each Object.entries(team) as [division, members]}
+                <h3 class="division-name">{division}</h3>
+                <ul class="no-list">
+                    {#each members as member}
+                    <li class="member">
+                        {#if member.linkedin}
+                        <div class="socials">
+                            <IconLink icon="LinkedIn" id={member.linkedin} />
+                        </div>
+                        {/if}
+                        <span class="name">{member.name}</span>
+                        <span class="desc">{member.role}</span>
+                    </li>
+                    {/each}
+
+                </ul>
+                   
+            {/each}
+        </div>
+    </section>
     <section aria-labelledby="team-21-22">
         <h2 id="team-21-22">2021/2022</h2>
         <div class="cols">
