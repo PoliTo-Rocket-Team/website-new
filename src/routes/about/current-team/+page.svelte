@@ -42,11 +42,6 @@
                 <p>She is now in her last year of the Master's in Aerospace Engineering at Politecnico di Torino, specializing in the Aeromechanical and Systems field.</p>
                 <p>Elena was previously the president of AESA Torino - the Aerospace Engineering Students’ Association of Politecnico - a non-profit student group composed of 500+ members.</p>
             </Executive>
-            <Executive name="Luca Santoro" role="Chief Technologist and Head of Strategy" mail="luca.santoro@polito.it" linkedin="luca-santoro-b16699151" img="Santoro.jpg">
-                <p>Luca graduated in Mechanical Engineering at Politecnico di Torino, where he is now a PhD student at the Department of Mechanical and Aerospace Engineering. After the foundation of the Team, he provided the human resources, a strong strategy, and technical support to the project.</p>
-                <p>As Chief Technologist, he is in charge of making decisions    for the technological infrastructure, in order to align it with the organization's goals.</p>
-                <p>As Head of Strategy, he is in charge of decisions concerning short and long term strategy, management, partnerships, cost-reduction, strategic initiatives and developing the Team's strategy and vision. The Head of Strategy is also the chairman of the Team's Advisor's board.</p>
-            </Executive>
         </ul>
     </section>
     <section aria-labelledby="faculty-advisors">
@@ -155,7 +150,7 @@
     @media (min-width: 70rem) {
         .executive-list {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(2,1fr);
             gap: 2rem;
         }
     }
