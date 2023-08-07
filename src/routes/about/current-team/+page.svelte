@@ -89,16 +89,16 @@
             <Pie title="Members by program" threshold={5} rotate={255} slices={[
                 { value: 49, label: "Aerospace Engineering", color: "#316B83" },
                 { value: 13, label: "Mechanical Engineering", color: "#DE8971" },
-                { value: 8, label: "Computer Engineering", color: "#70AF85" },
-                { value: 8, label: "Electronic Engineering", color: "#CD5D7D" },
+                { value: 10, label: "Computer Engineering", color: "#70AF85" },
+                { value: 6, label: "Electronic Engineering", color: "#CD5D7D" },
                 { value: 3, label: "Physics Engineering", color: "#6096B4" },
-                { value: 4, label: "Other Engineering", color: "#C6D57E" },
+                { value: 2, label: "Other Engineering", color: "#C6D57E" },
                 { value: 2, label: "Non-PoliTo", color: "#D3DEDC" },
             ]} />
             <Pie title="Members by level" threshold={5} slices={[
-                { value: 45, label: "Bachelor's", color: "#4e7bc1" },
-                { value: 36, label: "Master's", color: "#e1a463" },
-                { value: 4, label: "Ph.D.", color: "#3bdb84" }
+                { value: 47, label: "Bachelor's", color: "#4e7bc1" },
+                { value: 35, label: "Master's", color: "#e1a463" },
+                { value: 3, label: "Ph.D.", color: "#3bdb84" }
             ]} />
             <Pie title="International students rate" rotate={25} threshold={0} slices={[
                 { value: 61, label: "Domestic", color: "#DE8971" },
