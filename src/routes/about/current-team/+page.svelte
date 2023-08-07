@@ -103,7 +103,7 @@
     </section>
     <section aria-labelledby="members">
         <h2 id="members">Core members</h2>
-        <img loading="lazy" src="/img/team.jpg" alt="Members after the first general meeting of the team">
+        <img loading="lazy" src="/img/team/22-06.jpg" alt="Members after the first general meeting of the team">
         <ul class="cols no-list">
             {#each members as member}
                 <Member {...member} />
