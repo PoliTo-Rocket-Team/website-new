@@ -32,21 +32,20 @@
     <section aria-labelledby="executive">
         <h2 id="executive">Executive</h2>
         <ul class="executive-list no-list">
-            <Executive name="Fabio Meloni" role="President" mail="president@politorocketteam.it" img="Meloni.jpg" linkedin="fabioski01">
-                <p>Fabio is the founder and first President of the Team, and he is now a third-year Bachelor's student in Aerospace Engineering at Politecnico di Torino.</p>
-                <p>During his presidency, Fabio expanded the Team from 6 to 85+ members, involving undergraduate, graduate, and doctoral students. He is in charge of directing the executive, overseeing the budget and the financial performances, and communicating the Team’s vision, mission, and values.</p>
-                <p>Fabio is also the Chief Engineer of the Project Cavour, where he leads a subteam of 30+ students to research and develop Cavour, a reusable suborbital rocket with multiple apogee and payload configurations that was successfully launched and recovered at the 2023 Spaceport America Cup.</p>
-            </Executive>
-            <Executive name="Elena Dilorenzo" role="Chief Operating Officer" mail="elena.dilorenzo@studenti.polito.it" linkedin="elena-dilorenzo-294b5a20b" img="Dilorenzo.jpg">
-                <p>Elena is responsible for the Operations Subteam, which is in charge of logistics, outreach, and maintaining relations with the Team's partners. In addition, her work focuses on achieving operational excellence in the Team's technical and non-technical projects.</p>
-                <p>She is now in her last year of the Master's in Aerospace Engineering at Politecnico di Torino, specializing in the Aeromechanical and Systems field.</p>
-                <p>Elena was previously the president of AESA Torino - the Aerospace Engineering Students’ Association of Politecnico - a non-profit student group composed of 500+ members.</p>
-            </Executive>
-            <Executive name="Luca Santoro" role="Chief Technologist and Head of Strategy" mail="luca.santoro@polito.it" linkedin="luca-santoro-b16699151" img="Santoro.jpg">
-                <p>Luca graduated in Mechanical Engineering at Politecnico di Torino, where he is now a PhD student at the Department of Mechanical and Aerospace Engineering. After the foundation of the Team, he provided the human resources, a strong strategy, and technical support to the project.</p>
-                <p>As Chief Technologist, he is in charge of making decisions    for the technological infrastructure, in order to align it with the organization's goals.</p>
-                <p>As Head of Strategy, he is in charge of decisions concerning short and long term strategy, management, partnerships, cost-reduction, strategic initiatives and developing the Team's strategy and vision. The Head of Strategy is also the chairman of the Team's Advisor's board.</p>
-            </Executive>
+            <li>
+                <Executive name="Fabio Meloni" role="President" mail="president@politorocketteam.it" img="Meloni.jpg" linkedin="fabioski01" inverse>
+                    <p>Fabio is the founder and first President of the Team, and he is now a third-year Bachelor's student in Aerospace Engineering at Politecnico di Torino.</p>
+                    <p>During his presidency, Fabio expanded the Team from 6 to 85+ members, involving undergraduate, graduate, and doctoral students. He is in charge of directing the executive, overseeing the budget and the financial performances, and communicating the Team’s vision, mission, and values.</p>
+                    <p>Fabio is also the Chief Engineer of the Project Cavour, where he leads a subteam of 30+ students to research and develop Cavour, a reusable suborbital rocket with multiple apogee and payload configurations that was successfully launched and recovered at the 2023 Spaceport America Cup.</p>
+                </Executive>
+            </li>
+            <li>
+                <Executive name="Elena Dilorenzo" role="Chief Operating Officer" mail="elena.dilorenzo@studenti.polito.it" linkedin="elena-dilorenzo-294b5a20b" img="Dilorenzo.jpg">
+                    <p>Elena is responsible for the Operations Subteam, which is in charge of logistics, outreach, and maintaining relations with the Team's partners. In addition, her work focuses on achieving operational excellence in the Team's technical and non-technical projects.</p>
+                    <p>She is now in her last year of the Master's in Aerospace Engineering at Politecnico di Torino, specializing in the Aeromechanical and Systems field.</p>
+                    <p>Elena was previously the president of AESA Torino - the Aerospace Engineering Students’ Association of Politecnico - a non-profit student group composed of 500+ members.</p>
+                </Executive>
+            </li>
         </ul>
     </section>
     <section aria-labelledby="faculty-advisors">
@@ -89,16 +88,16 @@
             <Pie title="Members by program" threshold={5} rotate={255} slices={[
                 { value: 49, label: "Aerospace Engineering", color: "#316B83" },
                 { value: 13, label: "Mechanical Engineering", color: "#DE8971" },
-                { value: 8, label: "Computer Engineering", color: "#70AF85" },
-                { value: 8, label: "Electronic Engineering", color: "#CD5D7D" },
+                { value: 10, label: "Computer Engineering", color: "#70AF85" },
+                { value: 6, label: "Electronic Engineering", color: "#CD5D7D" },
                 { value: 3, label: "Physics Engineering", color: "#6096B4" },
-                { value: 4, label: "Other Engineering", color: "#C6D57E" },
+                { value: 2, label: "Other Engineering", color: "#C6D57E" },
                 { value: 2, label: "Non-PoliTo", color: "#D3DEDC" },
             ]} />
             <Pie title="Members by level" threshold={5} slices={[
-                { value: 45, label: "Bachelor's", color: "#4e7bc1" },
-                { value: 36, label: "Master's", color: "#e1a463" },
-                { value: 4, label: "Ph.D.", color: "#3bdb84" }
+                { value: 47, label: "Bachelor's", color: "#4e7bc1" },
+                { value: 35, label: "Master's", color: "#e1a463" },
+                { value: 3, label: "Ph.D.", color: "#3bdb84" }
             ]} />
             <Pie title="International students rate" rotate={25} threshold={0} slices={[
                 { value: 61, label: "Domestic", color: "#DE8971" },
@@ -108,7 +107,7 @@
     </section>
     <section aria-labelledby="members">
         <h2 id="members">Core members</h2>
-        <img loading="lazy" src="/img/team.jpg" alt="Members after the first general meeting of the team">
+        <img loading="lazy" src="/img/team/22-06.jpg" alt="Members after the first general meeting of the team">
         <ul class="cols no-list">
             {#each members as member}
                 <Member {...member} />
@@ -152,10 +151,16 @@
             gap: 3.5rem;
         }
     }
+
+    @media (max-width: 70rem) {
+        .executive-list li+li {
+            margin-top: 4.5rem;
+        }
+    }
     @media (min-width: 70rem) {
         .executive-list {
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(2,1fr);
             gap: 2rem;
         }
     }

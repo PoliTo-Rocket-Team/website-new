@@ -9,52 +9,34 @@
     export let linkedin: string;
     export let img: string;
 
-    const x = spring(0);
-    const y = spring(0);
-    function leave() {
-        x.set(0);
-        y.set(0);
-    }
-    function move(_x: number, _y: number, rect: DOMRect) {
-        x.set(2*_x/rect.width - 1);
-        y.set(2*_y/rect.height - 1);
-    }
+    export let inverse = false;
 </script>
 
-<li>
-    <div class="container" style="--x: {$x}; --y: {$y};" use:trackmouse={{move, leave}}>
-        <img src="/members/{img}" alt="{name} nicely dressed">
-        <div class="body">
-            <div class="text">
-                <h3>{name}</h3>
-                <span class="role">{role}</span>
-                <slot />
-            </div>
-            <div class="contacts">
-                <a href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer"><Icon icon="LinkedIn" /><span>LinkedIn</span></a>
-                <a href="mailto:{mail}" target="_blank" rel="noreferrer"><Icon icon="Email" /><span>Email</span></a>
-            </div>
-        </div>
+<div class="container" class:inverse>
+    <div class="text">
+        <h3>{name}</h3>
+        <span class="role">{role}</span>
+        <slot />
     </div>
-</li>
+    <div class="side">
+        <img src="/members/{img}" alt="{name} nicely dressed">
+        <ul class="contacts">
+            <li>
+                <a href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer"><Icon icon="LinkedIn" /><span>LinkedIn</span></a>
+            </li>
+            <li>
+                <a href="mailto:{mail}" target="_blank" rel="noreferrer"><Icon icon="Email" /><span>Email</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 <style>
-    .container {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 2rem;
-        background-color: var(--bg-1);
-        border-radius: .6rem;
-        overflow: hidden;
-        height: 100%;
-    }
     img {
         max-width: 100%;
         aspect-ratio: 1/1;
         object-fit: cover;
-    }
-    .body {
-        padding: 1rem;
+        border-radius: .4rem;
     }
     h3 {
         font-size: var(--fs-65);
@@ -84,46 +66,39 @@
     a:hover > :global(svg) {
         animation: shake .25s ease;
     }
-
-    @media (min-width: 30rem) {
-        li {
-            perspective: 35rem;
-        }
-        .container {
-            transform-origin: center;
-            transform-style: preserve-3d;
+    @media (max-width: 40rem) {
+        .side {
+            margin-top: 1rem;
         }
     }
-
-    @media (min-width: 30rem) and (max-width: 70rem) {
-        img { width: 40%; }
-        .body { width: 60%; }
+    @media (min-width: 40rem) {
         .container {
-            flex-direction: row;
-            transform: 
-                translateX(calc(var(--x) * 0.5rem))
-                translateY(calc(var(--y) * 0.5rem))
-                rotateY(calc(var(--x) * -1deg))
-                rotateX(calc(var(--y) * 2deg));
-        }
-    }
-    @media (min-width: 70rem) {
-        .body {
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.3rem;
         }
         .text {
-            margin-bottom: 1.5rem;
+            max-width: 40ch;
         }
-        .container {
-            margin-bottom: 0;
-            transform: 
-                translateX(calc(var(--x) * 0.5rem))
-                translateY(calc(var(--y) * 0.5rem))
-                rotateY(calc(var(--x) * -2deg))
-                rotateX(calc(var(--y) * 1deg));
+        :not(.inverse) .text {
+            text-align: right;
+            margin-left: auto;
+        }
+
+        .inverse {
+            grid-template-columns: 1fr 2fr;
+        }
+        .inverse .side { 
+            grid-row: 1;
+            grid-column: 1; 
+        }
+        .inverse .text { 
+            grid-row: 1;
+            grid-column: 2; 
+        }
+        .inverse a {
+            flex-direction: row-reverse;
+            margin-left: auto;
         }
     }
 </style>

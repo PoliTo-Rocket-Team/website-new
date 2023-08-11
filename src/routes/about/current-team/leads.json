@@ -61,7 +61,7 @@
             "role": "Coordinator",
             "mail": "pierluigi.mercadante",
             "linkedin": "pier-luigi-mercadante-b43125234",
-            "img": "Mercadante.png"
+            "img": "Mercadante.jpg"
         },{ 
             "name": "Luca Barnobi",
             "role": "Test Bench",
@@ -73,7 +73,7 @@
             "role": "Liquid System Architecture",
             "mail": "daniele.boccacciari",
             "linkedin": "daniele-boccacciari-637405222",
-            "img": "Boccacciari.png"
+            "img": "Boccacciari.jpg"
         },{ 
             "name": "Gloria Nallo",
             "role": "Thrust Chamber Assembly",
@@ -94,19 +94,13 @@
             "role": "Logistics Manager",
             "mail": "andrea.pantano",
             "linkedin": "andrea-pantano-84b805258",
-            "img": "Pantano.JPG"
+            "img": "Pantano.jpg"
         },{ 
             "name": "Federico Guglielmi",
             "role": "IT Manager",
             "mail": "federico.guglielmi",
             "linkedin": "Fedesky25",
             "img": "Guglielmi.jpg"
-        },{ 
-            "name": "Alessandro Di Nuzzo",
-            "role": "Media Manager",
-            "mail": "alessandro.dinuzzo",
-            "linkedin": "alessandro-di-nuzzo-999886254",
-            "img": "DiNuzzo.jpg"
         }
     ],
     "advisors": [
@@ -142,12 +136,6 @@
             "mail": "francesca.bracaglia",
             "linkedin": "francesca-bracaglia-a1000b214",
             "img": "Bracaglia.jpg" 
-        },{ 
-            "name": "Luca Santoro",
-            "role": "Head of Stategy",
-            "mail": "luca.santoro",
-            "linkedin": "luca-santoro-b16699151",
-            "img": "Santoro.jpg" 
         }
     ]
 }
