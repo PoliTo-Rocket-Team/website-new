@@ -28,6 +28,9 @@
                         </div>
                         {/if}
                         <span class="name">{member.name}</span>
+                        {#if Object.hasOwn(member, 'title')}
+                        <span class="title">{member.title}</span>
+                        {/if}
                         <span class="desc">{member.role}</span>
                     </li>
                     {/each}
