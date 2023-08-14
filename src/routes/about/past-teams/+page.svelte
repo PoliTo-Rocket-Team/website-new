@@ -15,7 +15,7 @@
 <main>
     <h1>Past Teams</h1>
     <section aria-labelledby="team-22-23">
-        <h2 id="team-21-22">2022/2023</h2>
+        <h2 id="team-22-23">2022/2023</h2>
         <div class="cols">
             {#each Object.entries(team) as [division, members]}
                 <h3 class="division-name">{division}</h3>
@@ -28,15 +28,13 @@
                         </div>
                         {/if}
                         <span class="name">{member.name}</span>
-                        {#if Object.hasOwn(member, 'title')}
+                        {#if "title" in member}
                         <span class="title">{member.title}</span>
                         {/if}
                         <span class="desc">{member.role}</span>
                     </li>
                     {/each}
-
-                </ul>
-                   
+                </ul>  
             {/each}
         </div>
     </section>
