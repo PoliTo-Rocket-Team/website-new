@@ -1,7 +1,7 @@
 <script>
+    import "@fontsource/plus-jakarta-sans/400-italic.css";
     import IconLink from "$lib/icons/IconLink.svelte";
     import Icon from "$lib/icons/IconLink.svelte";
-    
     import team from './22-23.json';
 
     // console.log(team.Cavour[0].name);
