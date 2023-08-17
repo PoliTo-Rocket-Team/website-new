@@ -2,11 +2,11 @@
     "Cavour": [
         { 
             "highlight": true,
-            "name": "Fabio Meloni" ,
+            "name": "Edoardo Viglietti" ,
             "role": "Chief Engineer" ,
-            "mail": "fabio.meloni" ,
-            "linkedin": "fabioski01",
-            "img": "Meloni.jpg"
+            "mail": "edoardo.viglietti" ,
+            "linkedin": "edoardoviglietti",
+            "img": "Viglietti.jpg"
         },{
             "name": "Samuele Martello",
             "role": "Avionics",
@@ -33,11 +33,11 @@
             "linkedin": "mattia-saba-5b6638258" ,
             "img": "Saba.jpg"
         },{ 
-            "name": "Edoardo Viglietti" ,
+            "name": "Riccardo Di Maria" ,
             "role": "Finite Element Analysis" ,
             "mail": "edoardo.viglietti" ,
-            "linkedin": "edoardoviglietti" ,
-            "img": "Viglietti.jpg" 
+            "linkedin": "riccardo-di-maria-455143257" ,
+            "img": null 
         }
     ],
     "Efesto": [
@@ -103,30 +103,13 @@
         }
     ],
     "advisors": [
-        { 
-            "name": "Gregorio Torchia",
-            "role": "Legal Advisor",
-            "mail": "NONE",
-            "linkedin": "gregorio-torchia-6514b8210",
-            "img": null
-        },{ 
-            "name": "Mattia Trombini",
-            "role": "Engineering Advisor",
-            "mail": "mattia.trombini@polito.it",
-            "linkedin": "mattia-trombini-01357a168",
-            "img": null
-        },{ 
-            "name": "Rebecca Masia",
-            "role": "Engineering Advisor",
-            "mail": "rebecca.masia@polito.it",
-            "linkedin": "rebecca-masia",
-            "img": null
-        },{ 
-            "name": "Gianluca Porta" ,
-            "role": "Strategy Advisor" ,
-            "mail": "NONE",
-            "linkedin": "gianluca-porta-4639b8180",
-            "img": null
+        {
+            "cofounder": true,
+            "name": "Fabio Meloni",
+            "role": "Project Cavour Advisor",
+            "mail": "fabio.meloni",
+            "linkedin": "fabioski01",
+            "img": "Meloni.jpg"
         },{ 
             "name": "Flora Punzi",
             "role": "Senior FEA analyst & Counselor",
