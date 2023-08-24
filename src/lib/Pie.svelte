@@ -89,8 +89,8 @@
         background-color: var(--clr);
     }
     li::before {
-        --c: var(--reverse) unset;
-        content: var(--c, '');
+        /* --c: var(--reverse) unset; */
+        content: var(--reverse, '');
         margin-right: .5ch;
     }
     li::after {
