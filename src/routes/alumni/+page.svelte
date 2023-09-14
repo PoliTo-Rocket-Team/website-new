@@ -72,6 +72,8 @@
         /* outline: 2px solid rgb(85, 0, 255); */
         /* border-radius: 25px; */
         /* padding: 0; */
+        padding-bottom: 2rem;
+        scrollbar-width: thin;
         
     }
     h2 {
