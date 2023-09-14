@@ -1,9 +1,15 @@
-<script>
+<script lang="ts">
     import Alumni from "./Alumni.svelte";
     import { leaders, cavour, efesto } from "./data";
     import DefineIcons from "$lib/icons/DefineIcons.svelte";
 
-    const beginning = Date.parse("2022-6-7");
+    // const extract = (p: Position) => p.start;
+    // const dates = Array.prototype.concat.call(
+    //     leaders.map(extract), 
+    //     cavour.map(extract), 
+    //     efesto.map(extract),
+    // );
+
 </script>
 
 <main>
@@ -14,8 +20,8 @@
 
     <div class="grid-container">
         
-        <div class="time title">Time</div>
-        <div class="time-content content ">time-content</div>
+        <div class="title">Time</div>
+        <div class="time content"></div>
 
         <h2 class="title">Team Leader</h2>
         <div class="content">
@@ -75,6 +81,14 @@
         padding-bottom: 2rem;
         scrollbar-width: thin;
         
+    }
+    .time {
+        position: relative;
+    }
+    .date {
+        position: absolute;
+        left: var(--left);
+
     }
     h2 {
         margin-bottom: 0;
