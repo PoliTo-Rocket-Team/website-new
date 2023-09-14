@@ -6,51 +6,57 @@
 
 
 <main>
-    <h1>Alumni</h1>
-       
-     <hr class="subtle stop-growth">
+    <div class="padded">
+        <h1>Alumni</h1>
+        <hr class="subtle stop-growth">
+    </div>
 
-    <section class="grid-container">
+    <div class="grid-container">
         
-            <div class="time title">Time</div>
-            <div class="time-content content ">time-content</div>
+        <div class="time title">Time</div>
+        <div class="time-content content ">time-content</div>
 
-            <div class="team-leader title">Team leader</div>
-            <div class="team-leader-content content">team-leader-content content
-                <div class="team-leader-content1"></div>
-            </div>
+        <div class="team-leader title">Team leader</div>
+        <div class="team-leader-content content">team-leader-content content
+            <div class="team-leader-content1"></div>
+        </div>
 
-            <div class="chief-engineers title span-row-2">chief-engineers</div>
-            <div class="chief-engineers-content content span-row-2">
-                <div class="chief-engineers-content-1 growing">
-                    
-                    <div class="card">
-                        <div class="card-img">
-                            <img src="./Meloni.jpg" alt="fabio Meloni">
-                        </div>
-                        <div class="card-info">
-                            <div class="card-name">fabio Meloni</div>
-                            <div class="card-role">Cavour chief-engineers</div>
-                        </div>
+        <div class="chief-engineers title span-row-2">chief-engineers</div>
+        <div class="chief-engineers-content content span-row-2">
+            <div class="chief-engineers-content-1 growing">
+                
+                <div class="card">
+                    <div class="card-img">
+                        <img src="/members/Meloni.jpg" alt="fabio Meloni">
                     </div>
-                    
+                    <div class="card-info">
+                        <div class="card-name">fabio Meloni</div>
+                        <div class="card-role">Cavour chief-engineers</div>
+                    </div>
                 </div>
-                <div class="chief-engineers-content-2 growing">chief-engineers-content-2</div>
+                
             </div>
+            <div class="chief-engineers-content-2 growing">chief-engineers-content-2</div>
+        </div>
 
-            <div class="notable-students title span-row-2">notable-students</div>
-            <div class="notable-students-content content span-row-2">
-                <div class="notable-students-content-1 growing">notable-students-content-1</div>
-                <div class="notable-students-content-2 growing">notable-students-content-2</div>
-            </div>
-        
-        
-    </section>
+        <div class="notable-students title span-row-2">notable-students</div>
+        <div class="notable-students-content content span-row-2">
+            <div class="notable-students-content-1 growing">notable-students-content-1</div>
+            <div class="notable-students-content-2 growing">notable-students-content-2</div>
+        </div>
+    </div>
 
 </main>
 
 
 <style>
+    main {
+        padding: 0;
+    }
+    .padded {
+        padding: var(--pad);
+        padding-top: max(6.5rem, var(--pad));
+    }
 
     .grid-container {
         display: grid;
@@ -58,11 +64,8 @@
         grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
         /* gap: 20px 20px; */
 
-
-
-
-        width: 84vw;
-        height: 100vh;
+        max-width: 100%;
+        overflow-x: scroll;
         border: 2px solid rgb(85, 0, 255);
         border-radius: 25px;
         /* padding: 0; */
@@ -74,10 +77,6 @@
         border: 2px solid rgb(255, 72, 0);
         border-radius: 5px;
         
-    }
-    .content {
-        /* border: 2px solid rgb(255, 72, 0);
-        border-radius: 5px; */
     }
 
     .span-row-2{
@@ -105,6 +104,8 @@
         align-items: center;
      
     }
-
+    img {
+        max-height: 5rem;
+    }
 
 </style>
