@@ -1,11 +1,6 @@
-<script context="module" lang="ts">
-    const beginning = Date.parse("2022-6-7");
-    const scale = 1e-3/3600/24/5;
-</script>
-
 <script lang="ts">
     import Icon from "$lib/icons/Icon.svelte";
-    import type { Alumni } from "./data";
+    import { scale, beginning, type Alumni } from "./data";
     export let data: Alumni;
     export let start: number;
     export let end = Date.now() + 40/scale;

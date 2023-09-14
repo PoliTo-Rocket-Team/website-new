@@ -56,3 +56,4 @@ export const efesto: Position[] = [
 ];
 
 export const scale = 1e-3/3600/24/5;
+export const beginning = Date.parse("2022-6-7");
