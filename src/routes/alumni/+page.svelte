@@ -1,9 +1,10 @@
 <script>
-    // import Lead from "../about/current-team/Lead.svelte";
+    import Alumni from "./Alumni.svelte";
+    import { leaders, cavour, efesto } from "./data";
+    import DefineIcons from "$lib/icons/DefineIcons.svelte";
 
+    const beginning = Date.parse("2022-6-7");
 </script>
-
-
 
 <main>
     <div class="padded">
@@ -18,26 +19,24 @@
 
         <h2 class="title">Team Leader</h2>
         <div class="content">
-            team-leader-content content
+            {#each leaders as data, i}
+                <Alumni {data} start={data.start} end={leaders[i+1]?.start} />
+            {/each}
         </div>
 
         <h2 class="title span-rows">Chief Engineers</h2>
         <div class="rows span-rows">
             <div class="content">
                 <h3>Cavour Chief Engineers</h3>
-                <div class="card">
-                    <div class="card-img">
-                        <img src="/members/Meloni.jpg" alt="fabio Meloni">
-                    </div>
-                    <div class="card-info">
-                        <div class="card-name">Fabio Meloni</div>
-                        <div class="card-role">Cavour chief-engineers</div>
-                    </div>
-                </div>
+                {#each cavour as data, i}
+                    <Alumni {data} start={data.start} end={cavour[i+1]?.start} />
+                {/each}
             </div>
             <div class="content">
                 <h3>Efesto Chief Engineers</h3>
-                chief-engineers-content-2
+                {#each efesto as data, i}
+                    <Alumni {data} start={data.start} end={efesto[i+1]?.start} />
+                {/each}
             </div>
         </div>
 
@@ -50,6 +49,8 @@
     </div>
 
 </main>
+
+<DefineIcons />
 
 
 <style>
@@ -82,6 +83,9 @@
         opacity: 0;
     }
     .title {
+        z-index: 2;
+        position: sticky;
+        left: 0;
         writing-mode: vertical-rl;
         white-space: nowrap;
         border-radius: 5px;
@@ -100,23 +104,12 @@
         grid-template-columns: 1fr;
     }
     .content {
-        display: flex;
         border: 1.5px solid rgb(255, 132, 0);
         border-radius: 5px;
         padding: .5rem;
-    }
-    .track {
-        width: var(--w);
-        outline: 1.5px solid rgb(68, 255, 0);
-    }
-    .card{
-        background: rgb(111, 86, 76);
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-    }
-    img {
-        max-height: 5rem;
+        display: grid;
+        grid-template-columns: 1fr;
+        /* padding-right: 80vw; */
     }
 
 </style>
