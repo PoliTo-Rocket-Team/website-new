@@ -16,33 +16,36 @@
         <div class="time title">Time</div>
         <div class="time-content content ">time-content</div>
 
-        <div class="team-leader title">Team leader</div>
-        <div class="team-leader-content content">team-leader-content content
-            <div class="team-leader-content1"></div>
+        <h2 class="title">Team Leader</h2>
+        <div class="content">
+            team-leader-content content
         </div>
 
-        <div class="chief-engineers title span-row-2">chief-engineers</div>
-        <div class="chief-engineers-content content span-row-2">
-            <div class="chief-engineers-content-1 growing">
-                
+        <h2 class="title span-rows">Chief Engineers</h2>
+        <div class="rows span-rows">
+            <div class="content">
+                <h3>Cavour Chief Engineers</h3>
                 <div class="card">
                     <div class="card-img">
                         <img src="/members/Meloni.jpg" alt="fabio Meloni">
                     </div>
                     <div class="card-info">
-                        <div class="card-name">fabio Meloni</div>
+                        <div class="card-name">Fabio Meloni</div>
                         <div class="card-role">Cavour chief-engineers</div>
                     </div>
                 </div>
-                
             </div>
-            <div class="chief-engineers-content-2 growing">chief-engineers-content-2</div>
+            <div class="content">
+                <h3>Efesto Chief Engineers</h3>
+                chief-engineers-content-2
+            </div>
         </div>
 
-        <div class="notable-students title span-row-2">notable-students</div>
-        <div class="notable-students-content content span-row-2">
-            <div class="notable-students-content-1 growing">notable-students-content-1</div>
-            <div class="notable-students-content-2 growing">notable-students-content-2</div>
+        <h2 class="title span-rows" style:--rows={3}>Notable students</h2>
+        <div class="rows span-rows" style:--rows={3}>
+            <div class="content">notable-students-content-1</div>
+            <div class="content">notable-students-content-2</div>
+            <div class="content">notable-students-content-3</div>
         </div>
     </div>
 
@@ -61,48 +64,56 @@
     .grid-container {
         display: grid;
         grid-template-columns: auto 1fr;
-        grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr;
-        /* gap: 20px 20px; */
+        grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr;
 
         max-width: 100%;
         overflow-x: scroll;
-        border: 2px solid rgb(85, 0, 255);
-        border-radius: 25px;
+        /* outline: 2px solid rgb(85, 0, 255); */
+        /* border-radius: 25px; */
         /* padding: 0; */
         
+    }
+    h2 {
+        margin-bottom: 0;
+    }
+    h3 {
+        position: absolute;
+        transform: scale(0);
+        opacity: 0;
     }
     .title {
         writing-mode: vertical-rl;
         white-space: nowrap;
-        border: 2px solid rgb(255, 72, 0);
         border-radius: 5px;
-        
+        text-align: center;
+        font-size: var(--fs-60);
+        font-weight: 500;
+        padding: 1.2rem .4rem;
+        transform: rotate(180deg);
     }
 
-    .span-row-2{
-        grid-row: span 2;
+    .span-rows {
+        grid-row: span var(--rows, 2);
     }
-    .notable-students-content , .chief-engineers-content , .team-leader-content{
+    .rows {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+    .content {
         display: flex;
-        flex-direction: column;
         border: 1.5px solid rgb(255, 132, 0);
         border-radius: 5px;
+        padding: .5rem;
     }
-    .growing{
-        flex-grow: 1;
-        border: 1.5px solid rgb(68, 255, 0);
-        border-radius: 5px;
-
-        display: flex;
-
+    .track {
+        width: var(--w);
+        outline: 1.5px solid rgb(68, 255, 0);
     }
     .card{
         background: rgb(111, 86, 76);
         border-radius: 5px;
         display: flex;
-        
         align-items: center;
-     
     }
     img {
         max-height: 5rem;
