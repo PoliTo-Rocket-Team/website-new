@@ -21,7 +21,22 @@
     <div class="grid-container">
         
         <div class="title">Time</div>
-        <div class="time content"></div>
+        <div class="time content">
+            <ol class="timeline">
+                <li>
+                    October 2022
+                </li>
+                <li>
+                    10 Agust 2023
+                </li>
+                <li>
+                    2 October 2023
+                </li>
+                <li>
+                    Today
+                </li>
+            </ol>
+        </div>
 
         <h2 class="title">Team Leader</h2>
         <div class="content">
@@ -82,9 +97,7 @@
         scrollbar-width: thin;
         
     }
-    .time {
-        position: relative;
-    }
+
     .date {
         position: absolute;
         left: var(--left);
@@ -127,5 +140,69 @@
         grid-template-columns: 1fr;
         /* padding-right: 80vw; */
     }
+
+
+    .time {
+        position: relative;
+        display: flex;
+        justify-content: stretch;
+        align-items: center;
+    }
+
+    
+
+    .timeline {
+  position: relative;
+  display: block;
+  background-color: rgb(255, 132, 0);
+  height: 4px;
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+.timeline::before, .timeline::after {
+  content: "";
+  position: absolute;
+  top: -8px;
+  display: block;
+  width: 0;
+  height: 0;
+  border-radius: 10px;
+  border: 10px solid rgb(255, 132, 0);
+}
+
+.timeline::before {
+  left: -20px;
+}
+
+.timeline::after {
+  right: -10px;
+  border: 10px solid transparent;
+  border-radius: 30px;
+  border-right: 0;
+  border-left: 20px solid rgb(255, 132, 0);
+}
+
+.timeline li {
+  position: relative;
+  display: block;
+  float: left;
+  width: 110px;
+  transform: rotate(-45deg);
+  top: -65px;
+ }
+
+.timeline li::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: -30px;
+  border: 3px solid rgb(255, 132, 0);
+  border-radius: 15px;
+  width: 10px;
+  height: 10px;
+  background: #F0F0F0;
+}
+
 
 </style>
