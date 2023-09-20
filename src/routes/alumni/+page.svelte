@@ -1,6 +1,6 @@
 <script lang="ts">
     import Alumni from "./Alumni.svelte";
-    import { leaders, cavour, efesto } from "./data";
+    import { leaders, cavour, efesto ,beginning ,scale } from "./data";
     import DefineIcons from "$lib/icons/DefineIcons.svelte";
 
     // const extract = (p: Position) => p.start;
@@ -24,10 +24,10 @@
         <div class="time content">
             <div class="timeline"></div>
             <ol>
-                <li class="date" style:--left="3rem">October 2022</li>
-                <li class="date" style:--left="7rem">10 Agust 2023</li>
-                <li class="date" style:--left="19rem">2 October 2023</li>
-                <li class="date" style:--left="32rem">Today</li>
+                <li class="date" style:--left="{((efesto[0]?.start)-beginning)*scale}rem">October 2022</li>
+                <li class="date" style:--left="{((cavour[1]?.start)-beginning)*scale}rem">17 Agust 2023</li>
+                <li class="date" style:--left="{((leaders[1]?.start)-beginning)*scale}rem">2 October 2023</li>
+                <!-- <li class="date" style:--left="32rem">Today</li> -->
             </ol>
         </div>
 
