@@ -23,19 +23,11 @@
         <div class="title">Time</div>
         <div class="time content">
             <div class="timeline"></div>
-            <ol class="date-list">
-                <li>
-                    October 2022
-                </li>
-                <li>
-                    10 Agust 2023
-                </li>
-                <li>
-                    2 October 2023
-                </li>
-                <li>
-                    Today
-                </li>
+            <ol>
+                <li class="date" style:--left="3rem">October 2022</li>
+                <li class="date" style:--left="7rem">10 Agust 2023</li>
+                <li class="date" style:--left="19rem">2 October 2023</li>
+                <li class="date" style:--left="32rem">Today</li>
             </ol>
         </div>
 
@@ -91,18 +83,13 @@
 
         max-width: 100%;
         overflow-x: scroll;
+        overflow-y: visible;
         /* outline: 2px solid rgb(85, 0, 255); */
         /* border-radius: 25px; */
         /* padding: 0; */
         padding-bottom: 2rem;
         scrollbar-width: thin;
         
-    }
-
-    .date {
-        position: absolute;
-        left: var(--left);
-
     }
     h2 {
         margin-bottom: 0;
@@ -145,9 +132,7 @@
 
     .time {
         position: relative;
-        display: flex;
-        justify-content: stretch;
-        align-items: center;
+        height: 20ch;
     }
     .timeline {
         position: absolute;
@@ -183,20 +168,24 @@
         border-left: 20px solid rgb(255, 132, 0);
     }
 
-    .date-list li {
-        position: relative;
+    .date {
         display: block;
+        position: absolute;
+        left: var(--left);
+        top: 50%;
         float: left;
-        width: 110px;
-        transform: rotate(-45deg);
-        top: -65px;
+        width: max-content;
+        transform-origin: left center;
+        padding-left: 1.3ch;
+        transform: translateY(-50%) rotate(-45deg);
     }
 
-    .date-list li::before {
+    .date::before {
         content: "";
         position: absolute;
-        top: 3px;
-        left: -30px;
+        top: 50%;
+        left: 0;
+        transform: translate(-50%, -50%);
         border: 3px solid rgb(255, 132, 0);
         border-radius: 15px;
         width: 10px;
