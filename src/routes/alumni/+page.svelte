@@ -22,7 +22,8 @@
         
         <div class="title">Time</div>
         <div class="time content">
-            <ol class="timeline">
+            <div class="timeline"></div>
+            <ol class="date-list">
                 <li>
                     October 2022
                 </li>
@@ -148,61 +149,60 @@
         justify-content: stretch;
         align-items: center;
     }
-
-    
-
     .timeline {
-  position: relative;
-  display: block;
-  background-color: rgb(255, 132, 0);
-  height: 4px;
-  flex-grow: 1;
-  margin-left: 20px;
-}
+        position: absolute;
+        left: .5rem;
+        right: .5rem;
+        top: 50%;
+        width: calc(100% - 1rem);
+        transform: translateY(-50%);
+        background-color: rgb(255, 132, 0);
+        height: 4px;
+    }
 
-.timeline::before, .timeline::after {
-  content: "";
-  position: absolute;
-  top: -8px;
-  display: block;
-  width: 0;
-  height: 0;
-  border-radius: 10px;
-  border: 10px solid rgb(255, 132, 0);
-}
+    .timeline::before, .timeline::after {
+        content: "";
+        position: absolute;
+        top: -8px;
+        display: block;
+        width: 0;
+        height: 0;
+        border-radius: 10px;
+        border: 10px solid rgb(255, 132, 0);
+    }
 
-.timeline::before {
-  left: -20px;
-}
+    .timeline::before {
+        left: -5px;
+    }
 
-.timeline::after {
-  right: -10px;
-  border: 10px solid transparent;
-  border-radius: 30px;
-  border-right: 0;
-  border-left: 20px solid rgb(255, 132, 0);
-}
+    .timeline::after {
+        right: -5px;
+        border: 10px solid transparent;
+        border-radius: 30px;
+        border-right: 0;
+        border-left: 20px solid rgb(255, 132, 0);
+    }
 
-.timeline li {
-  position: relative;
-  display: block;
-  float: left;
-  width: 110px;
-  transform: rotate(-45deg);
-  top: -65px;
- }
+    .date-list li {
+        position: relative;
+        display: block;
+        float: left;
+        width: 110px;
+        transform: rotate(-45deg);
+        top: -65px;
+    }
 
-.timeline li::before {
-  content: "";
-  position: absolute;
-  top: 3px;
-  left: -30px;
-  border: 3px solid rgb(255, 132, 0);
-  border-radius: 15px;
-  width: 10px;
-  height: 10px;
-  background: #F0F0F0;
-}
+    .date-list li::before {
+        content: "";
+        position: absolute;
+        top: 3px;
+        left: -30px;
+        border: 3px solid rgb(255, 132, 0);
+        border-radius: 15px;
+        width: 10px;
+        height: 10px;
+        background: #F0F0F0;
+    }
 
 
 </style>
