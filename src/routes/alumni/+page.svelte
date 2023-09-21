@@ -2,6 +2,7 @@
     import Alumni from "./Alumni.svelte";
     import { leaders, cavour, efesto ,beginning ,scale } from "./data";
     import DefineIcons from "$lib/icons/DefineIcons.svelte";
+    const complete = new Intl.DateTimeFormat("en-US", { day: "numeric", month: "long", year: "numeric" });
 
     // const extract = (p: Position) => p.start;
     // const dates = Array.prototype.concat.call(
@@ -9,6 +10,13 @@
     //     cavour.map(extract), 
     //     efesto.map(extract),
     // );
+
+
+    const timestamps = [...leaders, ...cavour, ...efesto].map(p => p.start);
+    const dates = [...new Set(timestamps)];
+
+ 
+
 
 </script>
 
@@ -24,10 +32,10 @@
         <div class="time content">
             <div class="timeline"></div>
             <ol>
-                <li class="date" style:--left="{((efesto[0]?.start)-beginning)*scale}rem">October 2022</li>
-                <li class="date" style:--left="{((cavour[1]?.start)-beginning)*scale}rem">17 Agust 2023</li>
-                <li class="date" style:--left="{((leaders[1]?.start)-beginning)*scale}rem">2 October 2023</li>
-                <!-- <li class="date" style:--left="32rem">Today</li> -->
+                {#each dates as date}
+                    <li class="date" style:--left="{(date-beginning)*scale}rem">{complete.format(new Date(date))}</li>
+                {/each}
+                
             </ol>
         </div>
 
@@ -179,6 +187,9 @@
         padding-left: 1.3ch;
         transform: translateY(-50%) rotate(-45deg);
     }
+    .date:first-child {
+        margin-left: .8rem;
+    }
 
     .date::before {
         content: "";
@@ -192,6 +203,7 @@
         height: 10px;
         background: #F0F0F0;
     }
+    
 
 
 </style>
