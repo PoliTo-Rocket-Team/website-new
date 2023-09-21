@@ -27,6 +27,7 @@
         width: var(--width);
     }
     .card {
+        z-index: 2;
         position: sticky; 
         left: 3.4rem;
         background-color: var(--bg-1);
