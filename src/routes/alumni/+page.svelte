@@ -68,8 +68,12 @@
             <div class="content">notable-students-content-2</div>
             <div class="content">notable-students-content-3</div>
         </div>
+        <div class="verticals">
+            {#each dates as date}
+                <div style:--left="{(date-beginning)*scale}rem"></div>
+            {/each}
+        </div>
     </div>
-
 </main>
 
 <DefineIcons />
@@ -86,7 +90,7 @@
 
     .grid-container {
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: auto auto 1fr;
         grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr;
 
         max-width: 100%;
@@ -108,7 +112,7 @@
         opacity: 0;
     }
     .title {
-        z-index: 2;
+        z-index: 4;
         position: sticky;
         left: 0;
         writing-mode: vertical-rl;
@@ -131,20 +135,31 @@
         grid-template-columns: 1fr;
     }
     .content {
-        border: 1.5px solid rgb(255, 132, 0);
+        position: relative;
         border-radius: 5px;
         padding: .5rem;
         display: grid;
         grid-template-columns: 1fr;
         /* padding-right: 80vw; */
     }
-
+    .content::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 50%;
+        height: 2px;
+        width: 100%;
+        background-color: #9090907f;
+        transform: translateY(-1px);
+    }
 
     .time {
         position: relative;
         height: 12ch;
     }
     .timeline {
+        z-index: 2;
         position: absolute;
         left: .5rem;
         right: .5rem;
@@ -179,6 +194,7 @@
     }
 
     .date {
+        z-index: 3;
         display: block;
         position: absolute;
         left: var(--left);
@@ -205,4 +221,22 @@
         background: #F0F0F0;
     }
 
+    .verticals {
+        width: 0;
+        height: 100%;
+        grid-row: 1/-1;
+        grid-column: 2;
+        position: relative;
+        overflow-x: visible;
+    }
+    .verticals > div {
+        position: absolute;
+        z-index: 1;
+        top: calc(12ch - 1.5rem);
+        left: var(--left);
+        height: calc(100% - 12ch + 1.5rem);
+        width: 2px;
+        background-color: #9090907f;
+        transform: translateX(-1px);
+    }
 </style>
