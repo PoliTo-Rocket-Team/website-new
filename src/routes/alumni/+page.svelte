@@ -113,12 +113,12 @@
         left: 0;
         writing-mode: vertical-rl;
         white-space: nowrap;
-        border-radius: 5px;
         text-align: center;
         font-size: var(--fs-60);
         font-weight: 500;
         padding: 1.2rem .4rem;
         transform: rotate(180deg);
+        background-color: var(--bg-0);
     }
 
     .span-rows {
@@ -203,7 +203,5 @@
         height: 10px;
         background: #F0F0F0;
     }
-    
-
 
 </style>
