@@ -142,7 +142,7 @@
         grid-template-columns: 1fr;
         /* padding-right: 80vw; */
     }
-    .content::before {
+    .content:not(.time)::before {
         content: '';
         position: absolute;
         left: 0;
