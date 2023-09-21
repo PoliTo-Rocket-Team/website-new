@@ -140,15 +140,15 @@
 
     .time {
         position: relative;
-        height: 20ch;
+        height: 12ch;
     }
     .timeline {
         position: absolute;
         left: .5rem;
         right: .5rem;
-        top: 50%;
+        bottom: 1rem;
         width: calc(100% - 1rem);
-        transform: translateY(-50%);
+        transform: translateY(50%);
         background-color: rgb(255, 132, 0);
         height: 4px;
     }
@@ -180,12 +180,11 @@
         display: block;
         position: absolute;
         left: var(--left);
-        top: 50%;
-        float: left;
+        bottom: 1rem;
         width: max-content;
         transform-origin: left center;
-        padding-left: 1.3ch;
-        transform: translateY(-50%) rotate(-45deg);
+        padding-left: 1.5ch;
+        transform: translateY(50%) rotate(-45deg);
     }
     .date:first-child {
         margin-left: .8rem;
