@@ -120,7 +120,9 @@
         transform: rotate(180deg);
         background-color: var(--bg-0);
     }
-
+    .title:first-child {
+        text-align: start;
+    }
     .span-rows {
         grid-row: span var(--rows, 2);
     }
@@ -146,7 +148,7 @@
         position: absolute;
         left: .5rem;
         right: .5rem;
-        bottom: 1rem;
+        bottom: 1.5rem;
         width: calc(100% - 1rem);
         transform: translateY(50%);
         background-color: rgb(255, 132, 0);
@@ -180,7 +182,7 @@
         display: block;
         position: absolute;
         left: var(--left);
-        bottom: 1rem;
+        bottom: 1.5rem;
         width: max-content;
         transform-origin: left center;
         padding-left: 1.5ch;
