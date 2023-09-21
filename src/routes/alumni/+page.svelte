@@ -70,7 +70,7 @@
         </div>
         <div class="verticals">
             {#each dates as date}
-                <div style:--left="{(date-beginning)*scale}rem"></div>
+                <div style:--right="{(beginning-date)*scale}rem"></div>
             {/each}
         </div>
     </div>
@@ -137,7 +137,7 @@
     .content {
         position: relative;
         border-radius: 5px;
-        padding: .5rem;
+        /* padding: .5rem; */
         display: grid;
         grid-template-columns: 1fr;
         /* padding-right: 80vw; */
@@ -161,10 +161,10 @@
     .timeline {
         z-index: 2;
         position: absolute;
-        left: .5rem;
+        left: 0;
         right: .5rem;
         bottom: 1.5rem;
-        width: calc(100% - 1rem);
+        width: calc(100% - .5rem);
         transform: translateY(50%);
         background-color: rgb(255, 132, 0);
         height: 4px;
@@ -182,7 +182,7 @@
     }
 
     .timeline::before {
-        left: -5px;
+        left: -9px;
     }
 
     .timeline::after {
@@ -204,9 +204,6 @@
         padding-left: 1.5ch;
         transform: translateY(50%) rotate(-45deg);
     }
-    .date:first-child {
-        margin-left: .8rem;
-    }
 
     .date::before {
         content: "";
@@ -222,7 +219,7 @@
     }
 
     .verticals {
-        width: 0;
+        width: 2ch;
         height: 100%;
         grid-row: 1/-1;
         grid-column: 2;
@@ -233,10 +230,10 @@
         position: absolute;
         z-index: 1;
         top: calc(12ch - 1.5rem);
-        left: var(--left);
+        right: var(--right);
         height: calc(100% - 12ch + 1.5rem);
         width: 2px;
         background-color: #9090907f;
-        transform: translateX(-1px);
+        transform: translateX(1px);
     }
 </style>

@@ -25,6 +25,7 @@
         grid-row: 1;
         margin-left: var(--left);
         width: var(--width);
+        padding: .5rem;
     }
     .card {
         z-index: 2;
