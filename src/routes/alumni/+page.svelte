@@ -46,27 +46,37 @@
             {/each}
         </div>
 
-        <h2 class="title span-rows">Chief Engineers</h2>
+        <h2 class="title span-rows">Cavour</h2>
         <div class="rows span-rows">
             <div class="content">
-                <h3>Cavour Chief Engineers</h3>
+                <h3>Chief Engineers</h3>
                 {#each cavour as data, i}
                     <Alumni {data} start={data.start} end={cavour[i+1]?.start} />
                 {/each}
             </div>
             <div class="content">
-                <h3>Efesto Chief Engineers</h3>
+                <h3>Notable students</h3>
+                <!-- {#each efesto as data, i}
+                    <Alumni {data} start={data.start} end={efesto[i+1]?.start} />
+                {/each} -->
+            </div>
+        </div>
+
+
+        <h2 class="title span-rows">Efesto</h2>
+        <div class="rows span-rows">
+            <div class="content">
+                <h3>Chief Engineers</h3>
                 {#each efesto as data, i}
                     <Alumni {data} start={data.start} end={efesto[i+1]?.start} />
                 {/each}
             </div>
-        </div>
-
-        <h2 class="title span-rows" style:--rows={3}>Notable students</h2>
-        <div class="rows span-rows" style:--rows={3}>
-            <div class="content">notable-students-content-1</div>
-            <div class="content">notable-students-content-2</div>
-            <div class="content">notable-students-content-3</div>
+            <div class="content">
+                <h3>Notable students</h3>
+                <!-- {#each efesto as data, i}
+                    <Alumni {data} start={data.start} end={efesto[i+1]?.start} />
+                {/each} -->
+            </div>
         </div>
         <div class="verticals">
             {#each dates as date}
