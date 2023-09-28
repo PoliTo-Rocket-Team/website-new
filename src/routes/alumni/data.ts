@@ -29,6 +29,16 @@ export const leaders: Position[] = [
     }
 ];
 
+export const operations: Position[] = [
+    {
+        start: Date.parse("2022-6-7"),
+        name: "Elena Dilorenzo",
+        description: "long text...",
+        img: "Dilorenzo.jpg",
+        linkedin: "elena-dilorenzo-294b5a20b"
+    }
+]
+
 export const cavour: Position[] = [
     {
         start: Date.parse("2022-6-7"),

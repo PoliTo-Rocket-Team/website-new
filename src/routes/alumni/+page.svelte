@@ -1,6 +1,6 @@
 <script lang="ts">
     import Alumni from "./Alumni.svelte";
-    import { leaders, cavour, efesto ,beginning ,scale } from "./data";
+    import { leaders, cavour, efesto, operations ,beginning ,scale } from "./data";
     import DefineIcons from "$lib/icons/DefineIcons.svelte";
     const complete = new Intl.DateTimeFormat("en-US", { day: "numeric", month: "long", year: "numeric" });
 
@@ -12,7 +12,7 @@
     // );
 
 
-    const timestamps = [...leaders, ...cavour, ...efesto].map(p => p.start);
+    const timestamps = [...leaders, ...cavour, ...efesto, ...operations].map(p => p.start);
     const dates = [...new Set(timestamps)];
 
  
@@ -55,7 +55,7 @@
                 {/each}
             </div>
             <div class="content">
-                <h3>Notable students</h3>
+                <h3>Notable student</h3>
                 <!-- {#each efesto as data, i}
                     <Alumni {data} start={data.start} end={efesto[i+1]?.start} />
                 {/each} -->
@@ -72,12 +72,29 @@
                 {/each}
             </div>
             <div class="content">
-                <h3>Notable students</h3>
+                <h3>Notable student</h3>
                 <!-- {#each efesto as data, i}
                     <Alumni {data} start={data.start} end={efesto[i+1]?.start} />
                 {/each} -->
             </div>
         </div>
+
+        <h2 class="title span-rows">Operations</h2>
+        <div class="rows span-rows">
+            <div class="content">
+                <h3>Chief Operating Officer</h3>
+                {#each operations as data, i}
+                    <Alumni {data} start={data.start} end={operations[i+1]?.start} />
+                {/each}
+            </div>
+            <div class="content">
+                <h3>Notable student</h3>
+                <!-- {#each efesto as data, i}
+                    <Alumni {data} start={data.start} end={efesto[i+1]?.start} />
+                {/each} -->
+            </div>
+        </div>
+
         <div class="verticals">
             {#each dates as date}
                 <div style:--right="{(beginning-date)*scale}rem"></div>
