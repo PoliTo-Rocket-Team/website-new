@@ -46,8 +46,8 @@
             {/each}
         </div>
 
-        <h2 class="title span-rows">Cavour</h2>
-        <div class="rows span-rows">
+        <h2 class="title">Cavour</h2>
+        <div class="rows">
             <div class="content">
                 <h3>Chief Engineers</h3>
                 {#each cavour as data, i}
@@ -63,8 +63,8 @@
         </div>
 
 
-        <h2 class="title span-rows">Efesto</h2>
-        <div class="rows span-rows">
+        <h2 class="title">Efesto</h2>
+        <div class="rows">
             <div class="content">
                 <h3>Chief Engineers</h3>
                 {#each efesto as data, i}
@@ -79,8 +79,8 @@
             </div>
         </div>
 
-        <h2 class="title span-rows">Operations</h2>
-        <div class="rows span-rows">
+        <h2 class="title">Operations</h2>
+        <div class="rows">
             <div class="content">
                 <h3>Chief Operating Officer</h3>
                 {#each operations as data, i}
@@ -118,7 +118,7 @@
     .grid-container {
         display: grid;
         grid-template-columns: auto auto 1fr;
-        grid-template-rows: auto 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-rows: auto auto 1fr 1fr 1fr;
 
         max-width: 100%;
         overflow-x: scroll;
@@ -153,9 +153,6 @@
     }
     .title:first-child {
         text-align: start;
-    }
-    .span-rows {
-        grid-row: span var(--rows, 2);
     }
     .rows {
         display: grid;
