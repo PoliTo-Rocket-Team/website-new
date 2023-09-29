@@ -3,6 +3,8 @@
     import "@fontsource/anonymous-pro/400.css";
     import Position from "./Position.svelte";
     import FAQs from "./FAQs.svelte";
+
+    import positions from "./data.json";
 </script>
 
 <svelte:head>
@@ -24,145 +26,41 @@
             <span>Division</span>
             <div class="code-label"><span>Code</span></div>
         </div>
-        <Position role="Sponsoring Manager" subteam="Operations" division="Logistics" code="OPS-LGS-001">
-            <h4>Description</h4>
-            <p>The Sponsoring Manager is responsible for finding new sponsors and keeping contacts with the present ones. You will have to select companies who could be interested in sponsoring the team, organize meetings with them and draw up sponsoring contracts. As a member of the Logistics Division, other logistics tasks, non concerning the sponsoring field, could be assigned to the Sponsoring Manager if necessary.</p>
-            <h4>Desirable skills</h4>
-            <ul>
-                <li>Communication skills</li>
-                <li>Good writing skills in both Italian and English</li>
-                <li>Teamwork skills</li>
-                <li>Resourcefulness</li>
-                <li>Flexibility</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
-        <Position role="Facility Manager" subteam="Operations" division="Logistics" code="OPS-LGS-002">
-            <h4>Description</h4>
-            <p>The Facility Manager would be responsible for the inventory management system. You will have to keep track of all the materials and equipment that enter or leave the laboratory. You will also have to make sure that anyone who needs to access the laboratory or other DIMEAS rooms has the proper habilitation, and keep track of the accesses. As a member of the Logistics Division, other logistics tasks, non concerning the facilities and inventory management, could be assigned to the Facility Manager if necessary.</p>
-            <h4>Desirable skills</h4>
-            <ul>
-                <li>Experience in inventories management (preferred, not required)</li>
-                <li>Knowledge of the Office Suite</li>
-                <li>Attention to details</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
-        <Position role="Events Specialist" subteam="Operations" division="Logistics" code="OPS-LGS-003">
-            <h4>Description</h4>
-            <p>The Events Specialist is responsible for the organization of team events, including conferences and team building events. You may be asked by the Team Leads to help them organize Division, Subteam and Plenary meetings, and related events. You will have to come up with your own team building events ideas. The Events Specialist is also responsible for the process of registration for the events. As a member of the Logistics Division, other logistics tasks, non concerning the events organization, could be assigned to the Events Specialist if necessary.</p>
-            <h4>Desirable skills</h4>
-            <ul>
-                <li>Communication skills</li>
-                <li>Teamwork skills</li>
-                <li>Resourcefulness</li>
-                <li>Flexibility</li>
-                <li>Proactivity</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
-        <Position role="Operational Excellence Specialist" subteam="Operations" division="Logistics" code="OPS-LGS-004">
-            <h4>Description</h4>
-            <p>The Operational Excellence Specialist is responsible for the GANNT chart of the team, using Microsoft Project. You will have to check the meeting minutes of the divisions you will be asked to support, and keep the chart updated. As a member of the Logistics Division, other logistics tasks, non concerning the GANNT, could be assigned to the Events Specialist if necessary.</p>
-            <h4>Desirable skills</h4>
-            <ul>
-                <li>Experience with Microsoft Project (not required, but highly recommended)</li>
-                <li>Communication skills</li>
-                <li>Teamwork skills</li>
-                <li>Flexibility and availability</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/VcTJJrpjMhPjGuVw8" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
-        <Position role="Web Developer" subteam="Operations" division="IT" code="OPS-ITC-001">
-            <h4>Description</h4>
-            <p>The role of the web developer is to manage the website in all its aspects, in order to present the team at the best. In particular, you will work with web technologies (SCSS, TypeScript, Svelte) to design, create, and mantain all the website sections, based on the team directives.</p>
-            <p>Mid term tasks could be:</p>
-            <ul>
-                <li>Improve the projects page,</li>
-                <li>Create page transition effects,</li>
-                <li>Create and maintain the outreach page,</li>
-                <li>Enhance the overall user experience and interactions with better animations and with 3D models.</li>
-            </ul>
-            <p>A relatively big, possible future project could be the development of a backend that handles recruitment, renders pages based on information from (admin) lead engineers, and possibly receives and stores data collected during flights. </p>
-            <h4>Required skills</h4>
-            <ul>
-                <li>Proficiency in CSS</li>
-                <li>good knowledge of modern JavaScript (ECMAScript 2018)</li>
-            </ul>
-            <h4>Preferred knowledge</h4>
-            <ul>
-                <li>SCSS</li>
-                <li>TypeScript</li>
-                <li>Svelte</li>
-                <li>Git</li>
-            </ul>
-            <h4>Desired knowledge</h4>
-            <ul>
-                <li>Vite</li>
-                <li>Node.js</li>
-                <li>SvelteKit</li>
-                <li>Three.js library</li>
-                <li>Accessible Rich Internet Applications (ARIA)</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/arcXaamqyvxy4FYE7" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
-        <Position role="Graphics Designer" subteam="Operations" division="Media" code="OPS-MDA-001" >
-            <h4>Description & Responsibilities</h4>
-            <p>As a Graphic Designer, you will be in charge of designing the Team’s mission patches and logos, and help design the external coating of the Team’s rockets. You will design social media posts and website UI & UX in tight collaboration with photographers, video makers, rendering specialists, and web developers, leveraging modern design styles and patterns.</p>
-            <h4>Skills & Experience (recommended, not required)</h4>
-            <ul>
-                <li>Knowledge of prototyping softwares and graphics softwares</li>
-                <li>Attention to details and being up to date on the latest trends</li>
-                <li>Collaboration with other IT & Media members</li>
-                <li>Experience in design motion graphics (charts, lower-thirds, GIFs, Animations, animated social media ads)</li>
-                <li>Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar</li>
-                <li>Intermediate English writing skills</li>
-                <li>Knowledge of Google Suite</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/YkbJ4NzrXGN8r1xc9" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
-        <Position role="Social Media Manager" subteam="Operations" division="Media" code="OPS-MDA-002" >
-            <h4>Description & Responsibilities</h4>
-            <p>PoliTo Rocket Team is looking for one or more Social Media Manager(s), who will have the responsibility to maintain and enhance the team’s image by implementing social media platforms’ content strategies.</p>
-            <p>This role will be required to run advertising campaigns and drive engagement by creating high-quality original content. The manager(s) should also oversee our community by managing interactions across all platforms.</p>
-            <p>The Social Media Manager(s) will have to collaborate with the Sponsoring Managers and the Outreach Team.</p>
-            <h4>Skills & Experience (recommended, not required)</h4>
-            <ul>
-                <li>Knowledge of the main social media platforms used by the Team (Instagram, LinkedIn, Twitter) and of additional social media platform to expand the Team's presence</li>
-                <li>Professionalism and responsibility</li>
-                <li>Attention to details and being up to date on the latest trends</li>
-                <li>Previous experience in the media management and previous experience with paid content promotions</li>
-                <li>Experience in design motion graphics (charts, lower-thirds, GIFs, Animations, animated social media ads)</li>
-                <li>Proficiency with graphic design software such as Canva, Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar</li>
-                <li>Intermediate/Advanced English writing skills</li>
-                <li>Knowledge of Google Suite</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/bzTseETDcFmjXek86" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
-        <Position role="Hardware/Embedded Software Engineer" subteam="Cavour" division="Avionics" code="CVR-AVN-001">
-            <h4>Description</h4>
-            <ul>
-                <li>Design, prototyping, manufacture and testing of printed circuit boards and electrical circuits</li>
-                <li>Design, development and testing of on-board software</li>
-            </ul>
-            <h4>Desireable skills</h4>
-            <ul>
-                <li>Knowledge in circuit theory and electronics</li>
-                <li>Prior experience with embedded systems and microcontrollers</li>
-                <li>Familiarity with PCB CAD software (e.g. KiCAD)</li>
-                <li>Good programming skills in C/C++</li>
-                <li>Good interdisciplinary communication skills</li>
-            </ul>
-            <a class="btn" href="https://forms.gle/JtC9MrEwYkUEYk7t5" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
-        <Position role="Mission Analyst/Software Engineer" subteam="Cavour" division="Mission Analysis" code="CVR-MSA-001">
-            <h4>Description</h4>
-            <p>We are seeking software engineers to join our team and design and create a model in Simulink to simulate and analyze the team’s rockets. Hence the task focuses on creating an accurate virtual model that can simulate the behavior of the rockets under different conditions. This will involve selecting appropriate physical models and parameters to represent the rocket's propulsion, aerodynamics, and control systems. Furthermore the created model must ensure that the simulation is  accurate and that it can be used to analyze the rocket's performance.</p>
-            <h4>Skills</h4>
-            <p>Experience in software engineering and testing of open/closed loop controls and system dynamics, and very good knowledge of MATLAB/SIMULINK is required.</p>
-            <p>In addition to the technical skills required for the task, proficiency in the English language, experience with LaTeX and the ability to work well in a team are also desirable.</p>
-            <a class="btn" href="https://forms.gle/W5KnsSJPYFKawjs96" target="_blank" rel="noreferrer">Apply</a>
-        </Position>
+        {#each positions as pos}
+            <Position role={pos.name} subteam={pos.subteam} division={pos.division} code={pos.code}>
+                <h4>Description</h4>
+                {#if Array.isArray(pos.description)}
+                    {#each pos.description as paragraph}
+                        {#if Array.isArray(paragraph)}
+                            <ul>
+                                {#each paragraph as item}
+                                    <li>{item}</li>
+                                {/each}
+                            </ul>
+                        {:else}
+                            <p>{paragraph}</p>
+                        {/if}
+                    {/each}
+                {:else}
+                    <p>{pos.description}</p>
+                {/if}
+                {#if pos.required}
+                    <h4>Required skills/knowledge</h4>
+                    <ul>
+                        {#each pos.required as item}
+                            <li>{item}</li>
+                        {/each}
+                    </ul>
+                {/if}
+                <h4>Desirable skills/knowledge</h4>
+                <ul>
+                    {#each pos.desirable as item}
+                        <li>{item}</li>
+                    {/each}
+                </ul>
+                <a class="btn" href="https://forms.gle/{pos.form}" target="_blank" rel="noreferrer">Apply</a>
+            </Position>
+        {/each}
     </section>
     <section aria-labelledby="faqs">
         <h2 id="faqs" class="section-title"><abbr title="Frequently Asked Questions">FAQs</abbr></h2>

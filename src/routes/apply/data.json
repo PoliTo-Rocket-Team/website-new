@@ -1,0 +1,263 @@
+[
+    {
+        "name": "Sponsoring Manager",
+        "subteam": "Operations",
+        "division": "Logistics",
+        "code": "OPS-LGS-001",
+        "description": "The Sponsoring Manager is responsible for finding new sponsors and keeping contacts with the present ones. You will have to select companies who could be interested in sponsoring the team, organize meetings with them and draw up sponsoring contracts. As a member of the Logistics Division, other logistics tasks, non concerning the sponsoring field, could be assigned to the Sponsoring Manager if necessary.",
+        "desirable": [
+            "Communication skills",
+            "Good writing skills in both Italian and English",
+            "Teamwork skills",
+            "Resourcefulness",
+            "Flexibility"
+        ],
+        "required": null,
+        "form": "o3ZpP64Sjjufkxqt5"
+    },
+    {
+        "name": "Facility Manager",
+        "subteam": "Operations",
+        "division": "Logistics",
+        "code": "OPS-LGS-002",
+        "description": "The Facility Manager would be responsible for the inventory management system. You will have to keep track of all the materials and equipment that enter or leave the laboratory. You will also have to make sure that anyone who needs to access the laboratory or other DIMEAS rooms has the proper habilitation, and keep track of the accesses. As a member of the Logistics Division, other logistics tasks, non concerning the facilities and inventory management, could be assigned to the Facility Manager if necessary.",
+        "desirable": [
+            "Experience in inventories management",
+            "Attention to details"
+        ],
+        "required": [
+            "Knowledge of the Office Suite"
+        ],
+        "form": "o3ZpP64Sjjufkxqt5"
+    },
+    {
+        "name": "Events Specialist",
+        "subteam": "Operations",
+        "division": "Logistics",
+        "code": "OPS-LGS-003",
+        "description": "The Operational Excellence Specialist is responsible for the GANNT chart of the team, using Microsoft Project. You will have to check the meeting minutes of the divisions you will be asked to support, and keep the chart updated. As a member of the Logistics Division, other logistics tasks, non concerning the GANNT, could be assigned to the Events Specialist if necessary.",
+        "desirable": [
+            "Communication skills",
+            "Teamwork skills",
+            "Resourcefulness",
+            "Flexibility",
+            "Proactivity"
+        ],
+        "required": [
+            "Intermediate / advanced knowledge of both English and Italian"
+        ],
+        "form": "o3ZpP64Sjjufkxqt5"
+    },
+    {
+        "name": "Operational Excellence Specialist",
+        "subteam": "Operations",
+        "division": "Logistics",
+        "code": "OPS-LGS-004",
+        "description": "The Operational Excellence Specialist is responsible for the GANNT chart of the team, using Microsoft Project. You will have to check the meeting minutes of the divisions you will be asked to support, and keep the chart updated. As a member of the Logistics Division, other logistics tasks, non concerning the GANNT, could be assigned to the Events Specialist if necessary.",
+        "desirable": [
+            "Experience with Microsoft Project (not required, but highly recommended)",
+            "Communication skills",
+            "Teamwork skills",
+            "Flexibility and availability"
+        ],
+        "required": null,
+        "form": "o3ZpP64Sjjufkxqt5"
+    },
+    {
+        "name": "Graphic Designer",
+        "subteam": "Operations",
+        "division": "Media",
+        "code": "OPS-MDA-001",
+        "description": "As a Graphic Designer, you will be in charge of designing the Team’s mission patches and logos, and help design the external coating of the Team’s rockets. You will design social media posts and website UI & UX in tight collaboration with photographers, video makers, rendering specialists, and web developers, leveraging modern design styles and patterns. ",
+        "desirable": [
+            "Attention to details and being up to date on the latest trends",
+            "Experience in design motion graphics (charts, lower-thirds, GIFs, Animations, animated social media ads)",
+            "Intermediate English writing skills"
+        ],
+        "required": [
+            "Knowledge of prototyping softwares and graphics softwares",
+            "Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar",
+            "Knowledge of Google Suite"
+        ],
+        "form": "kkNTvoskG8z2zY8cA"
+    },
+    {
+        "name": "Social Media Manager",
+        "subteam": "Operations",
+        "division": "Media",
+        "code": "OPS-MDA-002",
+        "description": [
+            "PoliTo Rocket Team is looking for one or more Social Media Manager(s), who will have the responsibility to maintain and enhance the team’s image by implementing social media platforms’ content strategies.",
+            "This role will be required to run advertising campaigns and drive engagement by creating high-quality original content. The manager(s) should also oversee our community by managing interactions across all platforms."
+        ],
+        "desirable": [
+            "Knowledge of the main social media platforms used by the Team (Instagram, LinkedIn, Twitter) and of additional social media platform to expand the Team's presence",
+            "Attention to details and being up to date on the latest trends",
+            "Previous experience in the media management and previous experience with paid content promotions",
+            "Experience in design motion graphics (charts, lower-thirds, GIFs, Animations, animated social media ads)",
+            "Proficiency with graphic design software such as Canva, Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar"
+        ],
+        "required": [
+            "Professionalism and responsibility",
+            "Intermediate/Advanced English writing skills",
+            "Knowledge of Google Suite"
+        ],
+        "form": "kkNTvoskG8z2zY8cA"
+    },
+    {
+        "name": "Video Maker",
+        "subteam": "Operations",
+        "division": "Media",
+        "code": "OPS-MDA-003",
+        "description": [
+            "The Video Maker(s) will be responsible for designing, editing and producing video content for our earned media, website and social media channels. This position requires to remain flexible and adaptable, have strong planning skills and participate in many aspects of the Team’s daily work. The Video Maker will work in close collaboration with the Photographer(s) and Social Media Manager.",
+            "It is very important to us to document every aspect of the Team’s operations. Hence, it will be needed to be present during the Team’s testing campaigns and launches, and take the best shots for the Team’s public appearance. It will be needed to film our members during their daily work and document the project's progress."
+        ],
+        "desirable": [
+            "Experience in photography and photo editing",
+            "Skilled at working and communicating with both technical and non-technical staff",
+            "Attention to details and up to date on the latest trends",
+            "Intermediate English writing skills"
+        ],
+        "required": [
+            "Possession of an adequate camera",
+            "Experience in Video Design or related field",
+            "Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar",
+            "Knowledge of Google Suite"
+        ],
+        "form": "kkNTvoskG8z2zY8cA"
+    },
+    {
+        "name": "Photographer",
+        "subteam": "Operations",
+        "division": "Media",
+        "code": "OPS-MDA-004",
+        "description": [
+            "The Photographer(s) will be responsible for producing and editing photographic content for our earned media, website and social media channels. This position requires to remain flexible and adaptable, have strong planning skills and participate in many aspects of the Team’s daily work. The Photographer(s) will work in close collaboration with the Video Maker(s) and Social Media Manager.",
+            "It is very important for the Team to document every public appearance. The Photographer(s) presence will be needed at every team event, mission and launch. The Photographer(s) will be asked to take the best shots during each event, in order to promote the image of the Team."
+        ],
+        "desirable": [
+            "Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar",
+            "Skilled at working and communicating with both technical and non-technical staff",
+            "Attention to details and up to date on the latest trends",
+            "Intermediate English writing skills"
+        ],
+        "required": [
+            "Experience in photography and photo editing",
+            "Possession of an adequate camera",
+            "Knowledge of Google Suite"
+        ],
+        "form": "kkNTvoskG8z2zY8cA"
+    },
+    {
+        "name": "Web Developer",
+        "subteam": "Operations",
+        "division": "IT",
+        "code": "OPS-ITC-001",
+        "description": [
+            "The role of the web developer is to manage the website in all its aspects, in order to present the team at the best. In particular, you will work with web technologies (SCSS, TypeScript, Svelte, Supabase) to design, create, and mantain all the website sections, based on the team directives.",
+            "Mid term tasks could be:",
+            [
+                "Improve the projects page",
+                "Create page transition effects",
+                "Enhance the overall user experience and interactions with better animations and with 3D models"
+            ],
+            "A relatively big future project is the development of a backend that handles recruitment, renders pages based on information from (admin) lead engineers, and possibly receives and stores data collected during flights."
+        ],
+        "desirable": [
+            "SCSS",
+            "TypeScript",
+            "Git",
+            "Vite",
+            "Svelte & SvelteKit",
+            "Three.js library",
+            "Accessible Rich Internet Applications (ARIA)"
+        ],
+        "required": [
+            "Proficiency in CSS",
+            "Good knowledge of modern JavaScript (ECMAScript 2018)"
+        ],
+        "form": "arcXaamqyvxy4FYE7"
+    },
+    {
+        "name": "Software Engineer (Mission Analysis)",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Mission Analysis",
+        "code": "VES-MSA-001",
+        "description": [
+            "We're looking for software engineers to join our team. Your job would involve developing scripts for studying rocket trajectories and improving aerodynamics. Additionally, you'll create a virtual model to simulate rocket behavior in various scenarios. This will involve selecting appropriate physical models and parameters to represent the rocket's propulsion, aerodynamics, and control systems. Furthermore the created model must ensure that the simulation is accurate and that it can be used to analyze the rocket's performance.  The basic features of this model shall include:",
+            [
+                "6 degree of freedom flight simulation",
+                "Realtime simulated altitude, velocity and acceleration display",
+                "Aerodynamic models",
+                "Solid motors models"
+            ],
+            "Future software features shall include:",
+            [
+                "Accurate weather modeling",
+                "Automatic design optimization",
+                "Parachutes with external trigger functions"
+            ]
+        ],
+        "desirable": [
+            "Knowledge of fluid dynamics and aerodynamics ",
+            "Mastery of Matlab/Simulink",
+            "Basic knowledge of CFD software",
+            "Previous experience in GUI development"
+        ],
+        "required": [
+            "Knowledge of a programming language suitable for performant scientific computing and numerical calculation, such as Python or Matlab/Simulink",
+            "Knowledge of existing tools, libraries, or resources on flight simulation",
+            "Collaboration with other developers",
+            "Knowledge of Git and GitHub",
+            "Basic knowledge of Latex"
+        ],
+        "form": "hj5QiiY8mqMFqtpQ8"
+    },
+    {
+        "name": "Recovery Engineer",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Recovery",
+        "code": "VES-RCV-001",
+        "description": [
+            "Everything that comes up, must eventually come down, hopefully without creating a crater. You'll be able to help develop and validate Cavour's parachutes deployment and recovery systems in collaboration with other division members. ",
+            "Every system and subsystem will have to be extensively tested on the ground before flight, to verify their reliability. Thus, small scale tests of a single component and extensive full scale tests of the whole recovery system will be performed. Your main objective will be to ensure the successful recovery and reusability of rocket components."
+        ],
+        "desirable": [
+            "Experience in handling and sewing synthetic fibers such as kevlar",
+            "Possession of a firearm license",
+            "Experience and knowledge with explosives and/or gases"
+        ],
+        "required": [
+            "Basic CAD (Solidworks) knowledge",
+            "Intermediate English writing and speaking skills",
+            "Basic knowledge of Latex",
+            "Knowledge of Google Suite",
+            "Good manual skills"
+        ],
+        "form": "n8QWzEB4i51EkR8D7"
+    },
+    {
+        "name": "CAD & Additive manufacturing Engineer",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Design & Additive Manufacturing",
+        "code": "VES-DAM-001",
+        "description": [
+            "The main role of the CAD & Additive Manufacturing Engineer is to design components of the rocket with CAD software, iterating on their design based on the analysis conducted by the other members of the Aerostructures Division. The job will also involve geometry optimization for additive manufacturing of some components and support to their production with 3D printing.",
+            "CAD Engineers of the Cavour subteam might also work on projects managed by other subteams, related to propulsion or payloads."
+        ],
+        "desirable": [
+            "Experience with 3D printing and knowledge of slicer softwares",
+            "Experience with topology optimisation/generative design softwares",
+            "Basic knowledge of LaTeX",
+            "Experience with carbon fiber lamination methods",
+            "Proficiency with blender or other rendering softwares"
+        ],
+        "required": [
+            "Knowledge of a CAD Software (preferably Solidworks or Fusion 360)",
+            "Basic/Intermediate English writing and speaking skills",
+            "Knowledge of Google Suite"
+        ],
+        "form": "u6SRq6ivD3pQp4LZ9"
+    }
+]
