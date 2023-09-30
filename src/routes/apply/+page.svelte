@@ -45,14 +45,14 @@
                     <p>{pos.description}</p>
                 {/if}
                 {#if pos.required}
-                    <h4>Required skills/knowledge</h4>
+                    <h4>Required skills</h4>
                     <ul>
                         {#each pos.required as item}
                             <li>{item}</li>
                         {/each}
                     </ul>
                 {/if}
-                <h4>Desirable skills/knowledge</h4>
+                <h4>Desirable skills</h4>
                 <ul>
                     {#each pos.desirable as item}
                         <li>{item}</li>
