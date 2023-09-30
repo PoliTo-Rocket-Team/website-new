@@ -155,7 +155,7 @@
         "division": "IT",
         "code": "OPS-ITC-001",
         "description": [
-            "The role of the web developer is to manage the website in all its aspects, in order to present the team at the best. In particular, you will work with web technologies (SCSS, TypeScript, Svelte, Supabase) to design, create, and mantain all the website sections, based on the team directives.",
+            "The role of the web developer is to manage the website in all its aspects, in order to present the team at its best. In particular, you will work with web technologies (SCSS, TypeScript, Svelte, Supabase) to design, create, and maintain all the website sections, based on the team directives.",
             "Mid term tasks could be:",
             [
                 "Improve the projects page",
@@ -165,13 +165,12 @@
             "A relatively big future project is the development of a backend that handles recruitment, renders pages based on information from (admin) lead engineers, and possibly receives and stores data collected during flights."
         ],
         "desirable": [
-            "SCSS",
-            "TypeScript",
-            "Git",
-            "Vite",
-            "Svelte & SvelteKit",
-            "Three.js library",
-            "Accessible Rich Internet Applications (ARIA)"
+            "Knowledge of SCSS",
+            "Knowledge of TypeScript",
+            "Previous experience with Git and GitHub",
+            "Previous experience with Svelte & SvelteKit",
+            "Knowledge and previous use of the Three.js library",
+            "Basic knowledge of Accessible Rich Internet Applications (ARIA)"
         ],
         "required": [
             "Proficiency in CSS",
@@ -259,5 +258,148 @@
             "Knowledge of Google Suite"
         ],
         "form": "u6SRq6ivD3pQp4LZ9"
+    },
+    {
+        "name": "Hardware Engineer",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Avionics",
+        "code": "VES-AVN-001",
+        "description": "As an Hardware Engineer in the Avionics division, you will design, prototype and manufacture the electronic systems for both the rocket and the ground station, starting from scratch. You will use CAD tools to create electrical schemes that will be converted into circuits and PCBs. Your main tasks will include optimizing and enhancing our first discrete flight computer by adding new features, ensuring safety and reliability, and designing the next-generation flight computer, a single-board integrated solution that uses STM32 microcontrollers. You will also conduct practical work, such as research, reading datasheets, design, simulations, soldering, testing and debugging. Projects will be developed in close cooperation with other division members. Please be informed that your work will be entirely voluntary.  As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+        "desirable": [
+            "Prior experience with microcontrollers",
+            "Familiarity with hardware testing and debugging tools",
+            "Familiarity with PCB CAD softwares (e.g. KiCAD)",
+            "Good interdisciplinary communication skills"
+        ],
+        "required": [
+            "Knowledge in circuit theory and electronics",
+            "Familiarity with welding",
+            "Basic programming skills",
+            "Basic/Intermediate English writing and speaking skills",
+            "Basic knowledge of LaTeX"
+        ],
+        "form": " eLiVvts7w7bpbckh9"
+    },
+    {
+        "name": "Embedded Software Engineer",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Avionics",
+        "code": "VES-AVN-002",
+        "description": "As an Embedded Software Engineer, your job will be the development and optimization of the first flight computer software, and you will also take part in the initial design phase for the next-generation flight computer, built in the STM32 platform. You will write sensors’ drivers and high-quality structured software for the embedded processor in order to retrieve and transmit data, control actuators and accomplish specific mission tasks. This will involve extensive research, writing, testing and debugging. Projects will be developed in close cooperation with other division members. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+        "desirable": [
+            "Knowledge of flight computer software architecture and design patterns",
+            "Experience with software testing and verification tools",
+            "Experience with STM32 platform",
+            "Good interdisciplinary communication skills"
+        ],
+        "required": [
+            "General knowledge of embedded systems and microcontrollers",
+            "Proficiency in C/C++ programming language",
+            "Experience with software development tools such as IDEs, compilers, debuggers and version control",
+            "Basic/Intermediate English writing and speaking skills",
+            "Basic knowledge of LaTeX"
+        ],
+        "form": " zvGDxnAQFYeZcauK8"
+    },
+    {
+        "name": "Software Engineer (Ground Station)",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Avionics",
+        "code": "VES-AVN-003",
+        "description": "Altitude, orientation, speed, and most importantly for recovery, GPS location sent by the rocket during flight and retrieved by ground antennas must be processed, displayed, and saved in real time.As a ground station software engineer, your job will be to develop a desktop application with a logical, neat, and aesthetic structure that can perform the tasks mentioned above. This task involves interacting with all the different avionics systems, so communication protocols play a critical role. Projects will be developed in close collaboration with other division members. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+        "desirable": [
+            "Prior experience with desktop applications and GUI development using a tech stack and graphics libraries of your choice",
+            "Experience with data processing and visualization tools",
+            "Experience with embedded systems and hardware interfaces",
+            "Good interdisciplinary communication skills"
+        ],
+        "required": [
+            "Knowledge of software engineering principles and practices",
+            "Familiarity with communication protocols and interfaces",
+            "Good programming skills",
+            "Basic/Intermediate English writing and speaking skills",
+            "Basic knowledge of LaTeX"
+        ],
+        "form": "tUq5EpHWbVn8U1aq6"
+    },
+    {
+        "name": "RF Specialist",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Avionics",
+        "code": "VES-AVN-004",
+        "description": "Wireless communication plays a fundamental role before, during, and after the flight. It allows the ground station to monitor system status and evaluate potential risks, transmit data in real time to track the rocket's altitude, speed, and other critical parameters, and facilitate recovery by communicating the rocket's GPS location. Due to its critical importance, our team needs a specialized engineer to design, simulate, and develop the rocket-ground station communication system at the physical layer. The role will involve extensive research, investigation of technologies and protocols, and positioning and pointing of ground and onboard antennas to optimize data transmission. Projects will be developed in close collaboration with other division members. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+        "desirable": [
+            "Familiarity with communication protocols such as ZigBee, LoRa and Wi-Fi",
+            "Prior experience with embedded systems",
+            "Experience with embedded systems and hardware interfaces",
+            "Good interdisciplinary communication skills"
+        ],
+        "required": [
+            "Knowledge in circuit theory and electronics",
+            "Knowledge of wireless communication principles and technologies",
+            "Basic/Intermediate English writing and speaking skills",
+            "Basic knowledge of LaTeX"
+        ],
+        "form": "XgazqriQqUCfWTDA8"
+    },
+    {
+        "name": "CFD Analyst / Aerodynamics Engineer",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Finite Element Analysis",
+        "code": "VES-FEA-001",
+        "description": [
+            "The role of the CFD Analyst / Aerodynamics Engineer is to study aerodynamic shape of the rocket with a trade off between manufacturing, structures and reliability. The job involves aerodynamic configuration development including aerosurface and aerodynamic control surface design. You will study aerodynamic loads, performance, stability and aerothermal analysis at multiple fidelity levels including empirical sizing methods, shock & impact methods, and CFD. You will work with CFD setup, analysis, and post-processing of inviscid and viscous flow simulations. Please be informed that your work will be entirely voluntary. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+            "Example of practical works to do in the near future are:",
+            [
+                "CFD analysis of the rocket’s nosecone",
+                "Launch stability",
+                "Transonic studies"
+            ]
+        ],
+        "desirable": [
+            "Knowledge of aerodynamic fundamentals ",
+            "Knowledge of CFD software: ANSA, STARC++, OpenFoam, ANSYS fluent or others",
+            "Knowledge of computational fluid dynamics theory",
+            "Experience with aerodynamic design and optimization",
+            "Experience in Computational Fluid Dynamics (CFD)",
+            "Experience with data visualization software",
+            "Experience with scientific computing and scripting languages"
+        ],
+        "required": [
+            "Interest in aerospace and fluid dynamics",
+            "Basic knowledge of LaTeX",
+            "Knowledge of Google Suite",
+            "Intermediate English level, particularly written",
+            "Motivation and commitment"
+        ],
+        "form": "PzGmyjBKkWNGL9Wj7"
+    },
+    {
+        "name": "FEM Analyst / Structural Engineer",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Finite Element Analysis",
+        "code": "VES-FEA-002",
+        "description": [
+            "The role of the FEM Analyst / Structural engineer is to study rocket stiffness and strength in order to remain within the displacement and stress limits to avoid catastrophic breaks. All those objectives are followed both by analytical and numerical analysis. The job is responsible for performing detailed analysis of advanced composite and metallic structure using classical hand calculations and FE tools to develop high performance airframe structures. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+            "Example of practical works to do in the near future are:",
+            [
+                "Buckling study of the rocket’s airframe bodytube",
+                "Frequency response of the structures"
+            ]
+        ],
+        "desirable": [
+            "Experience on static structural analysis",
+            "Knowledge and autonomous use of analysis and simulation tools such as Ansys, Nastran or similar",
+            "Understanding and interpretation of analysis results",
+            "Mesh generation capabilities"
+        ],
+        "required": [
+            "Interest in structures behaviour and FEM method",
+            "Basic knowledge of LaTeX",
+            "Knowledge of Google Suite",
+            "Intermediate English level, particularly written",
+            "Motivation and commitment"
+        ],
+        "form": "ShC8Q7KxHDLwko5n7"
     }
 ]
