@@ -90,16 +90,22 @@
     "Operations": [
         { 
             "name": "Andrea Pantano",
-            "role": "Logistics Manager",
+            "role": "Logistics (acting)",
             "mail": "andrea.pantano",
             "linkedin": "andrea-pantano-84b805258",
             "img": "Pantano.JPG"
         },{ 
             "name": "Federico Guglielmi",
-            "role": "IT Manager",
+            "role": "IT",
             "mail": "federico.guglielmi",
             "linkedin": "Fedesky25",
             "img": "Guglielmi.jpg"
+        },{
+            "name": "Yuri Valle",
+            "role": "Media",
+            "mail": "yuri.valle",
+            "linkedin": "null",
+            "img": null
         }
     ],
     "advisors": [
