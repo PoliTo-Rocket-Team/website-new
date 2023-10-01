@@ -40,14 +40,16 @@
                 role="Team Leader" 
                 mail="elena.dilorenzo@studenti.polito.it" 
                 linkedin="elena-dilorenzo-294b5a20b" 
-                img="Dilorenzo.jpg"/>
+                img="Dilorenzo.jpg"
+                reversable={false}/>
             </span>
             <span class="circle-radius">
                 <Lead  name={leads.Operations[0].name}
                 role="Chief Operations Officer"
                 mail={leads.Operations[0].mail}
                 linkedin={leads.Operations[0].linkedin}
-                img={leads.Operations[0].img}/>
+                img={leads.Operations[0].img}
+                reversable={false}/>
             </span>
             <span class="circle-radius"><Lead {...leads.Cavour[0]}  /></span>
             <span class="circle-radius"><Lead {...leads.Efesto[0]}  /></span>
@@ -167,50 +169,51 @@
     /* .circle-radius:nth-child(1){
         border: 1px solid red;
     } */
-    .circle-radius:nth-child(1)::after{
-        content: "---------";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: rotate(30deg) ;
-      
-    }
-    .circle-radius:nth-child(1)::before{
-        content: "---------";
-        position: absolute;
-        top: 100%;
-        right: 50%;
-        transform: rotate(150deg) ;
-      
-    }
+
 
     .circle-radius:nth-child(2) {
         transform: translate(-50%, -50%)   
                 translate(
-               calc(cos(150deg) * 18rem),
-               calc(sin(150deg) * 18rem)
+               calc(cos(150deg) * 25rem),
+               calc(sin(150deg) * 25rem)
              );
-}
+    }
+    .circle-radius:nth-child(2)::before{
+        content: "------------------";
+        position: absolute;
+        top: -2rem;
+        right: -9rem;
+        transform: rotate(150deg) ;
+
+     }
     .circle-radius:nth-child(3) {
         transform: translate(-50%, -50%)   
                 translate(
                calc(cos(90deg) * 18rem),
                calc(sin(90deg) * 18rem)
              );}
-    .circle-radius:nth-child(3)::after{
-        content: "---------";
+    .circle-radius:nth-child(3)::before{
+        content: "------------------";
         position: absolute;
-        top: 0%;
-        left: 50%;
-        transform: rotate(90deg) ;
+        top: -6rem;
+        left: 30%;
+        transform: rotate(90deg)  ;
 
              }
     .circle-radius:nth-child(4) {
         transform: translate(-50%, -50%)   
                 translate(
-               calc(cos(30deg) * 18rem),
-               calc(sin(30deg) * 18rem)
+               calc(cos(30deg) * 25rem),
+               calc(sin(30deg) * 25rem)
              );}
+    .circle-radius:nth-child(4)::before{
+        content: "------------------";
+        position: absolute;
+        top: -2rem;
+        left: -9rem;
+        transform: rotate(30deg) ;
+
+     }
 
 
 
