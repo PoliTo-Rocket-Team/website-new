@@ -52,12 +52,14 @@
                         {/each}
                     </ul>
                 {/if}
+                {#if pos.desirable}
                 <h4>Desirable skills</h4>
                 <ul>
                     {#each pos.desirable as item}
                         <li>{item}</li>
                     {/each}
                 </ul>
+                {/if}
                 <a class="btn" href="https://forms.gle/{pos.form}" target="_blank" rel="noreferrer">Apply</a>
             </Position>
         {/each}
