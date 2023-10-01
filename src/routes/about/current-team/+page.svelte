@@ -1,5 +1,5 @@
 <script>
-    import Executive from "./Executive.svelte";
+    import Chief from "./Chief.svelte";
     import Lead from "./Lead.svelte";
     import Pie from "$lib/Pie.svelte";
     import Member from "../Member.svelte";
@@ -47,21 +47,29 @@
                 img="Dilorenzo.jpg"
                 outside_list/>
             </span>
-            <span class="circle-radius" style="--cos: {-cos}; --sin: {sin}; --angle: 45deg;">
-                <Lead  name="Andrea Pantano"
+
+            <Chief
+                angle={-Math.PI*0.25}
+                firstname="Andrea"
+                lastname="Pantano"
                 role="Chief Operations Officer"
-                mail="andrea.pantano"
                 linkedin="andrea-pantano-84b805258"
                 img="Pantano.JPG"
-                outside_list/>
-            </span>
-            <span class="circle-radius" style="--cos: 0; --sin: 1;">
-                <Lead {...leads.Cavour[0]} outside_list />
-            </span>
-            <span class="circle-radius" style="--cos: {cos}; --sin: {sin}; --angle: -45deg;">
-                <Lead {...leads.Efesto[0]} outside_list />
-            </span>
-
+            />
+            <Chief
+                angle={-0}
+                firstname="Edoardo" lastname="Viglietti"
+                role="Cavour Chief Engineer"
+                linkedin="edoardoviglietti8"
+                img="Viglietti.jpg"
+            />
+            <Chief
+                angle={Math.PI*0.25}
+                firstname="Matteo" lastname="Crachi"
+                role="Efesto Chief Engineer"
+                linkedin="matteo-crachi-37a060161"
+                img="Crachi.jpg"
+            />
         </div>
 
     </section>
@@ -163,7 +171,7 @@
     .executive-view {
         position: relative;
         --radius: 20rem;
-        min-height: 28rem;
+        min-height: 40rem;
         /* border: 2px solid red; */
     }
 
