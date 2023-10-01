@@ -12,6 +12,10 @@
 
     let ww = browser ? document.body.clientWidth-2 : 0;
     onMount(() => ww = document.body.clientWidth-2);
+
+    const angle = 45/180*Math.PI
+    const cos = Math.sin(angle);
+    const sin = Math.cos(angle);
 </script>
 
 <svelte:window on:resize={frameThrottle(() => ww = document.body.clientWidth-2)} />
@@ -35,22 +39,28 @@
         <h2 id="executive">Executive</h2>
 
         <div class="executive-view">
-            <span class="circle-radius">
+            <span class="circle-radius" style="--cos: 0; --sin: 0;">
                 <Lead  name="Elena Dilorenzo"
                 role="Team Leader" 
                 mail="elena.dilorenzo@studenti.polito.it" 
                 linkedin="elena-dilorenzo-294b5a20b" 
-                img="Dilorenzo.jpg"/>
+                img="Dilorenzo.jpg"
+                outside_list/>
             </span>
-            <span class="circle-radius">
-                <Lead  name={leads.Operations[0].name}
+            <span class="circle-radius" style="--cos: {-cos}; --sin: {sin};">
+                <Lead  name="Andrea Pantano"
                 role="Chief Operations Officer"
-                mail={leads.Operations[0].mail}
-                linkedin={leads.Operations[0].linkedin}
-                img={leads.Operations[0].img}/>
+                mail="andrea.pantano"
+                linkedin="andrea-pantano-84b805258"
+                img="Pantano.JPG"
+                outside_list/>
             </span>
-            <span class="circle-radius"><Lead {...leads.Cavour[0]}  /></span>
-            <span class="circle-radius"><Lead {...leads.Efesto[0]}  /></span>
+            <span class="circle-radius" style="--cos: 0; --sin: 1;">
+                <Lead {...leads.Cavour[0]} outside_list />
+            </span>
+            <span class="circle-radius" style="--cos: {cos}; --sin: {sin};">
+                <Lead {...leads.Efesto[0]} outside_list />
+            </span>
 
         </div>
 
@@ -64,7 +74,8 @@
                 role="Primary Faculty Advisor" 
                 mail="alfonso.pagani@polito.it"
                 linkedin="alfonsopagani"
-                img="advisors/Pagani.jpg" />
+                img="advisors/Pagani.jpg"
+                reversable />
             <Lead 
                 name="Prof. Enrico Zappino" 
                 role="Faculty Advisor" 
@@ -83,8 +94,8 @@
             <div class="lead-panel">
                 <h2 class="center">{title}</h2>
                 <ul class="lead-list">
-                    {#each leads as lead}
-                        <Lead {...lead} />
+                    {#each leads as lead, i}
+                        <Lead reversable={!(i&1)} {...lead} />
                     {/each}
                 </ul>
             </div>
@@ -149,18 +160,21 @@
     }
 
 
-    .executive-view{
+    .executive-view {
         position: relative;
         min-height: 31rem;
-        /* border: 2px solid red; */
-        
+        border: 2px solid red;
+        --radius: 20rem;
     }
 
     .circle-radius{
         position: absolute;
-        top: 20%;
+        top: 0;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(
+            calc(-50% + var(--cos) * var(--radius)),
+            calc(var(--sin) * var(--radius))
+        );
 
 
     }
@@ -183,34 +197,6 @@
         transform: rotate(150deg) ;
       
     }
-
-    .circle-radius:nth-child(2) {
-        transform: translate(-50%, -50%)   
-                translate(
-               calc(cos(150deg) * 18rem),
-               calc(sin(150deg) * 18rem)
-             );
-}
-    .circle-radius:nth-child(3) {
-        transform: translate(-50%, -50%)   
-                translate(
-               calc(cos(90deg) * 18rem),
-               calc(sin(90deg) * 18rem)
-             );}
-    .circle-radius:nth-child(3)::after{
-        content: "---------";
-        position: absolute;
-        top: 0%;
-        left: 50%;
-        transform: rotate(90deg) ;
-
-             }
-    .circle-radius:nth-child(4) {
-        transform: translate(-50%, -50%)   
-                translate(
-               calc(cos(30deg) * 18rem),
-               calc(sin(30deg) * 18rem)
-             );}
 
 
 
