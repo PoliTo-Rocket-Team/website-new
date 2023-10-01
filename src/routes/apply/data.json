@@ -401,5 +401,194 @@
             "Motivation and commitment"
         ],
         "form": "ShC8Q7KxHDLwko5n7"
-    }
+    },
+    {
+        "name": "Mechanical/Structural Engineer",
+        "subteam": "Efesto",
+        "division": "Test Bench",
+        "code": "LRE-TBC-001",
+        "description": [
+            "The test bench group is responsible for the design, integration and validation of the Test Bench facility. Tasks:",
+            [
+                "Test bench Functional design (test bench layout: tanks, engine, control room, pipe lines, wires, hardware)",
+                "Test bench Structural design",
+                "Test bench Sensors and wires integration",
+                "Test bench Engine mounting procedure",
+                "Test bench Safety procedure"
+            ]
+        ],
+        "desirable": [
+           "Basic Finite Element Analysis (FEM) techniques"
+        ],
+        "required": [
+           "Mechanical design",
+           "Mechanical integration design",
+           "Basic 3D CAD modelling"
+        ],
+        "form": "BppqnwEUur7sLjgJA"
+    },
+    {
+        "name": "Electronic/Computer Engineer",
+        "subteam": "Efesto",
+        "division": "Test Bench",
+        "code": "LRE-TBC-002",
+        "description": [
+            "The test bench group is responsible for the design, integration and validation of the Test Bench facility. Tasks:",
+            [
+                "Test bench Control software design",
+                "Test Bench Sensors integration and validation",
+                "Test bench Control hardware for the Control Software"
+            ]
+        ],
+        "desirable": [
+          "Theory of signals"
+        ],
+        "required": [
+          "Software design",
+          "Sensors architecture and integration",
+          "Electronics",
+          "Python and MatLab"
+        ],
+        "form": "BppqnwEUur7sLjgJA"
+    },
+    {
+        "name": "FEA & Thermal Analyst",
+        "subteam": "Efesto",
+        "division": "Liquid System Architecture",
+        "code": "LRE-LSA-001",
+        "description": "The LSA division is in charge of the design and development of LOX and LCH4 tanks, pipelines, valves and connections for the Efesto engine. The ideal candidate should have strong skills in structural analysis and experience with FEA software, and a good knowledge of thermal issues is preferable but not necessary.",
+        "desirable": [
+          "Good knowledge of thermal issues"
+        ],
+        "required": [
+          "Structural analysis",
+          "FEA softwares"
+        ],
+        "form": "bqG3WP2ePZ33krDWA"
+    },
+    {
+        "name": "Material & AM Engineer",
+        "subteam": "Efesto",
+        "division": "Liquid System Architecture",
+        "code": "LRE-LSA-002",
+        "description": "The LSA division is in charge of the design and development of LOX and LCH4 tanks, pipelines, valves and connections for the Efesto engine. The ideal candidate has an excellent knowledge of additive and industrial manufacturing processes and material properties. In addition, the candidate is expected to have problem solving skills.",
+        "desirable": [
+          "Problem solving"
+        ],
+        "required": [
+          "Additive and industrial manufacturing processes",
+          "Material properties"
+        ],
+        "form": "bqG3WP2ePZ33krDWA"
+    },
+    {
+        "name": "Mechanical/Propulsion Engineer for Connection Lines, Pipe Lines and Valves System",
+        "subteam": "Efesto",
+        "division": "Liquid System Architecture",
+        "code": "LRE-LSA-003",
+        "description": [
+            "The LSA division is in charge of the design and development of LOX and LCH4 tanks, pipelines, valves and connections for the Efesto engine. Tasks:",
+            [
+                "Design connection lines arrangement",
+                "Connection lines Static structural design (banding angles, pipe thickness) and analysis (FEM)",
+                "Connection lines Material and Manufacturing process choice",
+                "Development of an analytic code (not CFD) in order to account pressure losses and possible cavitation",
+                "Design of a pipeline interface connection (typology, max locking load, etc.)",
+                "Identification of the correct valve typology",
+                "Simulation of the valves’ closure and opening procedure (CFD)",
+                "Monitoring of thermal loads during the opening and closing procedure (CFD)"
+            ]
+        ],
+        "desirable": [
+          "FEM softwares",
+          "Python"
+        ],
+        "required": [
+          "Mechanical design",
+          "Fluid mechanical design and analysis via CFD",
+          "MatLab"
+        ],
+        "form": "bqG3WP2ePZ33krDWA"
+    },
+    {
+        "name": "Embedded Software Engineer",
+        "subteam": "Efesto",
+        "division": "Engine Control Strategy",
+        "code": "LRE-ECS-001",
+        "description": "The engine control strategy division provides the start-up, fire phase and shut-down engine control strategy. Tasks: Develop the main engine control software which provides the start-up, fire phase and shout-down sequence provided by the other divisions.",
+        "desirable": null,
+        "required": [
+          "Programming skills",
+          "Block based coding",
+          "MatLab and Python"
+        ],
+        "form": "tkCH6L2BSb4DakqA8"
+    },
+    {
+        "name": "Embedded Hardware Engineer",
+        "subteam": "Efesto",
+        "division": "Engine Control Strategy",
+        "code": "LRE-ECS-002",
+        "description": [
+            "The engine control strategy division provides the start-up, fire phase and shut-down engine control strategy. Tasks:",
+            [
+                "Design the integration system of sensors needed for the engine control and monitoring software",
+                "Test and validate signals from sensors",
+                "Cooperate with the test bench division"
+            ]
+        ],
+        "desirable": [
+          "MatLab and Python"
+        ],
+        "required": [
+          "Strong electrical skills",
+          "Theory of signals",
+          "Strong sensor typology and working logic knowledge"
+        ],
+        "form": "tkCH6L2BSb4DakqA8"
+    },
+    {
+        "name": "CFD Engineer",
+        "subteam": "Efesto",
+        "division": "Thrust Chamber Assembly",
+        "code": "LRE-TCA-001",
+        "description": [
+            "The ideal candidate has already skills and knowledge in the field of computational fluid-dynamics, in order to perform simulations on some critical parts of the assembly such as manifolds, methane and oxygen domes, injectors. Tasks:",
+            ["Convergent-divergent De Laval analysis","Combustion stability analysis (analytical/CFD)","Fluid dynamic analysis of the Injector Head"]
+        ],
+        "desirable": null,
+        "required": [
+          "Computational fluid-dynamics"
+        ],
+        "form": "KVJanrtXG13AoPny7"
+    },
+    {
+        "name": "FEA Analyst",
+        "subteam": "Efesto",
+        "division": "Thrust Chamber Assembly",
+        "code": "LRE-TCA-002",
+        "description": "The ideal candidate has strong skills in structural analysis and experience of FEA software, in order to perform advanced analyses on the Head/Chamber. Tasks: Steady state thermos-structural analysis (FEM).",
+        "desirable": null,
+        "required": [
+          "Strong skills in structural analysis",
+          "Experience of FEA softwares"
+        ],
+        "form": "KVJanrtXG13AoPny7"
+    },
+    {
+        "name": "Engine Cycle Modeling Engineer",
+        "subteam": "Efesto",
+        "division": "Thrust Chamber Assembly",
+        "code": "LRE-TCA-003",
+        "description": "The successful candidates will be inserted in the EC sub-division with the common mid-long term objective to build our own Engine Cycle tool in Matlab/Simulink environment to perform EC overall performance analysis. Moreover, additional precise engine analysis with an already existing software could be required time by time depending on other divisions’ requests. Engine cycle modelling skills, engine performance knowledge and Matlab/Simulink know-how are all preferable skills to have to fill this position.",
+        "desirable": [
+          "Due to the complexity of the tasks assigned to this position, the ideal candidate should be a Master's Degree student."
+        ],
+        "required": [
+          "MatLab and Simulink",
+          "Engine cycle modelling skills",
+          "Engine performance knowledge"
+        ],
+        "form": "KVJanrtXG13AoPny7"
+      }
 ]
