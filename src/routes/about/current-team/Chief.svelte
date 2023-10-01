@@ -7,22 +7,25 @@
     export let lastname: string;
     export let role: string;
     export let linkedin: string;
+    export let president = false;
 
     const re = / /;
     $: mail = `${firstname.replace(re,'').toLowerCase()}.${lastname.replace(re,'').toLowerCase()}@politorocketteam.it`;
 
 </script>
 
-<div class="wrapper" style:--cos={Math.sin(angle)} style:--sin={Math.cos(angle)} style:--tilt="{-angle}rad">
-    {#if img}
-    <img class="img" src="/members/{img}" alt="Face of {firstname} {lastname}">
-    {:else}
-        <div class="img">
+<div class="wrapper" class:oncircle={!president} style:--cos={Math.sin(angle)} style:--sin={Math.cos(angle)} style:--tilt="{-angle}rad">
+    <div class="img">
+        {#if img}
+            <img class="img" src="/members/{img}" alt="Face of {firstname} {lastname}">
+        {:else}
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 118.2842712" width="50" height="59.14213562">
                 <use href="#prt-logo" />
             </svg>
-        </div>
-    {/if}
+        {/if}
+
+    </div>
+
     <div class="info">
         <span class="name">{firstname} {lastname}</span>
         <span class="role">{role}</span>
@@ -35,37 +38,48 @@
 
 <style>
     .wrapper {
+        z-index: 2;
         position: absolute;
         top: 0;
         left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .wrapper.oncircle {
+        z-index: 1;
         transform: translate(
             calc(-50% + var(--cos) * var(--radius)),
             calc(var(--sin) * var(--radius))
         );
     }
-    .wrapper:after {
+    .img {
+        width: 9rem;
+        height: 9rem;
+        border-radius: 50%;
+        flex-shrink: 0;
+        text-align: center;
+        position: relative;
+    }
+    .oncircle .img::after {
         content: "";
+        z-index: -1;
         position: absolute;
         height: var(--radius);
         width: 0;
-        border-left: 2px dashed #ccc;
+        border-left: 2px dashed #999c;
         top: 50%;
         left: 50%;
         transform-origin: bottom;
         transform: 
             translate(-50%, -100%)
             rotate(var(--tilt,0deg));
-        clip-path: inset(31% 0%);
+        clip-path: inset(12rem 0 0 0);
     }
-    .img {
-        width: 9rem;
-        height: 9rem;
-        object-fit: cover;
-        border-radius: 50%;
-        border: 2px solid #8884;
-        flex-shrink: 0;
-        text-align: center;
+    img {
         display: block;
+        object-fit: cover;
     }
     svg {
         display: block;
@@ -77,15 +91,12 @@
         transform: translateY(1.4rem) translateY(-2px);
     }
     .info {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
         padding-top: 1rem;
         display: flex;
         flex-direction: column;
         align-items: center;
         width: max-content;
+        text-shadow: 0 0 6px var(--bg-0);
     }
     .name {
         font-size: var(--fs-60);

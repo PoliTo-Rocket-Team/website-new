@@ -35,21 +35,18 @@
     </div>
 
 
-    <section aria-labelledby="executive">
-        <h2 id="executive">Executive</h2>
-
+    <section>
         <div class="executive-view">
-            <span class="circle-radius" style="--cos: 0; --sin: 0;">
-                <Lead  name="Elena Dilorenzo"
+            <Chief 
+                president
+                firstname="Elena" lastname="Dilorenzo"
                 role="Team Leader" 
-                mail="elena.dilorenzo@studenti.polito.it" 
                 linkedin="elena-dilorenzo-294b5a20b" 
                 img="Dilorenzo.jpg"
-                outside_list/>
-            </span>
-
+                angle={0}
+            />
             <Chief
-                angle={-Math.PI*0.25}
+                angle={-Math.PI*0.2}
                 firstname="Andrea"
                 lastname="Pantano"
                 role="Chief Operations Officer"
@@ -64,7 +61,7 @@
                 img="Viglietti.jpg"
             />
             <Chief
-                angle={Math.PI*0.25}
+                angle={Math.PI*0.2}
                 firstname="Matteo" lastname="Crachi"
                 role="Efesto Chief Engineer"
                 linkedin="matteo-crachi-37a060161"
@@ -170,35 +167,10 @@
 
     .executive-view {
         position: relative;
-        --radius: 20rem;
-        min-height: 40rem;
+        --radius: 26rem;
+        min-height: 43rem;
         /* border: 2px solid red; */
     }
-
-    .circle-radius{
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translate(
-            calc(-50% + var(--cos) * var(--radius)),
-            calc(var(--sin) * var(--radius))
-        );
-    }
-    .circle-radius:not(:first-child):after {
-        content: "";
-        position: absolute;
-        height: var(--radius);
-        width: 0;
-        border-left: 2px dashed #ccc;
-        top: 50%;
-        left: 50%;
-        transform-origin: bottom;
-        transform: 
-            translate(-50%, -100%)
-            rotate(var(--angle,0deg));
-        clip-path: inset(31% 0%);
-    }
-
 
     @media (min-width: 50rem) {
         .lead-list {
