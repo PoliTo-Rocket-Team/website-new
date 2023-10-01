@@ -179,7 +179,7 @@
         "form": "arcXaamqyvxy4FYE7"
     },
     {
-        "name": "Software Engineer (Mission Analysis)",
+        "name": "Software Engineer",
         "subteam": "Vittorio Emanuele II",
         "division": "Mission Analysis",
         "code": "VES-MSA-001",
@@ -302,13 +302,13 @@
         "form": " zvGDxnAQFYeZcauK8"
     },
     {
-        "name": "Software Engineer (Ground Station)",
+        "name": "Desktop Application Developer",
         "subteam": "Vittorio Emanuele II",
         "division": "Avionics",
         "code": "VES-AVN-003",
         "description": "Altitude, orientation, speed, and most importantly for recovery, GPS location sent by the rocket during flight and retrieved by ground antennas must be processed, displayed, and saved in real time.As a ground station software engineer, your job will be to develop a desktop application with a logical, neat, and aesthetic structure that can perform the tasks mentioned above. This task involves interacting with all the different avionics systems, so communication protocols play a critical role. Projects will be developed in close collaboration with other division members. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
         "desirable": [
-            "Prior experience with desktop applications and GUI development using a tech stack and graphics libraries of your choice",
+            "Previous experience with the QtQuick framework and QML language",
             "Experience with data processing and visualization tools",
             "Experience with embedded systems and hardware interfaces",
             "Good interdisciplinary communication skills"
