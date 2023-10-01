@@ -47,7 +47,7 @@
                 img="Dilorenzo.jpg"
                 outside_list/>
             </span>
-            <span class="circle-radius" style="--cos: {-cos}; --sin: {sin};">
+            <span class="circle-radius" style="--cos: {-cos}; --sin: {sin}; --angle: 45deg;">
                 <Lead  name="Andrea Pantano"
                 role="Chief Operations Officer"
                 mail="andrea.pantano"
@@ -58,7 +58,7 @@
             <span class="circle-radius" style="--cos: 0; --sin: 1;">
                 <Lead {...leads.Cavour[0]} outside_list />
             </span>
-            <span class="circle-radius" style="--cos: {cos}; --sin: {sin};">
+            <span class="circle-radius" style="--cos: {cos}; --sin: {sin}; --angle: -45deg;">
                 <Lead {...leads.Efesto[0]} outside_list />
             </span>
 
@@ -162,9 +162,9 @@
 
     .executive-view {
         position: relative;
-        min-height: 31rem;
-        border: 2px solid red;
         --radius: 20rem;
+        min-height: 28rem;
+        /* border: 2px solid red; */
     }
 
     .circle-radius{
@@ -175,12 +175,21 @@
             calc(-50% + var(--cos) * var(--radius)),
             calc(var(--sin) * var(--radius))
         );
-
-
     }
-    /* .circle-radius:nth-child(1){
-        border: 1px solid red;
-    } */
+    .circle-radius:not(:first-child):after {
+        content: "";
+        position: absolute;
+        height: var(--radius);
+        width: 0;
+        border-left: 2px dashed #ccc;
+        top: 50%;
+        left: 50%;
+        transform-origin: bottom;
+        transform: 
+            translate(-50%, -100%)
+            rotate(var(--angle,0deg));
+        clip-path: inset(31% 0%);
+    }
 
 
     @media (min-width: 50rem) {
