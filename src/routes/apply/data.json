@@ -219,7 +219,7 @@
         "division": "Recovery",
         "code": "VES-RCV-001",
         "description": [
-            "Everything that comes up, must eventually come down, hopefully without creating a crater. You'll be able to help develop and validate Cavour's parachutes deployment and recovery systems in collaboration with other division members. ",
+            "Everything that comes up, must eventually come down, hopefully without creating a crater. You'll be able to help develop and validate parachutes deployment and recovery systems in collaboration with other division members. ",
             "Every system and subsystem will have to be extensively tested on the ground before flight, to verify their reliability. Thus, small scale tests of a single component and extensive full scale tests of the whole recovery system will be performed. Your main objective will be to ensure the successful recovery and reusability of rocket components."
         ],
         "desirable": [
@@ -237,12 +237,12 @@
         "form": "n8QWzEB4i51EkR8D7"
     },
     {
-        "name": "CAD & Additive manufacturing Engineer",
+        "name": "CAD & Additive Manufacturing Engineer",
         "subteam": "Vittorio Emanuele II",
         "division": "Design & Additive Manufacturing",
         "code": "VES-DAM-001",
         "description": [
-            "The main role of the CAD & Additive Manufacturing Engineer is to design components of the rocket with CAD software, iterating on their design based on the analysis conducted by the other members of the Aerostructures Division. The job will also involve geometry optimization for additive manufacturing of some components and support to their production with 3D printing.",
+            "The main role of the CAD & Additive Manufacturing Engineer is to design components of the rocket with CAD software, iterating on their design based on the analysis conducted by the other members of the FEA Division. The job will also involve geometry optimization for additive manufacturing of some components and support to their production with 3D printing.",
             "CAD Engineers of the Cavour subteam might also work on projects managed by other subteams, related to propulsion or payloads."
         ],
         "desirable": [
@@ -264,7 +264,7 @@
         "subteam": "Vittorio Emanuele II",
         "division": "Avionics",
         "code": "VES-AVN-001",
-        "description": "As an Hardware Engineer in the Avionics division, you will design, prototype and manufacture the electronic systems for both the rocket and the ground station, starting from scratch. You will use CAD tools to create electrical schemes that will be converted into circuits and PCBs. Your main tasks will include optimizing and enhancing our first discrete flight computer by adding new features, ensuring safety and reliability, and designing the next-generation flight computer, a single-board integrated solution that uses STM32 microcontrollers. You will also conduct practical work, such as research, reading datasheets, design, simulations, soldering, testing and debugging. Projects will be developed in close cooperation with other division members. Please be informed that your work will be entirely voluntary.  As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+        "description": "As an Hardware Engineer in the Avionics division, you will design, prototype and manufacture the electronic systems for both the rocket and the ground station, starting from scratch. You will use CAD tools to create electrical schemes that will be converted into circuits and PCBs. Your main tasks will include optimizing and enhancing our first discrete flight computer by adding new features, ensuring safety and reliability, and designing the next-generation flight computer, a single-board integrated solution that uses STM32 microcontrollers. You will also conduct practical work, such as research, reading datasheets, design, simulations, soldering, testing and debugging. Projects will be developed in close cooperation with other division members. Please be informed that your work will be entirely voluntary.  ",
         "desirable": [
             "Prior experience with microcontrollers",
             "Familiarity with hardware testing and debugging tools",
@@ -278,14 +278,14 @@
             "Basic/Intermediate English writing and speaking skills",
             "Basic knowledge of LaTeX"
         ],
-        "form": " eLiVvts7w7bpbckh9"
+        "form": "eLiVvts7w7bpbckh9"
     },
     {
         "name": "Embedded Software Engineer",
         "subteam": "Vittorio Emanuele II",
         "division": "Avionics",
         "code": "VES-AVN-002",
-        "description": "As an Embedded Software Engineer, your job will be the development and optimization of the first flight computer software, and you will also take part in the initial design phase for the next-generation flight computer, built in the STM32 platform. You will write sensors’ drivers and high-quality structured software for the embedded processor in order to retrieve and transmit data, control actuators and accomplish specific mission tasks. This will involve extensive research, writing, testing and debugging. Projects will be developed in close cooperation with other division members. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+        "description": "As an Embedded Software Engineer, your job will be the development and optimization of the first flight computer software, and you will also take part in the initial design phase for the next-generation flight computer, built in the STM32 platform. You will write sensors’ drivers and high-quality structured software for the embedded processor in order to retrieve and transmit data, control actuators and accomplish specific mission tasks. This will involve extensive research, writing, testing and debugging. Projects will be developed in close cooperation with other division members. ",
         "desirable": [
             "Knowledge of flight computer software architecture and design patterns",
             "Experience with software testing and verification tools",
@@ -299,14 +299,17 @@
             "Basic/Intermediate English writing and speaking skills",
             "Basic knowledge of LaTeX"
         ],
-        "form": " zvGDxnAQFYeZcauK8"
+        "form": "zvGDxnAQFYeZcauK8"
     },
     {
         "name": "Desktop Application Developer",
         "subteam": "Vittorio Emanuele II",
         "division": "Avionics",
         "code": "VES-AVN-003",
-        "description": "Altitude, orientation, speed, and most importantly for recovery, GPS location sent by the rocket during flight and retrieved by ground antennas must be processed, displayed, and saved in real time.As a ground station software engineer, your job will be to develop a desktop application with a logical, neat, and aesthetic structure that can perform the tasks mentioned above. This task involves interacting with all the different avionics systems, so communication protocols play a critical role. Projects will be developed in close collaboration with other division members. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+        "description": [
+            "Altitude, orientation, speed, and most importantly for recovery, GPS location sent by the rocket during flight and retrieved by ground antennas must be processed, displayed, and saved in real time.",
+            "As a ground station developer, your job will be to develop a desktop application with a logical, neat, and aesthetic structure that can perform the tasks mentioned above. This task involves interacting with all the different avionics systems, so communication protocols play a critical role. Projects will be developed in close collaboration with other division members."
+        ],
         "desirable": [
             "Previous experience with the QtQuick framework and QML language",
             "Experience with data processing and visualization tools",
@@ -327,7 +330,7 @@
         "subteam": "Vittorio Emanuele II",
         "division": "Avionics",
         "code": "VES-AVN-004",
-        "description": "Wireless communication plays a fundamental role before, during, and after the flight. It allows the ground station to monitor system status and evaluate potential risks, transmit data in real time to track the rocket's altitude, speed, and other critical parameters, and facilitate recovery by communicating the rocket's GPS location. Due to its critical importance, our team needs a specialized engineer to design, simulate, and develop the rocket-ground station communication system at the physical layer. The role will involve extensive research, investigation of technologies and protocols, and positioning and pointing of ground and onboard antennas to optimize data transmission. Projects will be developed in close collaboration with other division members. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+        "description": "Wireless communication plays a fundamental role before, during, and after the flight. It allows the ground station to monitor system status and evaluate potential risks, transmit data in real time to track the rocket's altitude, speed, and other critical parameters, and facilitate recovery by communicating the rocket's GPS location. Due to its critical importance, our team needs a specialized engineer to design, simulate, and develop the rocket-ground station communication system at the physical layer. The role will involve extensive research, investigation of technologies and protocols, and positioning and pointing of ground and onboard antennas to optimize data transmission. Projects will be developed in close collaboration with other division members. ",
         "desirable": [
             "Familiarity with communication protocols such as ZigBee, LoRa and Wi-Fi",
             "Prior experience with embedded systems",
@@ -348,7 +351,7 @@
         "division": "Finite Element Analysis",
         "code": "VES-FEA-001",
         "description": [
-            "The role of the CFD Analyst / Aerodynamics Engineer is to study aerodynamic shape of the rocket with a trade off between manufacturing, structures and reliability. The job involves aerodynamic configuration development including aerosurface and aerodynamic control surface design. You will study aerodynamic loads, performance, stability and aerothermal analysis at multiple fidelity levels including empirical sizing methods, shock & impact methods, and CFD. You will work with CFD setup, analysis, and post-processing of inviscid and viscous flow simulations. Please be informed that your work will be entirely voluntary. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+            "The role of the CFD Analyst / Aerodynamics Engineer is to study aerodynamic shape of the rocket with a trade off between manufacturing, structures and reliability. The job involves aerodynamic configuration development including aerosurface and aerodynamic control surface design. You will study aerodynamic loads, performance, stability and aerothermal analysis at multiple fidelity levels including empirical sizing methods, shock & impact methods, and CFD. You will work with CFD setup, analysis, and post-processing of inviscid and viscous flow simulations. Please be informed that your work will be entirely voluntary. ",
             "Example of practical works to do in the near future are:",
             [
                 "CFD analysis of the rocket’s nosecone",
@@ -380,7 +383,7 @@
         "division": "Finite Element Analysis",
         "code": "VES-FEA-002",
         "description": [
-            "The role of the FEM Analyst / Structural engineer is to study rocket stiffness and strength in order to remain within the displacement and stress limits to avoid catastrophic breaks. All those objectives are followed both by analytical and numerical analysis. The job is responsible for performing detailed analysis of advanced composite and metallic structure using classical hand calculations and FE tools to develop high performance airframe structures. As we are a student team of Politecnico di Torino, we do not offer any paid employment.",
+            "The role of the FEM Analyst / Structural engineer is to study rocket stiffness and strength in order to remain within the displacement and stress limits to avoid catastrophic breaks. All those objectives are followed both by analytical and numerical analysis. The job is responsible for performing detailed analysis of advanced composite and metallic structure using classical hand calculations and FE tools to develop high performance airframe structures. ",
             "Example of practical works to do in the near future are:",
             [
                 "Buckling study of the rocket’s airframe bodytube",
