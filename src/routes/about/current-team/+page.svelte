@@ -41,8 +41,7 @@
                     linkedin="elena-dilorenzo-294b5a20b" 
                     img="Dilorenzo.jpg"/>
                 </span>
-                <span class="node-left aaa"><Lead {...leads.Operations[0]}  /></span>
-                
+                <span class="node-left"><Lead {...leads.Operations[0]}  /></span>
                 <span class="node-right"><Lead {...leads.Efesto[0]}  /></span>
                 <span class="node-center"><Lead {...leads.Cavour[0]}  /></span>
             </div>
@@ -177,9 +176,52 @@
         grid-column: 1 / 4;
         display: grid;
         place-items: center;
+        
 
     }
+    .node-center::before{
+        content: "---------------";
+        transform: rotate(90deg) translateY(-5rem) translateX(-5rem);
+        
+        
+    }
+    .node-left::before{
+        content: "---------------";
+        transform: rotate(-25deg) translateX(15rem) translateY(5rem);
+        
+        
+    }
+    .node-right::before{
+        content: "---------------";
+        transform: rotate(25deg) translateX(-13rem) translateY(5rem);
+        
+        
+    }
 
+
+
+
+    /* .node-center::before{
+        content: " -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - ";
+        position: absolute;
+        
+        left: 50%;
+        transform: rotate(90deg) translateX(-50%);
+    }
+    .node-left::before{
+        content: " -  -  -  -  -  -  -  -  -  -  -  -  -  -  - ";
+        position: absolute;
+
+        transform: rotate(-45deg) translateX(50%);
+    }
+    .node-right::before{
+        content: " -  -  -  -  -  -  -  -  -  -  -  -  -  -  - ";
+        
+        position: absolute;
+
+        transform: rotate(45deg) translateX(-50%);
+    }
+ */
 
 
 
