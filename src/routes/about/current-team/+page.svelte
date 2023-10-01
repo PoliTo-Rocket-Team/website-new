@@ -30,23 +30,29 @@
         </div>
     </div>
 
-    <section  >
-        <h2 class="" id="">Executive</h2>
-        <section class="tree-view">
-            <div class="node">
-                <span>
-                    <Lead  name="Elena Dilorenzo"
-                    role="President" 
-                    mail="elena.dilorenzo@studenti.polito.it" 
-                    linkedin="elena-dilorenzo-294b5a20b" 
-                    img="Dilorenzo.jpg"/>
-                </span>
-                <span class="node-left"><Lead {...leads.Operations[0]}  /></span>
-                <span class="node-right"><Lead {...leads.Efesto[0]}  /></span>
-                <span class="node-center"><Lead {...leads.Cavour[0]}  /></span>
-            </div>
 
-        </section>
+    <section aria-labelledby="executive">
+        <h2 id="executive">Executive</h2>
+
+        <div class="executive-view">
+            <span class="circle-radius">
+                <Lead  name="Elena Dilorenzo"
+                role="Team Leader" 
+                mail="elena.dilorenzo@studenti.polito.it" 
+                linkedin="elena-dilorenzo-294b5a20b" 
+                img="Dilorenzo.jpg"/>
+            </span>
+            <span class="circle-radius">
+                <Lead  name={leads.Operations[0].name}
+                role="Chief Operations Officer"
+                mail={leads.Operations[0].mail}
+                linkedin={leads.Operations[0].linkedin}
+                img={leads.Operations[0].img}/>
+            </span>
+            <span class="circle-radius"><Lead {...leads.Cavour[0]}  /></span>
+            <span class="circle-radius"><Lead {...leads.Efesto[0]}  /></span>
+
+        </div>
 
     </section>
 
@@ -143,88 +149,72 @@
     }
 
 
-
-
-    .tree-view .node {
-        display: grid;
-        grid-template-columns: 1fr  1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        /* gap: 5rem; */
-    }
-
-    .tree-view span:first-child{
-        grid-column: 1 / 4;
-        display: grid;
-        place-items: center;
-
-    }
-    .node-left{
-        grid-column: 1 / 2;
-        grid-row: 2 / 3;
-        display: grid;
-        place-items: center;
-
-    }
-    .node-right{
-        grid-column: 3 / 4;
-        grid-row: 2 / 3;
-        display: grid;
-        place-items: center;
-
-    }
-    .node-center{
-        grid-column: 1 / 4;
-        display: grid;
-        place-items: center;
-        
-
-    }
-    .node-center::before{
-        content: "---------------";
-        transform: rotate(90deg) translateY(-5rem) translateX(-5rem);
-        
-        
-    }
-    .node-left::before{
-        content: "---------------";
-        transform: rotate(-25deg) translateX(15rem) translateY(5rem);
-        
-        
-    }
-    .node-right::before{
-        content: "---------------";
-        transform: rotate(25deg) translateX(-13rem) translateY(5rem);
-        
+    .executive-view{
+        position: relative;
+        min-height: 31rem;
+        /* border: 2px solid red; */
         
     }
 
-
-
-
-    /* .node-center::before{
-        content: " -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  - ";
+    .circle-radius{
         position: absolute;
-        
+        top: 20%;
         left: 50%;
-        transform: rotate(90deg) translateX(-50%);
+        transform: translate(-50%, -50%);
+
+
     }
-    .node-left::before{
-        content: " -  -  -  -  -  -  -  -  -  -  -  -  -  -  - ";
+    /* .circle-radius:nth-child(1){
+        border: 1px solid red;
+    } */
+    .circle-radius:nth-child(1)::after{
+        content: "---------";
         position: absolute;
-
-        transform: rotate(-45deg) translateX(50%);
+        top: 100%;
+        left: 50%;
+        transform: rotate(30deg) ;
+      
     }
-    .node-right::before{
-        content: " -  -  -  -  -  -  -  -  -  -  -  -  -  -  - ";
-        
+    .circle-radius:nth-child(1)::before{
+        content: "---------";
         position: absolute;
-
-        transform: rotate(45deg) translateX(-50%);
+        top: 100%;
+        right: 50%;
+        transform: rotate(150deg) ;
+      
     }
- */
+
+    .circle-radius:nth-child(2) {
+        transform: translate(-50%, -50%)   
+                translate(
+               calc(cos(150deg) * 18rem),
+               calc(sin(150deg) * 18rem)
+             );
+}
+    .circle-radius:nth-child(3) {
+        transform: translate(-50%, -50%)   
+                translate(
+               calc(cos(90deg) * 18rem),
+               calc(sin(90deg) * 18rem)
+             );}
+    .circle-radius:nth-child(3)::after{
+        content: "---------";
+        position: absolute;
+        top: 0%;
+        left: 50%;
+        transform: rotate(90deg) ;
+
+             }
+    .circle-radius:nth-child(4) {
+        transform: translate(-50%, -50%)   
+                translate(
+               calc(cos(30deg) * 18rem),
+               calc(sin(30deg) * 18rem)
+             );}
 
 
 
+    
 
     @media (min-width: 50rem) {
         .lead-list {
