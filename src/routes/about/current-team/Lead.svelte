@@ -11,13 +11,12 @@
     export let cofounder: boolean = false;
     export let highlight = false;
     export let reversable = false;
-    export let outside_list = false;
 
     // $: src = img ? "/members/"+img : "https://api.dicebear.com/6.x/open-peeps/svg?face=cute,smile,contempt&seed="+name;
 </script>
 
 
-<svelte:element this={outside_list ? "div" : "li"} class="wrapper" class:reversable>
+<li class="wrapper" class:reversable>
     {#if img}
     <img class="img" src="/members/{img}" alt="Face of {name}">
     {:else}
@@ -40,7 +39,7 @@
             {/if}
         </div>
     </div>
-</svelte:element>
+</li>
 
 <style lang="scss">
     .wrapper {
