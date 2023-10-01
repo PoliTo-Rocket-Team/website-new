@@ -181,22 +181,7 @@
     /* .circle-radius:nth-child(1){
         border: 1px solid red;
     } */
-    .circle-radius:nth-child(1)::after{
-        content: "---------";
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: rotate(30deg) ;
-      
-    }
-    .circle-radius:nth-child(1)::before{
-        content: "---------";
-        position: absolute;
-        top: 100%;
-        right: 50%;
-        transform: rotate(150deg) ;
-      
-    }
+
 
     @media (min-width: 50rem) {
         .lead-list {
