@@ -29,25 +29,28 @@
             <p>During the 2022-2023 Academic Year, the Team is composed of more than 85 between undergraduate students, graduate students, and PhD candidates. Most of the Team members come from the aerospace, mechanical, electronic and computer engineering courses of Politecnico di Torino.</p>
         </div>
     </div>
-    <section aria-labelledby="executive">
-        <h2 id="executive">Executive</h2>
-        <ul class="executive-list no-list">
-            <li>
-                <Executive name="Fabio Meloni" role="President" mail="president@politorocketteam.it" img="Meloni.jpg" linkedin="fabioski01" inverse>
-                    <p>Fabio is the founder and first President of the Team, and he is now a third-year Bachelor's student in Aerospace Engineering at Politecnico di Torino.</p>
-                    <p>During his presidency, Fabio expanded the Team from 6 to 85+ members, involving undergraduate, graduate, and doctoral students. He is in charge of directing the executive, overseeing the budget and the financial performances, and communicating the Team’s vision, mission, and values.</p>
-                    <p>Fabio is also the Chief Engineer of the Project Cavour, where he leads a subteam of 30+ students to research and develop Cavour, a reusable suborbital rocket with multiple apogee and payload configurations that was successfully launched and recovered at the 2023 Spaceport America Cup.</p>
-                </Executive>
-            </li>
-            <li>
-                <Executive name="Elena Dilorenzo" role="Chief Operating Officer" mail="elena.dilorenzo@studenti.polito.it" linkedin="elena-dilorenzo-294b5a20b" img="Dilorenzo.jpg">
-                    <p>Elena is responsible for the Operations Subteam, which is in charge of logistics, outreach, and maintaining relations with the Team's partners. In addition, her work focuses on achieving operational excellence in the Team's technical and non-technical projects.</p>
-                    <p>She is now in her last year of the Master's in Aerospace Engineering at Politecnico di Torino, specializing in the Aeromechanical and Systems field.</p>
-                    <p>Elena was previously the president of AESA Torino - the Aerospace Engineering Students’ Association of Politecnico - a non-profit student group composed of 500+ members.</p>
-                </Executive>
-            </li>
-        </ul>
+
+    <section  >
+        <h2 class="" id="">Executive</h2>
+        <section class="tree-view">
+            <div class="node">
+                <span>
+                    <Lead  name="Elena Dilorenzo"
+                    role="President" 
+                    mail="elena.dilorenzo@studenti.polito.it" 
+                    linkedin="elena-dilorenzo-294b5a20b" 
+                    img="Dilorenzo.jpg"/>
+                </span>
+                <span class="node-left aaa"><Lead {...leads.Operations[0]}  /></span>
+                
+                <span class="node-right"><Lead {...leads.Efesto[0]}  /></span>
+                <span class="node-center"><Lead {...leads.Cavour[0]}  /></span>
+            </div>
+
+        </section>
+
     </section>
+
     <section aria-labelledby="faculty-advisors">
         <h2 class="section-title center" id="faculty-advisors">Faculty Advisors</h2>
         <ul class="lead-list">
@@ -139,6 +142,48 @@
         grid-template-columns: 1fr;
         gap: var(--pad);
     }
+
+
+
+
+    .tree-view .node {
+        display: grid;
+        grid-template-columns: 1fr  1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+        /* gap: 5rem; */
+    }
+
+    .tree-view span:first-child{
+        grid-column: 1 / 4;
+        display: grid;
+        place-items: center;
+
+    }
+    .node-left{
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+        display: grid;
+        place-items: center;
+
+    }
+    .node-right{
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+        display: grid;
+        place-items: center;
+
+    }
+    .node-center{
+        grid-column: 1 / 4;
+        display: grid;
+        place-items: center;
+
+    }
+
+
+
+
+
     @media (min-width: 50rem) {
         .lead-list {
             grid-template-columns: 1fr 1fr;
@@ -180,4 +225,8 @@
             --reverse: ;
         }
     }
+
+
+
+
 </style>
