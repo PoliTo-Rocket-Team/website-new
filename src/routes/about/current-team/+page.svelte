@@ -40,7 +40,7 @@
             <Chief 
                 president
                 firstname="Elena" lastname="Dilorenzo"
-                role="Team Leader" 
+                role="President" 
                 linkedin="elena-dilorenzo-294b5a20b" 
                 img="Dilorenzo.jpg"
                 angle={0}
