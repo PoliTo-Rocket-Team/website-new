@@ -49,7 +49,7 @@
                 angle={-Math.PI*0.2}
                 firstname="Andrea"
                 lastname="Pantano"
-                role="Chief Operations Officer"
+                role="Chief Operating Officer"
                 linkedin="andrea-pantano-84b805258"
                 img="Pantano.JPG"
             />
