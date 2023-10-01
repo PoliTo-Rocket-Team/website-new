@@ -1,6 +1,7 @@
 <script lang="ts">
     import IconLink from "$lib/icons/IconLink.svelte";
-    
+    import "@fontsource/plus-jakarta-sans/600.css"
+
     export let img: string | undefined = undefined;
     export let angle: number;
     export let firstname: string;
@@ -38,25 +39,14 @@
 
 <style>
     .wrapper {
-        z-index: 2;
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
         display: flex;
-        flex-direction: column;
+        flex-direction: row;
         align-items: center;
-    }
-    .wrapper.oncircle {
-        z-index: 1;
-        transform: translate(
-            calc(-50% + var(--cos) * var(--radius)),
-            calc(var(--sin) * var(--radius))
-        );
+        margin-bottom: var(--pad);
     }
     .img {
-        width: 9rem;
-        height: 9rem;
+        width: 7.2rem;
+        height: 7.2rem;
         border-radius: 50%;
         flex-shrink: 0;
         text-align: center;
@@ -91,27 +81,63 @@
         transform: translateY(1.4rem) translateY(-2px);
     }
     .info {
-        padding-top: 1rem;
         display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: start;
         width: max-content;
         text-shadow: 0 0 6px var(--bg-0);
+        padding-left: 1rem;
     }
     .name {
         font-size: var(--fs-60);
         font-weight: 700;
     }
     .role {
+        font-size: 1.1rem;
         font-weight: 600;
         color: var(--accent-text);
     }
     .socials {
-        padding-top: .5rem;
         display: flex;
+        margin-left: -.22rem;
+        margin-right: -.22rem;
 
         --icon-clr: rgba(160,160,160,0.7);
         --icon-size: 2.2rem;
         --icon-hover: var(--accent-fig);
+    }
+
+    @media (min-width: 50rem) {
+        .wrapper {
+            z-index: 2;
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            flex-direction: column;
+            margin-bottom: 0;
+        }
+        .wrapper.oncircle {
+            z-index: 1;
+            transform: translate(
+                calc(-50% + var(--cos) * var(--radius)),
+                calc(var(--sin) * var(--radius))
+            );
+        }
+        .img {
+            width: 9rem;
+            height: 9rem;
+        }
+        .info {
+            padding-left: 0;
+            padding-top: 1rem;
+            align-items: center;
+        }
+        .role {
+            margin: .1rem 0;
+        }
+        .socials {
+            padding-top: .5rem;
+        }
     }
 </style>

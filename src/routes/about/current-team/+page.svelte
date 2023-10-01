@@ -168,11 +168,13 @@
     .executive-view {
         position: relative;
         --radius: 26rem;
-        min-height: 43rem;
         /* border: 2px solid red; */
     }
 
     @media (min-width: 50rem) {
+        .executive-view {
+            min-height: 43rem;
+        }
         .lead-list {
             grid-template-columns: 1fr 1fr;
             gap: 3ch;
