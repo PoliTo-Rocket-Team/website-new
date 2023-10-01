@@ -90,6 +90,12 @@
     "Operations": [
         { 
             "name": "Andrea Pantano",
+            "role": "Chief Operating Officier",
+            "mail": "andrea.pantano",
+            "linkedin": "andrea-pantano-84b805258",
+            "img": "Pantano.JPG"
+        },{ 
+            "name": "Andrea Pantano",
             "role": "Logistics (acting)",
             "mail": "andrea.pantano",
             "linkedin": "andrea-pantano-84b805258",
