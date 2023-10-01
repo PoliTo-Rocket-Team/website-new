@@ -198,10 +198,6 @@
       
     }
 
-
-
-    
-
     @media (min-width: 50rem) {
         .lead-list {
             grid-template-columns: 1fr 1fr;
@@ -215,18 +211,6 @@
         }
     }
 
-    @media (max-width: 70rem) {
-        .executive-list li+li {
-            margin-top: 4.5rem;
-        }
-    }
-    @media (min-width: 70rem) {
-        .executive-list {
-            display: grid;
-            grid-template-columns: repeat(2,1fr);
-            gap: 2rem;
-        }
-    }
     @media (min-width: 85rem) {
         section {
             max-width: 85rem;
@@ -243,8 +227,4 @@
             --reverse: ;
         }
     }
-
-
-
-
 </style>
