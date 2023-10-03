@@ -264,7 +264,7 @@
         "subteam": "Vittorio Emanuele II",
         "division": "Avionics",
         "code": "VES-AVN-001",
-        "description": "As an Hardware Engineer in the Avionics division, you will design, prototype and manufacture the electronic systems for both the rocket and the ground station, starting from scratch. You will use CAD tools to create electrical schemes that will be converted into circuits and PCBs. Your main tasks will include optimizing and enhancing our first discrete flight computer by adding new features, ensuring safety and reliability, and designing the next-generation flight computer, a single-board integrated solution that uses STM32 microcontrollers. You will also conduct practical work, such as research, reading datasheets, design, simulations, soldering, testing and debugging. Projects will be developed in close cooperation with other division members. Please be informed that your work will be entirely voluntary.  ",
+        "description": "As an Hardware Engineer in the Avionics division, you will design, prototype and manufacture the electronic systems for both the rocket and the ground station, starting from scratch. You will use CAD tools to create electrical schemes that will be converted into circuits and PCBs. Your main tasks will include optimizing and enhancing our first discrete flight computer by adding new features, ensuring safety and reliability, and designing the next-generation flight computer, a single-board integrated solution that uses STM32 microcontrollers. You will also conduct practical work, such as research, reading datasheets, design, simulations, soldering, testing and debugging. Projects will be developed in close cooperation with other division members.",
         "desirable": [
             "Prior experience with microcontrollers",
             "Familiarity with hardware testing and debugging tools",
@@ -285,7 +285,7 @@
         "subteam": "Vittorio Emanuele II",
         "division": "Avionics",
         "code": "VES-AVN-002",
-        "description": "As an Embedded Software Engineer, your job will be the development and optimization of the first flight computer software, and you will also take part in the initial design phase for the next-generation flight computer, built in the STM32 platform. You will write sensors’ drivers and high-quality structured software for the embedded processor in order to retrieve and transmit data, control actuators and accomplish specific mission tasks. This will involve extensive research, writing, testing and debugging. Projects will be developed in close cooperation with other division members. ",
+        "description": "As an Embedded Software Engineer, your job will be the development and optimization of the first flight computer software, and you will also take part in the initial design phase for the next-generation flight computer, built in the STM32 platform. You will write sensors’ drivers and high-quality structured software for the embedded processor in order to retrieve and transmit data, control actuators and accomplish specific mission tasks. This will involve extensive research, writing, testing and debugging. Projects will be developed in close cooperation with other division members.",
         "desirable": [
             "Knowledge of flight computer software architecture and design patterns",
             "Experience with software testing and verification tools",
@@ -333,8 +333,7 @@
         "description": "Wireless communication plays a fundamental role before, during, and after the flight. It allows the ground station to monitor system status and evaluate potential risks, transmit data in real time to track the rocket's altitude, speed, and other critical parameters, and facilitate recovery by communicating the rocket's GPS location. Due to its critical importance, our team needs a specialized engineer to design, simulate, and develop the rocket-ground station communication system at the physical layer. The role will involve extensive research, investigation of technologies and protocols, and positioning and pointing of ground and onboard antennas to optimize data transmission. Projects will be developed in close collaboration with other division members. ",
         "desirable": [
             "Familiarity with communication protocols such as ZigBee, LoRa and Wi-Fi",
-            "Prior experience with embedded systems",
-            "Experience with embedded systems and hardware interfaces",
+            "Prior experience with embedded systems and hardware interfaces",
             "Good interdisciplinary communication skills"
         ],
         "required": [
@@ -351,7 +350,7 @@
         "division": "Finite Element Analysis",
         "code": "VES-FEA-001",
         "description": [
-            "The role of the CFD Analyst / Aerodynamics Engineer is to study aerodynamic shape of the rocket with a trade off between manufacturing, structures and reliability. The job involves aerodynamic configuration development including aerosurface and aerodynamic control surface design. You will study aerodynamic loads, performance, stability and aerothermal analysis at multiple fidelity levels including empirical sizing methods, shock & impact methods, and CFD. You will work with CFD setup, analysis, and post-processing of inviscid and viscous flow simulations. Please be informed that your work will be entirely voluntary. ",
+            "The role of the CFD Analyst / Aerodynamics Engineer is to study aerodynamic shape of the rocket with a trade off between manufacturing, structures and reliability. The job involves aerodynamic configuration development including aerosurface and aerodynamic control surface design. You will study aerodynamic loads, performance, stability and aerothermal analysis at multiple fidelity levels including empirical sizing methods, shock & impact methods, and CFD. You will work with CFD setup, analysis, and post-processing of inviscid and viscous flow simulations.",
             "Example of practical works to do in the near future are:",
             [
                 "CFD analysis of the rocket’s nosecone",
