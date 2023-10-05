@@ -13,10 +13,10 @@
     <section class="cols">
         <div>
             <h2 class="m-top smudge">Name and design</h2>
-            <p>Vittorio Emanuele II, code name VES, is the second rocketry project undertaken by our team.</p>
-            <p>The project is named after the first King of Italy, born in Turin in 1820. Vittorio Emanuele II, although already King of Sardinia and Piedmont, fought tirelessly for a united Italy.</p>
-            <p>His unwavering determination to never settle for mere accomplishments and always strive for greater heights serves as an inspiration for the second rocket of the Founding Fathers series.</p>
-            <p>The PoliTo Rocket Team is propelled by this spirit, refusing to rest on the laurels of the remarkable achievements of the Cavour Project. Instead develops another rocket specifically designed for the international competitions and with more challenging objectives.</p>
+            <p>Vittorio Emanuele II, codename “VES”, is the second rocket engineering project undertaken by our team.</p>
+            <p>The project is named after the first King of Italy, born in Turin in 1820. Vittorio Emanuele II, who although already King of Sardinia and Piedmont, fought tirelessly for a united Italy.</p>
+            <p>His unwavering determination to never settle for mere accomplishments and always strive for greater heights serve as an inspiration for the second rocket of the Founding Fathers series.</p>
+            <p>The PoliTo Rocket Team is propelled by this spirit, refusing to rest on the laurels of the remarkable achievements of the Cavour Project. Instead, develops another rocket specifically designed for international competitions with increasingly challenging objectives.</p>
         </div>
 
         <div>
@@ -31,7 +31,7 @@
             </ul>
             <p>The ultimate goal will be the participation to EuRoC 2024 in the 9 km COTS Category.</p>
 
-            <p>The development of the VES will pave the way for any project of the team, and in particular for the future integration of the Efesto engine within a launch vehicle.</p>
+            <p>The development of the VES will pave the way for any project of the team, and in particular for the future integration of the Efesto liquid rocket engine within a launch vehicle.</p>
             <p>With these prospects, the Vittorio Emanuele II Project stands out as one of the most stimulating student-led projects in the field of rocketry.</p>
         </div>
     </section>
