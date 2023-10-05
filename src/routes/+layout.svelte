@@ -18,7 +18,8 @@
     ];
     const projectsCombo: ComboRoute[] = [
         {url: "Cavour", name: "Cavour"},
-        {url: "Efesto", name: "Efesto"}
+        {url: "Efesto", name: "Efesto"},
+        {url: "VES", name: "VES"}
     ];
     
     const OPEN_STATE = "PRT-nav-open";
