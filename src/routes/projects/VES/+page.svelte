@@ -12,7 +12,7 @@
     <h1>Project Vittorio Emanuele II</h1>
     <section class="cols">
         <div>
-            <h2 class="m-top smudge">Name and design</h2>
+            <h2 class="smudge">Name and design</h2>
             <p>Vittorio Emanuele II, code name VES, is the second rocketry project undertaken by our team.</p>
             <p>The project is named after the first King of Italy, born in Turin in 1820. Vittorio Emanuele II, although already King of Sardinia and Piedmont, fought tirelessly for a united Italy.</p>
             <p>His unwavering determination to never settle for mere accomplishments and always strive for greater heights serves as an inspiration for the second rocket of the Founding Fathers series.</p>
@@ -20,7 +20,7 @@
         </div>
 
         <div>
-            <h2 class="m-top smudge">Technical characteristics and goals</h2>
+            <h2 class="smudge">Technical characteristics and goals</h2>
             <p>VES is a single-stage rocket equipped with a solid Commercial Off-The-Shelf (COTS) motor and the following technical characteristics:</p>
             <ul class="list">
                 <li>Target apogee of 10000 m </li>
@@ -38,6 +38,9 @@
 
 
 <style>
+    .cols > div {
+        margin-bottom: 4rem;
+    }
 
     @media (min-width: 50rem) {
         .cols {
