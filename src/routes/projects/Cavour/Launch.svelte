@@ -18,7 +18,7 @@
     <div class="title">
         <div>
             <h3>{name}</h3>
-            <span>{formatter.format(new Date(date))}</span>
+            <span>{formatter.format(Date.parse(date))}</span>
         </div>
     </div>
     <div class="desc">
