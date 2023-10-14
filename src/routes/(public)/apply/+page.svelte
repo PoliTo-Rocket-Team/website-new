@@ -2,9 +2,11 @@
     import "./consts.scss";
     import "@fontsource/anonymous-pro/400.css";
     import Position from "./Position.svelte";
+    import type { PageData } from "./$types";
     import FAQs from "./FAQs.svelte";
 
     import positions from "./data.json";
+    export let data: PageData
 </script>
 
 <svelte:head>
@@ -87,10 +89,8 @@
         {/each}
     </section>
     <section aria-labelledby="faqs">
-        <h2 id="faqs" class="section-title">
-            <abbr title="Frequently Asked Questions">FAQs</abbr>
-        </h2>
-        <FAQs />
+        <h2 id="faqs" class="section-title"><abbr title="Frequently Asked Questions">FAQs</abbr></h2>
+        <FAQs data={data.faqs} />
     </section>
 </main>
 

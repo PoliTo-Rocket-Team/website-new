@@ -3,8 +3,9 @@
     import { frameThrottle } from "$lib/timing";
     import FormatLine from "$lib/FormatLine.svelte";
 
-    import faqs from "./FAQs.json";
     import { onMount } from "svelte";
+
+    export let data: { question: string, answer: string }[];
 
     const elements: HTMLElement[] = [];
     let lastScroll = browser ? window.scrollY : 0;
@@ -87,7 +88,7 @@
 </script>
 
 <div class="container" use:observe>
-    {#each faqs as faq, i}
+    {#each data as faq, i}
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         <article
             bind:this={elements[i]}
