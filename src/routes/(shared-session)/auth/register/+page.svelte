@@ -13,8 +13,7 @@
 
     const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();
-        if(mask !== 0b1111) return;
-        if(!data.session) return;
+        if(mask || !data.session) return;
         const password = formData.get("password");
         if(typeof password !== "string") return void (form = { error: "Invalid password value type", password: '' });
         const res = await data.supabase.auth.updateUser({password});
@@ -29,10 +28,10 @@
 
 <main>
     <h1>Set your password</h1>
-    <p>Please <b>do not close this tab</b>: the code embedded in this requesti is valid only once. Here you must set the password of your account &mdash; <a href="mailto:{data.email}">{data.email}</a> &mdash; in the PRT admin program</p>
+    <p>Please, <b>do not close this tab</b>: the code embedded in this request is valid only once. Here you must set the password for your new account in the PRT admin program.</p>
     <form method="post" use:enhance={submit}>
         <input type="email" name="email" value={data.email} readonly>
-        <input type="password" name="password" autocomplete="new-password" bind:value={psw}>
+        <input type="password" name="password" autocomplete="new-password" placeholder="Password" bind:value={psw}>
         <button type="submit" disabled={mask !== 0}>Confirm</button>
     </form>
     <p>You new password must:</p>
@@ -42,3 +41,52 @@
         {/each}
     </ul>
 </main>
+
+<style>
+    main {
+        max-width: 58ch;
+        margin: auto;
+    }
+    @media (min-width: 50rem) {
+        main {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 1rem;
+    }
+    input, button {
+        margin: .6rem;
+    }
+    input {
+        color: inherit;
+        background-color: var(--bg-1);
+        padding: .4rem .8rem;
+        border-radius: .25rem;
+        border: none;
+        font-family: inherit;
+        font-size: 1.2rem;
+    }
+    input:focus-visible {
+        outline: none;
+    }
+    input:read-only {
+        color: var(--fg-1);
+    }
+    ul {
+        padding-left: 2ch;
+    }
+    li::first-letter {
+        text-transform: uppercase;
+    }
+    :global([data-theme="light"]) li.wrong {
+        color: #b60600;
+    }
+    :global([data-theme="dark"]) li.wrong {
+        color: #ff5454;
+    }
+</style>
