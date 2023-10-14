@@ -1,9 +1,4 @@
 <script lang="ts">
-    import "$lib/global.css";
-    import "@fontsource/plus-jakarta-sans/400.css";
-    import "@fontsource/plus-jakarta-sans/500.css";
-    import "@fontsource/plus-jakarta-sans/700.css";
-
     import { page } from "$app/stores";
     import { browser } from "$app/environment";
     import { afterNavigate, goto } from "$app/navigation";
@@ -342,9 +337,6 @@
 </div>
 
 <style lang="scss">
-    :global(*) {
-        font-family: "Plus Jakarta Sans", sans-serif;
-    }
     :global(body.no-scroll) {
         overflow-y: hidden;
     }
