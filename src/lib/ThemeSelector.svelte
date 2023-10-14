@@ -45,6 +45,7 @@
         padding: .3em;
         display: flex;
         box-shadow: inset 0 0 10px var(--bg-0);
+        width: fit-content;
     }
     label { cursor: pointer; }
     label + label {
