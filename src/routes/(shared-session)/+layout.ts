@@ -1,7 +1,7 @@
 import { createSupabaseLoadClient } from "@supabase/auth-helpers-sveltekit";
 import type { LayoutLoad } from "./$types";
 import { PUBLIC_SUPABASE_KEY, PUBLIC_SUPABASE_URL } from "$env/static/public";
-import type { Database } from "$lib/supabase";
+import { cookieOptions, type Database } from "$lib/supabase";
 
 export const prerender = false;
 
@@ -12,6 +12,7 @@ export const load: LayoutLoad = async ({ fetch, data, depends }) => {
     supabaseKey: PUBLIC_SUPABASE_KEY,
     event: { fetch },
     serverSession: data.session,
+    cookieOptions
   })
   const res = await supabase.auth.getSession();
   return { supabase, session: res.data.session }
