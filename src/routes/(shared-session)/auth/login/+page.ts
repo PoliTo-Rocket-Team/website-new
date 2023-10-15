@@ -2,8 +2,12 @@ import { redirect } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ parent, url }) => {
-    const { session } = await parent();
-    if(session) throw redirect(303, "/admin");
-    const goto = url.searchParams.get("redirect");
-    return ({ goto: goto ? decodeURI(goto) : "/admin" });
+    let path = url.searchParams.get("redirect");
+    path = path && path.startsWith('/') ? decodeURI(path) : "/dashboard"
+    const { user } = await parent();
+    if(user) {
+        console.log("login: user found");
+        throw redirect(303, path);
+    }
+    return ({ goto: path });
 };
