@@ -17,7 +17,7 @@
                 <a href="/dashboard/account" use:current>Account</a>
             </li>
             {#each data.divisions||[] as d}
-                <li><a href="/positions/{d.id}" use:current>{d.code} positions</a></li>
+                <li><a href="/dashboard/positions/{d.id}" use:current>{d.code} positions</a></li>
             {/each}
             {#each data.subteams||[] as s}
                 <li>
