@@ -7,8 +7,8 @@ import { redirect, type Handle } from '@sveltejs/kit';
 
 export const handle: Handle = async ({ event, resolve }) => {
   const path = event.url.pathname;
-  const admin = path.startsWith("/admin");
-  if(admin || path.startsWith("/auth")) {
+  const dashboard = path.startsWith("/dashboard");
+  if(dashboard || path.startsWith("/auth")) {
     const sb = createSupabaseServerClient({
       supabaseUrl: PUBLIC_SUPABASE_URL,
       supabaseKey: PUBLIC_SUPABASE_KEY,
@@ -16,9 +16,8 @@ export const handle: Handle = async ({ event, resolve }) => {
     });
     event.locals.supabase = sb;
     event.locals.session = null;
-    if(path.startsWith("/admin")) {
-      const res = await sb.auth.getSession();
-      event.locals.session = res.data.session;
+    if(dashboard) {
+      event.locals.session = (await sb.auth.getSession()).data.session;
       if(!event.locals.session) throw redirect(303, "/auth/login?redirect="+encodeURI(path));
     }
     return resolve(event, {
