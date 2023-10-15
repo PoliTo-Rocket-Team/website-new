@@ -18,17 +18,24 @@ export const load: LayoutLoad = async ({ parent, url }) => {
             details: res.error.message
         });
     }
-    if(res.data.length === 0) return {person: null}
+    if(res.data.length === 0) return ({user});
     const person = res.data[0];
-
-    const p = await Promise.all([
-        supabase.from("divisions").select("name, code, acting:lead_acting, subteam:subteams(name,code)").eq("lead", person.id),
-        supabase.from("subteams").select("title:title_name, code").eq("chief", person.id),
-    ]);
 
     return {
         user, person, 
-        divisions: p[0].data!,
-        subteams: p[1].data!,
+        pic: supabase.storage
+            .from("people-pics")
+            .getPublicUrl(`${person.id}.jpeg`)
+            .data.publicUrl,
+        divisions: supabase
+            .from("divisions")
+            .select("id, name, code, acting:lead_acting, subteam:subteams(name,code)")
+            .eq("lead", person.id)
+            .then(v => v.data!),
+        subteams: supabase
+            .from("subteams")
+            .select("id, name, code, title:title_name")
+            .eq("chief", person.id)
+            .then(v => v.data!),
     }
 };
