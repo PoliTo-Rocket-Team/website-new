@@ -259,7 +259,7 @@ export interface Database {
           end: string | null
           id: number
           name: string
-          title_name: string | null
+          title_name: string
         }
         Insert: {
           chief?: number | null
@@ -267,7 +267,7 @@ export interface Database {
           end?: string | null
           id?: number
           name: string
-          title_name?: string | null
+          title_name: string
         }
         Update: {
           chief?: number | null
@@ -275,7 +275,7 @@ export interface Database {
           end?: string | null
           id?: number
           name?: string
-          title_name?: string | null
+          title_name?: string
         }
         Relationships: [
           {
@@ -296,6 +296,12 @@ export interface Database {
           _user: string
         }
         Returns: number[]
+      }
+      get_person_id_from_user: {
+        Args: {
+          _user: string
+        }
+        Returns: number
       }
       get_subteam_of: {
         Args: {
