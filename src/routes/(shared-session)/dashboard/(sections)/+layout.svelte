@@ -10,12 +10,17 @@
         const destroy = page.subscribe(v => node.classList.toggle("current", node.href.endsWith(v.url.pathname)));
         return { destroy };
     }
+
+    function fiximg(this: HTMLImageElement) {
+        this.src = "https://api.dicebear.com/7.x/micah/svg?backgroundColor=transparent&seed="+data.person?.first_name;
+    }
 </script>
 
 <main class="split">
     <aside>
         <div class="account">
-            <img src={data.pic} alt="Hopefully your face">
+            <img src={data.pic} alt="Hopefully your face" on:error={fiximg}>
+
             <span class="name">{data.person ? data.person.first_name + ' ' + data.person.last_name : "Not yet linked"}</span>
             {#each data.subteams||[] as s}
                 <span class="title">{s.title} Lead</span>
