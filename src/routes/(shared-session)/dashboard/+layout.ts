@@ -1,18 +1,19 @@
 import { error, redirect } from "@sveltejs/kit";
-import type { PageLoad } from "./$types";
+import type { LayoutLoad } from "./$types";
 
-export const load: PageLoad = async ({ parent }) => {
+export const load: LayoutLoad = async ({ parent }) => {
     let { supabase, session } = await parent();
     if(!session) {
         session = (await supabase.auth.getSession()).data.session;
         if(!session) throw redirect(303, "/auth/login");
     }
-    const res = await supabase.from("people").select("id, first_name, last_name, linkedin").eq("user", session!.user.id);
+    const user = session.user.id;
+    const res = await supabase.from("people").select("id, first_name, last_name, linkedin").eq("user", user);
     if(res.error) {
-        console.log(session);
+        // console.log(session);
         throw error(500, {
             message: "Invalid session",
-            details: res.error.details
+            details: res.error.message
         });
     }
     if(res.data.length === 0) return {person: null}
@@ -25,7 +26,7 @@ export const load: PageLoad = async ({ parent }) => {
     ]);
 
     return {
-        person, 
+        user, email: session.user.email, person, 
         divisions: data[0].data!,
         subteams: data[1].data!,
         positions: data[2].data!,

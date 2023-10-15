@@ -77,7 +77,7 @@
                             </td>
                         </tr>
                     </table>
-                    <button type="button">Modify</button>
+                    <button type="button">Modify account</button>
                 </section>
                 <section aria-labelledby="account">
                     <h2 id="account">Positions</h2>
@@ -150,5 +150,13 @@
     h3 {
         margin-top: 1rem;
         margin-bottom: .3rem;
+    }
+    .name {
+        font-weight: 600;
+        font-size: 1.1rem;
+    }
+    .titles {
+        list-style: none;
+        color: var(--accent-text);
     }
 </style>
