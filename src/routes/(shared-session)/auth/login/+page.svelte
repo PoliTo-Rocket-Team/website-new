@@ -7,18 +7,24 @@
     export let form: ActionData;
     export let data: PageData;
 
+    let submitting = false;
+
     const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();
-        console.log("submitting");
+        if(submitting) return;
+        submitting = true;
         const email = formData.get("email");
         const password = formData.get("password");
         if(typeof email === "string" && typeof password === "string") {
             const res = await data.supabase.auth.signInWithPassword({email,password});
             if(res.error) form = { email, password, success: false };
-            else setTimeout(()=>goto(data.goto),0);
+            else await goto(data.goto);
         }   
         else form = { email: '', password: '', success: false };
+        submitting = false;
     }
+
+    function removeError() { form = null; }
 </script>
 
 <svelte:head>
@@ -28,11 +34,14 @@
 <main>
     <h1>Login</h1>
     <form method="post" use:enhance={submit}>
-        <input type="email" name="email" autocomplete="email" placeholder="email">
-        <input type="password" name="password" autocomplete="current-password" placeholder="Password">
+        <input type="email" name="email" autocomplete="Email" placeholder="Email" value={form?.email} on:input={removeError}>
+        <input type="password" name="password" autocomplete="current-password" placeholder="Password" value={form?.password} on:input={removeError}>
         <input type="hidden" name="redirect" value={data.goto}>
-        <button type="submit">Login</button>
+        <button type="submit" disabled={submitting}>Login</button>
     </form>
+    {#if form}
+        <p>Invalid email or username</p>
+    {/if}
 </main>
 
 <style>
@@ -72,5 +81,36 @@
     }
     input:read-only {
         color: var(--fg-1);
+    }
+    button {
+        color: var(--accent-text);
+        border: 2px solid var(--accent-fig);
+        padding: .4rem 1rem;
+        transition: background-color .2s ease, color .2s ease;
+        margin-top: 2rem;
+        font-weight: 600;
+    }
+    button:hover {
+        background-color: var(--accent-fig);
+        color: white;
+    }
+    button:focus-visible {
+        text-decoration: underline dashed currentColor;
+        outline: none;
+    }
+    button:disabled {
+        border-color: #8883;
+        color: #8883;
+        background-color: transparent;
+    }
+    p {
+        text-align: center;
+        margin-top: 1rem;
+    }
+    :global([data-theme="light"]) p {
+        color: #b60600;
+    }
+    :global([data-theme="dark"]) p {
+        color: #ff5454;
     }
 </style>
