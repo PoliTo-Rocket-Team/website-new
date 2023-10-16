@@ -17,7 +17,8 @@ export const handle: Handle = async ({ event, resolve }) => {
     event.locals.supabase = sb;
     event.locals.session = null;
     if(dashboard) {
-      event.locals.session = (await sb.auth.getSession()).data.session;
+      try { event.locals.session = (await sb.auth.getSession()).data.session;}
+      catch {} // I don't know why, but it throws an error instead of returning it if refresh token is expired
       if(!event.locals.session) throw redirect(303, "/auth/login?redirect="+encodeURI(path));
     }
     return resolve(event, {
