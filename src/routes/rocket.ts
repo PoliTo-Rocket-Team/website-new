@@ -1,4 +1,4 @@
-import { AmbientLight, ArrowHelper, Color, DirectionalLight, Euler, Object3D, PerspectiveCamera, Scene, Vector3, WebGLRenderer } from "three";
+import { AmbientLight, ArrowHelper, Box3, Color, DirectionalLight, Euler, Group, Object3D, PerspectiveCamera, Scene, Vector3, WebGLRenderer } from "three";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 import { wait } from "$lib/timing";
 
@@ -21,11 +21,11 @@ camera.position.set(1, 0, liftoff_heigth + 7);
 camera.position.add(new Vector3(0,0,camera_distance).applyEuler(rot));
 // camera.position.z = 20;
 
-const directional_light = new DirectionalLight(0xffffff, 4.5);
+const directional_light = new DirectionalLight(0xffffff, 1.5);
 directional_light.position.set(2, .5, 1);
 scene.add(directional_light);
 
-const ambient_light = new AmbientLight(0xffffff, .25);
+const ambient_light = new AmbientLight(0xffffff, .2);
 scene.add(ambient_light);
 
 function randomDisplacement(w: number = 3e-3) { return (Math.random()-0.5)*w; }
@@ -58,13 +58,13 @@ function startAnimation(obj: Object3D) {
     let req = requestAnimationFrame(animate);
 
     function animate(time: number) {
-        obj.rotateY(2e-3);
+        obj.rotateZ(2e-3);
 
         if(height < liftoff_heigth) {
             height += liftoff_coefficient*Math.pow(liftoff_heigth-height, 1.5);
             obj.position.z = height;
         }
-        camera.position.set(1, 0, liftoff_heigth + 7);
+        camera.position.set(1, 0, liftoff_heigth + 6);
         camera.position.add(new Vector3(0, yshift,camera_distance).applyEuler(rot));
         renderer.render(scene, camera);
         req = requestAnimationFrame(animate);
@@ -80,6 +80,25 @@ function addAxisArrows(origin?: Vector3) {
     );
 }
 
+/** 
+ * @see {@link https://stackoverflow.com/questions/46164308/how-to-center-a-three-group-based-on-the-width-of-its-children} 
+ * @see {@link https://stackoverflow.com/questions/28848863/threejs-how-to-rotate-around-objects-own-center-instead-of-world-center}
+ * - create axis-aligned bounding box of object
+ * - get the center
+ * - translate it
+ * - wraps it into a group so that local rotation are normal
+ */
+function placeAtCenter(obj: Object3D) {
+    const center = new Vector3(0,0,0);
+    const box = new Box3().setFromObject(obj);
+    box.getCenter(center);
+    obj.position.setX(-center.x);
+    obj.position.setY(-center.y);
+    const pivot = new Group();
+    pivot.add(obj);
+    return pivot;
+}
+
 export async function loadScene() {
     await wait(100);
     try {
@@ -89,11 +108,11 @@ export async function loadScene() {
         const loader = new GLTFLoader();
         const gltf = await loader.loadAsync("/assets/Rocket.glb", e => post("load", e.loaded/e.total));
         const rocket = gltf.scene;
-        rocket.scale.multiplyScalar(4);
+        rocket.scale.multiplyScalar(0.5);
         rocket.rotateX(Math.PI/2);
-        scene.add(rocket);
-        // console.dir(rocket);
-        startAnimation(rocket);
+        const pivot = placeAtCenter(rocket)
+        scene.add(pivot);
+        startAnimation(pivot);
 
         await wait(100);
         post("done", void 0);
