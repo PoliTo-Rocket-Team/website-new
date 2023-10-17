@@ -3,19 +3,11 @@
     import { goto } from "$app/navigation";
     import type { PageData } from "./$types";
     import Follow3D from "$lib/Follow3D.svelte";
+    import { fiximg } from "$lib/dashboard-utils";
 
     export let data: PageData;
 
-    const space = /\s/;
-    function correct(v: string) {
-        return v.toLowerCase().replace(space,'');
-    }
-
     const transform = (x: number, y: number) => `rotate3d(${-y},${x},0,${-15*Math.hypot(x,y)}deg)`;
-
-    function fiximg(this: HTMLImageElement) {
-        this.src = "https://api.dicebear.com/7.x/micah/svg?backgroundColor=transparent&seed="+data.person?.first_name;
-    }
 </script>
 
 <svelte:head>
@@ -41,7 +33,7 @@
             <article>
                 <Follow3D {transform}>
                     <a href="/dashboard/account">
-                        <img src={data.pic} alt="Hopefully your face" on:error={fiximg}>
+                        <img src={data.pic} alt="Hopefully your face" data-seed={data.person.first_name} on:error={fiximg}>
                         <h2>Account</h2>
                     </a>
                 </Follow3D>

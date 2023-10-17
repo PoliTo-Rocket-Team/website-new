@@ -3,6 +3,7 @@
     import { page } from "$app/stores";
     import { enhance } from "$app/forms";
     import { goto } from "$app/navigation";
+    import { fiximg } from "$lib/dashboard-utils";
 
     export let data: LayoutData;
 
@@ -10,16 +11,12 @@
         const destroy = page.subscribe(v => node.classList.toggle("current", node.href.endsWith(v.url.pathname)));
         return { destroy };
     }
-
-    function fiximg(this: HTMLImageElement) {
-        this.src = "https://api.dicebear.com/7.x/micah/svg?backgroundColor=transparent&seed="+data.person?.first_name;
-    }
 </script>
 
 <main class="split">
     <aside>
         <div class="account">
-            <img src={data.pic} alt="Hopefully your face" on:error={fiximg}>
+            <img src={data.pic} alt="Hopefully your face" data-seed={data.person?.first_name} on:error={fiximg}>
 
             <span class="name">{data.person ? data.person.first_name + ' ' + data.person.last_name : "Not yet linked"}</span>
             {#each data.subteams||[] as s}
