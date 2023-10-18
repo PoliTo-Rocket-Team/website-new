@@ -56,7 +56,7 @@
             <button type="submit">Log out</button>
         </form>
     </aside>
-    <div>
+    <div class="body">
         <slot />
     </div>
 </main>
@@ -129,5 +129,8 @@
     .title {
         color: var(--accent-text);
         font-weight: 500;
+    }
+    .body {
+        padding: 2.5rem 4rem;
     }
 </style>
