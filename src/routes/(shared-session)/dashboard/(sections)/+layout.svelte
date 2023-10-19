@@ -1,9 +1,11 @@
 <script lang="ts">
+    import "./common.css";
     import type { LayoutData } from "./$types";
     import { page } from "$app/stores";
     import { enhance } from "$app/forms";
     import { goto } from "$app/navigation";
-    import { fiximg } from "$lib/dashboard-utils";
+    import { createPictureStore, fiximg } from "$lib/dashboard-utils";
+    import { setContext } from "svelte";
 
     export let data: LayoutData;
 
@@ -11,12 +13,15 @@
         const destroy = page.subscribe(v => node.classList.toggle("current", node.href.endsWith(v.url.pathname)));
         return { destroy };
     }
+
+    const picture = createPictureStore(data.pic);
+    setContext("picture", picture);
 </script>
 
 <main class="split">
     <aside>
         <div class="account">
-            <img src={data.pic} alt="Hopefully your face" data-seed={data.person?.first_name} on:error={fiximg}>
+            <img src={$picture} alt="Hopefully your face" data-seed={data.person?.first_name} on:error={fiximg}>
 
             <span class="name">{data.person ? data.person.first_name + ' ' + data.person.last_name : "Not yet linked"}</span>
             {#each data.subteams||[] as s}
@@ -71,6 +76,7 @@
         border-right: 2px solid #8884;
         position: sticky;
         top: 10vh;
+        text-align: right;
         /* transform: translateY(-50%); */
     }
     hr {
