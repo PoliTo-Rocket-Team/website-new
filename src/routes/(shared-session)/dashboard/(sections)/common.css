@@ -5,9 +5,16 @@ h2 {
 
 input, textarea {
     font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: 2px solid #8887;
+}
+input:focus-visible, textarea:focus-visible {
+    outline: none;
+    border-color: var(--accent-fig);
 }
 input[type="text"], textarea {
-    padding: .1rem .3rem;
+    padding: .2rem .4rem;
 }
 
 .btn {
@@ -15,7 +22,7 @@ input[type="text"], textarea {
     width: fit-content;
     color: var(--accent-text);
     border: 2px solid var(--accent-fig);
-    padding: .4rem 1rem;
+    padding: .4rem .8rem;
     transition: background-color .2s ease, color .2s ease;
     font-weight: 600;
     cursor: pointer;

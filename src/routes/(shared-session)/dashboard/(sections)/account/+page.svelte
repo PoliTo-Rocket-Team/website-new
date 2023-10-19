@@ -16,9 +16,11 @@
 
     function showButtons(this: HTMLInputElement) {
         const ref = this.dataset.ref || null;
-        (this.parentElement as HTMLFormElement).classList.toggle("modified", this.value !== ref);
+        this.size = this.value ? this.value.length : 6;
+        (this.parentElement as HTMLFormElement).classList.toggle("unchanged", this.value.trim() === ref);
     }
     
+    let modifying = false;
     let imgState = 0;
 
     function imgError(msg: string) {
@@ -107,14 +109,47 @@
 
 <h2>Contacts</h2>
 <ul class="no-list">
-    <li>Official email: <a href="mailto:{email}">{email}</a></li>
+    <li>Official email: <a href="mailto:{email}" target="_blank" rel="noreferrer">{email}</a></li>
     <li>
-        <form action="?/linkeind" method="post" class="oneliner">
-            <label for="linkedin">LinkedIn username: <span>
-            <input type="text" name="username" id="linkedin" placeholder="Not set" value={data.person.linkedin} data-ref={data.person.linkedin} on:input={showButtons}>
-            <button type="reset">Cancel</button>
-            <button type="submit">Save</button>
+        <span>LinkedIn profile:</span>
+        {#if modifying}
+        <form action="?/linkedin" method="post" class="oneliner unchanged" use:enhance={async ({ cancel, formElement, formData }) => {
+            cancel();
+            const v = formData.get("username");
+            if(typeof v !== "string") return;
+            const res = await data.supabase.from("people").update({ linkedin: v }).eq("id", data.person.id);
+            if(res.error) return;
+            data.person.linkedin = v;
+            formElement.dataset.ref = v;
+            formElement.classList.add("unchanged");
+        }}>
+            <span>
+                <label for="linkedin">
+                    <span>linkedin.com/in/</span>
+                    <input 
+                        type="text" 
+                        name="username" 
+                        id="linkedin" 
+                        placeholder="Not set" 
+                        autocomplete="off"
+                        class="inline" 
+                        value={data.person.linkedin} 
+                        size={data.person.linkedin?.length || 6}
+                        data-ref={data.person.linkedin} 
+                        on:input={showButtons}>
+                </label>
+            </span>
+            <button class="btn" type="submit">Save</button>
+            <button class="btn btn--low" type="reset">Cancel</button>
         </form>
+
+        {:else}
+            {#if data.person.linkedin}
+            <a href="https://www.linkedin.com/in/{data.person.linkedin}" target="_blank" rel="noreferrer">linkedin.com/in/{data.person.linkedin}</a>
+            {:else}
+            <span class="low">not set</span>
+            {/if}
+        {/if}
     </li>
 </ul>
 
@@ -155,23 +190,33 @@
     .error {
         margin-top: 1rem;
     }
-    
+    a {
+        text-decoration-style: dashed;
+    }
     .oneliner {
         display: flex;
         align-items: center;
+        gap: 1ch;
     }
-    .oneliner button {
+    .oneliner.unchanged button {
         display: none;
     }
     ul.no-list {
         list-style: none;
     }
     .no-list li {
-        margin-bottom: .2rem;
+        margin-bottom: .4rem;
     }
     label > input {
         display: none;
     }
+
+    input.inline {
+        display: inline;
+        padding: 0;
+        border: 0;
+    }
+
     .hidden {
         display: none;
     }
