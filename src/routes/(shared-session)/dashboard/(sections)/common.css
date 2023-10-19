@@ -1,0 +1,50 @@
+h2 {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+input, textarea {
+    font-size: inherit;
+}
+input[type="text"], textarea {
+    padding: .1rem .3rem;
+}
+
+.btn {
+    display: block;
+    width: fit-content;
+    color: var(--accent-text);
+    border: 2px solid var(--accent-fig);
+    padding: .4rem 1rem;
+    transition: background-color .2s ease, color .2s ease;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn--low {
+    color: var(--fg-1);
+    border-color: #8887;
+}
+.btn:hover {
+    background-color: var(--accent-fig);
+    color: white;
+}
+.btn--low:hover {
+    background-color: #8882;
+    color: var(--fg-0);
+}
+.btn:focus-visible {
+    text-decoration: underline dashed currentColor;
+    outline: none;
+}
+.btn:disabled {
+    border-color: #8883;
+    color: #8883;
+    background-color: transparent;
+}
+
+[data-theme="light"] .error {
+    color: #b60600;
+}
+[data-theme="dark"] .error {
+    color: #ff5454;
+}
