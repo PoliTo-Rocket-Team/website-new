@@ -115,6 +115,41 @@
         "form": "arcXaamqyvxy4FYE7"
     },
     {
+        "name": "Software Engineer",
+        "subteam": "Vittorio Emanuele II",
+        "division": "Mission Analysis",
+        "code": "VES-MSA-001",
+        "description": [
+            "We're looking for software engineers to join our team. Your job would involve developing scripts for studying rocket trajectories and improving aerodynamics. Additionally, you'll create a virtual model to simulate rocket behavior in various scenarios. This will involve selecting appropriate physical models and parameters to represent the rocket's propulsion, aerodynamics, and control systems. Furthermore the created model must ensure that the simulation is accurate and that it can be used to analyze the rocket's performance.  The basic features of this model shall include:",
+            [
+                "6 degree of freedom flight simulation",
+                "Realtime simulated altitude, velocity and acceleration display",
+                "Aerodynamic models",
+                "Solid motors models"
+            ],
+            "Future software features shall include:",
+            [
+                "Accurate weather modeling",
+                "Automatic design optimization",
+                "Parachutes with external trigger functions"
+            ]
+        ],
+        "desirable": [
+            "Knowledge of fluid dynamics and aerodynamics ",
+            "Mastery of Matlab/Simulink",
+            "Basic knowledge of CFD software",
+            "Previous experience in GUI development"
+        ],
+        "required": [
+            "Knowledge of a programming language suitable for performant scientific computing and numerical calculation, such as Python or Matlab/Simulink",
+            "Knowledge of existing tools, libraries, or resources on flight simulation",
+            "Collaboration with other developers",
+            "Knowledge of Git and GitHub",
+            "Basic knowledge of Latex"
+        ],
+        "form": "hj5QiiY8mqMFqtpQ8"
+    },
+    {
         "name": "Hardware Engineer",
         "subteam": "Vittorio Emanuele II",
         "division": "Avionics",
