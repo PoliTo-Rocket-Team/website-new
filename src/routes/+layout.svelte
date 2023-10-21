@@ -6,7 +6,7 @@
 
     import { page } from "$app/stores";
     import { browser } from "$app/environment";
-    import { beforeNavigate, afterNavigate, goto } from "$app/navigation";
+    import { afterNavigate, goto } from "$app/navigation";
     import LinkCombo, { type ComboRoute } from "$lib/LinkCombo.svelte";
     import { preference, theme } from "$lib/theme"
     import { throttle } from "$lib/timing";
@@ -26,7 +26,7 @@
     let open = false;
 
     function close() {
-        if(history.state === OPEN_STATE) history.back();
+        if(history.state.navbar) history.back();
     }
     function toggle() {
         if(open) history.back();
@@ -49,7 +49,7 @@
     $: if(browser) document.body.classList.toggle("no-scroll", open);
 </script>
 
-<svelte:window on:scroll={throttle(20, onScroll)} />
+<svelte:window on:scroll={throttle(20, onScroll)} on:popstate={() => open = history.state.navbar === true} />
 
 <div class="nav-container">
     <nav id="page-nav" class:hide class:down>
