@@ -108,7 +108,7 @@ export async function loadScene() {
         const loader = new GLTFLoader();
         const gltf = await loader.loadAsync("/assets/Rocket.glb", e => post("load", e.loaded/e.total));
         const rocket = gltf.scene;
-        rocket.scale.multiplyScalar(0.5);
+        rocket.scale.multiplyScalar(0.55);
         rocket.rotateX(Math.PI/2);
         const pivot = placeAtCenter(rocket)
         scene.add(pivot);
