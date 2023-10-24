@@ -48,9 +48,9 @@ You can preview the production build with `pnpm preview` afterwards.
 
 Division leads, subteam chiefs, and the president &ndash; each with their permissions &ndash; can edit their own appearance, manage their divisions, write/open/close positions.
 
-The [public](./src/routes/(public)/) routes are prerendered (see [here](#public-prerendering)) in order to be served very quickly and to save netlify computation time. On the other hand the [dashboard](./src/routes/(shared-session)/dashboard/) make full use of SvelteKit load functions. On top of that, a minimal [server hook](https://kit.svelte.dev/docs/hooks#server-hooks) is used to create a supabase server client for:
+The [public](./src/routes/(public)/) routes are prerendered (see [here](#public-prerendering)) in order to be served very quickly and to save netlify computation time. On the other hand the [dashboard](./src/routes/(shared-session)/dashboard/) makes full use of SvelteKit load functions. On top of that, a minimal [server hook](https://kit.svelte.dev/docs/hooks#server-hooks) is used to create a supabase server client for:
 - [`/auth`](./src/routes/(shared-session)/auth/) routes;
-- `/dashboard` routes, for which it also checks for the existance of a user section, redirecting in case of unauthenticated users;
+- `/dashboard` routes, for which it also checks for the existance of a user session, redirecting in case of unauthenticated users;
 - public routes in the case of building or developing, logging in a special user (with only partial read permissions) which allows the load functions to retrieve data from the database.
 
 
@@ -74,7 +74,7 @@ The [public](./src/routes/(public)/) routes are prerendered (see [here](#public-
 
 ### Public prerendering
 
-In the [public `layout.ts`](./src/routes/(public)/layout.ts), `export const prerender = true;` tells sveltekit to prerender any public route. `+page.server.ts` [load](https://kit.svelte.dev/docs/load) functions are thus executed only during build time, and their result is stored in prerendered json files. The returned data is available in the prop `page` of `+page.svelte` components. 
+In the [public `layout.ts`](./src/routes/(public)/+layout.ts), `export const prerender = true;` tells sveltekit to prerender any public route. `+page.server.ts` [load](https://kit.svelte.dev/docs/load) functions are thus executed only during build time, and their result is stored in json files. The returned data is available in the prop `page` of `+page.svelte` components. 
 
 ```ts
 // +page.server.ts
