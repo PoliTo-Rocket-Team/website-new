@@ -68,7 +68,8 @@ The [public](./src/routes/(public)/) routes are prerendered (see [here](#public-
 | Appoint new subteam chief | &#10006; | &#10006; | &#10004; |
 | Add notable student (N.S.) | &#10006; | &#10004; | &#10006; |
 | Update & remove N.S. | &#10006; | &#10006; | &#10004; |
-| Edit apply faqs | if logistics lead? | &#10006; | &#10004; |
+| Edit apply faqs | if Logistics lead? | &#10006; | &#10004; |
+| Edit timeline | if Media lead | &#10006; | &#10004; |
 | Issue Netlify build | if IT lead | &#10006; | &#10004; |
 
 
