@@ -27,7 +27,7 @@ export const handle: Handle = async ({ event, resolve }) => {
       },
     });
   }
-  if(building || dev) {
+  else if(building || dev) {
     const sb = createSupabaseServerClient({
       supabaseUrl: PUBLIC_SUPABASE_URL,
       supabaseKey: PUBLIC_SUPABASE_KEY,
