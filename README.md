@@ -1,4 +1,4 @@
-# New PRT website
+# Official PRT website source files
 
 Website of PoliTo Rocket Team using the [SvelteKit](https://kit.svelte.dev/) framework with [adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static).
 
@@ -44,31 +44,48 @@ pnpm build
 
 You can preview the production build with `pnpm preview` afterwards.
 
-## External text server
+## Supabase integration
 
-> This is a future feature. Here it's explained how it would work
+Division leads, subteam chiefs, and the president &ndash; each with their permissions &ndash; can edit their own appearance, manage their divisions, write/open/close positions.
 
-The idea is to allow leads as admins with custom permissions to edit some texts of the website. In order to achieve this while keeping a fully static generation, we could leverage SvelteKit's [`+page.sever.ts`](https://kit.svelte.dev/docs/routing#page) and [Netlify build hooks](https://docs.netlify.com/configure-builds/build-hooks/). For each page that requires this sort of synamic text, the following steps can be followed:
+The [public](./src/routes/(public)/) routes are prerendered (see [here](#public-prerendering)) in order to be served very quickly and to save netlify computation time. On the other hand the [dashboard](./src/routes/(shared-session)/dashboard/) make full use of SvelteKit load functions. On top of that, a minimal [server hook](https://kit.svelte.dev/docs/hooks#server-hooks) is used to create a supabase server client for:
+- [`/auth`](./src/routes/(shared-session)/auth/) routes;
+- `/dashboard` routes, for which it also checks for the existance of a user section, redirecting in case of unauthenticated users;
+- public routes in the case of building or developing, logging in a special user (with only partial read permissions) which allows the load functions to retrieve data from the database.
 
--   create `+page.sever.ts` that export a `load` function that queries a server api endpoint and returns its result. This query is done only once during the build process: the text goes directly in the html, and the eventual hydration won't query the API (thus faster navigation)
+
+### Permissions
+
+| Action | Division Lead | Subteam Chief | President |
+| ------ | :-----------: | :-----------: | :-------: |
+| Update personal picture & linkedin | &#10004; | &#10004; | &#10004; |
+| Read positions | Their division | Their subteam | All |
+| Edit positions | Upon Chief permission | Their subteam | &#10006; |
+| Edit subteam divisions | &#10006; | Their subteam | All |
+| Edit subteams | &#10006; | &#10006; | &#10004; |
+| Invite people | &#10006; | ? | &#10004; |
+| Appoint new division lead | &#10006; | &#10004; | &#10004; |
+| Appoint new subteam chief | &#10006; | &#10006; | &#10004; |
+| Add notable student (N.S.) | &#10006; | &#10004; | &#10006; |
+| Update & remove N.S. | &#10006; | &#10006; | &#10004; |
+| Edit apply faqs | if logistics lead? | &#10006; | &#10004; |
+| Issue Netlify build | if IT lead | &#10006; | &#10004; |
+
+
+### Public prerendering
+
+In the [public `layout.ts`](./src/routes/(public)/layout.ts), `export const prerender = true;` tells sveltekit to prerender any public route. `+page.server.ts` [load](https://kit.svelte.dev/docs/load) functions are thus executed only during build time, and their result is stored in prerendered json files. The returned data is available in the prop `page` of `+page.svelte` components. 
 
 ```ts
 // +page.server.ts
 
 import type { PageServerLoad } from "./$types";
 
-interface Texts {
-    /* definition */
-}
-
-export const load = (async ({ fetch }) => {
-    const res = await fetch("<api endpoint>");
-    const data: Texts = await res.json();
-    return data; // or do some processing
-}) satisfies PageServerLoad;
+export const load: PageServerLoad = async ({ locals }) => {
+    const res = await locals.supabase.from("<table>").select("<fields>");
+    return res.data; // or do some processing
+};
 ```
-
--   inside `+page.svelte` export a prop with type `PageData` imported from `./$types` (hidden ts declaration file silently created by SvelteKit to have) and use its value around the page
 
 ```html
 <!-- +page.svelte -->
@@ -80,4 +97,4 @@ export const load = (async ({ fetch }) => {
 <!-- use data in the document -->
 ```
 
--   After some texts are modified, the server can request Netlify to rebuild the website trough a POST request to `https://api.netlify.com/build_hooks/<id>?trigger_title=<name>` where the `id` is given when creating a new Netlify build hook, an `name` is an optional name for tracking purposes.
+In order for some databse change to take effect on the public pages, Netlify has to receive a POST request to `https://api.netlify.com/build_hooks/<id>?trigger_title=<name>` where the `id` is given when creating a new Netlify build hook, an `name` is an optional name for tracking purposes. Such request can be only done by the president or by the IT lead, though an _ad-hoc_ page.
