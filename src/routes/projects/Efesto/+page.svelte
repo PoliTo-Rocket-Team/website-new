@@ -49,7 +49,7 @@
         <h3 class="smudge">New Materials</h3>
         <p>The thrust chamber of a high-performance bi-propellant liquid rocket engine is a critical component of the launch vehicle because it is designed to operate in some of the most severe conditions seen in engineering practice.</p>
         <p>The requirement of reducing the temperature of the walls exposed to the hot gas can be met with high-thermal conductivity copper alloys, while mechanical stiffness is achieved by using high-strength steel or nickel alloys.</p>
-        <p>Because the stress-strain behaviour of a regeneratively-cooled thrust chamber is directly correlated with its temperature behaviour, it is of primary importance to select the correct alloys.</p>
+        <p>Because the stress-strain behavior of a regeneratively-cooled thrust chamber is directly correlated with its temperature behavior, it is of primary importance to select the correct alloys.</p>
         <p>Thanks to the Politecnico R&D partnership, the Efesto Engine will be designed with some of the most recent copper-based metal matrix composite materials.</p>
     </li>
     <li class="card" use:move={1}>

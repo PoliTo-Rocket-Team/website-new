@@ -4,7 +4,7 @@
 
 <svelte:head>
     <title>Project Vittorio Emanuele II - PoliTo Rocket Team</title>
-    <meta name="description" content="rocket specifically designed for the international competitions and with more challenging objectives" />
+    <meta name="description" content="VES is our last single-stage, solid propelled rocket, with a variable target altitude and mission profile. Discover all its characteristics here!" />
 </svelte:head>
 
 
@@ -12,10 +12,10 @@
 <section class="cols">
     <div>
         <h2 class="smudge">Name and design</h2>
-        <p>Vittorio Emanuele II, code name VES, is the second rocketry project undertaken by our team.</p>
+        <p>Vittorio Emanuele II, code name VES, is the second rocketry project undertaken by the team.</p>
         <p>The project is named after the first King of Italy, born in Turin in 1820. Vittorio Emanuele II, although already King of Sardinia and Piedmont, fought tirelessly for a united Italy.</p>
         <p>His unwavering determination to never settle for mere accomplishments and always strive for greater heights serves as an inspiration for the second rocket of the Founding Fathers series.</p>
-        <p>The PoliTo Rocket Team is propelled by this spirit, refusing to rest on the laurels of the remarkable achievements of the Cavour Project. Instead develops another rocket specifically designed for the international competitions and with more challenging objectives.</p>
+        <p>The PoliTo Rocket Team is propelled by this spirit, refusing to rest on the laurels of the remarkable achievements of the Cavour Project. Instead, it develops another rocket specifically designed for international competitions with increasingly challenging objectives.</p>
     </div>
 
     <div>
