@@ -4,7 +4,7 @@
 
 <svelte:head>
     <title>Project Vittorio Emanuele II - PoliTo Rocket Team</title>
-    <meta name="description" content="VES is our last single-stage, solid propelled rocket, with a variable target altitude and mission profile. Discover all its characteristics here!" />
+    <meta name="description" content="VES is our latest single-stage, solid propelled rocket, with a variable target altitude and mission profile. Discover all its characteristics here!" />
 </svelte:head>
 
 
