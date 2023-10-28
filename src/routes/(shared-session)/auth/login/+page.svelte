@@ -34,8 +34,8 @@
 <main>
     <h1>Login</h1>
     <form method="post" use:enhance={submit}>
-        <input type="email" name="email" autocomplete="Email" placeholder="Email" value={form?.email} on:input={removeError}>
-        <input type="password" name="password" autocomplete="current-password" placeholder="Password" value={form?.password} on:input={removeError}>
+        <input type="email" name="email" autocomplete="email" placeholder="Email" value={form ? form.email : ''} on:input={removeError}>
+        <input type="password" name="password" autocomplete="current-password" placeholder="Password" value={form ? form.password : ''} on:input={removeError}>
         <input type="hidden" name="redirect" value={data.goto}>
         <button type="submit" disabled={submitting}>Login</button>
     </form>
