@@ -52,7 +52,7 @@
             {/each}
             <article>
                 <Follow3D {transform}>
-                    <a href="/dashboard/account">
+                    <a href="/dashboard/bureaucracy">
                         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,255.98959,255.98959" style="fill:#000000;">
                             <path d="M0,255.98959v-255.98959h255.98959v255.98959z"  fill-opacity="0"  fill="#000000" fill-rule="nonzero" stroke="none"></path>
                             <g transform="scale(8.53333,8.53333)" fill="var(--accent-fig)" fill-rule="nonzero" stroke="none">
