@@ -13,12 +13,12 @@
 
     const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();
-        if(mask || !data.session) return;
+        if(mask) return;
         const password = formData.get("password");
         if(typeof password !== "string") return void (form = { error: "Invalid password value type", password: '' });
         const res = await data.supabase.auth.updateUser({password});
         if(res.error) return void (form = { password, error: res.error.message });
-        else goto("/admin"); 
+        goto("/dashboard"); 
     }
 </script>
 

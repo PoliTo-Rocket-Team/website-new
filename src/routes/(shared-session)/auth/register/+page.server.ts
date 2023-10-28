@@ -8,8 +8,13 @@ export const load: PageServerLoad = async ({ url, locals }) => {
     if(!token_hash) throw error(400, {
         message: "Bad request",
         details: "Token parameter is missing: cannot perform OTP"
-    })  
-    const res = await locals.supabase.auth.verifyOtp({token_hash, type: "invite"});
+    });
+    const type = url.searchParams.get("type");
+    if(type !== "invite" && type !== "recovery") throw error(400, {
+        message: "Bad request",
+        details: "Action type is invalid: cannot perform OTP"
+    })
+    const res = await locals.supabase.auth.verifyOtp({token_hash, type});
     if(res.error) throw error(401, {
         message: "Invalid OTP code",
         details: res.error.message
@@ -34,6 +39,6 @@ export const actions: Actions = {
         if(typeof password !== "string") return fail(400, { error: "Invalid password value type", password: '' });
         if(getPswCriteriaMask(password)) return fail(400, { error: "Submitted password does not satisfy requirements", password } );
         locals.supabase.auth.updateUser({password});
-        redirect(303, "/admin");
+        redirect(303, "/dashboard");
     }
 };
