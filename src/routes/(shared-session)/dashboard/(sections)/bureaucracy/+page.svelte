@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Bureaucracy | PRT Admin Program</title>
+</svelte:head>
+
 <h1>Bureaucracy</h1>
 
 <h2>Procedures</h2>

@@ -75,6 +75,10 @@
     }
 </script>
 
+<svelte:head>
+    <title>Your Account | PRT Admin Program</title>
+</svelte:head>
+
 
 <h1>Your account</h1>
 
