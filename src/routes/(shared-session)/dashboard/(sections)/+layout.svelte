@@ -19,51 +19,53 @@
 </script>
 
 <main class="split">
-    <aside>
-        <div class="account">
-            <img src={$picture} alt="Hopefully your face" data-seed={data.person?.first_name} on:error={fiximg}>
-
-            <span class="name">{data.person ? data.person.first_name + ' ' + data.person.last_name : "Not yet linked"}</span>
-            {#each data.subteams||[] as s}
-                <span class="title">{s.title} Lead</span>
-            {/each}
-            {#each data.divisions||[] as d}
-                <span class="title">{d.name} Lead</span>
-            {/each}
-        </div>
-        <hr>
-        <ul>
-            {#each data.divisions||[] as d}
-                <li><a href="/dashboard/positions/{d.id}" use:current>{d.code} positions</a></li>
-            {/each}
-            {#each data.subteams||[] as s}
+    <div>
+        <aside>
+            <div class="account">
+                <img src={$picture} alt="Hopefully your face" data-seed={data.person?.first_name} on:error={fiximg}>
+    
+                <span class="name">{data.person ? data.person.first_name + ' ' + data.person.last_name : "Not yet linked"}</span>
+                {#each data.subteams||[] as s}
+                    <span class="title">{s.title} Lead</span>
+                {/each}
+                {#each data.divisions||[] as d}
+                    <span class="title">{d.name} Lead</span>
+                {/each}
+            </div>
+            <hr>
+            <ul>
+                {#each data.divisions||[] as d}
+                    <li><a href="/dashboard/positions/{d.id}" use:current>{d.code} positions</a></li>
+                {/each}
+                {#each data.subteams||[] as s}
+                    <li>
+                        <a href="/dashboard/subteam/{s.id}" use:current>
+                            Project
+                            {#if s.name.length > 15}
+                                <abbr title={s.name}>{s.code}</abbr>
+                            {:else}
+                                {s.name}
+                            {/if}
+                        </a>
+                    </li>
+                {/each}
                 <li>
-                    <a href="/dashboard/subteam/{s.id}" use:current>
-                        Project
-                        {#if s.name.length > 15}
-                            <abbr title={s.name}>{s.code}</abbr>
-                        {:else}
-                            {s.name}
-                        {/if}
-                    </a>
+                    <a href="/dashboard/bureaucracy" use:current>Bureaucracy</a>
                 </li>
-            {/each}
-            <li>
-                <a href="/dashboard/bureaucracy" use:current>Bureaucracy</a>
-            </li>
-            <li>
-                <a href="/dashboard/account" use:current>Account</a>
-            </li>
-        </ul>
-        <hr>
-        <form action="/auth/logout" method="post" use:enhance={async ({cancel}) => {
-            cancel();
-            await data.supabase.auth.signOut();
-            goto("/auth/login");
-        }}>
-            <button type="submit">Log out</button>
-        </form>
-    </aside>
+                <li>
+                    <a href="/dashboard/account" use:current>Account</a>
+                </li>
+            </ul>
+            <hr>
+            <form action="/auth/logout" method="post" use:enhance={async ({cancel}) => {
+                cancel();
+                await data.supabase.auth.signOut();
+                goto("/auth/login");
+            }}>
+                <button type="submit">Log out</button>
+            </form>
+        </aside>
+    </div>
     <div class="body">
         <slot />
     </div>
@@ -76,9 +78,10 @@
     }
     aside {
         padding: 1.5rem;
+        padding-bottom: 10vh;
         border-right: 2px solid #8884;
         position: sticky;
-        top: 10vh;
+        top: var(--pad);
         text-align: right;
         /* transform: translateY(-50%); */
     }
