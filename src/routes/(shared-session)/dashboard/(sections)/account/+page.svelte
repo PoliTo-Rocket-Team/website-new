@@ -154,9 +154,6 @@
 </ul>
 
 
-<h2>Credentials</h2>
-<p>Here you can see and change the credentials for your authentication. </p>
-
 <style>
     p {
         margin-bottom: 1rem;
