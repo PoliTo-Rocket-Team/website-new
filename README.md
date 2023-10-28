@@ -60,17 +60,18 @@ The [public](./src/routes/(public)/) routes are prerendered (see [here](#public-
 | ------ | :-----------: | :-----------: | :-------: |
 | Update personal picture & linkedin | &#10004; | &#10004; | &#10004; |
 | Read positions | Their division | Their subteam | All |
-| Edit positions | Upon Chief permission | Their subteam | &#10006; |
-| Edit subteam divisions | &#10006; | Their subteam | All |
+| Edit positions | Their own division | Their subteam | &#10006; |
+| Close division | &#10006; | Can request | All |
+| Edit division name | &#10006; | &#10006; | &#10006; |
 | Edit subteams | &#10006; | &#10006; | &#10004; |
-| Invite people | &#10006; | ? | &#10004; |
-| Appoint new division lead | &#10006; | &#10004; | &#10004; |
+| Appoint new division lead | &#10006; | Can request | &#10004; |
 | Appoint new subteam chief | &#10006; | &#10006; | &#10004; |
-| Add notable student (N.S.) | &#10006; | &#10004; | &#10006; |
+| Add notable student (N.S.) | &#10006; | Can request | Can confirm |
 | Update & remove N.S. | &#10006; | &#10006; | &#10004; |
-| Edit apply faqs | if Logistics lead? | &#10006; | &#10004; |
-| Edit timeline | if Media lead | &#10006; | &#10004; |
-| Issue Netlify build | if IT lead | &#10006; | &#10004; |
+| Edit apply faqs | &#10006; | COO | &#10004; |
+| Edit timeline | Media lead | COO | &#10004; |
+| Issue Netlify build | IT lead | COO | &#10004; |
+| Invite people | &#10006; | &#10006; | &#10004; |
 
 
 ### Public prerendering
