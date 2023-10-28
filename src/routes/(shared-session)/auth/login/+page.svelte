@@ -9,22 +9,27 @@
 
     let submitting = false;
 
+    const re = /^[^@]+(@politorocketteam\.it)?$/;
+
     const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();
         if(submitting) return;
         submitting = true;
-        const email = formData.get("email");
+        const username = formData.get("username");
         const password = formData.get("password");
-        if(typeof email === "string" && typeof password === "string") {
+        if(typeof username === "string" && typeof password === "string") {
+            const r = re.exec(username);
+            if(!r) return void (form = { username, success: false });
+            const email = r[1] ? username : (username + "@politorocketteam.it");
             const res = await data.supabase.auth.signInWithPassword({email,password});
-            if(res.error) form = { email, password, success: false };
+            if(res.error) form = { username, success: false };
             else await goto(data.goto);
         }   
-        else form = { email: '', password: '', success: false };
+        else form = { username: '', success: false };
         submitting = false;
     }
 
-    function removeError() { form = null; }
+    function removeError() { if(form) form.success = true; }
 </script>
 
 <svelte:head>
@@ -34,12 +39,12 @@
 <main>
     <h1>Login</h1>
     <form method="post" use:enhance={submit}>
-        <input type="email" name="email" autocomplete="email" placeholder="Email" value={form ? form.email : ''} on:input={removeError}>
-        <input type="password" name="password" autocomplete="current-password" placeholder="Password" value={form ? form.password : ''} on:input={removeError}>
+        <input type="text" name="username" autocomplete="username" placeholder="Username" value={form ? form.username : ''} on:input={removeError}>
+        <input type="password" name="password" autocomplete="current-password" placeholder="Password" on:input={removeError}>
         <input type="hidden" name="redirect" value={data.goto}>
         <button type="submit" disabled={submitting}>Login</button>
     </form>
-    {#if form}
+    {#if form && !form.success}
         <p>Invalid email or username</p>
     {/if}
 </main>
@@ -75,6 +80,7 @@
         border: none;
         font-family: inherit;
         font-size: 1.2rem;
+        width: 22ch;
     }
     input:focus-visible {
         outline: none;
