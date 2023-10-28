@@ -49,7 +49,7 @@
                 </li>
             {/each}
             <li>
-                <a href="/dashboard/bureaucracy" use:current>Bureaucray</a>
+                <a href="/dashboard/bureaucracy" use:current>Bureaucracy</a>
             </li>
             <li>
                 <a href="/dashboard/account" use:current>Account</a>
