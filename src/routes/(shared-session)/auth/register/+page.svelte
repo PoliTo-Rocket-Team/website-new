@@ -70,6 +70,7 @@
         border: none;
         font-family: inherit;
         font-size: 1.2rem;
+        width: 20ch;
     }
     input:focus-visible {
         outline: none;
