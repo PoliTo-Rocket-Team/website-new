@@ -121,17 +121,7 @@
         <div class="linkdid-form-container">
             {#if modifying}
             <!-- editing view of linkedin profile - showing form -->
-            <form action="?/linkedin" method="post" class="oneliner unchanged" use:enhance={async ({ cancel, formElement, formData }) => {
-                cancel();
-                const v = formData.get("username");
-                if( (typeof v !== "string") && (v !== data.person.linkedin) ) return;
-                const res = await data.supabase.from("people").update({ linkedin: v }).eq("id", data.person.id);
-                if(res.error) return;
-                data.person.linkedin = v;
-                // formElement.dataset.ref = v;
-                // formElement.classList.add("unchanged");
-                modifying = false;
-            }}>
+            <form action="?/linkedin" method="post" class="oneliner unchanged">
                 <span >
                     <label for="linkedin " class="btn">
                         <span>linkedin.com/in/</span>
@@ -167,7 +157,12 @@
             {/if}
             
         </div>
+    </li>       
+    {#if form?.username}
+    <li>
+        <p class="error">{form.username}</p>
     </li>
+    {/if}
 </ul>
 
 
