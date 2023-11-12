@@ -1,10 +1,10 @@
 <script lang="ts">
-    import "./consts.scss";
+    import "../../../lib/components/apply-page/consts.scss";
     import "@fontsource/anonymous-pro/400.css";
-    import Position from "./Position.svelte";
+    import Position from "../../../lib/components/apply-page/Position.svelte";
     import type { PageData } from "./$types";
     import FAQs from "./FAQs.svelte";
-
+    import FAQsOld from "../../../lib/components/apply-page/FAQsOld.svelte";
     import positions from "./data.json";
     export let data: PageData
 </script>
@@ -79,24 +79,24 @@
                         {/each}
                     </ul>
                 {/if}
-                <a
-                    class="btn"
-                    href="https://forms.gle/{pos.form}"
-                    target="_blank"
-                    rel="noreferrer">Apply</a
-                >
+                <a class="btn" href="https://forms.gle/{pos.form}" target="_blank" rel="noreferrer">Apply</a>
+            <p class="disclaimer">Please be informed that your work will be entirely voluntary. As we are a student team of Politecnico di Torino, we do not offer any paid employment.</p>
+
             </Position>
         {/each}
     </section>
+
     <section aria-labelledby="faqs">
         <h2 id="faqs" class="section-title"><abbr title="Frequently Asked Questions">FAQs</abbr></h2>
-        <FAQs data={data.faqs} />
+        <!-- <FAQs data={data.faqs} /> -->
+        <FAQsOld  />
+        
     </section>
 </main>
 
 <style lang="scss">
-    @use "./consts.scss" as *;
-
+    @use  "../../../lib/components/apply-page/consts.scss" as *;
+    
     section {
         max-width: 75ch;
         margin-left: auto;
@@ -141,6 +141,11 @@
     .btn:focus {
         text-decoration: underline;
     }
+    .disclaimer {
+        margin-top: 1.5rem;
+        font-size: 0.9rem;
+        opacity: 0.9;
+    }
     @media (min-width: 50rem) {
         h2 {
             text-align: center;
@@ -152,6 +157,12 @@
             grid-auto-flow: dense;
             align-items: center;
             column-gap: $gap;
+        }
+        .disclaimer {
+            max-width: 55ch;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
         }
     }
 </style>
