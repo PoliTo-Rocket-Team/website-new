@@ -26,10 +26,10 @@
     
                 <span class="name">{data.person ? data.person.first_name + ' ' + data.person.last_name : "Not yet linked"}</span>
                 {#each data.subteams||[] as s}
-                    <span class="title">{s.title} Lead</span>
+                    <span class="title">{s.title}</span>
                 {/each}
                 {#each data.divisions||[] as d}
-                    <span class="title">{d.name} Lead</span>
+                    <span class="title">{d.name} Lead {d.acting ? "(acting)" : ''}</span>
                 {/each}
             </div>
             <hr>
