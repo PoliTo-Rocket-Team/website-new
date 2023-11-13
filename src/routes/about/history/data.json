@@ -1,16 +1,67 @@
-[    {
-        "start": "2021",
-        "end": "2022",
-        "text": "In October 2021 a group of 2nd year Bachelor's students at Politecnico di Torino, inspired by the remarkable achievement of American student rocketry clubs, embarked on the ambitious project of developing and launching a sounding rocket from scratch. Led by Fabio Meloni, the future President and Chief Engineer (CE) of Project Cavour, the founding team included Cristian Manfredi, the future coordinator for Project Efesto; Mattia Saba, the future mission analysis lead; and Salvatore Lagrasta, the future avionics lead.\nThroughout the fall and winter of 2021, the group laid the groundwork and crafted the initial design for what would evolve into Project Cavour. In early 2022, Andrea Ruscica and Andrea Troglia, colleagues from the BSc aerospace engineering program, joined the founding group to contribute to the early recovery system. The Founders presented the project to establish a dedicated student team for rocket engineering to Professor Alfonso Pagani, who staunchly supported the initiative. The proposal for the formation of a recognized student team was formally submitted to Politecnico di Torino's budget and projects commission on April 14th, 2022.\nIn the following months the group continued to iterate the rocket's design, and welcomed new members, including Luca Loiodice, future design and additive manufacturing lead; Federico Guglielmi, the future IT manager; and Pierluigi Mercadante, future coordinator for Project Efesto. The team expanded further with the inclusion of a dozen members from another student team, including Edoardo Viglietti, the future CE of Project VES; Luca Santoro, the future chief technologist during 2022-2023; and Francesca Bracaglia and Flora Punzi, respectively the aerostructures and FEA leads during 2022-2023.\nThe proposal for the creation of a rocketry student team received approval and funding from Politecnico di Torino on Tuesday, June 7th, 2022. The founders christened the team 'PoliTo Rocket Team,' the sounding rocket project 'Cavour,' and selected Fabio Meloni as the inaugural President" 
-    },
-    {
-        "start": "2022",
-        "end": "2023",
-        "text": "The academic year (a.y.) 2022-2023 marked a significant expansion for the PoliTo Rocket Team. In fall 2022 the Team opened its first general recruitment window, attracting hundreds of applications and selecting around 15% of them. By the end of the a.y. the Team boasted to around 90 active members. The executive management of the Team in 2022-2023 comprised Fabio Meloni (President), Elena Dilorenzo (Chief Operating Officer), and Luca Santoro (Chief Technologist & Head of Strategy).\nAlong with the work of the sounding rocket Cavour, in fall 2022 the Team established Project Efesto under the lead of the CE Matteo Crachi, to research and develop Italy's first student-made bi-liquid rocket engine with a focus on sustainability.\nIn October 2022, Project Cavour, directed by CE Fabio Meloni, achieved the distinction of being the first Italian project selected for the 2023 Spaceport America Cup (SA CUP), the world's largest rocketry intercollegiate competition. The Cavour rocket completed its design phase in early 2023 and underwent assembly and testing in April 2023, culminating in a successful test launch in Germany. This launch marked a historic moment for the student team at Politecnico di Torino, concluding with the perfect recovery and subsequent reuse of the rocket. In June 2023, Project Cavour was also selected as the first project from Politecnico di Torino to participate in the European Rocketry Challenge (EuRoC) 2023, Europe's premier rocketry intercollegiate competition.\nThe a.y. concluded at the end of June 2023, with Project Cavour competing in the 2023 SA CUP, in the 10k feet apogee with COTS solid propulsion category. The rocket was successfully launched and recovered at Spaceport America, in New Mexico, USA. PoliTo Rocket Team achieved an important world ranking and won the Technical Award for Innovation for the design and optimization of its 3D printed structural components.\nThroughout the academic year, the Team actively engaged in STEM Outreach, by participating or directly organising them. In particular, the PoliTo Rocket Team organised during the spring the 1st Italian Rocket Engineering Student Summit (IRESS), which was the first occasion for Italy's rocketry student teams to meet up and discuss along with field experts."    
-      },
-      {
-        "start": "2023",
-        "end": "2024",
-        "text": "In the summer of 2023, former President Fabio Meloni passed on the torch to Elena Dilorenzo, former COO, and the job of CE of Project Cavour to Edoardo Viglietti, former FEA lead. Andrea Pantano, former logistics lead, was promoted to Chief Operating Officer.\nThe a.y. commenced with the Team's participation at the European Rocketry Challenge with Project Cavour. Launched from Portugal alongside Europe's top teams, the rocket experienced a recovery failure on its third launch in approximately six months. Despite this setback, the Team received the ANACOM award and achieved a commendable final ranking.\nDuring the fall of 2023, the Team conducted its second general recruitment, expanding to around 130 members.\nAfter the conclusion of Project Cavour, a new project was started under CE Edoardo Viglietti for a competition rocket, named Vittorio Emanuele II (VES), with the goal of launching a solid propelled rocket with 9km target apogee."
-      }
+[
+  {
+    "start": "2021-10-01",
+    "text": "In October 2021 a group of 2nd year Bachelor's students at Politecnico di Torino, inspired by the remarkable achievement of American student rocketry clubs, embarked on the ambitious project of developing and launching a sounding rocket from scratch. Led by Fabio Meloni, the future President and Chief Engineer (CE) of Project Cavour, the founding team included Cristian Manfredi, the future coordinator for Project Efesto; Mattia Saba, the future mission analysis lead; and Salvatore Lagrasta, the future avionics lead."
+  },
+
+  {
+    "start": "2021-12-01",
+    "end": "2022-04-14",
+    "text": "Throughout the fall and winter of 2021, the group laid the groundwork and crafted the initial design for what would evolve into Project Cavour. In early 2022, Andrea Ruscica and Andrea Troglia, colleagues from the BSc aerospace engineering program, joined the founding group to contribute to the early recovery system. The Founders presented the project to establish a dedicated student team for rocket engineering to Professor Alfonso Pagani, who staunchly supported the initiative. The proposal for the formation of a recognized student team was formally submitted to Politecnico di Torino's budget and projects commission on April 14th, 2022."
+  },
+
+  {
+    "start": "2022-05-01",
+    "text": "In the following months the group continued to iterate the rocket's design, and welcomed new members, including Luca Loiodice, future design and additive manufacturing lead; Federico Guglielmi, the future IT manager; and Pierluigi Mercadante, future coordinator for Project Efesto. The team expanded further with the inclusion of a dozen members from another student team, including Edoardo Viglietti, the future CE of Project VES; Luca Santoro, the future chief technologist during 2022-2023; and Francesca Bracaglia and Flora Punzi, respectively the aerostructures and FEA leads during 2022-2023."
+  },
+
+  {
+    "start": "2022-06-07",
+    "text": "The proposal for the creation of a rocketry student team received approval and funding from Politecnico di Torino on Tuesday, June 7th, 2022. The founders christened the team \"PoliTo Rocket Team,\" the sounding rocket project \"Cavour,\" and selected Fabio Meloni as the inaugural President"
+  },
+
+  {
+    "start": "2022-09-01",
+    "text": "The academic year (a.y.) 2022-2023 marked a significant expansion for the PoliTo Rocket Team. In fall 2022 the Team opened its first general recruitment window, attracting hundreds of applications and selecting around 15% of them. By the end of the a.y. the Team boasted to around 90 active members. The executive management of the Team in 2022-2023 comprised Fabio Meloni (President), Elena Dilorenzo (Chief Operating Officer), and Luca Santoro (Chief Technologist & Head of Strategy)."
+  },
+
+  {
+    "start": "2022-09-01",
+    "text": "Along with the work of the sounding rocket Cavour, in fall 2022 the Team established Project Efesto under the lead of the CE Matteo Crachi, to research and develop Italy's first student-made bi-liquid rocket engine with a focus on sustainability."
+  },
+
+  {
+    "start": "2022-10-01",
+    "text": "In October 2022, Project Cavour, directed by CE Fabio Meloni, achieved the distinction of being the first Italian project selected for the 2023 Spaceport America Cup (SA CUP), the world's largest rocketry intercollegiate competition. The Cavour rocket completed its design phase in early 2023 and underwent assembly and testing in April 2023, culminating in a successful test launch in Germany. This launch marked a historic moment for the student team at Politecnico di Torino, concluding with the perfect recovery and subsequent reuse of the rocket. In June 2023, Project Cavour was also selected as the first project from Politecnico di Torino to participate in the European Rocketry Challenge (EuRoC) 2023, Europe's premier rocketry intercollegiate competition."
+  },
+
+  {
+    "start": "2023-06-30",
+    "text": "The a.y. concluded at the end of June 2023, with Project Cavour competing in the 2023 SA CUP, in the 10k feet apogee with COTS solid propulsion category. The rocket was successfully launched and recovered at Spaceport America, in New Mexico, USA. PoliTo Rocket Team achieved an important world ranking and won the Technical Award for Innovation for the design and optimization of its 3D printed structural components."
+  },
+
+  {
+    "start": "2023-07-01",
+    "text": "Throughout the academic year, the Team actively engaged in STEM Outreach, by participating or directly organising them. In particular, the PoliTo Rocket Team organised during the spring the 1st Italian Rocket Engineering Student Summit (IRESS), which was the first occasion for Italy's rocketry student teams to meet up and discuss along with field experts."
+  },
+
+  {
+    "start": "2023-08-01",
+    "text": "In the summer of 2023, former President Fabio Meloni passed on the torch to Elena Dilorenzo, former COO, and the job of CE of Project Cavour to Edoardo Viglietti, former FEA lead. Andrea Pantano, former logistics lead, was promoted to Chief Operating Officer."
+  },
+
+  {
+    "start": "2023-09-01",
+    "text": "The a.y. commenced with the Team's participation at the European Rocketry Challenge with Project Cavour. Launched from Portugal alongside Europe's top teams, the rocket experienced a recovery failure on its third launch in approximately six months. Despite this setback, the Team received the ANACOM award and achieved a commendable final ranking."
+  },
+
+  {
+    "start": "2023-09-30",
+    "text": "During the fall of 2023, the Team conducted its second general recruitment, expanding to around 130 members."
+  },
+
+  {
+    "start": "2023-10-01",
+    "text": "After the conclusion of Project Cavour, a new project was started under CE Edoardo Viglietti for a competition rocket, named Vittorio Emanuele II (VES), with the goal of launching a solid propelled rocket with 9km target apogee."
+  }
 ]
