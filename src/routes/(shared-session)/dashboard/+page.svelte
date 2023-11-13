@@ -125,9 +125,11 @@
         .cards {
             flex-direction: row;
             justify-content: center;
+            flex-wrap: wrap;
         }
         article {
             margin: 2rem;
+            min-width: 20rem;
         }
 
         a {
