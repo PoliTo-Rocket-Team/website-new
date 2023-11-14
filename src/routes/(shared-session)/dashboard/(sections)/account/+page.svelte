@@ -183,7 +183,7 @@
                             
                     <div class="linkedin-form-btn">
                         <button class="btn" type="submit">Save</button>
-                        <button class="btn btn--low" on:click={()=>{modifying = !modifying; isLink= false;}}>Cancel</button>
+                        <button class="btn btn--low" on:click={()=>{modifying = !modifying; isLink= false;linkedin = (data.person.linkedin)?.toString()}}>Cancel</button>
                     </div>
                         
 
