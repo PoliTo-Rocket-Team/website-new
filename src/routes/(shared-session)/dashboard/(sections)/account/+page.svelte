@@ -13,14 +13,7 @@
     let considering: string|null = null;
 
     const email = getEmailOf(data.person.first_name, data.person.last_name);
-
-    // function showButtons(this: HTMLInputElement) {
-    //     const ref = this.dataset.ref || null;
-    //     this.size = this.value ? this.value.length : 6;
-    //     (this.parentElement as HTMLFormElement).classList.toggle("unchanged", this.value.trim() === ref);
-    // }
-    
-    let modifying = false;
+   let modifying = false;
     let imgState = 0;
 
     function imgError(msg: string) {
@@ -73,6 +66,28 @@
             picture.refresh();
         }
     }
+
+
+    let isLink = false;
+    let linkedin = (data.person.linkedin)?.toString();
+    function checkLinkdinId (this: HTMLInputElement) {
+        if (isLink){
+            const regex = /linkedin\.com\/in\/([^\/?]+)/;
+            const match = (this.value)?.toString().match(regex);
+            if (match){
+                linkedin = match[1].replace("linkedin.com/in/", "");
+            }
+            else{
+                linkedin = this.value;
+            }
+
+        }
+        else{
+            linkedin = this.value;
+
+        }
+   
+    }
 </script>
 
 <svelte:head>
@@ -113,51 +128,73 @@
 
 <h2>Contacts</h2>
 <ul class="no-list">
-    <li>Official email: <a href="mailto:{email}" target="_blank" rel="noreferrer">{email}</a></li>
+    <li>
+        <span>Official email:</span>
+        <a href="mailto:{email}" target="_blank" rel="noreferrer">{email}</a>
+    </li>
     
 
     <li>
-        <span>LinkedIn profile:</span>
-        <div class="linkdid-form-container">
-            {#if modifying}
-            <!-- editing view of linkedin profile - showing form -->
-            <form action="?/linkedin" method="post" class="oneliner unchanged">
-                <span >
-                    <label for="linkedin " class="btn">
-                        <span>linkedin.com/in/</span>
+
+                    
+        
+            <span>LinkedIn profile:</span>
+
+                {#if data.person.linkedin}
+                <a class="" href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer">linkedin.com/in/{linkedin}</a>
+                {:else}
+                <span class="low">not set</span>
+                {/if}
+
+            </li> 
+            {#if !modifying}
+                <button class="btn " on:click={()=>{modifying = !modifying}}>Edit</button>
+
+            {:else}
+            <li>
+                <form action="?/linkedin" method="post" class="oneliner linkedin-form">
+                    <div class="linkedin-prompt">
+                        <p>Please select the input type :</p>
+                        <span>
+                            <input on:click={()=>{isLink=true}} type="radio" id="link" name="isLink" >
+                            <label for="link">Link</label>
+                        </span>
+                        <span>
+                            <input on:click={()=>{isLink=false}} type="radio" id="id" name="isLink" checked>
+                            <label for="id">Id</label>
+                        </span>
+                    </div>
+
+
+                    <label for="linkedin " class="">
                         <input 
                             type="text" 
                             name="username" 
                             id="linkedin" 
-                            placeholder="Not set" 
+                            
                             autocomplete="off"
                             class="inline" 
-                            value={data.person.linkedin} 
-                            size={data.person.linkedin?.length || 6}
-                            data-ref={data.person.linkedin} 
+                            value={ isLink ? ( (linkedin==="")? "" : "linkedin.com/in/" + linkedin) : linkedin} 
+                            placeholder="not set"
+                            on:input={checkLinkdinId}
+                            data-ref={data.person.linkedin}>
+                        </label>
                             
-                            >
-                    </label>
-                </span>
-                <button class="btn" type="submit">Save</button>
-                <button class="btn btn--low" on:click={()=>{modifying = !modifying}}>Cancel</button>
-            </form>
-            
-            {:else}
-                <!--  default view - not modifying -->
-                {#if data.person.linkedin}
-                <a class="btn linkdin-url-link" href="https://www.linkedin.com/in/{data.person.linkedin}" target="_blank" rel="noreferrer">linkedin.com/in/{data.person.linkedin}</a>
-                {:else}
-                <span class="low">not set</span>
-                {/if}
-            {/if}
+                            
+                    <div class="linkedin-form-btn">
+                        <button class="btn" type="submit">Save</button>
+                        <button class="btn btn--low" on:click={()=>{modifying = !modifying; isLink= false;}}>Cancel</button>
+                    </div>
+                        
 
-            {#if !modifying}
-                <button class="btn " on:click={()=>{modifying = !modifying}}>Edit</button>
+            </form>
+        
+            </li>
             {/if}
             
-        </div>
-    </li>       
+  
+
+   
     {#if form?.username}
     <li>
         <p class="error">{form.username}</p>
@@ -207,14 +244,22 @@
         align-items: center;
         gap: 1ch;
     }
-    .oneliner.unchanged button {
-        /* display: none; */
-    }
+    /* .oneliner.unchanged button {
+        display: none;
+    } */
     ul.no-list {
         list-style: none;
+        
+
     }
     .no-list li {
-        margin-bottom: .4rem;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        padding: 0.5rem 0;
+    }
+    .no-list li span:first-child {
+        min-width: 10ch;
     }
  
     label > input {
@@ -225,7 +270,13 @@
         display: inline;
         padding: 0;
         border: 0;
-        max-width: 100%;
+
+        width: 20rem;
+        padding: 5px 7px;
+        border: 2px solid var(--accent-fig);
+        border-radius: 15px;
+
+
         
     }
 
@@ -233,29 +284,26 @@
         display: none;
     }
 
-
-
-
-    /* ------------ */
-    .linkdid-form-container {
-        margin-top: .4rem;
+    .linkedin-form{
+        border: 2px solid rgb(197, 186, 186);
+        border-radius: 15px;
         display: flex;
         align-items: flex-start;
-        gap: 1ch;
- 
+        width: 30rem;
+        flex-direction: column;
+        padding: 1rem;
+
     }
-    .linkdid-form-container a {
-        border: none;
-        padding-left: 0;
-    }
-    .linkdid-form-container input {
+    .linkedin-form-btn{
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
         width: 100%;
     }
-    .linkdin-url-link:hover {
-        background-color: initial;
-        color:   rgb(216, 82, 9);
-
- 
+   .linkedin-prompt{
+        display: flex;
+        gap: 1rem;
     }
- 
+
+
 </style>
