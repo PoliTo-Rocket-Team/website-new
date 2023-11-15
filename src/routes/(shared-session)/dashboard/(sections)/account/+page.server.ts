@@ -1,6 +1,8 @@
 import { fail } from "@sveltejs/kit";
 import type { Actions } from "./$types";
-import { session2user } from "$lib/supabase";
+
+const url_regexp = /^(?:https:\/\/)?(?:www\.)?linkedin\.(?:it|com)\/in\/([\w-]+)\/?(?:\?.*)?$/;
+const username_regexp = /^[\w-]+$/;
 
 export const actions: Actions = {
     pic: async ({ request, locals,  }) => {
@@ -17,20 +19,16 @@ export const actions: Actions = {
     linkedin: async ({ request, locals,  }) => {
         // retrieve linkedin form data
         const data = await request.formData();
+        const person = data.get("person-id");
+        if(typeof person !== "string" || Number.isNaN(+person)) return fail(400, { success: false, linkedin: "Missing person id" });
+        
         const v = data.get("username");
-        if(typeof v === "string"){
-                    // retrieve user id 
-        const session = (await locals.supabase.auth.getSession()).data.session;
-        const user = session2user(session);
-        const res2 = await locals.supabase.from("people").select("id").eq("user", user.id);
-        const id = res2.data[0].id;
+        if(typeof v !== "string") return fail(400, { success: false, linkedin: "Invalid Input" });
+        const match = url_regexp.exec(v);
+        const linkedin = match ? match[1] : username_regexp.test(v) ? v : null;
         // update linkedin in database
-        const res = await locals.supabase.from("people").update({ linkedin: ''+v }).eq("id", id);
-        if(res.error) return fail(400, {success: false,username: res.error.message});
+        const res = await locals.supabase.from("people").update({ linkedin }).eq("id", +person);
+        if(res.error) return fail(400, {success: false, linkedin: res.error.message});
         else return {success: true}
-        }
-        else return fail(400, { success: false, username: "Invalid Input" });
-
-
-}
+    }
 };
