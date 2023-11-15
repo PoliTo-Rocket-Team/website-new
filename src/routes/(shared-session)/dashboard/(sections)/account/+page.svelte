@@ -13,7 +13,7 @@
     let considering: string|null = null;
 
     const email = getEmailOf(data.person.first_name, data.person.last_name);
-   let modifying = false;
+    let modifying = !!form?.linkedin;
     let imgState = 0;
 
     function imgError(msg: string) {
@@ -67,26 +67,13 @@
         }
     }
 
+    const url_regexp = /^(?:https:\/\/)?(?:www\.)?linkedin\.(?:it|com)\/in\/([\w-]+)\/?(?:\?.*)?$/;
+    const username_regexp = /^[\w-]+$/;
+    let linkedin = data.person.linkedin;
 
-    let isLink = false;
-    let linkedin = (data.person.linkedin)?.toString();
     function checkLinkdinId (this: HTMLInputElement) {
-        if (isLink){
-            const regex = /linkedin\.com\/in\/([^\/?]+)/;
-            const match = (this.value)?.toString().match(regex);
-            if (match){
-                linkedin = match[1].replace("linkedin.com/in/", "");
-            }
-            else{
-                linkedin = this.value;
-            }
-
-        }
-        else{
-            linkedin = this.value;
-
-        }
-   
+        const match = url_regexp.exec(this.value);
+        linkedin = match ? match[1] : username_regexp.test(this.value) ? this.value : null;
     }
 </script>
 
@@ -132,74 +119,55 @@
         <span>Official email:</span>
         <a href="mailto:{email}" target="_blank" rel="noreferrer">{email}</a>
     </li>
-    
-
     <li>
-
-                    
-        
+        <div class="linkedin-display">
             <span>LinkedIn profile:</span>
-
-                {#if data.person.linkedin}
-                <a class="" href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer">linkedin.com/in/{linkedin}</a>
-                {:else}
-                <span class="low">not set</span>
-                {/if}
-
-            </li> 
-            {#if !modifying}
-                <button class="btn " on:click={()=>{modifying = !modifying}}>Edit</button>
-
+            {#if linkedin}
+            <a class="" href="https://www.linkedin.com/in/{linkedin}" target="_blank" rel="noreferrer">linkedin.com/in/{linkedin}</a>
             {:else}
-            <li>
-                <form action="?/linkedin" method="post" class="oneliner linkedin-form">
-                    <div class="linkedin-prompt">
-                        <p>Please select the input type :</p>
-                        <span>
-                            <input on:click={()=>{isLink=true}} type="radio" id="link" name="isLink" >
-                            <label for="link">Link</label>
-                        </span>
-                        <span>
-                            <input on:click={()=>{isLink=false}} type="radio" id="id" name="isLink" checked>
-                            <label for="id">Id</label>
-                        </span>
-                    </div>
-
-
-                    <label for="linkedin " class="">
-                        <input 
-                            type="text" 
-                            name="username" 
-                            id="linkedin" 
-                            
-                            autocomplete="off"
-                            class="inline" 
-                            value={ isLink ? ( (linkedin==="")? "" : "linkedin.com/in/" + linkedin) : linkedin} 
-                            placeholder="not set"
-                            on:input={checkLinkdinId}
-                            data-ref={data.person.linkedin}>
-                        </label>
-                            
-                            
-                    <div class="linkedin-form-btn">
-                        <button class="btn" type="submit">Save</button>
-                        <button class="btn btn--low" on:click={()=>{modifying = !modifying; isLink= false;linkedin = (data.person.linkedin)?.toString()}}>Cancel</button>
-                    </div>
-                        
-
-            </form>
-        
-            </li>
+            <span class="low">not set</span>
             {/if}
-            
-  
 
-   
-    {#if form?.username}
-    <li>
-        <p class="error">{form.username}</p>
-    </li>
-    {/if}
+            <button class="btn" class:hidden={modifying} type="button" on:click={()=>{modifying = true; linkedin = null;}}>Edit</button>
+        </div>
+
+        {#if modifying}
+            <form action="?/linkedin" method="post" class="linkedin-form" use:enhance={async ({ cancel }) => {
+                cancel();
+                const res = await data.supabase.from("people").update({ linkedin }).eq("id", data.person.id);
+                if(res.error) form = {success: false, linkedin: res.error.message};
+                else {
+                    data.person.linkedin = linkedin;
+                    modifying = false;
+                }
+            }}>
+                <p>Please insert your LinkedIn username or a link to your LinkedIn profile</p>
+                <input 
+                    type="text" 
+                    name="username" 
+                    autocomplete="off"
+                    class="inline"
+                    placeholder="URL or username"
+                    value=""
+                    on:input={checkLinkdinId}
+                    data-ref={data.person.linkedin}>
+                
+                <input type="hidden" name="person-id" value={data.person.id}>
+                            
+                <div class="linkedin-form-btn">
+                    <button class="btn" type="submit">Save</button>
+                    <button class="btn btn--low" type="reset" on:click={()=>{
+                        modifying = false; 
+                        linkedin = data.person.linkedin;
+                    }}>Cancel</button>
+                </div>
+
+                {#if form?.linkedin}
+                <p class="error">{form.linkedin}</p>
+                {/if}
+            </form>
+        {/if}
+    </li> 
 </ul>
 
 
@@ -239,11 +207,6 @@
     a {
         text-decoration-style: dashed;
     }
-    .oneliner {
-        display: flex;
-        align-items: center;
-        gap: 1ch;
-    }
     /* .oneliner.unchanged button {
         display: none;
     } */
@@ -252,57 +215,50 @@
         
 
     }
-    .no-list li {
-        display: flex;
-        align-items: center;
-        gap: 1rem;
+    li {
         padding: 0.5rem 0;
-    }
-    .no-list li span:first-child {
-        min-width: 10ch;
     }
  
     label > input {
         display: none;
     }
 
-    input.inline {
-        display: inline;
-        padding: 0;
-        border: 0;
-
-        width: 20rem;
-        padding: 5px 7px;
-        border: 2px solid var(--accent-fig);
-        border-radius: 15px;
-
-
-        
-    }
-
     .hidden {
         display: none;
     }
 
+    .linkedin-display {
+        position: relative;
+        width: fit-content;
+    }
+    .linkedin-display button {
+        position: absolute;
+        right: -1rem;
+        top: 50%;
+        transform: translate(100%, -50%);
+    }
+
     .linkedin-form{
-        border: 2px solid rgb(197, 186, 186);
-        border-radius: 15px;
+        margin-top: 1rem;
+        border: 2px solid #8882;
+        border-radius: .6rem;
         display: flex;
         align-items: flex-start;
-        width: 30rem;
+        width: 35ch;
         flex-direction: column;
-        padding: 1rem;
-
+        padding: .8rem 1.1rem;
+    }
+    .linkedin-form input {
+        width: 100%;
+        padding: .5rem .8rem;
+        border: 2px solid var(--accent-fig);
+        margin-bottom: 1rem;
     }
     .linkedin-form-btn{
         display: flex;
         justify-content: center;
         gap: 1rem;
         width: 100%;
-    }
-   .linkedin-prompt{
-        display: flex;
-        gap: 1rem;
     }
 
 
