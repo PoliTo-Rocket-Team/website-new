@@ -1,10 +1,12 @@
 <script>
 	/** @type {import('./$types').PageData} */
     import Position from "$lib/components/apply-page/Position.svelte";
+    import Addmodal from "./Addmodal.svelte";
 	import { createEventDispatcher, onMount } from 'svelte';
 	const dispatch = createEventDispatcher();
 	export let data;
 	let modify = false;
+    let showAdd = false;
 
      async function handelDelete(event) {
 
@@ -18,7 +20,7 @@
 		});
 
 		let total = await response.json();
-		console.log("total : ",total);  
+		data.positions =data.positions; 
     }
 
  
@@ -50,7 +52,11 @@
 </svelte:head>
 
 <h1  >{data.divisions[0].name} Positions</h1>
-{#if !data.positions.length === 0}
+
+<p>Here you can add, edit, and delete positions for the {data.divisions[0].name} division.</p>
+    <Addmodal show={showAdd} on:close={()=>{showAdd= false}} ></Addmodal>
+<button class="btn"  on:click={()=>{showAdd= true}}>Add</button>
+{#if !(data.positions.length === 0)}
 
 
 <section aria-labelledby="positions" class="positions">
@@ -58,7 +64,7 @@
 	<div class="position-labels on-lg" aria-hidden="true">
 		<span>Role</span>
 		<span></span>
-		<span></span>
+		<span>open</span>
 		<div class="code-label"><span>Code</span></div>
 	</div>
 
@@ -66,17 +72,17 @@
 	{#each data.positions as pos}
 	
 
-        <Position on:submitEdit={edit} on:delete={handelDelete} role={pos.name} id={pos.id}  desirable={pos.desirable} required={pos.required} description={pos.description} subteam={""} division={""} code={`${data.subteam[0].code}-${data.divisions[0].code}-${pos.number}`}>
+        <Position on:submitEdit={edit} on:delete={handelDelete} forAdmin={true} role={pos.name} id={pos.id}  desirable={pos.desirable} required={pos.required} description={pos.description} subteam={""} division={""} code={`${data.subteam[0].code}-${data.divisions[0].code}-${pos.number}`}>
 		
         </Position>
 
 	{/each}
-<button></button>
+
 
 
 </section>
 {:else}
-<p>No positions found.</p>
+<p>No positions found</p>
 {/if}
 
 

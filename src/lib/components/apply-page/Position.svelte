@@ -1,13 +1,14 @@
 <script lang="ts">
-  import { expo } from "@slidy/easing";
-    import Base from "../../../lib/components/apply-page/Base.svelte";
+//   import { expo } from "@slidy/easing";
+    import Base from "$lib/components/apply-page/Base.svelte";
     import { createEventDispatcher } from 'svelte';
 
     export let role: string;
     export let code: string;
     export let subteam: string;
     export let division: string;
-    let modify: boolean = false;
+    export let modify: boolean = false;
+    export let forAdmin: boolean = false;
     export let description: string;
     export let required: string[];
     export let desirable: string[];
@@ -70,132 +71,159 @@
 
 </script>
 
-<Base {role} {code} >
+
+
+
+
+
+
+
+
+
+
+
+
+
+<Base {role} {code}  >
     <svelte:fragment slot="header">
-        <!-- <div><span class="on-sm">Subteam: </span>Delete</div> -->
-        <div><button on:click={handeldelete} class="btn">Delete</button></div>
-        
-        <div><span class="on-sm">Division: </span>Toggle</div>
+        {#if forAdmin}
+        <div><button on:click={handeldelete} class="btn border">Delete</button></div>
+        <div><label class="switch">
+            <input  type="checkbox" checked>
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        {:else}
+                <div><span class="on-sm">Subteam: </span>{subteam}</div>
+                <div><span class="on-sm">Division: </span>{division}</div>
+        {/if}
     </svelte:fragment>
     <svelte:fragment slot="content">
     <!-- ------------------------------ -->
-    <div class="content">
-    {#if ! modify}
-
-        <h4>Description</h4>
-        {#if Array.isArray(description)}
-            {#each description as paragraph}
-                {#if Array.isArray(paragraph)}
+        {#if forAdmin}
+        <!-- if the component is showed on the admin section -->
+        <div class="content">
+            {#if ! modify}
+        
+                <h4>Description</h4>
+                {#if Array.isArray(description)}
+                    {#each description as paragraph}
+                        {#if Array.isArray(paragraph)}
+                            <ol>
+                                {#each paragraph as item}
+                                    <li>{item}</li>
+                                {/each}
+                            </ol>
+                        {:else}
+                            <p>{paragraph}</p>
+                        {/if}
+                    {/each}
+                {:else}
+                    <p>{description}</p>
+                {/if}
+        
+        
+        
+        
+                
+                {#if required}
+                    <h4>Required skills</h4>
                     <ol>
-                        {#each paragraph as item}
+                        {#each required as item}
                             <li>{item}</li>
                         {/each}
                     </ol>
-                {:else}
-                    <p>{paragraph}</p>
                 {/if}
-            {/each}
-        {:else}
-            <p>{description}</p>
-        {/if}
-
-
-
-
         
-        {#if required}
-            <h4>Required skills</h4>
-            <ol>
-                {#each required as item}
-                    <li>{item}</li>
-                {/each}
-            </ol>
-        {/if}
-
-        {#if desirable}
-            <h4>Desirable skills</h4>
-            <ol>
-                {#each desirable as item}
-                    <li>{item}</li>
-                {/each}
-            </ol>
-        {/if}
-        <button on:click={()=>{modify=!modify}} class="btn border">Edit</button>
-
-    {:else}
-    <!-- ---------------------------------------------------------------- -->
-    <!-- Modifying View -->
-    <div class="sections-flex">
-    <h4>Description</h4>
-        <textarea bind:value={newDescription} class="input border"></textarea>
-    </div >
-    <br>
-    <div class="sections-flex">
-       <div class="position-content-header">
-        <h4>Required skills</h4>
-        <div class="skill-input ">
-            
-            <input bind:value={indexRequired} type="number" id="removeRequired" class="border rm" placeholder="Enter a number to remove">
-            <button  class="btn border" on:click={()=>{removeElementFromList(indexRequired,newRequired,"removeRequired");newRequired=newRequired;}}>Remove</button>
-
-        </div>
-        </div>
-         {#if newRequired}        
-        <ol>
-            {#each newRequired as item}
-                <li>{item}</li>
-            {/each}
-        </ol>
-        <div class="skill-input">
-            
-            <input bind:value={inputRequired} type="text" class="border add" placeholder="Add new required skill in here!">
-            <button  class="btn border" on:click={()=>{newRequired=[...newRequired,inputRequired]; inputRequired=""}}>Add</button>
-
-        </div>
-        {:else}
-        <strong>Nothing to show</strong>
-    
-        {/if}
-
-    </div> 
-
-    <br>
-
-    <div class="sections-flex">  
-        <div class="position-content-header">
-            <h4>Desirable skills</h4>
-            <!-- <button class="btn" on:click={()=>{desirable=[...desirable, ""]}}>Add</button> -->
-            <div class="skill-input">           
-                <input bind:value={indexDesirable} type="number" id="removeDesirable"  class="border rm" placeholder="Enter a number to remove">
-                <button class="btn border" on:click={()=>{removeElementFromList(indexDesirable,newDesirable,"removeDesirable");newDesirable=newDesirable;}}>Remove</button>
-            </div>
-        </div>
-        {#if newDesirable}        
-            <ol>
-                {#each newDesirable as item}
-                    <li>{item}</li>
-                {/each}
-            </ol>
-
-        {:else}
-            <strong>Nothing to show</strong>
+                {#if desirable}
+                    <h4>Desirable skills</h4>
+                    <ol>
+                        {#each desirable as item}
+                            <li>{item}</li>
+                        {/each}
+                    </ol>
+                {/if}
+                <button on:click={()=>{modify=!modify}} class="btn border">Edit</button>
         
+            {:else}
+            <!-- ---------------------------------------------------------------- -->
+            <!-- Modifying View -->
+            <div class="sections-flex">
+                <h4>Description</h4>
+                <textarea bind:value={newDescription} class="input border"></textarea>
+            </div >
+            <br>
+            <div class="sections-flex">
+               <div class="position-content-header">
+                <h4>Required skills</h4>
+                <div class="skill-input ">
+                    
+                    <input bind:value={indexRequired} type="number" id="removeRequired" class="border rm" placeholder="Enter a number to remove">
+                    <button  class="btn border" on:click={()=>{removeElementFromList(indexRequired,newRequired,"removeRequired");newRequired=newRequired;}}>Remove</button>
+        
+                </div>
+                </div>
+                 {#if newRequired}        
+                <ol>
+                    {#each newRequired as item}
+                        <li>{item}</li>
+                    {/each}
+                </ol>
+                <div class="skill-input">
+                    
+                    <input bind:value={inputRequired} type="text" class="border add" placeholder="Add new required skill in here!">
+                    <button  class="btn border" on:click={()=>{newRequired=[...newRequired,inputRequired]; inputRequired=""}}>Add</button>
+        
+                </div>
+                {:else}
+                <strong>Nothing to show</strong>
+            
+                {/if}
+        
+            </div> 
+        
+            <br>
+        
+            <div class="sections-flex">  
+                <div class="position-content-header">
+                    <h4>Desirable skills</h4>
+                    <!-- <button class="btn" on:click={()=>{desirable=[...desirable, ""]}}>Add</button> -->
+                    <div class="skill-input">           
+                        <input bind:value={indexDesirable} type="number" id="removeDesirable"  class="border rm" placeholder="Enter a number to remove">
+                        <button class="btn border" on:click={()=>{removeElementFromList(indexDesirable,newDesirable,"removeDesirable");newDesirable=newDesirable;}}>Remove</button>
+                    </div>
+                </div>
+                {#if newDesirable}        
+                    <ol>
+                        {#each newDesirable as item}
+                            <li>{item}</li>
+                        {/each}
+                    </ol>
+        
+                {:else}
+                    <strong>Nothing to show</strong>
+                
+                {/if}
+                <div class="skill-input">           
+                    <input bind:value={inputDesirable} type="text"  class="border add" placeholder="Add new desirable skill in here!">
+                    <button class="btn border" on:click={()=>{newDesirable=[...newDesirable,inputDesirable];inputDesirable="";}}>Add</button>
+                </div>
+            </div> 
+        
+        
+                <div class="edit-btns-view">
+                    <button on:click={handleCancel} class="btn btn--low border">Cancel</button>
+                    <button on:click={handelSubmit} class="btn border">Submit</button>
+                </div>
+        
+        
+            {/if}
+        </div>
+        {:else}
+
+        <p>normal view to ordinary users</p>
         {/if}
-        <div class="skill-input">           
-            <input bind:value={inputDesirable} type="text"  class="border add" placeholder="Add new desirable skill in here!">
-            <button class="btn border" on:click={()=>{newDesirable=[...newDesirable,inputDesirable];inputDesirable="";}}>Add</button>
-        </div>
-    </div> 
-
-
-        <div class="edit-btns-view">
-            <button on:click={handleCancel} class="btn btn--low border">Cancel</button>
-            <button on:click={handelSubmit} class="btn border">Submit</button>
-        </div>
-
-
-    {/if}
-</div>
     </svelte:fragment>
 
     <!-- ------------------------------ -->
@@ -260,6 +288,65 @@
     }
 
     /* -------------------------------------- */
+    .switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(75, 13, 13);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: rgb(255, 255, 255);
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #21f34b;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #21f34b;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
   
 
 </style>
