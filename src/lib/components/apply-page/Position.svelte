@@ -41,6 +41,8 @@
             desirable: newDesirable,
             id: id
 		});
+    
+
 
         description = newDescription.toString();
         required= [...newRequired];
@@ -58,12 +60,22 @@
 
     };
 
+    function handeldelete() {
+        console.log("delete",id);
+        dispatch('delete', {
+
+            id: id
+		});
+    }
+
 </script>
 
 <Base {role} {code} >
     <svelte:fragment slot="header">
-        <div><span class="on-sm">Subteam: </span>{subteam}</div>
-        <div><span class="on-sm">Division: </span>{division}</div>
+        <!-- <div><span class="on-sm">Subteam: </span>Delete</div> -->
+        <div><button on:click={handeldelete} class="btn">Delete</button></div>
+        
+        <div><span class="on-sm">Division: </span>Toggle</div>
     </svelte:fragment>
     <svelte:fragment slot="content">
     <!-- ------------------------------ -->

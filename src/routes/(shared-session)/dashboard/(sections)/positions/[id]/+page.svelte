@@ -1,18 +1,33 @@
 <script>
-	// /** @type {import('./$types').PageData} */
-	export let data;
-
-    import Position from "../../../../../../lib/components/apply-page/Position.svelte";
-	let modify = false;
-	
-	import { createEventDispatcher } from 'svelte';
-
+	/** @type {import('./$types').PageData} */
+    import Position from "$lib/components/apply-page/Position.svelte";
+	import { createEventDispatcher, onMount } from 'svelte';
 	const dispatch = createEventDispatcher();
+	export let data;
+	let modify = false;
+
+     async function handelDelete(event) {
+
+		let data =event.detail;
+		const response = await fetch(`/api/positions/${data.id}/delete/`, {
+			method: 'POST',
+			body: JSON.stringify( {data}  ),
+			headers: {
+				'content-type': 'application/json'
+			}
+		});
+
+		let total = await response.json();
+		console.log("total : ",total);  
+    }
+
+ 
+
 
 	async function edit (event) {
 		// console.log(event.detail.description);
 		let data =event.detail;
-		const response = await fetch('/api/positions/edit/', {
+		const response = await fetch(`/api/positions/${data.id}/add/`, {
 			method: 'POST',
 			body: JSON.stringify( {data}  ),
 			headers: {
@@ -24,17 +39,19 @@
 		console.log("total",total);
 
 	}
+    
 
 
 
 </script>
 
 <svelte:head>
-    <title>{data.subteam[0].name} | PRT Admin Program</title>
+    <title> Positions | PRT Admin Program</title>
 </svelte:head>
 
+<h1  >{data.divisions[0].name} Positions</h1>
+{#if !data.positions.length === 0}
 
-<h1 >{data.divisions[0].name}</h1>
 
 <section aria-labelledby="positions" class="positions">
 	<h2 id="positions">Open positions</h2>
@@ -48,18 +65,23 @@
 
 	{#each data.positions as pos}
 	
-	<Position on:submitEdit={edit} role={pos.name} id={pos.id}  desirable={pos.desirable} required={pos.required} description={pos.description} subteam={""} division={""} code={`${data.subteam[0].code}-${data.divisions[0].code}-${pos.number}`}>
-		
-	</Position>
-	{/each}
 
+        <Position on:submitEdit={edit} on:delete={handelDelete} role={pos.name} id={pos.id}  desirable={pos.desirable} required={pos.required} description={pos.description} subteam={""} division={""} code={`${data.subteam[0].code}-${data.divisions[0].code}-${pos.number}`}>
+		
+        </Position>
+
+	{/each}
+<button></button>
 
 
 </section>
+{:else}
+<p>No positions found.</p>
+{/if}
 
 
 <style lang="scss">
-    @use  "../../../../../../lib/components/apply-page/consts.scss" as *;
+    @use  "$lib/components/apply-page/consts.scss" as *;
     
     section {
         max-width: 75ch;
@@ -105,5 +127,7 @@
             column-gap: $gap;
         }
     }
+
+
 </style>
 

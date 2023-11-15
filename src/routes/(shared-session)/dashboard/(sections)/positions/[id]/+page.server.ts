@@ -13,6 +13,7 @@ export async function load({ params ,locals  }) {
 		divisions: divisions.data,
 		subteam: subteam.data,
 		positions: positions.data,
+		id : params.id
 
 	};
 
