@@ -6,6 +6,16 @@
     let inputSkill : string;
     const dispatch = createEventDispatcher();
 
+   
+    function handleChange(){
+        
+        if (inputSkill.length > 0) {
+                                skills = [...skills, inputSkill];
+                                inputSkill = "";
+                            }
+        dispatch("change", skills);
+                        
+    }
 
 
 </script>
@@ -18,12 +28,12 @@
 
                         {#each skills as item }
                         <div class="list-items">
-                            <button class="" on:click={()=>{
+                            <span class="" on:click={()=>{
                                 let index = skills.indexOf(item);
                                 skills.splice(index, 1);
                                 skills = [...skills];
                             
-                            }}>&cross;</button>
+                            }}>&cross;</span>
                             <li> {item}</li>
                         </div>
                             
@@ -37,10 +47,7 @@
                 <label for="required"> 
                     <div class="list-input">
                         <input class="border" type="text" id="required" bind:value={inputSkill} />
-                        <button class="btn border" on:click={()=>{
-                            skills = [...skills, inputSkill];
-                            inputSkill = "";
-                        }}>Add</button>
+                        <a class="btn border" on:click={handleChange}>Add</a>
                     </div>
                 </label>
 
@@ -75,6 +82,9 @@
     .list-items{
         display: flex;
         gap: 2rem;
+    }
+    span{
+        cursor: pointer;
     }
     
 </style>
