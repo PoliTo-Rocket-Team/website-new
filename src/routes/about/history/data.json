@@ -110,7 +110,7 @@
           "title": "Expansion of team",
           "description": "Team opened its second general recruitment window, attracting hundreds of applications, marked a significant expansion by reaching around 130 active members.",
           "max-width": 45,
-          "isVisible": true
+          "isVisible": false
 
       },
 
