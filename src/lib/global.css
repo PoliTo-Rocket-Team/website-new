@@ -119,8 +119,8 @@ a {
     text-decoration-color: currentColor;
 }
 ::selection {
-    color: var(--light-bg-0);
-    background-color: var(--accent-fig);
+    color: white;
+    background-color: hsl(19, 95%, 50%);
 }
 .nav-entry {
     text-decoration: none;
