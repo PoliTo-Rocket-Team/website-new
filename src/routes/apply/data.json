@@ -1,257 +1,253 @@
 [
-    {
-        "name": "Graphic Designer",
-        "subteam": "Operations",
-        "division": "Media",
-        "code": "OPS-MDA-001",
-        "description": "As a Graphic Designer, you will be in charge of designing the Team’s mission patches and logos, and help design the external coating of the Team’s rockets. You will design social media posts and website UI & UX in tight collaboration with photographers, video makers, rendering specialists, and web developers, leveraging modern design styles and patterns. ",
-        "desirable": [
-            "Attention to details and being up to date on the latest trends",
-            "Experience in design motion graphics (charts, lower-thirds, GIFs, Animations, animated social media ads)",
-            "Intermediate English writing skills"
-        ],
-        "required": [
-            "Knowledge of prototyping softwares and graphics softwares",
-            "Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar",
-            "Knowledge of Google Suite"
-        ],
-        "form": "kkNTvoskG8z2zY8cA"
-    },
-    {
-        "name": "Social Media Manager",
-        "subteam": "Operations",
-        "division": "Media",
-        "code": "OPS-MDA-002",
-        "description": [
-            "PoliTo Rocket Team is looking for one or more Social Media Manager(s), who will have the responsibility to maintain and enhance the team’s image by implementing social media platforms’ content strategies.",
-            "This role will be required to run advertising campaigns and drive engagement by creating high-quality original content. The manager(s) should also oversee our community by managing interactions across all platforms."
-        ],
-        "desirable": [
-            "Knowledge of the main social media platforms used by the Team (Instagram, LinkedIn, Twitter) and of additional social media platform to expand the Team's presence",
-            "Attention to details and being up to date on the latest trends",
-            "Previous experience in the media management and previous experience with paid content promotions",
-            "Experience in design motion graphics (charts, lower-thirds, GIFs, Animations, animated social media ads)",
-            "Proficiency with graphic design software such as Canva, Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar"
-        ],
-        "required": [
-            "Professionalism and responsibility",
-            "Intermediate/Advanced English writing skills",
-            "Knowledge of Google Suite"
-        ],
-        "form": "kkNTvoskG8z2zY8cA"
-    },
-    {
-        "name": "Video Maker",
-        "subteam": "Operations",
-        "division": "Media",
-        "code": "OPS-MDA-003",
-        "description": [
-            "The Video Maker(s) will be responsible for designing, editing and producing video content for our earned media, website and social media channels. This position requires to remain flexible and adaptable, have strong planning skills and participate in many aspects of the Team’s daily work. The Video Maker will work in close collaboration with the Photographer(s) and Social Media Manager.",
-            "It is very important to us to document every aspect of the Team’s operations. Hence, it will be needed to be present during the Team’s testing campaigns and launches, and take the best shots for the Team’s public appearance. It will be needed to film our members during their daily work and document the project's progress."
-        ],
-        "desirable": [
-            "Experience in photography and photo editing",
-            "Skilled at working and communicating with both technical and non-technical staff",
-            "Attention to details and up to date on the latest trends",
-            "Intermediate English writing skills"
-        ],
-        "required": [
-            "Possession of an adequate camera",
-            "Experience in Video Design or related field",
-            "Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar",
-            "Knowledge of Google Suite"
-        ],
-        "form": "kkNTvoskG8z2zY8cA"
-    },
-    {
-        "name": "Photographer",
-        "subteam": "Operations",
-        "division": "Media",
-        "code": "OPS-MDA-004",
-        "description": [
-            "The Photographer(s) will be responsible for producing and editing photographic content for our earned media, website and social media channels. This position requires to remain flexible and adaptable, have strong planning skills and participate in many aspects of the Team’s daily work. The Photographer(s) will work in close collaboration with the Video Maker(s) and Social Media Manager.",
-            "It is very important for the Team to document every public appearance. The Photographer(s) presence will be needed at every team event, mission and launch. The Photographer(s) will be asked to take the best shots during each event, in order to promote the image of the Team."
-        ],
-        "desirable": [
-            "Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar",
-            "Skilled at working and communicating with both technical and non-technical staff",
-            "Attention to details and up to date on the latest trends",
-            "Intermediate English writing skills"
-        ],
-        "required": [
-            "Experience in photography and photo editing",
-            "Possession of an adequate camera",
-            "Knowledge of Google Suite"
-        ],
-        "form": "kkNTvoskG8z2zY8cA"
-    },
-    {
-        "name": "Web Developer",
-        "subteam": "Operations",
-        "division": "IT",
-        "code": "OPS-ITC-001",
-        "description": [
-            "The role of the web developer is to manage the website in all its aspects, in order to present the team at its best. In particular, you will work with web technologies (SCSS, TypeScript, Svelte, Supabase) to design, create, and maintain all the website sections, based on the team directives.",
-            "Mid term tasks could be:",
-            [
-                "Improve the projects page",
-                "Create page transition effects",
-                "Enhance the overall user experience and interactions with better animations and with 3D models"
-            ],
-            "A relatively big future project is the development of a backend that handles recruitment, renders pages based on information from (admin) lead engineers, and possibly receives and stores data collected during flights."
-        ],
-        "desirable": [
-            "Knowledge of SCSS",
-            "Knowledge of TypeScript",
-            "Previous experience with Git and GitHub",
-            "Previous experience with Svelte & SvelteKit",
-            "Knowledge and previous use of the Three.js library",
-            "Basic knowledge of Accessible Rich Internet Applications (ARIA)"
-        ],
-        "required": [
-            "Proficiency in CSS",
-            "Good knowledge of modern JavaScript (ECMAScript 2018)"
-        ],
-        "form": "arcXaamqyvxy4FYE7"
-    },
-    {
-        "name": "Control System Engineer",
-        "subteam": "Vittorio Emanuele II",
-        "division": "Mission Analysis",
-        "code": "VES-MSA-002",
-        "description": [
-            "The SW Control System Engineer will be involved in the development and validation of software control systems for the rocket. As an example, the team is currently working on the Air Brakes Control system which is the algorithm that controls the extension of the air brakes with the aim of reaching the target apogee as precisely as possible."
-        ],
-        "desirable": [
-            "Basics of Flight Dynamics"
-        ],
-        "required": [
-            "Knowledge of Matlab and Simulink",
-            "Knowledge of PID controller",
-            "Basics of Body Dynamics"
-        ],
-        "form": "AoS3yA9qbF32qNzJ6"
-    },
-    {
-        "name": "Hardware Engineer",
-        "subteam": "Vittorio Emanuele II",
-        "division": "Avionics",
-        "code": "VES-AVN-001",
-        "description": "As an Hardware Engineer in the Avionics division, you will design, prototype and manufacture the electronic systems for both the rocket and the ground station, starting from scratch. You will use CAD tools to create electrical schemes that will be converted into circuits and PCBs. Your main tasks will include optimizing and enhancing our first discrete flight computer by adding new features, ensuring safety and reliability, and designing the next-generation flight computer, a single-board integrated solution that uses STM32 microcontrollers. You will also conduct practical work, such as research, reading datasheets, design, simulations, soldering, testing and debugging. Projects will be developed in close cooperation with other division members.",
-        "desirable": [
-            "Prior experience with microcontrollers",
-            "Familiarity with hardware testing and debugging tools",
-            "Familiarity with PCB CAD softwares (e.g. KiCAD)",
-            "Good interdisciplinary communication skills"
-        ],
-        "required": [
-            "Knowledge in circuit theory and electronics",
-            "Familiarity with welding",
-            "Basic programming skills",
-            "Basic/Intermediate English writing and speaking skills",
-            "Basic knowledge of LaTeX"
-        ],
-        "form": "pGk1dbLjNJSyAS1w9"
-    },
-    {
-        "name": "Embedded Software Engineer",
-        "subteam": "Vittorio Emanuele II",
-        "division": "Avionics",
-        "code": "VES-AVN-002",
-        "description": "As an Embedded Software Engineer, your job will be the development and optimization of the first flight computer software, and you will also take part in the initial design phase for the next-generation flight computer, built in the STM32 platform. You will write sensors’ drivers and high-quality structured software for the embedded processor in order to retrieve and transmit data, control actuators and accomplish specific mission tasks. This will involve extensive research, writing, testing and debugging. Projects will be developed in close cooperation with other division members.",
-        "desirable": [
-            "Knowledge of flight computer software architecture and design patterns",
-            "Experience with software testing and verification tools",
-            "Experience with STM32 platform",
-            "Good interdisciplinary communication skills"
-        ],
-        "required": [
-            "General knowledge of embedded systems and microcontrollers",
-            "Proficiency in C/C++ programming language",
-            "Experience with software development tools such as IDEs, compilers, debuggers and version control",
-            "Basic/Intermediate English writing and speaking skills",
-            "Basic knowledge of LaTeX"
-        ],
-        "form": "AirSF94XD2BMvaD76"
-    },
-    {
-        "name": "Desktop Application Developer",
-        "subteam": "Vittorio Emanuele II",
-        "division": "Avionics",
-        "code": "VES-AVN-003",
-        "description": [
-            "Altitude, orientation, speed, and most importantly for recovery, GPS location sent by the rocket during flight and retrieved by ground antennas must be processed, displayed, and saved in real time.",
-            "As a ground station developer, your job will be to develop a desktop application with a logical, neat, and aesthetic structure that can perform the tasks mentioned above. This task involves interacting with all the different avionics systems, so communication protocols play a critical role. Projects will be developed in close collaboration with other division members."
-        ],
-        "desirable": [
-            "Previous experience with the QtQuick framework and QML language",
-            "Experience with data processing and visualization tools",
-            "Experience with embedded systems and hardware interfaces",
-            "Good interdisciplinary communication skills"
-        ],
-        "required": [
-            "Knowledge of software engineering principles and practices",
-            "Familiarity with communication protocols and interfaces",
-            "Good programming skills",
-            "Basic/Intermediate English writing and speaking skills",
-            "Basic knowledge of LaTeX"
-        ],
-        "form": "tUq5EpHWbVn8U1aq6"
-    },
-    {
-        "name": "RF Specialist",
-        "subteam": "Vittorio Emanuele II",
-        "division": "Avionics",
-        "code": "VES-AVN-004",
-        "description": "Wireless communication plays a fundamental role before, during, and after the flight. It allows the ground station to monitor system status and evaluate potential risks, transmit data in real time to track the rocket's altitude, speed, and other critical parameters, and facilitate recovery by communicating the rocket's GPS location. Due to its critical importance, our team needs a specialized engineer to design, simulate, and develop the rocket-ground station communication system at the physical layer. The role will involve extensive research, investigation of technologies and protocols, and positioning and pointing of ground and onboard antennas to optimize data transmission. Projects will be developed in close collaboration with other division members. ",
-        "desirable": [
-            "Familiarity with communication protocols such as ZigBee, LoRa and Wi-Fi",
-            "Prior experience with embedded systems and hardware interfaces",
-            "Good interdisciplinary communication skills"
-        ],
-        "required": [
-            "Knowledge in circuit theory and electronics",
-            "Knowledge of wireless communication principles and technologies",
-            "Basic/Intermediate English writing and speaking skills",
-            "Basic knowledge of LaTeX"
-        ],
-        "form": "XgazqriQqUCfWTDA8"
-    },
-    {
-        "name": "Embedded Software Engineer",
-        "subteam": "Efesto",
-        "division": "Engine Control Strategy",
-        "code": "LRE-ECS-001",
-        "description": "The engine control strategy division provides the start-up, fire phase and shut-down engine control strategy. Tasks: Develop the main engine control software which provides the start-up, fire phase and shout-down sequence provided by the other divisions.",
-        "desirable": null,
-        "required": [
-          "Programming skills",
-          "Block based coding",
-          "MatLab and Python"
-        ],
-        "form": "tkCH6L2BSb4DakqA8"
-    },
-    {
-        "name": "Embedded Hardware Engineer",
-        "subteam": "Efesto",
-        "division": "Engine Control Strategy",
-        "code": "LRE-ECS-002",
-        "description": [
-            "The engine control strategy division provides the start-up, fire phase and shut-down engine control strategy. Tasks:",
-            [
-                "Design the integration system of sensors needed for the engine control and monitoring software",
-                "Test and validate signals from sensors",
-                "Cooperate with the test bench division"
-            ]
-        ],
-        "desirable": [
-          "MatLab and Python"
-        ],
-        "required": [
-          "Strong electrical skills",
-          "Theory of signals",
-          "Strong sensor typology and working logic knowledge"
-        ],
-        "form": "tkCH6L2BSb4DakqA8"
-    }
+  {
+    "name": "Graphic Designer",
+    "subteam": "Operations",
+    "division": "Media",
+    "code": "OPS-MDA-001",
+    "description": "As a Graphic Designer, you will be in charge of designing the Team’s mission patches and logos, and help design the external coating of the Team’s rockets. You will design social media posts and website UI & UX in tight collaboration with photographers, video makers, rendering specialists, and web developers, leveraging modern design styles and patterns. ",
+    "desirable": [
+      "Attention to details and being up to date on the latest trends",
+      "Experience in design motion graphics (charts, lower-thirds, GIFs, Animations, animated social media ads)",
+      "Intermediate English writing skills"
+    ],
+    "required": [
+      "Knowledge of prototyping softwares and graphics softwares",
+      "Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar",
+      "Knowledge of Google Suite"
+    ],
+    "form": "kkNTvoskG8z2zY8cA"
+  },
+  {
+    "name": "Social Media Manager",
+    "subteam": "Operations",
+    "division": "Media",
+    "code": "OPS-MDA-002",
+    "description": [
+      "PoliTo Rocket Team is looking for one or more Social Media Manager(s), who will have the responsibility to maintain and enhance the team’s image by implementing social media platforms’ content strategies.",
+      "This role will be required to run advertising campaigns and drive engagement by creating high-quality original content. The manager(s) should also oversee our community by managing interactions across all platforms."
+    ],
+    "desirable": [
+      "Knowledge of the main social media platforms used by the Team (Instagram, LinkedIn, Twitter) and of additional social media platform to expand the Team's presence",
+      "Attention to details and being up to date on the latest trends",
+      "Previous experience in the media management and previous experience with paid content promotions",
+      "Experience in design motion graphics (charts, lower-thirds, GIFs, Animations, animated social media ads)",
+      "Proficiency with graphic design software such as Canva, Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar"
+    ],
+    "required": [
+      "Professionalism and responsibility",
+      "Intermediate/Advanced English writing skills",
+      "Knowledge of Google Suite"
+    ],
+    "form": "kkNTvoskG8z2zY8cA"
+  },
+  {
+    "name": "Video Maker",
+    "subteam": "Operations",
+    "division": "Media",
+    "code": "OPS-MDA-003",
+    "description": [
+      "The Video Maker(s) will be responsible for designing, editing and producing video content for our earned media, website and social media channels. This position requires to remain flexible and adaptable, have strong planning skills and participate in many aspects of the Team’s daily work. The Video Maker will work in close collaboration with the Photographer(s) and Social Media Manager.",
+      "It is very important to us to document every aspect of the Team’s operations. Hence, it will be needed to be present during the Team’s testing campaigns and launches, and take the best shots for the Team’s public appearance. It will be needed to film our members during their daily work and document the project's progress."
+    ],
+    "desirable": [
+      "Experience in photography and photo editing",
+      "Skilled at working and communicating with both technical and non-technical staff",
+      "Attention to details and up to date on the latest trends",
+      "Intermediate English writing skills"
+    ],
+    "required": [
+      "Possession of an adequate camera",
+      "Experience in Video Design or related field",
+      "Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar",
+      "Knowledge of Google Suite"
+    ],
+    "form": "kkNTvoskG8z2zY8cA"
+  },
+  {
+    "name": "Photographer",
+    "subteam": "Operations",
+    "division": "Media",
+    "code": "OPS-MDA-004",
+    "description": [
+      "The Photographer(s) will be responsible for producing and editing photographic content for our earned media, website and social media channels. This position requires to remain flexible and adaptable, have strong planning skills and participate in many aspects of the Team’s daily work. The Photographer(s) will work in close collaboration with the Video Maker(s) and Social Media Manager.",
+      "It is very important for the Team to document every public appearance. The Photographer(s) presence will be needed at every team event, mission and launch. The Photographer(s) will be asked to take the best shots during each event, in order to promote the image of the Team."
+    ],
+    "desirable": [
+      "Proficiency with Adobe Creative Suite Professional products,such as Illustrator, Photoshop, After Effects, Premiere, and InDesign, or similar",
+      "Skilled at working and communicating with both technical and non-technical staff",
+      "Attention to details and up to date on the latest trends",
+      "Intermediate English writing skills"
+    ],
+    "required": [
+      "Experience in photography and photo editing",
+      "Possession of an adequate camera",
+      "Knowledge of Google Suite"
+    ],
+    "form": "kkNTvoskG8z2zY8cA"
+  },
+  {
+    "name": "Web Developer",
+    "subteam": "Operations",
+    "division": "IT",
+    "code": "OPS-ITC-001",
+    "description": [
+      "The role of the web developer is to manage the website in all its aspects, in order to present the team at its best. In particular, you will work with web technologies (SCSS, TypeScript, Svelte, Supabase) to design, create, and maintain all the website sections, based on the team directives.",
+      "Mid term tasks could be:",
+      [
+        "Improve the projects page",
+        "Create page transition effects",
+        "Enhance the overall user experience and interactions with better animations and with 3D models"
+      ],
+      "A relatively big future project is the development of a backend that handles recruitment, renders pages based on information from (admin) lead engineers, and possibly receives and stores data collected during flights."
+    ],
+    "desirable": [
+      "Knowledge of SCSS",
+      "Knowledge of TypeScript",
+      "Previous experience with Git and GitHub",
+      "Previous experience with Svelte & SvelteKit",
+      "Knowledge and previous use of the Three.js library",
+      "Basic knowledge of Accessible Rich Internet Applications (ARIA)"
+    ],
+    "required": [
+      "Proficiency in CSS",
+      "Good knowledge of modern JavaScript (ECMAScript 2018)"
+    ],
+    "form": "arcXaamqyvxy4FYE7"
+  },
+  {
+    "name": "Control System Engineer",
+    "subteam": "Vittorio Emanuele II",
+    "division": "Mission Analysis",
+    "code": "VES-MSA-002",
+    "description": [
+      "The SW Control System Engineer will be involved in the development and validation of software control systems for the rocket. As an example, the team is currently working on the Air Brakes Control system which is the algorithm that controls the extension of the air brakes with the aim of reaching the target apogee as precisely as possible."
+    ],
+    "desirable": ["Basics of Flight Dynamics"],
+    "required": [
+      "Knowledge of Matlab and Simulink",
+      "Knowledge of PID controller",
+      "Basics of Body Dynamics"
+    ],
+    "form": "AoS3yA9qbF32qNzJ6"
+  },
+  {
+    "name": "Hardware Engineer",
+    "subteam": "Vittorio Emanuele II",
+    "division": "Avionics",
+    "code": "VES-AVN-001",
+    "description": "As an Hardware Engineer in the Avionics division, you will design, prototype and manufacture the electronic systems for both the rocket and the ground station, starting from scratch. You will use CAD tools to create electrical schemes that will be converted into circuits and PCBs. Your main tasks will include optimizing and enhancing our first discrete flight computer by adding new features, ensuring safety and reliability, and designing the next-generation flight computer, a single-board integrated solution that uses STM32 microcontrollers. You will also conduct practical work, such as research, reading datasheets, design, simulations, soldering, testing and debugging. Projects will be developed in close cooperation with other division members.",
+    "desirable": [
+      "Prior experience with microcontrollers",
+      "Familiarity with hardware testing and debugging tools",
+      "Familiarity with PCB CAD softwares (e.g. KiCAD)",
+      "Good interdisciplinary communication skills"
+    ],
+    "required": [
+      "Knowledge in circuit theory and electronics",
+      "Familiarity with welding",
+      "Basic programming skills",
+      "Basic/Intermediate English writing and speaking skills",
+      "Basic knowledge of LaTeX"
+    ],
+    "form": "pGk1dbLjNJSyAS1w9"
+  },
+  {
+    "name": "Embedded Software Engineer",
+    "subteam": "Vittorio Emanuele II",
+    "division": "Avionics",
+    "code": "VES-AVN-002",
+    "description": "As an Embedded Software Engineer, your job will be the development and optimization of the first flight computer software, and you will also take part in the initial design phase for the next-generation flight computer, built in the STM32 platform. You will write sensors’ drivers and high-quality structured software for the embedded processor in order to retrieve and transmit data, control actuators and accomplish specific mission tasks. This will involve extensive research, writing, testing and debugging. Projects will be developed in close cooperation with other division members.",
+    "desirable": [
+      "Knowledge of flight computer software architecture and design patterns",
+      "Experience with software testing and verification tools",
+      "Experience with STM32 platform",
+      "Good interdisciplinary communication skills"
+    ],
+    "required": [
+      "General knowledge of embedded systems and microcontrollers",
+      "Proficiency in C/C++ programming language",
+      "Experience with software development tools such as IDEs, compilers, debuggers and version control",
+      "Basic/Intermediate English writing and speaking skills",
+      "Basic knowledge of LaTeX"
+    ],
+    "form": "AirSF94XD2BMvaD76"
+  },
+  {
+    "name": "Desktop Application Developer",
+    "subteam": "Vittorio Emanuele II",
+    "division": "Avionics",
+    "code": "VES-AVN-003",
+    "description": [
+      "Altitude, orientation, speed, and most importantly for recovery, GPS location sent by the rocket during flight and retrieved by ground antennas must be processed, displayed, and saved in real time.",
+      "As a ground station developer, your job will be to develop a desktop application with a logical, neat, and aesthetic structure that can perform the tasks mentioned above. This task involves interacting with all the different avionics systems, so communication protocols play a critical role. Projects will be developed in close collaboration with other division members."
+    ],
+    "desirable": [
+      "Previous experience with the QtQuick framework and QML language",
+      "Experience with data processing and visualization tools",
+      "Experience with embedded systems and hardware interfaces",
+      "Good interdisciplinary communication skills"
+    ],
+    "required": [
+      "Knowledge of software engineering principles and practices",
+      "Familiarity with communication protocols and interfaces",
+      "Good programming skills",
+      "Basic/Intermediate English writing and speaking skills",
+      "Basic knowledge of LaTeX"
+    ],
+    "form": "tUq5EpHWbVn8U1aq6"
+  },
+  {
+    "name": "RF Specialist",
+    "subteam": "Vittorio Emanuele II",
+    "division": "Avionics",
+    "code": "VES-AVN-004",
+    "description": "Wireless communication plays a fundamental role before, during, and after the flight. It allows the ground station to monitor system status and evaluate potential risks, transmit data in real time to track the rocket's altitude, speed, and other critical parameters, and facilitate recovery by communicating the rocket's GPS location. Due to its critical importance, our team needs a specialized engineer to design, simulate, and develop the rocket-ground station communication system at the physical layer. The role will involve extensive research, investigation of technologies and protocols, and positioning and pointing of ground and onboard antennas to optimize data transmission. Projects will be developed in close collaboration with other division members. ",
+    "desirable": [
+      "Familiarity with communication protocols such as ZigBee, LoRa and Wi-Fi",
+      "Prior experience with embedded systems and hardware interfaces",
+      "Good interdisciplinary communication skills"
+    ],
+    "required": [
+      "Knowledge in circuit theory and electronics",
+      "Knowledge of wireless communication principles and technologies",
+      "Basic/Intermediate English writing and speaking skills",
+      "Basic knowledge of LaTeX"
+    ],
+    "form": "XgazqriQqUCfWTDA8"
+  },
+  {
+    "name": "Embedded Software Engineer",
+    "subteam": "Efesto",
+    "division": "Engine Control Strategy",
+    "code": "LRE-ECS-001",
+    "description": "The engine control strategy division provides the start-up, fire phase and shut-down engine control strategy. Tasks: Develop the main engine control software which provides the start-up, fire phase and shout-down sequence provided by the other divisions.",
+    "desirable": null,
+    "required": [
+      "Programming skills",
+      "Block based coding",
+      "MatLab and Python"
+    ],
+    "form": "tkCH6L2BSb4DakqA8"
+  },
+  {
+    "name": "Embedded Hardware Engineer",
+    "subteam": "Efesto",
+    "division": "Engine Control Strategy",
+    "code": "LRE-ECS-002",
+    "description": [
+      "The engine control strategy division provides the start-up, fire phase and shut-down engine control strategy. Tasks:",
+      [
+        "Design the integration system of sensors needed for the engine control and monitoring software",
+        "Test and validate signals from sensors",
+        "Cooperate with the test bench division"
+      ]
+    ],
+    "desirable": ["MatLab and Python"],
+    "required": [
+      "Strong electrical skills",
+      "Theory of signals",
+      "Strong sensor typology and working logic knowledge"
+    ],
+    "form": "tkCH6L2BSb4DakqA8"
+  }
 ]

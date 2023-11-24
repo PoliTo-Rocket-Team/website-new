@@ -1,53 +1,239 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content="SvelteKit" />
-		<meta name="creator" content="PoliTo Rocket Team" />
-		<!-- faviconit.com light -->
-		<link media="(prefers-color-scheme: light)" rel="shortcut icon" href="/favicons/light/favicon.ico">
-		<link media="(prefers-color-scheme: light)" rel="icon" sizes="16x16 32x32 64x64" href="/favicons/light/favicon.ico">
-		<link media="(prefers-color-scheme: light)" rel="icon" type="image/png" sizes="196x196" href="/favicons/light/favicon-192.png">
-		<link media="(prefers-color-scheme: light)" rel="icon" type="image/png" sizes="160x160" href="/favicons/light/favicon-160.png">
-		<link media="(prefers-color-scheme: light)" rel="icon" type="image/png" sizes="96x96" href="/favicons/light/favicon-96.png">
-		<link media="(prefers-color-scheme: light)" rel="icon" type="image/png" sizes="64x64" href="/favicons/light/favicon-64.png">
-		<link media="(prefers-color-scheme: light)" rel="icon" type="image/png" sizes="32x32" href="/favicons/light/favicon-32.png">
-		<link media="(prefers-color-scheme: light)" rel="icon" type="image/png" sizes="16x16" href="/favicons/light/favicon-16.png">
-		<link media="(prefers-color-scheme: light)" rel="apple-touch-icon" href="/favicons/light/favicon-57.png">
-		<link media="(prefers-color-scheme: light)" rel="apple-touch-icon" sizes="114x114" href="/favicons/light/favicon-114.png">
-		<link media="(prefers-color-scheme: light)" rel="apple-touch-icon" sizes="72x72" href="/favicons/light/favicon-72.png">
-		<link media="(prefers-color-scheme: light)" rel="apple-touch-icon" sizes="144x144" href="/favicons/light/favicon-144.png">
-		<link media="(prefers-color-scheme: light)" rel="apple-touch-icon" sizes="60x60" href="/favicons/light/favicon-60.png">
-		<link media="(prefers-color-scheme: light)" rel="apple-touch-icon" sizes="120x120" href="/favicons/light/favicon-120.png">
-		<link media="(prefers-color-scheme: light)" rel="apple-touch-icon" sizes="76x76" href="/favicons/light/favicon-76.png">
-		<link media="(prefers-color-scheme: light)" rel="apple-touch-icon" sizes="152x152" href="/favicons/light/favicon-152.png">
-		<link media="(prefers-color-scheme: light)" rel="apple-touch-icon" sizes="180x180" href="/favicons/light/favicon-180.png">
-		<!-- faviconit.com dark -->
-		<link media="(prefers-color-scheme: dark)" rel="shortcut icon" href="/favicons/dark/favicon.ico">
-		<link media="(prefers-color-scheme: dark)" rel="icon" sizes="16x16 32x32 64x64" href="/favicons/dark/favicon.ico">
-		<link media="(prefers-color-scheme: dark)" rel="icon" type="image/png" sizes="196x196" href="/favicons/dark/favicon-192.png">
-		<link media="(prefers-color-scheme: dark)" rel="icon" type="image/png" sizes="160x160" href="/favicons/dark/favicon-160.png">
-		<link media="(prefers-color-scheme: dark)" rel="icon" type="image/png" sizes="96x96" href="/favicons/dark/favicon-96.png">
-		<link media="(prefers-color-scheme: dark)" rel="icon" type="image/png" sizes="64x64" href="/favicons/dark/favicon-64.png">
-		<link media="(prefers-color-scheme: dark)" rel="icon" type="image/png" sizes="32x32" href="/favicons/dark/favicon-32.png">
-		<link media="(prefers-color-scheme: dark)" rel="icon" type="image/png" sizes="16x16" href="/favicons/dark/favicon-16.png">
-		<link media="(prefers-color-scheme: dark)" rel="apple-touch-icon" href="/favicons/dark/favicon-57.png">
-		<link media="(prefers-color-scheme: dark)" rel="apple-touch-icon" sizes="114x114" href="/favicons/dark/favicon-114.png">
-		<link media="(prefers-color-scheme: dark)" rel="apple-touch-icon" sizes="72x72" href="/favicons/dark/favicon-72.png">
-		<link media="(prefers-color-scheme: dark)" rel="apple-touch-icon" sizes="144x144" href="/favicons/dark/favicon-144.png">
-		<link media="(prefers-color-scheme: dark)" rel="apple-touch-icon" sizes="60x60" href="/favicons/dark/favicon-60.png">
-		<link media="(prefers-color-scheme: dark)" rel="apple-touch-icon" sizes="120x120" href="/favicons/dark/favicon-120.png">
-		<link media="(prefers-color-scheme: dark)" rel="apple-touch-icon" sizes="76x76" href="/favicons/dark/favicon-76.png">
-		<link media="(prefers-color-scheme: dark)" rel="apple-touch-icon" sizes="152x152" href="/favicons/dark/favicon-152.png">
-		<link media="(prefers-color-scheme: dark)" rel="apple-touch-icon" sizes="180x180" href="/favicons/dark/favicon-180.png">
-		<meta name="msapplication-TileColor" content="#FFFFFF">
-		<meta name="msapplication-TileImage" content="/favicons/dark/favicon-144.png">
-		<meta name="msapplication-config" content="/favicons/dark/browserconfig.xml">
-		%sveltekit.head%
-	</head>
-	<body data-sveltekit-preload-data="hover">
-		<script>document.body.dataset.theme = localStorage.getItem("PRT-theme")</script>
-		<div style="display: contents; height: 100%;">%sveltekit.body%</div>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="SvelteKit" />
+    <meta name="creator" content="PoliTo Rocket Team" />
+    <!-- faviconit.com light -->
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="shortcut icon"
+      href="/favicons/light/favicon.ico"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="icon"
+      sizes="16x16 32x32 64x64"
+      href="/favicons/light/favicon.ico"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="icon"
+      type="image/png"
+      sizes="196x196"
+      href="/favicons/light/favicon-192.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="icon"
+      type="image/png"
+      sizes="160x160"
+      href="/favicons/light/favicon-160.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicons/light/favicon-96.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="/favicons/light/favicon-64.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/light/favicon-32.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/light/favicon-16.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="apple-touch-icon"
+      href="/favicons/light/favicon-57.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/favicons/light/favicon-114.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/favicons/light/favicon-72.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/favicons/light/favicon-144.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/favicons/light/favicon-60.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/favicons/light/favicon-120.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/favicons/light/favicon-76.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/favicons/light/favicon-152.png"
+    />
+    <link
+      media="(prefers-color-scheme: light)"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/light/favicon-180.png"
+    />
+    <!-- faviconit.com dark -->
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="shortcut icon"
+      href="/favicons/dark/favicon.ico"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="icon"
+      sizes="16x16 32x32 64x64"
+      href="/favicons/dark/favicon.ico"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="icon"
+      type="image/png"
+      sizes="196x196"
+      href="/favicons/dark/favicon-192.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="icon"
+      type="image/png"
+      sizes="160x160"
+      href="/favicons/dark/favicon-160.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="/favicons/dark/favicon-96.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="/favicons/dark/favicon-64.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="/favicons/dark/favicon-32.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="/favicons/dark/favicon-16.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="apple-touch-icon"
+      href="/favicons/dark/favicon-57.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="/favicons/dark/favicon-114.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="/favicons/dark/favicon-72.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="apple-touch-icon"
+      sizes="144x144"
+      href="/favicons/dark/favicon-144.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="apple-touch-icon"
+      sizes="60x60"
+      href="/favicons/dark/favicon-60.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="apple-touch-icon"
+      sizes="120x120"
+      href="/favicons/dark/favicon-120.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="apple-touch-icon"
+      sizes="76x76"
+      href="/favicons/dark/favicon-76.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="/favicons/dark/favicon-152.png"
+    />
+    <link
+      media="(prefers-color-scheme: dark)"
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/favicons/dark/favicon-180.png"
+    />
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta
+      name="msapplication-TileImage"
+      content="/favicons/dark/favicon-144.png"
+    />
+    <meta
+      name="msapplication-config"
+      content="/favicons/dark/browserconfig.xml"
+    />
+    %sveltekit.head%
+  </head>
+  <body data-sveltekit-preload-data="hover">
+    <script>
+      document.body.dataset.theme = localStorage.getItem("PRT-theme");
+    </script>
+    <div style="display: contents; height: 100%">%sveltekit.body%</div>
+  </body>
 </html>

@@ -1,44 +1,44 @@
 [
-    {
-        "date": "2023-5-2",
-        "title": "IRESS",
-        "body": "The event brought together rocket teams from major Italian universities, promoting collaboration and networking among students, professionals, and industry leaders in the field of Rocket and Space Engineering. The summit provided a platform for students to showcase their projects, share ideas, and discuss the realities and challenges of this field. ",
-        "img": "posts/IRESS1.jpeg",
-        "url": "https://www.instagram.com/p/CrwPytBs6Kr/"
-    },
-    {
-        "date": "2023-3-22",
-        "title": "Stem4Future",
-        "body": "We recently took part in Steam4Future at Bocconi University, an event introducing high school students to the mathematics behind AI and its training models. It was a pleasure meeting students, Boeing Italy execs, Bocconi managers, and ScuolAttiva tutors: excited for more experiences ahead!",
-        "img": "posts/stem4future.jpg",
-        "url": "https://www.instagram.com/p/CrBzVzKsSrl/"
-    },
-    {
-        "date": "2023-3-14",
-        "title": "Pi Day Fair",
-        "body": "We enthusiastically participated in the Pi Day Fair organized by Associazione Ex Alunni Newton in Chivasso. It was a rewarding experience to nurture the curiosity of younger generations in scientific disciplines, as we taught them rocket science basics and demonstrated a do-it-yourself water-powered rocket. The event also marked the exciting debut of our newly-painted Cavour rocket.",
-        "img": "posts/pi-day.jpg",
-        "url": "https://www.instagram.com/p/Cp-9BnXs8WY/"
-    },
-    {
-        "date": "2023-2-23",
-        "title": "Visit at Pininfarina's wind tunnel",
-        "body": "Members of PoliTo Rocket Team recently visited Pininfarina's Wind Tunnel in Grugliasco, one of the largest in Europe. The visit provided valuable insights into the significant role and importance of this establishment, as well as an opportunity to present our work to Pininfarina engineers.",
-        "img": "posts/pininfarina.jpg",
-        "url": "https://www.instagram.com/p/CpinA-ANFug/"
-    },
-    {
-        "date": "2022-12-16",
-        "title": "Luna e Italia",
-        "body": "Our Team had the privilege of presenting our projects and the Cavour Rocket prototype at the event 'Luna e Italia. Torino e il futuro dell’esplorazione spaziale', organized by Istituto Affari Internazionali and Politecnico di Torino, in celebration of Italy's National Space Day. We showcased our work in front of esteemed representatives from academia, research, industry, and other institutions, as well as a large audience of attending students.",
-        "img": "posts/luna-italia.jpg",
-        "url": "https://www.instagram.com/p/CmbxqzdsyA8/"
-    },
-    {
-        "date": "2022-11-25",
-        "title": "Hosting Space Eagle",
-        "body": "STEM Outreach goes beyond inspiration; it sparks meaningful exchanges. Recently, PoliTo Rocket Team hosted Space Eagle, a talented high school rocketry group. Guided tours, hands-on workshops, and a remarkable collection unfolded, shaping the future of STEM education.",
-        "img": "posts/space-eagle.jpg",
-        "url": "https://www.instagram.com/p/CrTSz02N8J-/"
-    }
+  {
+    "date": "2023-5-2",
+    "title": "IRESS",
+    "body": "The event brought together rocket teams from major Italian universities, promoting collaboration and networking among students, professionals, and industry leaders in the field of Rocket and Space Engineering. The summit provided a platform for students to showcase their projects, share ideas, and discuss the realities and challenges of this field. ",
+    "img": "posts/IRESS1.jpeg",
+    "url": "https://www.instagram.com/p/CrwPytBs6Kr/"
+  },
+  {
+    "date": "2023-3-22",
+    "title": "Stem4Future",
+    "body": "We recently took part in Steam4Future at Bocconi University, an event introducing high school students to the mathematics behind AI and its training models. It was a pleasure meeting students, Boeing Italy execs, Bocconi managers, and ScuolAttiva tutors: excited for more experiences ahead!",
+    "img": "posts/stem4future.jpg",
+    "url": "https://www.instagram.com/p/CrBzVzKsSrl/"
+  },
+  {
+    "date": "2023-3-14",
+    "title": "Pi Day Fair",
+    "body": "We enthusiastically participated in the Pi Day Fair organized by Associazione Ex Alunni Newton in Chivasso. It was a rewarding experience to nurture the curiosity of younger generations in scientific disciplines, as we taught them rocket science basics and demonstrated a do-it-yourself water-powered rocket. The event also marked the exciting debut of our newly-painted Cavour rocket.",
+    "img": "posts/pi-day.jpg",
+    "url": "https://www.instagram.com/p/Cp-9BnXs8WY/"
+  },
+  {
+    "date": "2023-2-23",
+    "title": "Visit at Pininfarina's wind tunnel",
+    "body": "Members of PoliTo Rocket Team recently visited Pininfarina's Wind Tunnel in Grugliasco, one of the largest in Europe. The visit provided valuable insights into the significant role and importance of this establishment, as well as an opportunity to present our work to Pininfarina engineers.",
+    "img": "posts/pininfarina.jpg",
+    "url": "https://www.instagram.com/p/CpinA-ANFug/"
+  },
+  {
+    "date": "2022-12-16",
+    "title": "Luna e Italia",
+    "body": "Our Team had the privilege of presenting our projects and the Cavour Rocket prototype at the event 'Luna e Italia. Torino e il futuro dell’esplorazione spaziale', organized by Istituto Affari Internazionali and Politecnico di Torino, in celebration of Italy's National Space Day. We showcased our work in front of esteemed representatives from academia, research, industry, and other institutions, as well as a large audience of attending students.",
+    "img": "posts/luna-italia.jpg",
+    "url": "https://www.instagram.com/p/CmbxqzdsyA8/"
+  },
+  {
+    "date": "2022-11-25",
+    "title": "Hosting Space Eagle",
+    "body": "STEM Outreach goes beyond inspiration; it sparks meaningful exchanges. Recently, PoliTo Rocket Team hosted Space Eagle, a talented high school rocketry group. Guided tours, hands-on workshops, and a remarkable collection unfolded, shaping the future of STEM education.",
+    "img": "posts/space-eagle.jpg",
+    "url": "https://www.instagram.com/p/CrTSz02N8J-/"
+  }
 ]
