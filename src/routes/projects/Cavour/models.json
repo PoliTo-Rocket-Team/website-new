@@ -1,55 +1,55 @@
 {
-  "models": ["CVR 100-75-3", "CVR 100-75-4", "CVR 100-54-6"],
-  "fields": [
-    {
-      "name": "Diameter",
-      "unit": "mm",
-      "values": [104, 104, 104]
-    },
-    {
-      "name": "Length",
-      "unit": "mm",
-      "values": [2167, 2527, 2527]
-    },
-    {
-      "name": "Operating empty weight",
-      "unit": "kg",
-      "values": [4.8, 5.1, 5.1]
-    },
-    {
-      "name": "Wet mass",
-      "unit": "kg",
-      "values": [8.4, 9.3, 6.9]
-    },
-    {
-      "name": "Payload",
-      "values": ["4kg (scientific)", "4kg (scientific)", "540g"],
-      "unit": null
-    },
-    {
-      "name": "Motor model",
-      "unit": null,
-      "values": ["CTI L1350", "CTI L1350", "CTI K940"]
-    },
-    {
-      "name": "Liftoff Thrust-Weight ratio",
-      "unit": null,
-      "values": [13.7, 12.9, 15.3]
-    },
-    {
-      "name": "Maximum thrust",
-      "values": [1672.5, 1672.5, 1120.8],
-      "unit": "N"
-    },
-    {
-      "name": "Maximum speed",
-      "values": [320, 295, 201],
-      "unit": "m/s"
-    },
-    {
-      "name": "Target apogee",
-      "values": [3000, 3000, 1500],
-      "unit": "m"
-    }
-  ]
+    "models": ["CVR 100-75-3", "CVR 100-75-4", "CVR 100-54-6"],
+    "fields": [
+        {
+            "name": "Diameter",
+            "unit": "mm",
+            "values": [104, 104, 104]
+        },
+        {
+            "name": "Length",
+            "unit": "mm",
+            "values": [2167, 2527, 2527]
+        },
+        {
+            "name": "Operating empty weight",
+            "unit": "kg",
+            "values": [4.8, 5.1, 5.1]
+        },
+        {
+            "name": "Wet mass",
+            "unit": "kg",
+            "values": [8.4, 9.3, 6.9]
+        },
+        {
+            "name": "Payload",
+            "values": ["4kg (scientific)", "4kg (scientific)", "540g"],
+            "unit": null
+        },
+        {
+            "name": "Motor model",
+            "unit": null,
+            "values": ["CTI L1350", "CTI L1350", "CTI K940"]
+        },
+        {
+            "name": "Liftoff Thrust-Weight ratio",
+            "unit": null,
+            "values": [13.7, 12.9, 15.3]
+        },
+        {
+            "name": "Maximum thrust",
+            "values": [1672.5, 1672.5, 1120.8],
+            "unit": "N"
+        },
+        {
+            "name": "Maximum speed",
+            "values": [320, 295, 201],
+            "unit": "m/s"
+        },
+        {
+            "name": "Target apogee",
+            "values": [3000, 3000, 1500],
+            "unit": "m"
+        }
+    ]
 }

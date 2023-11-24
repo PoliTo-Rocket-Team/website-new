@@ -19,44 +19,95 @@
     const total = slices.reduce((acc, slice) => acc + slice.value, 0);
     const len = slices.length;
     const angles = new Array(len + 1);
-    angles[0] = rotate/180*Math.PI;
+    angles[0] = (rotate / 180) * Math.PI;
     let i;
-    for(i =0; i<len; i++) angles[i+1] = angles[i] + slices[i].value/total*Math.PI*2;
+    for (i = 0; i < len; i++)
+        angles[i + 1] = angles[i] + (slices[i].value / total) * Math.PI * 2;
     const coss = angles.map(Math.cos);
     const sins = angles.map(Math.sin);
-    const center = radius*scale;
+    const center = radius * scale;
 
-    let mx = 0, my=0, left=0;
-    let hovered: SVGElement|null = null;
-    function enter(this: SVGElement) { hovered = this; }
-    function leave(this: SVGElement) { if(hovered == this) hovered = null; }
+    let mx = 0,
+        my = 0,
+        left = 0;
+    let hovered: SVGElement | null = null;
+    function enter(this: SVGElement) {
+        hovered = this;
+    }
+    function leave(this: SVGElement) {
+        if (hovered == this) hovered = null;
+    }
     function move(x: number, y: number, rect: DOMRect) {
-        if(!hovered) return;
-        mx = x; my = y;
-        left = x+rect.left;
+        if (!hovered) return;
+        mx = x;
+        my = y;
+        left = x + rect.left;
     }
 </script>
 
 <div class="pie-chart">
-    <div class="svg-wrapper" use:trackmouse={{move}}>
-        <div class="label" style="--mx: {mx}px; --my: {my}px; --left: {left}px;" class:show={hovered}>{hovered?.getAttribute("data-label")}</div>
-        <svg viewBox="0 0 {2*scale*radius} {2*scale*radius}" >
+    <div class="svg-wrapper" use:trackmouse={{ move }}>
+        <div
+            class="label"
+            style="--mx: {mx}px; --my: {my}px; --left: {left}px;"
+            class:show={hovered}
+        >
+            {hovered?.getAttribute("data-label")}
+        </div>
+        <svg viewBox="0 0 {2 * scale * radius} {2 * scale * radius}">
             {#each slices as slice, i}
-                {@const p = slice.value/total}
-                {@const p_str = (p*100).toFixed(1) + '%'}
-                {@const d = `M${center},${center} L${radius*(scale + coss[i])},${radius*(scale + sins[i])} A${radius},${radius},${p*360},${+(p>0.5)},1,${radius*(scale + coss[i+1])},${radius*(scale + sins[i+1])}Z`}
+                {@const p = slice.value / total}
+                {@const p_str = (p * 100).toFixed(1) + "%"}
+                {@const d = `M${center},${center} L${
+                    radius * (scale + coss[i])
+                },${radius * (scale + sins[i])} A${radius},${radius},${
+                    p * 360
+                },${+(p > 0.5)},1,${radius * (scale + coss[i + 1])},${
+                    radius * (scale + sins[i + 1])
+                }Z`}
                 {#if slice.value < threshold}
-                    <path {d} fill={slice.color} class="pie-slice" data-label="{slice.label} - {p_str}" style="--p: {p};" on:mouseenter={enter} on:mouseleave={leave} role="presentation" />
+                    <path
+                        {d}
+                        fill={slice.color}
+                        class="pie-slice"
+                        data-label="{slice.label} - {p_str}"
+                        style="--p: {p};"
+                        on:mouseenter={enter}
+                        on:mouseleave={leave}
+                        role="presentation"
+                    />
                 {:else}
-                    {@const df = 0.85*radius*(1 - Math.min(p*p*12, 0.5))}
-                    <g class="pie-slice" data-label="{slice.label} - {p_str}" style="--p: {p};" on:mouseenter={enter} on:mouseleave={leave} role="presentation">
+                    {@const df =
+                        0.85 * radius * (1 - Math.min(p * p * 12, 0.5))}
+                    <g
+                        class="pie-slice"
+                        data-label="{slice.label} - {p_str}"
+                        style="--p: {p};"
+                        on:mouseenter={enter}
+                        on:mouseleave={leave}
+                        role="presentation"
+                    >
                         <path {d} fill={slice.color} />
-                        <text x={center + df*Math.cos(angles[i] + p*Math.PI)} y={center + df*Math.sin(angles[i] + p*Math.PI)} text-anchor="middle" dominant-baseline="central" fill="white">{p_str}</text>
+                        <text
+                            x={center + df * Math.cos(angles[i] + p * Math.PI)}
+                            y={center + df * Math.sin(angles[i] + p * Math.PI)}
+                            text-anchor="middle"
+                            dominant-baseline="central"
+                            fill="white">{p_str}</text
+                        >
                     </g>
                 {/if}
             {/each}
-            {#each {length: len} as _, i}   
-                <line x1={center} y1={center} x2={scale*radius*(1+coss[i])} y2={scale*radius*(1+sins[i])} stroke-linecap="round" stroke-width=".2" stroke="var(--bg-0)" />
+            {#each { length: len } as _, i}
+                <line
+                    x1={center}
+                    y1={center}
+                    x2={scale * radius * (1 + coss[i])}
+                    y2={scale * radius * (1 + sins[i])}
+                    stroke-linecap="round"
+                    stroke-width=".2"
+                    stroke="var(--bg-0)"
+                />
             {/each}
         </svg>
     </div>
@@ -64,7 +115,11 @@
         <h3>{title}</h3>
         <ul>
             {#each slices as slice}
-                <li style="--clr: {slice.color};">{slice.label}<span class="hidden"> {(slice.value/total*100).toFixed(1)}%</span></li>
+                <li style="--clr: {slice.color};">
+                    {slice.label}<span class="hidden">
+                        {((slice.value / total) * 100).toFixed(1)}%</span
+                    >
+                </li>
             {/each}
         </ul>
     </div>
@@ -75,32 +130,39 @@
         display: flex;
         align-items: center;
     }
-    .hidden {display: none;}
+    .hidden {
+        display: none;
+    }
     h3 {
         font-size: 1.5rem;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
     }
-    ul {list-style: none;}
+    ul {
+        list-style: none;
+    }
     li::after,
     li::before {
         display: inline-block;
-        width: .8em;
-        height: .6em;
+        width: 0.8em;
+        height: 0.6em;
         background-color: var(--clr);
     }
     li::before {
         /* --c: var(--reverse) unset; */
-        content: var(--reverse, '');
-        margin-right: .5ch;
+        content: var(--reverse, "");
+        margin-right: 0.5ch;
     }
     li::after {
-        --c: var(--reverse) '';
+        --c: var(--reverse) "";
         content: var(--c, unset);
-        margin-left: .5ch;
+        margin-left: 0.5ch;
     }
 
-    .svg-wrapper {position: relative;}
-    .svg-wrapper, svg {
+    .svg-wrapper {
+        position: relative;
+    }
+    .svg-wrapper,
+    svg {
         width: var(--pie-size, 16rem);
         height: var(--pie-size, 16rem);
         border-radius: 50%;
@@ -108,17 +170,21 @@
     }
     .pie-slice {
         transform-origin: center;
-        transition: transform .15s ease;
+        transition: transform 0.15s ease;
     }
     svg:hover .pie-slice:not(:hover) {
-        filter: saturate(.8);
+        filter: saturate(0.8);
         opacity: 0.4;
     }
     .pie-slice:hover {
         transform: scale(1.1);
     }
-    text {font-size: clamp(1px, var(--p) * var(--p) * 100px, 1.5px);}
-    .pie-slice:hover text {transform: scale(0);}
+    text {
+        font-size: clamp(1px, var(--p) * var(--p) * 100px, 1.5px);
+    }
+    .pie-slice:hover text {
+        transform: scale(0);
+    }
 
     .label {
         z-index: 1;
@@ -130,10 +196,9 @@
         background-color: var(--bg-1);
         color: var(--fg-0);
         font-weight: 500;
-        padding: .3em .6em;
-        border-radius: .3em;
+        padding: 0.3em 0.6em;
+        border-radius: 0.3em;
     }
-
 
     @media (max-width: 50rem) {
         .pie-chart {
@@ -146,7 +211,10 @@
         }
         .label.show {
             transform: translate(
-                calc(var(--mx) - min(50%, var(--left) - .5rem) - max(.1px, 50% + .5rem + var(--left) - 100vw)), 
+                calc(
+                    var(--mx) - min(50%, var(--left) - 0.5rem) -
+                        max(0.1px, 50% + 0.5rem + var(--left) - 100vw)
+                ),
                 calc(var(--my) - 100% - 1rem)
             );
         }

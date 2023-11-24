@@ -11,12 +11,12 @@
 
     let x: number;
     let y: number;
-    let req: number|null = null;
+    let req: number | null = null;
     let element: HTMLElement;
 
     export let options: SpringOpt | undefined = undefined;
     export let transform: (x: number, y: number) => string;
-    export let perspective: string|null = null;
+    export let perspective: string | null = null;
 
     const xs = spring(0, options);
     const ys = spring(0, options);
@@ -30,26 +30,31 @@
         const rect = element.getBoundingClientRect();
         const _x = x - rect.left - window.scrollX;
         const _y = y - rect.top - window.scrollY;
-        xs.set(2*_x/rect.width -1);
-        ys.set(2*_y/rect.height -1);
+        xs.set((2 * _x) / rect.width - 1);
+        ys.set((2 * _y) / rect.height - 1);
         req = null;
     }
     function mousemove(ev: MouseEvent) {
         x = ev.pageX;
         y = ev.pageY;
-        if(req == null) req = requestAnimationFrame(signal);
+        if (req == null) req = requestAnimationFrame(signal);
     }
     function leave(this: HTMLElement) {
         this.removeEventListener("mousemove", mousemove);
-        if(req != null) cancelAnimationFrame(req);
+        if (req != null) cancelAnimationFrame(req);
         xs.set(0);
         ys.set(0);
     }
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<div class="outer" on:mouseenter={enter} bind:this={element} style:--perspective={perspective}>
-    <div class="inner" style="transform: {transform($xs,$ys)};">
+<div
+    class="outer"
+    on:mouseenter={enter}
+    bind:this={element}
+    style:--perspective={perspective}
+>
+    <div class="inner" style="transform: {transform($xs, $ys)};">
         <slot />
     </div>
 </div>

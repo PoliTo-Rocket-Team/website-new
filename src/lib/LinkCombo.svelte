@@ -17,30 +17,41 @@
 
     let container: HTMLElement;
     let open = false;
-    $: active = $page.url.pathname.startsWith('/'+base);
+    $: active = $page.url.pathname.startsWith("/" + base);
 
-    function close() {open = false;}
-    function onBodyClick(e: Event) {
-        if(container === e.target || container.contains(e.target as Node)) return;
+    function close() {
         open = false;
     }
-    $: if(open) {
-        if(closeLast) closeLast();
+    function onBodyClick(e: Event) {
+        if (container === e.target || container.contains(e.target as Node))
+            return;
+        open = false;
+    }
+    $: if (open) {
+        if (closeLast) closeLast();
         closeLast = close;
-        if(browser) document.body.addEventListener("click", onBodyClick);
+        if (browser) document.body.addEventListener("click", onBodyClick);
     } else {
-        if(closeLast === close) closeLast = null;
-        if(browser) document.body.removeEventListener("click", onBodyClick);
+        if (closeLast === close) closeLast = null;
+        if (browser) document.body.removeEventListener("click", onBodyClick);
     }
 </script>
 
 <svelte:window on:scroll={close} />
 
 <div class="wrapper" bind:this={container}>
-    <button class="nav-entry" class:active on:click={() => open = !open}>{base}</button>
+    <button class="nav-entry" class:active on:click={() => (open = !open)}
+        >{base}</button
+    >
     <ul class:open>
         {#each routes as route}
-            <li><a data-sveltekit-replacestate={replace || null} href="/{base}/{route.url}" on:click={close}>{route.name}</a></li>
+            <li>
+                <a
+                    data-sveltekit-replacestate={replace || null}
+                    href="/{base}/{route.url}"
+                    on:click={close}>{route.name}</a
+                >
+            </li>
         {/each}
     </ul>
 </div>
@@ -61,24 +72,24 @@
         color: var(--fg-0);
         font-weight: 500;
     }
-    
+
     @media (max-width: 50rem) {
         button {
             text-align: right;
             display: block;
             width: fit-content;
             margin-left: auto;
-            margin-bottom: .3rem;
+            margin-bottom: 0.3rem;
             font-size: var(--fs-60);
         }
         ul {
             list-style: none;
             align-items: flex-end;
-            padding-right: .6em;
+            padding-right: 0.6em;
             border-right: 4px solid #8888;
         }
         ul li + li {
-            margin-top: .3rem;
+            margin-top: 0.3rem;
         }
         ul a {
             font-size: var(--fs-50);
@@ -97,22 +108,23 @@
             position: absolute;
             width: max-content;
             top: 0;
-            left: -.5ch;
+            left: -0.5ch;
             align-items: start;
 
-            
-            padding-left: .5ch;
-            padding-right: .2ch;
+            padding-left: 0.5ch;
+            padding-right: 0.2ch;
             padding-top: 1.6rem;
-            padding-bottom: .15rem;
+            padding-bottom: 0.15rem;
 
             opacity: 0;
             clip-path: inset(0 -2rem 100% -2rem);
-            transition: clip-path .25s ease, opacity .25s ease;
+            transition:
+                clip-path 0.25s ease,
+                opacity 0.25s ease;
             pointer-events: none;
         }
         ul::before {
-            content: '';
+            content: "";
             position: absolute;
             left: 0;
             top: 0;
@@ -123,7 +135,7 @@
         }
         ul::after {
             z-index: -1;
-            content: '';
+            content: "";
             position: absolute;
             bottom: -0.8rem;
             left: -0.8rem;
@@ -132,10 +144,10 @@
             border-radius: 0.8rem;
             background-color: rgba(var(--bg-0-rgb), 0.7);
             backdrop-filter: blur(2px);
-            filter: blur(.2rem);
+            filter: blur(0.2rem);
         }
         ul li {
-            margin-top: .1rem;
+            margin-top: 0.1rem;
             opacity: 0.9;
         }
         /* .wrapper:hover > ul, */

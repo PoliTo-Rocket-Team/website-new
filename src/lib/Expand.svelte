@@ -1,10 +1,13 @@
 <script context="module">
     import { browser } from "$app/environment";
-    if(browser) {
-        function csbw(){
-            document.documentElement.style.setProperty('--scrollbar-width', (window.innerWidth - document.documentElement.clientWidth) + "px");
+    if (browser) {
+        function csbw() {
+            document.documentElement.style.setProperty(
+                "--scrollbar-width",
+                window.innerWidth - document.documentElement.clientWidth + "px"
+            );
         }
-        if(document.readyState === "complete") csbw();
+        if (document.readyState === "complete") csbw();
         else {
             window.addEventListener("DOMContentLoaded", csbw, false);
             window.addEventListener("load", csbw);

@@ -4,8 +4,14 @@
     register.add(icon);
 </script>
 
-<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
-    <use fill="var(--icon-clr)" href="#icon-{icon}" width="48" height="48"></use>
+<svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="48"
+    height="48"
+    viewBox="0 0 48 48"
+>
+    <use fill="var(--icon-clr)" href="#icon-{icon}" width="48" height="48"
+    ></use>
 </svg>
 
 <style>

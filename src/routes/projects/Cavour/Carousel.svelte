@@ -17,7 +17,7 @@
         axis: "x",
         snap: "center",
         loop: true,
-    }
+    };
 </script>
 
 <script lang="ts">
@@ -28,22 +28,21 @@
 
     let s: SlidyInstance;
     let node: HTMLElement;
-    $: node && (s = slidy(node, opt))
+    $: node && (s = slidy(node, opt));
 
     let index = 0;
     function onMove(e: CustomEvent) {
-        index = e.detail.index
+        index = e.detail.index;
     }
-
 </script>
 
 <Expand>
     <div>
         <ul role="listbox" bind:this={node} on:move={onMove}>
             {#each images as src}
-            <li>
-                <img src={src} alt="" loading="lazy">
-            </li>
+                <li>
+                    <img {src} alt="" loading="lazy" />
+                </li>
             {/each}
         </ul>
     </div>
@@ -51,7 +50,7 @@
 
 <style>
     div {
-        overflow-x: hidden; 
+        overflow-x: hidden;
         overflow-y: visible;
         padding: var(--carousel-padding, 1rem) 0;
         width: 100%;
@@ -74,7 +73,7 @@
         max-height: 30rem; /* var(--carousel-height) */
         width: auto;
         height: auto;
-        border-radius: .5rem;
+        border-radius: 0.5rem;
         display: block;
     }
 </style>

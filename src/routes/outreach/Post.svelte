@@ -4,12 +4,16 @@
     export let img: string;
     export let url: string;
 
-    const formatter = new Intl.DateTimeFormat("en-US", { day: "numeric", month: "long", year: "numeric" });
+    const formatter = new Intl.DateTimeFormat("en-US", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    });
 </script>
 
 <article>
     <a href={url} tabindex="-1" class="img" target="_blank" rel="noopener">
-        <img src={img} alt="Post image of {title}" loading="lazy">
+        <img src={img} alt="Post image of {title}" loading="lazy" />
     </a>
     <div class="text">
         <time datetime={date}>{formatter.format(new Date(date))}</time>
@@ -50,7 +54,7 @@
     }
     h3 {
         font-size: var(--fs-65);
-        margin-bottom: .7rem;
+        margin-bottom: 0.7rem;
         margin-top: -0.2rem;
     }
     .cta {
@@ -58,7 +62,7 @@
         width: fit-content;
         margin-top: 1.3rem;
         text-decoration: none;
-        padding: .4rem .8rem;
+        padding: 0.4rem 0.8rem;
         border: 2px solid var(--accent-fig);
         font-weight: 500;
     }

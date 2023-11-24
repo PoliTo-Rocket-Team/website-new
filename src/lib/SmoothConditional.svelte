@@ -3,7 +3,7 @@
     export let selection: boolean;
     export let ms: number = 50;
 
-    const t = transitional(ms,selection);
+    const t = transitional(ms, selection);
     $: t.set(selection);
     $: t.dur(ms);
 </script>
@@ -28,6 +28,10 @@
         transition: opacity var(--dur) ease;
         overflow: visible;
     }
-    .view.faded { opacity: 0; }
-    .view.hidden { transform: scale(0); }
+    .view.faded {
+        opacity: 0;
+    }
+    .view.hidden {
+        transform: scale(0);
+    }
 </style>

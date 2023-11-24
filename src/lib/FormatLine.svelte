@@ -2,7 +2,8 @@
     export let text: string;
 </script>
 
-{#each text.split('*') as str, i}{#if i&1}<em>{str}</em>{:else}{str}{/if}{/each}
+{#each text.split("*") as str, i}{#if i & 1}<em>{str}</em
+        >{:else}{str}{/if}{/each}
 
 <style>
     em {

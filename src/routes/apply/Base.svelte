@@ -5,18 +5,21 @@
     import "@fontsource/anonymous-pro/400.css";
 </script>
 
-
 <article>
     <details>
         <summary>
-            <h3>{ role }</h3>
-            <div class="color code">{ code }</div>
+            <h3>{role}</h3>
+            <div class="color code">{code}</div>
             <slot name="header" />
         </summary>
-        <hr>
+        <hr />
         <div class="content">
             <slot name="content" />
-            <p class="disclaimer">Please be informed that your work will be entirely voluntary. As we are a student team of Politecnico di Torino, we do not offer any paid employment.</p>
+            <p class="disclaimer">
+                Please be informed that your work will be entirely voluntary. As
+                we are a student team of Politecnico di Torino, we do not offer
+                any paid employment.
+            </p>
         </div>
     </details>
 </article>
@@ -37,10 +40,10 @@
         border-bottom: 2px solid hsla(0, 0%, 80%, 0.5);
     }
     .content {
-        padding: .6rem .8rem;
+        padding: 0.6rem 0.8rem;
     }
     .code {
-        font-family: 'Anonymous Pro', monospace;
+        font-family: "Anonymous Pro", monospace;
         color: var(--accent-text);
         width: 11ch;
     }
@@ -56,16 +59,16 @@
             flex-direction: column;
         }
         h3 {
-            margin-bottom: .2rem;
+            margin-bottom: 0.2rem;
         }
         h3::before {
-            content: '';
+            content: "";
             display: inline-block;
             width: 0;
             height: 0;
             vertical-align: middle;
-            margin-bottom: .2rem;
-            margin-right: .6ch;
+            margin-bottom: 0.2rem;
+            margin-right: 0.6ch;
             border-left: $marker-dim solid currentColor;
             border-top: $marker-dim solid transparent;
             border-bottom: $marker-dim solid transparent;
@@ -73,7 +76,7 @@
             transition: transform 150ms;
         }
         details[open] h3::before {
-            transform: translateX(1px) rotate(90deg)
+            transform: translateX(1px) rotate(90deg);
         }
     }
 
@@ -89,7 +92,7 @@
             grid-column: -3/-2;
         }
         summary::after {
-            content: '';
+            content: "";
             width: 0;
             height: 0;
             border-right: $marker-dim solid currentColor;

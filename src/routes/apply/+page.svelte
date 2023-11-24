@@ -9,14 +9,26 @@
 
 <svelte:head>
     <title>Apply - PoliTo Rocket Team</title>
-    <meta name="description" content="Get Involved! PoliTo Rocket Team has numerous positions available for undergraduate and graduate students of Politecnico di Torino" />
+    <meta
+        name="description"
+        content="Get Involved! PoliTo Rocket Team has numerous positions available for undergraduate and graduate students of Politecnico di Torino"
+    />
 </svelte:head>
 
 <main>
     <h1>Apply</h1>
     <div class="stop-growth">
-        <hr class="subtle">
-        <p>Get Involved! PoliTo Rocket Team has numerous positions available for undergraduate and graduate students of Politecnico di Torino. Here you can find our Open Positions and some Frequently Asked Questions about our recruitment process or about the Team. If you still have some questions, don’t hesitate to reach out to us on social media or at <a href="mailto:recruitment@politorocketteam.it">recruitment@politorocketteam.it</a></p>
+        <hr class="subtle" />
+        <p>
+            Get Involved! PoliTo Rocket Team has numerous positions available
+            for undergraduate and graduate students of Politecnico di Torino.
+            Here you can find our Open Positions and some Frequently Asked
+            Questions about our recruitment process or about the Team. If you
+            still have some questions, don’t hesitate to reach out to us on
+            social media or at <a href="mailto:recruitment@politorocketteam.it"
+                >recruitment@politorocketteam.it</a
+            >
+        </p>
     </div>
     <section aria-labelledby="positions" class="positions">
         <h2 id="positions">Open positions</h2>
@@ -27,7 +39,12 @@
             <div class="code-label"><span>Code</span></div>
         </div>
         {#each positions as pos}
-            <Position role={pos.name} subteam={pos.subteam} division={pos.division} code={pos.code}>
+            <Position
+                role={pos.name}
+                subteam={pos.subteam}
+                division={pos.division}
+                code={pos.code}
+            >
                 <h4>Description</h4>
                 {#if Array.isArray(pos.description)}
                     {#each pos.description as paragraph}
@@ -53,26 +70,33 @@
                     </ul>
                 {/if}
                 {#if pos.desirable}
-                <h4>Desirable skills</h4>
-                <ul>
-                    {#each pos.desirable as item}
-                        <li>{item}</li>
-                    {/each}
-                </ul>
+                    <h4>Desirable skills</h4>
+                    <ul>
+                        {#each pos.desirable as item}
+                            <li>{item}</li>
+                        {/each}
+                    </ul>
                 {/if}
-                <a class="btn" href="https://forms.gle/{pos.form}" target="_blank" rel="noreferrer">Apply</a>
+                <a
+                    class="btn"
+                    href="https://forms.gle/{pos.form}"
+                    target="_blank"
+                    rel="noreferrer">Apply</a
+                >
             </Position>
         {/each}
     </section>
     <section aria-labelledby="faqs">
-        <h2 id="faqs" class="section-title"><abbr title="Frequently Asked Questions">FAQs</abbr></h2>
+        <h2 id="faqs" class="section-title">
+            <abbr title="Frequently Asked Questions">FAQs</abbr>
+        </h2>
         <FAQs />
     </section>
 </main>
 
 <style lang="scss">
     @use "./consts.scss" as *;
-    
+
     section {
         max-width: 75ch;
         margin-left: auto;
@@ -80,23 +104,34 @@
     }
 
     .code-label {
-        font-family: 'Anonymous Pro', monospace;
+        font-family: "Anonymous Pro", monospace;
         width: 11ch;
         max-width: 11ch;
         min-width: 11ch;
     }
-    
+
     $text-margin: 0.5rem;
     .positions {
-        h4:not(:first-child) { margin-top: 3*$text-margin; }
-        h4 { margin-bottom: $text-margin; }
-        p + ul { margin-top: 0.5*$text-margin; }
-        ul + p, p + p { margin-top: $text-margin; }
-        ul { padding-left: 2ch;}
+        h4:not(:first-child) {
+            margin-top: 3 * $text-margin;
+        }
+        h4 {
+            margin-bottom: $text-margin;
+        }
+        p + ul {
+            margin-top: 0.5 * $text-margin;
+        }
+        ul + p,
+        p + p {
+            margin-top: $text-margin;
+        }
+        ul {
+            padding-left: 2ch;
+        }
     }
     .btn {
         display: block;
-        padding: .4em .7em;
+        padding: 0.4em 0.7em;
         border: 2px solid var(--accent-fig);
         width: fit-content;
         text-decoration: none;
@@ -107,7 +142,9 @@
         text-decoration: underline;
     }
     @media (min-width: 50rem) {
-        h2 {text-align: center;}
+        h2 {
+            text-align: center;
+        }
         .position-labels {
             padding: $details-pad-y $details-pad-x;
             display: grid;

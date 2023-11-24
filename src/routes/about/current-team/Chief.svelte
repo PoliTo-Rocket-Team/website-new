@@ -1,6 +1,6 @@
 <script lang="ts">
     import IconLink from "$lib/icons/IconLink.svelte";
-    import "@fontsource/plus-jakarta-sans/600.css"
+    import "@fontsource/plus-jakarta-sans/600.css";
 
     export let img: string | undefined = undefined;
     export let angle: number;
@@ -11,20 +11,35 @@
     export let president = false;
 
     const re = / /;
-    $: mail = `${firstname.replace(re,'').toLowerCase()}.${lastname.replace(re,'').toLowerCase()}@politorocketteam.it`;
-
+    $: mail = `${firstname.replace(re, "").toLowerCase()}.${lastname
+        .replace(re, "")
+        .toLowerCase()}@politorocketteam.it`;
 </script>
 
-<div class="wrapper" class:oncircle={!president} style:--cos={Math.sin(angle)} style:--sin={Math.cos(angle)} style:--tilt="{-angle}rad">
+<div
+    class="wrapper"
+    class:oncircle={!president}
+    style:--cos={Math.sin(angle)}
+    style:--sin={Math.cos(angle)}
+    style:--tilt="{-angle}rad"
+>
     <div class="img">
         {#if img}
-            <img class="img" src="/members/{img}" alt="Face of {firstname} {lastname}">
+            <img
+                class="img"
+                src="/members/{img}"
+                alt="Face of {firstname} {lastname}"
+            />
         {:else}
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 118.2842712" width="50" height="59.14213562">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 118.2842712"
+                width="50"
+                height="59.14213562"
+            >
                 <use href="#prt-logo" />
             </svg>
         {/if}
-
     </div>
 
     <div class="info">
@@ -62,9 +77,7 @@
         top: 50%;
         left: 50%;
         transform-origin: bottom;
-        transform: 
-            translate(-50%, -100%)
-            rotate(var(--tilt,0deg));
+        transform: translate(-50%, -100%) rotate(var(--tilt, 0deg));
         clip-path: inset(12rem 0 0 0);
     }
     img {
@@ -77,7 +90,7 @@
         width: auto;
         margin: auto;
         opacity: 0.8;
-        filter: saturate(0.25) ;
+        filter: saturate(0.25);
         transform: translateY(1.4rem) translateY(-2px);
     }
     .info {
@@ -99,10 +112,10 @@
     }
     .socials {
         display: flex;
-        margin-left: -.22rem;
-        margin-right: -.22rem;
+        margin-left: -0.22rem;
+        margin-right: -0.22rem;
 
-        --icon-clr: rgba(160,160,160,0.7);
+        --icon-clr: rgba(160, 160, 160, 0.7);
         --icon-size: 2.2rem;
         --icon-hover: var(--accent-fig);
     }
@@ -134,10 +147,10 @@
             align-items: center;
         }
         .role {
-            margin: .1rem 0;
+            margin: 0.1rem 0;
         }
         .socials {
-            padding-top: .5rem;
+            padding-top: 0.5rem;
         }
     }
 </style>

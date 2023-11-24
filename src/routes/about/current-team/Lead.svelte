@@ -15,27 +15,39 @@
     // $: src = img ? "/members/"+img : "https://api.dicebear.com/6.x/open-peeps/svg?face=cute,smile,contempt&seed="+name;
 </script>
 
-
 <li class="wrapper" class:reversable>
     {#if img}
-    <img class="img" src="/members/{img}" alt="Face of {name}">
+        <img class="img" src="/members/{img}" alt="Face of {name}" />
     {:else}
         <div class="img">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 118.2842712" width="50" height="59.14213562">
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 100 118.2842712"
+                width="50"
+                height="59.14213562"
+            >
                 <use href="#prt-logo" />
             </svg>
         </div>
     {/if}
     <div class="info">
         <span class="name">{name}</span>
-        <span class="title" class:colored={highlight}>{#if cofounder}<em>Cofounder</em> <span class="divisor">|</span> {/if}{role}</span>
+        <span class="title" class:colored={highlight}
+            >{#if cofounder}<em>Cofounder</em> <span class="divisor">|</span>
+            {/if}{role}</span
+        >
         {#if scope}
             <span>{scope}</span>
         {/if}
         <div class="socials">
             <IconLink icon="LinkedIn" id={linkedin} />
             {#if mail !== "NONE"}
-            <IconLink icon="Email" id={mail.includes('@') ? mail : mail + "@politorocketteam.it" } />
+                <IconLink
+                    icon="Email"
+                    id={mail.includes("@")
+                        ? mail
+                        : mail + "@politorocketteam.it"}
+                />
             {/if}
         </div>
     </div>
@@ -64,7 +76,7 @@
         width: auto;
         margin: auto;
         opacity: 0.8;
-        filter: saturate(0.25) ;
+        filter: saturate(0.25);
         transform: translateY(1.4rem) translateY(-2px);
     }
     .colored {
@@ -80,8 +92,8 @@
         align-items: flex-start;
 
         & > * {
-            margin-top: .1rem;
-            margin-bottom: .1rem;
+            margin-top: 0.1rem;
+            margin-bottom: 0.1rem;
         }
     }
     .name {
@@ -90,17 +102,17 @@
     }
     .socials {
         display: flex;
-        margin-left: -.22rem;
-        margin-right: -.22rem;
+        margin-left: -0.22rem;
+        margin-right: -0.22rem;
 
-        --icon-clr: rgba(160,160,160,0.7);
+        --icon-clr: rgba(160, 160, 160, 0.7);
         --icon-size: 2.2rem;
         --icon-hover: var(--accent-fig);
     }
     @media (min-width: 50rem) {
         .wrapper.reversable {
             flex-direction: row-reverse;
-            
+
             .img {
                 margin-right: 0;
                 margin-left: 1rem;

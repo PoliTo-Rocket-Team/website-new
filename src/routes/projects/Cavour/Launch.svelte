@@ -1,14 +1,18 @@
 <script context="module">
-    const formatter = new Intl.DateTimeFormat("en-US", { day: "numeric", month: "long", year: "numeric" });
+    const formatter = new Intl.DateTimeFormat("en-US", {
+        day: "numeric",
+        month: "long",
+        year: "numeric",
+    });
 </script>
 
 <script lang="ts">
     import Carousel from "./Carousel.svelte";
-    
+
     export let name: string;
     export let date: string;
     export let images: string[];
-    
+
     // import type { MiddleScreenPool } from "$lib/visibility";
     // export let pool: MiddleScreenPool;
     // function track(node: HTMLElement) {pool.add(node);}

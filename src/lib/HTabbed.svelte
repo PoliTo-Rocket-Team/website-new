@@ -5,17 +5,23 @@
     export let expand: string = "100%";
     type T = $$Generic<object>;
     export let data: T[];
-    interface $$Slots { default: T; }
+    interface $$Slots {
+        default: T;
+    }
     // export let component: ComponentType<SvelteComponentTyped<T>>;
     let selected = 0;
 
     function selectMe(this: HTMLElement, e: MouseEvent) {
         const i = +this.getAttribute("data-index")!;
-        if(i !== selected) e.preventDefault(); // prevent link clicks
+        if (i !== selected) e.preventDefault(); // prevent link clicks
         selected = i;
     }
-    function previous() {if(selected > 0) selected--;}
-    function next() {if(selected < data.length-1) selected++;}
+    function previous() {
+        if (selected > 0) selected--;
+    }
+    function next() {
+        if (selected < data.length - 1) selected++;
+    }
 </script>
 
 <div class="container">
@@ -23,12 +29,17 @@
         <div class="clip-zone">
             <div class="large" style:--num={data.length}>
                 <div class="slider" style:--index={selected}>
-                    {#each data as d,i}
-                    <!-- svelte-ignore a11y-click-events-have-key-events -->
-                    <!-- svelte-ignore a11y-no-static-element-interactions -->
-                    <div class="section" data-index={i} class:selected={selected === i} on:click={selectMe}>
-                        <slot {...d} />
-                    </div>
+                    {#each data as d, i}
+                        <!-- svelte-ignore a11y-click-events-have-key-events -->
+                        <!-- svelte-ignore a11y-no-static-element-interactions -->
+                        <div
+                            class="section"
+                            data-index={i}
+                            class:selected={selected === i}
+                            on:click={selectMe}
+                        >
+                            <slot {...d} />
+                        </div>
                     {/each}
                 </div>
             </div>
@@ -37,14 +48,19 @@
     <button style="left: 0;" on:click={previous} disabled={selected === 0}>
         <Icon icon="previous" />
     </button>
-    <button style="right: 0;" on:click={next} disabled={selected === data.length-1}>
+    <button
+        style="right: 0;"
+        on:click={next}
+        disabled={selected === data.length - 1}
+    >
         <Icon icon="next" />
     </button>
 </div>
 
 <style>
-    
-    button {display: none;}
+    button {
+        display: none;
+    }
 
     .section + .section {
         margin-top: max(7rem, var(--pad));
@@ -57,7 +73,7 @@
             position: relative;
         }
         .shift {
-            transform: translateX(calc(50% - 0.5*var(--size)));
+            transform: translateX(calc(50% - 0.5 * var(--size)));
             width: 100%;
             overflow-x: visible;
         }
@@ -81,8 +97,10 @@
             align-items: center;
 
             transform-style: preserve-3d;
-            transform: translateX(calc(50% - (50% + var(--index) * 100%) / var(--num)));
-            transition: transform .2s ease;
+            transform: translateX(
+                calc(50% - (50% + var(--index) * 100%) / var(--num))
+            );
+            transition: transform 0.2s ease;
         }
         .section + .section {
             margin-top: unset;
@@ -92,7 +110,9 @@
             cursor: pointer;
             opacity: 0.5;
             transform: translateZ(-6rem);
-            transition: transform .2s ease, opacity .2s ease;
+            transition:
+                transform 0.2s ease,
+                opacity 0.2s ease;
         }
         .section.selected {
             cursor: auto;
@@ -112,7 +132,9 @@
             /* background-color: var(--bg-1); */
             padding: 0.5rem;
             border-radius: 50%;
-            transition: opacity 70ms ease, transform 70ms ease;
+            transition:
+                opacity 70ms ease,
+                transform 70ms ease;
 
             --icon-clr: var(--fg-1);
         }

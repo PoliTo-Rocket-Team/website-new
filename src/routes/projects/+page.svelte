@@ -4,15 +4,30 @@
 
 <svelte:head>
     <title>Projects - Polito Rocket Team</title>
-    <meta name="description" content="There are two projects the team is working on: Cavour, the our first rocket, and Efesto, our liquid propulsion engine" />
+    <meta
+        name="description"
+        content="There are two projects the team is working on: Cavour, the our first rocket, and Efesto, our liquid propulsion engine"
+    />
 </svelte:head>
 
 <h1>Projects</h1>
 <div class="grid">
-    <Project name="Cavour" desc="The team's first rocket" href="projects/Cavour">
-        <img class="cavour" src="/img/Render_Cavour.png" alt="Rendering of Cavour">
+    <Project
+        name="Cavour"
+        desc="The team's first rocket"
+        href="projects/Cavour"
+    >
+        <img
+            class="cavour"
+            src="/img/Render_Cavour.png"
+            alt="Rendering of Cavour"
+        />
     </Project>
-    <Project name="Efesto" desc="Liquid propulsion engine" href="projects/Efesto" />
+    <Project
+        name="Efesto"
+        desc="Liquid propulsion engine"
+        href="projects/Efesto"
+    />
 </div>
 
 <style>

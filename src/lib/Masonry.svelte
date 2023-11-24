@@ -2,9 +2,9 @@
     function splitGroup<T>(arr: T[], count: number) {
         let i: number;
         const res = new Array<T[]>(count);
-        for(i=0; i<count; i++) res[i] = []; 
+        for (i = 0; i < count; i++) res[i] = [];
         const len = arr.length;
-        for(i=0; i<len; i++) res[i%count].push(arr[i]);
+        for (i = 0; i < len; i++) res[i % count].push(arr[i]);
         return res;
     }
 </script>
@@ -15,14 +15,14 @@
     import { onMount } from "svelte";
 
     type T = $$Generic<Record<string, any>>;
-    
+
     export let data: T[];
-    
+
     let cols = 1;
     let container: HTMLElement;
     function updateRows() {
         const css = getComputedStyle(container);
-        cols = css.gridTemplateColumns.split(' ').length;
+        cols = css.gridTemplateColumns.split(" ").length;
     }
     onMount(updateRows);
 

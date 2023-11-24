@@ -5,7 +5,6 @@
 </main>
 
 <style lang="scss">
-
     $space: 3.5rem;
 
     div {
@@ -20,17 +19,17 @@
         }
         :global(h2) {
             font-size: 1.8rem;
-            margin-bottom: .7rem;
+            margin-bottom: 0.7rem;
         }
         :global(ul + p),
         :global(p + p) {
-            margin-top: .7em;
+            margin-top: 0.7em;
         }
         :global(p + ul) {
-            margin-top: .5rem;
+            margin-top: 0.5rem;
         }
         :global(li + li) {
-            margin-top: .2rem;
+            margin-top: 0.2rem;
         }
         :global(.m-top) {
             margin-top: $space;
@@ -44,14 +43,14 @@
         :global(.card) {
             background-color: var(--bg-1);
             padding: 1rem 1rem;
-            border-radius: .8rem;
+            border-radius: 0.8rem;
         }
         :global(.smudge) {
             position: relative;
             padding-top: 8px;
         }
         :global(.smudge)::before {
-            content: '';
+            content: "";
             position: absolute;
             top: 0;
             left: 0;

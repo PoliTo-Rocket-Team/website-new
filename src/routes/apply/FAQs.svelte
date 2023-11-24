@@ -13,59 +13,72 @@
     const focusNearestFAQ = frameThrottle(() => {
         const delta = window.scrollY - lastScroll;
         lastScroll = window.scrollY;
-        const newFocused = delta > 0 ? nearestAfter(focused) : nearestBefore(focused);
-        if(focused != newFocused) {
+        const newFocused =
+            delta > 0 ? nearestAfter(focused) : nearestBefore(focused);
+        if (focused != newFocused) {
             elements[focused].classList.remove("focus");
             focused = newFocused;
             elements[focused].classList.add("focus");
         }
-    })
+    });
 
     function nearestAfter(start: number = 0) {
         let i: number;
         let lastDistance = distanceFromCenterScreen(elements[start]);
         let currentDistance: number;
         const len = elements.length;
-        for(i = start+1; i<len; i++) {
+        for (i = start + 1; i < len; i++) {
             currentDistance = distanceFromCenterScreen(elements[i]);
-            if(currentDistance > lastDistance) break;
+            if (currentDistance > lastDistance) break;
             lastDistance = currentDistance;
         }
-        return i-1;
+        return i - 1;
     }
 
-    function nearestBefore(end: number = elements.length-1) {
+    function nearestBefore(end: number = elements.length - 1) {
         let i: number;
         let lastDistance = distanceFromCenterScreen(elements[end]);
         let currentDistance: number;
-        for(i = end-1; i >= 0; i--) {
+        for (i = end - 1; i >= 0; i--) {
             currentDistance = distanceFromCenterScreen(elements[i]);
-            if(currentDistance > lastDistance) break;
+            if (currentDistance > lastDistance) break;
             lastDistance = currentDistance;
         }
-        return i+1;
+        return i + 1;
     }
 
     function distanceFromCenterScreen(el: HTMLElement) {
-        return Math.abs(el.offsetTop + el.offsetHeight/2 - window.scrollY - window.innerHeight*4/9); 
+        return Math.abs(
+            el.offsetTop +
+                el.offsetHeight / 2 -
+                window.scrollY -
+                (window.innerHeight * 4) / 9
+        );
     }
 
     function bringIntoView(this: HTMLElement) {
         const rect = this.getBoundingClientRect();
-        window.scrollBy({ left: 0, top: rect.top - window.innerHeight/2 + this.clientHeight/2, behavior: "smooth" });
+        window.scrollBy({
+            left: 0,
+            top: rect.top - window.innerHeight / 2 + this.clientHeight / 2,
+            behavior: "smooth",
+        });
     }
 
     function observe(node: HTMLElement) {
-        const obs = new IntersectionObserver(entries => entries.forEach(entry => {
-            if(entry.isIntersecting) window.addEventListener("scroll", focusNearestFAQ);
-            else window.removeEventListener("scroll", focusNearestFAQ);
-        }));
+        const obs = new IntersectionObserver(entries =>
+            entries.forEach(entry => {
+                if (entry.isIntersecting)
+                    window.addEventListener("scroll", focusNearestFAQ);
+                else window.removeEventListener("scroll", focusNearestFAQ);
+            })
+        );
         obs.observe(node);
         return {
             destroy() {
                 obs.unobserve(node);
-            }
-        }
+            },
+        };
     }
     onMount(() => {
         focused = nearestAfter(0);
@@ -73,14 +86,17 @@
     });
 </script>
 
-
 <div class="container" use:observe>
     {#each faqs as faq, i}
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-        <article bind:this={elements[i]} on:click={bringIntoView} on:keyup={() => {}}>
+        <article
+            bind:this={elements[i]}
+            on:click={bringIntoView}
+            on:keyup={() => {}}
+        >
             <h3><FormatLine text={faq.question} /></h3>
             <div class="answer">
-                {#each faq.answer.split('\n') as par}
+                {#each faq.answer.split("\n") as par}
                     <p><FormatLine text={par} /></p>
                 {/each}
             </div>
@@ -91,7 +107,7 @@
 <style>
     article {
         opacity: 0.4;
-        transition: opacity .1s ease;
+        transition: opacity 0.1s ease;
         margin: clamp(3.5rem, 12vh, 12rem) 0;
         cursor: pointer;
     }
@@ -103,7 +119,7 @@
         --em-fw: 500;
     }
     p + p {
-        margin-top: .7rem;
+        margin-top: 0.7rem;
     }
 
     h3 {

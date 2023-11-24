@@ -1,170 +1,170 @@
 {
-  "Cavour": [
-    {
-      "highlight": true,
-      "name": "Edoardo Viglietti",
-      "role": "Chief Engineer",
-      "mail": "edoardo.viglietti",
-      "linkedin": "edoardoviglietti",
-      "img": "Viglietti.jpg"
-    },
-    {
-      "name": "Samuele Martello",
-      "role": "Avionics",
-      "mail": "samuele.martello",
-      "linkedin": "samuele-martello-633550277",
-      "img": "Martello.jpg"
-    },
-    {
-      "name": "Orlando Nardo",
-      "role": "Design & Additive Manufacturing",
-      "mail": "orlando.nardo",
-      "linkedin": "orlando-nardo-1466a9257",
-      "img": null
-    },
-    {
-      "name": "Edoardo Viglietti",
-      "role": "Recovery (acting)",
-      "linkedin": "edoardoviglietti",
-      "mail": "edoardo.viglietti",
-      "img": "Viglietti.jpg"
-    },
-    {
-      "cofounder": true,
-      "name": "Mattia Saba",
-      "role": "Mission Analysis",
-      "mail": "mattia.saba",
-      "linkedin": "mattia-saba-5b6638258",
-      "img": "Saba.jpg"
-    },
-    {
-      "name": "Riccardo Di Maria",
-      "role": "Finite Element Analysis",
-      "mail": "riccardo.dimaria",
-      "linkedin": "riccardo-di-maria-455143257",
-      "img": "DiMaria.jpg"
-    }
-  ],
-  "Efesto": [
-    {
-      "highlight": true,
-      "name": "Matteo Crachi",
-      "role": "Chief Engineer",
-      "mail": "matteo.crachi",
-      "linkedin": "matteo-crachi-37a060161",
-      "img": "Crachi.jpg"
-    },
-    {
-      "cofounder": true,
-      "name": "Cristian Manfredi",
-      "role": "Coordinator",
-      "mail": "cristian.manfredi",
-      "linkedin": "cristian-manfredi-478b82194",
-      "img": "Manfredi.jpeg"
-    },
-    {
-      "name": "Pier Luigi Mercadante",
-      "role": "Coordinator",
-      "mail": "pierluigi.mercadante",
-      "linkedin": "pier-luigi-mercadante-b43125234",
-      "img": "Mercadante.jpg"
-    },
-    {
-      "name": "Luca Barnobi",
-      "role": "Test Bench",
-      "mail": "luca.barnobi",
-      "linkedin": "luca-barnobi-b21547182",
-      "img": "barnobi.jpg"
-    },
-    {
-      "name": "Daniele Boccacciari",
-      "role": "Liquid System Architecture",
-      "mail": "daniele.boccacciari",
-      "linkedin": "daniele-boccacciari-637405222",
-      "img": "Boccacciari.jpg"
-    },
-    {
-      "name": "Gloria Nallo",
-      "role": "Thrust Chamber Assembly",
-      "mail": "gloria.nallo",
-      "linkedin": "gloria-nallo-19a277169",
-      "img": "nallo.jpg"
-    },
-    {
-      "name": "Lorenzo Guarino",
-      "role": "Engine Cycle",
-      "mail": "lorenzo.guarino",
-      "linkedin": "lorenzo-guarino-563806246",
-      "img": "guarino.jpg"
-    }
-  ],
-  "Operations": [
-    {
-      "name": "Andrea Pantano",
-      "role": "Chief Operating Officier",
-      "mail": "andrea.pantano",
-      "linkedin": "andrea-pantano-84b805258",
-      "img": "Pantano.JPG"
-    },
-    {
-      "name": "Andrea Pantano",
-      "role": "Logistics (acting)",
-      "mail": "andrea.pantano",
-      "linkedin": "andrea-pantano-84b805258",
-      "img": "Pantano.JPG"
-    },
-    {
-      "name": "Federico Guglielmi",
-      "role": "IT",
-      "mail": "federico.guglielmi",
-      "linkedin": "Fedesky25",
-      "img": "Guglielmi.jpg"
-    },
-    {
-      "name": "Yuri Valle",
-      "role": "Media",
-      "mail": "yuri.valle",
-      "linkedin": "null",
-      "img": null
-    }
-  ],
-  "advisors": [
-    {
-      "cofounder": true,
-      "name": "Fabio Meloni",
-      "role": "Project Cavour Advisor",
-      "mail": "fabio.meloni",
-      "linkedin": "fabioski01",
-      "img": "Meloni.jpg"
-    },
-    {
-      "name": "Flora Punzi",
-      "role": "Senior FEA analyst & Counselor",
-      "mail": "flora.punzi",
-      "linkedin": "fpunzi",
-      "img": "Punzi.jpg"
-    },
-    {
-      "name": "Francesca Bracaglia",
-      "role": "FEA Advisor",
-      "mail": "francesca.bracaglia",
-      "linkedin": "francesca-bracaglia-a1000b214",
-      "img": "Bracaglia.jpg"
-    },
-    {
-      "cofounder": true,
-      "name": "Salvatore Lagrasta",
-      "role": "Avionics Advisor",
-      "mail": "salvatore.lagrasta",
-      "linkedin": "salvatore-lagrasta",
-      "img": "Lagrasta.jfif"
-    },
-    {
-      "name": "Luca Loiodice",
-      "role": "Additive Manufacturing Advisor",
-      "mail": "luca.loiodice",
-      "linkedin": "luca-loiodice-01l10",
-      "img": "Loiodice.jpg"
-    }
-  ]
+    "Cavour": [
+        {
+            "highlight": true,
+            "name": "Edoardo Viglietti",
+            "role": "Chief Engineer",
+            "mail": "edoardo.viglietti",
+            "linkedin": "edoardoviglietti",
+            "img": "Viglietti.jpg"
+        },
+        {
+            "name": "Samuele Martello",
+            "role": "Avionics",
+            "mail": "samuele.martello",
+            "linkedin": "samuele-martello-633550277",
+            "img": "Martello.jpg"
+        },
+        {
+            "name": "Orlando Nardo",
+            "role": "Design & Additive Manufacturing",
+            "mail": "orlando.nardo",
+            "linkedin": "orlando-nardo-1466a9257",
+            "img": null
+        },
+        {
+            "name": "Edoardo Viglietti",
+            "role": "Recovery (acting)",
+            "linkedin": "edoardoviglietti",
+            "mail": "edoardo.viglietti",
+            "img": "Viglietti.jpg"
+        },
+        {
+            "cofounder": true,
+            "name": "Mattia Saba",
+            "role": "Mission Analysis",
+            "mail": "mattia.saba",
+            "linkedin": "mattia-saba-5b6638258",
+            "img": "Saba.jpg"
+        },
+        {
+            "name": "Riccardo Di Maria",
+            "role": "Finite Element Analysis",
+            "mail": "riccardo.dimaria",
+            "linkedin": "riccardo-di-maria-455143257",
+            "img": "DiMaria.jpg"
+        }
+    ],
+    "Efesto": [
+        {
+            "highlight": true,
+            "name": "Matteo Crachi",
+            "role": "Chief Engineer",
+            "mail": "matteo.crachi",
+            "linkedin": "matteo-crachi-37a060161",
+            "img": "Crachi.jpg"
+        },
+        {
+            "cofounder": true,
+            "name": "Cristian Manfredi",
+            "role": "Coordinator",
+            "mail": "cristian.manfredi",
+            "linkedin": "cristian-manfredi-478b82194",
+            "img": "Manfredi.jpeg"
+        },
+        {
+            "name": "Pier Luigi Mercadante",
+            "role": "Coordinator",
+            "mail": "pierluigi.mercadante",
+            "linkedin": "pier-luigi-mercadante-b43125234",
+            "img": "Mercadante.jpg"
+        },
+        {
+            "name": "Luca Barnobi",
+            "role": "Test Bench",
+            "mail": "luca.barnobi",
+            "linkedin": "luca-barnobi-b21547182",
+            "img": "barnobi.jpg"
+        },
+        {
+            "name": "Daniele Boccacciari",
+            "role": "Liquid System Architecture",
+            "mail": "daniele.boccacciari",
+            "linkedin": "daniele-boccacciari-637405222",
+            "img": "Boccacciari.jpg"
+        },
+        {
+            "name": "Gloria Nallo",
+            "role": "Thrust Chamber Assembly",
+            "mail": "gloria.nallo",
+            "linkedin": "gloria-nallo-19a277169",
+            "img": "nallo.jpg"
+        },
+        {
+            "name": "Lorenzo Guarino",
+            "role": "Engine Cycle",
+            "mail": "lorenzo.guarino",
+            "linkedin": "lorenzo-guarino-563806246",
+            "img": "guarino.jpg"
+        }
+    ],
+    "Operations": [
+        {
+            "name": "Andrea Pantano",
+            "role": "Chief Operating Officier",
+            "mail": "andrea.pantano",
+            "linkedin": "andrea-pantano-84b805258",
+            "img": "Pantano.JPG"
+        },
+        {
+            "name": "Andrea Pantano",
+            "role": "Logistics (acting)",
+            "mail": "andrea.pantano",
+            "linkedin": "andrea-pantano-84b805258",
+            "img": "Pantano.JPG"
+        },
+        {
+            "name": "Federico Guglielmi",
+            "role": "IT",
+            "mail": "federico.guglielmi",
+            "linkedin": "Fedesky25",
+            "img": "Guglielmi.jpg"
+        },
+        {
+            "name": "Yuri Valle",
+            "role": "Media",
+            "mail": "yuri.valle",
+            "linkedin": "null",
+            "img": null
+        }
+    ],
+    "advisors": [
+        {
+            "cofounder": true,
+            "name": "Fabio Meloni",
+            "role": "Project Cavour Advisor",
+            "mail": "fabio.meloni",
+            "linkedin": "fabioski01",
+            "img": "Meloni.jpg"
+        },
+        {
+            "name": "Flora Punzi",
+            "role": "Senior FEA analyst & Counselor",
+            "mail": "flora.punzi",
+            "linkedin": "fpunzi",
+            "img": "Punzi.jpg"
+        },
+        {
+            "name": "Francesca Bracaglia",
+            "role": "FEA Advisor",
+            "mail": "francesca.bracaglia",
+            "linkedin": "francesca-bracaglia-a1000b214",
+            "img": "Bracaglia.jpg"
+        },
+        {
+            "cofounder": true,
+            "name": "Salvatore Lagrasta",
+            "role": "Avionics Advisor",
+            "mail": "salvatore.lagrasta",
+            "linkedin": "salvatore-lagrasta",
+            "img": "Lagrasta.jfif"
+        },
+        {
+            "name": "Luca Loiodice",
+            "role": "Additive Manufacturing Advisor",
+            "mail": "luca.loiodice",
+            "linkedin": "luca-loiodice-01l10",
+            "img": "Loiodice.jpg"
+        }
+    ]
 }
