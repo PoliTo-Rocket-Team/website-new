@@ -10,7 +10,9 @@
     export let data: LayoutData;
 
     function current(node: HTMLAnchorElement) {
-        const destroy = page.subscribe(v => node.classList.toggle("current", node.href.endsWith(v.url.pathname)));
+        const destroy = page.subscribe(v =>
+            node.classList.toggle("current", node.href.endsWith(v.url.pathname))
+        );
         return { destroy };
     }
 
@@ -22,22 +24,37 @@
     <div>
         <aside>
             <div class="account">
-                <img src={$picture} alt="Hopefully your face" data-seed={data.person?.first_name} on:error={fiximg}>
-    
-                <span class="name">{data.person ? data.person.first_name + ' ' + data.person.last_name : "Not yet linked"}</span>
-                {#each data.subteams||[] as s}
+                <img
+                    src={$picture}
+                    alt="Hopefully your face"
+                    data-seed={data.person?.first_name}
+                    on:error={fiximg}
+                />
+
+                <span class="name"
+                    >{data.person
+                        ? data.person.first_name + " " + data.person.last_name
+                        : "Not yet linked"}</span
+                >
+                {#each data.subteams || [] as s}
                     <span class="title">{s.title}</span>
                 {/each}
-                {#each data.divisions||[] as d}
-                    <span class="title">{d.name} Lead {d.acting ? "(acting)" : ''}</span>
+                {#each data.divisions || [] as d}
+                    <span class="title"
+                        >{d.name} Lead {d.acting ? "(acting)" : ""}</span
+                    >
                 {/each}
             </div>
-            <hr>
+            <hr />
             <ul>
-                {#each data.divisions||[] as d}
-                    <li><a href="/dashboard/positions/{d.id}" use:current>{d.code} positions</a></li>
+                {#each data.divisions || [] as d}
+                    <li>
+                        <a href="/dashboard/positions/{d.id}" use:current
+                            >{d.code} positions</a
+                        >
+                    </li>
                 {/each}
-                {#each data.subteams||[] as s}
+                {#each data.subteams || [] as s}
                     <li>
                         <a href="/dashboard/subteam/{s.id}" use:current>
                             Project
@@ -56,12 +73,16 @@
                     <a href="/dashboard/account" use:current>Account</a>
                 </li>
             </ul>
-            <hr>
-            <form action="/auth/logout" method="post" use:enhance={async ({cancel}) => {
-                cancel();
-                await data.supabase.auth.signOut();
-                goto("/auth/login");
-            }}>
+            <hr />
+            <form
+                action="/auth/logout"
+                method="post"
+                use:enhance={async ({ cancel }) => {
+                    cancel();
+                    await data.supabase.auth.signOut();
+                    goto("/auth/login");
+                }}
+            >
                 <button type="submit">Log out</button>
             </form>
         </aside>
@@ -92,36 +113,39 @@
         margin: 1.5rem 0;
         transform: translateX(1.5rem);
     }
-    .account, ul {
+    .account,
+    ul {
         list-style: none;
         display: flex;
         flex-direction: column;
         align-items: end;
     }
     li + li {
-        margin-top: .4rem;
+        margin-top: 0.4rem;
     }
-    button, a {
+    button,
+    a {
         display: inline-block;
         text-decoration: none;
         color: inherit;
-        padding: .4rem .8rem;
+        padding: 0.4rem 0.8rem;
         background-color: #8881;
         color: var(--fg-1);
-        border-radius: .4rem;
+        border-radius: 0.4rem;
         font-weight: 600;
         font-size: 1.1rem;
     }
-    button:hover, a:hover {
+    button:hover,
+    a:hover {
         background-color: #8882;
         color: var(--fg-0);
     }
     a:global(.current)::before {
-        content: '\00BB';
+        content: "\00BB";
         color: var(--accent-fig);
         position: relative;
-        bottom: .1rem;
-        padding-right: .4ch;
+        bottom: 0.1rem;
+        padding-right: 0.4ch;
     }
     form {
         text-align: right;
@@ -132,7 +156,7 @@
         height: 8rem;
         border-radius: 50%;
         object-fit: cover;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
     }
     .name {
         font-size: 1.5rem;
