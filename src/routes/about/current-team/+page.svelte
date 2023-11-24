@@ -110,22 +110,21 @@
         <h2 id="stats">Statistics</h2>
         <div class="pies">
             <Pie title="Members by program" threshold={5} rotate={255} slices={[
-                { value: 49, label: "Aerospace Engineering", color: "#316B83" },
-                { value: 13, label: "Mechanical Engineering", color: "#DE8971" },
-                { value: 10, label: "Computer Engineering", color: "#70AF85" },
-                { value: 6, label: "Electronic Engineering", color: "#CD5D7D" },
+                { value: 66, label: "Aerospace Engineering", color: "#316B83" },
+                { value: 20, label: "Mechanical Engineering", color: "#DE8971" },
+                { value: 8, label: "Electronic Engineering", color: "#CD5D7D" },
+                { value: 7, label: "Computer Engineering", color: "#70AF85" },
                 { value: 3, label: "Physics Engineering", color: "#6096B4" },
-                { value: 2, label: "Other Engineering", color: "#C6D57E" },
-                { value: 2, label: "Non-PoliTo", color: "#D3DEDC" },
+                { value: 22, label: "Other Engineering", color: "#C6D57E" },
             ]} />
             <Pie title="Members by level" threshold={5} slices={[
-                { value: 47, label: "Bachelor's", color: "#4e7bc1" },
-                { value: 35, label: "Master's", color: "#e1a463" },
-                { value: 3, label: "Ph.D.", color: "#3bdb84" }
+                { value: 64, label: "Bachelor's", color: "#4e7bc1" },
+                { value: 61, label: "Master's", color: "#e1a463" },
+                { value: 1, label: "Ph.D.", color: "#3bdb84" }
             ]} />
             <Pie title="International students rate" rotate={25} threshold={0} slices={[
-                { value: 61, label: "Domestic", color: "#DE8971" },
-                { value: 24, label: "International", color: "#A7D0CD" },
+                { value: 88, label: "Domestic", color: "#DE8971" },
+                { value: 38, label: "International", color: "#A7D0CD" },
             ]} />
         </div>
     </section>
