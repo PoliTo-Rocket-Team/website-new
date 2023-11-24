@@ -110,12 +110,12 @@
         <h2 id="stats">Statistics</h2>
         <div class="pies">
             <Pie title="Members by program" threshold={5} rotate={255} slices={[
-                { value: 66, label: "Aerospace Engineering", color: "#316B83" },
-                { value: 20, label: "Mechanical Engineering", color: "#DE8971" },
-                { value: 8, label: "Electronic Engineering", color: "#CD5D7D" },
-                { value: 7, label: "Computer Engineering", color: "#70AF85" },
-                { value: 3, label: "Physics Engineering", color: "#6096B4" },
-                { value: 22, label: "Other Engineering", color: "#C6D57E" },
+                { value: 66, label: "Aerospace", color: "#316B83" },
+                { value: 25, label: "Mechanical", color: "#DE8971" },
+                { value: 8, label: "Electronic", color: "#CD5D7D" },
+                { value: 8, label: "Computer", color: "#70AF85" },
+                { value: 4, label: "Management", color: "#C6D57E" },
+                { value: 22, label: "Other", color: "#A7D0CD" },
             ]} />
             <Pie title="Members by level" threshold={5} slices={[
                 { value: 64, label: "Bachelor's", color: "#4e7bc1" },
