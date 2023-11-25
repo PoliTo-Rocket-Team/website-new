@@ -8,8 +8,8 @@
 
           "date": "2021-10-01",
           "title": "The beginning",
-          "description": "A group of friends, inspired by remarkable achievement of American student rocketry clubs, started designing an experimental sounding rocket project from scratch.",
-          "max-width": 45,
+          "description": "Inspired by <a href='https://www.uscrpl.com/' target='_blank' rel='noreferrer'>USCRPL</a> and `<a href='https://www.skywarder.eu/blog/' target='_blank' rel='noreferrer'>Skyward Experimental Rocketry</a>`, a group of friends started designing an experimental sounding rocket.",
+          "max_width": 45,
           "isVisible": true
 
       },
@@ -19,7 +19,7 @@
           "date": "2021-12-01",
           "title": "First groundwork",
           "description": "The group laid the groundwork and crafted the initial design for what would evolve into Project Cavour.",
-          "max-width": 45,
+          "max_width": 45,
           "isVisible": true
 
       },
@@ -29,7 +29,7 @@
           "date": "2022-14-04",
           "title": "Formalization of the team",
           "description": "The proposal for the formation of a recognized student team was formally submitted to Politecnico di Torino's budget and projects commission.",
-          "max-width": 45,
+          "max_width": 45,
           "isVisible": true
 
       },
@@ -38,8 +38,8 @@
 
           "date": "2022-06-07",
           "title": "Team approval and start of Project Cavour",
-          "description": "Politecnico di Torino officially approved the Team, which started working on Project Cavour.",
-          "max-width": 45,
+          "description": "On June 7th 2022, Politecnico di Torino officially approved the Team, which started working on Project Cavour.",
+          "max_width": 41,
           "isVisible": true
 
       },
@@ -49,7 +49,7 @@
           "date": "2022-09-01",
           "title": "First expansion of the team",
           "description": "Team opened its first general recruitment window, attracting hundreds of applications, marked a significant expansion by reaching around 90 active members.",
-          "max-width": 45,
+          "max_width": 45,
           "isVisible": true
 
       },
@@ -58,8 +58,8 @@
 
           "date": "2022-09-20",
           "title": "Start of Project Efesto",
-          "description": "Project Efesto was started to research and develop Italy's first student-made bi-liquid rocket engine with a focus on sustainability.",
-          "max-width": 45,
+          "description": "After the first general recruitment, <a href='/projects/Efesto'>Project Efesto</a> was started to research and develop a Liquid Rocket Engine for the Team's rockets.",
+          "max_width": 51,
           "isVisible": true
 
       },
@@ -69,7 +69,7 @@
           "date": "2022-10-01",
           "title": "First italian Project on SA CUP",
           "description": "Project Cavour achieved the distinction of being the first Italian project selected for the 2023 Spaceport America Cup (SA CUP), the world's largest rocketry intercollegiate competition",
-          "max-width": 45,
+          "max_width": 55,
           "isVisible": true
 
       },
@@ -78,8 +78,8 @@
 
           "date": "2023-04-29",
           "title": "First Cavour launch",
-          "description": "Germany, 19:53:42 CET: test launch successful",
-          "max-width": 45,
+          "description": "Germany, 19:53:42 CET: test launch successful, <a href='https://www.instagram.com/p/CroYBp9t8Sr/?igshid=ZWIzMWE5ZmU3Zg==' target='_blank' rel='noreferrer' class='play' title='See the video' aria-label='See the video'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path fill='currentColor' stroke='currentColor' stroke-linejoin='round' stroke-width='2' d='M3.26795,2 L3.26795,8 L8.4641,5 Z' /></svg></a>",
+          "max_width": 35,
           "isVisible": true
 
       },
@@ -88,8 +88,8 @@
 
           "date": "2023-06-01",
           "title": "2023 Spaceport America Cup and second Cavour launch",
-          "description": "With Project Cavour, we represented Politecnico and Italy as the first Italian team at the Spaceport America Cup, the largest intercollegiate rocketry competition on the planet. Cavour launch was a success!",
-          "max-width": 45,
+          "description": "With <a href='/projects/Cavour'>Project Cavour</a>, we represented Politecnico and Italy as the first Italian team at the <a href='https://spaceportamericacup.com/' target='_blank' rel='noreferrer'>Spaceport America Cup</a>, the largest intercollegiate rocketry competition on the planet.Cavour launch was a success!",
+          "max_width": 55,
           "isVisible": true
 
       },
@@ -97,9 +97,9 @@
       {
 
           "date": "2023-09-01",
-          "title": "2023 European Rocketry Challenge(EuRoC)",
-          "description": "we competed with Project Cavour at the 2023 EuRoC as the first team from Politecnico. Project Cavour experienced a recovery failure on launch. Despite this setback, the Team received the ANACOM award and achieved a commendable final ranking.",
-          "max-width": 45,
+          "title": "2023 European Rocketry Challenge",
+          "description": "We were the first team from Politecnico to compete with Project Cavour at the 2023 <a href='https://euroc.pt/' target='_blank' rel='noreferrer'>EuRoC</a>, Europe's major rocket engineering competition.",
+          "max_width": 50,
           "isVisible": true
 
       },
@@ -109,7 +109,7 @@
           "date": "2023-10-01",
           "title": "Expansion of team",
           "description": "Team opened its second general recruitment window, attracting hundreds of applications, marked a significant expansion by reaching around 130 active members.",
-          "max-width": 45,
+          "max_width": 45,
           "isVisible": false
 
       },
@@ -119,7 +119,7 @@
           "date": "2023-11-01",
           "title": "Start of Vittorio Emanuele II (VES)",
           "description": "A new project was started for a competition rocket with the goal of launching a solid propelled rocket with 9km target apogee.",
-          "max-width": "max-width",
+          "max_width": 50,
           "isVisible": true
 
       }
