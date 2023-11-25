@@ -6,10 +6,13 @@
     import Event from "./Event.svelte";
     import { theme } from "$lib/theme";
     import { browser } from "$app/environment";
+import {events} from "./about/history/data.json";
+
     let main: HTMLElement;
     const deltaH = browser ? document.documentElement.clientHeight - window.innerHeight : 0;
     let headerHeight = browser ? window.innerHeight : 100000;
 
+    
 
     import type { HostMessageMap, WorkerMessageMap } from "./worker-msg";
     let post: CanvasPoster<HostMessageMap>;
@@ -82,21 +85,16 @@
                 <div class="base"></div>
             </div>
             <div class="timeline__body">
-                <Event year={2021} month={10} ch={45} title="The beginning">Inspired by <a href="https://www.uscrpl.com/" target="_blank" rel="noreferrer">USCRPL</a> and <a href="https://www.skywarder.eu/blog/" target="_blank" rel="noreferrer">Skyward Experimental Rocketry</a>, a group of friends started designing an experimental sounding rocket.</Event>
-                <Event year={2022} month={6} day={7} ch={41} title="Team approval and start of Project Cavour">On June 7th 2022, Politecnico di Torino officially approved the Team, which started working on <a href="/projects/Cavour">Project Cavour</a>.</Event>
-                <Event year={2023} month={1} ch={51} title="Start of Project Efesto">After the first general recruitment, <a href="/projects/Efesto">Project Efesto</a> was started to research and develop a Liquid Rocket Engine for the Team's rockets.</Event>
-                <Event year={2023} month={4} day={29} ch={35} title="First Cavour launch">
-                    Germany, 19:53:42 CET: test launch successful 
-                    <a href="https://www.instagram.com/p/CroYBp9t8Sr/?igshid=ZWIzMWE5ZmU3Zg==" target="_blank" rel="noreferrer" class="play" title="See the video" aria-label="See the video">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 10">
-                            <path fill="currentColor" stroke="currentColor" stroke-linejoin="round" stroke-width="2" d="M3.26795,2 L3.26795,8 L8.4641,5 Z" />
-                        </svg>
-                    </a>
-                </Event>
-                <Event year={2023} month={6} ch={55} title="2023 Spaceport America Cup and second Cavour launch">With <a href="/projects/Cavour">Project Cavour</a>, we represented Politecnico and Italy as the first Italian team at the <a href="https://spaceportamericacup.com/" target="_blank" rel="noreferrer">Spaceport America Cup</a>, the largest intercollegiate rocketry competition on the planet.Cavour launch was a success!
-                </Event>
-                <Event year={2023} month={10} ch={50} title="2023 European Rocketry Challenge">We will be the first team from Politecnico to compete with Project Cavour at the 2023 <a href="https://euroc.pt/" target="_blank" rel="noreferrer">EuRoC</a>, Europe’s major rocket engineering competition.
-                </Event>
+                {#each events as event }
+                    {#if event.isVisible}
+                        <Event year={parseInt(event.date.split('-')[0])} month={parseInt(event.date.split('-')[1])} day={parseInt(event.date.split('-')[2])} ch ={event.max_width} title={event.title}>
+                            {event.description}
+                        </Event>
+                    {/if}
+                {/each}
+                
+
+                
             </div>
         </div>
     </section>
