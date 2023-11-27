@@ -1,326 +1,320 @@
-<script lang="ts">
-  import { createEventDispatcher } from "svelte";
+<script>
+    import { createEventDispatcher } from "svelte";
+    import { Form, Field, ErrorMessage, createForm } from "svelte-forms-lib";
+    import * as yup from "yup";
+    export let customSubmitForm = values => {
+        alert("customSubmitForm not defined");
+    };
+    export let division;
 
-  import SkillsList from "./skillsList.svelte";
-  import { applyAction, enhance } from "$app/forms";
+    export let DatainitialValues = {
+        division: division,
+        name: "",
+        number: "",
+        description: "",
+        requiredSkills: [""],
+        desirableSkills: [""],
+        formLink: "",
+        open: false,
+    };
+    export let positions;
 
-  const dispatch = createEventDispatcher();
-  export let newDescription: string;
-  export let newRequired: string[];
-  export let newDesirable: string[];
-  export let name: string;
-  export let positionNumber: number;
-  export let endDate: string;
-  export let formLink: string;
-  export let posid: number;
-
-  let required: string;
-  let desirable: string;
-  const stringListSeparator = "__~!!||_";
-  let errEmtyRequired = false;
-  let errUnknown = false;
-
-  export let show = false;
-  // ----------------------------------------------------------------------------
-
-  let editRequired: string[] = [...newRequired];
-  required = editRequired.join(stringListSeparator);
-
-  let editDesirable: string[] = [...newDesirable];
-  desirable = editDesirable.join(stringListSeparator);
-
-  // ----------------------------------------------------------------------------
-
-  function handelCancel() {
-    show = false;
-    dispatch("close");
-    editRequired = [...newRequired];
-
-    editDesirable = [...newDesirable];
-  }
-
-  function handleRequiredChange(event) {
-    editRequired = event.detail;
-    required = editRequired.join(stringListSeparator);
-    errEmtyRequired = false;
-  }
-
-  function handleDesirableChange(event) {
-    editDesirable = event.detail;
-    desirable = editDesirable.join(stringListSeparator);
-  }
-
-  let myform;
-  const handesubmit = (input) => {
-    if (editRequired.length === 0) {
-      // console.log("required is empty");
-      errEmtyRequired = true;
-      input.cancel();
+    function addEntryIfUnique(newNumber) {
+        return !positions?.some(obj => obj.number === newNumber);
     }
 
-    return async ({ result, update }) => {
-      // console.log("result", result);
-      // console.log("result.data.data : ", result.data.data);
-      myform = result.data.data;
-
-      if (result.status === 200) {
-        editDesirable = [];
-        editRequired = [];
-        handelCancel();
-        await update();
-        // await applyAction(result);
-      } else {
-        errUnknown = true;
-      }
+    const formProps = {
+        initialValues: DatainitialValues,
+        validationSchema: yup.object().shape({
+            name: yup.string().required(),
+            number: yup
+                .number()
+                .test("check-duplicate", "duplicate number", function (value) {
+                    return addEntryIfUnique(value);
+                })
+                .required(),
+            description: yup
+                .string()
+                .min(40, "Must be more than 40 characters")
+                .required(),
+            requiredSkills: yup
+                .array()
+                .of(yup.string().required())
+                .min(1)
+                .test(
+                    "check-duplicate",
+                    "At least one required skill is required",
+                    function (value) {
+                        return !(value?.length === 1 && value[0] === "");
+                    }
+                ),
+            open: yup.boolean().required(),
+        }),
+        onSubmit: values => {
+            customSubmitForm(values);
+        },
     };
-  };
+    const { form, errors, state, handleChange, handleSubmit, handleReset } =
+        createForm(formProps);
+
+    const addRequired = () => {
+        $form.requiredSkills = $form.requiredSkills.concat("");
+        $errors.requiredSkills = $errors.requiredSkills.concat("");
+    };
+
+    const removeRequired = i => {
+        $form.requiredSkills = $form.requiredSkills.filter((u, j) => j !== i);
+        $errors.requiredSkills = $errors.requiredSkills.filter(
+            (u, j) => j !== i
+        );
+    };
+    const addDesirable = () => {
+        $form.desirableSkills = $form.desirableSkills.concat("");
+        $errors.desirableSkills = $errors.desirableSkills.concat("");
+    };
+
+    const removeDesirable = i => {
+        $form.desirableSkills = $form.desirableSkills.filter((u, j) => j !== i);
+        $errors.desirableSkills = $errors.desirableSkills.filter(
+            (u, j) => j !== i
+        );
+    };
+
+    function handelEnter(e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            addRequired();
+        }
+    }
+
+    let dispatch = createEventDispatcher();
+    function handelCancel() {
+        dispatch("close");
+    }
 </script>
 
-<div class="add-form-container">
-  <form id="addForm" method="POST" action="?/edit" use:enhance={handesubmit}>
-    {#if myform?.error?.unknown}
-      <strong class="error">
-        Error : Please check all input befor submit again</strong
-      >
-    {/if}
-    {#if myform?.error?.number}
-      <strong class="error"> {myform?.error?.number.message}</strong>
-    {/if}
+<div class="main-container">
+    <form on:submit|preventDefault={handleSubmit} class="form-container">
+        <div class="input-short">
+            <label for="name"><strong>Name :</strong></label>
+            <input
+                type="text"
+                name="name"
+                id="name"
+                on:blur={handleChange}
+                on:change={handleChange}
+                bind:value={$form.name}
+            />
+            {#if $errors.name}
+                <small class="error">{$errors.name}</small>
+            {/if}
+        </div>
+        <div class="input-short">
+            <label for="number"><strong>Number :</strong></label>
+            <input
+                type="number"
+                name="number"
+                id="number"
+                on:blur={handleChange}
+                on:change={handleChange}
+                bind:value={$form.number}
+            />
+            {#if $errors.number}
+                <small class="error">{$errors.number}</small>
+            {/if}
+        </div>
+        <div class="input-short">
+            <label for="formLink"><strong>Form Link :</strong></label>
+            <input
+                type="text"
+                name="formLink"
+                id="formLink"
+                on:blur={handleChange}
+                on:change={handleChange}
+                bind:value={$form.formLink}
+            />
+            {#if $errors.formLink}
+                <small class="error">{$errors.formLink}</small>
+            {/if}
+        </div>
+        <div class="input-short">
+            <label for="open"><strong>Open :</strong></label>
+            <input
+                type="checkbox"
+                name="open"
+                id="open"
+                on:blur={handleChange}
+                on:change={handleChange}
+                bind:value={$form.open}
+            />
+            {#if $errors.open}
+                <small class="error">{$errors.open}</small>
+            {/if}
+        </div>
 
-    <div class="input-column">
-      <label for="name">
-        <strong>Name :</strong>
-        <input
-          id="name"
-          name="name"
-          class="short-input-border short-input name"
-          type="text"
-          bind:value={name}
-          required
-        />
-      </label>
+        <div class="input-description">
+            <label for="description"><strong>Description :</strong></label>
+            <textarea
+                name="description"
+                id="description"
+                cols="30"
+                rows="10"
+                on:blur={handleChange}
+                on:change={handleChange}
+                bind:value={$form.description}
+            ></textarea>
+            {#if $errors.description}
+                <small class="error">{$errors.description}</small>
+            {/if}
+        </div>
 
-      <label for="formLink"
-        ><strong>Form Link :</strong>
-        <input
-          id="formLink"
-          name="formLink"
-          class="short-input-border short-input name"
-          type="text"
-          bind:value={formLink}
-        />
-      </label>
+        <div class="array-input">
+            <div class="array-input-header">
+                <h3>Required Skills</h3>
+                <span class="btn" on:click={addRequired}>Add</span>
+            </div>
+            {#if $errors.requiredSkills}
+                <small class="error">{$errors.requiredSkills}</small>
+            {/if}
+            <div class="input-short-container">
+                <ol>
+                    {#each $form.requiredSkills as skill, i}
+                        <li>
+                            <div class="input-short">
+                                <input
+                                    type="text"
+                                    id="requiredSkills"
+                                    placeholder="Enter Required Skill here"
+                                    on:keydown={handelEnter}
+                                    bind:value={$form.requiredSkills[i]}
+                                />
+                                {#if $form.requiredSkills.length !== 1}
+                                    <span
+                                        class="btn"
+                                        on:click={() => removeRequired(i)}
+                                        >Remove</span
+                                    >
+                                {/if}
+                            </div>
+                        </li>
+                    {/each}
+                </ol>
+            </div>
 
-      <label for="number"
-        ><strong>Number :</strong>
-        <input
-          name="number"
-          id="number"
-          class="short-input-border short-input number"
-          min="1"
-          type="number"
-          bind:value={positionNumber}
-          required
-        />
-      </label>
+            <br />
 
-      <label for="endDate"
-        ><strong>End date :</strong>
-        <input
-          name="endDate"
-          id="endDate"
-          bind:value={endDate}
-          class="short-input-border short-input date"
-          type="date"
-        />
-      </label>
-    </div>
+            <div class="array-input">
+                <div class="array-input-header">
+                    <h3>Desirable Skills</h3>
+                    <span class="btn" on:click={addDesirable}>Add</span>
+                </div>
+                {#if $errors.desirableSkills}
+                    <small class="error">{$errors.desirableSkills}</small>
+                {/if}
+                <div class="input-short-container">
+                    <ol>
+                        {#each $form.desirableSkills as skill, i}
+                            <li>
+                                <div class="input-short">
+                                    <input
+                                        type="text"
+                                        id="desirableSkills"
+                                        placeholder="Enter Desirable Skill here"
+                                        on:keydown={handelEnter}
+                                        bind:value={$form.desirableSkills[i]}
+                                    />
+                                    {#if $form.desirableSkills.length !== 1}
+                                        <span
+                                            class="btn"
+                                            on:click={() => removeDesirable(i)}
+                                            >Remove</span
+                                        >
+                                    {/if}
+                                </div>
+                            </li>
+                        {/each}
+                    </ol>
+                </div>
 
-    <!-- {#if form?.data?.error?.description}
-      <strong class="error"> {form?.data?.error?.description.message}</strong>
-    {/if} -->
-    <label for="description"
-      ><strong>Description</strong>
-      <textarea
-        id="description"
-        class="input border"
-        name="description"
-        bind:value={newDescription}
-      />
-    </label>
-    {#if errEmtyRequired}
-      <p class="error">Required is empty</p>
-    {/if}
-    <SkillsList
-      on:change={handleRequiredChange}
-      title="Required skills"
-      skills={editRequired}
-    />
-    <input name="required" type="hidden" id="required" bind:value={required} />
-
-    <SkillsList
-      on:change={handleDesirableChange}
-      title="Desirable skills"
-      skills={editDesirable}
-    />
-    <input
-      name="desirable"
-      type="hidden"
-      id="desirable"
-      bind:value={desirable}
-    />
-    <input type="hidden" name="separator" value={stringListSeparator} />
-    <input type="hidden" name="posid" value={posid} />
-
-    <div class="form-btns-container">
-      <button type="submit" class="btn border">Save</button>
-      <button on:click={handelCancel} class="btn border" type="reset"
-        >Cancel</button
-      >
-    </div>
-  </form>
+                <div class="form-btn">
+                    <button class="btn" type="submit" on:click={handleSubmit}
+                        >Submit</button
+                    >
+                    <button class="btn" type="reset" on:click={handleReset}
+                        >Reset</button
+                    >
+                    <button on:click={handelCancel} class="btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>
 
-<!-- <div class="content">
-  <form method="POST" action="" use:enhance>
-
-    <label for="name"
-      ><strong>Name :</strong>
-      <input
-        id="name"
-        name="name"
-        class="short-input-border short-input name"
-        type="text"
-        bind:value={name}
-        required
-      />
-    </label>
-    
-    <div class="row">
-      <label for="number"
-        ><strong>Number :</strong>
-        <input
-          name="number"
-          id="number"
-          class="short-input-border short-input number"
-          min="1"
-          type="number"
-          bind:value={positionNumber}
-          required
-        />
-      </label>
-      <label for="endDate"
-        ><strong>End date :</strong>
-        <input
-          name="endDate"
-          id="endDate"
-          bind:value={endDate}
-          class="short-input-border short-input date"
-          type="date"
-        />
-      </label>
-    </div>
-
-    <label for="description"
-      ><strong>Description</strong>
-      <textarea
-        id="description"
-        class="input border"
-        name="description"
-        bind:value={newDescription}
-      />
-    </label>
-    {#if errEmtyRequired}
-      <p class="error">Required is empty</p>
-    {/if}
-    <SkillsList
-      on:change={handleRequiredChange}
-      title="Required skills"
-      skills={newRequired}
-    />
-    <input name="required" type="hidden" id="required" bind:value={required} />
-
-    <SkillsList
-      on:change={handleDesirableChange}
-      title="Desirable skills"
-      skills={newDesirable}
-    />
-    <input
-      name="desirable"
-      type="hidden"
-      id="desirable"
-      bind:value={desirable}
-    />
-    <input type="hidden" name="separator" value={stringListSeparator} />
-
-    <div class="form-btns-container">
-      <button type="submit" class="btn border">Save</button>
-      <button on:click={handelClose} class="btn--low btn border">Cancel</button>
-    </div>
-  </form>
-</div> -->
-
 <style>
-  .content {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .add-form-container {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-  }
-  .input-column {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-  }
+    .main-container {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    :global(.form-container) {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
 
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  .border {
-    border-radius: 10px;
-  }
+    .input-short {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+    }
 
-  .input {
-    min-width: 100%;
-    min-height: 6rem;
-    box-sizing: border-box;
-    outline: none;
-    padding: 10px 10px 10px 10px;
-    resize: none;
-    margin-top: 0.5rem;
-  }
+    .input-short-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    .input-description {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        resize: none;
+    }
 
-  .short-input {
-    margin-left: 0.5rem;
-  }
-  .row {
-    display: flex;
-    gap: 1rem;
-  }
-  .number {
-    width: 3rem;
-    text-align: center;
-  }
-  .date {
-    padding: 0.1rem;
-  }
-  .short-input-border {
-    border-radius: 7px;
-  }
+    .array-input {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+    .array-input input {
+        min-width: 15rem;
+    }
+    .form-btn {
+        display: flex;
+        justify-content: center;
 
-  .form-btns-container {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
+        gap: 1rem;
+    }
 
-  .error {
-    color: red;
-  }
+    .array-input-header {
+        display: flex;
+        gap: 1rem;
+    }
+    ol {
+        padding: 1rem;
+    }
+    li {
+        margin: 0.5rem 0;
+    }
+    strong {
+        white-space: nowrap;
+    }
+
+    textarea {
+        resize: none;
+    }
+
+    .error {
+        color: red;
+    }
 </style>
