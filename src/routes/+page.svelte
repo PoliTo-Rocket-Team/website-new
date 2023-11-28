@@ -378,19 +378,19 @@
                             ><g transform="scale(5.33333,5.33333)"
                                 ><path
                                     d="M38,42h-28c-2.209,0 -4,-1.791 -4,-4v-28c0,-2.209 1.791,-4 4,-4h28c2.209,0 4,1.791 4,4v28c0,2.209 -1.791,4 -4,4z"
-                                    fill="#000000"
+                                    fill="var(--fg-0)"
                                     fill-rule="evenodd"
                                 ></path><path
                                     d="M34.257,34h-6.437l-13.991,-20h6.437zM28.587,32.304h2.563l-11.651,-16.608h-2.563z"
-                                    fill="#ffffff"
+                                    fill="var(--bg-0)"
                                     fill-rule="nonzero"
                                 ></path><path
                                     d="M15.866,34l7.203,-8.344l-0.942,-1.249l-8.304,9.593z"
-                                    fill="#ffffff"
+                                    fill="var(--bg-0)"
                                     fill-rule="nonzero"
                                 ></path><path
                                     d="M24.45,21.721l0.905,1.289l7.781,-9.01h-2z"
-                                    fill="#ffffff"
+                                    fill="var(--bg-0)"
                                     fill-rule="nonzero"
                                 ></path></g
                             ></g
