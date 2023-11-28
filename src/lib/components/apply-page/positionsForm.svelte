@@ -1,6 +1,6 @@
 <script>
     import { createEventDispatcher } from "svelte";
-    import { Form, Field, ErrorMessage, createForm } from "svelte-forms-lib";
+    import { createForm } from "svelte-forms-lib";
     import * as yup from "yup";
     export let customSubmitForm = values => {
         alert("customSubmitForm not defined");
@@ -8,7 +8,7 @@
     export let division;
 
     export let DatainitialValues = {
-        id: null,
+        id: "",
         division: division,
         name: "",
         number: "",
@@ -18,14 +18,18 @@
         formLink: "",
         open: false,
     };
-    export let positions;
+    export let numbers;
+    if (DatainitialValues.number) {
+        numbers.delete(DatainitialValues.number);
+    }
     let dispatch = createEventDispatcher();
     function handelCancel() {
         dispatch("close");
     }
 
     function addEntryIfUnique(newNumber) {
-        return !positions?.some(obj => obj.number === newNumber);
+        console.log("addEntryIfUnique", numbers);
+        return true;
     }
 
     const formProps = {
@@ -35,7 +39,7 @@
             number: yup
                 .number()
                 .test("check-duplicate", "duplicate number", function (value) {
-                    return addEntryIfUnique(value);
+                    return !numbers.has(value);
                 })
                 .required(),
             description: yup
@@ -90,6 +94,12 @@
         if (e.key === "Enter") {
             e.preventDefault();
             addRequired();
+        }
+    }
+    function handelEnterDesirable(e) {
+        if (e.key === "Enter") {
+            e.preventDefault();
+            addDesirable();
         }
     }
 </script>
@@ -221,7 +231,7 @@
                                         type="text"
                                         id="desirableSkills"
                                         placeholder="Enter Desirable Skill here"
-                                        on:keydown={handelEnter}
+                                        on:keydown={handelEnterDesirable}
                                         bind:value={$form.desirableSkills[i]}
                                     />
                                     {#if $form.desirableSkills.length !== 1}

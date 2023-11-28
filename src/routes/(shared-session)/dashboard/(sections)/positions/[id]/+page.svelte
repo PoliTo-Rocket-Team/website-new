@@ -13,6 +13,7 @@
 
     export let data: PageData;
     let positions = [];
+    let numbers = [];
 
     let showAdd = false;
 
@@ -25,10 +26,11 @@
             data.divisions[0].id
         );
         positions = response.data;
+        numbers = new Set(positions.map(position => position.number));
     };
     const handelsubmitAdd = async values => {
         let res = await addPosition(values, data.supabase);
-        let data = getPositions(data.supabase, data.divisions[0].id);
+        // let data = getPositions(data.supabase, data.divisions[0].id);
         if (res.error) {
             alert(res.error.message);
         } else {
@@ -77,7 +79,7 @@
 <Addmodal show={showAdd}>
     <PositionForm
         division={data.divisions[0].id}
-        positions={data.positions}
+        {numbers}
         customSubmitForm={handelsubmitAdd}
         on:close={() => {
             showAdd = !showAdd;
@@ -88,6 +90,7 @@
 {#if !(positions.length === 0)}
     {#each positions as position}
         <AdminPosition
+            {numbers}
             on:delete={handelDelete}
             {position}
             customEditSubmit={handelEditPositions}

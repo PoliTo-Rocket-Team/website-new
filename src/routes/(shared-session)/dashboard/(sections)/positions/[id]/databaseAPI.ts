@@ -19,7 +19,6 @@ export const addPosition = async (value, supabase) => {
         open: open,
         form: formLink,
     });
-
     return dbRespose;
 };
 
@@ -56,7 +55,6 @@ export const editPosition = async (value, supabase) => {
             form: formLink,
         })
         .eq("id", id);
-
     return dbRespose;
 };
 

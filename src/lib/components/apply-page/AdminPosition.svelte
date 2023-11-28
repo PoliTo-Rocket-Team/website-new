@@ -7,6 +7,8 @@
     let modify = false;
     export let code: string;
     export let position;
+    export let numbers;
+
     export let customEditSubmit;
     let DatainitialValues = {
         id: position.id,
@@ -72,13 +74,15 @@
     </svelte:fragment>
     <svelte:fragment slot="content">
         {#if !modify}
-            <ShowPositions pos={position} />
-            <button
-                on:click={() => {
-                    modify = true;
-                }}
-                class="btn">Edit</button
-            >
+            <div class="center-flex">
+                <ShowPositions pos={position} />
+                <button
+                    on:click={() => {
+                        modify = true;
+                    }}
+                    class="btn">Edit</button
+                >
+            </div>
         {:else}
             <PositionsForm
                 on:close={() => {
@@ -87,6 +91,7 @@
                 division={position.division}
                 {DatainitialValues}
                 customSubmitForm={customEditSubmit}
+                {numbers}
             />
         {/if}
     </svelte:fragment>
@@ -164,5 +169,12 @@
 
     .slider.round:before {
         border-radius: 50%;
+    }
+
+    .center-flex {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
 </style>
