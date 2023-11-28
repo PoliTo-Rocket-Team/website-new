@@ -8,6 +8,7 @@
     export let division;
 
     export let DatainitialValues = {
+        id: null,
         division: division,
         name: "",
         number: "",
@@ -18,6 +19,10 @@
         open: false,
     };
     export let positions;
+    let dispatch = createEventDispatcher();
+    function handelCancel() {
+        dispatch("close");
+    }
 
     function addEntryIfUnique(newNumber) {
         return !positions?.some(obj => obj.number === newNumber);
@@ -48,10 +53,11 @@
                         return !(value?.length === 1 && value[0] === "");
                     }
                 ),
-            open: yup.boolean().required(),
+            open: yup.boolean(),
         }),
         onSubmit: values => {
             customSubmitForm(values);
+            dispatch("close");
         },
     };
     const { form, errors, state, handleChange, handleSubmit, handleReset } =
@@ -85,11 +91,6 @@
             e.preventDefault();
             addRequired();
         }
-    }
-
-    let dispatch = createEventDispatcher();
-    function handelCancel() {
-        dispatch("close");
     }
 </script>
 
@@ -145,7 +146,7 @@
                 id="open"
                 on:blur={handleChange}
                 on:change={handleChange}
-                bind:value={$form.open}
+                bind:checked={$form.open}
             />
             {#if $errors.open}
                 <small class="error">{$errors.open}</small>

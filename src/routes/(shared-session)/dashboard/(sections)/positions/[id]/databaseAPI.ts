@@ -30,3 +30,32 @@ export const getPositions = async (supabase, id) => {
         .eq("division", id);
     return positions;
 };
+
+export const editPosition = async (value, supabase) => {
+    const {
+        id,
+        division,
+        name,
+        number,
+        description,
+        requiredSkills,
+        desirableSkills,
+        open,
+        formLink,
+    } = value;
+    const dbRespose = await supabase
+        .from("positions")
+        .update({
+            division: division,
+            number: number,
+            name: name,
+            description: description,
+            required: requiredSkills,
+            desirable: desirableSkills,
+            open: open,
+            form: formLink,
+        })
+        .eq("id", id);
+
+    return dbRespose;
+};

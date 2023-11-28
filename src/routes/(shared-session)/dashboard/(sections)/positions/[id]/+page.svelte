@@ -1,10 +1,11 @@
 <script lang="ts">
-    import { addPosition, getPositions } from "./databaseAPI";
+    import { addPosition, getPositions, editPosition } from "./databaseAPI";
     import AdminPosition from "$lib/components/apply-page/AdminPosition.svelte";
     import PositionForm from "$lib/components/apply-page/positionsForm.svelte";
     import Addmodal from "$lib/components/apply-page/Addmodal.svelte";
     import type { PageData } from "./$types";
     import { onMount } from "svelte";
+
     export let data: PageData;
     let positions = [];
 
@@ -43,16 +44,14 @@
         data.positions = [...data.positions];
     }
 
-    async function edit(event) {
-        let data = event.detail;
-        const response = await fetch(`/api/positions/${data.id}/add/`, {
-            method: "POST",
-            body: JSON.stringify({ data }),
-            headers: {
-                "content-type": "application/json",
-            },
-        });
-    }
+    const handelEditPositions = async values => {
+        const response = await editPosition(values, data.supabase);
+        if (response.error) {
+            alert("Error editing position!");
+        } else {
+            alert("Position edited successfully");
+        }
+    };
 </script>
 
 <svelte:head>
@@ -85,6 +84,7 @@
         <AdminPosition
             on:delete={handelDelete}
             {position}
+            customEditSubmit={handelEditPositions}
             code={`${data.divisions[0].subteam.code}-${data.divisions[0].code}-${position.number}`}
         />
     {/each}
