@@ -1,16 +1,36 @@
 <script lang="ts">
-    import { addPosition } from "./databaseAPI";
+    import { addPosition, getPositions } from "./databaseAPI";
     import AdminPosition from "$lib/components/apply-page/AdminPosition.svelte";
     import PositionForm from "$lib/components/apply-page/positionsForm.svelte";
     import Addmodal from "$lib/components/apply-page/Addmodal.svelte";
     import type { PageData } from "./$types";
+    import { onMount } from "svelte";
     export let data: PageData;
-    let positions: position[] = data.positions;
+    let positions = [];
+
     let showAdd = false;
-    // functions
+
+    onMount(async () => {
+        const response = await getPositions(
+            data.supabase,
+            data.divisions[0].id
+        );
+        positions = response.data;
+    });
+    const handelupdatePositions = async () => {};
+    const handelsubmitAdd = async values => {
+        let res = await addPosition(values, data.supabase);
+        let data = getPositions(data.supabase, data.divisions[0].id);
+        if (res.error) {
+            alert(res.error.message);
+        } else {
+            showAdd = false;
+            alert("Position added successfully");
+        }
+    };
     async function handelDelete(event) {
         let data = event.detail;
-        console.log("data", data);
+
         const response = await fetch(`/api/positions/${9}/delete/`, {
             method: "POST",
             body: JSON.stringify({ data }),
@@ -32,20 +52,7 @@
                 "content-type": "application/json",
             },
         });
-
-        let total = await response.json();
-        console.log("total", total);
     }
-
-    const handelsubmitAdd = async values => {
-        let res = await addPosition(values, data.supabase);
-        if (res.error) {
-            alert(res.error.message);
-        } else {
-            showAdd = false;
-            alert("Position added successfully");
-        }
-    };
 </script>
 
 <svelte:head>
@@ -73,7 +80,7 @@
     ></PositionForm>
 </Addmodal>
 
-{#if !(data.positions?.length === 0)}
+{#if !(positions.length === 0)}
     {#each positions as position}
         <AdminPosition
             on:delete={handelDelete}

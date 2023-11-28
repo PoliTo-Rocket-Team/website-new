@@ -9,7 +9,6 @@ export const addPosition = async (value, supabase) => {
         open,
         formLink,
     } = value;
-    // console.log("inside add position", value);
     const dbRespose = await supabase.from("positions").insert({
         division: division,
         number: number,
@@ -22,4 +21,12 @@ export const addPosition = async (value, supabase) => {
     });
 
     return dbRespose;
+};
+
+export const getPositions = async (supabase, id) => {
+    const positions = await supabase
+        .from("positions")
+        .select()
+        .eq("division", id);
+    return positions;
 };
