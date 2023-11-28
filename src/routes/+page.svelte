@@ -6,7 +6,15 @@
     import Event from "./Event.svelte";
     import { theme } from "$lib/theme";
     import { browser } from "$app/environment";
-import {events} from "./about/history/data.json";
+    import {events} from "./about/history/data.json";
+
+     function replaceLinks(text: string) {
+        const regex = /\[([^\]]+)\]\(([^)]+)\)/g;
+        const updatedText = text.replace(regex, '<a href="$2" target="_blank" rel="noreferrer">$1</a>');
+        return updatedText; }
+
+
+
 
     let main: HTMLElement;
     const deltaH = browser ? document.documentElement.clientHeight - window.innerHeight : 0;
@@ -88,13 +96,10 @@ import {events} from "./about/history/data.json";
                 {#each events as event }
                     {#if event.isVisible}
                         <Event year={parseInt(event.date.split('-')[0])} month={parseInt(event.date.split('-')[1])} day={parseInt(event.date.split('-')[2])} ch ={event.max_width} title={event.title}>
-                            {event.description}
+                            {@html replaceLinks(event.description)}
                         </Event>
                     {/if}
-                {/each}
-                
-
-                
+                {/each} 
             </div>
         </div>
     </section>
