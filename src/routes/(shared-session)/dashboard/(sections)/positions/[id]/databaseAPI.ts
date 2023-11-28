@@ -59,3 +59,9 @@ export const editPosition = async (value, supabase) => {
 
     return dbRespose;
 };
+
+export const deletePosition = async (id, supabase) => {
+    const dbRespose = await supabase.from("positions").delete().eq("id", id);
+
+    return dbRespose;
+};

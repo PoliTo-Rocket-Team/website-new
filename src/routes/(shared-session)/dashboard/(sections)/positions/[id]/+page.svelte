@@ -1,5 +1,10 @@
 <script lang="ts">
-    import { addPosition, getPositions, editPosition } from "./databaseAPI";
+    import {
+        addPosition,
+        getPositions,
+        editPosition,
+        deletePosition,
+    } from "./databaseAPI";
     import AdminPosition from "$lib/components/apply-page/AdminPosition.svelte";
     import PositionForm from "$lib/components/apply-page/positionsForm.svelte";
     import Addmodal from "$lib/components/apply-page/Addmodal.svelte";
@@ -30,18 +35,14 @@
         }
     };
     async function handelDelete(event) {
-        let data = event.detail;
+        let id = event.detail.id;
 
-        const response = await fetch(`/api/positions/${9}/delete/`, {
-            method: "POST",
-            body: JSON.stringify({ data }),
-            headers: {
-                "content-type": "application/json",
-            },
-        });
-
-        let total = await response.json();
-        data.positions = [...data.positions];
+        const response = await deletePosition(id, data.supabase);
+        if (response.error) {
+            alert("Error deleting position!");
+        } else {
+            alert("Position deleted successfully");
+        }
     }
 
     const handelEditPositions = async values => {
