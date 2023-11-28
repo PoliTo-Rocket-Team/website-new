@@ -17,13 +17,15 @@
     let showAdd = false;
 
     onMount(async () => {
+        await handelupdatePositions();
+    });
+    const handelupdatePositions = async () => {
         const response = await getPositions(
             data.supabase,
             data.divisions[0].id
         );
         positions = response.data;
-    });
-    const handelupdatePositions = async () => {};
+    };
     const handelsubmitAdd = async values => {
         let res = await addPosition(values, data.supabase);
         let data = getPositions(data.supabase, data.divisions[0].id);
@@ -32,6 +34,7 @@
         } else {
             showAdd = false;
             alert("Position added successfully");
+            await handelupdatePositions();
         }
     };
     async function handelDelete(event) {
@@ -42,6 +45,7 @@
             alert("Error deleting position!");
         } else {
             alert("Position deleted successfully");
+            await handelupdatePositions();
         }
     }
 
@@ -50,6 +54,7 @@
         if (response.error) {
             alert("Error editing position!");
         } else {
+            await handelupdatePositions();
             alert("Position edited successfully");
         }
     };
