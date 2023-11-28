@@ -8,7 +8,7 @@
 
           "date": "2021-10-01",
           "title": "The beginning",
-          "description": "Inspired by <a href='https://www.uscrpl.com/' target='_blank' rel='noreferrer'>USCRPL</a> and `<a href='https://www.skywarder.eu/blog/' target='_blank' rel='noreferrer'>Skyward Experimental Rocketry</a>`, a group of friends started designing an experimental sounding rocket.",
+          "description": "Inspired by [USCRPL](https://www.uscrpl.com/) and [Skyward Experimental Rocketry](https://www.skywarder.eu/blog/), a group of friends started designing an experimental sounding rocket.",
           "max_width": 45,
           "isVisible": true
 
@@ -58,7 +58,7 @@
 
           "date": "2022-09-20",
           "title": "Start of Project Efesto",
-          "description": "After the first general recruitment, <a href='/projects/Efesto'>Project Efesto</a> was started to research and develop a Liquid Rocket Engine for the Team's rockets.",
+          "description": "After the first general recruitment, [Project Efesto](/projects/Efesto) was started to research and develop a Liquid Rocket Engine for the Team's rockets.",
           "max_width": 51,
           "isVisible": true
 
@@ -78,7 +78,7 @@
 
           "date": "2023-04-29",
           "title": "First Cavour launch",
-          "description": "Germany, 19:53:42 CET: test launch successful, <a href='https://www.instagram.com/p/CroYBp9t8Sr/?igshid=ZWIzMWE5ZmU3Zg==' target='_blank' rel='noreferrer' class='play' title='See the video' aria-label='See the video'><svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'><path fill='currentColor' stroke='currentColor' stroke-linejoin='round' stroke-width='2' d='M3.26795,2 L3.26795,8 L8.4641,5 Z' /></svg></a>",
+          "description": "Germany, 19:53:42 CET: test launch successful, [watch it on Instagram](https://www.instagram.com/p/CroYBp9t8Sr/?igshid=ZWIzMWE5ZmU3Zg==')",
           "max_width": 35,
           "isVisible": true
 
@@ -88,7 +88,7 @@
 
           "date": "2023-06-01",
           "title": "2023 Spaceport America Cup and second Cavour launch",
-          "description": "With <a href='/projects/Cavour'>Project Cavour</a>, we represented Politecnico and Italy as the first Italian team at the <a href='https://spaceportamericacup.com/' target='_blank' rel='noreferrer'>Spaceport America Cup</a>, the largest intercollegiate rocketry competition on the planet.Cavour launch was a success!",
+          "description": "With [Project Cavour](/projects/Cavour), we represented Politecnico and Italy as the first Italian team at the [Spaceport America Cup](https://spaceportamericacup.com/), the largest intercollegiate rocketry competition on the planet.Cavour launch was a success!",
           "max_width": 55,
           "isVisible": true
 
@@ -98,7 +98,7 @@
 
           "date": "2023-09-01",
           "title": "2023 European Rocketry Challenge",
-          "description": "We were the first team from Politecnico to compete with Project Cavour at the 2023 <a href='https://euroc.pt/' target='_blank' rel='noreferrer'>EuRoC</a>, Europe's major rocket engineering competition.",
+          "description": "We were the first team from Politecnico to compete with Project Cavour at the 2023 [EuRoC](https://euroc.pt/), Europe's major rocket engineering competition.",
           "max_width": 50,
           "isVisible": true
 
