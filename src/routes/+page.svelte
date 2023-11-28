@@ -359,17 +359,7 @@
         //     border-radius: 50%;
         // }
     }
-    .play {
-        color: var(--accent-fig);
-        text-decoration: none;
-        vertical-align: middle;
-
-        svg {
-            display: inline-block;
-            height: 1rem;
-            width: auto;
-        }
-    }
+    
     .socials {
         display: flex;
         justify-content: center;
