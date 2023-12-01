@@ -20,19 +20,15 @@ pnpm dev -- --open
 
 ## Code formatter
 
-We are using a code formatter [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extension to format our code for better readability across developers. 
-
-Steps to set up the Prettier;
+We are using [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extension to format our code for better readability across developers. Follow these steps to set it up:
 
 1. Download the [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) extension.
  
-2. Go to vscode formatting settings; 
+2. Go to vscode formatting settings:
     
-    Enable Format on Paste(optional)
-    
-    Enable Format on Save(obligatory)
-    
-    Enable Format on Type(optional)
+   - Enable Format on Paste (optional)
+   - Enable Format on Save (obligatory)
+   - Enable Format on Type (optional)
 
 3. Go to default formatter settings and choose **Prettier - Code formatter** extension as your default code formatter.
 
