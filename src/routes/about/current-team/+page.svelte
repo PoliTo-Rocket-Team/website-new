@@ -89,7 +89,8 @@
         </h2>
         <ul class="lead-list">
             <Lead
-                name="Prof. Alfonso Pagani"
+                firstname="Prof. Alfonso"
+                lastname="Pagani"
                 role="Primary Faculty Advisor"
                 mail="alfonso.pagani@polito.it"
                 linkedin="alfonsopagani"
@@ -97,7 +98,8 @@
                 reversable
             />
             <Lead
-                name="Prof. Enrico Zappino"
+                firstname="Prof. Enrico"
+                lastname="Zappino"
                 role="Faculty Advisor"
                 mail="enrico.zappino@polito.it"
                 linkedin="enrico-zappino-4a762326"
@@ -109,10 +111,10 @@
         <HTabbed
             expand={ww + "px"}
             data={[
-                { title: "Project Cavour Leads", leads: leads.Cavour },
+                { title: "Project VES Leads", leads: leads.VES },
                 { title: "Project Efesto Leads", leads: leads.Efesto },
                 { title: "Operations Leads", leads: leads.Operations },
-                { title: "Advisor Board", leads: leads.advisors },
+                { title: "Advisor Board", leads: leads.ADVISOR },
             ]}
             let:title
             let:leads

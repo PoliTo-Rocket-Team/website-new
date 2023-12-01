@@ -2,11 +2,13 @@
     import IconLink from "$lib/icons/IconLink.svelte";
     import "@fontsource/plus-jakarta-sans/400-italic.css";
 
-    export let name: string;
+    export let firstname: string;
+    export let lastname: string;
+    export let mail = `${firstname.toLowerCase().replace(" ", "")}.${lastname
+        .toLowerCase()
+        .replace(" ", "")}@politorocketteam.it`;
     export let role: string;
-    export let scope: string | null = null;
     export let img: string | null = null;
-    export let mail: string;
     export let linkedin: string;
     export let cofounder: boolean = false;
     export let highlight = false;
@@ -17,7 +19,11 @@
 
 <li class="wrapper" class:reversable>
     {#if img}
-        <img class="img" src="/members/{img}" alt="Face of {name}" />
+        <img
+            class="img"
+            src="/members/{img}"
+            alt="Face of {firstname} {lastname}"
+        />
     {:else}
         <div class="img">
             <svg
@@ -31,24 +37,14 @@
         </div>
     {/if}
     <div class="info">
-        <span class="name">{name}</span>
+        <span class="name">{firstname} {lastname}</span>
         <span class="title" class:colored={highlight}
             >{#if cofounder}<em>Cofounder</em> <span class="divisor">|</span>
             {/if}{role}</span
         >
-        {#if scope}
-            <span>{scope}</span>
-        {/if}
         <div class="socials">
             <IconLink icon="LinkedIn" id={linkedin} />
-            {#if mail !== "NONE"}
-                <IconLink
-                    icon="Email"
-                    id={mail.includes("@")
-                        ? mail
-                        : mail + "@politorocketteam.it"}
-                />
-            {/if}
+            <IconLink icon="Email" id={mail} />
         </div>
     </div>
 </li>
