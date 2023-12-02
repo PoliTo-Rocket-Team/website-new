@@ -1,9 +1,9 @@
 <script>
     // @ts-nocheck
     // no check to make partners img type compatible
-    import Sponsor from "./Sponsor.svelte";
+
+    import Partner from "./Partner.svelte";
     import partners from "./partners.json";
-    import Masonry from "$lib/Masonry.svelte";
 </script>
 
 <svelte:head>
@@ -29,13 +29,11 @@
     </div>
     <section aria-labelledby="main-partners">
         <h2 id="main-partners">Main partners</h2>
-        <Masonry data={partners} let:name let:link let:img let:texts>
-            <Sponsor {name} {link} {img}>
-                {#each texts as text}
-                    <p>{text}</p>
-                {/each}
-            </Sponsor>
-        </Masonry>
+        <div class="grid">
+            {#each partners as p}
+                <Partner {...p} />
+            {/each}
+        </div>
     </section>
 </main>
 
@@ -47,5 +45,16 @@
     section {
         --masonry-cols: repeat(auto-fill, minmax(30ch, 1fr));
         --masonry-gap: 2rem;
+    }
+    .grid {
+        display: grid;
+        gap: 2rem;
+        grid-template-columns: 1fr;
+        --partner-height: 28rem;
+    }
+    @media (min-width: 50rem) {
+        .grid {
+            grid-template-columns: repeat(auto-fill, 30ch);
+        }
     }
 </style>
