@@ -63,18 +63,26 @@
     img {
         width: 100%;
         z-index: 2;
+        display: block;
     }
     [data-theme]::before {
         content: "";
         z-index: -1;
         position: absolute;
-        left: -2rem;
-        top: -2rem;
-        width: calc(100% + 4rem);
-        height: calc(100% + 4rem);
-        border-radius: 5rem;
+        left: -1.5rem;
+        top: -1.5rem;
+        width: calc(100% + 3rem);
+        height: calc(100% + 3rem);
+        border-radius: 8rem;
+        /* filter: blur(0rem); */
+    }
+    :global([data-theme="light"]) [data-theme="dark"]::before {
+        background-color: var(--bg-1);
+        box-shadow: 0 0 1.5rem var(--bg-1);
+    }
+    :global([data-theme="dark"]) [data-theme="light"]::before {
         background-color: var(--bg-0);
-        filter: blur(1rem);
+        box-shadow: inset 0 0 1.5rem var(--bg-2);
     }
     h3 {
         font-size: var(--fs-60);
