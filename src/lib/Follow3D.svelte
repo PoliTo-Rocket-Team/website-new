@@ -54,7 +54,7 @@
     bind:this={element}
     style:--perspective={perspective}
 >
-    <div class="inner" style="transform: {transform($xs, $ys)};">
+    <div class="inner" style:--transform={transform($xs, $ys)}>
         <slot />
     </div>
 </div>
@@ -66,5 +66,10 @@
     .inner {
         transform-origin: center;
         transform-style: preserve-3d;
+    }
+    @media (min-width: 50rem) {
+        .inner {
+            transform: var(--transform);
+        }
     }
 </style>
