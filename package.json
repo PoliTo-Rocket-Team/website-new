@@ -26,6 +26,7 @@
         "sass": "^1.56.2",
         "svelte": "^4.1.0",
         "svelte-check": "^3.4.6",
+		"svelte-dnd-action": "^0.9.33",
         "three": "^0.148.0",
         "tslib": "^2.4.1",
         "typescript": "^4.9.3",
