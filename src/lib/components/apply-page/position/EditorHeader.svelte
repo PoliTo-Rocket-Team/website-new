@@ -27,6 +27,8 @@
     }
 
     .code {
+        font-family: "Anonymous Pro", monospace;
+        color: var(--accent-text);
         grid-column: -3/-2;
     }
     summary::after {
@@ -46,8 +48,9 @@
     .switch {
         position: relative;
         display: inline-block;
-        width: 60px;
-        height: 34px;
+        width: 3.5rem;
+        height: 1.8rem;
+        border-radius: 3rem;
     }
 
     .switch input {
@@ -63,27 +66,29 @@
         left: 0;
         right: 0;
         bottom: 0;
+        width: 100%;
+        height: 100%;
         background-color: #ccc;
-        transition:
-            transform 0.4s,
-            background-color 0.4s;
+        border-radius: 3rem;
+        transition: background-color 0.2s;
     }
 
     .slider:before {
+        display: block;
         position: absolute;
         content: "";
-        height: 1.2rem;
-        width: 1.2rem;
-        left: 4px;
-        bottom: 4px;
+        height: 1.4rem;
+        width: 1.4rem;
+        left: 0.2rem;
+        top: 50%;
         background-color: white;
-        transition: 0.4s;
+        transition: transform 0.2s;
+        transform: translateY(-50%);
         border-radius: 34px;
-        border-radius: 50%;
     }
 
     input:checked + .slider {
-        background-color: #1c852e;
+        background-color: var(--accent-fig);
     }
 
     input:focus + .slider {
@@ -91,6 +96,6 @@
     }
 
     input:checked + .slider:before {
-        transform: translateX(26px);
+        transform: translate(1.6rem, -50%);
     }
 </style>
