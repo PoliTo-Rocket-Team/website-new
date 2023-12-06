@@ -11,6 +11,8 @@
     import type { PageData } from "./$types";
     import { onMount } from "svelte";
 
+    import * as Position from "$lib/components/apply-page/position";
+
     export let data: PageData;
     let positions = [];
     let numbers = [];
@@ -66,40 +68,24 @@
     <title>Positions | PRT Admin Program</title>
 </svelte:head>
 
-<h1>{data.divisions[0].name} positions</h1>
-<p>Here you can add, edit, and delete the positions .</p>
+<h1>{data.division_name} positions</h1>
+
+<Addmodal show={showAdd}>
+    <Position.Form creating />
+</Addmodal>
+
+{#each data.positions as position (position.id)}
+    <Position.Admin data={position} code={data.code} />
+{:else}
+    <p>No positions found</p>
+{/each}
 
 <button
     class="btn"
     on:click={() => {
         showAdd = true;
-    }}>Add</button
+    }}>Add a new position</button
 >
-
-<Addmodal show={showAdd}>
-    <PositionForm
-        division={data.divisions[0].id}
-        {numbers}
-        customSubmitForm={handelsubmitAdd}
-        on:close={() => {
-            showAdd = !showAdd;
-        }}
-    ></PositionForm>
-</Addmodal>
-
-{#if !(positions.length === 0)}
-    {#each positions as position}
-        <AdminPosition
-            {numbers}
-            on:delete={handelDelete}
-            {position}
-            customEditSubmit={handelEditPositions}
-            code={`${data.divisions[0].subteam.code}-${data.divisions[0].code}-${position.number}`}
-        />
-    {/each}
-{:else}
-    <p>No positions found</p>
-{/if}
 
 <style lang="scss">
     @use "$lib/components/apply-page/consts.scss" as *;
