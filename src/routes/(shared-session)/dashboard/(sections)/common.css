@@ -3,18 +3,22 @@ h2 {
     margin-bottom: 1rem;
 }
 
-input, textarea {
+input,
+textarea {
     font-size: inherit;
     color: inherit;
     background-color: transparent;
     border: 2px solid #8887;
 }
-input:focus-visible, textarea:focus-visible {
+input:focus-visible,
+textarea:focus-visible {
     outline: none;
     border-color: var(--accent-fig);
 }
-input[type="text"], textarea {
-    padding: .2rem .4rem;
+input[type="text"],
+input[type="number"],
+textarea {
+    padding: 0.2rem 0.4rem;
 }
 
 .btn {
@@ -22,8 +26,10 @@ input[type="text"], textarea {
     width: fit-content;
     color: var(--accent-text);
     border: 2px solid var(--accent-fig);
-    padding: .4rem .8rem;
-    transition: background-color .2s ease, color .2s ease;
+    padding: 0.4rem 0.8rem;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
     font-weight: 600;
     cursor: pointer;
 }
