@@ -5,7 +5,7 @@
 
     import Field from "$lib/components/form/Field.svelte";
     import List from "$lib/components/form/List.svelte";
-    import { createEventDispatcher } from "svelte";
+    import { createEventDispatcher, getContext } from "svelte";
     import type { SupabaseClient } from "@supabase/supabase-js";
     import type { Database } from "$lib/supabase";
 
@@ -14,9 +14,10 @@
         saved: PositionData;
     }>();
 
+    const supabase = getContext<SupabaseClient<Database>>("supabase");
+
     /** If the division is passed, creation of position is assumed */
     export let division: number | null = null;
-    export let supabase: SupabaseClient<Database>;
     export let data: PositionData = {
         id: -1,
         name: "",
