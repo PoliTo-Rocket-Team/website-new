@@ -1,20 +1,22 @@
 <script lang="ts">
     import type { SubmitFunction } from "@sveltejs/kit";
-    import { fields, type PositionData } from "./validation";
+    import { fields, save, type PositionData } from "./validation";
     import { enhance } from "$app/forms";
 
     import Field from "$lib/components/form/Field.svelte";
     import List from "$lib/components/form/List.svelte";
     import { createEventDispatcher } from "svelte";
+    import type { SupabaseClient } from "@supabase/supabase-js";
+    import type { Database } from "$lib/supabase";
 
     const dispatch = createEventDispatcher<{
         cancel: void;
-        save: PositionData;
+        saved: PositionData;
     }>();
 
-    // export let supabase: SupabaseClient;
-    
-    export let creating: number | null = null;
+    /** If the division is passed, creation of position is assumed */
+    export let division: number | null = null;
+    export let supabase: SupabaseClient<Database>;
     export let data: PositionData = {
         id: -1,
         name: "",
@@ -26,18 +28,27 @@
         open: true,
     };
 
-    const submit: SubmitFunction = ({ cancel }) => {
+    let errors: string[] = [];
+    const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();
-        // dispatch("confirm");
+        const res = await save(formData, supabase);
+        errors = res.errors;
+        if (res.data) dispatch("saved", res.data);
     };
 </script>
 
-<form class="form-container" method="post" action="./" use:enhance={submit}>
+<form
+    class="form-container"
+    method="post"
+    action="/dashboard/positions"
+    use:enhance={submit}
+>
     {#if data.id > 0}
         <input type="hidden" name="id" value={data.id} />
     {/if}
     <Field label="Name" type="text" schema={fields.name} value={data.name} />
-    {#if creating}
+    {#if division}
+        <input type="hidden" name="division" value={division} />
         <Field
             label="Number"
             type="number"
@@ -70,6 +81,11 @@
     />
     <h4>Desirable skills</h4>
     <List name="desirable" schema={fields.desirable} values={data.desirable} />
+    <ul class="error">
+        {#each errors as e}
+            <li>{e}</li>
+        {/each}
+    </ul>
 
     <div class="btns">
         <button
