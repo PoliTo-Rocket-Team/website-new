@@ -55,6 +55,11 @@
 </label>
 
 <style>
+    span {
+        font-weight: 500;
+        font-size: 1rem;
+        margin-bottom: 0.2rem;
+    }
     label {
         display: flex;
         flex-direction: column;
