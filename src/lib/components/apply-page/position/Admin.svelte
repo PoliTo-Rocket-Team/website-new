@@ -12,7 +12,7 @@
     let edit = false;
 
     const dispatch = createEventDispatcher<{
-        // saved: PositionData;
+        saved: PositionData;
         delete: { id: number; name: string };
     }>();
 
@@ -30,7 +30,14 @@
     />
     <svelte:fragment slot="content">
         {#if edit}
-            <Form {data} on:saved on:cancel={() => (edit = false)} />
+            <Form
+                {data}
+                on:saved={e => {
+                    edit = false;
+                    dispatch("saved", e.detail);
+                }}
+                on:cancel={() => (edit = false)}
+            />
         {:else}
             <Content
                 description={data.description}
