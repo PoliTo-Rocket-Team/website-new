@@ -27,22 +27,29 @@
     }
 </script>
 
-<div>
+<div class="wrap">
     <ul
         use:dndzone={{ items, type: name, flipDurationMs }}
         on:consider={move}
         on:finalize={move}
     >
         {#each items as item, i (item.id)}
-            <li animate:flip={{ duration: flipDurationMs }}>
+            <li class="item" animate:flip={{ duration: flipDurationMs }}>
                 <input type="text" {name} bind:value={item.value} />
-                <button type="button" data-index={i} on:click={remove}
-                    >delete</button
+                <button
+                    type="button"
+                    class="del"
+                    data-index={i}
+                    on:click={remove}
                 >
+                    <div></div>
+                    <span>delete</span>
+                    <div></div>
+                </button>
             </li>
         {/each}
     </ul>
-    <button type="button" on:click={add}>Add</button>
+    <button type="button" class="btn btn--low add" on:click={add}>Add</button>
     <ul class="error">
         {#await getErrs( schema, items.map(v => v.value) ) then errs}
             {#each errs as e}
@@ -51,3 +58,58 @@
         {/await}
     </ul>
 </div>
+
+<style>
+    .wrap {
+        margin: 0.5rem 0;
+    }
+    .item {
+        display: flex;
+        align-items: center;
+        justify-content: stretch;
+        gap: 1ch;
+        padding: 0.2rem;
+    }
+    .item::before {
+        content: "";
+        height: 1.2rem;
+        width: 1.2rem;
+        background-image: radial-gradient(currentColor 0.06rem, transparent 0);
+        background-size: 0.3rem 0.3rem;
+        /* background-position: -0.15rem -0.15rem; */
+    }
+    input {
+        flex-grow: 1;
+    }
+    .del {
+        width: 1.8rem;
+        height: 1.8rem;
+        position: relative;
+        border-radius: 0.2rem;
+    }
+    .del:hover {
+        background-color: #8883;
+    }
+    .del span {
+        position: absolute;
+        transform: scale(0);
+    }
+    .del div {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        width: 80%;
+        height: 0.15rem;
+        border-radius: 0.1rem;
+        background-color: currentColor;
+    }
+    .del div:first-child {
+        transform: translateY(-50%) rotate(-45deg);
+    }
+    .del div:last-child {
+        transform: translateY(-50%) rotate(45deg);
+    }
+    .add {
+        margin-top: 0.5rem;
+    }
+</style>
