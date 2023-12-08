@@ -61,3 +61,9 @@ textarea {
 [data-theme="dark"] .error {
     color: #ff5454;
 }
+
+ul.error {
+    margin-top: 0.3rem;
+    padding-left: 1.8ch;
+    font-size: 0.8rem;
+}
