@@ -1,6 +1,11 @@
 <script>
     import "@fontsource/anonymous-pro";
+    import "@fontsource/plus-jakarta-sans/400-italic.css";
+    import Modal from "$lib/Modal.svelte";
+
     export let data;
+
+    let create = false;
 </script>
 
 <svelte:head>
@@ -16,7 +21,7 @@
         <th></th>
         <th>Name</th>
         <th>Lead</th>
-        <th>Actions</th>
+        <!-- <th>Actions</th> -->
     </tr>
     {#each data.open as d}
         <tr>
@@ -26,31 +31,57 @@
                     {d.name}
                 </a>
             </td>
-            <td>{d.lead?.first_name} {d.lead?.last_name}</td>
+            <td>
+                {#if d.lead}
+                    {d.lead.first_name} {d.lead.last_name}
+                {:else}
+                    <span class="low">Pending request</span>
+                {/if}
+            </td>
         </tr>
     {/each}
 </table>
 
-<button type="button" class="btn">Create a new division</button>
+<button
+    type="button"
+    class="btn"
+    on:click={() => {
+        create = true;
+    }}>Create a new division</button
+>
+<Modal bind:use={create} ch={50}>
+    <h2>New division</h2>
+    <p>
+        Name and code can only be changed later by the presidenti or IT lead: so
+        please pay attention and write them down correctly.
+    </p>
+</Modal>
 
 <h2>Closed divisions</h2>
 
-<table>
-    <tr>
-        <th>Code</th>
-        <th>Name</th>
-        <th>End date</th>
-    </tr>
-    {#each data.closed as d}
+{#if data.closed.length}
+    <table>
         <tr>
-            <td class="code">{d.code}</td>
-            <td>{d.name}</td>
-            <td>{d.end}</td>
+            <th></th>
+            <th>Name</th>
+            <th>End date</th>
         </tr>
-    {/each}
-</table>
+        {#each data.closed as d}
+            <tr>
+                <td class="code">{d.code}</td>
+                <td>{d.name}</td>
+                <td>{d.end}</td>
+            </tr>
+        {/each}
+    </table>
+{:else}
+    <p>There are no closed division yet.</p>
+{/if}
 
 <style>
+    h2:first-child {
+        margin-top: 0;
+    }
     table {
         border-collapse: collapse;
     }
@@ -90,6 +121,10 @@
     a:hover {
         /* background-color: #8787871a; */
         text-decoration: underline dashed var(--accent-fig);
+    }
+    .low {
+        font-style: italic;
+        opacity: 0.7;
     }
     button {
         margin-top: 2rem;
