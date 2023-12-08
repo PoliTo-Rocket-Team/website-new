@@ -41,25 +41,34 @@
     {#if data.id > 0}
         <input type="hidden" name="id" value={data.id} />
     {/if}
-    <Field label="Name" type="text" schema={fields.name} value={data.name} />
     {#if creating}
         <input type="hidden" name="division" value={data.division} />
         <input type="hidden" name="number" value={data.number} />
     {/if}
-    <Field
-        label="Form ID"
-        type="text"
-        schema={fields.form}
-        name="form"
-        value={data.form}
-        null_on_empty
-    />
+
+    <div class="split">
+        <Field
+            label="Name"
+            type="text"
+            schema={fields.name}
+            value={data.name}
+        />
+        <Field
+            label="Form ID"
+            type="text"
+            schema={fields.form}
+            name="form"
+            value={data.form}
+            null_on_empty
+        />
+    </div>
     <Field
         label="Description"
         type="textarea"
         schema={fields.description}
         value={data.description}
     />
+
     <h4>Required skills</h4>
     <p>
         Please, put here only the skills that it is impossible for a new member
@@ -89,8 +98,20 @@
 </form>
 
 <style>
+    .split {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 2rem;
+        margin-bottom: 1rem;
+    }
+    h4 {
+        font-weight: 500;
+        margin-top: 1.5rem;
+    }
     .btns {
         display: flex;
+        justify-content: end;
         column-gap: 1rem;
+        margin-top: 2rem;
     }
 </style>
