@@ -18,7 +18,7 @@
     $marker-dim: 0.3rem;
 
     summary {
-        padding: 0.8rem 0.5rem;
+        padding: 0.6rem 0.8rem;
         display: grid;
         grid-template-columns: 1fr auto auto $marker-dim;
         grid-auto-flow: dense;

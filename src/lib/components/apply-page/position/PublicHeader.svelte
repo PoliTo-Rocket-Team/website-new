@@ -16,15 +16,11 @@
 
 <style lang="scss">
     $marker-dim: 0.3rem;
-    $details-radius: 0.5rem;
-    $details-pad-x: 0.8rem;
-    $details-pad-y: 0.5rem;
-    $details-border: 2px solid #b3b3b3ba;
     $details-columns: 2.5fr 1fr 1fr auto $marker-dim;
     $gap: 1rem;
 
     summary {
-        padding: $details-pad-y $details-pad-x;
+        padding: 0.6rem 0.8rem;
     }
     .code {
         font-family: "Anonymous Pro", monospace;
