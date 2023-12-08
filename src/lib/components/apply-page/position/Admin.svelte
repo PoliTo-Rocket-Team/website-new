@@ -4,11 +4,21 @@
     import Content from "./Content.svelte";
     import Form from "./Form.svelte";
     import type { PositionData } from "./validation";
+    import { createEventDispatcher } from "svelte";
 
     export let data: PositionData;
     export let code: string;
 
     let edit = false;
+
+    const dispatch = createEventDispatcher<{
+        // saved: PositionData;
+        delete: { id: number; name: string };
+    }>();
+
+    function del() {
+        dispatch("delete", { id: data.id, name: data.name });
+    }
 </script>
 
 <Wrapper>
@@ -20,7 +30,7 @@
     />
     <svelte:fragment slot="content">
         {#if edit}
-            <Form {data} on:save />
+            <Form {data} on:saved />
         {:else}
             <Content
                 description={data.description}
@@ -32,7 +42,9 @@
                 <button type="button" class="btn" on:click={() => (edit = true)}
                     >Edit</button
                 >
-                <button type="button" class="btn btn--low">Delete</button>
+                <button type="button" class="btn btn--low" on:click={del}
+                    >Delete</button
+                >
             </div>
         {/if}
     </svelte:fragment>
