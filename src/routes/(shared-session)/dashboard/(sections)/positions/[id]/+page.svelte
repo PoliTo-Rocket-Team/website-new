@@ -81,11 +81,15 @@
 >
 
 <style>
+    h3 {
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
     .btns {
         display: flex;
         justify-content: end;
         column-gap: 1rem;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
     }
     .center {
         margin: 2rem auto;
