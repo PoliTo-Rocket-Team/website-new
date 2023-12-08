@@ -7,13 +7,20 @@
     export let label: string;
     export let name: string = label2name(label);
     export let type: "text" | "number" | "textarea";
+    export let null_on_empty = false;
 
     $: isnum = type === "number";
     let skip = true;
     let errors: string[] = [];
     async function oninput(this: HTMLInputElement | HTMLTextAreaElement) {
-        if (!skip)
-            errors = await getErrs(schema, isnum ? +this.value : this.value);
+        if (skip) return;
+        const v =
+            null_on_empty && !this.value.length
+                ? null
+                : isnum
+                  ? +this.value
+                  : this.value;
+        errors = await getErrs(schema, v);
     }
     async function startcheck(this: HTMLInputElement | HTMLTextAreaElement) {
         skip = false;
