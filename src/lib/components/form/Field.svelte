@@ -34,7 +34,7 @@
         <textarea
             {name}
             {value}
-            rows="10"
+            rows="8"
             on:input={oninput}
             on:change|once={startcheck}
         ></textarea>
