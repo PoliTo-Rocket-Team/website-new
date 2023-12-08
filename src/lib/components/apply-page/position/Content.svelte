@@ -3,10 +3,14 @@
     export let required: string[] | null;
     export let desirable: string[];
     export let form: string | null;
+
+    $: paragraphs = description.split("\n\n");
 </script>
 
 <h4>Description</h4>
-<p>{description}</p>
+{#each paragraphs as p}
+    <p>{p}</p>
+{/each}
 
 {#if required && required.length}
     <h4>Required skills</h4>
@@ -32,7 +36,7 @@
         rel="noreferrer">Apply</a
     >
 {:else}
-    <span>No google form is linked</span>
+    <span>(No google form is linked)</span>
 {/if}
 
 <style>
@@ -56,6 +60,11 @@
         margin-bottom: 0.5rem;
     }
     p {
-        margin-bottom: 0.5rem;
+        margin-top: 0.5rem;
+    }
+    span {
+        display: inline-block;
+        margin-top: 1.5rem;
+        opacity: 0.7;
     }
 </style>
