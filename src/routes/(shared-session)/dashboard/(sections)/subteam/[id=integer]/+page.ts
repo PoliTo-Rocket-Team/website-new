@@ -18,6 +18,6 @@ export const load: PageLoad = async ({ parent, params }) => {
     const open: typeof res.data = [];
     const closed: typeof res.data = [];
     for (var i = 0; i < res.data.length; i++)
-        (res.data[i].lead ? open : closed).push(res.data[i]);
+        (res.data[i].end ? closed : open).push(res.data[i]);
     return { subteam, open, closed };
 };
