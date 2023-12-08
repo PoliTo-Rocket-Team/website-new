@@ -8,6 +8,7 @@
     import { createEventDispatcher, getContext } from "svelte";
     import type { SupabaseClient } from "@supabase/supabase-js";
     import type { Database } from "$lib/supabase";
+    import { browser } from "$app/environment";
 
     const dispatch = createEventDispatcher<{
         cancel: void;
@@ -15,24 +16,17 @@
     }>();
 
     const supabase = getContext<SupabaseClient<Database>>("supabase");
+    if (!supabase && browser) alert("Supabse not passed by context");
 
     /** If the division is passed, creation of position is assumed */
-    export let division: number | null = null;
-    export let data: PositionData = {
-        id: -1,
-        name: "",
-        description: "",
-        desirable: [],
-        required: [],
-        number: 0,
-        form: "",
-        open: true,
-    };
+    export let creating = false;
+    export let data: PositionData;
 
     let errors: string[] = [];
     const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();
         const res = await save(formData, supabase);
+        console.log(res.errors);
         errors = res.errors;
         if (res.data) dispatch("saved", res.data);
     };
@@ -48,14 +42,9 @@
         <input type="hidden" name="id" value={data.id} />
     {/if}
     <Field label="Name" type="text" schema={fields.name} value={data.name} />
-    {#if division}
-        <input type="hidden" name="division" value={division} />
-        <Field
-            label="Number"
-            type="number"
-            schema={fields.number}
-            value={data.number}
-        />
+    {#if creating}
+        <input type="hidden" name="division" value={data.division} />
+        <input type="hidden" name="number" value={data.number} />
     {/if}
     <Field
         label="Form ID"
@@ -63,6 +52,7 @@
         schema={fields.form}
         name="form"
         value={data.form}
+        null_on_empty
     />
     <Field
         label="Description"
@@ -90,10 +80,17 @@
 
     <div class="btns">
         <button
-            type="button"
+            type={creating ? "reset" : "button"}
             class="btn btn--low"
             on:click={() => dispatch("cancel")}>Cancel</button
         >
         <button type="submit" class="btn">Save</button>
     </div>
 </form>
+
+<style>
+    .btns {
+        display: flex;
+        column-gap: 1rem;
+    }
+</style>
