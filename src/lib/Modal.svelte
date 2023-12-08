@@ -48,6 +48,9 @@
     :global([data-theme="light"]) dialog {
         box-shadow: 0 0 2rem #2a2a2a;
     }
+    :global([data-theme="dark"]) dialog {
+        border: 2px solid #8887;
+    }
     .content {
         /* width: 60ch; */
         max-width: 90vw;
