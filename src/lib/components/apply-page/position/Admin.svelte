@@ -30,7 +30,7 @@
     />
     <svelte:fragment slot="content">
         {#if edit}
-            <Form {data} on:saved />
+            <Form {data} on:saved on:cancel={() => (edit = false)} />
         {:else}
             <Content
                 description={data.description}
@@ -42,9 +42,9 @@
                 <button type="button" class="btn" on:click={() => (edit = true)}
                     >Edit</button
                 >
-                <button type="button" class="btn btn--low" on:click={del}
-                    >Delete</button
-                >
+                <button type="button" class="btn btn--low" on:click={del}>
+                    Delete
+                </button>
             </div>
         {/if}
     </svelte:fragment>
