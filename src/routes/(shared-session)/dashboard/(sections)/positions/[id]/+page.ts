@@ -17,5 +17,12 @@ export const load: PageLoad = async ({ parent, params }) => {
             message: "Could not load data",
             details: res.error.message,
         });
-    return { code, positions: res.data, division_name: division_data.name };
+    return {
+        positions: res.data,
+        division: {
+            code,
+            id: division_id,
+            name: division_data.name,
+        },
+    };
 };
