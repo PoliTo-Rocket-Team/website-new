@@ -11,7 +11,7 @@
 
     export let name: string;
     export let link: string;
-    export let texts: string[];
+    export let texts: string[] | null;
     export let img: string;
     export let theme: null | "dark" | "light" = null;
 
@@ -24,15 +24,27 @@
             <div class="img-wrapper" data-theme={theme}>
                 <img src="img/sponsors/{img}" alt="logo of {name}" />
             </div>
-            <h3>{name}</h3>
-        </div>
-        <div class="text">
-            {#each texts as t}
-                <p>{t}</p>
-            {/each}
-            <a href={link} target="_blank" on:click={preventNav}
-                >Visit their website</a
-            >
+
+            {#if texts}
+                <h3>{name}</h3>
+                <div class="text">
+                    {#each texts as t}
+                        <p>{t}</p>
+                    {/each}
+                    <a
+                        class="main--link"
+                        href={link}
+                        target="_blank"
+                        on:click={preventNav}>Visit their website</a
+                    >
+                </div>
+            {:else}
+                <h3>
+                    <a href={link} target="_blank" on:click={preventNav}
+                        >{name}</a
+                    >
+                </h3>
+            {/if}
         </div>
     </article>
 </Follow3D>
@@ -91,7 +103,13 @@
     p {
         margin-bottom: 0.5rem;
     }
+
     a {
+        color: var(--accent-fig);
+        text-decoration: none;
+    }
+
+    .main--link {
         margin-top: 0.5rem;
         display: inline-block;
         border: 2px solid var(--accent-fig);
@@ -133,13 +151,13 @@
 
     /* Disable briefly the anchor tag on mobile devices */
     @media (max-width: 50rem) {
-        a {
+        .main--link {
             clip-path: inset(0 0 100% 0);
             transition: clip-path 0ms 0.15s linear;
         }
-        article:hover a,
-        article:active a,
-        article:focus-within a {
+        article:hover .main--link,
+        article:active .main--link,
+        article:focus-within .main--link {
             clip-path: inset(0);
             transition: clip-path 0ms 0.01s linear;
         }

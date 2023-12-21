@@ -4,6 +4,9 @@
 
     import Partner from "./Partner.svelte";
     import partners from "./partners.json";
+
+    let mainPartners = partners.filter(p => p.texts !== null);
+    let mediaPartners = partners.filter(p => p.texts === null);
 </script>
 
 <svelte:head>
@@ -30,7 +33,15 @@
     <section aria-labelledby="main-partners">
         <h2 id="main-partners">Main partners</h2>
         <div class="grid">
-            {#each partners as p}
+            {#each mainPartners as p}
+                <Partner {...p} />
+            {/each}
+        </div>
+    </section>
+    <section aria-labelledby="media-partners">
+        <h2 id="media-partners">Media partners</h2>
+        <div class="grid">
+            {#each mediaPartners as p}
                 <Partner {...p} />
             {/each}
         </div>
