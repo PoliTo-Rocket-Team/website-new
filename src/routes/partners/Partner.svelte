@@ -21,11 +21,10 @@
 <Follow3D options={opts} {transform}>
     <article>
         <div class="cover">
-            <div class="img-wrapper" data-theme={theme}>
-                <img src="img/sponsors/{img}" alt="logo of {name}" />
-            </div>
-
             {#if texts}
+                <div class="img-wrapper" data-theme={theme}>
+                    <img src="img/sponsors/{img}" alt="logo of {name}" />
+                </div>
                 <h3>{name}</h3>
                 <div class="text">
                     {#each texts as t}
@@ -39,6 +38,14 @@
                     >
                 </div>
             {:else}
+                <div class="img-wrapper" data-theme={theme}>
+                    <a href={link} target="_blank" on:click={preventNav}
+                        ><img
+                            src="img/sponsors/{img}"
+                            alt="logo of {name}"
+                        /></a
+                    >
+                </div>
                 <h3>
                     <a href={link} target="_blank" on:click={preventNav}
                         >{name}</a
