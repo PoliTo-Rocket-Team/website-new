@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
     import Chief from "./Chief.svelte";
     import Lead from "./Lead.svelte";
     import Pie from "$lib/Pie.svelte";
@@ -9,6 +9,7 @@
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
     import { onMount } from "svelte";
+    import type { resolvePath } from "@sveltejs/kit";
 
     let ww = browser ? document.body.clientWidth - 2 : 0;
     onMount(() => (ww = document.body.clientWidth - 2));
@@ -16,6 +17,38 @@
     const angle = (45 / 180) * Math.PI;
     const cos = Math.sin(angle);
     const sin = Math.cos(angle);
+
+    interface Lead {
+        role: string;
+    }
+    interface Leads {
+        [key: string]: Lead[];
+    }
+
+    const leadsData: Leads = leads;
+
+    let data: any = []; // chiefs' and president's data
+
+    for (let project in leadsData) {
+        leadsData[project].forEach((lead: Lead) => {
+            if (lead.role === "President") {
+                data.push(lead);
+            } else if (lead.role === "Chief Engineer") {
+                let newLead = { ...lead, role: `${project} ${lead.role}` };
+                data.push(newLead);
+            } else if (lead.role === "Chief Operating Officer") {
+                data.push(lead);
+            }
+        });
+    }
+    const chiefAngles = [0, -Math.PI * 0.2, 0, Math.PI * 0.2];
+
+    const leadsWithAngles = data.map((lead: any, i: number) => {
+        return {
+            ...lead,
+            angle: chiefAngles[i],
+        };
+    });
 </script>
 
 <svelte:window
@@ -47,39 +80,13 @@
 
     <section>
         <div class="executive-view">
-            <Chief
-                president
-                firstname="Elena"
-                lastname="Dilorenzo"
-                role="President"
-                linkedin="elena-dilorenzo-294b5a20b"
-                img="Dilorenzo.jpg"
-                angle={0}
-            />
-            <Chief
-                angle={-Math.PI * 0.2}
-                firstname="Andrea"
-                lastname="Pantano"
-                role="Chief Operating Officer"
-                linkedin="andrea-pantano-84b805258"
-                img="Pantano.JPG"
-            />
-            <Chief
-                angle={-0}
-                firstname="Edoardo"
-                lastname="Viglietti"
-                role="Cavour Chief Engineer"
-                linkedin="edoardoviglietti8"
-                img="Viglietti.jpg"
-            />
-            <Chief
-                angle={Math.PI * 0.2}
-                firstname="Matteo"
-                lastname="Crachi"
-                role="Efesto Chief Engineer"
-                linkedin="matteo-crachi-37a060161"
-                img="Crachi.jpg"
-            />
+            {#each leadsWithAngles as lead (lead.firstname)}
+                <Chief
+                    {...lead}
+                    angle={lead.angle}
+                    president={lead.role === "President"}
+                />
+            {/each}
         </div>
     </section>
 
