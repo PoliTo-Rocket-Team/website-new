@@ -41,7 +41,7 @@
             }
         });
     }
-    const chiefAngles = [0, -Math.PI * 0.2, 0, Math.PI * 0.2];
+    const chiefAngles = [0, -Math.PI * 0.2, -0, Math.PI * 0.2];
 
     const leadsWithAngles = data.map((lead: any, i: number) => {
         return {
