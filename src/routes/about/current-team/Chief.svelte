@@ -2,7 +2,7 @@
     import IconLink from "$lib/icons/IconLink.svelte";
     import "@fontsource/plus-jakarta-sans/600.css";
 
-    export let img: string | undefined = undefined;
+    export let img: string | null | undefined = undefined;
     export let angle: number;
     export let firstname: string;
     export let lastname: string;
