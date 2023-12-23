@@ -20,7 +20,7 @@
             "firstname": "Luca",
             "lastname": "Loiodice",
             "highlight": false,
-            "linkedin": "luca loiodice",
+            "linkedin": "luca-loiodice-01l10",
             "role": "Additive Manufacturing",
             "img": "Loiodice.jpg"
         },
@@ -67,7 +67,6 @@
             "role": "President",
             "img": "Dilorenzo.jpg"
         }
-
     ],
     "Efesto": [
         {
@@ -82,7 +81,7 @@
             "firstname": "Cristian",
             "lastname": "Manfredi",
             "highlight": false,
-            "linkedin": "cristian manfredi",
+            "linkedin": "cristian-manfredi",
             "role": "Coordinator",
             "img": "Manfredi.jpeg"
         },
@@ -98,7 +97,7 @@
             "firstname": "Lorenzo",
             "lastname": "Guarino",
             "highlight": false,
-            "linkedin": "lorenzo guarino",
+            "linkedin": "lorenzoarena1234",
             "role": "Engine Cycle Division",
             "img": "guarino.jpg"
         },
@@ -106,7 +105,7 @@
             "firstname": "Daniele",
             "lastname": "Boccacciari",
             "highlight": false,
-            "linkedin": "daniele boccacciari",
+            "linkedin": "daniele-pice-6a425a291",
             "role": "Liquid System Architecture Division",
             "img": "Boccacciari.jpg"
         },
@@ -114,7 +113,7 @@
             "firstname": "Gloria",
             "lastname": "Nallo",
             "highlight": false,
-            "linkedin": "gloria nallo",
+            "linkedin": "gloria-nallo-19a277169",
             "role": "Thrust Chamber Assembly Division",
             "img": "nallo.jpg"
         },
@@ -138,7 +137,7 @@
             "firstname": "Giovanni",
             "lastname": "Ferrannini",
             "highlight": false,
-            "linkedin": "null",
+            "linkedin": "giovanni-ferrannini-4919441b8",
             "role": "Engine Control Strategy",
             "img": null
         }
@@ -161,20 +160,20 @@
             "img": "Saba.jpg"
         },
         {
-            "firstname": "Edoardo",
-            "lastname": "Viglietti",
+            "firstname": "Riccardo",
+            "lastname": "Di Maria",
             "highlight": false,
-            "linkedin": "edoardoviglietti",
+            "linkedin": "riccardo-savio-614741218",
             "role": "Finite Element Analysis",
-            "img": "Viglietti.jpg"
+            "img": "DiMaria.jpg"
         },
         {
-            "firstname": "Edoardo",
-            "lastname": "Viglietti",
+            "firstname": "Marco",
+            "lastname": "Donà",
             "highlight": false,
-            "linkedin": "edoardoviglietti",
-            "role": "Recovery (acting)",
-            "img": "Viglietti.jpg"
+            "linkedin": "marco-dona1601",
+            "role": "Recovery",
+            "img": null
         },
         {
             "firstname": "Orlando",
@@ -198,7 +197,7 @@
             "firstname": "Andrea",
             "lastname": "Pantano",
             "highlight": true,
-            "linkedin": "andrea pantano",
+            "linkedin": "andrea-pantano-84b805258",
             "role": "Chief Operating Officer",
             "img": "Pantano.JPG"
         },
@@ -206,7 +205,7 @@
             "firstname": "Andrea",
             "lastname": "Pantano",
             "highlight": false,
-            "linkedin": "andrea pantano",
+            "linkedin": "andrea-pantano-84b805258",
             "role": "Logistics (acting)",
             "img": "Pantano.JPG"
         },
@@ -222,7 +221,7 @@
             "firstname": "Yuri",
             "lastname": "Valle",
             "highlight": false,
-            "linkedin": "null",
+            "linkedin": "yuri-valle-7b5419294",
             "role": "Media",
             "img": null
         }
