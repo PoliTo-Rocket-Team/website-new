@@ -32,11 +32,11 @@
         <div class="stop-growth">
             <hr class="subtle" />
             <p>
-                During the 2022-2023 Academic Year, the Team is composed of more
-                than 85 between undergraduate students, graduate students, and
-                PhD candidates. Most of the Team members come from the
-                aerospace, mechanical, electronic and computer engineering
-                courses of Politecnico di Torino.
+                During the 2023-2024 Academic Year, the Team is composed of more
+                than 120 between undergraduate students and graduate students.
+                Most of the Team members come from the aerospace, mechanical,
+                electronic and computer engineering courses of Politecnico di
+                Torino.
             </p>
         </div>
     </div>
