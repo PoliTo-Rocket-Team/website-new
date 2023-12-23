@@ -57,17 +57,14 @@
             "img": null
         }
     ],
-
-    "President": [
-        {
-            "firstname": "Elena",
-            "lastname": "Dilorenzo",
-            "highlight": null,
-            "linkedin": "elena-dilorenzo-294b5a20b",
-            "role": "President",
-            "img": "Dilorenzo.jpg"
-        }
-    ],
+    "President": {
+        "firstname": "Elena",
+        "lastname": "Dilorenzo",
+        "highlight": null,
+        "linkedin": "elena-dilorenzo-294b5a20b",
+        "role": "President",
+        "img": "Dilorenzo.jpg"
+    },
     "Efesto": [
         {
             "firstname": "Matteo",

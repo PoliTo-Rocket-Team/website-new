@@ -9,46 +9,9 @@
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
     import { onMount } from "svelte";
-    import type { resolvePath } from "@sveltejs/kit";
 
     let ww = browser ? document.body.clientWidth - 2 : 0;
     onMount(() => (ww = document.body.clientWidth - 2));
-
-    const angle = (45 / 180) * Math.PI;
-    const cos = Math.sin(angle);
-    const sin = Math.cos(angle);
-
-    interface Lead {
-        role: string;
-    }
-    interface Leads {
-        [key: string]: Lead[];
-    }
-
-    const leadsData: Leads = leads;
-
-    let data: any = []; // chiefs' and president's data
-
-    for (let project in leadsData) {
-        leadsData[project].forEach((lead: Lead) => {
-            if (lead.role === "President") {
-                data.push(lead);
-            } else if (lead.role === "Chief Engineer") {
-                let newLead = { ...lead, role: `${project} ${lead.role}` };
-                data.push(newLead);
-            } else if (lead.role === "Chief Operating Officer") {
-                data.push(lead);
-            }
-        });
-    }
-    const chiefAngles = [0, -Math.PI * 0.2, -0, Math.PI * 0.2];
-
-    const leadsWithAngles = data.map((lead: any, i: number) => {
-        return {
-            ...lead,
-            angle: chiefAngles[i],
-        };
-    });
 </script>
 
 <svelte:window
@@ -80,13 +43,14 @@
 
     <section>
         <div class="executive-view">
-            {#each leadsWithAngles as lead (lead.firstname)}
-                <Chief
-                    {...lead}
-                    angle={lead.angle}
-                    president={lead.role === "President"}
-                />
-            {/each}
+            <Chief {...leads.President} angle={0} president />
+            <Chief {...leads.Operations[0]} angle={-Math.PI * 0.2} />
+            <Chief {...leads.VES[0]} angle={0} role="VES Chief Engineer" />
+            <Chief
+                {...leads.Efesto[0]}
+                angle={Math.PI * 0.2}
+                role="Efesto Chief Engineer"
+            />
         </div>
     </section>
 
