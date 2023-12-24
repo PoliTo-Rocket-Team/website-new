@@ -38,14 +38,16 @@
             {/each}
         </div>
     </section>
-    <section aria-labelledby="media-partners">
-        <h2 id="media-partners">Media partners</h2>
-        <div class="grid">
-            {#each mediaPartners as p}
-                <Partner {...p} />
-            {/each}
-        </div>
-    </section>
+    {#if mediaPartners.length}
+        <section aria-labelledby="media-partners">
+            <h2 id="media-partners">Media partners</h2>
+            <div class="grid">
+                {#each mediaPartners as p}
+                    <Partner {...p} />
+                {/each}
+            </div>
+        </section>
+    {/if}
 </main>
 
 <style>
