@@ -86,7 +86,7 @@
                 We are the rocket engineering student team of Politecnico di
                 Torino, entirely dedicated to the research, design, and
                 construction of rocket engines and experimental rockets with
-                scientific payload capability. We are a group of more than 85
+                scientific payload capability. We are a group of more than 120
                 undergraduate, graduate and doctoral engineering students with
                 great plans for the future.
             </p>
