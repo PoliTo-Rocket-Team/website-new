@@ -1,5 +1,21 @@
-<script context="module">
+<script context="module" lang="ts">
     const space_re = / /g;
+    const accent_a = /à/g;
+    const accent_e = /èé/g;
+    const accent_i = /ì/g;
+    const accent_o = /ò/g;
+    const accent_u = /ù/g;
+
+    function normalize(s: string) {
+        return s
+            .toLowerCase()
+            .replace(space_re, "")
+            .replace(accent_a, "a")
+            .replace(accent_e, "e")
+            .replace(accent_i, "i")
+            .replace(accent_o, "o")
+            .replace(accent_u, "u");
+    }
 </script>
 
 <script lang="ts">
@@ -8,11 +24,9 @@
 
     export let firstname: string;
     export let lastname: string;
-    export let mail = `${firstname
-        .toLowerCase()
-        .replace(space_re, "")}.${lastname
-        .toLowerCase()
-        .replace(space_re, "")}@politorocketteam.it`;
+    export let mail = `${normalize(firstname)}.${normalize(
+        lastname
+    )}@politorocketteam.it`;
     export let role: string;
     export let img: string | null = null;
     export let linkedin: string;
