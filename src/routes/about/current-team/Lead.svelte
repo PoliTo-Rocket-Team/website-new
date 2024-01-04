@@ -4,7 +4,7 @@
 
     export let firstname: string;
     export let lastname: string;
-    export let mail = `${firstname.toLowerCase().replace(" ", "")}.${lastname
+    export let mail = `${firstname.toLowerCase().replace(/ /g, "")}.${lastname
         .toLowerCase()
         .replace(" ", "")}@politorocketteam.it`;
     export let role: string;
