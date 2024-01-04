@@ -69,5 +69,12 @@
             "TekRevolution is an esteemed Italian engineering company, renowned for their meticulous understanding of technical needs and delivery of exceptional results. The company operates in different industrial sectors, thanks to its multidisciplinary team of highly qualified experts. They have extensive experience in technology integration and project management.",
             "TekRevolution provides technical support to the Team. The company lends their expertise and training to ensure the success of our groundbreaking projects."
         ]
+    },
+    {
+        "name": "JEToP",
+        "img": "JEToP.png",
+        "theme": "dark",
+        "link": "https://www.jetop.com/",
+        "texts": null
     }
 ]
