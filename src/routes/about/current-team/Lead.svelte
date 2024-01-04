@@ -1,12 +1,18 @@
+<script context="module">
+    const space_re = / /g;
+</script>
+
 <script lang="ts">
     import IconLink from "$lib/icons/IconLink.svelte";
     import "@fontsource/plus-jakarta-sans/400-italic.css";
 
     export let firstname: string;
     export let lastname: string;
-    export let mail = `${firstname.toLowerCase().replace(/ /g, "")}.${lastname
+    export let mail = `${firstname
         .toLowerCase()
-        .replace(" ", "")}@politorocketteam.it`;
+        .replace(space_re, "")}.${lastname
+        .toLowerCase()
+        .replace(space_re, "")}@politorocketteam.it`;
     export let role: string;
     export let img: string | null = null;
     export let linkedin: string;
