@@ -1,6 +1,7 @@
 <script lang="ts">
     import IconLink from "$lib/icons/IconLink.svelte";
     import "@fontsource/plus-jakarta-sans/600.css";
+    import { normalize } from "./mail";
 
     export let img: string | null | undefined = undefined;
     export let angle: number;
@@ -11,9 +12,9 @@
     export let president = false;
 
     const re = / /;
-    $: mail = `${firstname.replace(re, "").toLowerCase()}.${lastname
-        .replace(re, "")
-        .toLowerCase()}@politorocketteam.it`;
+    $: mail = `${normalize(firstname)}.${normalize(
+        lastname
+    )}@politorocketteam.it`;
 </script>
 
 <div
