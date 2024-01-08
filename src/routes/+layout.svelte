@@ -11,6 +11,8 @@
     import { preference, theme } from "$lib/theme";
     import { throttle } from "$lib/timing";
 
+    let currentYear = new Date().getFullYear(); // for footer
+
     const aboutCombo: ComboRoute[] = [
         { url: "mission-vision", name: "Mission" },
         { url: "current-team", name: "The Team" },
@@ -335,7 +337,7 @@
         ></path>
     </svg>
     <footer>
-        <div class="center-lg">PoliTo Rocket Team &trade; 2023</div>
+        <div class="center-lg">PoliTo Rocket Team &trade; {currentYear}</div>
     </footer>
 </div>
 
