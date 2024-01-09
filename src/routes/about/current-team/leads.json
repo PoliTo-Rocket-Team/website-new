@@ -123,12 +123,12 @@
             "img": "Magnanini.jpeg"
         },
         {
-            "firstname": "El Sheikh Isber Charbel",
+            "firstname": "Isber",
             "lastname": "Abdo",
             "highlight": false,
             "linkedin": "isber7abdo",
             "role": "Test Bench",
-            "img": null
+            "img": "Abdo.jpg"
         },
         {
             "firstname": "Giovanni",
@@ -178,7 +178,7 @@
             "highlight": false,
             "linkedin": "orlando-nardo-1466a9257",
             "role": "Design and Additive Manufacturing",
-            "img": null
+            "img": "Nardo.jpg"
         },
         {
             "firstname": "Samuele",
@@ -199,12 +199,12 @@
             "img": "Pantano.JPG"
         },
         {
-            "firstname": "Andrea",
-            "lastname": "Pantano",
+            "firstname": "Giovanni",
+            "lastname": "Del Vecchio",
             "highlight": false,
-            "linkedin": "andrea-pantano-84b805258",
-            "role": "Logistics (acting)",
-            "img": "Pantano.JPG"
+            "linkedin": "giovanni-delvecchio",
+            "role": "Logistics",
+            "img": null
         },
         {
             "firstname": "Federico",
