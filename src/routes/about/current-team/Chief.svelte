@@ -11,10 +11,9 @@
     export let linkedin: string;
     export let president = false;
 
-    const re = / /;
-    $: mail = `${normalize(firstname)}.${normalize(
-        lastname
-    )}@politorocketteam.it`;
+    $: mail = president
+        ? "president@politorocketteam.it"
+        : `${normalize(firstname)}.${normalize(lastname)}@politorocketteam.it`;
 </script>
 
 <div
