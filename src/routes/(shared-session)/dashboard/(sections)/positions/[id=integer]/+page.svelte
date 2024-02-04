@@ -19,6 +19,12 @@
         await data.supabase.from("positions").delete().eq("id", deleting.id);
         deleting = null;
     }
+    async function handelOpen(event: any) {
+        await data.supabase
+            .from("positions")
+            .update({ open: event.detail.open })
+            .eq("id", event.detail.id);
+    }
 </script>
 
 <svelte:head>
@@ -68,6 +74,7 @@
             data.positions[i] = e.detail;
         }}
         on:delete={e => (deleting = e.detail)}
+        on:open={handelOpen}
     />
 {:else}
     <p>No positions found</p>

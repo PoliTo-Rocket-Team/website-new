@@ -13,6 +13,7 @@
     const dispatch = createEventDispatcher<{
         cancel: void;
         saved: PositionData;
+        open: boolean;
     }>();
 
     const supabase = getContext<SupabaseClient<Database>>("supabase");

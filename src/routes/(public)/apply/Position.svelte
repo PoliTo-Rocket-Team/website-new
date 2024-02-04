@@ -13,4 +13,3 @@
     </svelte:fragment>
     <slot slot="content" />
 </Base>
-

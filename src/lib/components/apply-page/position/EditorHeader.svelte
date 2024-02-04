@@ -1,15 +1,23 @@
 <script lang="ts">
     import "@fontsource/anonymous-pro/400.css";
+    import { createEventDispatcher } from "svelte";
     export let role: string;
     export let code: string;
     export let open: boolean;
+    const dispatch = createEventDispatcher<{
+        open: boolean;
+    }>();
+
+    function handelOpen() {
+        dispatch("open", open);
+    }
 </script>
 
 <summary>
     <h3>{role}</h3>
     <div class="code">{code}</div>
     <label class="switch">
-        <input type="checkbox" bind:checked={open} />
+        <input type="checkbox" bind:checked={open} on:click={handelOpen} />
         <span class="slider" />
     </label>
 </summary>

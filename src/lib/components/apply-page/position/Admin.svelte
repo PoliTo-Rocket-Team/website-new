@@ -14,10 +14,17 @@
     const dispatch = createEventDispatcher<{
         saved: PositionData;
         delete: { id: number; name: string };
+        open: { open: boolean; id: number };
     }>();
 
     function del() {
         dispatch("delete", { id: data.id, name: data.name });
+    }
+    function handelOpen() {
+        data.open = !data.open;
+        let information = { open: data.open, id: data.id };
+
+        dispatch("open", information);
     }
 </script>
 
@@ -27,6 +34,7 @@
         code="{code}-{data.number.toString().padStart(3, '0')}"
         slot="header"
         open={data.open}
+        on:open={handelOpen}
     />
     <svelte:fragment slot="content">
         {#if edit}
