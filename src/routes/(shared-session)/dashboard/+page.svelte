@@ -7,23 +7,36 @@
 
     export let data: PageData;
 
-    const transform = (x: number, y: number) => `rotate3d(${-y},${x},0,${-15*Math.hypot(x,y)}deg)`;
+    const transform = (x: number, y: number) =>
+        `rotate3d(${-y},${x},0,${-15 * Math.hypot(x, y)}deg)`;
 </script>
 
 <svelte:head>
-    <title>{data.person ? data.person.first_name + "'s panel | " : ""} PRT admin program</title>
+    <title
+        >{data.person ? data.person.first_name + "'s panel | " : ""} PRT admin program</title
+    >
 </svelte:head>
 
 <main>
     {#if !data.person}
         <h1>Hi!</h1>
-        <p>It seems like there's still no user data linked to your user id. In the future the invitation process will be entirely automatic, but in the meantime please notify the IT lead of your situation.</p>
-        <p style="margin-top: .5rem;">User ID: <b>{data.user.id}</b><br>Email: <b>{data.user.email}</b></p>
-        <form action="/auth/logout" method="post" use:enhance={async ({ cancel }) => {
-            cancel();
-            await data.supabase.auth.signOut();
-            goto("/auth/login");
-        }}>
+        <p>
+            It seems like there's still no user data linked to your user id. In
+            the future the invitation process will be entirely automatic, but in
+            the meantime please notify the IT lead of your situation.
+        </p>
+        <p style="margin-top: .5rem;">
+            User ID: <b>{data.user.id}</b><br />Email: <b>{data.user.email}</b>
+        </p>
+        <form
+            action="/auth/logout"
+            method="post"
+            use:enhance={async ({ cancel }) => {
+                cancel();
+                await data.supabase.auth.signOut();
+                goto("/auth/login");
+            }}
+        >
             <button type="submit">Logout</button>
         </form>
     {:else}
@@ -43,7 +56,7 @@
             {#each data.subteams as s}
                 <article>
                     <Follow3D {transform}>
-                        <a href="/dashboard/positions/{s.id}">
+                        <a href="/dashboard/subteam/{s.id}">
                             <span class="water">{s.code}</span>
                             <h2>{s.name}</h2>
                         </a>
@@ -53,10 +66,31 @@
             <article>
                 <Follow3D {transform}>
                     <a href="/dashboard/bureaucracy">
-                        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="30" height="30" viewBox="0,0,255.98959,255.98959" style="fill:#000000;">
-                            <path d="M0,255.98959v-255.98959h255.98959v255.98959z"  fill-opacity="0"  fill="#000000" fill-rule="nonzero" stroke="none"></path>
-                            <g transform="scale(8.53333,8.53333)" fill="var(--accent-fig)" fill-rule="nonzero" stroke="none">
-                                <path d="M24.707,8.793l-6.5,-6.5c-0.188,-0.188 -0.442,-0.293 -0.707,-0.293h-10.5c-1.105,0 -2,0.895 -2,2v22c0,1.105 0.895,2 2,2h16c1.105,0 2,-0.895 2,-2v-16.5c0,-0.265 -0.105,-0.519 -0.293,-0.707zM18,21h-8c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1h8c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1zM20,17h-10c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1h10c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1zM18,10c-0.552,0 -1,-0.448 -1,-1v-5.096l6.096,6.096z"></path>
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            x="0px"
+                            y="0px"
+                            width="30"
+                            height="30"
+                            viewBox="0,0,255.98959,255.98959"
+                            style="fill:#000000;"
+                        >
+                            <path
+                                d="M0,255.98959v-255.98959h255.98959v255.98959z"
+                                fill-opacity="0"
+                                fill="#000000"
+                                fill-rule="nonzero"
+                                stroke="none"
+                            ></path>
+                            <g
+                                transform="scale(8.53333,8.53333)"
+                                fill="var(--accent-fig)"
+                                fill-rule="nonzero"
+                                stroke="none"
+                            >
+                                <path
+                                    d="M24.707,8.793l-6.5,-6.5c-0.188,-0.188 -0.442,-0.293 -0.707,-0.293h-10.5c-1.105,0 -2,0.895 -2,2v22c0,1.105 0.895,2 2,2h16c1.105,0 2,-0.895 2,-2v-16.5c0,-0.265 -0.105,-0.519 -0.293,-0.707zM18,21h-8c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1h8c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1zM20,17h-10c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1h10c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1zM18,10c-0.552,0 -1,-0.448 -1,-1v-5.096l6.096,6.096z"
+                                ></path>
                             </g>
                         </svg>
                         <h2>Bureaucracy</h2>
@@ -66,7 +100,12 @@
             <article>
                 <Follow3D {transform}>
                     <a href="/dashboard/account">
-                        <img src={data.pic} alt="Hopefully your face" data-seed={data.person.first_name} on:error={fiximg}>
+                        <img
+                            src={data.pic}
+                            alt="Hopefully your face"
+                            data-seed={data.person.first_name}
+                            on:error={fiximg}
+                        />
                         <h2>Account</h2>
                     </a>
                 </Follow3D>
@@ -84,7 +123,7 @@
     }
     button {
         color: var(--accent-text);
-        padding: .4rem .7rem;
+        padding: 0.4rem 0.7rem;
         border: 1px solid var(--accent-text);
         margin-top: 1rem;
     }
@@ -136,8 +175,11 @@
             /* perspective: var(--perspective); */
             transform-style: preserve-3d;
         }
-        h2, .water, img, svg {
-            transition: transform .2s;
+        h2,
+        .water,
+        img,
+        svg {
+            transition: transform 0.2s;
         }
         h2 {
             transform: translateZ(0rem);
