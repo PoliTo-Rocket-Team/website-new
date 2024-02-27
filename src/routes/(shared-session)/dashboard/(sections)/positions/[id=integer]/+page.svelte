@@ -9,14 +9,24 @@
     export let data: PageData;
     setContext("supabase", data.supabase);
     let deleting: { id: number; name: string } | null = null;
-    let showAdd = false;
 
-    let newPos = emptyPositionData(data.division.id);
-    $: newPos.number = (data.positions.length && data.positions[0].number) + 1;
+    let newPos: null | ReturnType<typeof emptyPositionData> = null;
 
     async function handelDelete() {
         if (!deleting) return;
-        await data.supabase.from("positions").delete().eq("id", deleting.id);
+        const res = await data.supabase
+            .from("positions")
+            .delete()
+            .eq("id", deleting.id);
+        if (res.error)
+            alert(
+                `Could not delete position "${deleting.name}":\n\n${res.error.details}`
+            );
+        else {
+            const i = data.positions.findIndex(v => v.id === deleting?.id);
+            data.positions.splice(i, 1);
+            data.positions = data.positions;
+        }
         deleting = null;
     }
     async function handleOpen(
@@ -41,17 +51,21 @@
 
 <h1>{data.division.name} positions</h1>
 
-<Modal bind:use={showAdd} empty={false}>
+<Modal
+    bind:use={newPos}
+    empty={emptyPositionData(data.division.id)}
+    let:data={pos_data}
+>
     <h3>Add a new position</h3>
     <Position.Form
         creating
-        data={emptyPositionData(data.division.id)}
-        on:cancel={() => (showAdd = false)}
+        data={pos_data}
+        on:cancel={() => (newPos = null)}
         on:saved={e => {
             console.log("saved");
             data.positions.splice(0, 0, e.detail);
             data.positions = data.positions;
-            showAdd = false;
+            newPos = null;
         }}
     />
 </Modal>
@@ -91,7 +105,10 @@
 <button
     class="btn center"
     on:click={() => {
-        showAdd = true;
+        newPos = emptyPositionData(
+            data.division.id,
+            (data.positions.length && data.positions[0].number) + 1
+        );
     }}>Add a new position</button
 >
 

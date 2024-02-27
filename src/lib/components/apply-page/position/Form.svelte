@@ -24,12 +24,19 @@
     export let data: PositionData;
 
     let errors: string[] = [];
-    const submit: SubmitFunction = async ({ cancel, formData }) => {
+    const submit: SubmitFunction = async ({
+        cancel,
+        formData,
+        formElement,
+    }) => {
         cancel();
         const res = await save(formData, supabase);
         console.log(res.errors);
         errors = res.errors;
-        if (res.data) dispatch("saved", res.data);
+        if (res.data) {
+            dispatch("saved", res.data);
+            formElement.reset();
+        }
     };
 </script>
 

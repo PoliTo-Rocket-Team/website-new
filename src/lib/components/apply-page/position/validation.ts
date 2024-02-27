@@ -4,7 +4,10 @@ import * as yup from "yup";
 
 export type PositionData = Database["public"]["Tables"]["positions"]["Row"];
 
-export function emptyPositionData(division: number): PositionData {
+export function emptyPositionData(
+    division: number,
+    num: number = 1
+): PositionData {
     return {
         id: -1,
         division,
@@ -12,7 +15,7 @@ export function emptyPositionData(division: number): PositionData {
         description: "",
         desirable: [],
         required: [],
-        number: 1,
+        number: num,
         form: "",
         open: true,
     };
