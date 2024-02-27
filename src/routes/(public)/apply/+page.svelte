@@ -1,24 +1,17 @@
 <script lang="ts">
-    import "../../../lib/components/apply-page/consts.scss";
     import "@fontsource/anonymous-pro/400.css";
-    import Position from "./Position.svelte";
+    import { Display } from "$lib/components/apply-page/position";
     import type { PageData } from "./$types";
     import FAQs from "./FAQs.svelte";
 
-    // import positions from "./data.json";
     export let data: PageData;
-    let positions = data.positions;
-    // console.log("inside page , data : ", data);
 </script>
 
 <svelte:head>
     <title>Apply - PoliTo Rocket Team</title>
     <meta
-       
         name="description"
-       
         content="Get Involved! PoliTo Rocket Team has numerous positions available for undergraduate and graduate students of Politecnico di Torino"
-   
     />
 </svelte:head>
 
@@ -37,122 +30,30 @@
             >
         </p>
     </div>
-    <section aria-labelledby="positions" class="positions">
-        <h2 id="positions">Open positions</h2>
-        <div class="position-labels on-lg" aria-hidden="true">
-            <span>Role</span>
-            <span>Subteam</span>
-            <span>Division</span>
-            <div class="code-label"><span>Code</span></div>
-        </div>
-        {#each positions as pos}
-            <Position
-                role={pos.name}
-                subteam={"aaa"}
-                division={"bbb"}
-                code={"vvv"}
-            >
-                <h4>Description</h4>
-                {#if Array.isArray(pos.description)}
-                    {#each pos.description as paragraph}
-                        {#if Array.isArray(paragraph)}
-                            <ul>
-                                {#each paragraph as item}
-                                    <li>{item}</li>
-                                {/each}
-                            </ul>
-                        {:else}
-                            <p>{paragraph}</p>
-                        {/if}
-                    {/each}
-                {:else}
-                    <p>{pos.description}</p>
-                {/if}
-                {#if pos.required}
-                    <h4>Required skills</h4>
-                    <ul>
-                        {#each pos.required as item}
-                            <li>{item}</li>
-                        {/each}
-                    </ul>
-                {/if}
-                {#if pos.desirable}
-                    <h4>Desirable skills</h4>
-                    <ul>
-                        {#each pos.desirable as item}
-                            <li>{item}</li>
-                        {/each}
-                    </ul>
-                {/if}
-                <a
-                    class="btn"
-                    href="https://forms.gle/{pos.form}"
-                    target="_blank"
-                    rel="noreferrer">Apply</a
-                >
-            </Position>
-        {/each}
-    </section>
-    <!-- <section aria-labelledby="positions" class="positions">
-        <h2 id="positions">Open positions</h2>
-        <div class="position-labels on-lg" aria-hidden="true">
-            <span>Role</span>
-            <span>Subteam</span>
-            <span>Division</span>
-            <div class="code-label"><span>Code</span></div>
-        </div>
-        {#each positions as pos}
-            <Position role={pos.name} subteam={pos.subteam} division={pos.division} code={pos.code}>
-                <h4>Description</h4>
-                {#if Array.isArray(pos.description)}
-                    {#each pos.description as paragraph}
-                        {#if Array.isArray(paragraph)}
-                            <ul>
-                                {#each paragraph as item}
-                                    <li>{item}</li>
-                                {/each}
-                            </ul>
-                        {:else}
-                            <p>{paragraph}</p>
-                        {/if}
-                    {/each}
-                {:else}
-                    <p>{pos.description}</p>
-                {/if}
-                {#if pos.required}
-                    <h4>Required skills</h4>
-                    <ul>
-                        {#each pos.required as item}
-                            <li>{item}</li>
-                        {/each}
-                    </ul>
-                {/if}
-                {#if pos.desirable}
-                    <h4>Desirable skills</h4>
-                    <ul>
-                        {#each pos.desirable as item}
-                            <li>{item}</li>
-                        {/each}
-                    </ul>
-                {/if}
-                <a class="btn" href="https://forms.gle/{pos.form}" target="_blank" rel="noreferrer">Apply</a>
-            <p class="disclaimer">Please be informed that your work will be entirely voluntary. As we are a student team of Politecnico di Torino, we do not offer any paid employment.</p>
-
-            </Position>
-        {/each}
-    </section> -->
-
+    {#if data.positions && data.positions.length}
+        <section aria-labelledby="positions" class="positions">
+            <h2 id="positions">Open positions</h2>
+            <div class="position-labels on-lg" aria-hidden="true">
+                <span>Role</span>
+                <span>Subteam</span>
+                <span>Division</span>
+                <div class="code-label"><span>Code</span></div>
+            </div>
+            {#each data.positions as pos}
+                <Display {...pos} />
+            {/each}
+        </section>
+    {/if}
     <section aria-labelledby="faqs">
         <h2 id="faqs" class="section-title">
             <abbr title="Frequently Asked Questions">FAQs</abbr>
         </h2>
         <FAQs data={data.faqs} />
-        <!-- <FAQsOld  /> -->
     </section>
 </main>
 
 <style lang="scss">
-    @use "../../../lib/components/apply-page/consts.scss" as *;
+    @use "$lib/components/apply-page/consts.scss" as *;
 
     section {
         max-width: 75ch;
@@ -168,41 +69,6 @@
     }
 
     $text-margin: 0.5rem;
-    .positions {
-        h4:not(:first-child) {
-            margin-top: 3 * $text-margin;
-        }
-        h4 {
-            margin-bottom: $text-margin;
-        }
-        p + ul {
-            margin-top: 0.5 * $text-margin;
-        }
-        ul + p,
-        p + p {
-            margin-top: $text-margin;
-        }
-        ul {
-            padding-left: 2ch;
-        }
-    }
-    .btn {
-        display: block;
-        padding: 0.4em 0.7em;
-        border: 2px solid var(--accent-fig);
-        width: fit-content;
-        text-decoration: none;
-        font-weight: 600;
-        margin: 2rem auto;
-    }
-    .btn:focus {
-        text-decoration: underline;
-    }
-    .disclaimer {
-        margin-top: 1.5rem;
-        font-size: 0.9rem;
-        opacity: 0.9;
-    }
     @media (min-width: 50rem) {
         h2 {
             text-align: center;
@@ -214,12 +80,6 @@
             grid-auto-flow: dense;
             align-items: center;
             column-gap: $gap;
-        }
-        .disclaimer {
-            max-width: 55ch;
-            text-align: center;
-            margin-left: auto;
-            margin-right: auto;
         }
     }
 </style>

@@ -4,7 +4,7 @@
     import Content from "./Content.svelte";
     import Disclaimer from "./Disclaimer.svelte";
 
-    export let role: string;
+    export let name: string;
     export let subteam: string;
     export let division: string;
     export let code: string;
@@ -15,7 +15,7 @@
 </script>
 
 <Wrapper>
-    <Header {role} {subteam} {division} {code} slot="header" />
+    <Header role={name} {subteam} {division} {code} slot="header" />
     <svelte:fragment slot="content">
         <Content {description} {required} {desirable} {form} />
         <Disclaimer />
