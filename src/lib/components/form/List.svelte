@@ -82,13 +82,18 @@
         flex-grow: 1;
     }
     .del {
-        width: 1.8rem;
-        height: 1.8rem;
+        width: 1.5rem;
+        height: 1.5rem;
         position: relative;
         border-radius: 0.2rem;
+        opacity: 0.5;
+        transition:
+            background-color 0.1s,
+            opacity 0.1s;
     }
     .del:hover {
         background-color: #8883;
+        opacity: 1;
     }
     .del span {
         position: absolute;
