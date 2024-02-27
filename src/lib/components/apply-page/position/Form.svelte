@@ -84,7 +84,7 @@
     </p>
     <List
         name="required"
-        schema={fields.desirable}
+        schema={fields.required}
         values={data.required || []}
     />
     <h4>Desirable skills</h4>
