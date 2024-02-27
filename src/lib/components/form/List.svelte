@@ -35,7 +35,12 @@
     >
         {#each items as item, i (item.id)}
             <li class="item" animate:flip={{ duration: flipDurationMs }}>
-                <input type="text" {name} bind:value={item.value} />
+                <input
+                    type="text"
+                    autocomplete="off"
+                    {name}
+                    bind:value={item.value}
+                />
                 <button
                     type="button"
                     class="del"
