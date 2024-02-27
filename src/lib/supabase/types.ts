@@ -6,7 +6,7 @@ export type Json =
     | { [key: string]: Json | undefined }
     | Json[];
 
-export interface Database {
+export type Database = {
     public: {
         Tables: {
             chiefs: {
@@ -191,6 +191,7 @@ export interface Database {
             people: {
                 Row: {
                     first_name: string;
+                    has_pp: boolean;
                     id: number;
                     last_name: string;
                     linkedin: string | null;
@@ -198,6 +199,7 @@ export interface Database {
                 };
                 Insert: {
                     first_name: string;
+                    has_pp?: boolean;
                     id?: number;
                     last_name: string;
                     linkedin?: string | null;
@@ -205,6 +207,7 @@ export interface Database {
                 };
                 Update: {
                     first_name?: string;
+                    has_pp?: boolean;
                     id?: number;
                     last_name?: string;
                     linkedin?: string | null;
@@ -329,6 +332,8 @@ export interface Database {
                 Row: {
                     chief: number | null;
                     code: string;
+                    coordinator1: number | null;
+                    coordinator2: number | null;
                     end: string | null;
                     id: number;
                     name: string;
@@ -337,6 +342,8 @@ export interface Database {
                 Insert: {
                     chief?: number | null;
                     code: string;
+                    coordinator1?: number | null;
+                    coordinator2?: number | null;
                     end?: string | null;
                     id?: number;
                     name: string;
@@ -345,12 +352,28 @@ export interface Database {
                 Update: {
                     chief?: number | null;
                     code?: string;
+                    coordinator1?: number | null;
+                    coordinator2?: number | null;
                     end?: string | null;
                     id?: number;
                     name?: string;
                     title_name?: string;
                 };
                 Relationships: [
+                    {
+                        foreignKeyName: "public_subteams_coordinator1_fkey";
+                        columns: ["coordinator1"];
+                        isOneToOne: false;
+                        referencedRelation: "people";
+                        referencedColumns: ["id"];
+                    },
+                    {
+                        foreignKeyName: "public_subteams_coordinator2_fkey";
+                        columns: ["coordinator2"];
+                        isOneToOne: false;
+                        referencedRelation: "people";
+                        referencedColumns: ["id"];
+                    },
                     {
                         foreignKeyName: "subteams_chief_fkey";
                         columns: ["chief"];
@@ -438,7 +461,7 @@ export interface Database {
             [_ in never]: never;
         };
     };
-}
+};
 
 export type Tables<
     PublicTableNameOrOptions extends
