@@ -1,10 +1,16 @@
-<script>
+<script lang="ts">
     import "@fontsource/anonymous-pro";
     import "@fontsource/plus-jakarta-sans/400-italic.css";
     import Modal from "$lib/Modal.svelte";
 
+    import Field from "$lib/components/form/Field.svelte";
+    import { schema_name, schema_code } from "./logic";
+    import { enhance } from "$app/forms";
+    import { askAddition } from "./logic";
+
     export let data;
 
+    let error: string | null = null;
     let create = false;
 </script>
 
@@ -12,7 +18,7 @@
     <title>{data.subteam.name} | PRT Admin Program</title>
 </svelte:head>
 
-<h1>{data.subteam.name} overview</h1>
+<h1>{data.subteam.name}</h1>
 
 <h2>Open divisions</h2>
 
@@ -49,12 +55,50 @@
         create = true;
     }}>Create a new division</button
 >
-<Modal bind:use={create} ch={50}>
-    <h2>New division</h2>
+<Modal bind:use={create} ch={50} empty={false}>
+    <h3>Create new division</h3>
     <p>
-        Name and code can only be changed later by the presidenti or IT lead: so
+        Name and code can only be changed later by the president or IT lead:
         please pay attention and write them down correctly.
     </p>
+    <form
+        action="/dashboard/subteam/{data.subteam.id}"
+        method="post"
+        use:enhance={async ({ formData, cancel }) => {
+            cancel();
+            error = await askAddition(data.subteam.id, formData, data.supabase);
+        }}
+    >
+        <div class="split">
+            <Field
+                type="text"
+                label="Name"
+                name="name"
+                schema={schema_name}
+                value=""
+            />
+            <Field
+                type="text"
+                label="Code"
+                name="code"
+                schema={schema_code}
+                value=""
+            />
+        </div>
+        <div class="btns">
+            <button
+                type="button"
+                class="btn btn--low"
+                on:click={() => (create = false)}>Cancel</button
+            >
+            <button type="submit" class="btn">Save</button>
+        </div>
+        {#if error}
+            <p class="error">
+                {error}
+            </p>
+        {/if}
+    </form>
 </Modal>
 
 <h2>Closed divisions</h2>
@@ -82,8 +126,14 @@
     h2:first-child {
         margin-top: 0;
     }
+    h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+        margin-top: -0.2rem;
+    }
     table {
         border-collapse: collapse;
+        margin-bottom: 2rem;
     }
     th {
         text-align: left;
@@ -126,7 +176,21 @@
         font-style: italic;
         opacity: 0.7;
     }
-    button {
-        margin-top: 2rem;
+    form {
+        margin-top: 1rem;
+    }
+    .split {
+        display: grid;
+        grid-template-columns: 1fr 10ch;
+        column-gap: 2rem;
+    }
+    .btns {
+        display: flex;
+        justify-content: end;
+        column-gap: 1rem;
+        margin-top: 1rem;
+    }
+    .error {
+        margin-top: 1rem;
     }
 </style>
