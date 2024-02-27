@@ -9,6 +9,7 @@
     import type { SupabaseClient } from "@supabase/supabase-js";
     import type { Database } from "$lib/supabase";
     import { browser } from "$app/environment";
+    import { writable } from "svelte/store";
 
     const dispatch = createEventDispatcher<{
         cancel: void;
@@ -35,9 +36,11 @@
         errors = res.errors;
         if (res.data) {
             dispatch("saved", res.data);
-            formElement.reset();
+            resetter.update(v => v + 1);
         }
     };
+
+    const resetter = writable(0);
 </script>
 
 <form
@@ -60,6 +63,7 @@
             type="text"
             schema={fields.name}
             value={data.name}
+            {resetter}
         />
         <Field
             label="Form ID"
@@ -68,6 +72,7 @@
             name="form"
             value={data.form}
             null_on_empty
+            {resetter}
         />
     </div>
     <Field
@@ -75,6 +80,7 @@
         type="textarea"
         schema={fields.description}
         value={data.description}
+        {resetter}
     />
 
     <h4>Required skills</h4>
@@ -86,9 +92,15 @@
         name="required"
         schema={fields.required}
         values={data.required || []}
+        {resetter}
     />
     <h4>Desirable skills</h4>
-    <List name="desirable" schema={fields.desirable} values={data.desirable} />
+    <List
+        name="desirable"
+        schema={fields.desirable}
+        values={data.desirable}
+        {resetter}
+    />
     <ul class="error">
         {#each errors as e}
             <li>{e}</li>
@@ -99,7 +111,10 @@
         <button
             type={creating ? "reset" : "button"}
             class="btn btn--low"
-            on:click={() => dispatch("cancel")}>Cancel</button
+            on:click={() => {
+                resetter.update(v => v + 1);
+                dispatch("cancel");
+            }}>Cancel</button
         >
         <button type="submit" class="btn">Save</button>
     </div>

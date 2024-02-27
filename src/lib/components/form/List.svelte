@@ -3,10 +3,13 @@
     import { dndzone } from "svelte-dnd-action";
     import { getErrs, label2name } from "./utils";
     import type { Schema } from "yup";
+    import type { Readable } from "svelte/store";
+    import { onDestroy } from "svelte";
 
     export let name: string;
     export let values: string[] = [];
     export let schema: Schema;
+    export let resetter: Readable<any> | undefined = undefined;
 
     const flipDurationMs = 300;
 
@@ -25,6 +28,13 @@
         items.splice(i, 1);
         items = items;
     }
+
+    if (resetter)
+        onDestroy(
+            resetter.subscribe(() => {
+                items = [];
+            })
+        );
 </script>
 
 <div class="wrap">
