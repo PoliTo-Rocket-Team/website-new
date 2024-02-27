@@ -43,6 +43,7 @@
             {type}
             {name}
             {value}
+            autocomplete="off"
             on:input={oninput}
             on:change|once={startcheck}
         />
