@@ -24,7 +24,6 @@
     on:close={() => (use = null)}
     on:mousedown={e => {
         // https://stackoverflow.com/questions/25864259/how-to-close-the-new-html-dialog-tag-by-clicking-on-its-backdrop
-        console.log(e.currentTarget, e);
         if (e.target === e.currentTarget) use = null;
     }}
 >
