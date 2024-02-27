@@ -1,7 +1,6 @@
 <script lang="ts">
     import type { Schema } from "yup";
-    import { getErrs, label2name } from "./utils";
-    import type { Readable } from "svelte/store";
+    import { getErrs, label2name, type SignalSub } from "./utils";
     import { onDestroy } from "svelte";
 
     export let value: any = undefined;
@@ -10,7 +9,7 @@
     export let name: string = label2name(label);
     export let type: "text" | "number" | "textarea";
     export let null_on_empty = false;
-    export let resetter: Readable<any> | undefined = undefined;
+    export let resetter: SignalSub | undefined = undefined;
 
     $: isnum = type === "number";
     let skip = true;
@@ -32,7 +31,7 @@
 
     if (resetter)
         onDestroy(
-            resetter.subscribe(() => {
+            resetter(() => {
                 skip = true;
                 value = "";
                 errors = [];

@@ -1,7 +1,7 @@
 <script lang="ts">
     import { flip } from "svelte/animate";
     import { dndzone } from "svelte-dnd-action";
-    import { getErrs, label2name } from "./utils";
+    import { getErrs, label2name, type SignalSub } from "./utils";
     import type { Schema } from "yup";
     import type { Readable } from "svelte/store";
     import { onDestroy } from "svelte";
@@ -9,7 +9,7 @@
     export let name: string;
     export let values: string[] = [];
     export let schema: Schema;
-    export let resetter: Readable<any> | undefined = undefined;
+    export let resetter: SignalSub | undefined = undefined;
 
     const flipDurationMs = 300;
 
@@ -31,7 +31,7 @@
 
     if (resetter)
         onDestroy(
-            resetter.subscribe(() => {
+            resetter(() => {
                 items = [];
             })
         );
