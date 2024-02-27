@@ -19,11 +19,19 @@
         await data.supabase.from("positions").delete().eq("id", deleting.id);
         deleting = null;
     }
-    async function handelOpen(event: any) {
-        await data.supabase
+    async function handleOpen(
+        event: CustomEvent<{ open: boolean; id: number }>
+    ) {
+        const res = await data.supabase
             .from("positions")
             .update({ open: event.detail.open })
             .eq("id", event.detail.id);
+
+        if (res.error) {
+            alert(
+                `Could not open/close the position:\n\n${res.error.message}\n${res.error.details}`
+            );
+        }
     }
 </script>
 
@@ -74,7 +82,7 @@
             data.positions[i] = e.detail;
         }}
         on:delete={e => (deleting = e.detail)}
-        on:open={handelOpen}
+        on:open={handleOpen}
     />
 {:else}
     <p>No positions found</p>

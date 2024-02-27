@@ -8,8 +8,8 @@
         open: boolean;
     }>();
 
-    function handelOpen() {
-        dispatch("open", open);
+    function onchange(this: HTMLInputElement) {
+        dispatch("open", this.checked);
     }
 </script>
 
@@ -17,7 +17,7 @@
     <h3>{role}</h3>
     <div class="code">{code}</div>
     <label class="switch">
-        <input type="checkbox" bind:checked={open} on:click={handelOpen} />
+        <input type="checkbox" bind:checked={open} on:change={onchange} />
         <span class="slider" />
     </label>
 </summary>
