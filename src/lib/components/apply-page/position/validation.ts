@@ -21,16 +21,50 @@ export function emptyPositionData(
     };
 }
 
+const indexRegExp = /\["(\d)"\]/;
+
+function extractIndex(arg: any) {
+    const m = indexRegExp.exec(arg.path);
+    return m ? +m[1] : 0;
+}
+
+function emptyErrorInArray(arg: any) {
+    // https://github.com/jquense/yup/issues/830#issuecomment-1156152181
+    const m = indexRegExp.exec(arg.path);
+    const i = m ? +m[1] + 1 : 1;
+    let suffix = "th";
+    switch (i % 10) {
+        case 1:
+            suffix = "st";
+            break;
+        case 2:
+            suffix = "nd";
+            break;
+        case 3:
+            suffix = "rd";
+            break;
+    }
+    return `${i}${suffix} item is empty`;
+}
+
 export const fields = {
-    name: yup.string().required().min(10),
-    description: yup
-        .string()
+    name: yup.string().label("The position name").required().min(10),
+    description: yup.string().label("The description").required().min(40),
+    desirable: yup
+        .array()
         .required()
-        .min(40, "Must be more than 40 characters"),
-    desirable: yup.array().required().of(yup.string().required()).min(1),
-    required: yup.array().of(yup.string().required()).defined().nullable(),
+        .of(yup.string().required(emptyErrorInArray))
+        .min(1),
+    required: yup
+        .array()
+        .label("Required skills")
+        .of(yup.string().required(emptyErrorInArray))
+        .defined()
+        .nullable()
+        .min(0),
     form: yup
         .string()
+        .label("The Google form ID")
         .defined()
         .nullable()
         .length(17, "Google form IDs are 17 characters long"),
