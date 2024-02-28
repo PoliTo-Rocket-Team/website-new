@@ -6,8 +6,7 @@
     /** The width in ch of the modal (default 60) */
     export let ch = 60;
 
-    let _d = empty;
-    $: if (use) _d = use;
+    $: _d = use ? use : empty;
 
     let dialog: HTMLDialogElement;
 

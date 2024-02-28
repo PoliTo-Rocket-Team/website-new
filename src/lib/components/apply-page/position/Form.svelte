@@ -10,7 +10,6 @@
     import type { SupabaseClient } from "@supabase/supabase-js";
     import type { Database } from "$lib/supabase";
     import { browser } from "$app/environment";
-    import { writable } from "svelte/store";
 
     const dispatch = createEventDispatcher<{
         cancel: void;
@@ -26,22 +25,24 @@
     export let data: PositionData;
 
     let errors: string[] = [];
-    const submit: SubmitFunction = async ({
-        cancel,
-        formData,
-        formElement,
-    }) => {
+    const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();
         const res = await save(formData, supabase);
         console.log(res.errors);
         errors = res.errors;
         if (res.data) {
-            dispatch("saved", res.data);
             resetter.notify();
+            dispatch("saved", res.data);
         }
     };
 
     const resetter = signal();
+
+    // a bit of hack: assuming empty data when number is zero
+    $: if (data.number === 0) {
+        console.log("reset");
+        resetter.notify();
+    }
 </script>
 
 <form

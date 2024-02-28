@@ -6,7 +6,7 @@ export type PositionData = Database["public"]["Tables"]["positions"]["Row"];
 
 export function emptyPositionData(
     division: number,
-    num: number = 1
+    num: number = 0
 ): PositionData {
     return {
         id: -1,

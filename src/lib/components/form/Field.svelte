@@ -33,8 +33,10 @@
         onDestroy(
             resetter(() => {
                 skip = true;
-                value = "";
                 errors = [];
+                // need to set value to something different from "" since it's not binded
+                value = undefined;
+                value = "";
             })
         );
 </script>
