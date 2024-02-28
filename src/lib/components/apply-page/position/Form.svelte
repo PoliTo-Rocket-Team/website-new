@@ -39,10 +39,7 @@
     const resetter = signal();
 
     // a bit of hack: assuming empty data when number is zero
-    $: if (data.number === 0) {
-        console.log("reset");
-        resetter.notify();
-    }
+    $: if (data.number === 0) resetter.notify();
 </script>
 
 <form
