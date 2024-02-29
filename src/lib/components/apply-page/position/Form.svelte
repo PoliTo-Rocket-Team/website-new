@@ -5,6 +5,7 @@
 
     import Field from "$lib/components/form/Field.svelte";
     import List from "$lib/components/form/List.svelte";
+    import { signal } from "$lib/components/form/utils";
     import { createEventDispatcher, getContext } from "svelte";
     import type { SupabaseClient } from "@supabase/supabase-js";
     import type { Database } from "$lib/supabase";
@@ -29,8 +30,16 @@
         const res = await save(formData, supabase);
         console.log(res.errors);
         errors = res.errors;
-        if (res.data) dispatch("saved", res.data);
+        if (res.data) {
+            resetter.notify();
+            dispatch("saved", res.data);
+        }
     };
+
+    const resetter = signal();
+
+    // a bit of hack: assuming empty data when number is zero
+    $: if (data.number === 0) resetter.notify();
 </script>
 
 <form
@@ -53,6 +62,7 @@
             type="text"
             schema={fields.name}
             value={data.name}
+            resetter={resetter.sub}
         />
         <Field
             label="Form ID"
@@ -61,6 +71,7 @@
             name="form"
             value={data.form}
             null_on_empty
+            resetter={resetter.sub}
         />
     </div>
     <Field
@@ -68,6 +79,7 @@
         type="textarea"
         schema={fields.description}
         value={data.description}
+        resetter={resetter.sub}
     />
 
     <h4>Required skills</h4>
@@ -77,11 +89,17 @@
     </p>
     <List
         name="required"
-        schema={fields.desirable}
+        schema={fields.required}
         values={data.required || []}
+        resetter={resetter.sub}
     />
     <h4>Desirable skills</h4>
-    <List name="desirable" schema={fields.desirable} values={data.desirable} />
+    <List
+        name="desirable"
+        schema={fields.desirable}
+        values={data.desirable}
+        resetter={resetter.sub}
+    />
     <ul class="error">
         {#each errors as e}
             <li>{e}</li>
@@ -92,7 +110,10 @@
         <button
             type={creating ? "reset" : "button"}
             class="btn btn--low"
-            on:click={() => dispatch("cancel")}>Cancel</button
+            on:click={() => {
+                resetter.notify();
+                dispatch("cancel");
+            }}>Cancel</button
         >
         <button type="submit" class="btn">Save</button>
     </div>

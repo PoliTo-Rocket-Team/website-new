@@ -1,6 +1,7 @@
 <script lang="ts">
     import type { Schema } from "yup";
-    import { getErrs, label2name } from "./utils";
+    import { getErrs, label2name, type SignalSub } from "./utils";
+    import { onDestroy } from "svelte";
 
     export let value: any = undefined;
     export let schema: Schema;
@@ -8,6 +9,7 @@
     export let name: string = label2name(label);
     export let type: "text" | "number" | "textarea";
     export let null_on_empty = false;
+    export let resetter: SignalSub | undefined = undefined;
 
     $: isnum = type === "number";
     let skip = true;
@@ -23,9 +25,20 @@
         errors = await getErrs(schema, v);
     }
     async function startcheck(this: HTMLInputElement | HTMLTextAreaElement) {
+        if (skip) errors = await getErrs(schema, this.value);
         skip = false;
-        errors = await getErrs(schema, this.value);
     }
+
+    if (resetter)
+        onDestroy(
+            resetter(() => {
+                skip = true;
+                errors = [];
+                // need to set value to something different from "" since it's not binded
+                value = undefined;
+                value = "";
+            })
+        );
 </script>
 
 <label>
@@ -35,8 +48,8 @@
             {name}
             {value}
             rows="8"
+            on:change={startcheck}
             on:input={oninput}
-            on:change|once={startcheck}
         ></textarea>
     {:else}
         <input
@@ -45,7 +58,7 @@
             {value}
             autocomplete="off"
             on:input={oninput}
-            on:change|once={startcheck}
+            on:change={startcheck}
         />
     {/if}
     <ul class="error">

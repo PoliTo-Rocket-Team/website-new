@@ -14,3 +14,18 @@ function extract(e: ValidationError) {
 export function getErrs(s: Schema, val: any) {
     return s.validate(val, { abortEarly: false }).then(retemptyarr, extract);
 }
+
+export function signal() {
+    const subs = new Set<() => void>();
+    return {
+        sub(fn: () => void) {
+            subs.add(fn);
+            return () => subs.delete(fn);
+        },
+        notify() {
+            for (let s of subs) s();
+        },
+    };
+}
+
+export type SignalSub = (fn: () => void) => () => void;

@@ -6,8 +6,7 @@
     /** The width in ch of the modal (default 60) */
     export let ch = 60;
 
-    let _d = empty;
-    $: if (use) _d = use;
+    $: _d = use ? use : empty;
 
     let dialog: HTMLDialogElement;
 
@@ -22,7 +21,8 @@
 <dialog
     bind:this={dialog}
     on:close={() => (use = null)}
-    on:click={e => {
+    on:mousedown={e => {
+        // https://stackoverflow.com/questions/25864259/how-to-close-the-new-html-dialog-tag-by-clicking-on-its-backdrop
         if (e.target === e.currentTarget) use = null;
     }}
 >

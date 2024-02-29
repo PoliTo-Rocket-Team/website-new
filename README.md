@@ -11,6 +11,9 @@ git clone "https://github.com/PoliTo-Rocket-Team/website-new.git" <folder name>
 # installing dependencies
 pnpm install
 
+# Setting up .env files
+Duplicate .env.example file, rename it as .env and fill in the required fields.
+
 # developing by starting the server
 pnpm dev
 

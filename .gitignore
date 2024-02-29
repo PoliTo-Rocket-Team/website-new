@@ -12,3 +12,4 @@ vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 # Ignore the package-lock.json file
 package-lock.json
+.env
