@@ -22,6 +22,9 @@
     summary {
         padding: 0.6rem 0.8rem;
     }
+    summary::-webkit-details-marker {
+        display: none;
+    }
     .code {
         font-family: "Anonymous Pro", monospace;
         color: var(--accent-text);

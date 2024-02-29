@@ -15,11 +15,11 @@
 
 <summary>
     <h3>{role}</h3>
-    <div class="code">{code}</div>
     <label class="switch">
         <input type="checkbox" bind:checked={open} on:change={onchange} />
         <span class="slider" />
     </label>
+    <div class="code">{code}</div>
 </summary>
 
 <style lang="scss">
@@ -33,11 +33,8 @@
         align-items: center;
         column-gap: 1rem;
     }
-
-    .code {
-        font-family: "Anonymous Pro", monospace;
-        color: var(--accent-text);
-        grid-column: -3/-2;
+    summary::-webkit-details-marker {
+        display: none;
     }
     summary::after {
         content: "";
@@ -51,6 +48,11 @@
     }
     :global(details[open]) > summary::after {
         transform: translateX(1px) rotate(-90deg);
+    }
+
+    .code {
+        font-family: "Anonymous Pro", monospace;
+        color: var(--accent-text);
     }
 
     .switch {
