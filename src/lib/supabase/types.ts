@@ -424,6 +424,12 @@ export type Database = {
         }
         Returns: number[]
       }
+      get_last_name: {
+        Args: {
+          user_uuid: string
+        }
+        Returns: string
+      }
       get_open_positions: {
         Args: Record<PropertyKey, never>
         Returns: {
@@ -436,6 +442,27 @@ export type Database = {
           subteam: string
           code: string
         }[]
+      }
+      get_person_data: {
+        Args: {
+          user_uuid: string
+        }
+        Returns: {
+          id: number
+          first_name: string
+          last_name: string
+          linkedin: string
+          has_pp: boolean
+          is_president: boolean
+          lead_of: Json[]
+          chief_of: Json
+        }[]
+      }
+      get_person_id: {
+        Args: {
+          user_uuid: string
+        }
+        Returns: number
       }
       get_person_id_from_user: {
         Args: {
@@ -452,6 +479,22 @@ export type Database = {
           _user: string
         }
         Returns: number
+      }
+      get_subteams: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          subteam: string
+          firstname: string
+          lastname: string
+          linkedin: string
+          has_pp: boolean
+        }[]
+      }
+      is_developer: {
+        Args: {
+          email: string
+        }
+        Returns: boolean
       }
       is_it_related: {
         Args: {

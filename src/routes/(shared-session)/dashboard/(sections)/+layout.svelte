@@ -24,22 +24,16 @@
     <div>
         <aside>
             <div class="account">
-                <img
-                    src={$picture}
-                    alt="Hopefully your face"
-                    data-seed={data.person?.first_name}
-                    on:error={fiximg}
-                />
-
+                <img src={$picture} alt="Hopefully your face" />
                 <span class="name"
                     >{data.person
                         ? data.person.first_name + " " + data.person.last_name
                         : "Not yet linked"}</span
                 >
-                {#each data.subteams || [] as s}
-                    <span class="title">{s.title}</span>
-                {/each}
-                {#each data.divisions || [] as d}
+                {#if data.person.chief_of}
+                    <span class="title">{data.person.chief_of.title}</span>
+                {/if}
+                {#each data.person.lead_of || [] as d}
                     <span class="title"
                         >{d.name} Lead {d.acting ? "(acting)" : ""}</span
                     >
@@ -47,14 +41,8 @@
             </div>
             <hr />
             <ul>
-                {#each data.divisions || [] as d}
-                    <li>
-                        <a href="/dashboard/positions/{d.id}" use:current
-                            >{d.code} positions</a
-                        >
-                    </li>
-                {/each}
-                {#each data.subteams || [] as s}
+                {#if data.person.chief_of}
+                    {@const s = data.person.chief_of}
                     <li>
                         <a href="/dashboard/subteam/{s.id}" use:current>
                             Project
@@ -64,6 +52,13 @@
                                 {s.name}
                             {/if}
                         </a>
+                    </li>
+                {/if}
+                {#each data.person.lead_of as d}
+                    <li>
+                        <a href="/dashboard/positions/{d.id}" use:current
+                            >{d.code} positions</a
+                        >
                     </li>
                 {/each}
                 <li>

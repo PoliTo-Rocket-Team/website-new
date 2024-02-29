@@ -1,6 +1,6 @@
 import { error, redirect } from "@sveltejs/kit";
 import type { LayoutLoad } from "./$types";
-import { session2user } from "$lib/supabase";
+import { session2user, type PersonData } from "$lib/supabase";
 
 export const load: LayoutLoad = async ({ parent, url }) => {
     let { supabase, user } = await parent();
@@ -14,38 +14,27 @@ export const load: LayoutLoad = async ({ parent, url }) => {
             );
         else user = session2user(session);
     }
-    const res = await supabase
-        .from("people")
-        .select("id, first_name, last_name, linkedin")
-        .eq("user", user.id);
-    if (res.error) {
-        // console.log(session);
+
+    const res = await supabase.rpc("get_person_data", { user_uuid: user.id });
+    if (res.error)
         throw error(500, {
             message: "Invalid session",
             details: res.error.message,
         });
-    }
-    if (res.data.length === 0) return { user };
-    const person = res.data[0];
+    if (!res.data.length) return { user };
+    const person = res.data[0] as PersonData;
+    console.log(person);
 
     return {
         user,
         person,
-        pic: supabase.storage
-            .from("people-pics")
-            .getPublicUrl(`${person.id}-${person.last_name}.jpeg`).data
-            .publicUrl,
-        divisions: supabase
-            .from("divisions")
-            .select(
-                "id, name, code, acting:lead_acting, subteam:subteams(name,code)"
-            )
-            .eq("lead", person.id)
-            .then(v => v.data!),
-        subteams: supabase
-            .from("subteams")
-            .select("id, name, code, title:title_name")
-            .eq("chief", person.id)
-            .then(v => v.data!),
+        pic: person.has_pp
+            ? supabase.storage
+                  .from("people-pics")
+                  .getPublicUrl(
+                      `${person.id}-${person.last_name.replace(" ", "")}.jpeg`
+                  ).data.publicUrl
+            : "https://api.dicebear.com/7.x/micah/svg?backgroundColor=transparent&seed=" +
+              encodeURI(person.first_name),
     };
 };
