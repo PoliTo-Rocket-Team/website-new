@@ -3,9 +3,8 @@ import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ parent, params }) => {
     const id = +params.id;
-    const { supabase, subteams } = await parent();
-    const subteam = subteams.find(s => s.id === id);
-    if (!subteam) throw redirect(300, "/dashboard");
+    const { supabase, person } = await parent();
+    if (!person.chief_of) throw redirect(300, "/dashboard");
     const res = await supabase
         .from("divisions")
         .select("id, name, code, end, lead:people(first_name, last_name)")
@@ -19,5 +18,5 @@ export const load: PageLoad = async ({ parent, params }) => {
     const closed: typeof res.data = [];
     for (var i = 0; i < res.data.length; i++)
         (res.data[i].end ? closed : open).push(res.data[i]);
-    return { subteam, open, closed };
+    return { subteam: person.chief_of, open, closed };
 };

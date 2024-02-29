@@ -117,23 +117,17 @@
     <img
         src={considering || $picture}
         alt="Hopefully your face"
-        data-seed={data.person.first_name}
         style:--size="12rem"
-        on:error={fiximg}
     />
     <img
         src={considering || $picture}
         alt="Hopefully your face"
-        data-seed={data.person.first_name}
         style:--size="7.2rem"
-        on:error={fiximg}
     />
     <img
         src={considering || $picture}
         alt="Hopefully your face"
-        data-seed={data.person.first_name}
         style:--size="4rem"
-        on:error={fiximg}
     />
 </div>
 

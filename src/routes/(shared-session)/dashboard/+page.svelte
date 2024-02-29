@@ -43,22 +43,23 @@
         <h1>Welcome back {data.person.first_name}!</h1>
 
         <div class="cards">
-            {#each data.divisions as d}
-                <article>
-                    <Follow3D {transform}>
-                        <a href="/dashboard/positions/{d.id}">
-                            <span class="water">{d.code}</span>
-                            <h2>{d.name}</h2>
-                        </a>
-                    </Follow3D>
-                </article>
-            {/each}
-            {#each data.subteams as s}
+            {#if data.person.chief_of}
+                {@const s = data.person.chief_of}
                 <article>
                     <Follow3D {transform}>
                         <a href="/dashboard/subteam/{s.id}">
                             <span class="water">{s.code}</span>
                             <h2>{s.name}</h2>
+                        </a>
+                    </Follow3D>
+                </article>
+            {/if}
+            {#each data.person.lead_of as d}
+                <article>
+                    <Follow3D {transform}>
+                        <a href="/dashboard/positions/{d.id}">
+                            <span class="water">{d.code}</span>
+                            <h2>{d.name}</h2>
                         </a>
                     </Follow3D>
                 </article>
