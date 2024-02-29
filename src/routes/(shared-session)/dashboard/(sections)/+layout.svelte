@@ -95,7 +95,7 @@
 <style>
     .split {
         display: grid;
-        grid-template-columns: auto 1fr;
+        grid-template-columns: minmax(20ch, auto) 1fr;
     }
     aside {
         padding: 1.5rem;
