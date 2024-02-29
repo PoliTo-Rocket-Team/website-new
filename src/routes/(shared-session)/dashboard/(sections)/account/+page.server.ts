@@ -15,11 +15,14 @@ export const actions: Actions = {
             typeof id === "string" &&
             f instanceof File &&
             f.type === "image/jpeg" &&
-            f.size <= 512000
+            f.size <= 512000 &&
+            typeof last_name === "string"
         ) {
             const res = await locals.supabase.storage
                 .from("people-pic")
-                .upload(`${id}-${last_name}.jpeg`, f, { upsert: true });
+                .upload(`${id}-${last_name.replace(" ", "")}.jpeg`, f, {
+                    upsert: true,
+                });
             if (res.error)
                 return fail(400, {
                     success: false,
