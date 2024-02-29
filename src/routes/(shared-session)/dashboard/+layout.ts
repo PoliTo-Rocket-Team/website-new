@@ -23,7 +23,6 @@ export const load: LayoutLoad = async ({ parent, url }) => {
         });
     if (!res.data.length) return { user };
     const person = res.data[0] as PersonData;
-    console.log(person);
 
     return {
         user,
