@@ -2,15 +2,14 @@
     import Modal from "$lib/Modal.svelte";
     import type { PageData } from "./$types";
 
-    import * as Position from "$lib/components/apply-page/position";
-    import { emptyPositionData } from "$lib/components/apply-page/position/validation";
+    import * as Position from "$lib/components/position";
     import { setContext } from "svelte";
 
     export let data: PageData;
     setContext("supabase", data.supabase);
     let deleting: { id: number; name: string } | null = null;
 
-    let newPos: null | ReturnType<typeof emptyPositionData> = null;
+    let newPos: null | ReturnType<typeof Position.empty> = null;
 
     async function handelDelete() {
         if (!deleting) return;
@@ -53,7 +52,7 @@
 
 <Modal
     bind:use={newPos}
-    empty={emptyPositionData(data.division.id)}
+    empty={Position.empty(data.division.id)}
     let:data={pos_data}
 >
     <h3>Add a new position</h3>
@@ -105,7 +104,7 @@
 <button
     class="btn center"
     on:click={() => {
-        newPos = emptyPositionData(
+        newPos = Position.empty(
             data.division.id,
             (data.positions.length && data.positions[0].number) + 1
         );

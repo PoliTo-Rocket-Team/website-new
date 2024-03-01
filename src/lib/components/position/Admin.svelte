@@ -20,10 +20,9 @@
     function del() {
         dispatch("delete", { id: data.id, name: data.name });
     }
-    function handelOpen() {
-        data.open = !data.open;
-        let information = { open: data.open, id: data.id };
-
+    function handleOpen(e: CustomEvent<boolean>) {
+        if (e.detail === data.open) return;
+        let information = { open: (data.open = e.detail), id: data.id };
         dispatch("open", information);
     }
 </script>
@@ -34,7 +33,7 @@
         code="{code}-{data.number.toString().padStart(3, '0')}"
         slot="header"
         open={data.open}
-        on:open={handelOpen}
+        on:open={handleOpen}
     />
     <svelte:fragment slot="content">
         {#if edit}
@@ -42,6 +41,7 @@
                 {data}
                 on:saved={e => {
                     edit = false;
+                    e.detail.open = data.open; // Form does not handle opening/closing
                     dispatch("saved", e.detail);
                 }}
                 on:cancel={() => (edit = false)}

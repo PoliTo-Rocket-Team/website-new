@@ -1,6 +1,6 @@
 <script lang="ts">
     import "@fontsource/anonymous-pro/400.css";
-    import { Display } from "$lib/components/apply-page/position";
+    import { Display } from "$lib/components/position";
     import type { PageData } from "./$types";
     import FAQs from "./FAQs.svelte";
 
