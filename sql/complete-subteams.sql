@@ -22,6 +22,7 @@ as $$
       'first_name', p1.first_name,
       'last_name', p1.last_name,
       'linkedin', p1.linkedin,
+      'has_pp', p1.has_pp,
       'title', st.title_name
     ) as chief,
     case 
@@ -30,7 +31,8 @@ as $$
       else json_build_object(
         'first_name', p2.first_name,
         'last_name', p2.last_name,
-        'linkedin', p2.linkedin
+        'linkedin', p2.linkedin,
+        'has_pp', p1.has_pp
       )
     end as coordinator1,
     case 
@@ -39,7 +41,8 @@ as $$
       else json_build_object(
         'first_name', p3.first_name,
         'last_name', p3.last_name,
-        'linkedin', p3.linkedin
+        'linkedin', p3.linkedin,
+        'has_pp', p1.has_pp
       )
     end as coordinator2,
     leads.col as leads
@@ -48,7 +51,7 @@ as $$
     select array (
       select row_to_json(a)
       from (
-        select people.first_name, people.last_name, people.linkedin, div.lead_acting as acting, div.name as division
+        select people.first_name, people.last_name, people.linkedin, people.has_pp, div.lead_acting as acting, div.name as division
         from (
           select divisions.*
           from divisions
