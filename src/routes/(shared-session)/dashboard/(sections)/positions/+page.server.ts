@@ -1,4 +1,4 @@
-import { save } from "$lib/components/apply-page/position/validation";
+import { save } from "$lib/components/position/validation";
 import type { Actions } from "./$types";
 
 export const actions: Actions = {
