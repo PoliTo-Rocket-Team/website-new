@@ -418,6 +418,27 @@ export type Database = {
         }
         Returns: number[]
       }
+      get_chiefs: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          title_name: string
+          first_name: string
+          last_name: string
+          linkedin: string
+          has_pp: boolean
+        }[]
+      }
+      get_complete_subteams: {
+        Args: Record<PropertyKey, never>
+        Returns: {
+          name: string
+          code: string
+          chief: Json
+          coordinator1: Json
+          coordinator2: Json
+          leads: Json[]
+        }[]
+      }
       get_division_of: {
         Args: {
           _user: string
