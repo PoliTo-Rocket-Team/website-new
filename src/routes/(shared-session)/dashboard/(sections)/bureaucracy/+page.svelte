@@ -157,7 +157,7 @@
     />
     <DocCard name="VES Subteam Guide" url="VES-guide" icon="document" />
     <DocCard name="EFS Subteam Guide" url="EFS-guide" icon="document" />
-    <DocCard name="Non-Disclosure Agreement" url="EFS-guide" icon="handshake" />
+    <DocCard name="Non-Disclosure Agreement" url="NDA" icon="handshake" />
 </div>
 
 <DefineIcons />
