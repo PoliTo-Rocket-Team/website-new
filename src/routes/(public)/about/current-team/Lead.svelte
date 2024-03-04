@@ -5,26 +5,19 @@
 
     export let firstname: string;
     export let lastname: string;
-    export let mail = `${normalize(firstname)}.${normalize(
-        lastname
+    export let mail = `${normalize(firstname.toLowerCase())}.${normalize(
+        lastname.toLowerCase()
     )}@politorocketteam.it`;
     export let role: string;
     export let img: string | null = null;
     export let linkedin: string;
     export let cofounder: boolean = false;
     export let highlight = false;
-    export let reversable = false;
-
-    // $: src = img ? "/members/"+img : "https://api.dicebear.com/6.x/open-peeps/svg?face=cute,smile,contempt&seed="+name;
 </script>
 
-<li class="wrapper" class:reversable>
+<li class="wrapper">
     {#if img}
-        <img
-            class="img"
-            src="/members/{img}"
-            alt="Face of {firstname} {lastname}"
-        />
+        <img class="img" src={img} alt="Face of {firstname} {lastname}" />
     {:else}
         <div class="img">
             <svg
@@ -107,7 +100,7 @@
         --icon-hover: var(--accent-fig);
     }
     @media (min-width: 50rem) {
-        .wrapper.reversable {
+        .wrapper:nth-child(2n + 1) {
             flex-direction: row-reverse;
 
             .img {

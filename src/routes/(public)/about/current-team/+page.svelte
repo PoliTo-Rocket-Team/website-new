@@ -4,14 +4,24 @@
     import Pie from "$lib/Pie.svelte";
     import Member from "../Member.svelte";
     import members from "./members.json";
-    import leads from "./leads.json";
+    import advisors from "./advisors.json";
     import HTabbed from "$lib/HTabbed.svelte";
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
     import { onMount } from "svelte";
+    import { normalize } from "./mail";
 
     let ww = browser ? document.body.clientWidth - 2 : 0;
     onMount(() => (ww = document.body.clientWidth - 2));
+
+    export let data;
+
+    function getAngle(i: number) {
+        return ((i / (data.subteams.length - 1)) * 2 - 1) * Math.PI * 0.2;
+    }
+    function getImg(id: number | null, lastname: string) {
+        return !id ? null : `${data.ppBucket}${id}-${normalize(lastname)}.jpeg`;
+    }
 </script>
 
 <svelte:window
@@ -43,21 +53,90 @@
 
     <section>
         <div class="executive-view">
-            <Chief {...leads.President} angle={0} president />
-            <Chief {...leads.Operations[0]} angle={-Math.PI * 0.2} />
-            <Chief {...leads.VES[0]} angle={0} role="VES Chief Engineer" />
             <Chief
-                {...leads.Efesto[0]}
-                angle={Math.PI * 0.2}
-                role="Efesto Chief Engineer"
+                firstname="Elena"
+                lastname="Dilorenzo"
+                linkedin="elena-dilorenzo-294b5a20b"
+                role="President"
+                img="/members/Dilorenzo.jpg"
+                angle={0}
+                president
             />
+            {#each data.subteams as s, i}
+                {@const c = s.chief}
+                <Chief
+                    firstname={c.first_name}
+                    lastname={c.last_name}
+                    linkedin={c.linkedin}
+                    role={c.title}
+                    angle={getAngle(i)}
+                    img={getImg(c.id4pp, c.last_name)}
+                />
+            {/each}
         </div>
     </section>
-
-    <section aria-labelledby="faculty-advisors">
-        <h2 class="section-title center" id="faculty-advisors">
-            Faculty Advisors
-        </h2>
+    <section>
+        <HTabbed
+            expand={ww + "px"}
+            data={data.subteams}
+            let:name
+            let:chief
+            let:coordinator1
+            let:coordinator2
+            let:leads
+        >
+            <div class="lead-panel">
+                <h2 class="center">{name} Leads</h2>
+                <ul class="lead-list">
+                    <Lead
+                        firstname={chief.first_name}
+                        lastname={chief.last_name}
+                        linkedin={chief.linkedin}
+                        role={chief.title}
+                        img={getImg(chief.id4pp, chief.last_name)}
+                        highlight
+                    />
+                    {#if coordinator1}
+                        <Lead
+                            firstname={coordinator1.first_name}
+                            lastname={coordinator1.last_name}
+                            linkedin={coordinator1.linkedin}
+                            role="Coordinator"
+                            img={getImg(
+                                coordinator1.id4pp,
+                                coordinator1.last_name
+                            )}
+                            highlight
+                        />
+                    {/if}
+                    {#if coordinator2}
+                        <Lead
+                            firstname={coordinator2.first_name}
+                            lastname={coordinator2.last_name}
+                            linkedin={coordinator2.linkedin}
+                            role="Coordinator"
+                            img={getImg(
+                                coordinator2.id4pp,
+                                coordinator2.last_name
+                            )}
+                            highlight
+                        />
+                    {/if}
+                    {#each leads as lead}
+                        <Lead
+                            firstname={lead.first_name}
+                            lastname={lead.last_name}
+                            linkedin={lead.linkedin}
+                            role={lead.division}
+                            img={getImg(lead.id4pp, lead.last_name)}
+                        />
+                    {/each}
+                </ul>
+            </div>
+        </HTabbed>
+    </section>
+    <section aria-labelledby="advisors">
+        <h2 class="section-title center" id="advisors">Advisors</h2>
         <ul class="lead-list">
             <Lead
                 firstname="Prof. Alfonso"
@@ -65,8 +144,8 @@
                 role="Primary Faculty Advisor"
                 mail="alfonso.pagani@polito.it"
                 linkedin="alfonsopagani"
-                img="advisors/Pagani.jpg"
-                reversable
+                img="/members/Pagani.jpg"
+                highlight
             />
             <Lead
                 firstname="Prof. Enrico"
@@ -74,31 +153,13 @@
                 role="Faculty Advisor"
                 mail="enrico.zappino@polito.it"
                 linkedin="enrico-zappino-4a762326"
-                img="advisors/Zappino.jpg"
+                img="/members/Zappino.jpg"
+                highlight
             />
+            {#each advisors as advisor}
+                <Lead {...advisor} />
+            {/each}
         </ul>
-    </section>
-    <section>
-        <HTabbed
-            expand={ww + "px"}
-            data={[
-                { title: "Project VES Leads", leads: leads.VES },
-                { title: "Project Efesto Leads", leads: leads.Efesto },
-                { title: "Operations Leads", leads: leads.Operations },
-                { title: "Advisor Board", leads: leads.ADVISOR },
-            ]}
-            let:title
-            let:leads
-        >
-            <div class="lead-panel">
-                <h2 class="center">{title}</h2>
-                <ul class="lead-list">
-                    {#each leads as lead, i}
-                        <Lead reversable={!(i & 1)} {...lead} />
-                    {/each}
-                </ul>
-            </div>
-        </HTabbed>
     </section>
     <section aria-labelledby="stats">
         <h2 id="stats">Statistics</h2>

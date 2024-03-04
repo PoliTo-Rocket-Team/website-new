@@ -25,11 +25,7 @@
 >
     <div class="img">
         {#if img}
-            <img
-                class="img"
-                src="/members/{img}"
-                alt="Face of {firstname} {lastname}"
-            />
+            <img class="img" src={img} alt="Face of {firstname} {lastname}" />
         {:else}
             <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -66,6 +62,7 @@
         flex-shrink: 0;
         text-align: center;
         position: relative;
+        background-color: var(--bg-0);
     }
     .oncircle .img::after {
         content: "";
@@ -86,7 +83,7 @@
     }
     svg {
         display: block;
-        height: 4rem;
+        height: 6rem;
         width: auto;
         margin: auto;
         opacity: 0.8;

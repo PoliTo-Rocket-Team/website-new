@@ -1,0 +1,52 @@
+[
+    {
+        "firstname": "Fabio",
+        "lastname": "Meloni",
+        "linkedin": "fabioski01",
+        "role": "Founder & Senior Advisor",
+        "img": "/members/Meloni.jpg"
+    },
+    {
+        "firstname": "Salvatore",
+        "lastname": "Lagrasta",
+        "linkedin": "salvatore-lagrasta",
+        "role": "Avionics",
+        "img": "/members/Lagrasta.jfif"
+    },
+    {
+        "firstname": "Luca",
+        "lastname": "Loiodice",
+        "linkedin": "luca-loiodice-01l10",
+        "role": "Additive Manufacturing",
+        "img": "/members/Loiodice.jpg"
+    },
+    {
+        "firstname": "Francesca",
+        "lastname": "Bracaglia",
+        "linkedin": "francesca bracaglia",
+        "role": "Finite Element Analysis",
+        "img": "/members/Bracaglia.jpg"
+    },
+    {
+        "firstname": "Flora",
+        "lastname": "Punzi",
+        "linkedin": "fpunzi",
+        "role": "Senior FEA analyst & Counselor",
+        "img": "/members/Punzi.jpg"
+    },
+    {
+        "firstname": "Jacopo",
+        "lastname": "Cerzosimo",
+        "linkedin": "jacopocerzosimo",
+        "role": "VES Advisor",
+        "img": null
+    },
+    {
+        "firstname": "Giuseppe",
+        "lastname": "Roccasalva",
+        "highlight": false,
+        "linkedin": "giuseppe-roccasalva12",
+        "role": "VES Advisor",
+        "img": null
+    }
+]

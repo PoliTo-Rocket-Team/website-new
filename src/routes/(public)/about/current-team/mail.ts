@@ -10,7 +10,6 @@ const accent_g = /ğ/g;
 
 export function normalize(s: string) {
     return s
-        .toLowerCase()
         .replace(space_re, "")
         .replace(accent_a, "a")
         .replace(accent_e, "e")
