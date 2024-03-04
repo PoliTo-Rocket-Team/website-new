@@ -22,7 +22,7 @@ as $$
       'first_name', p1.first_name,
       'last_name', p1.last_name,
       'linkedin', p1.linkedin,
-      'has_pp', p1.has_pp,
+      'id4pp', case when p1.has_pp then p1.id else null end,
       'title', st.title_name
     ) as chief,
     case 
@@ -32,7 +32,7 @@ as $$
         'first_name', p2.first_name,
         'last_name', p2.last_name,
         'linkedin', p2.linkedin,
-        'has_pp', p1.has_pp
+        'id4pp', case when p2.has_pp then p2.id else null end
       )
     end as coordinator1,
     case 
@@ -42,7 +42,7 @@ as $$
         'first_name', p3.first_name,
         'last_name', p3.last_name,
         'linkedin', p3.linkedin,
-        'has_pp', p1.has_pp
+        'id4pp', case when p3.has_pp then p3.id else null end
       )
     end as coordinator2,
     leads.col as leads
@@ -51,7 +51,13 @@ as $$
     select array (
       select row_to_json(a)
       from (
-        select people.first_name, people.last_name, people.linkedin, people.has_pp, div.lead_acting as acting, div.name as division
+        select 
+          people.first_name, 
+          people.last_name, 
+          people.linkedin, 
+          (case when people.has_pp then people.id else null end) as "id4pp",
+          div.lead_acting as acting, 
+          div.name as division
         from (
           select divisions.*
           from divisions

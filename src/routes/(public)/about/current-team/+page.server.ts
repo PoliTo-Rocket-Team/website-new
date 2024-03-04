@@ -5,7 +5,8 @@ interface Person {
     first_name: string;
     last_name: string;
     linkedin: string;
-    has_pp: boolean;
+    /** id of the person if they have a profile picture, otherwise null */
+    id4pp: number | null;
 }
 
 interface CompleteSubteam {
@@ -24,5 +25,9 @@ export const load: PageServerLoad = async ({ locals }) => {
             details: res.error.details,
             message: res.error.message,
         });
-    return { subteams: res.data as unknown as CompleteSubteam[] };
+    return {
+        subteams: res.data as unknown as CompleteSubteam[],
+        ppBucket: locals.supabase.storage.from("people-pics").getPublicUrl("")
+            .data.publicUrl,
+    };
 };
