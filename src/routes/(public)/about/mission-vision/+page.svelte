@@ -52,20 +52,19 @@
             With our first rocket, <a
                 href="https://www.politorocketteam.it/projects">Cavour</a
             >, we represented Italy and our university at the Spaceport America
-            Cup, the world’s largest rocket engineering competition, and we will
-            continue to represent Italian excellence at other competitions, such
-            as the European Rocketry Challenge.In the future, with the evolution
-            of <a href="https://www.politorocketteam.it/projects">Cavour</a>'s
-            design, the Team will conceive a reusable rocket with payload
-            capacity, capable of conducting scientific experiments inexpensively
-            and reliably.
+            Cup, the world’s largest rocket engineering competition, and at the
+            European Rocketry Challenge. Now, with the evolution of Cavour's
+            design embodied by the
+            <a href="/projects/VES">Vittorio Emanuele II</a> project, and with the
+            design of a liquid rocket engine, we intend to continue to represent
+            Italian excellence in numerous competitions and around the world.
         </p>
         <ul>
             <li>We are constantly focused on progress.</li>
             <li>We believe in the simple, not the complex.</li>
             <li>We are engineers: if it works...</li>
         </ul>
-        <p class="signature">Fabio Meloni, 2022</p>
+        <p class="signature">Elena Dilorenzo, 2024</p>
     </div>
 </main>
 
