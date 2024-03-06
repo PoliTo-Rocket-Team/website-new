@@ -225,19 +225,27 @@
                         target="_blank"
                         rel="noreferrer">Spaceport America Cup</a
                     >, the largest intercollegiate rocketry competition on the
-                    planet.Cavour launch was a success!
+                    planet. Cavour launch was a success!
                 </Event>
                 <Event
                     year={2023}
                     month={10}
-                    ch={50}
+                    ch={52}
                     title="2023 European Rocketry Challenge"
-                    >We will be the first team from Politecnico to compete with
-                    Project Cavour at the 2023 <a
+                    >We have been the first team from Politecnico to compete
+                    with Project Cavour at the 2023 <a
                         href="https://euroc.pt/"
                         target="_blank"
                         rel="noreferrer">EuRoC</a
                     >, Europe’s major rocket engineering competition.
+                </Event>
+                <Event
+                    year={2024}
+                    month={10}
+                    ch={45}
+                    title="2024 European Rocketry Challenge"
+                    >With <a href="/projects/VEs">Project VES</a> we intend to reach
+                    9km and supersonic speeds!
                 </Event>
             </div>
         </div>
