@@ -47,7 +47,11 @@
             <li>Target apogee of 10000 m</li>
             <li>Able to sustain Supersonic regime</li>
             <li>Integrated and innovative Airbrakes system</li>
-            <li>CO2-based recovery system</li>
+            <li>
+                CO2-based <abbr title="Student Researched and Developed"
+                    >SRAD</abbr
+                > recovery system
+            </li>
             <li>Advanced Avionics and Cubesat-type Payload subsystem</li>
         </ul>
         <p>
