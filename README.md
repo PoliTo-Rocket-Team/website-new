@@ -1,18 +1,15 @@
 # Official PRT website source files
 
-Website of PoliTo Rocket Team using the [SvelteKit](https://kit.svelte.dev/) framework with [adapter-static](https://github.com/sveltejs/kit/tree/master/packages/adapter-static).
+Website of PoliTo Rocket Team using the [SvelteKit](https://kit.svelte.dev/) framework with [adapter-netlify](https://kit.svelte.dev/docs/adapter-netlify).
 
 ## Contributing
 
+1. Clone the repository into a folder and switch to that folder
+2. Duplicate `.env.example`, rename it as `.env` and fill in the required fields
+3. Run the following commands:
 ```bash
-# clone repo
-git clone "https://github.com/PoliTo-Rocket-Team/website-new.git" <folder name>
-
 # installing dependencies
 pnpm install
-
-# Setting up .env files
-Duplicate .env.example file, rename it as .env and fill in the required fields.
 
 # developing by starting the server
 pnpm dev
