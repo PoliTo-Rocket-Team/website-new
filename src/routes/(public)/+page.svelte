@@ -244,7 +244,7 @@
                     month={10}
                     ch={45}
                     title="2024 European Rocketry Challenge"
-                    >With <a href="/projects/VEs">Project VES</a> we intend to reach
+                    >With <a href="/projects/VES">Project VES</a> we intend to reach
                     9km and supersonic speeds!
                 </Event>
             </div>
