@@ -1,0 +1,69 @@
+h2 {
+    margin-top: 4rem;
+    margin-bottom: 1rem;
+}
+
+input,
+textarea {
+    font-size: inherit;
+    color: inherit;
+    background-color: transparent;
+    border: 2px solid #8887;
+}
+input:focus-visible,
+textarea:focus-visible {
+    outline: none;
+    border-color: var(--accent-fig);
+}
+input[type="text"],
+input[type="number"],
+textarea {
+    padding: 0.2rem 0.4rem;
+}
+
+.btn {
+    display: block;
+    width: fit-content;
+    color: var(--accent-text);
+    border: 2px solid var(--accent-fig);
+    padding: 0.4rem 0.8rem;
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease;
+    font-weight: 600;
+    cursor: pointer;
+}
+.btn--low {
+    color: var(--fg-1);
+    border-color: #8887;
+}
+.btn:hover {
+    background-color: var(--accent-fig);
+    color: white;
+}
+.btn--low:hover {
+    background-color: #8882;
+    color: var(--fg-0);
+}
+.btn:focus-visible {
+    text-decoration: underline dashed currentColor;
+    outline: none;
+}
+.btn:disabled {
+    border-color: #8883;
+    color: #8883;
+    background-color: transparent;
+}
+
+[data-theme="light"] .error {
+    color: #b60600;
+}
+[data-theme="dark"] .error {
+    color: #ff5454;
+}
+
+ul.error {
+    margin-top: 0.3rem;
+    padding-left: 1.8ch;
+    font-size: 0.8rem;
+}

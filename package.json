@@ -17,6 +17,7 @@
         "@slidy/animation": "^1.0.7",
         "@slidy/core": "^3.7.4",
         "@slidy/easing": "^1.0.5",
+		"@sveltejs/adapter-netlify": "^2.0.8",
         "@sveltejs/adapter-static": "^2.0.2",
         "@sveltejs/kit": "^1.22.3",
         "@types/three": "^0.148.0",
@@ -25,10 +26,18 @@
         "sass": "^1.56.2",
         "svelte": "^4.1.0",
         "svelte-check": "^3.4.6",
+		"svelte-dnd-action": "^0.9.33",
         "three": "^0.148.0",
         "tslib": "^2.4.1",
         "typescript": "^4.9.3",
         "vite": "^4.0.0"
     },
-    "type": "module"
+    "type": "module",
+	"dependencies": {
+		"@supabase/auth-helpers-sveltekit": "^0.10.3",
+		"@supabase/supabase-js": "^2.38.1",
+		"prettier-plugin-svelte": "^3.1.2",
+		"svelte-forms-lib": "^2.0.1",
+		"yup": "^1.3.2"
+	}
 }

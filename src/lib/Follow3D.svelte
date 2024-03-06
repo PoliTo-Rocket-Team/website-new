@@ -62,10 +62,12 @@
 <style>
     .outer {
         perspective: var(--perspective, 30rem);
+        height: 100%;
     }
     .inner {
         transform-origin: center;
         transform-style: preserve-3d;
+        height: 100%;
     }
     @media (min-width: 50rem) {
         .inner {
