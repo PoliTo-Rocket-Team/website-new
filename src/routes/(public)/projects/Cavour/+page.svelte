@@ -17,6 +17,12 @@
             eager: true,
         })
     );
+    const euroc = Object.values(
+        import.meta.glob("/src/img/cavour/euroc23/*.{jpg,png}", {
+            as: "url",
+            eager: true,
+        })
+    );
 
     // import { MiddleScreenPool, whenVisible } from "$lib/visibility";
     // import { onDestroy } from "svelte";
@@ -220,7 +226,7 @@
             reused.
         </p>
     </Launch>
-    <Launch name="2023 Spaceport America Cup" date="2023-06-22" images={spac}>
+    <Launch name="Spaceport America Cup" date="2023-06-22" images={spac}>
         <p>
             On Thursday, June 22nd, with moderate wind conditions, the Cavour
             rocket was launched from launchpad B2 of the Vertical Launch Area of
@@ -251,6 +257,34 @@
             thanks to the presented extended abstract "3D-printed multilayered
             fins for flutter suppression", which the judging panel stated stands
             to revolutionise the industry of rocketry.
+        </p>
+    </Launch>
+    <Launch name="European Rocketry Challenge" date="2023-10-13" images={euroc}>
+        <p>
+            On Friday, October 13rd, at 14:45 (UTC+1), Cavour rocket was
+            launched for the 3rd time in this year from the launch rail at Santa
+            Margarida Military Camp, Portugal.
+        </p>
+        <p>
+            Cavour completed the boost and coast phase nominally, reaching an
+            apogee of about 2800m with a maximum speed of 266m/s and a maximum
+            acceleration of 14G. After this phase, Cavour descended hitting the
+            ground at 75m/s, due to an undefined failure of one of the rocket's
+            systems.
+        </p>
+        <p>
+            Overall, Cavour's mission at EuRoC ‘23 was a success, being able to
+            fly again and acquiring an incredible amount of knowledge, skills
+            and experience. This launch set the first of many records for the
+            team, which in minimal time managed to complete two missions at the
+            most ambitious international rocketry competitions.
+        </p>
+        <p>
+            Project Cavour won the ANACOM "Best Telemetry Spectral Signature"
+            Award, which honors the team with the best telemetry spectral
+            signature. Furthermore, the PoliTo Rocket Team placed 8th in the
+            general ranking among the 25 selected teams, part of the much larger
+            number of applicants.
         </p>
     </Launch>
 </section>
