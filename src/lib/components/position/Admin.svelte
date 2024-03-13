@@ -41,7 +41,6 @@
                 {data}
                 on:saved={e => {
                     edit = false;
-                    e.detail.open = data.open; // Form does not handle opening/closing
                     dispatch("saved", e.detail);
                 }}
                 on:cancel={() => (edit = false)}
