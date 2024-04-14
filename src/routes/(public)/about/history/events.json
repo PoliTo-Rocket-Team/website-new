@@ -1,0 +1,79 @@
+[
+    {
+        "date": "October 2021",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "The beginning",
+        "description": "Inspired by <a href='https://www.uscrpl.com/' target='_blank' rel='noreferrer'>USCRPL</a> and <a href='https://www.skywarder.eu/blog/' target='_blank' rel='noreferrer'>Skyward Experimental Rocketry</a>, a group of friends started designing an experimental sounding rocket.",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "Fall-Winter 2021",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "Building Project Cavour: from conception to commission proposal",
+        "description": "<p>The group laid the groundwork and crafted the initial design for what would evolve into <a href='/projects/Cavour'>Project Cavour</a>. </p><p>The <a href='/about/past-teams'>Founders</a> presented the project to establish a dedicated student team for rocket engineering to Professor Alfonso Pagani, who staunchly supported the initiative.</p>",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "April 14, 2022",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "Proposal submission",
+        "description": "The proposal for the formation of a recognized student team was formally submitted to Politecnico di Torino’s budget and projects commission on April 14th, 2022.",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "June 7, 2022",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "Team approval and start of Project Cavour",
+        "description": "On June 7th 2022, Politecnico di Torino officially approved the Team, which started working on <a href='/projects/Cavour'>Project Cavour</a>.",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "Fall 2022",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "Establishing of Project Efesto",
+        "description": "Along with the work of the sounding rocket <a href='/projects/Cavour'>Cavour</a>, in fall 2022 the Team established <a href='/projects/Efesto'>Project Efesto</a> under the lead of the CE Matteo Crachi, to research and develop Italy’s first student-made bi-liquid rocket engine with a focus on sustainability.",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "October 2022",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "Project Cavour makes history",
+        "description": "In October 2022, <a href='/projects/Cavour'>Project Cavour</a>, directed by CE Fabio Meloni, achieved the distinction of being the first Italian project selected for the 2023 Spaceport America Cup (SA CUP), the world’s largest rocketry intercollegiate competition.",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "January 2023",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "Start of Project Efesto",
+        "description": "After the first general recruitment, <a href='/projects/Efesto'>Project Efesto</a> was started to research and develop a Liquid Rocket Engine for the Team's rockets.",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "April 29, 2023",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "Successful test launch of Cavour rocket",
+        "description": "The Cavour rocket completed its design phase in early 2023 and underwent assembly and testing in April 2023, culminating in a successful <a href='https://www.instagram.com/p/CroYBp9t8Sr/?igshid=ZWIzMWE5ZmU3Zg==' target='_blank' rel='noreferrer' title='See the video'>test launch</a> in Germany at 19:53:42 CET. This launch marked a historic moment for the student team at Politecnico di Torino, concluding with the perfect recovery and subsequent reuse of the rocket.",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "June 2023",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "2023 Spaceport America Cup and second Cavour launch",
+        "description": "The a.y. concluded at the end of June 2023, with Project Cavour competing in the 2023 SA CUP, in the 10k feet apogee with COTS solid propulsion category. The rocket was successfully launched and recovered at Spaceport America, in New Mexico, USA.",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "October 2023",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "2023 European Rocketry Challenge",
+        "description": "The team became the first to compete with Project Cavour at the 2023 EuRoC, Europe's major rocket engineering competition.",
+        "longerText": "HELLOOOOOO"
+    },
+    {
+        "date": "October 2024",
+        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "title": "2024 European Rocketry Challenge",
+        "description": "After the conclusion of Project Cavour, a new project was started under CE Edoardo Viglietti for a competition rocket, named <a href='/projects/VES'>Vittorio Emanuele II</a> (VES), with the goal of launching a solid propelled rocket with 9km target apogee.",
+        "longerText": "HELLOOOOOO"
+    }
+]
