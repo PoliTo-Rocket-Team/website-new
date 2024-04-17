@@ -21,6 +21,13 @@
         "img": "/members/Loiodice.jpg"
     },
     {
+        "firstname": "Matteo",
+        "lastname": "Crachi",
+        "linkedin": "matteo-crachi-37a060161",
+        "role": "Efesto",
+        "img": "https://xhppdswwlhomojrlakdk.supabase.co/storage/v1/object/public/people-pics/8-Crachi.jpeg"
+    },
+    {
         "firstname": "Francesca",
         "lastname": "Bracaglia",
         "linkedin": "francesca bracaglia",

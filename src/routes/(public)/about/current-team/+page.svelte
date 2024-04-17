@@ -54,11 +54,11 @@
     <section>
         <div class="executive-view">
             <Chief
-                firstname="Elena"
-                lastname="Dilorenzo"
-                linkedin="elena-dilorenzo-294b5a20b"
+                firstname="Cristiam"
+                lastname="Manfredi"
+                linkedin="cristian-manfredi"
                 role="President"
-                img="/members/Dilorenzo.jpg"
+                img="https://xhppdswwlhomojrlakdk.supabase.co/storage/v1/object/public/people-pics/17-Manfredi.jpeg"
                 angle={0}
                 president
             />
