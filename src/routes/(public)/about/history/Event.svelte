@@ -1,4 +1,3 @@
-
 <script lang="ts">
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
@@ -6,8 +5,7 @@
     const images: HTMLElement[] = [];
     let lastScroll = browser ? window.scrollY : 0;
     let visible = 0;
-    export let data: any[]
-
+    export let data: any[];
 
     const nearestImg = frameThrottle(() => {
         const delta = window.scrollY - lastScroll;
@@ -55,70 +53,49 @@
         );
     }
 
-    
-    
-    
-
-
-
     function observe(node: HTMLElement) {
-    const obs = new IntersectionObserver(
-        entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting)
-                    window.addEventListener("scroll", nearestImg);
-                else window.removeEventListener("scroll", nearestImg);
-            });
-        },
-        {
-            rootMargin: "20% 0% 20% 0%", 
-        }
-    );
-    obs.observe(node);
-    return {
-        destroy() {
-            obs.unobserve(node);
-        },
-    };
-}
-
-
+        const obs = new IntersectionObserver(
+            entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting)
+                        window.addEventListener("scroll", nearestImg);
+                    else window.removeEventListener("scroll", nearestImg);
+                });
+            },
+            {
+                rootMargin: "20% 0% 20% 0%",
+            }
+        );
+        obs.observe(node);
+        return {
+            destroy() {
+                obs.unobserve(node);
+            },
+        };
+    }
 
     onMount(() => {
         visible = nearestAfter(0);
         images[visible].classList.add("visible");
     });
-   
-    
-
-
 </script>
 
 <div use:observe>
     {#each data as image, i}
-    <h3>{image.date}</h3>
-    <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-    <article
-            bind:this={images[i]}
-            
-            on:keyup={() => {}}
-        >
-        
-        <div class="cover">
+        <h3>{image.date}</h3>
+        <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
+        <article bind:this={images[i]} on:keyup={() => {}}>
+            <div class="cover">
                 <div class="img-wrapper">
                     <img src={image.imageSrc} alt={image.title} />
                     <div class="text">
                         <p>{@html image.description}</p>
                     </div>
-                    
-                </div>      
-        </div>
-        
-                
-    </article>
+                </div>
+            </div>
+        </article>
     {/each}
 </div>
-
 
 <style>
     article {
@@ -140,7 +117,7 @@
         opacity: 1;
         cursor: auto;
     }
-    
+
     h3 {
         text-align: center;
         margin-bottom: 1rem;
@@ -175,7 +152,9 @@
         padding: 1rem;
         opacity: 0;
         transform: translateY(-1rem);
-        transition: transform 0.15s ease-out, opacity 0.15s ease-out;
+        transition:
+            transform 0.15s ease-out,
+            opacity 0.15s ease-out;
     }
 
     .img-wrapper:hover img {
@@ -194,7 +173,9 @@
     .img-wrapper:focus-within .text {
         opacity: 1;
         transform: translateY(0);
-        transition: transform 0.15s ease-out, opacity 0.15s ease-in;
+        transition:
+            transform 0.15s ease-out,
+            opacity 0.15s ease-in;
     }
 
     p {
@@ -205,45 +186,44 @@
         margin-top: 0.7rem;
     }
 
-   @media (max-width: 50rem) {
-    article {
-        display: block;
-        opacity: 0.4;
-        transition: opacity 0.1s ease;
-        margin-bottom: 5rem;
-        cursor: pointer;
-        position: relative;
-        z-index: 0;
-        height: 60vh;
-        padding: 1rem;
-        overflow-y: hidden;
-        width: 100%;
+    @media (max-width: 50rem) {
+        article {
+            display: block;
+            opacity: 0.4;
+            transition: opacity 0.1s ease;
+            margin-bottom: 5rem;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            height: 60vh;
+            padding: 1rem;
+            overflow-y: hidden;
+            width: 100%;
+        }
+
+        .img-wrapper:hover img {
+            opacity: 1;
+            position: static;
+            object-fit: cover;
+            z-index: 1;
+        }
     }
 
-    .img-wrapper:hover img {
-      opacity: 1; 
-      position: static; 
-      object-fit: cover; 
-      z-index: 1; 
+    .img-wrapper:hover .text,
+    .img-wrapper:active .text,
+    .img-wrapper:focus-within .text {
+        opacity: 1;
+        transform: translateY(0);
+        transition:
+            transform 0.15s ease-out,
+            opacity 0.15s ease-in;
     }
-  }
 
-  .img-wrapper:hover .text,
-  .img-wrapper:active .text,
-  .img-wrapper:focus-within .text {
-    opacity: 1;
-    transform: translateY(0);
-    transition: transform 0.15s ease-out, opacity 0.15s ease-in;
-  }
+    p {
+        margin-bottom: 0.5rem;
+    }
 
-  p {
-    margin-bottom: 0.5rem;
-  }
-
-  p + p {
-    margin-top: 0.7rem;
-  }
-    
-
+    p + p {
+        margin-top: 0.7rem;
+    }
 </style>
-
