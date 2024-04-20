@@ -40,27 +40,6 @@
         ]
     },
     {
-        "name": "The Exploration Company",
-        "link": "https://www.exploration.space/",
-        "img": "ExplorationCompany.png",
-        "theme": "dark",
-        "texts": [
-            "The Exploration Company is a space engineering firm based in Wessling, Germany. Their efforts are concentrated in the developement of Nyx, a modular, reusable and in-orbit refuelable space vehicle. It is set to have its earth orbit demo flight in 2024, and its first lunar mission is expected to take place in 2028. Their services will be available to serve a wide range of industries.",
-            "The Exploration Company is in a technical partnership with PRT's Project Efesto, involved in the research and development of our first liquid rocket engine."
-        ]
-    },
-    {
-        "name": "BLU Electronic",
-        "link": "http://www.bluelectronic.com/",
-        "img": "BLU_Electronic.jpg",
-        "theme": null,
-        "texts": [
-            "With over two decades of experience, Blu Electronic is a leading provider of electronic boards and equipment for the space and avionics industries.",
-            "Blu Electronic's Aero activities commenced in 2007, and in 2009, the company achieved the UNI EN9100 certification, which it still maintains today. In 2010, it became part of Lombardia Aerospace and continues to provide cutting-edge solutions for space, avionics, and aerospace systems.",
-            "Blue Electronic will provide our team with technical and material support."
-        ]
-    },
-    {
         "name": "TekRevolution",
         "link": "https://www.tekrevolution.it/",
         "img": "Tek.svg",
