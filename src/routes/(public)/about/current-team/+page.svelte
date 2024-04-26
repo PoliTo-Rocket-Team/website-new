@@ -22,6 +22,8 @@
     function getImg(id: number | null, lastname: string) {
         return !id ? null : `${data.ppBucket}${id}-${normalize(lastname)}.jpeg`;
     }
+
+    let p = data.president;
 </script>
 
 <svelte:window
@@ -54,11 +56,11 @@
     <section>
         <div class="executive-view">
             <Chief
-                firstname="Cristiam"
-                lastname="Manfredi"
-                linkedin="cristian-manfredi"
+                firstname={p.first_name}
+                lastname={p.last_name}
+                linkedin={p.linkedin}
                 role="President"
-                img="https://xhppdswwlhomojrlakdk.supabase.co/storage/v1/object/public/people-pics/17-Manfredi.jpeg"
+                img={getImg(p.id4pp, p.last_name)}
                 angle={0}
                 president
             />
