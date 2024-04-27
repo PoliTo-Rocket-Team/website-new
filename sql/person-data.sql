@@ -20,7 +20,7 @@ as $$
     p.last_name,
     p.linkedin,
     p.has_pp,
-    (p.id = get_president()) as is_president,
+    (p.id = get_president_id()) as is_president,
     divs.col as lead_of, 
     row_to_json(chiefing) as chief_of
   from (
