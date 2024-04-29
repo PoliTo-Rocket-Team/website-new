@@ -9,10 +9,10 @@
     import ThemeSelector from "$lib/ThemeSelector.svelte";
 
     const aboutCombo: ComboRoute[] = [
+        { url: "history", name: "History" },
         { url: "mission-vision", name: "Mission" },
         { url: "current-team", name: "The Team" },
         { url: "past-teams", name: "Past Teams" },
-        { url: "history", name: "History" },
     ];
     const projectsCombo: ComboRoute[] = [
         { url: "Cavour", name: "Cavour" },

@@ -2,21 +2,41 @@
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
     import { onMount } from "svelte";
+    import Cavour from "/src/img/cavour/test/8.jpg";
+
     const images: HTMLElement[] = [];
     let lastScroll = browser ? window.scrollY : 0;
     let visible = 0;
     export let data: any[];
 
     const nearestImg = frameThrottle(() => {
-        const delta = window.scrollY - lastScroll;
-        lastScroll = window.scrollY;
-        const newvisible =
-            delta > 0 ? nearestAfter(visible) : nearestBefore(visible);
-        if (visible != newvisible) {
-            images[visible].classList.remove("visible");
-            visible = newvisible;
-            images[visible].classList.add("visible");
-        }
+        const viewportCenterY = window.innerHeight / 2;
+
+        data.forEach((event, i) => {
+            let titleRect = null;
+            let titleCenterY = null;
+            const eventElement = images[i];
+            const titleElement = eventElement.querySelector("h3"); 
+            if (titleElement) {
+                titleRect = titleElement.getBoundingClientRect();
+                titleCenterY = titleRect.top + titleRect.height / 2;
+            }
+
+         
+            if (titleCenterY)
+                if (
+                    Math.abs(titleCenterY - viewportCenterY) <
+                    window.innerHeight / 4
+                ) {
+                    
+                    if (!images[i].classList.contains("visible")) {
+                        images.forEach(image =>
+                            image.classList.remove("visible")
+                        );
+                        images[i].classList.add("visible");
+                    }
+                }
+        });
     });
 
     function nearestAfter(start: number = 0) {
@@ -53,142 +73,35 @@
         );
     }
 
-    function observe(node: HTMLElement) {
-        const obs = new IntersectionObserver(
-            entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting)
-                        window.addEventListener("scroll", nearestImg);
-                    else window.removeEventListener("scroll", nearestImg);
-                });
-            },
-            {
-                rootMargin: "20% 0% 20% 0%",
-            }
-        );
-        obs.observe(node);
-        return {
-            destroy() {
-                obs.unobserve(node);
-            },
-        };
-    }
+    
 
     onMount(() => {
         visible = nearestAfter(0);
         images[visible].classList.add("visible");
+        nearestImg();
+        window.addEventListener("scroll", nearestImg);
     });
 </script>
 
-<div use:observe>
-    {#each data as image, i}
-        <h3>{image.date}</h3>
+<div class="events">
+    {#each data as event, i}
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         <article bind:this={images[i]} on:keyup={() => {}}>
-            <div class="cover">
-                <div class="img-wrapper">
-                    <img src={image.imageSrc} alt={image.title} />
-                    <div class="text">
-                        <p>{@html image.description}</p>
-                    </div>
-                </div>
+            <h3>{event.date}</h3>
+            <div class="image">
+                <img src={Cavour} alt={event.title} />
+                <p>{@html event.description}</p>
             </div>
         </article>
     {/each}
 </div>
 
 <style>
-    article {
-        display: none;
-        opacity: 0.4;
-        transition: opacity 0.1s ease;
-        margin-bottom: 5rem;
-        cursor: pointer;
-        position: relative;
-        z-index: 0;
-        height: 60vh;
-        padding: 1rem;
-        overflow-y: hidden;
-        width: 100%;
-    }
-
-    article:global(.visible) {
-        display: block;
-        opacity: 1;
-        cursor: auto;
-    }
-
-    h3 {
-        text-align: center;
-        margin-bottom: 1rem;
-    }
-
-    .cover {
-        display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr auto;
-        z-index: 1;
-    }
-
-    .img-wrapper {
-        width: 18rem;
-        place-self: center;
-        position: relative;
-        isolation: isolate;
-    }
-
-    img {
-        width: 100%;
-        z-index: 2;
-    }
-
-    .text {
-        z-index: 10;
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        padding: 1rem;
-        opacity: 0;
-        transform: translateY(-1rem);
-        transition:
-            transform 0.15s ease-out,
-            opacity 0.15s ease-out;
-    }
-
-    .img-wrapper:hover img {
-        opacity: 0.4;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        z-index: -1;
-    }
-
-    .img-wrapper:hover .text,
-    .img-wrapper:active .text,
-    .img-wrapper:focus-within .text {
-        opacity: 1;
-        transform: translateY(0);
-        transition:
-            transform 0.15s ease-out,
-            opacity 0.15s ease-in;
-    }
-
-    p {
-        margin-bottom: 0.5rem;
-    }
-
-    p + p {
-        margin-top: 0.7rem;
-    }
-
-    @media (max-width: 50rem) {
+    
+    @media (min-width: 51rem) {
         article {
-            display: block;
+            display: flex;
+            flex-direction: column;
             opacity: 0.4;
             transition: opacity 0.1s ease;
             margin-bottom: 5rem;
@@ -199,31 +112,123 @@
             padding: 1rem;
             overflow-y: hidden;
             width: 100%;
+            align-self: center;
         }
 
-        .img-wrapper:hover img {
+        article:global(.visible) {
             opacity: 1;
-            position: static;
+            cursor: auto;
+        }
+
+        h3 {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .image {
+            visibility: hidden;
+            width: 18rem;
+            place-self: center;
+            position: relative;
+            isolation: isolate;
+        }
+
+        .image:global(.visible) {
+            visibility: visible;
+            cursor: auto;
+            z-index: 20;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .image:hover img {
+            opacity: 0.4;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             object-fit: cover;
+            z-index: -1;
+        }
+
+        .image:hover p {
+            opacity: 1;
+            transform: translateY(0);
+            transition:
+                transform 0.15s ease-out,
+                opacity 0.15s ease-in;
             z-index: 1;
         }
+
+        p {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 1rem;
+            opacity: 0;
+            transform: translateY(-1rem);
+            transition:
+                transform 0.15s ease-out,
+                opacity 0.15s ease-out;
+        }
     }
 
-    .img-wrapper:hover .text,
-    .img-wrapper:active .text,
-    .img-wrapper:focus-within .text {
-        opacity: 1;
-        transform: translateY(0);
-        transition:
-            transform 0.15s ease-out,
-            opacity 0.15s ease-in;
-    }
+   
+    @media (max-width: 50rem) {
+        h3 {
+            text-align: center;
+            margin-bottom: 1rem;
+        }
 
-    p {
-        margin-bottom: 0.5rem;
-    }
+        .image {
+            width: 18rem;
+            place-self: center;
+            position: relative;
+            isolation: isolate;
+        }
 
-    p + p {
-        margin-top: 0.7rem;
+        img {
+            width: 100%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        article {
+            display: flex;
+            flex-direction: column;
+            opacity: 0.4;
+            transition: opacity 0.1s ease;
+            margin-bottom: 5rem;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            height: 60vh;
+            padding: 1rem;
+            overflow-y: hidden;
+            width: 100%;
+            height: auto;
+        }
+
+        article:global(.visible) {
+            opacity: 1;
+            cursor: auto;
+        }
+
+        p {
+            opacity: 1;
+            margin-top: 1rem;
+            position: static;
+        }
+
+        p + p {
+            margin-top: 0.7rem;
+        }
     }
 </style>
