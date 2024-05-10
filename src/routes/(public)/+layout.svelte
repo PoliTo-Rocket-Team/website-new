@@ -282,11 +282,6 @@
         transition:
             transform $nav-trans,
             filter $nav-trans;
-        &.unfocus {
-            transform: translateX(calc(-3 * var(--pad)));
-            filter: brightness(0.75);
-        }
-
         min-height: 100%;
         display: flex;
         flex-direction: column;
