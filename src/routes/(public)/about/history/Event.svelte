@@ -37,9 +37,10 @@
     onMount(() => {
         images = Array.from(document.querySelectorAll(".events article"));
         nearestImg();
-        window.addEventListener("scroll", nearestImg);
     });
 </script>
+
+<svelte:window on:scroll={nearestImg} />
 
 <div class="events">
     {#each data as event, i}
