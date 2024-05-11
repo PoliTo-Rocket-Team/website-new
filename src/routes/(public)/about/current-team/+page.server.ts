@@ -25,7 +25,7 @@ export const load: PageServerLoad = async ({ locals }) => {
             details: res.error.details,
             message: res.error.message,
         });
-    
+
     const president = await locals.supabase.rpc("get_latest_president");
     if (president.error) {
         throw error(500, {
@@ -34,7 +34,7 @@ export const load: PageServerLoad = async ({ locals }) => {
         });
     }
     return {
-        subteams: res.data as unknown as CompleteSubteam[],
+        subteams: res.data,
         ppBucket: locals.supabase.storage.from("people-pics").getPublicUrl("")
             .data.publicUrl,
         president: president.data[0] as Person,
