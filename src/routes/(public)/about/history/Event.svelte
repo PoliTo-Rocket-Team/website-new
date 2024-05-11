@@ -21,7 +21,10 @@
                     const titleRect = titleElement.getBoundingClientRect();
                     const titleCenterY = titleRect.top + titleRect.height / 2;
 
-                    if (Math.abs(titleCenterY - viewportCenterY) < window.innerHeight / 4) {
+                    if (
+                        Math.abs(titleCenterY - viewportCenterY) <
+                        window.innerHeight / 4
+                    ) {
                         centeredEventIndex = i;
                     }
                 }
@@ -32,7 +35,7 @@
     let images: HTMLElement[] = [];
 
     onMount(() => {
-        images = Array.from(document.querySelectorAll('.events article'));
+        images = Array.from(document.querySelectorAll(".events article"));
         nearestImg();
         window.addEventListener("scroll", nearestImg);
     });
@@ -43,7 +46,7 @@
         <article class:selected={centeredEventIndex === i}>
             <h3>{event.date}</h3>
             <div class="image">
-                <img src={Cavour} alt={event.title}  />
+                <img src={Cavour} alt={event.title} />
                 <p>{@html event.description}</p>
             </div>
         </article>
@@ -52,36 +55,31 @@
 
 <style>
     h3 {
-            text-align: center;
-            margin-bottom: 1rem;
-        }
+        text-align: center;
+        margin-bottom: 1rem;
+    }
 
-        
+    article {
+        display: flex;
+        flex-direction: column;
+        opacity: 0.4;
+        transition: opacity 0.1s ease;
+        margin-bottom: 5rem;
+        cursor: pointer;
+        position: relative;
+        z-index: 0;
+        height: 60vh;
+        padding: 2rem;
+        overflow-y: hidden;
+        width: 100%;
+        height: auto;
+    }
 
-        
+    article:global(.selected) {
+        opacity: 1;
+        cursor: auto;
+    }
 
-        article {
-            display: flex;
-            flex-direction: column;
-            opacity: 0.4;
-            transition: opacity 0.1s ease;
-            margin-bottom: 5rem;
-            cursor: pointer;
-            position: relative;
-            z-index: 0;
-            height: 60vh;
-            padding: 2rem;
-            overflow-y: hidden;
-            width: 100%;
-            height: auto;
-        }
-
-        article:global(.selected) {
-            opacity: 1;
-            cursor: auto;
-        }
-
-    
     @media (min-width: 51rem) {
         article.selected .image {
             height: 30vh;
@@ -90,7 +88,7 @@
             clip-path: inset(0);
             transform: scale(1);
         }
-        
+
         img {
             width: 100%;
             display: block;
@@ -99,19 +97,18 @@
             transform: scale(0.3);
         }
         .image {
-            height : 0;
+            height: 0;
             width: 18rem;
             place-self: center;
             position: relative;
             isolation: isolate;
             overflow: hidden;
         }
-        .image img{
+        .image img {
             transition: height 0.3s ease;
         }
-        
-      
-        .image:hover img{
+
+        .image:hover img {
             opacity: 0.4;
             position: fixed;
             top: 0;
@@ -123,7 +120,6 @@
         }
 
         .image:hover p {
-            
             opacity: 1;
             transform: translateY(0);
             transition:
@@ -133,7 +129,6 @@
         }
 
         p {
-           
             position: absolute;
             bottom: 0;
             left: 0;
@@ -148,7 +143,6 @@
         }
     }
 
-   
     @media (max-width: 50rem) {
         img {
             width: 100%;
@@ -156,7 +150,7 @@
             margin: 0 auto;
         }
         .image {
-            height : auto;
+            height: auto;
             width: 18rem;
             place-self: center;
             position: relative;
@@ -169,4 +163,3 @@
         }
     }
 </style>
-
