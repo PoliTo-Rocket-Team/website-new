@@ -1,10 +1,10 @@
 <script lang="ts">
-    import { onMount } from "svelte";
     import { frameThrottle } from "$lib/timing";
     import Cavour from "/src/img/cavour/test/8.jpg";
 
     export let data: any[];
 
+    const articles: HTMLElement[] = new Array(data.length);
     let centeredEventIndex = 0;
 
     const nearestImg = frameThrottle(() => {
@@ -14,7 +14,7 @@
         centeredEventIndex = -1; // Reset centered event index
 
         data.forEach((event, i) => {
-            const eventElement = images[i];
+            const eventElement = articles[i];
             if (eventElement) {
                 const titleElement = eventElement.querySelector("h3");
                 if (titleElement) {
@@ -31,20 +31,16 @@
             }
         });
     });
-
-    let images: HTMLElement[] = [];
-
-    onMount(() => {
-        images = Array.from(document.querySelectorAll(".events article"));
-        nearestImg();
-    });
 </script>
 
 <svelte:window on:scroll={nearestImg} />
 
 <div class="events">
     {#each data as event, i}
-        <article class:selected={centeredEventIndex === i}>
+        <article
+            bind:this={articles[i]}
+            class:selected={centeredEventIndex === i}
+        >
             <h3>{event.date}</h3>
             <div class="image">
                 <img src={Cavour} alt={event.title} />
