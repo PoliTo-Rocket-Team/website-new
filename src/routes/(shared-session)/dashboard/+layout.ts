@@ -15,14 +15,17 @@ export const load: LayoutLoad = async ({ parent, url }) => {
         else user = session2user(session);
     }
 
-    const res = await supabase.rpc("get_person_data", { user_uuid: user.id });
+    const res = await supabase.rpc("get_person_data", {
+        user_uuid: user.id,
+    });
     if (res.error)
         throw error(500, {
             message: "Invalid session",
             details: res.error.message,
         });
     if (!res.data.length) return { user };
-    const person = res.data[0] as PersonData;
+
+    const person = res.data[0];
 
     return {
         user,
