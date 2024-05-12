@@ -1,4 +1,5 @@
 <script lang="ts">
+    import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
     import Cavour from "/src/img/cavour/test/8.jpg";
 
@@ -6,34 +7,58 @@
 
     const articles: HTMLElement[] = new Array(data.length);
     let centeredEventIndex = 0;
+    let lastScroll = browser ? window.scrollY : 0;
 
-    const nearestImg = frameThrottle(() => {
-        if (!data?.length) return;
-        const viewportCenterY = window.innerHeight / 2;
-
-        centeredEventIndex = -1; // Reset centered event index
-
-        data.forEach((event, i) => {
-            const eventElement = articles[i];
-            if (eventElement) {
-                const titleElement = eventElement.querySelector("h3");
-                if (titleElement) {
-                    const titleRect = titleElement.getBoundingClientRect();
-                    const titleCenterY = titleRect.top + titleRect.height / 2;
-
-                    if (
-                        Math.abs(titleCenterY - viewportCenterY) <
-                        window.innerHeight / 4
-                    ) {
-                        centeredEventIndex = i;
-                    }
-                }
-            }
-        });
+    const nearestArticle = frameThrottle(() => {
+        const delta = window.scrollY - lastScroll;
+        lastScroll = window.scrollY;
+        const newFocused =
+            delta > 0
+                ? nearestAfter(centeredEventIndex)
+                : nearestBefore(centeredEventIndex);
+        if (centeredEventIndex != newFocused) {
+            articles[centeredEventIndex].classList.remove("focus");
+            centeredEventIndex = newFocused;
+            articles[centeredEventIndex].classList.add("focus");
+        }
     });
+
+    function nearestAfter(start: number = 0) {
+        let i: number;
+        let lastDistance = distanceFromCenterScreen(articles[start]);
+        let currentDistance: number;
+        const len = articles.length;
+        for (i = start + 1; i < len; i++) {
+            currentDistance = distanceFromCenterScreen(articles[i]);
+            if (currentDistance > lastDistance) break;
+            lastDistance = currentDistance;
+        }
+        return i - 1;
+    }
+
+    function nearestBefore(end: number = articles.length - 1) {
+        let i: number;
+        let lastDistance = distanceFromCenterScreen(articles[end]);
+        let currentDistance: number;
+        for (i = end - 1; i >= 0; i--) {
+            currentDistance = distanceFromCenterScreen(articles[i]);
+            if (currentDistance > lastDistance) break;
+            lastDistance = currentDistance;
+        }
+        return i + 1;
+    }
+
+    function distanceFromCenterScreen(el: HTMLElement) {
+        return Math.abs(
+            el.offsetTop +
+                el.offsetHeight * 0.5 -
+                window.scrollY -
+                window.innerHeight * 0.5
+        );
+    }
 </script>
 
-<svelte:window on:scroll={nearestImg} />
+<svelte:window on:scroll={nearestArticle} />
 
 <div class="events">
     {#each data as event, i}
