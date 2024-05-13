@@ -1,433 +1,517 @@
 [
-    { "name": "Alessandro Nitti", "role": "CFD Analyst", "linkedin": null },
+    {
+        "name": "Alessandro Giacobetti",
+        "role": "Control System Engineer",
+        "linkedIn": "alessandrogiacobetti"
+    },
+    {
+        "name": "Alessandro Nitti",
+        "role": "CFD Analyst",
+        "linkedIn": null
+    },
     {
         "name": "Alessandro Rabino",
         "role": "Software Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Alessandro Vignola",
         "role": "FEM Analyst Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Alessio Franco",
         "role": "Software Engineer",
-        "linkedin": "alessiofranco31"
+        "linkedIn": "alessiofranco31"
     },
     {
         "name": "Alessio Improta",
-        "role": "Propulsion Engineer",
-        "linkedin": "alessioimprota"
-    },
-    {
-        "name": "Alex Aiello",
-        "role": "Avionics Engineer",
-        "linkedin": "alex aiello"
-    },
-    {
-        "name": "Alex Jarod Sclafani",
-        "role": "Propulsion Engineer",
-        "linkedin": "alex jarod sclafani"
-    },
-    {
-        "name": "Ali Mirzaei",
-        "role": "Propulsion Engineer",
-        "linkedin": "ali mirzaei"
+        "role": "Engine Cycle Modelling Engineer",
+        "linkedIn": "alessioimprota"
     },
     {
         "name": "Ali Rahmatpour",
         "role": "Product Designer, Graphic Designer",
-        "linkedin": "ebteda"
+        "linkedIn": "ebteda"
     },
     {
         "name": "Amit Suresh Kaushik",
         "role": "Design and Additive Manufacturing Engineer",
-        "linkedin": "amit-k"
+        "linkedIn": "amit-k"
     },
     {
         "name": "Andrea  Manzo",
         "role": "Design and Additive Manufacturing Engineer",
-        "linkedin": null
-    },
-    {
-        "name": "Andrea De Masi",
-        "role": "Software Engineer",
-        "linkedin": "andrea de masi"
-    },
-    {
-        "name": "Andrea Ruscica",
-        "role": "Mechanical Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Antonino Spadafora",
         "role": "FEM Analyst Engineer",
-        "linkedin": "antonino-spadafora"
+        "linkedIn": "antonino-spadafora"
+    },
+    {
+        "name": "Antonio Sepe",
+        "role": "Propulsion engineer",
+        "linkedIn": "antonio-sepe"
     },
     {
         "name": "Aurelio Maria Amato",
         "role": "Hardware Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Balkan Urkmez",
         "role": "Design and Additive Manufacturing Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
-    { "name": "Benedetta Marazzato", "role": "CFD Analyst", "linkedin": null },
-    { "name": "Christian Biondo", "role": "CFD Analyst", "linkedin": null },
+    {
+        "name": "Behdad Khodabakhshi Rizi",
+        "role": "Design Engineer",
+        "linkedIn": "behdad-khodabakhshi-rizi"
+    },
+    {
+        "name": "Benedetta Marazzato",
+        "role": "CFD Analyst",
+        "linkedIn": null
+    },
+    {
+        "name": "Can Dogrul",
+        "role": "Desktop Application Developer",
+        "linkedIn": "can-do"
+    },
+    {
+        "name": "Carmen Sonia Altieri",
+        "role": "Front-End Developer",
+        "linkedIn": null
+    },
+    {
+        "name": "Christian Biondo",
+        "role": "CFD Analyst",
+        "linkedIn": null
+    },
     {
         "name": "Cosmo Spinosa",
         "role": "Propulsion Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
-        "name": "Cristiana Avata",
+        "name": "Cristiana Avati",
         "role": "Hardware Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
-    { "name": "Daniele Brero", "role": "Recovery engineer", "linkedin": null },
+    {
+        "name": "Cristina Pecoriello",
+        "role": "Cryogenic system Engineer",
+        "linkedIn": null
+    },
+    {
+        "name": "Daniele Brero",
+        "role": "Recovery engineer",
+        "linkedIn": null
+    },
     {
         "name": "Daniele Pice",
         "role": "CFD analyst",
-        "linkedin": "daniele-pice"
+        "linkedIn": "daniele-pice-6a425a291"
     },
     {
         "name": "Davide Bruno",
         "role": "Operational Excellence Specialist",
-        "linkedin": "davide-bruno"
+        "linkedIn": "davide-bruno"
     },
     {
-        "name": "Davide Parlato",
-        "role": "Propulsion Engineer",
-        "linkedin": null
+        "name": "Diego Bottegal",
+        "role": "Event specialist ",
+        "linkedIn": null
     },
     {
-        "name": "Deniz Akyuz",
-        "role": "App Developer",
-        "linkedin": "denizzakyuz"
-    },
-    { "name": "Diego Bottegal", "role": "Event specialist ", "linkedin": null },
-    { "name": "Duru Duran", "role": "Photographer ", "linkedin": null },
-    {
-        "name": "Edoardo Baraldi",
-        "role": "Propulsion Engineer",
-        "linkedin": "edoardo baraldi"
+        "name": "Dimitri Mazzone",
+        "role": "Propulsion engineer",
+        "linkedIn": "dimitri-mazzone"
     },
     {
         "name": "Edoardo Pagliano",
         "role": "Recovery engineer",
-        "linkedin": "edoardo-pagliano"
-    },
-    {
-        "name": "Eliza  Ciszewska ",
-        "role": "Mechanical Engineer",
-        "linkedin": null
+        "linkedIn": "edoardo-pagliano"
     },
     {
         "name": "Emanuele Ronchetti",
         "role": "Sponsoring manager",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Emir Topakci",
         "role": "CAD & AM Engineer",
-        "linkedin": "emir topakcı"
+        "linkedIn": "emir-topakc%C4%B1-09a58420a"
     },
     {
         "name": "Erfan Khoini",
         "role": "Design and Additive Manufacturing Engineer",
-        "linkedin": "erfankhoini"
+        "linkedIn": "erfankhoini"
     },
     {
         "name": "Ettore Giuseppe  De Bartolo ",
         "role": "Recruitment Specialist",
-        "linkedin": null
+        "linkedIn": null
+    },
+    {
+        "name": "Fabio Zeloni",
+        "role": "Propulsion engineer",
+        "linkedIn": "fabio-zeloni"
     },
     {
         "name": "Federica Carollo",
         "role": "Propulsion Engineer",
-        "linkedin": null
-    },
-    {
-        "name": "Federica Portis",
-        "role": "Sponsoring Manager - Safety and Launch manager ",
-        "linkedin": "federica portis"
+        "linkedIn": null
     },
     {
         "name": "Federica Withmanthi Fernando Anjanpalage",
         "role": "Event Specialist",
-        "linkedin": null
+        "linkedIn": null
     },
-    { "name": "Felipe Cuellar", "role": "Facility Manager", "linkedin": null },
+    {
+        "name": "Felipe Cuellar",
+        "role": "Facility Manager",
+        "linkedIn": null
+    },
     {
         "name": "Francesco Abate",
         "role": "Avionics Engineer",
-        "linkedin": "francesco abate"
+        "linkedIn": "francesco-abate-79601719b"
     },
     {
         "name": "Furkan Emre Agyel",
-        "role": "Software Engineer",
-        "linkedin": "furkanagyel"
+        "role": "Embedded Hardware/Software Engineer",
+        "linkedIn": "furkanagyel"
     },
     {
         "name": "Gabriele  Caso",
         "role": "Propulsion Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Gabriele  Tanca",
         "role": "Outreach & Recognition Specialist",
-        "linkedin": null
+        "linkedIn": null
     },
     {
-        "name": "Giacomo Luccisano",
-        "role": "Avionics engineer",
-        "linkedin": "giacomo luccisano"
+        "name": "Gianluca Paolicelli",
+        "role": "Hardware Engineer",
+        "linkedIn": null
     },
     {
         "name": "Giovanna Santarelli",
         "role": "Engine Cycle Modelling Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
-        "name": "Giovanni Del Vecchio",
-        "role": "Operational Excellence Specialist",
-        "linkedin": "giovanni delvecchio"
+        "name": "Giuliana De Geronimo",
+        "role": "FEA Analyst",
+        "linkedIn": null
     },
-    { "name": "Giuliana De Geronimo", "role": "FEA Analyst", "linkedin": null },
-    { "name": "Giulio  Balsano", "role": "CFD Analyst", "linkedin": null },
+    {
+        "name": "Giulio  Balsano",
+        "role": "CFD Analyst",
+        "linkedIn": null
+    },
     {
         "name": "Giuseppe Barbera",
-        "role": "Avionics Engineer",
-        "linkedin": "giuseppe barbera"
+        "role": "Software Engineer",
+        "linkedIn": "giuseppe-barbera-97b741204"
     },
-    { "name": "Giusi Raso", "role": "CFD Analyst ", "linkedin": "giusi raso" },
+    {
+        "name": "Giuseppe Ribbisi",
+        "role": "Recovery Engineer",
+        "linkedIn": "giuseppe-ribbisi"
+    },
+    {
+        "name": "Giuseppe Riccardo Fornari",
+        "role": "Propulsion engineer",
+        "linkedIn": "riccardo-fornari"
+    },
+    {
+        "name": "Giusi Raso",
+        "role": "CFD Analyst ",
+        "linkedIn": "giusi-raso"
+    },
     {
         "name": "Gustavo Lopez",
         "role": "Structure Engineer",
-        "linkedin": "gustavo-andrés-lópez-cáceres"
+        "linkedIn": "gustavo-andrés-lópez-cáceres"
     },
     {
         "name": "Harrshit Oruganti Sridhar",
         "role": "Propulsion Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Homer Valizadeh",
-        "role": "Software Engineer",
-        "linkedin": "homer-valizadeh"
+        "role": "Embedded Hardware/Software Engineer",
+        "linkedIn": "homer-valizadeh"
     },
     {
         "name": "Huseyin Gulec",
         "role": "Web Developer",
-        "linkedin": "huseyingulec"
+        "linkedIn": "huseyingulec"
     },
     {
-        "name": "Kacper Koncewicz",
-        "role": "Mechanical Engineer",
-        "linkedin": "kacper k"
+        "name": "Khalil Ekradi",
+        "role": "CFD Analyst",
+        "linkedIn": null
     },
     {
-        "name": "Kevin Giordano",
-        "role": "Embedded Software Engineer",
-        "linkedin": "kevin-giordano"
+        "name": "Kiana Kamali Poorshiraz ",
+        "role": "Hardware Engineer",
+        "linkedIn": null
     },
-    { "name": "Khalil Ekradi", "role": "CFD Analyst", "linkedin": null },
     {
-        "name": "Lorenzo Arena",
-        "role": "Propulsion Engineer",
-        "linkedin": "lorenzoarena1234"
+        "name": "Linda Ennio",
+        "role": "Recovery Engineer",
+        "linkedIn": null
     },
-    { "name": "Lorenzo Faggion", "role": "CFD Analyst", "linkedin": null },
+    {
+        "name": "Lorenzo Faggion",
+        "role": "CFD Analyst",
+        "linkedIn": null
+    },
     {
         "name": "Luca Salvatelli",
         "role": "Hardware Engineer",
-        "linkedin": "luca-salvatelli"
-    },
-    {
-        "name": "Marco Donà",
-        "role": "Recovery engineer",
-        "linkedin": "marco-dona"
+        "linkedIn": "luca-salvatelli"
     },
     {
         "name": "Marco Guzzon",
         "role": "Propulsion Engineer",
-        "linkedin": "marco guzzon"
+        "linkedIn": "marco-guzzon-4605221b5"
     },
-    { "name": "Marco Prodan", "role": "Propulsion Engineer", "linkedin": null },
     {
-        "name": "Marco Romano Delogu",
+        "name": "Marco Prodan",
         "role": "Propulsion Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Margherita  Michahelles ",
         "role": "Propulsion Engineer",
-        "linkedin": "margherita m"
+        "linkedIn": "margherita-m-b4a8971b9"
+    },
+    {
+        "name": "Maria Giulia Canetti",
+        "role": "Engine Cycle Modelling Engineer ",
+        "linkedIn": "maria-giulia-canetti"
     },
     {
         "name": "Matteo Donadel",
         "role": "Sponsoring Manager",
-        "linkedin": "matteo-donadel"
+        "linkedIn": "matteo-donadel"
     },
     {
         "name": "Matteo Manavello",
         "role": "Sponsoring Manager",
-        "linkedin": "matteo manavello"
+        "linkedIn": "matteo-manavello-72221421b"
+    },
+    {
+        "name": "Matteo Perfetti",
+        "role": "Cryogenic system Engineer",
+        "linkedIn": "matteo-perfetti"
     },
     {
         "name": "Matteo Petri",
         "role": "Mechanical/Propulsion Engineer",
-        "linkedin": "matteo-petri"
+        "linkedIn": "matteo-petri"
     },
-    { "name": "Mattia Angirillo ", "role": "FEM Analyst", "linkedin": null },
+    {
+        "name": "Mattia Angirillo ",
+        "role": "FEM Analyst",
+        "linkedIn": null
+    },
+    {
+        "name": "Mattia Curione ",
+        "role": "Recovery Engineer",
+        "linkedIn": null
+    },
     {
         "name": "Mehdi Mansouri",
         "role": "Web Developer",
-        "linkedin": "mehdi mansouri"
+        "linkedIn": "mehdi-mansouri-636203227"
     },
     {
         "name": "Mesut Berk Unal",
         "role": "Design and Additive Manufacturing Engineer",
-        "linkedin": "mesut-berk"
+        "linkedIn": "mesut-berk"
     },
     {
         "name": "Michał Zawadzki",
         "role": "CAD & AM Engineer",
-        "linkedin": "michal zawadzki"
+        "linkedIn": "michal-zawadzki-pl"
     },
     {
         "name": "Michele Rossetto",
         "role": "Hardware Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Michele Sannino",
         "role": "Propulsion Engineer",
-        "linkedin": "michele sannino"
-    },
-    {
-        "name": "Mohammad Reza Abedi",
-        "role": "Design Engineer",
-        "linkedin": null
+        "linkedIn": "michele-sannino-331154245"
     },
     {
         "name": "Mohammad Yousefi",
         "role": "FEM Analyst",
-        "linkedin": "mohammad yousefi"
+        "linkedIn": "mohammad-yousefi-1804ba189"
     },
     {
         "name": "Mohammadreza Sobhi",
         "role": "Materials and AM Engineer",
-        "linkedin": "mhrezasobhi"
+        "linkedIn": "mhrezasobhi"
     },
     {
         "name": "Morteza Moslehi",
         "role": "Control System Engineer",
-        "linkedin": "morteza-moslehi"
+        "linkedIn": "morteza-moslehi"
     },
     {
-        "name": "Mustafa Ulvi Aydin",
-        "role": "Mechanical Engineer",
-        "linkedin": null
+        "name": "Natia Sakandelidze",
+        "role": "CFD Analyst",
+        "linkedIn": null
     },
-    { "name": "Natia Sakandelidze", "role": "CFD Analyst", "linkedin": null },
     {
         "name": "Nicola Bruschi",
         "role": "FEM Analyst Engineer",
-        "linkedin": "nicola-bruschi"
+        "linkedIn": "nicola-bruschi"
+    },
+    {
+        "name": "Nicola Montagner",
+        "role": "Control System Engineer",
+        "linkedIn": "nicola-montagner"
     },
     {
         "name": "Nicolas Cerutti",
         "role": "Recovery engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Nicolò Petronella",
         "role": "Mission Analyst",
-        "linkedin": "nicol%C3%B2 petronella"
+        "linkedIn": "nicol%C3%B2 petronella"
     },
     {
         "name": "Nicolò Vetri",
         "role": "Design and Additive Manufacturing Engineer",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Nikita Fusilli Grynchenko",
         "role": "FEM Analyst",
-        "linkedin": null
+        "linkedIn": null
     },
-    { "name": "Nisanur Nagac", "role": "RF Specialist", "linkedin": null },
+    {
+        "name": "Nisanur Nagac",
+        "role": "RF Specialist",
+        "linkedIn": null
+    },
     {
         "name": "Niv Gilad",
         "role": "Safety and Launch Manager",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Oshani Kularathna",
-        "role": "Propulsion Engineer",
-        "linkedin": null
+        "role": "Software Engineer",
+        "linkedIn": null
     },
     {
         "name": "Paul Teo Davis",
         "role": "Electronics Engineer",
-        "linkedin": null
-    },
-    {
-        "name": "Pierantonio Bertuccio",
-        "role": "FEM Analyst",
-        "linkedin": null
+        "linkedIn": null
     },
     {
         "name": "Pierluigi Petrachi",
-        "role": "Propulsion Engineer",
-        "linkedin": null
+        "role": "Engine Cycle Modelling Engineer - Sponsoring Manager",
+        "linkedIn": null
+    },
+    {
+        "name": "Pouriya  Salimian Rizi ",
+        "role": "Control Engineering ",
+        "linkedIn": "pouriya-salimian-rizi"
     },
     {
         "name": "Ramin Moradi",
         "role": "Design and Additive Manufacturing Engineer",
-        "linkedin": "ramin-moradi"
+        "linkedIn": "ramin-moradi"
     },
-    { "name": "Ricardo Brunetti", "role": "Design Engineer", "linkedin": null },
     {
-        "name": "Riccardo Di Maria",
-        "role": "CFD Analyst",
-        "linkedin": "riccardo-di-maria-455143257"
+        "name": "Ricardo Brunetti",
+        "role": "Safety Engineer",
+        "linkedIn": null
     },
     {
         "name": "Riccardo Dipietro",
-        "role": "Software Engineer",
-        "linkedin": "riccardo-dipietro"
+        "role": "Embedded Hardware/Software Engineer",
+        "linkedIn": "riccardo-dipietro"
     },
     {
         "name": "Riccardo Savio",
         "role": "Propulsion Engineer",
-        "linkedin": "riccardo-savio"
+        "linkedIn": "riccardo-savio-614741218"
     },
-    { "name": "Selim Kararti", "role": "Sponsoring Manager", "linkedin": null },
+    {
+        "name": "Rocco Donnola",
+        "role": "Hardware Engineer",
+        "linkedIn": null
+    },
+    {
+        "name": "Selim Kararti",
+        "role": "Operational Excellence Specialist ",
+        "linkedIn": null
+    },
     {
         "name": "Silvia Semenzin",
         "role": "Engine Cycle Modeling Engineer",
-        "linkedin": "silviasemenzin"
+        "linkedIn": "silviasemenzin"
+    },
+    {
+        "name": "Simone Edoardo Neri",
+        "role": "FEM Analyst",
+        "linkedIn": null
     },
     {
         "name": "Syed Farooq Shah",
         "role": "Social Media Manager",
-        "linkedin": null
+        "linkedIn": null
     },
-    { "name": "Tacan Avsar", "role": "Hardware Engineer", "linkedin": null },
+    {
+        "name": "Tacan Avsar",
+        "role": "Embedded Hardware/Software Engineer",
+        "linkedIn": null
+    },
+    {
+        "name": "Tancredi Palumbo",
+        "role": "Engine Cycle Modelling Engineer",
+        "linkedIn": null
+    },
     {
         "name": "Tommaso Gualtierotti",
         "role": "Embedded Software Engineer",
-        "linkedin": "tommaso-gualtierotti"
+        "linkedIn": "tommaso-gualtierotti"
     },
-    { "name": "Tuna Sahin", "role": "Mechanical Engineer", "linkedin": "tuna" },
-    { "name": "Vito Murgolo", "role": "FEA Analyst", "linkedin": null },
+    {
+        "name": "Tuna Sahin",
+        "role": "Mechanical Engineer",
+        "linkedIn": "tuna"
+    },
+    {
+        "name": "Vincenzo Catalano",
+        "role": "Embedded Software Engineer",
+        "linkedIn": "vincenzo-catalano"
+    },
+    {
+        "name": "Vito Murgolo",
+        "role": "FEA Analyst",
+        "linkedIn": null
+    },
     {
         "name": "Zhu Ruoqing",
         "role": "Control System Engineer",
-        "linkedin": "ruoqing-zh"
+        "linkedIn": "ruoqing-zh"
     }
 ]
