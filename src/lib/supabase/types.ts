@@ -439,17 +439,6 @@ export type Database = {
                     leads: Database["public"]["CompositeTypes"]["lead_info"][];
                 }[];
             };
-            "get_complete_subteams-old-version": {
-                Args: Record<PropertyKey, never>;
-                Returns: {
-                    name: string;
-                    code: string;
-                    chief: Json;
-                    coordinator1: Json;
-                    coordinator2: Json;
-                    leads: Json[];
-                }[];
-            };
             get_division_of: {
                 Args: {
                     _user: string;
@@ -501,21 +490,6 @@ export type Database = {
                     is_president: boolean;
                     lead_of: Database["public"]["CompositeTypes"]["division_info"][];
                     chief_of: Database["public"]["CompositeTypes"]["subteam_info"];
-                }[];
-            };
-            "get_person_data-old-version": {
-                Args: {
-                    user_uuid: string;
-                };
-                Returns: {
-                    id: number;
-                    first_name: string;
-                    last_name: string;
-                    linkedin: string;
-                    has_pp: boolean;
-                    is_president: boolean;
-                    lead_of: Json[];
-                    chief_of: Json;
                 }[];
             };
             get_person_id: {
@@ -575,37 +549,37 @@ export type Database = {
         };
         CompositeTypes: {
             chief_info: {
-                first_name: string | null;
-                last_name: string | null;
+                first_name: string;
+                last_name: string;
                 linkedin: string | null;
                 id4pp: number | null;
-                title: string | null;
+                title: string;
             };
             coordinator_info: {
-                first_name: string | null;
-                last_name: string | null;
+                first_name: string;
+                last_name: string;
                 linkedin: string | null;
                 id4pp: number | null;
             };
             division_info: {
-                id: number | null;
-                code: string | null;
-                name: string | null;
-                acting: boolean | null;
+                id: number;
+                code: string;
+                name: string;
+                acting: boolean;
             };
             lead_info: {
-                first_name: string | null;
-                last_name: string | null;
+                first_name: string;
+                last_name: string;
                 linkedin: string | null;
                 id4pp: number | null;
-                acting: boolean | null;
-                division: string | null;
+                acting: boolean;
+                division: string;
             };
             subteam_info: {
-                id: number | null;
-                code: string | null;
-                name: string | null;
-                title: string | null;
+                id: number;
+                code: string;
+                name: string;
+                title: string;
             };
         };
     };
