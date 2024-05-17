@@ -25,7 +25,8 @@
         "lastname": "Crachi",
         "linkedin": "matteo-crachi-37a060161",
         "role": "Efesto",
-        "img": "https://xhppdswwlhomojrlakdk.supabase.co/storage/v1/object/public/people-pics/8-Crachi.jpeg"
+        "img": "https://xhppdswwlhomojrlakdk.supabase.co/storage/v1/object/public/people-pics/8-Crachi.jpeg",
+        "mail": null
     },
     {
         "firstname": "Francesca",
@@ -39,21 +40,23 @@
         "lastname": "Punzi",
         "linkedin": "fpunzi",
         "role": "Senior FEA analyst & Counselor",
-        "img": "/members/Punzi.jpg"
+        "img": "/members/Punzi.jpg",
+        "mail": null
     },
     {
-        "firstname": "Jacopo",
-        "lastname": "Cerzosimo",
-        "linkedin": "jacopocerzosimo",
-        "role": "VES Advisor",
-        "img": null
+        "firstname": "Lorenzo",
+        "lastname": "Pezzolato",
+        "linkedin": "lorenzopezzolato",
+        "role": "Additive Manufacturing",
+        "img": null,
+        "mail": null
     },
     {
-        "firstname": "Giuseppe",
-        "lastname": "Roccasalva",
-        "highlight": false,
-        "linkedin": "giuseppe-roccasalva12",
-        "role": "VES Advisor",
-        "img": null
+        "firstname": "Marco Romano",
+        "lastname": "Delogu",
+        "linkedin": "marco-romano-delogu-637165225",
+        "role": "Thrust Chamber Assembly",
+        "img": null,
+        "mail": null
     }
 ]
