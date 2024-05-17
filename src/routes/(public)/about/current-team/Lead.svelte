@@ -38,7 +38,9 @@
         >
         <div class="socials">
             <IconLink icon="LinkedIn" id={linkedin} />
-            <IconLink icon="Email" id={mail} />
+            {#if mail}
+                <IconLink icon="Email" id={mail} />
+            {/if}
         </div>
     </div>
 </li>
