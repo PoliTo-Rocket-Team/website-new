@@ -30,7 +30,7 @@
                         ? data.person.first_name + " " + data.person.last_name
                         : "Not yet linked"}</span
                 >
-                {#if data.person.chief_of.id}
+                {#if data.person.chief_of}
                     <span class="title">{data.person.chief_of.title}</span>
                 {/if}
                 {#each data.person.lead_of || [] as d}
@@ -46,7 +46,7 @@
                         <a href="/dashboard/requests" use:current>Requests</a>
                     </li>
                 {/if}
-                {#if data.person.chief_of.id}
+                {#if data.person.chief_of}
                     {@const s = data.person.chief_of}
                     <li>
                         <a href="/dashboard/subteam/{s.id}" use:current>

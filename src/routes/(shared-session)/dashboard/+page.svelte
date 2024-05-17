@@ -43,7 +43,7 @@
         <h1>Welcome back {data.person.first_name}!</h1>
 
         <div class="cards">
-            {#if data.person.chief_of.id}
+            {#if data.person.chief_of}
                 {@const s = data.person.chief_of}
                 <article>
                     <Follow3D {transform}>
