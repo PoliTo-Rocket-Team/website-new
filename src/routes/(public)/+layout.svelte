@@ -1,7 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
-    import { browser } from "$app/environment";
-    import { onMount } from "svelte";
+    import { writable } from "svelte/store";
+    import { onMount, setContext } from "svelte";
     import { afterNavigate, goto } from "$app/navigation";
     import LinkCombo, { type ComboRoute } from "$lib/LinkCombo.svelte";
     import { throttle } from "$lib/timing";
@@ -43,7 +43,13 @@
         hide = currentY > lastY;
         lastY = currentY;
     }
-    onMount(() => (lastY = content.scrollTop));
+
+    const containerStore = writable<HTMLDivElement | null>(null);
+    setContext("page-container", containerStore);
+    onMount(() => {
+        lastY = content.scrollTop;
+        containerStore.set(content);
+    });
 </script>
 
 <svelte:window on:popstate={() => (open = history.state.navbar === true)} />

@@ -9,6 +9,7 @@
     import Event from "./Event.svelte";
     import { theme } from "$lib/theme";
     import { browser } from "$app/environment";
+    import { getContext } from "svelte";
     let main: HTMLElement;
     const deltaH = browser
         ? document.documentElement.clientHeight - window.innerHeight
@@ -16,6 +17,7 @@
     let headerHeight = browser ? window.innerHeight : 100000;
 
     import type { HostMessageMap, WorkerMessageMap } from "./worker-msg";
+    import type { Writable } from "svelte/store";
     let post: CanvasPoster<HostMessageMap>;
     let progress = 0;
     let canvas: HTMLCanvasElement;
@@ -47,12 +49,16 @@
 
     // import { onMount } from "svelte";
     // onMount(() => window.scrollTo(0,2600));
+
+    const content =
+        getContext<Writable<HTMLDivElement | null>>("page-container");
+    const onScroll = throttle(10, () =>
+        post("scroll", -$content!.scrollTop / 700)
+    );
+    $: if ($content) $content.addEventListener("scroll", onScroll);
 </script>
 
-<svelte:window
-    on:resize={throttle(20, onResize)}
-    on:scroll={throttle(10, () => post("scroll", -window.scrollY / 700))}
-/>
+<svelte:window on:resize={throttle(20, onResize)} />
 
 <svelte:head>
     <title>PoliTo Rocket Team</title>
