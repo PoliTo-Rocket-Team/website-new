@@ -226,7 +226,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
     id="page-content"
-    class:no-scroll={open}
+    class:background={open}
     on:click={close}
     on:keydown={() => {}}
     on:scroll={throttle(20, onScroll)}
@@ -329,10 +329,13 @@
         max-height: 100%;
         display: flex;
         flex-direction: column;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
     }
-    #page-content.no-scroll {
-        overflow: hidden;
+    #page-content.background {
+        overflow-y: hidden;
+        filter: blur(2px) brightness(0.8);
+        // transform: translateX(-2rem);
     }
 
     svg.divider {
