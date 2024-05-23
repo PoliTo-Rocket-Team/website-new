@@ -284,7 +284,7 @@
             transform 200ms ease,
             background-color 350ms ease;
 
-        &.hide:not(:focus-within) {
+        &.hide {
             transform: translateY(-100%);
             overflow-y: hidden;
         }
