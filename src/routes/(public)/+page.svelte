@@ -8,13 +8,8 @@
     import { throttle } from "$lib/timing";
     import Event from "./Event.svelte";
     import { theme } from "$lib/theme";
-    import { browser } from "$app/environment";
     import { getContext } from "svelte";
     let main: HTMLElement;
-    const deltaH = browser
-        ? document.documentElement.clientHeight - window.innerHeight
-        : 0;
-    let headerHeight = browser ? window.innerHeight : 100000;
 
     import type { HostMessageMap, WorkerMessageMap } from "./worker-msg";
     import type { Writable } from "svelte/store";
@@ -44,7 +39,6 @@
             canvas.clientHeight,
             window.devicePixelRatio,
         ]);
-        headerHeight = document.documentElement.clientHeight - deltaH;
     }
 
     // import { onMount } from "svelte";
@@ -70,7 +64,7 @@
 
 <div class="scene-progress" style="--p: {progress};"></div>
 <canvas use:rocketify bind:this={canvas}></canvas>
-<header style="--h: {headerHeight}px">
+<header>
     <h1>
         <span class="slide-up" style="animation-delay: 0ms;">PoliTo</span>
         <span class="slide-up" style="animation-delay: 75ms;">Rocket</span>
@@ -440,7 +434,7 @@
         z-index: 1;
     }
     header {
-        height: min(100vh, var(--h));
+        min-height: 90vh;
         display: grid;
         grid-template-rows: 1fr auto auto 3fr auto;
         padding: var(--pad);
