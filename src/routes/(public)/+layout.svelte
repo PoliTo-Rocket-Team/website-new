@@ -1,6 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
     import { browser } from "$app/environment";
+    import { onMount } from "svelte";
     import { afterNavigate, goto } from "$app/navigation";
     import LinkCombo, { type ComboRoute } from "$lib/LinkCombo.svelte";
     import { throttle } from "$lib/timing";
@@ -21,6 +22,7 @@
 
     const OPEN_STATE = "PRT-nav-open";
     let open = false;
+    let content: HTMLDivElement;
 
     function close() {
         if (history.state.navbar) history.back();
@@ -31,24 +33,20 @@
     }
     afterNavigate(() => (open = history.state.navbar === true));
 
-    let lastY = browser ? window.scrollY : 0;
+    let lastY = 0;
     let down = lastY > 100;
     let hide = false;
     function onScroll() {
-        let currentY = window.scrollY;
+        let currentY = content.scrollTop;
         down = currentY > 100;
         if (Math.abs(currentY - lastY) < 10) return;
         hide = currentY > lastY;
         lastY = currentY;
     }
-
-    $: if(browser) document.body.classList.toggle("no-scroll", open);
+    onMount(() => (lastY = content.scrollTop));
 </script>
 
-<svelte:window
-    on:scroll={throttle(20, onScroll)}
-    on:popstate={() => (open = history.state.navbar === true)}
-/>
+<svelte:window on:popstate={() => (open = history.state.navbar === true)} />
 
 <div class="nav-container">
     <nav id="page-nav" class:hide class:down>
@@ -172,11 +170,49 @@
             </li>
         </ul>
         <ThemeSelector />
-        <button class="burger on-sm" class:active={open} aria-hidden="true" data-nav-btn="main-nav" on:click={toggle}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="2.2em" height="2.2em">
-                <line x1="10" x2="54" y1="32" y2="32" stroke-width="6" stroke="var(--fg-0)" stroke-linecap="round" class="top" />
-                <line x1="10" x2="54" y1="32" y2="32" stroke-width="6" stroke="var(--fg-0)" stroke-linecap="round" class="middle" />
-                <line x1="10" x2="54" y1="32" y2="32" stroke-width="6" stroke="var(--fg-0)" stroke-linecap="round" class="bottom" />
+        <button
+            class="burger on-sm"
+            class:active={open}
+            aria-hidden="true"
+            data-nav-btn="main-nav"
+            on:click={toggle}
+        >
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 64 64"
+                width="2.2em"
+                height="2.2em"
+            >
+                <line
+                    x1="10"
+                    x2="54"
+                    y1="32"
+                    y2="32"
+                    stroke-width="6"
+                    stroke="var(--fg-0)"
+                    stroke-linecap="round"
+                    class="top"
+                />
+                <line
+                    x1="10"
+                    x2="54"
+                    y1="32"
+                    y2="32"
+                    stroke-width="6"
+                    stroke="var(--fg-0)"
+                    stroke-linecap="round"
+                    class="middle"
+                />
+                <line
+                    x1="10"
+                    x2="54"
+                    y1="32"
+                    y2="32"
+                    stroke-width="6"
+                    stroke="var(--fg-0)"
+                    stroke-linecap="round"
+                    class="bottom"
+                />
             </svg>
         </button>
     </nav>
@@ -184,9 +220,11 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
     id="page-content"
-    class:unfocus={open}
+    class:no-scroll={open}
     on:click={close}
     on:keydown={() => {}}
+    on:scroll={throttle(20, onScroll)}
+    bind:this={content}
 >
     <slot />
     <svg
@@ -212,10 +250,9 @@
 </div>
 
 <style lang="scss">
-    :global(body.no-scroll) {
-        overflow-y: hidden;
+    :global(body) {
+        overflow: hidden;
     }
-
     $nav-trans: 350ms ease;
     .nav-container {
         position: fixed;
@@ -283,8 +320,13 @@
             transform $nav-trans,
             filter $nav-trans;
         min-height: 100%;
+        max-height: 100%;
         display: flex;
         flex-direction: column;
+        overflow: scroll;
+    }
+    #page-content.no-scroll {
+        overflow: hidden;
     }
 
     svg.divider {
