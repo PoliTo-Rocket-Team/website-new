@@ -331,6 +331,7 @@
         flex-direction: column;
         overflow-y: scroll;
         overflow-x: hidden;
+        position: relative;
     }
     #page-content.background {
         overflow-y: hidden;

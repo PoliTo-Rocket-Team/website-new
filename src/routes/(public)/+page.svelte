@@ -8,7 +8,7 @@
     import { throttle } from "$lib/timing";
     import Event from "./Event.svelte";
     import { theme } from "$lib/theme";
-    import { getContext } from "svelte";
+    import { getContext, onDestroy } from "svelte";
     let main: HTMLElement;
 
     import type { HostMessageMap, WorkerMessageMap } from "./worker-msg";
@@ -16,6 +16,13 @@
     let post: CanvasPoster<HostMessageMap>;
     let progress = 0;
     let canvas: HTMLCanvasElement;
+
+    let req: number | null = null;
+    function onFrame() {
+        if ($content)
+            canvas.style.setProperty("--y-shift", $content.scrollTop + "px");
+        req = requestAnimationFrame(onFrame);
+    }
 
     function rocketify(canvas: HTMLCanvasElement) {
         post = alleviateCanvas<HostMessageMap, WorkerMessageMap>(
@@ -31,6 +38,7 @@
             }
         );
         const destroy = theme.subscribe(t => post("dark", t === "dark"));
+        req = requestAnimationFrame(onFrame);
         return { destroy };
     }
     function onResize() {
@@ -50,6 +58,10 @@
         post("scroll", -$content!.scrollTop / 700)
     );
     $: if ($content) $content.addEventListener("scroll", onScroll);
+
+    onDestroy(() => {
+        if (req) cancelAnimationFrame(req);
+    });
 </script>
 
 <svelte:window on:resize={throttle(20, onResize)} />
@@ -423,8 +435,7 @@
     }
     canvas {
         z-index: 0;
-        position: fixed;
-        bottom: 0;
+        top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
@@ -650,6 +661,11 @@
     }
 
     @media (max-width: 50rem) {
+        canvas {
+            position: absolute;
+            transform: translateY(var(--y-shift, 0));
+        }
+
         header h1,
         header p {
             justify-self: start;
@@ -659,6 +675,9 @@
         }
     }
     @media (min-width: 50rem) {
+        canvas {
+            position: fixed;
+        }
         main {
             padding: 0;
         }
