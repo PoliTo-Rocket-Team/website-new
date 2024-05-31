@@ -3,7 +3,6 @@
     import Lead from "./Lead.svelte";
     import Pie from "$lib/Pie.svelte";
     import Member from "../Member.svelte";
-    import members from "./members.json";
     import advisors from "./advisors.json";
     import HTabbed from "$lib/HTabbed.svelte";
     import { browser } from "$app/environment";
@@ -24,6 +23,17 @@
     }
 
     let p = data.president;
+
+    // Sort members by first name, then last name
+    let members = data.members.sort((a, b) => {
+        let comparison = a.first_name.localeCompare(b.first_name);
+        
+        if (comparison === 0) {
+            comparison = a.last_name.localeCompare(b.last_name);
+        }
+        
+        return comparison;
+    });
 </script>
 
 <svelte:window

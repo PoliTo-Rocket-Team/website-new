@@ -33,10 +33,18 @@ export const load: PageServerLoad = async ({ locals }) => {
             message: president.error.message,
         });
     }
+    const members = await locals.supabase.rpc("get_members");
+    if (members.error) {
+        throw error(500, {
+            details: members.error.details,
+            message: members.error.message,
+        });
+    }
     return {
         subteams: res.data,
         ppBucket: locals.supabase.storage.from("people-pics").getPublicUrl("")
             .data.publicUrl,
         president: president.data[0] as Person,
+        members: members.data
     };
 };
