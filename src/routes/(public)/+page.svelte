@@ -17,13 +17,6 @@
     let progress = 0;
     let canvas: HTMLCanvasElement;
 
-    let req: number | null = null;
-    function onFrame() {
-        if ($content)
-            canvas.style.setProperty("--y-shift", $content.scrollTop + "px");
-        req = requestAnimationFrame(onFrame);
-    }
-
     function rocketify(canvas: HTMLCanvasElement) {
         post = alleviateCanvas<HostMessageMap, WorkerMessageMap>(
             canvas,
@@ -38,7 +31,6 @@
             }
         );
         const destroy = theme.subscribe(t => post("dark", t === "dark"));
-        req = requestAnimationFrame(onFrame);
         return { destroy };
     }
     function onResize() {
@@ -58,10 +50,7 @@
         post("scroll", -$content!.scrollTop / 700)
     );
     $: if ($content) $content.addEventListener("scroll", onScroll);
-
-    onDestroy(() => {
-        if (req) cancelAnimationFrame(req);
-    });
+    onDestroy(() => $content!.removeEventListener("scroll", onScroll));
 </script>
 
 <svelte:window on:resize={throttle(20, onResize)} />
@@ -439,6 +428,9 @@
         left: 0;
         width: 100%;
         height: 100vh;
+        min-height: 100vh;
+        position: sticky;
+        margin-bottom: -100vh;
     }
     header,
     main {
@@ -523,10 +515,10 @@
         }
     }
 
-    main {
+    main section {
         max-width: 50rem;
-        margin: 0 auto;
-        padding: var(--pad);
+        margin-left: auto;
+        margin-right: auto;
     }
     main p + p {
         margin-top: 1rem;
@@ -661,11 +653,6 @@
     }
 
     @media (max-width: 50rem) {
-        canvas {
-            position: absolute;
-            transform: translateY(var(--y-shift, 0));
-        }
-
         header h1,
         header p {
             justify-self: start;
@@ -677,9 +664,6 @@
     @media (min-width: 50rem) {
         canvas {
             position: fixed;
-        }
-        main {
-            padding: 0;
         }
         img.float {
             float: right;
