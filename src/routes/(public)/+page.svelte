@@ -50,7 +50,9 @@
         post("scroll", -$content!.scrollTop / 700)
     );
     $: if ($content) $content.addEventListener("scroll", onScroll);
-    onDestroy(() => $content!.removeEventListener("scroll", onScroll));
+    onDestroy(
+        () => $content && $content.removeEventListener("scroll", onScroll)
+    );
 </script>
 
 <svelte:window on:resize={throttle(20, onResize)} />
