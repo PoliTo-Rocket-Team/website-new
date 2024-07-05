@@ -10,7 +10,7 @@
     )}@politorocketteam.it`;
     export let role: string;
     export let img: string | null = null;
-    export let linkedin: string;
+    export let linkedin: string | null = null;
     export let cofounder: boolean = false;
     export let highlight = false;
 </script>
@@ -37,7 +37,9 @@
             {/if}{role}</span
         >
         <div class="socials">
-            <IconLink icon="LinkedIn" id={linkedin} />
+            {#if linkedin}
+                <IconLink icon="LinkedIn" id={linkedin} />
+            {/if}
             {#if mail}
                 <IconLink icon="Email" id={mail} />
             {/if}
