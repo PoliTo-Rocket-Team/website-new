@@ -50,6 +50,17 @@
         ]
     },
     {
+        "name": "Explorer Cases",
+        "link": "https://www.explorercases.com/",
+        "img": "explorer-cases.webp",
+        "theme": null,
+        "texts": [
+            "EXPLORER CASES is a range of indestructible and waterproof cases which guarantee maximum protection when transporting professional equipment manufactured by GT line. It is a leading brand in the sector, established internationally.",
+            "Constant investment in R&D has allowed them to develop efficient solutions, for which they have obtained multiple certifications. The cases are subjected to strict laboratory tests to guarantee their reliability to extreme conditions of use.",
+            "Explorer cases supports the team by providing its cases for the safe and practical transport of our equipment."
+        ]
+    },
+    {
         "name": "JEToP",
         "img": "JEToP.png",
         "theme": "dark",
