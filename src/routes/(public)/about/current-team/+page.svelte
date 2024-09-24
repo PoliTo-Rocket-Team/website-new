@@ -181,20 +181,20 @@
                 threshold={5}
                 rotate={255}
                 slices={[
-                    { value: 66, label: "Aerospace", color: "#316B83" },
-                    { value: 25, label: "Mechanical", color: "#DE8971" },
-                    { value: 8, label: "Electronic", color: "#CD5D7D" },
+                    { value: 71, label: "Aerospace", color: "#316B83" },
+                    { value: 21, label: "Mechanical", color: "#DE8971" },
                     { value: 8, label: "Computer", color: "#70AF85" },
+                    { value: 7, label: "Electronic", color: "#CD5D7D" },
                     { value: 4, label: "Management", color: "#C6D57E" },
-                    { value: 22, label: "Other", color: "#A7D0CD" },
+                    { value: 8, label: "Other", color: "#A7D0CD" },
                 ]}
             />
             <Pie
                 title="Members by level"
                 threshold={5}
                 slices={[
-                    { value: 64, label: "Bachelor's", color: "#4e7bc1" },
-                    { value: 61, label: "Master's", color: "#e1a463" },
+                    { value: 62, label: "Bachelor's", color: "#4e7bc1" },
+                    { value: 64, label: "Master's", color: "#e1a463" },
                     { value: 1, label: "Ph.D.", color: "#3bdb84" },
                 ]}
             />
@@ -203,8 +203,8 @@
                 rotate={25}
                 threshold={0}
                 slices={[
-                    { value: 88, label: "Domestic", color: "#DE8971" },
-                    { value: 38, label: "International", color: "#A7D0CD" },
+                    { value: 96, label: "Domestic", color: "#DE8971" },
+                    { value: 34, label: "International", color: "#A7D0CD" },
                 ]}
             />
         </div>
