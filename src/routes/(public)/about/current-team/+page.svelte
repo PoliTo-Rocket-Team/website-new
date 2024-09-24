@@ -16,7 +16,7 @@
     export let data;
 
     function getAngle(i: number) {
-        return ((i / (data.subteams.length - 1)) * 2 - 1) * Math.PI * 0.2;
+        return ((i / (data.subteams.length - 1)) * 2 - 1) * Math.PI * 0.3;
     }
     function getImg(id: number | null, lastname: string) {
         return !id ? null : `${data.ppBucket}${id}-${normalize(lastname)}.jpeg`;
