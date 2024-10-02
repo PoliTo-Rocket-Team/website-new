@@ -3,6 +3,7 @@
     // no check to make partners img type compatible
 
     import Partner from "./Partner.svelte";
+
     import partners from "./partners.json";
 
     let mainPartners = partners.filter(p => p.texts !== null);
@@ -30,6 +31,7 @@
             >
         </p>
     </div>
+
     <section aria-labelledby="main-partners">
         <h2 id="main-partners">Main partners</h2>
         <div class="grid">
