@@ -277,7 +277,7 @@
         pointer-events: none;
     }
     .max-width-wrapper {
-        max-width: 1280px;
+        max-width: 80rem;
         margin: 0 auto;
         display: flex;
     }
@@ -345,7 +345,7 @@
     .page-content-inner {
         display: flex;
         flex-direction: column;
-        max-width: 1280px;
+        max-width: 80rem;
         margin: 0 auto;
     }
     #page-content.background {
