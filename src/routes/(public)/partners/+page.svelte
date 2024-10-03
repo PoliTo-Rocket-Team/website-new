@@ -69,7 +69,12 @@
     }
     @media (min-width: 50rem) {
         .grid {
-            grid-template-columns: repeat(auto-fill, 30ch);
+            grid-template-columns: repeat(2, minmax(30ch, 1fr));
+        }
+    }
+    @media (min-width: 80rem) {
+        .grid {
+            grid-template-columns: repeat(3, minmax(30ch, 1fr));
         }
     }
 </style>

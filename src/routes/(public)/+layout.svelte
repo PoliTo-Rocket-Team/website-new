@@ -345,7 +345,7 @@
     .page-content-inner {
         display: flex;
         flex-direction: column;
-        max-width: 80rem;
+        max-width: calc(80rem + 2 * var(--pad));
         margin: 0 auto;
     }
     #page-content.background {
