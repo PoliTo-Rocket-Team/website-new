@@ -21,9 +21,9 @@
     },
     {
         "name": "Sòphia High Tech",
-        "img": ["logo_sophia_biancoLIGHT.png", "Logo_SHT_scontornatoDARK.png"],
+        "img": ["Logo_SHT_scontornatoDARK.png", "logo_sophia_biancoLIGHT.png"],
         "link": "https://www.sophiahightech.com/",
-        "localTheme": "dark",
+        "localTheme": null,
         "texts": [
             "Sòphia High Tech, certified according to the Quality Standard AS/EN9100, operates in the Aerospace field, focusing on the design, development and production of metal alloy components using Additive Manufacturing and CNC Machining.",
             "Sòphia uses the most advanced technological processes: to produce complex components in shape and geometry, Sòphia uses Additive Manufacturing (SLM), according to ECSS-Q-ST-70-80C.",
