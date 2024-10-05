@@ -12,10 +12,10 @@
     function closeDialog() {
         dialog.close();
     }
-    const submit = async e => {
+    const submit = async (e: SubmitEvent) => {
         e.preventDefault();
         const form = e.target;
-        const formData = new FormData(form);
+        const formData = new FormData(form! as HTMLFormElement);
         const res = await save(formData, supabase);
         console.log(res);
         dialog.close();
