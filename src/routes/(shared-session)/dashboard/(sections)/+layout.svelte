@@ -67,9 +67,6 @@
                     </li>
                 {/each}
                 <li>
-                    <a href="/dashboard/orders" use:current>Orders</a>
-                </li>
-                <li>
                     <a href="/dashboard/bureaucracy" use:current>Bureaucracy</a>
                 </li>
                 <li>
