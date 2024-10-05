@@ -1,10 +1,10 @@
-<script>
+<script lang="ts">
     import { save } from "./validation";
 
     export let requester;
     export let supabase;
 
-    let dialog;
+    let dialog: HTMLDialogElement;
     function openDialog() {
         dialog.show();
     }
