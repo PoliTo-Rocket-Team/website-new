@@ -2,6 +2,8 @@
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
     import Cavour from "/src/img/cavour/test/8.jpg";
+    import { getContext } from "svelte";
+    import type { Writable } from "svelte/store";
 
     export let data: any[];
 
@@ -9,9 +11,16 @@
     let centeredEventIndex = 0;
     let lastScroll = browser ? window.scrollY : 0;
 
+    const storeContent =
+        getContext<Writable<HTMLDivElement | null>>("page-container");
+    let content: HTMLDivElement | null = null;
+
+    $: content = $storeContent;
+
     const nearestArticle = frameThrottle(() => {
-        const delta = window.scrollY - lastScroll;
-        lastScroll = window.scrollY;
+        if (!content) return;
+        const delta = content?.scrollTop - lastScroll;
+        lastScroll = content.scrollTop;
         const newFocused =
             delta > 0
                 ? nearestAfter(centeredEventIndex)
@@ -49,18 +58,35 @@
     }
 
     function distanceFromCenterScreen(el: HTMLElement) {
+        if (!el || !content) return 0;
         return Math.abs(
             el.offsetTop +
-                el.offsetHeight * 0.5 -
-                window.scrollY -
-                window.innerHeight * 0.5
+                el.offsetHeight / 2 -
+                content.scrollTop -
+                (content.clientHeight * 4) / 9
         );
+    }
+
+    function observe(node: HTMLElement) {
+        const obs = new IntersectionObserver(entries =>
+            entries.forEach(entry => {
+                if (entry.isIntersecting)
+                    content?.addEventListener("scroll", nearestArticle);
+                else content?.removeEventListener("scroll", nearestArticle);
+            })
+        );
+        obs.observe(node);
+        return {
+            destroy() {
+                obs.unobserve(node);
+            },
+        };
     }
 </script>
 
 <svelte:window on:scroll={nearestArticle} />
 
-<div class="events">
+<div class="events" bind:this={content} use:observe>
     {#each data as event, i}
         <article
             bind:this={articles[i]}

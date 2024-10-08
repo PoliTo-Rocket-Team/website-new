@@ -8,14 +8,11 @@
     import { throttle } from "$lib/timing";
     import Event from "./Event.svelte";
     import { theme } from "$lib/theme";
-    import { browser } from "$app/environment";
+    import { getContext, onDestroy } from "svelte";
     let main: HTMLElement;
-    const deltaH = browser
-        ? document.documentElement.clientHeight - window.innerHeight
-        : 0;
-    let headerHeight = browser ? window.innerHeight : 100000;
 
     import type { HostMessageMap, WorkerMessageMap } from "./worker-msg";
+    import type { Writable } from "svelte/store";
     let post: CanvasPoster<HostMessageMap>;
     let progress = 0;
     let canvas: HTMLCanvasElement;
@@ -42,17 +39,23 @@
             canvas.clientHeight,
             window.devicePixelRatio,
         ]);
-        headerHeight = document.documentElement.clientHeight - deltaH;
     }
 
     // import { onMount } from "svelte";
     // onMount(() => window.scrollTo(0,2600));
+
+    const content =
+        getContext<Writable<HTMLDivElement | null>>("page-container");
+    const onScroll = throttle(10, () =>
+        post("scroll", -$content!.scrollTop / 700)
+    );
+    $: if ($content) $content.addEventListener("scroll", onScroll);
+    onDestroy(
+        () => $content && $content.removeEventListener("scroll", onScroll)
+    );
 </script>
 
-<svelte:window
-    on:resize={throttle(20, onResize)}
-    on:scroll={throttle(10, () => post("scroll", -window.scrollY / 700))}
-/>
+<svelte:window on:resize={throttle(20, onResize)} />
 
 <svelte:head>
     <title>PoliTo Rocket Team</title>
@@ -64,7 +67,7 @@
 
 <div class="scene-progress" style="--p: {progress};"></div>
 <canvas use:rocketify bind:this={canvas}></canvas>
-<header style="--h: {headerHeight}px">
+<header>
     <h1>
         <span class="slide-up" style="animation-delay: 0ms;">PoliTo</span>
         <span class="slide-up" style="animation-delay: 75ms;">Rocket</span>
@@ -423,18 +426,20 @@
     }
     canvas {
         z-index: 0;
-        position: fixed;
-        bottom: 0;
+        top: 0;
         left: 0;
         width: 100%;
         height: 100vh;
+        min-height: 100vh;
+        position: sticky;
+        margin-bottom: -100vh;
     }
     header,
     main {
         z-index: 1;
     }
     header {
-        height: min(100vh, var(--h));
+        min-height: 90vh;
         display: grid;
         grid-template-rows: 1fr auto auto 3fr auto;
         padding: var(--pad);
@@ -512,10 +517,10 @@
         }
     }
 
-    main {
+    main section {
         max-width: 50rem;
-        margin: 0 auto;
-        padding: var(--pad);
+        margin-left: auto;
+        margin-right: auto;
     }
     main p + p {
         margin-top: 1rem;
@@ -659,8 +664,8 @@
         }
     }
     @media (min-width: 50rem) {
-        main {
-            padding: 0;
+        canvas {
+            position: fixed;
         }
         img.float {
             float: right;

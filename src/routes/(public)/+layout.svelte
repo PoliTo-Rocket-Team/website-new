@@ -1,6 +1,7 @@
 <script lang="ts">
     import { page } from "$app/stores";
-    import { browser } from "$app/environment";
+    import { writable } from "svelte/store";
+    import { onMount, setContext } from "svelte";
     import { afterNavigate, goto } from "$app/navigation";
     import LinkCombo, { type ComboRoute } from "$lib/LinkCombo.svelte";
     import { throttle } from "$lib/timing";
@@ -9,10 +10,10 @@
     import ThemeSelector from "$lib/ThemeSelector.svelte";
 
     const aboutCombo: ComboRoute[] = [
-        { url: "history", name: "History" },
         { url: "mission-vision", name: "Mission" },
         { url: "current-team", name: "The Team" },
         { url: "past-teams", name: "Past Teams" },
+        { url: "history", name: "History" },
     ];
     const projectsCombo: ComboRoute[] = [
         { url: "Cavour", name: "Cavour" },
@@ -22,6 +23,7 @@
 
     const OPEN_STATE = "PRT-nav-open";
     let open = false;
+    let content: HTMLDivElement;
 
     function close() {
         if (history.state.navbar) history.back();
@@ -32,164 +34,214 @@
     }
     afterNavigate(() => (open = history.state.navbar === true));
 
-    let lastY = browser ? window.scrollY : 0;
+    let lastY = 0;
     let down = lastY > 100;
     let hide = false;
     function onScroll() {
-        let currentY = window.scrollY;
+        let currentY = content.scrollTop;
         down = currentY > 100;
         if (Math.abs(currentY - lastY) < 10) return;
         hide = currentY > lastY;
         lastY = currentY;
     }
 
-    $: if(browser) document.body.classList.toggle("no-scroll", open);
+    const containerStore = writable<HTMLDivElement | null>(null);
+    setContext("page-container", containerStore);
+    onMount(() => {
+        lastY = content.scrollTop;
+        containerStore.set(content);
+    });
 </script>
 
-<svelte:window
-    on:scroll={throttle(20, onScroll)}
-    on:popstate={() => (open = history.state.navbar === true)}
-/>
+<svelte:window on:popstate={() => (open = history.state.navbar === true)} />
 
 <div class="nav-container">
     <nav id="page-nav" class:hide class:down>
-        <a href="/" class="logo">
-            <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 100 118.2842712"
-                width="50"
-                height="59.14213562"
+        <div class="max-width-wrapper">
+            <a href="/" class="logo">
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 100 118.2842712"
+                    width="50"
+                    height="59.14213562"
+                >
+                    <g id="prt-logo">
+                        <mask id="logo-mask-1">
+                            <rect
+                                x="0"
+                                y="0"
+                                width="100"
+                                height="116.75"
+                                fill="black"
+                            />
+                            <path
+                                d="M0,0 L0,116.75,100,116.75,100,48.2842712,70,48.2842712 A68.2842712,68.2842712,90,0,0,1.71572875,-20"
+                                fill="white"
+                            />
+                        </mask>
+                        <mask id="logo-mask-2">
+                            <rect
+                                x="0"
+                                y="0"
+                                width="100"
+                                height="116.75"
+                                fill="black"
+                            />
+                            <path
+                                d="M100,0 L100,116.75,0,116.75,0,48.2842712,30,48.2842712 A68.2842712,68.2842712,90,0,1,98.2842712,-20"
+                                fill="white"
+                            />
+                        </mask>
+                        <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="8"
+                            mask="url(#logo-mask-2)"
+                            d="M100,112.75 A66,66,90,0,1,34,48.2842712"
+                        />
+                        <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="8"
+                            mask="url(#logo-mask-2)"
+                            d="M100,096.75 A50,50,90,0,1,50,48.2842712 A48.2842712,48.2842712,90,0,0,1.71572875,0"
+                        />
+                        <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="8"
+                            mask="url(#logo-mask-2)"
+                            d="M100,080.75 A34,34,90,0,1,66,48.2842712 A64.2842712,64.2842712,90,0,0,1.71572875,-16"
+                        />
+                        <path
+                            fill="none"
+                            stroke="var(--accent-fig)"
+                            stroke-width="8"
+                            mask="url(#logo-mask-1)"
+                            d="M0,112.75 A66,66,90,0,0,66,48.2842712 A32.2842712,32.2842712,90,0,1,98.2842712,16"
+                        />
+                        <path
+                            fill="none"
+                            stroke="var(--accent-fig)"
+                            stroke-width="8"
+                            mask="url(#logo-mask-1)"
+                            d="M0,096.75 A50,50,90,0,0,50,48.2842712 A48.2842712,48.2842712,90,0,1,98.2842712,0"
+                        />
+                        <path
+                            fill="none"
+                            stroke="var(--accent-fig)"
+                            stroke-width="8"
+                            mask="url(#logo-mask-1)"
+                            d="M0,080.75 A34,34,90,0,0,34,48.2842712 A64.2842712,64.2842712,90,0,1,98.2842712,-16"
+                        />
+                    </g>
+                </svg>
+            </a>
+            <ul class="links" class:open>
+                <li>
+                    <a
+                        data-sveltekit-replacestate={open || null}
+                        class="nav-entry"
+                        href="/">Home</a
+                    >
+                </li>
+                <li>
+                    <LinkCombo
+                        replace={open}
+                        base="about"
+                        routes={aboutCombo}
+                    />
+                </li>
+                <li>
+                    <LinkCombo
+                        replace={open}
+                        base="projects"
+                        routes={projectsCombo}
+                    />
+                </li>
+                <li>
+                    <a
+                        data-sveltekit-replacestate={open || null}
+                        class="nav-entry"
+                        href="/outreach">Outreach</a
+                    >
+                </li>
+                <li>
+                    <a
+                        data-sveltekit-replacestate={open || null}
+                        class="nav-entry"
+                        href="/partners">Partners</a
+                    >
+                </li>
+                <li>
+                    <a
+                        data-sveltekit-replacestate={open || null}
+                        class="nav-entry"
+                        href="/apply">Apply</a
+                    >
+                </li>
+            </ul>
+            <ThemeSelector />
+            <button
+                class="burger on-sm"
+                class:active={open}
+                aria-hidden="true"
+                data-nav-btn="main-nav"
+                on:click={toggle}
             >
-                <g id="prt-logo">
-                    <mask id="logo-mask-1">
-                        <rect
-                            x="0"
-                            y="0"
-                            width="100"
-                            height="116.75"
-                            fill="black"
-                        />
-                        <path
-                            d="M0,0 L0,116.75,100,116.75,100,48.2842712,70,48.2842712 A68.2842712,68.2842712,90,0,0,1.71572875,-20"
-                            fill="white"
-                        />
-                    </mask>
-                    <mask id="logo-mask-2">
-                        <rect
-                            x="0"
-                            y="0"
-                            width="100"
-                            height="116.75"
-                            fill="black"
-                        />
-                        <path
-                            d="M100,0 L100,116.75,0,116.75,0,48.2842712,30,48.2842712 A68.2842712,68.2842712,90,0,1,98.2842712,-20"
-                            fill="white"
-                        />
-                    </mask>
-                    <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="8"
-                        mask="url(#logo-mask-2)"
-                        d="M100,112.75 A66,66,90,0,1,34,48.2842712"
-                    />
-                    <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="8"
-                        mask="url(#logo-mask-2)"
-                        d="M100,096.75 A50,50,90,0,1,50,48.2842712 A48.2842712,48.2842712,90,0,0,1.71572875,0"
-                    />
-                    <path
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="8"
-                        mask="url(#logo-mask-2)"
-                        d="M100,080.75 A34,34,90,0,1,66,48.2842712 A64.2842712,64.2842712,90,0,0,1.71572875,-16"
-                    />
-                    <path
-                        fill="none"
-                        stroke="var(--accent-fig)"
-                        stroke-width="8"
-                        mask="url(#logo-mask-1)"
-                        d="M0,112.75 A66,66,90,0,0,66,48.2842712 A32.2842712,32.2842712,90,0,1,98.2842712,16"
-                    />
-                    <path
-                        fill="none"
-                        stroke="var(--accent-fig)"
-                        stroke-width="8"
-                        mask="url(#logo-mask-1)"
-                        d="M0,096.75 A50,50,90,0,0,50,48.2842712 A48.2842712,48.2842712,90,0,1,98.2842712,0"
-                    />
-                    <path
-                        fill="none"
-                        stroke="var(--accent-fig)"
-                        stroke-width="8"
-                        mask="url(#logo-mask-1)"
-                        d="M0,080.75 A34,34,90,0,0,34,48.2842712 A64.2842712,64.2842712,90,0,1,98.2842712,-16"
-                    />
-                </g>
-            </svg>
-        </a>
-        <ul class="links" class:open>
-            <li>
-                <a
-                    data-sveltekit-replacestate={open || null}
-                    class="nav-entry"
-                    href="/">Home</a
+                <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 64 64"
+                    width="2.2em"
+                    height="2.2em"
                 >
-            </li>
-            <li>
-                <LinkCombo replace={open} base="about" routes={aboutCombo} />
-            </li>
-            <li>
-                <LinkCombo
-                    replace={open}
-                    base="projects"
-                    routes={projectsCombo}
-                />
-            </li>
-            <li>
-                <a
-                    data-sveltekit-replacestate={open || null}
-                    class="nav-entry"
-                    href="/outreach">Outreach</a
-                >
-            </li>
-            <li>
-                <a
-                    data-sveltekit-replacestate={open || null}
-                    class="nav-entry"
-                    href="/partners">Partners</a
-                >
-            </li>
-            <li>
-                <a
-                    data-sveltekit-replacestate={open || null}
-                    class="nav-entry"
-                    href="/apply">Apply</a
-                >
-            </li>
-        </ul>
-        <ThemeSelector />
-        <button class="burger on-sm" class:active={open} aria-hidden="true" data-nav-btn="main-nav" on:click={toggle}>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="2.2em" height="2.2em">
-                <line x1="10" x2="54" y1="32" y2="32" stroke-width="6" stroke="var(--fg-0)" stroke-linecap="round" class="top" />
-                <line x1="10" x2="54" y1="32" y2="32" stroke-width="6" stroke="var(--fg-0)" stroke-linecap="round" class="middle" />
-                <line x1="10" x2="54" y1="32" y2="32" stroke-width="6" stroke="var(--fg-0)" stroke-linecap="round" class="bottom" />
-            </svg>
-        </button>
+                    <line
+                        x1="10"
+                        x2="54"
+                        y1="32"
+                        y2="32"
+                        stroke-width="6"
+                        stroke="var(--fg-0)"
+                        stroke-linecap="round"
+                        class="top"
+                    />
+                    <line
+                        x1="10"
+                        x2="54"
+                        y1="32"
+                        y2="32"
+                        stroke-width="6"
+                        stroke="var(--fg-0)"
+                        stroke-linecap="round"
+                        class="middle"
+                    />
+                    <line
+                        x1="10"
+                        x2="54"
+                        y1="32"
+                        y2="32"
+                        stroke-width="6"
+                        stroke="var(--fg-0)"
+                        stroke-linecap="round"
+                        class="bottom"
+                    />
+                </svg>
+            </button>
+        </div>
     </nav>
 </div>
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <div
     id="page-content"
-    class:unfocus={open}
+    class:background={open}
     on:click={close}
     on:keydown={() => {}}
+    on:scroll={throttle(20, onScroll)}
+    bind:this={content}
 >
-    <slot />
+    <div class="page-content-inner">
+        <slot />
+    </div>
     <svg
         class="divider"
         viewBox="0 0 1000 200"
@@ -213,10 +265,9 @@
 </div>
 
 <style lang="scss">
-    :global(body.no-scroll) {
-        overflow-y: hidden;
+    :global(body) {
+        overflow: hidden;
     }
-
     $nav-trans: 350ms ease;
     .nav-container {
         position: fixed;
@@ -225,15 +276,16 @@
         width: 100%;
         z-index: 100;
         pointer-events: none;
-        height: 30vh;
+    }
+    .max-width-wrapper {
+        max-width: 80rem;
+        margin: 0 auto;
+        display: flex;
     }
     nav {
         position: relative;
         width: 100%;
         pointer-events: auto;
-        display: flex;
-        align-items: center;
-        justify-content: end;
         padding: 0.8rem;
         font-size: var(--fs-50);
         overflow-y: visible;
@@ -242,7 +294,7 @@
             transform 200ms ease,
             background-color 350ms ease;
 
-        &.hide:not(:focus-within) {
+        &.hide {
             transform: translateY(-100%);
             overflow-y: hidden;
         }
@@ -283,14 +335,24 @@
         transition:
             transform $nav-trans,
             filter $nav-trans;
-        &.unfocus {
-            transform: translateX(calc(-3 * var(--pad)));
-            filter: brightness(0.75);
-        }
-
         min-height: 100%;
+        max-height: 100%;
         display: flex;
         flex-direction: column;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        position: relative;
+    }
+    .page-content-inner {
+        display: flex;
+        flex-direction: column;
+        max-width: calc(80rem + 2 * var(--pad));
+        margin: 0 auto;
+    }
+    #page-content.background {
+        overflow-y: hidden;
+        filter: blur(2px) brightness(0.8);
+        // transform: translateX(-2rem);
     }
 
     svg.divider {
