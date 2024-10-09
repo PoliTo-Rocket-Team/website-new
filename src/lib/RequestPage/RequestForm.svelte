@@ -16,7 +16,7 @@
         e.preventDefault();
         const form = e.target;
         const formData = new FormData(form! as HTMLFormElement);
-        const res = await save(formData, supabase);
+        const res = await save(formData, supabase); 
         console.log(res);
         dialog.close();
     };
@@ -43,18 +43,18 @@
                 <input type="number" name="price" id="price" />
             </label>
 
-            <label for="status"
+            <!-- <label for="status"
                 >status
                 <input type="text" name="status" id="status" />
-            </label>
+            </label> -->
             <label for="reason"
                 >reason
                 <input type="textarea" name="reason" id="reason" />
             </label>
-            <label for="Quote"
+            <!-- <label for="Quote"
                 >Quote*
                 <input class="" type="file" name="Quote" id="Quote" />
-            </label>
+            </label> -->
 
             <div class="btn-container">
                 <button type="submit" class="btn">Save</button>
