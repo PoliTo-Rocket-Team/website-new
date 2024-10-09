@@ -8,12 +8,40 @@
 
 <script lang="ts">
     import Follow3D from "$lib/Follow3D.svelte";
+    import { theme } from "$lib/theme";
 
     export let name: string;
     export let link: string;
     export let texts: string[] | null;
-    export let img: string;
-    export let theme: null | "dark" | "light" = null;
+    export let img: string | string[];
+    export let localTheme: null | "dark" | "light" = null;
+
+    let currentTheme: string | null = null;
+    let currentImg: string;
+
+    const unsubscribe = theme.subscribe(value => {
+        currentTheme = value;
+        updateImage();
+    });
+
+    function updateImage() {
+        if (Array.isArray(img)) {
+            if (currentTheme === "light") {
+                currentImg = img[0];
+            } else if (currentTheme === "dark") {
+                currentImg = img[1];
+            }
+        } else {
+            currentImg = img as string;
+        }
+    }
+
+    $: updateImage();
+
+    import { onDestroy } from "svelte";
+    onDestroy(() => {
+        unsubscribe();
+    });
 
     function preventNav(this: HTMLAnchorElement) {}
 </script>
@@ -22,8 +50,8 @@
     <article>
         <div class="cover">
             {#if texts}
-                <div class="img-wrapper" data-theme={theme}>
-                    <img src="img/sponsors/{img}" alt="logo of {name}" />
+                <div class="img-wrapper" data-theme={localTheme}>
+                    <img src="img/sponsors/{currentImg}" alt="logo of {name}" />
                 </div>
                 <h3>{name}</h3>
                 <div class="text">
@@ -38,10 +66,10 @@
                     >
                 </div>
             {:else}
-                <div class="img-wrapper" data-theme={theme}>
+                <div class="img-wrapper" data-theme={localTheme}>
                     <a href={link} target="_blank" on:click={preventNav}
                         ><img
-                            src="img/sponsors/{img}"
+                            src="img/sponsors/{currentImg}"
                             alt="logo of {name}"
                         /></a
                     >
@@ -103,6 +131,7 @@
         background-color: var(--bg-0);
         box-shadow: inset 0 0 1.5rem var(--bg-2);
     }
+
     h3 {
         font-size: var(--fs-60);
         color: var(--accent-fig);

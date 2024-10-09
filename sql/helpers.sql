@@ -1,4 +1,4 @@
-create or replace function get_president()
+create or replace function get_president_id()
 returns int8
 language sql
 stable
@@ -27,7 +27,7 @@ declare
   it_lead constant int8 := (select divisions.lead from divisions where divisions.id = 1); -- ITC lead
   coo constant int8 := (select subteams.chief from subteams where subteams.id = 1); -- OPS chief
 begin
-  return (person = it_lead or person = coo or person = get_president());
+  return (person = it_lead or person = coo or person = get_president_id());
 end $$;
 
 
@@ -42,7 +42,7 @@ declare
   media_lead constant int8 := (select divisions.lead from divisions where divisions.id = 4); -- media lead
   coo constant int8 := (select subteams.chief from subteams where subteams.id = 1); -- OPS chief
 begin
-  return (person = media_lead or person = coo or person = get_president());
+  return (person = media_lead or person = coo or person = get_president_id());
 end $$;
 
 

@@ -1,8 +1,9 @@
 <script lang="ts">
     import IconLink from "$lib/icons/IconLink.svelte";
     import "@fontsource/plus-jakarta-sans/400-italic.css";
-    export let name: string;
-    export let role: string;
+    export let first_name : string;
+    export let last_name: string;
+    export let title_name: string | null;
     export let linkedin: string | null = null;
 </script>
 
@@ -12,8 +13,8 @@
             <IconLink icon="LinkedIn" id={linkedin} />
         </div>
     {/if}
-    <span class="name">{name}</span>
-    <span class="desc">{role}</span>
+    <span class="name">{first_name} {last_name}</span>
+    <span class="desc">{title_name}</span>
 </li>
 
 <style>

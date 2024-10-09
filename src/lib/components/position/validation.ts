@@ -17,7 +17,7 @@ export function emptyPositionData(
         required: [],
         number: num,
         form: "",
-        open: true,
+        open: false,
     };
 }
 
@@ -68,7 +68,7 @@ export const fields = {
         .defined()
         .nullable()
         .length(17, "Google form IDs are 17 characters long"),
-    open: yup.boolean().required(),
+    // open: yup.boolean().required(),
 };
 
 const creationFields = {
@@ -93,7 +93,6 @@ export async function save(
     const desirable = data.getAll("desirable");
     const required = data.getAll("required");
     const form = data.get("form") || null;
-    const open = data.has("open");
 
     try {
         if (id > 0) {
@@ -104,7 +103,6 @@ export async function save(
                     desirable,
                     required,
                     form,
-                    open,
                 },
                 { abortEarly: false }
             );
@@ -112,7 +110,7 @@ export async function save(
                 .from("positions")
                 .update(obj)
                 .eq("id", id)
-                .select("id, number, division");
+                .select("id, number, division, open");
             if (res.error) return { data: null, errors: [res.error.message] };
             if (!res.data.length)
                 return { data: null, errors: ["No such position exists"] };
@@ -132,20 +130,22 @@ export async function save(
                     desirable,
                     required,
                     form,
-                    open,
                 },
                 { abortEarly: false }
             );
             if (!Number.isInteger(division) || division < 0)
                 return { data: null, errors: ["Invalid division"] };
-            const row = Object.assign(obj, { division });
+            const row = Object.assign(obj, { division, open: false });
             const res = await supabase
                 .from("positions")
                 .insert(row)
                 .select("id");
             return res.error
                 ? { data: null, errors: [res.error.message] }
-                : { data: Object.assign(row, res.data[0]), errors: [] };
+                : {
+                      data: Object.assign(row, res.data[0]),
+                      errors: [],
+                  };
         }
     } catch (err) {
         return { data: null, errors: (err as yup.ValidationError).errors };

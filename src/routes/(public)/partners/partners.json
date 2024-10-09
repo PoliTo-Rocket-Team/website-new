@@ -3,7 +3,7 @@
         "name": "Politecnico di Torino",
         "link": "https://www.polito.it/",
         "img": "poli.svg",
-        "theme": "dark",
+        "localTheme": "dark",
         "texts": [
             "Politecnico di Torino (Polytechnic University of Turin) is the oldest public technical university of Italy, located in Turin. Consistently ranked as one of the best universities in Italy and in Europe, as of 2022 PoliTo is ranked by QS World University Rankings 33rd among the engineering and technology universities in the world.",
             "Politecnico's Department of Mechanical and Aerospace Engineering (DIMEAS) is the main financial partner of the Team."
@@ -13,17 +13,28 @@
         "name": "Mul2 Research Group",
         "img": "mul2_ter.png",
         "link": "http://www.mul2.polito.it/",
-        "theme": null,
+        "localTheme": null,
         "texts": [
             "Mul2 Research Group is a research project within Politecnico di Torino's Dept. of Mechanical and Aerospace Engineering, devoted to the development of advanced structural models for MULSs with particular attention given to the multifield analysis and the fluid-structure interactions.",
             "Mul2 provides material support, with 3D printers and 3D printing materials, along with technical support for the additive manufacturing processes."
         ]
     },
     {
+        "name": "Sòphia High Tech",
+        "img": ["Logo_SHT_scontornatoDARK.png", "logo_sophia_biancoLIGHT.png"],
+        "link": "https://www.sophiahightech.com/",
+        "localTheme": null,
+        "texts": [
+            "Sòphia High Tech, certified according to the Quality Standard AS/EN9100, operates in the Aerospace field, focusing on the design, development and production of metal alloy components using Additive Manufacturing and CNC Machining.",
+            "Sòphia uses the most advanced technological processes: to produce complex components in shape and geometry, Sòphia uses Additive Manufacturing (SLM), according to ECSS-Q-ST-70-80C.",
+            "Sophia High Tech supports the team in the development of project Efesto by providing state-of-the-art equipment, which will be crucial for the success of the project."
+        ]
+    },
+    {
         "name": "BETA CAE Systems",
         "link": "https://www.beta-cae.com/",
         "img": "BETA_CAE_Systems.svg",
-        "theme": "light",
+        "localTheme": "light",
         "texts": [
             "BETA CAE Systems transformed CAE by introducing revolutionary automation software tools and practices into Simulation and Analysis processes almost 30 years ago. Today, BETA CAE Systems is a world leader of Engineering Simulation, thanks to their softwares deployed in the Aerospace, Defense, Automotive, Biomechanics, Electronics, Energy and other Industries.",
             "BETA CAE Systems provides material support with the ANSA and META software suites, as well as technical support to the Team."
@@ -33,47 +44,37 @@
         "name": "ASSOCAM Scuola Camerana",
         "link": "https://www.scuolacamerana.it/",
         "img": "Camerana.png",
-        "theme": "light",
+        "localTheme": "light",
         "texts": [
             "ASSOCAM Scuola Camerana, is a Turin-based organisation rooted in the city's industrial fabric that has been providing post-diploma training since 1959. It brings together experienced technicians and teachers, as well as a large number of laboratories and machinery for students. In particular, it is a training agency of Unione Industriali and Camera di Commercio of Turin with a focus on technological training applied to industrial processes.",
             "Assocam Scuola Camerana provides the team with the necessary mechanical machining and components for its activities."
         ]
     },
     {
-        "name": "The Exploration Company",
-        "link": "https://www.exploration.space/",
-        "img": "ExplorationCompany.png",
-        "theme": "dark",
-        "texts": [
-            "The Exploration Company is a space engineering firm based in Wessling, Germany. Their efforts are concentrated in the developement of Nyx, a modular, reusable and in-orbit refuelable space vehicle. It is set to have its earth orbit demo flight in 2024, and its first lunar mission is expected to take place in 2028. Their services will be available to serve a wide range of industries.",
-            "The Exploration Company is in a technical partnership with PRT's Project Efesto, involved in the research and development of our first liquid rocket engine."
-        ]
-    },
-    {
-        "name": "BLU Electronic",
-        "link": "http://www.bluelectronic.com/",
-        "img": "BLU_Electronic.jpg",
-        "theme": null,
-        "texts": [
-            "With over two decades of experience, Blu Electronic is a leading provider of electronic boards and equipment for the space and avionics industries.",
-            "Blu Electronic's Aero activities commenced in 2007, and in 2009, the company achieved the UNI EN9100 certification, which it still maintains today. In 2010, it became part of Lombardia Aerospace and continues to provide cutting-edge solutions for space, avionics, and aerospace systems.",
-            "Blue Electronic will provide our team with technical and material support."
-        ]
-    },
-    {
         "name": "TekRevolution",
         "link": "https://www.tekrevolution.it/",
         "img": "Tek.svg",
-        "theme": "dark",
+        "localTheme": "dark",
         "texts": [
             "TekRevolution is an esteemed Italian engineering company, renowned for their meticulous understanding of technical needs and delivery of exceptional results. The company operates in different industrial sectors, thanks to its multidisciplinary team of highly qualified experts. They have extensive experience in technology integration and project management.",
             "TekRevolution provides technical support to the Team. The company lends their expertise and training to ensure the success of our groundbreaking projects."
         ]
     },
     {
+        "name": "Explorer Cases",
+        "link": "https://www.explorercases.com/",
+        "img": "explorer-cases.webp",
+        "localTheme": null,
+        "texts": [
+            "EXPLORER CASES is a range of indestructible and waterproof cases which guarantee maximum protection when transporting professional equipment manufactured by GT line. It is a leading brand in the sector, established internationally.",
+            "Constant investment in R&D has allowed them to develop efficient solutions, for which they have obtained multiple certifications. The cases are subjected to strict laboratory tests to guarantee their reliability to extreme conditions of use.",
+            "Explorer cases supports the team by providing its cases for the safe and practical transport of our equipment."
+        ]
+    },
+    {
         "name": "JEToP",
         "img": "JEToP.png",
-        "theme": "dark",
+        "localTheme": "dark",
         "link": "https://www.jetop.com/",
         "texts": null
     }

@@ -25,9 +25,26 @@ export const load: PageServerLoad = async ({ locals }) => {
             details: res.error.details,
             message: res.error.message,
         });
+
+    const president = await locals.supabase.rpc("get_latest_president");
+    if (president.error) {
+        throw error(500, {
+            details: president.error.details,
+            message: president.error.message,
+        });
+    }
+    const members = await locals.supabase.rpc("get_members");
+    if (members.error) {
+        throw error(500, {
+            details: members.error.details,
+            message: members.error.message,
+        });
+    }
     return {
-        subteams: res.data as unknown as CompleteSubteam[],
+        subteams: res.data,
         ppBucket: locals.supabase.storage.from("people-pics").getPublicUrl("")
             .data.publicUrl,
+        president: president.data[0] as Person,
+        members: members.data
     };
 };

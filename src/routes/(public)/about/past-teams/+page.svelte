@@ -223,7 +223,17 @@
 </main>
 
 <style lang="scss">
+
+    main h1 {
+        margin: 2rem;
+    }
+    section {
+        margin-right: 2rem;
+        margin-left: 2rem;
+        // padding: 2rem;
+    }
     .cols {
+        column-count: 3;
         column-width: 25ch;
         column-gap: 4rem;
         column-rule: dashed 2px var(--fg-1);

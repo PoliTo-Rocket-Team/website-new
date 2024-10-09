@@ -1,11 +1,13 @@
+
+
 create or replace function get_complete_subteams()
 returns table (
   name text,
   code text,
-  chief json,
-  coordinator1 json,
-  coordinator2 json,
-  leads json[]
+  chief chief_info,
+  coordinator1 coordinator_info,
+  coordinator2 coordinator_info,
+  leads lead_info[]
 )
 language sql
 stable
@@ -18,38 +20,38 @@ as $$
   select 
     st.name, 
     st.code, 
-    json_build_object(
-      'first_name', p1.first_name,
-      'last_name', p1.last_name,
-      'linkedin', p1.linkedin,
-      'id4pp', case when p1.has_pp then p1.id else null end,
-      'title', st.title_name
-    ) as chief,
+    (
+       p1.first_name,
+       p1.last_name,
+       p1.linkedin,
+       case when p1.has_pp then p1.id else null end,
+       st.title_name
+    )::chief_info as chief,
     case 
       when p2 is null
       then null
-      else json_build_object(
-        'first_name', p2.first_name,
-        'last_name', p2.last_name,
-        'linkedin', p2.linkedin,
-        'id4pp', case when p2.has_pp then p2.id else null end
-      )
+      else row(
+         p2.first_name,
+         p2.last_name,
+         p2.linkedin,
+         case when p2.has_pp then p2.id else null end
+      )::coordinator_info
     end as coordinator1,
     case 
       when p3 is null
       then null
-      else json_build_object(
-        'first_name', p3.first_name,
-        'last_name', p3.last_name,
-        'linkedin', p3.linkedin,
-        'id4pp', case when p3.has_pp then p3.id else null end
-      )
+      else row(
+         p3.first_name,
+         p3.last_name,
+         p3.linkedin,
+       case when p3.has_pp then p3.id else null end
+      )::coordinator_info
     end as coordinator2,
     leads.col as leads
   from st
   cross join lateral (
     select array (
-      select row_to_json(a)
+      select a::lead_info
       from (
         select 
           people.first_name, 

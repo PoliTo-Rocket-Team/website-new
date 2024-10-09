@@ -2,24 +2,31 @@
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
     import FormatLine from "$lib/FormatLine.svelte";
-
     import { onMount } from "svelte";
+    import { getContext } from "svelte";
+    import type { Writable } from "svelte/store";
 
-    export let data: { question: string, answer: string }[];
+    export let data: { question: string; answer: string }[];
 
     const elements: HTMLElement[] = [];
-    let lastScroll = browser ? window.scrollY : 0;
     let focused = 0;
+    let lastScroll = 0;
+    const storeContent =
+        getContext<Writable<HTMLDivElement | null>>("page-container");
+    let content: HTMLDivElement | null = null;
+
+    $: content = $storeContent;
 
     const focusNearestFAQ = frameThrottle(() => {
-        const delta = window.scrollY - lastScroll;
-        lastScroll = window.scrollY;
+        if (!content) return;
+        const delta = content.scrollTop - lastScroll;
+        lastScroll = content.scrollTop;
         const newFocused =
             delta > 0 ? nearestAfter(focused) : nearestBefore(focused);
         if (focused != newFocused) {
-            elements[focused].classList.remove("focus");
+            elements[focused]?.classList.remove("focus");
             focused = newFocused;
-            elements[focused].classList.add("focus");
+            elements[focused]?.classList.add("focus");
         }
     });
 
@@ -49,19 +56,21 @@
     }
 
     function distanceFromCenterScreen(el: HTMLElement) {
+        if (!el || !content) return 0;
         return Math.abs(
             el.offsetTop +
                 el.offsetHeight / 2 -
-                window.scrollY -
-                (window.innerHeight * 4) / 9
+                content.scrollTop -
+                (content.clientHeight * 4) / 9
         );
     }
 
     function bringIntoView(this: HTMLElement) {
+        if (!content) return;
         const rect = this.getBoundingClientRect();
-        window.scrollBy({
+        content.scrollBy({
             left: 0,
-            top: rect.top - window.innerHeight / 2 + this.clientHeight / 2,
+            top: rect.top - content.clientHeight / 2 + this.clientHeight / 2,
             behavior: "smooth",
         });
     }
@@ -70,8 +79,8 @@
         const obs = new IntersectionObserver(entries =>
             entries.forEach(entry => {
                 if (entry.isIntersecting)
-                    window.addEventListener("scroll", focusNearestFAQ);
-                else window.removeEventListener("scroll", focusNearestFAQ);
+                    content?.addEventListener("scroll", focusNearestFAQ);
+                else content?.removeEventListener("scroll", focusNearestFAQ);
             })
         );
         obs.observe(node);
@@ -81,13 +90,14 @@
             },
         };
     }
+
     onMount(() => {
         focused = nearestAfter(0);
-        elements[focused].classList.add("focus");
+        elements[focused]?.classList.add("focus");
     });
 </script>
 
-<div class="container" use:observe>
+<div class="container" bind:this={content} use:observe>
     {#each data as faq, i}
         <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
         <article

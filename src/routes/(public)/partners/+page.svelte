@@ -3,6 +3,7 @@
     // no check to make partners img type compatible
 
     import Partner from "./Partner.svelte";
+
     import partners from "./partners.json";
 
     let mainPartners = partners.filter(p => p.texts !== null);
@@ -30,6 +31,7 @@
             >
         </p>
     </div>
+
     <section aria-labelledby="main-partners">
         <h2 id="main-partners">Main partners</h2>
         <div class="grid">
@@ -67,7 +69,12 @@
     }
     @media (min-width: 50rem) {
         .grid {
-            grid-template-columns: repeat(auto-fill, 30ch);
+            grid-template-columns: repeat(2, minmax(30ch, 1fr));
+        }
+    }
+    @media (min-width: 80rem) {
+        .grid {
+            grid-template-columns: repeat(3, minmax(30ch, 1fr));
         }
     }
 </style>

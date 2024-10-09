@@ -3,7 +3,6 @@
     import Lead from "./Lead.svelte";
     import Pie from "$lib/Pie.svelte";
     import Member from "../Member.svelte";
-    import members from "./members.json";
     import advisors from "./advisors.json";
     import HTabbed from "$lib/HTabbed.svelte";
     import { browser } from "$app/environment";
@@ -17,11 +16,24 @@
     export let data;
 
     function getAngle(i: number) {
-        return ((i / (data.subteams.length - 1)) * 2 - 1) * Math.PI * 0.2;
+        return ((i / (data.subteams.length - 1)) * 2 - 1) * Math.PI * 0.3;
     }
     function getImg(id: number | null, lastname: string) {
         return !id ? null : `${data.ppBucket}${id}-${normalize(lastname)}.jpeg`;
     }
+
+    let p = data.president;
+
+    // Sort members by first name, then last name
+    let members = data.members.sort((a, b) => {
+        let comparison = a.first_name.localeCompare(b.first_name);
+
+        if (comparison === 0) {
+            comparison = a.last_name.localeCompare(b.last_name);
+        }
+
+        return comparison;
+    });
 </script>
 
 <svelte:window
@@ -54,11 +66,11 @@
     <section>
         <div class="executive-view">
             <Chief
-                firstname="Elena"
-                lastname="Dilorenzo"
-                linkedin="elena-dilorenzo-294b5a20b"
+                firstname={p.first_name}
+                lastname={p.last_name}
+                linkedin={p.linkedin}
                 role="President"
-                img="/members/Dilorenzo.jpg"
+                img={getImg(p.id4pp, p.last_name)}
                 angle={0}
                 president
             />
@@ -169,20 +181,20 @@
                 threshold={5}
                 rotate={255}
                 slices={[
-                    { value: 66, label: "Aerospace", color: "#316B83" },
-                    { value: 25, label: "Mechanical", color: "#DE8971" },
-                    { value: 8, label: "Electronic", color: "#CD5D7D" },
+                    { value: 71, label: "Aerospace", color: "#316B83" },
+                    { value: 21, label: "Mechanical", color: "#DE8971" },
                     { value: 8, label: "Computer", color: "#70AF85" },
+                    { value: 7, label: "Electronic", color: "#CD5D7D" },
                     { value: 4, label: "Management", color: "#C6D57E" },
-                    { value: 22, label: "Other", color: "#A7D0CD" },
+                    { value: 8, label: "Other", color: "#A7D0CD" },
                 ]}
             />
             <Pie
                 title="Members by level"
                 threshold={5}
                 slices={[
-                    { value: 64, label: "Bachelor's", color: "#4e7bc1" },
-                    { value: 61, label: "Master's", color: "#e1a463" },
+                    { value: 62, label: "Bachelor's", color: "#4e7bc1" },
+                    { value: 64, label: "Master's", color: "#e1a463" },
                     { value: 1, label: "Ph.D.", color: "#3bdb84" },
                 ]}
             />
@@ -191,8 +203,8 @@
                 rotate={25}
                 threshold={0}
                 slices={[
-                    { value: 88, label: "Domestic", color: "#DE8971" },
-                    { value: 38, label: "International", color: "#A7D0CD" },
+                    { value: 96, label: "Domestic", color: "#DE8971" },
+                    { value: 34, label: "International", color: "#A7D0CD" },
                 ]}
             />
         </div>
