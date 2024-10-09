@@ -1,6 +1,6 @@
 <script lang="ts">
     import type { SubmitFunction } from "@sveltejs/kit";
-    import { fields, save, type ExtendedOrdersData } from "./validation";
+    import { fields, save, type OrdersData } from "./validation";
     import { enhance } from "$app/forms";
 
     import Field from "$lib/components/form/Field.svelte";
@@ -12,15 +12,17 @@
 
     const dispatch = createEventDispatcher<{
         cancel: void;
-        saved: ExtendedOrdersData;
+        saved: OrdersData;
     }>();
+
+
 
     const supabase = getContext<SupabaseClient<Database>>("supabase");
     if (!supabase && browser) alert("Supabase not passed by context");
 
     /** If the requester is passed, creation of position is assumed */
     export let creating = false;
-    export let data: ExtendedOrdersData;
+    export let data: OrdersData;
 
     let errors: string[] = [];
     // const submit: SubmitFunction = async ({ cancel, formData }) => {
@@ -37,7 +39,7 @@
     //     }
     // };
 
-    type OrderSaveData = ExtendedOrdersData & { quote: File | null };
+    type OrderSaveData = OrdersData & { quote: File | null };
 
     const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();

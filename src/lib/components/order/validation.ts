@@ -2,29 +2,25 @@ import type { Database } from "$lib/supabase";
 import type { SupabaseClient } from "@supabase/supabase-js";
 import * as yup from "yup";
 
-export type OrdersData = Database["public"]["Tables"]["orders"]["Row"];
-
-export type ExtendedOrdersData = OrdersData & {
+export type OrdersData = Database["public"]["Tables"]["orders"]["Row"] & {
     quote: File | null;
 };
 
-export function emptyOrdersData(
-    requester: number
-): ExtendedOrdersData {
+export function emptyOrdersData(requester: number): OrdersData {
     return {
-        name: '',
+        name: "",
         description: "",
         price: 0,
         quantity: 0,
-        reason: '',
+        reason: "",
         requester,
         id: -1, // auto-generated
         status: "pending", // auto-generated
         createdAt: new Date().toISOString(), // auto-generated
+        quote_url: "", // auto-generated
         quote: null,
     };
 }
-
 
 const supportedFileTypes = [
     "application/pdf",
@@ -36,18 +32,14 @@ const supportedFileTypes = [
 export const fields = {
     name: yup.string().label("Item name").required().max(50),
     description: yup.string().label("Long description").required().min(10),
-    price: yup
-        .number()
-        .label("Price")
-        .required()
-        .integer()
-        .moreThan(0),
+    price: yup.number().label("Price").required().integer().moreThan(0),
     quantity: yup.number().required().integer().moreThan(0).label("Quantity"),
     reason: yup.string().label("Reason for purchase").required().min(10),
     requester: yup.number().required().min(1).integer(),
     quote: yup
         .mixed<File>()
-        .nullable().label("Quote file")
+        .nullable()
+        .label("Quote file")
         .test("fileType", "Unsupported file type", value => {
             if (!value) return true; // Allow null values
             return value && supportedFileTypes.includes(value.type);
@@ -92,35 +84,46 @@ export async function save(
         if (!Number.isInteger(requester) || requester < 0)
             return { data: null, errors: ["Invalid requester"] };
 
+        // const row = {
+        //     ...obj,
+        //     requester,
+        //     status: "pending" as "pending",
+        //     createdAt: new Date().toISOString(),
+        // //
         const row = Object.assign(obj, {
             requester,
             status: "pending" as "pending",
             createdAt: new Date().toISOString(),
+            quote_url: null as string | null,
+            // quote: null as File | null,
         });
 
         // if (quote) {
         //     const file = quote as File;
         //     const filePath = `quotes/${file.name}`;
         //     const { data: uploadData, error: uploadError } =
-        //         await supabase.storage
-        //             .from("quotes")
-        //             .upload(filePath, file, {
-        //                 cacheControl: '3600',
-        //                 upsert: false,
-        //                 // If needed, specify the owner ID
-        //                 owner_id: ownerId, // Replace this with the actual owner_id you want to set
-        //             }););
+        //         await supabase.storage.from("quotes").upload(filePath, file, {
+        //             cacheControl: "3600",
+        //             upsert: false,
+        //         });
 
         //     if (uploadError) {
         //         return { data: null, errors: [uploadError.message] };
         //     }
-    // }
+
+        //     // Add the quote URL to the row
+        //     const { data: publicUrlData } = supabase.storage
+        //         .from("quotes")
+        //         .getPublicUrl(filePath);
+        //     row.quote_url = publicUrlData.publicUrl;
+        // }
         const res = await supabase.from("orders").insert(row).select("id");
 
         return res.error
             ? { data: null, errors: [res.error.message] }
             : {
-                  data: { ...row, id: res.data[0].id }, errors: [],
+                  data: { ...row, id: res.data[0].id },
+                  errors: [],
               };
     } catch (err) {
         return { data: null, errors: (err as yup.ValidationError).errors };

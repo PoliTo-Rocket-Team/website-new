@@ -2,11 +2,11 @@
     import "@fontsource/anonymous-pro/400.css";
     import { expo } from "@slidy/easing";
     import { createEventDispatcher } from "svelte";
-    export let name: string;
-    export let quantity: number ;
-    export let price: number;
-    export let requester: number;
-    export let status: string;
+    export let name: string | null;
+    export let quantity: number | null;
+    export let price: number | null;
+    export let requester: number | null;
+    export let status: string | null;
 
     export let total = 0;
     

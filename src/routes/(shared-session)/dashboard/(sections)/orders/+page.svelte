@@ -36,7 +36,7 @@
 </Modal>
 
 
-<!-- {#each data.orders as order, i}
+{#each data.orders as order, i}
     <Order.Admin
         data={order}
         on:saved={e => {
@@ -44,8 +44,8 @@
         }}
     />
 {:else}
-    <p>No positions found</p>
-{/each} -->
+    <p>No orders found</p>
+{/each}
 
 <button
     class="btn center"

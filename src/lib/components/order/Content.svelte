@@ -1,13 +1,12 @@
 <script lang="ts">
     export let description: string;
-    export let reason: string;
-    export let quote: File;
-    export let createdAt: string;
+    export let reason: string | null;
+    export let quote_url: string | null;
+    export let createdAt: string | null;
 
     $: paragraphs = description.split("\n\n");
     $: reasonParagraphs = reason.split("\n\n");
 
-    $: quoteUrl = quote ? `/quotes/${quote.name}` : null;
 
     $: formattedDate = createdAt ? new Date(createdAt).toLocaleDateString() : 'N/A';
     
@@ -22,13 +21,10 @@
     <p>{p}</p>
 {/each}
 
-{#if quoteUrl}
+{#if quote_url}
     <h4>Quote</h4>
-    <a href={quoteUrl} target="_blank">Download Quote</a>
+    <a href={quote_url} target="_blank">Quote</a>
     <!-- Optionally, embed the file if it's a viewable type -->
-    {#if quote.type === 'application/pdf'}
-        <embed src={quoteUrl} type="application/pdf" width="100%" height="600px" />
-    {/if}
 {/if}
 
 {#if createdAt}
