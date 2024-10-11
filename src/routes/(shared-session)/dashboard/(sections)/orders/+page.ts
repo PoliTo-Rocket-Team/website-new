@@ -19,6 +19,6 @@ export const load: PageLoad = async ({ parent }) => {
     return {
         orders: res.data,
         requesterId: person.id,
-        requester: person.first_name + " " + person.last_name,
+        requesterName: person.first_name + " " + person.last_name,
     };
 };

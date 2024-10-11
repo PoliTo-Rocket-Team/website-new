@@ -7,9 +7,17 @@
     $: paragraphs = description.split("\n\n");
     $: reasonParagraphs = reason.split("\n\n");
 
-
-    $: formattedDate = createdAt ? new Date(createdAt).toLocaleDateString() : 'N/A';
-    
+    $: formattedDate = createdAt
+        ? `${new Date(createdAt).toLocaleDateString("en-US", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+          })}, ${new Date(createdAt).toLocaleTimeString("en-US", {
+              hour: "2-digit",
+              minute: "2-digit",
+              hour12: false, // 24-hour format
+          })}`
+        : "N/A";
 </script>
 
 <h4>Description</h4>
@@ -32,8 +40,6 @@
     <p>{formattedDate}</p>
 {/if}
 
-
-
 <style>
     a {
         display: block;
@@ -55,5 +61,4 @@
     p {
         margin-top: 0.5rem;
     }
-
 </style>

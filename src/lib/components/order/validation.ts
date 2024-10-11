@@ -30,7 +30,7 @@ const supportedFileTypes = [
 ];
 
 export const fields = {
-    name: yup.string().label("Item name").required().max(50),
+    name: yup.string().label("Item name").required().max(30),
     description: yup.string().label("Long description").required().min(10),
     price: yup.number().label("Price").required().integer().moreThan(0),
     quantity: yup.number().required().integer().moreThan(0).label("Quantity"),
@@ -66,7 +66,7 @@ export async function save(
     const price = data.get("price");
     const quantity = data.get("quantity");
     const reason = data.get("reason");
-    const quote = data.get("quote");
+    const quote = data.get("quote") as File | null;
 
     try {
         const requester = +(data.get("requester") || 0);
@@ -78,45 +78,48 @@ export async function save(
                 requester,
                 quantity,
                 reason,
+                quote
             },
             { abortEarly: false }
         );
         if (!Number.isInteger(requester) || requester < 0)
             return { data: null, errors: ["Invalid requester"] };
 
-        // const row = {
-        //     ...obj,
-        //     requester,
-        //     status: "pending" as "pending",
-        //     createdAt: new Date().toISOString(),
-        // //
-        const row = Object.assign(obj, {
+        const row = {
+            ...obj,
             requester,
             status: "pending" as "pending",
             createdAt: new Date().toISOString(),
             quote_url: null as string | null,
-            // quote: null as File | null,
-        });
+            quote: quote ?? null,
+        };
+        // //
+        // const row = Object.assign(obj, {
+        //     requester,
+        //     status: "pending" as "pending",
+        //     createdAt: new Date().toISOString(),
+        //     quote_url: null as string | null,
+        // });
 
-        // if (quote) {
-        //     const file = quote as File;
-        //     const filePath = `quotes/${file.name}`;
-        //     const { data: uploadData, error: uploadError } =
-        //         await supabase.storage.from("quotes").upload(filePath, file, {
-        //             cacheControl: "3600",
-        //             upsert: false,
-        //         });
+        if (quote) {
+            const file = quote as File;
+            const filePath = `quotes/${file.name}`;
+            const { data: uploadData, error: uploadError } =
+                await supabase.storage.from("quotes").upload(filePath, file, {
+                    cacheControl: "3600",
+                    upsert: false,
+                });
 
-        //     if (uploadError) {
-        //         return { data: null, errors: [uploadError.message] };
-        //     }
+            if (uploadError) {
+                return { data: null, errors: [uploadError.message] };
+            }
 
-        //     // Add the quote URL to the row
-        //     const { data: publicUrlData } = supabase.storage
-        //         .from("quotes")
-        //         .getPublicUrl(filePath);
-        //     row.quote_url = publicUrlData.publicUrl;
-        // }
+            // Add the quote URL to the row
+            const { data: publicUrlData } = supabase.storage
+                .from("quotes")
+                .getPublicUrl(filePath);
+            row.quote_url = publicUrlData.publicUrl;
+        }
         const res = await supabase.from("orders").insert(row).select("id");
 
         return res.error

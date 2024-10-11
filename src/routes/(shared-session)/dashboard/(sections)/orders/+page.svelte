@@ -8,8 +8,7 @@
     export let data: PageData;
     setContext("supabase", data.supabase);
 
-    const orders = data.orders || [];
-    
+    const orders = data.orders || [];    
 
 </script>
 
@@ -18,9 +17,20 @@
 </svelte:head>
 <h1>Orders</h1>
 
+{#if data.orders}
+    <div class='title'>
+        <h3 class='name'>Name</h3>
+        <h3>Quantity</h3>
+        <h3>Price</h3>
+        <h3>Total</h3>
+        <h3>Requester</h3>
+        <h3>Status</h3>
+    </div>
+{/if}
+
 <Modal bind:use={newOrder} empty={newOrder ? newOrder : Order.empty(data.requesterId)} let:data={orders_data}>
 
-    <h3>Add a new Order</h3>
+    <h3 class="new-order">Add a new Order</h3>
     <Order.Form
         creating
         requester={data.requesterId}
@@ -37,8 +47,9 @@
 
 
 {#each data.orders as order, i}
+
     <Order.Admin
-        data={order}
+        data={{...order, requesterName: data.requesterName}}
         on:saved={e => {
             data.orders[i] = e.detail;
         }}
@@ -58,4 +69,24 @@
 
 
 <style>
+    .title {
+        padding: 1rem;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        align-items: center;
+        column-gap: 1rem;
+    }
+    .name {
+        min-width: 18rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .new-order {
+        margin-bottom: 1rem;
+        font-size: 1.7rem;
+    }
+    .center {
+        margin: 2rem auto;
+    }
 </style>

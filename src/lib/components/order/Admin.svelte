@@ -5,8 +5,8 @@
     import type { OrdersData } from "./validation";
 
 
-    export let data: OrdersData;
-
+    export let data: OrdersData & {requesterName: string};
+    
 </script>
 
 <Wrapper>
@@ -14,7 +14,7 @@
         name={data.name}
         quantity={data.quantity}
         price={data.price}
-        requester={data.requester}
+        requesterName={data.requesterName}
         status={data.status}
         slot="header"
     />
