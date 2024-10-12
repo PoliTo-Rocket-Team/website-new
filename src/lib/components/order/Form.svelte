@@ -25,19 +25,6 @@
     export let data: OrdersData;
 
     let errors: string[] = [];
-    // const submit: SubmitFunction = async ({ cancel, formData }) => {
-    //     cancel();
-    //     const res = await save(formData, supabase);
-    //     console.log(res.errors);
-    //     errors = res.errors;
-    //     if (res.data) {
-    //         resetter.notify();
-    //         dispatch("saved", {
-    //             ...res.data,
-    //             quote: (formData.get("quote") as File) || null,
-    //         });
-    //     }
-    // };
 
     type OrderSaveData = OrdersData & { quote: File | null };
 
@@ -57,12 +44,7 @@
             dispatch("saved", savedData);
         }
     };
-
     const resetter = signal();
-
-    // a bit of hack: assuming empty data when number is zero
-    // $: if (data.number === 0) resetter.notify();
-
     export let requester;
 </script>
 
