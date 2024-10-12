@@ -4,7 +4,7 @@
     import type { PageData } from "./$types";
     import * as Order from "$lib/components/order";
 
-    let newOrder: ReturnType<typeof Order.empty> | null = null;
+    let newOrder: null | ReturnType<typeof Order.empty> = null;
     export let data: PageData;
     setContext("supabase", data.supabase);
 
@@ -28,7 +28,7 @@
     </div>
 {/if}
 
-<Modal bind:use={newOrder} empty={newOrder ? newOrder : Order.empty(data.requesterId)} let:data={orders_data}>
+<Modal bind:use={newOrder} empty={Order.empty(data.requesterId)} let:data={orders_data}>
 
     <h3 class="new-order">Add a new Order</h3>
     <Order.Form
@@ -49,7 +49,7 @@
 {#each data.orders as order, i}
 
     <Order.Admin
-        data={{...order, requesterName: data.requesterName}}
+        data={{...order, requesterName: data.requesterName, fileName: data.fileName}}
         on:saved={e => {
             data.orders[i] = e.detail;
         }}

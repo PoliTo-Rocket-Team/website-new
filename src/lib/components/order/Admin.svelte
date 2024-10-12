@@ -5,7 +5,7 @@
     import type { OrdersData } from "./validation";
 
 
-    export let data: OrdersData & {requesterName: string};
+    export let data: OrdersData & {requesterName: string, fileName: string};
     
 </script>
 
@@ -25,6 +25,7 @@
                 reason={data.reason}
                 quote_url={data.quote_url}
                 createdAt={data.createdAt}
+                fileName={data.fileName}
             />
             <div class="btns">
                 <button type="button" class="btn btn--low" >
