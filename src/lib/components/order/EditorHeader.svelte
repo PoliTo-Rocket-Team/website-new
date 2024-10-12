@@ -6,7 +6,8 @@
     export let requesterName: string | null;
     export let status: string | null;
 
-    export let total = price * quantity;
+    // export let total = price * quantity;
+    $: total = price * quantity;
 </script>
     <summary>
         <h3>{name}</h3>
