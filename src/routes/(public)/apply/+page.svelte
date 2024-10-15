@@ -70,6 +70,10 @@
 
     $text-margin: 0.5rem;
     @media (min-width: 50rem) {
+        .stop-growth {
+            min-width: 90ch;
+        }
+
         h2 {
             text-align: center;
         }
