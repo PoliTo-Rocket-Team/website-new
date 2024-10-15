@@ -1,7 +1,7 @@
 <script lang="ts">
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
-    import Cavour from "/src/img/cavour/test/8.jpg";
+
     import { getContext } from "svelte";
     import type { Writable } from "svelte/store";
 
@@ -94,7 +94,10 @@
         >
             <h3>{event.date}</h3>
             <div class="image">
-                <img src={Cavour} alt={event.title} />
+                <img
+                    src="/img/history_page/{event.imageSrc}"
+                    alt={event.title}
+                />
                 <p>{@html event.description}</p>
             </div>
         </article>
@@ -116,11 +119,12 @@
         cursor: pointer;
         position: relative;
         z-index: 0;
-        height: 60vh;
+        height: 70vh;
         padding: 2rem;
         overflow-y: hidden;
         width: 100%;
         height: auto;
+        align-items: center;
     }
 
     article:global(.selected) {
@@ -129,6 +133,9 @@
     }
 
     @media (min-width: 51rem) {
+        .events {
+            min-width: 90ch;
+        }
         article.selected .image {
             height: 30vh;
         }
@@ -143,10 +150,12 @@
             margin: 0 auto;
             clip-path: inset(50% 0);
             transform: scale(0.3);
+            object-position: center;
         }
         .image {
             height: 0;
-            width: 18rem;
+            object-position: center;
+            width: 40rem;
             place-self: center;
             position: relative;
             isolation: isolate;
@@ -154,17 +163,20 @@
         }
         .image img {
             transition: height 0.3s ease;
+            object-position: center;
         }
 
         .image:hover img {
-            opacity: 0.4;
+            opacity: 0.2;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center;
             z-index: -1;
+            filter: blur(3px);
         }
 
         .image:hover p {
