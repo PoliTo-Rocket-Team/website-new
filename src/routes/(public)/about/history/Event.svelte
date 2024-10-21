@@ -137,7 +137,7 @@
             min-width: 90ch;
         }
         article.selected .image {
-            height: 30vh;
+            height: 70vh;
         }
         article.selected .image img {
             clip-path: inset(0);
@@ -146,15 +146,16 @@
 
         img {
             width: 100%;
+            height: 50vh;
             display: block;
             margin: 0 auto;
             clip-path: inset(50% 0);
             transform: scale(0.3);
-            object-position: center;
+            object-fit: contain;
+            position: absolute;
         }
         .image {
             height: 0;
-            object-position: center;
             width: 40rem;
             place-self: center;
             position: relative;
@@ -163,7 +164,6 @@
         }
         .image img {
             transition: height 0.3s ease;
-            object-position: center;
         }
 
         .image:hover img {
@@ -174,7 +174,6 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
             z-index: -1;
             filter: blur(3px);
         }
