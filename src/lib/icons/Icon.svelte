@@ -1,6 +1,7 @@
 <script lang="ts">
     import { register, type Icon } from "./internal";
     export let icon: Icon;
+    export let title: string | null = null;
     register.add(icon);
 </script>
 
@@ -10,8 +11,11 @@
     height="48"
     viewBox="0 0 48 48"
 >
-    <use fill="var(--icon-clr)" href="#icon-{icon}" width="48" height="48"
-    ></use>
+    <use fill="var(--icon-clr)" href="#icon-{icon}" width="48" height="48">
+        {#if title}
+            <title>{title}</title>
+        {/if}
+    </use>
 </svg>
 
 <style>
