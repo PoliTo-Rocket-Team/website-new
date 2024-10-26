@@ -21,6 +21,11 @@
     /** If the requester is passed, creation of position is assumed */
     export let creating = false;
     export let data: OrdersData;
+    export let requester: {
+        id: number;
+        first_name: string;
+        last_name: string;
+    };
 
     let errors: string[] = [];
 
@@ -34,16 +39,12 @@
 
         if (res.data) {
             resetter.notify();
-
-            const quote = (formData.get("quote") as File) || null;
-            const savedData: OrderSaveData = { ...res.data, quote };
-
+            const savedData = { ...res.data, requester };
             // Dispatch event with proper typing
             dispatch("saved", savedData);
         }
     };
     const resetter = signal();
-    export let requester;
 </script>
 
 <form
@@ -53,7 +54,7 @@
     use:enhance={submit}
 >
     {#if creating}
-        <input type="hidden" name="requester" value={requester} />
+        <input type="hidden" name="requester" value={requester.id} />
     {/if}
 
     <div class="split">
@@ -108,7 +109,6 @@
         type="file"
         name="quote"
         schema={fields.quote}
-        value={data.quote}
         resetter={resetter.sub}
     />
 
