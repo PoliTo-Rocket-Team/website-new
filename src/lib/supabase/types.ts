@@ -273,7 +273,15 @@ export type Database = {
           requester?: number
           status?: Database["public"]["Enums"]["request_status"]
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "orders_requester_fkey"
+            columns: ["requester"]
+            isOneToOne: false
+            referencedRelation: "people"
+            referencedColumns: ["id"]
+          },
+        ]
       }
       people: {
         Row: {
