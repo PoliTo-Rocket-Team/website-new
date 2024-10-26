@@ -4,12 +4,7 @@
     import Content from "./Content.svelte";
     import type { OrdersData } from "./validation";
 
-    export let data: Omit<OrdersData, "requester"> & {
-        requester: {
-            first_name: string;
-            last_name: string;
-        };
-    };
+    export let data: OrdersData;
 </script>
 
 <Wrapper>
