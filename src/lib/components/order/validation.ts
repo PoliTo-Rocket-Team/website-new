@@ -1,28 +1,32 @@
 import type { Database } from "$lib/supabase";
-import { createClient } from "@supabase/supabase-js";
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import * as yup from "yup";
 
-export type OrdersData = Database["public"]["Tables"]["orders"]["Row"] & {
-    quote: File | null;
+export interface Requester {
+    first_name: string;
+    last_name: string;
+}
+
+export type OrdersData = Omit<
+    Database["public"]["Tables"]["orders"]["Row"],
+    "requester"
+> & {
+    requester: Requester;
 };
 
-export function emptyOrdersData(requester: number,
-    num: number = 0
-): OrdersData {
+export function emptyOrdersData(requester: Requester): OrdersData {
     return {
         name: "",
         description: "",
-        price: null,
-        quantity: null,
+        price: 0,
+        quantity: 0,
         reason: "",
         requester,
         id: -1, // auto-generated
         status: "pending", // auto-generated
         createdAt: new Date().toISOString(), // auto-generated
-        quoteName: "", 
-        quote: null,
+        quoteName: "",
     };
 }
 
@@ -59,10 +63,13 @@ const creation = yup.object().shape({ ...fields });
 
 // Function to generate a unique 8-character string
 function generateUniqueString(length: number): string {
-    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    let result = '';
+    const characters =
+        "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+    let result = "";
     for (let i = 0; i < length; i++) {
-        result += characters.charAt(Math.floor(Math.random() * characters.length));
+        result += characters.charAt(
+            Math.floor(Math.random() * characters.length)
+        );
     }
     return result;
 }
@@ -72,7 +79,7 @@ const newFileName = `${uniqueString}_quote`;
 
 type SaveResult =
     | { data: null; errors: string[] }
-    | { data: OrdersData; errors: [] };
+    | { data: Omit<OrdersData, "requester">; errors: [] };
 
 export async function save(
     data: FormData,
@@ -84,9 +91,9 @@ export async function save(
     const quantity = data.get("quantity");
     const reason = data.get("reason");
     const quote = data.get("quote") as File | null;
+    const requester = +(data.get("requester") || 0);
 
     try {
-        const requester = +(data.get("requester") || 0);
         const obj = await creation.validate(
             {
                 name,
@@ -103,22 +110,21 @@ export async function save(
 
         const row = {
             ...obj,
-            requester,
             status: "pending" as "pending",
             createdAt: new Date().toISOString(),
             quoteName: null as string | null,
         };
 
         if (quote?.name) {
-
-            
             const file = quote as File;
 
             const { data: uploadData, error: uploadError } =
-                await supabase.storage.from("quotes").upload(newFileName, file, {
-                    cacheControl: "3600",
-                    upsert: true,
-                });
+                await supabase.storage
+                    .from("quotes")
+                    .upload(newFileName, file, {
+                        cacheControl: "3600",
+                        upsert: true,
+                    });
 
             if (uploadError) {
                 return { data: null, errors: [uploadError.message] };
