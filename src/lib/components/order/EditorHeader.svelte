@@ -5,7 +5,7 @@
     export let name: string;
     export let quantity: number;
     export let price: number;
-    export let requesterName: string | null;
+    export let requester: { first_name: string; last_name: string };
     export let status: Database["public"]["Enums"]["request_status"];
 
     // export let total = price * quantity;
@@ -13,7 +13,7 @@
 
 <summary>
     <h3>{name}</h3>
-    <span class="requester">{requesterName}</span>
+    <span class="requester">{requester.first_name} {requester.last_name}</span>
     <span class="price">
         {price}€
         {#if quantity > 1}

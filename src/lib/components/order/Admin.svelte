@@ -4,7 +4,12 @@
     import Content from "./Content.svelte";
     import type { OrdersData } from "./validation";
 
-    export let data: OrdersData & { requesterName: string };
+    export let data: Omit<OrdersData, "requester"> & {
+        requester: {
+            first_name: string;
+            last_name: string;
+        };
+    };
 </script>
 
 <Wrapper>
@@ -12,7 +17,7 @@
         name={data.name}
         quantity={data.quantity}
         price={data.price}
-        requesterName={data.requesterName}
+        requester={data.requester}
         status={data.status}
         slot="header"
     />
@@ -20,9 +25,8 @@
         <Content
             description={data.description}
             reason={data.reason}
-            quoteName={data.quoteName}  
+            quoteName={data.quoteName}
             createdAt={data.createdAt}
-            
         />
         {#if data.status === "pending"}
             <div class="btns">

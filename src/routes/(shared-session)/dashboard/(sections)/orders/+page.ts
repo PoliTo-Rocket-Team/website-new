@@ -6,7 +6,9 @@ export const load: PageLoad = async ({ parent }) => {
 
     const res = await supabase
         .from("orders")
-        .select("*")
+        .select(
+            "id, name, quantity, price, description, reason, status, createdAt, quoteName, requester:people!requester(first_name, last_name)"
+        )
         .order("createdAt", { ascending: false });
 
     if (res.error) {
@@ -18,6 +20,5 @@ export const load: PageLoad = async ({ parent }) => {
 
     return {
         orders: res.data,
-        requesterId: person.id,
     };
 };
