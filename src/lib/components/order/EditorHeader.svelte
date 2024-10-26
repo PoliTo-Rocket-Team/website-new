@@ -9,13 +9,18 @@
     export let status: Database["public"]["Enums"]["request_status"];
 
     // export let total = price * quantity;
-    $: total = price * quantity;
 </script>
 
 <summary>
     <h3>{name}</h3>
     <span class="requester">{requesterName}</span>
-    <span class="total">{total}€</span>
+    <span class="price">
+        {price}€
+        {#if quantity > 1}
+            <span class="op">&#10005;</span>{quantity}<span class="op">=</span
+            >{price * quantity}€
+        {/if}
+    </span>
     <Icon
         title={status}
         icon={status === "accepted"
@@ -30,14 +35,19 @@
     summary {
         padding: 0.8rem 1rem;
         display: grid;
-        grid-template-columns: 2fr 10ch 1fr auto 0.3rem;
+        grid-template-columns: 2fr 1fr 12rem 1.5rem 0.3rem;
         align-items: center;
         column-gap: 1.5rem;
         white-space: nowrap;
         --icon-size: 1.5rem;
     }
-    .total {
+    .price {
         text-align: right;
+    }
+    .op {
+        opacity: 0.5;
+        font-family: "Anonymous Pro", monospace;
+        padding-inline: 0.4ch;
     }
 
     h3 {

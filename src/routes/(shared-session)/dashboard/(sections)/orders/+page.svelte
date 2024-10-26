@@ -3,13 +3,13 @@
     import { setContext } from "svelte";
     import type { PageData } from "./$types";
     import * as Order from "$lib/components/order";
+    import DefineIcons from "$lib/icons/DefineIcons.svelte";
 
     let newOrder: null | ReturnType<typeof Order.empty> = null;
     export let data: PageData;
     setContext("supabase", data.supabase);
 
-    const orders = data.orders || [];    
-
+    const orders = data.orders || [];
 </script>
 
 <svelte:head>
@@ -18,18 +18,18 @@
 <h1>Orders</h1>
 
 {#if data.orders}
-    <div class='title'>
-        <h3 class='name'>Name</h3>
-        <h3>Quantity</h3>
-        <h3>Price</h3>
-        <h3>Total</h3>
-        <h3>Requester</h3>
-        <h3>Status</h3>
-    </div>
+    <h3>
+        <span>Item name</span>
+        <span>Requester</span>
+        <span class="total">Price</span>
+    </h3>
 {/if}
 
-<Modal bind:use={newOrder} empty={Order.empty(data.requesterId)} let:data={orders_data}>
-
+<Modal
+    bind:use={newOrder}
+    empty={Order.empty(data.requesterId)}
+    let:data={orders_data}
+>
     <h3 class="new-order">Add a new Order</h3>
     <Order.Form
         creating
@@ -45,11 +45,13 @@
     />
 </Modal>
 
-
 {#each data.orders as order, i}
-
     <Order.Admin
-        data={{...order, requesterName: data.requesterName, fileName: data.fileName}}
+        data={{
+            ...order,
+            requesterName: data.requesterName,
+            fileName: data.fileName,
+        }}
         on:saved={e => {
             data.orders[i] = e.detail;
         }}
@@ -67,20 +69,17 @@
     Add a new order
 </button>
 
+<DefineIcons />
 
 <style>
-    .title {
+    h3 {
         padding: 1rem;
         display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        align-items: center;
-        column-gap: 1rem;
+        grid-template-columns: 2fr 1fr 12rem 3.3rem;
+        column-gap: 1.5rem;
     }
-    .name {
-        min-width: 18rem;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
+    .total {
+        text-align: right;
     }
     .new-order {
         margin-bottom: 1rem;
