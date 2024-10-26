@@ -16,6 +16,20 @@
     <title>Orders | PRT Admin Program</title>
 </svelte:head>
 <h1>Orders</h1>
+<p>
+    Here you can request the team leader to place one or more orders. Keep in
+    mind that you should use this page for big orders which cannot be done using
+    the team credit card
+</p>
+
+<button
+    class="btn"
+    on:click={() => {
+        newOrder = Order.empty(data.requesterId);
+    }}
+>
+    Add a new order
+</button>
 
 {#if data.orders}
     <h3>
@@ -60,15 +74,6 @@
     <p>No orders found</p>
 {/each}
 
-<button
-    class="btn center"
-    on:click={() => {
-        newOrder = Order.empty(data.requesterId);
-    }}
->
-    Add a new order
-</button>
-
 <DefineIcons />
 
 <style>
@@ -78,14 +83,17 @@
         grid-template-columns: 2fr 1fr 12rem 3.3rem;
         column-gap: 1.5rem;
     }
+    p {
+        max-width: 60ch;
+    }
+    .btn {
+        margin: 2rem 0;
+    }
     .total {
         text-align: right;
     }
     .new-order {
         margin-bottom: 1rem;
         font-size: 1.7rem;
-    }
-    .center {
-        margin: 2rem auto;
     }
 </style>
