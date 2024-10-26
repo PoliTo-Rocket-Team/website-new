@@ -25,7 +25,7 @@
 <button
     class="btn"
     on:click={() => {
-        newOrder = Order.empty(data.person.id);
+        newOrder = Order.empty(data.person);
     }}
 >
     Add a new order
@@ -41,13 +41,13 @@
 
 <Modal
     bind:use={newOrder}
-    empty={Order.empty(data.person.id)}
+    empty={Order.empty(data.person)}
     let:data={orders_data}
 >
     <h3 class="new-order">Add a new Order</h3>
     <Order.Form
         creating
-        requester={data.person.id}
+        requester={data.person}
         data={orders_data}
         on:cancel={() => (newOrder = null)}
         on:saved={e => {
