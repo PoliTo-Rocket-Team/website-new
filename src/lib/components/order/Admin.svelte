@@ -4,9 +4,7 @@
     import Content from "./Content.svelte";
     import type { OrdersData } from "./validation";
 
-
-    export let data: OrdersData & {requesterName: string, fileName: string};
-    
+    export let data: OrdersData & { requesterName: string; fileName: string };
 </script>
 
 <Wrapper>
@@ -19,22 +17,19 @@
         slot="header"
     />
     <svelte:fragment slot="content">
-
-            <Content
-                description={data.description}
-                reason={data.reason}
-                quote_url={data.quote_url}
-                createdAt={data.createdAt}
-                fileName={data.fileName}
-            />
+        <Content
+            description={data.description}
+            reason={data.reason}
+            quote_url={data.quote_url}
+            createdAt={data.createdAt}
+            fileName={data.fileName}
+        />
+        {#if data.status === "pending"}
             <div class="btns">
-                <button type="button" class="btn btn--low" >
-                    Reject
-                </button>
-                <button type="button" class="btn" >
-                    Accept
-                </button>
+                <button type="button" class="btn btn--low"> Reject </button>
+                <button type="button" class="btn"> Accept </button>
             </div>
+        {/if}
     </svelte:fragment>
 </Wrapper>
 
