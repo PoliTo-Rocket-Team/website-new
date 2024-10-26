@@ -1,4 +1,6 @@
 import type { Database } from "$lib/supabase";
+import { createClient } from "@supabase/supabase-js";
+
 import type { SupabaseClient } from "@supabase/supabase-js";
 import * as yup from "yup";
 
@@ -6,18 +8,20 @@ export type OrdersData = Database["public"]["Tables"]["orders"]["Row"] & {
     quote: File | null;
 };
 
-export function emptyOrdersData(requester: number): OrdersData {
+export function emptyOrdersData(requester: number,
+    num: number = 0
+): OrdersData {
     return {
         name: "",
         description: "",
-        price: 0,
-        quantity: 0,
+        price: null,
+        quantity: null,
         reason: "",
         requester,
         id: -1, // auto-generated
         status: "pending", // auto-generated
         createdAt: new Date().toISOString(), // auto-generated
-        quote_url: "", // auto-generated
+        quoteName: "", 
         quote: null,
     };
 }
@@ -41,17 +45,30 @@ export const fields = {
         .nullable()
         .label("Quote file")
         .test("fileType", "Unsupported file type", value => {
-            if (!value) return true; // Allow null values
+            if (!value || !value.name) return true;
             return value && supportedFileTypes.includes(value.type);
         })
         .test("fileSize", "File size is too large", value => {
-            if (!value) return true; // Allow null values
+            if (!value || !value.size) return true;
             return value && value.size <= 50 * 1024 * 1024; // max file type 50MB
         })
         .label("Quote"),
 };
 
 const creation = yup.object().shape({ ...fields });
+
+// Function to generate a unique 8-character string
+function generateUniqueString(length: number): string {
+    const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    let result = '';
+    for (let i = 0; i < length; i++) {
+        result += characters.charAt(Math.floor(Math.random() * characters.length));
+    }
+    return result;
+}
+
+const uniqueString = generateUniqueString(8);
+const newFileName = `${uniqueString}_quote`;
 
 type SaveResult =
     | { data: null; errors: string[] }
@@ -78,7 +95,6 @@ export async function save(
                 requester,
                 quantity,
                 reason,
-                quote
             },
             { abortEarly: false }
         );
@@ -90,35 +106,25 @@ export async function save(
             requester,
             status: "pending" as "pending",
             createdAt: new Date().toISOString(),
-            quote_url: null as string | null,
-            quote: quote ?? null,
+            quoteName: null as string | null,
         };
-        // //
-        // const row = Object.assign(obj, {
-        //     requester,
-        //     status: "pending" as "pending",
-        //     createdAt: new Date().toISOString(),
-        //     quote_url: null as string | null,
-        // });
 
-        if (quote) {
+        if (quote?.name) {
+
+            
             const file = quote as File;
-            const filePath = `quotes/${file.name}`;
+
             const { data: uploadData, error: uploadError } =
-                await supabase.storage.from("quotes").upload(filePath, file, {
+                await supabase.storage.from("quotes").upload(newFileName, file, {
                     cacheControl: "3600",
-                    upsert: false,
+                    upsert: true,
                 });
 
             if (uploadError) {
                 return { data: null, errors: [uploadError.message] };
             }
 
-            // Add the quote URL to the row
-            const { data: publicUrlData } = supabase.storage
-                .from("quotes")
-                .getPublicUrl(filePath);
-            row.quote_url = publicUrlData.publicUrl;
+            row.quoteName = newFileName;
         }
         const res = await supabase.from("orders").insert(row).select("id");
 
