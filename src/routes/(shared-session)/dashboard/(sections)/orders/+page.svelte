@@ -63,8 +63,7 @@
     <Order.Admin
         data={{
             ...order,
-            requesterName: data.requesterName,
-            fileName: data.fileName,
+            // requesterName: data.requesterName,
         }}
         on:saved={e => {
             data.orders[i] = e.detail;

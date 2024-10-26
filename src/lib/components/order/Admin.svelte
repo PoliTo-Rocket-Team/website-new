@@ -4,7 +4,7 @@
     import Content from "./Content.svelte";
     import type { OrdersData } from "./validation";
 
-    export let data: OrdersData & { requesterName: string; fileName: string };
+    export let data: OrdersData & { requesterName: string };
 </script>
 
 <Wrapper>
@@ -20,9 +20,9 @@
         <Content
             description={data.description}
             reason={data.reason}
-            quote_url={data.quote_url}
+            quoteName={data.quoteName}  
             createdAt={data.createdAt}
-            fileName={data.fileName}
+            
         />
         {#if data.status === "pending"}
             <div class="btns">

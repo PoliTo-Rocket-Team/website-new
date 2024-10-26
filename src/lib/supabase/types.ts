@@ -244,7 +244,7 @@ export type Database = {
           name: string
           price: number
           quantity: number
-          quote_url: string | null
+          quoteName: string | null
           reason: string
           requester: number
           status: Database["public"]["Enums"]["request_status"]
@@ -256,7 +256,7 @@ export type Database = {
           name: string
           price: number
           quantity: number
-          quote_url?: string | null
+          quoteName?: string | null
           reason: string
           requester: number
           status?: Database["public"]["Enums"]["request_status"]
@@ -268,7 +268,7 @@ export type Database = {
           name?: string
           price?: number
           quantity?: number
-          quote_url?: string | null
+          quoteName?: string | null
           reason?: string
           requester?: number
           status?: Database["public"]["Enums"]["request_status"]

@@ -8,6 +8,8 @@
     export let label: string;
     export let name: string = label2name(label);
     export let type: "text" | "number" | "textarea" | "file";
+    export let accept: string = "";
+    export let placeholder: string = "";
     export let null_on_empty = false;
     export let resetter: SignalSub | undefined = undefined;
 
@@ -62,19 +64,18 @@
             on:input={oninput}
         ></textarea>
     {:else if type === "file"}
-        <input
-            type="file"
-            {name}
-            on:change={onfileinput}
-        />
+        <input type="file" {name} on:change={onfileinput} />
     {:else}
         <input
             {type}
             {name}
             {value}
+            {accept}
+            {placeholder}
             autocomplete="off"
             on:input={oninput}
             on:change={startcheck}
+            class="input-field"
         />
     {/if}
     <ul class="error">
@@ -97,5 +98,17 @@
     }
     textarea {
         resize: vertical;
+    }
+    /* Remove the number input arrows */
+    /* Chrome, Safari, Edge, Opera */
+    .input-field::-webkit-outer-spin-button,
+    .input-field::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    .input-field[type="number"] {
+        -moz-appearance: textfield;
     }
 </style>

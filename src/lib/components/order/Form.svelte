@@ -15,8 +15,6 @@
         saved: OrdersData;
     }>();
 
-
-
     const supabase = getContext<SupabaseClient<Database>>("supabase");
     if (!supabase && browser) alert("Supabase not passed by context");
 
@@ -70,7 +68,8 @@
         <div>
             <Field
                 label="Price"
-                type="text"
+                type="number"
+                placeholder="0€"
                 schema={fields.price}
                 name="price"
                 value={data.price}
@@ -78,7 +77,7 @@
             />
             <Field
                 label="Quantity"
-                type="text"
+                type="number"
                 schema={fields.quantity}
                 name="quantity"
                 value={data.quantity}
