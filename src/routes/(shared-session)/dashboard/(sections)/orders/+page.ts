@@ -1,16 +1,24 @@
-import { error, redirect } from "@sveltejs/kit";
+import { error } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 
-export const load: PageLoad = async ({ parent }) => {
-    const { supabase, person } = await parent();
+export const load: PageLoad = async ({ parent, url }) => {
+    const { supabase } = await parent();
 
-    const res = await supabase
+    const req = supabase
         .from("orders")
         .select(
             "id, name, quantity, price, description, reason, status, createdAt, quoteName, requester:people!requester(first_name, last_name)"
         )
-        .order("createdAt", { ascending: false });
+        .order("id", { ascending: false })
+        .limit(25);
 
+    const before = url.searchParams.get("before");
+    if (before) {
+        const id = +before;
+        if (Number.isInteger(id) && id > 0) req.lt("id", +before);
+    }
+
+    const res = await req;
     if (res.error) {
         throw error(500, {
             message: "Could not load orders data",
