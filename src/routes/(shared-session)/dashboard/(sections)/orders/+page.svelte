@@ -10,6 +10,24 @@
     setContext("supabase", data.supabase);
 
     const orders = data.orders || [];
+
+    type OrderStatus = "pending" | "accepted" | "rejected";
+
+    async function handleStatus(
+        event: CustomEvent<{ status: OrderStatus; id: number }>
+    ) {
+        const res = await data.supabase
+            .from("orders")
+            .update({ status: event.detail.status })
+            .eq("id", event.detail.id);
+
+        if (res.error) {
+            alert(
+                `Could not reject/accept the order:\n\n${res.error.message}\n${res.error.details}`
+            );
+        }
+    }
+    const isPresident = data.person.is_president;
 </script>
 
 <svelte:head>
@@ -65,6 +83,8 @@
         on:saved={e => {
             data.orders[i] = e.detail;
         }}
+        on:status={handleStatus}
+        isPresident={isPresident}
     />
 {:else}
     <p>No orders found</p>

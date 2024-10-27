@@ -3,8 +3,24 @@
     import Header from "./EditorHeader.svelte";
     import Content from "./Content.svelte";
     import type { OrdersData } from "./validation";
+    import { createEventDispatcher } from "svelte";
 
     export let data: OrdersData;
+    type OrderStatus = "pending" | "accepted" | "rejected";
+    export let isPresident: boolean;
+
+    const dispatch = createEventDispatcher<{
+        status: { status: OrderStatus; id: number };
+    }>();
+
+    function handleStatus(status: OrderStatus) {
+        return () => {
+            const information = { status, id: data.id };
+            dispatch("status", information);
+            data.status = status;
+        };
+    }
+    
 </script>
 
 <Wrapper>
@@ -23,10 +39,22 @@
             quoteName={data.quoteName}
             createdAt={data.createdAt}
         />
-        {#if data.status === "pending"}
+        {#if data.status === "pending" && isPresident}
             <div class="btns">
-                <button type="button" class="btn btn--low"> Reject </button>
-                <button type="button" class="btn"> Accept </button>
+                <button
+                    type="button"
+                    on:click={handleStatus("rejected")}
+                    class="btn btn--low"
+                >
+                    Reject
+                </button>
+                <button
+                    type="button"
+                    on:click={handleStatus("accepted")}
+                    class="btn"
+                >
+                    Accept
+                </button>
             </div>
         {/if}
     </svelte:fragment>
