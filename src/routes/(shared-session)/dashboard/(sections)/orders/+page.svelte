@@ -84,12 +84,20 @@
             data.orders[i] = e.detail;
         }}
         on:status={handleStatus}
-        isPresident={isPresident}
+        {isPresident}
     />
 {:else}
     <p>No orders found</p>
 {/each}
-
+<!-- {if} -->
+<a
+    href={`/dashboard/orders?previous=${data.orders[data.orders.length - 1].id}`}
+    class="btn">Previous page</a
+>
+<a
+    href={`/dashboard/orders?next=${data.orders[data.orders.length - 1].id}`}
+    class="btn">Next page</a
+>
 <DefineIcons />
 
 <style>
