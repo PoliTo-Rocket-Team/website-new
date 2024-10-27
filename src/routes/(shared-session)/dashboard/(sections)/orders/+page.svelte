@@ -84,7 +84,7 @@
             data.orders[i] = e.detail;
         }}
         on:status={handleStatus}
-        {isPresident}
+        isPresident={isPresident}
     />
 {:else}
     <p>No orders found</p>
