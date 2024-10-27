@@ -56,7 +56,6 @@
 >
     <h3 class="new-order">Add a new Order</h3>
     <Order.Form
-        creating
         requester={data.person}
         data={orders_data}
         on:cancel={() => (newOrder = null)}

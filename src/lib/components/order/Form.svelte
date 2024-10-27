@@ -18,8 +18,6 @@
     const supabase = getContext<SupabaseClient<Database>>("supabase");
     if (!supabase && browser) alert("Supabase not passed by context");
 
-    /** If the requester is passed, creation of order is assumed */
-    export let creating = false;
     export let data: OrdersData;
     export let requester: {
         id: number;
@@ -51,10 +49,7 @@
     action="/dashboard/orders"
     use:enhance={submit}
 >
-    {#if creating}
-        <input type="hidden" name="requester" value={requester.id} />
-    {/if}
-
+    <input type="hidden" name="requester" value={requester.id} />
     <div class="split">
         <Field
             label="Item Name*"
@@ -117,7 +112,7 @@
 
     <div class="btns">
         <button
-            type={creating ? "reset" : "button"}
+            type="reset"
             class="btn btn--low"
             on:click={() => {
                 resetter.notify();
