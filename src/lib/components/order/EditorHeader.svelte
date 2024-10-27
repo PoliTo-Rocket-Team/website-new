@@ -8,7 +8,6 @@
     export let requester: { first_name: string; last_name: string };
     export let status: Database["public"]["Enums"]["request_status"];
 
-    // export let total = price * quantity;
 </script>
 
 <summary>

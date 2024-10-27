@@ -26,7 +26,6 @@
     let signedUrl = "";
 
     async function generateSignedUrl() {
-        console.log("Generating signed URL for:", quoteName); // Debugging statement
 
         if (!quoteName) {
             console.error("quoteName is not set");
