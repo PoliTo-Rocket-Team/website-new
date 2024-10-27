@@ -18,7 +18,7 @@
     const supabase = getContext<SupabaseClient<Database>>("supabase");
     if (!supabase && browser) alert("Supabase not passed by context");
 
-    /** If the requester is passed, creation of position is assumed */
+    /** If the requester is passed, creation of order is assumed */
     export let creating = false;
     export let data: OrdersData;
     export let requester: {
@@ -28,8 +28,6 @@
     };
 
     let errors: string[] = [];
-
-    type OrderSaveData = OrdersData & { quote: File | null };
 
     const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();
@@ -59,7 +57,7 @@
 
     <div class="split">
         <Field
-            label="Item Name"
+            label="Item Name*"
             type="text"
             name="name"
             schema={fields.name}
@@ -68,12 +66,11 @@
         />
         <div>
             <Field
-                label="Price"
+                label="Price*"
                 type="number"
                 placeholder="0€"
                 schema={fields.price}
                 name="price"
-                value={data.price}
                 resetter={resetter.sub}
             />
             <Field
@@ -87,7 +84,7 @@
         </div>
     </div>
     <Field
-        label="Description"
+        label="Description*"
         type="textarea"
         name="description"
         schema={fields.description}
@@ -95,7 +92,7 @@
         resetter={resetter.sub}
     />
     <Field
-        label="Reason"
+        label="Reason*"
         type="textarea"
         name="reason"
         schema={fields.reason}

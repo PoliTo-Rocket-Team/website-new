@@ -20,7 +20,7 @@ export function emptyOrdersData(requester: Requester): OrdersData {
         name: "",
         description: "",
         price: 0,
-        quantity: 0,
+        quantity: 1,
         reason: "",
         requester,
         id: -1, // auto-generated
