@@ -49,14 +49,6 @@
     Add a new order
 </button>
 
-{#if data.orders}
-    <h3>
-        <span>Item name</span>
-        <span>Requester</span>
-        <span class="total">Price</span>
-    </h3>
-{/if}
-
 <Modal
     bind:use={newOrder}
     empty={Order.empty(data.person)}
@@ -77,27 +69,40 @@
     />
 </Modal>
 
-{#each data.orders as order, i}
-    <Order.Admin
-        data={order}
-        on:saved={e => {
-            data.orders[i] = e.detail;
-        }}
-        on:status={handleStatus}
-        isPresident={isPresident}
-    />
-{:else}
-    <p>No orders found</p>
-{/each}
-<!-- {if} -->
-<a
-    href={`/dashboard/orders?previous=${data.orders[data.orders.length - 1].id}`}
-    class="btn">Previous page</a
->
-<a
-    href={`/dashboard/orders?next=${data.orders[data.orders.length - 1].id}`}
-    class="btn">Next page</a
->
+{#if data.orders.length}
+    <h3>
+        <span>Item name</span>
+        <span>Requester</span>
+        <span class="total">Price</span>
+    </h3>
+    {#each data.orders as order, i}
+        <Order.Admin
+            data={order}
+            on:saved={e => {
+                data.orders[i] = e.detail;
+            }}
+            on:status={handleStatus}
+            {isPresident}
+        />
+    {/each}
+{/if}
+<div class="btns">
+    {#if !data.latest}
+        <a
+            href={`/dashboard/orders?after=${data.orders[0].id}`}
+            class="btn btn--low">Newer orders</a
+        >
+    {/if}
+    {#if data.orders.length === 25}
+        <a
+            href={`/dashboard/orders?before=${
+                data.orders[data.orders.length - 1].id
+            }`}
+            class="btn btn--low older">Older orders</a
+        >
+    {/if}
+</div>
+
 <DefineIcons />
 
 <style>
@@ -112,6 +117,7 @@
     }
     .btn {
         margin: 2rem 0;
+        text-decoration: none;
     }
     .total {
         text-align: right;
@@ -119,5 +125,11 @@
     .new-order {
         margin-bottom: 1rem;
         font-size: 1.7rem;
+    }
+    .btns {
+        display: flex;
+    }
+    .older {
+        margin-left: auto;
     }
 </style>

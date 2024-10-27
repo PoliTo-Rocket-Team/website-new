@@ -1,4 +1,4 @@
-import { error } from "@sveltejs/kit";
+import { error, redirect } from "@sveltejs/kit";
 import type { PageLoad } from "./$types";
 
 export const load: PageLoad = async ({ parent, url }) => {
@@ -9,20 +9,22 @@ export const load: PageLoad = async ({ parent, url }) => {
         .select(
             "id, name, quantity, price, description, reason, status, createdAt, quoteName, requester:people!requester(first_name, last_name)"
         )
-        .order("id", {ascending: true})
-        .limit(3);
+        .limit(25);
 
-        const before = url.searchParams.get("previous");
-        if (before) {
-            const id = +before;
-            if (Number.isInteger(id) && id > 0) req.gt("id", id);
-        }
-        const after = url.searchParams.get("next");
-        if (after) {
-            const id = +after;
-            if (Number.isInteger(id) && id > 0) req.lt("id", id);
-        }
-        
+    let latest = true;
+    let ascending = false;
+    const before = +(url.searchParams.get("before") || -1);
+    if (Number.isInteger(before) && before > 0) {
+        req.lt("id", before);
+        latest = false;
+    }
+    const after = +(url.searchParams.get("after") || -1);
+    if (Number.isInteger(after) && after > 0) {
+        req.gt("id", after);
+        ascending = true;
+    }
+    req.order("id", { ascending });
+
     const res = await req;
     if (res.error) {
         throw error(500, {
@@ -30,8 +32,14 @@ export const load: PageLoad = async ({ parent, url }) => {
             details: res.error.message,
         });
     }
+    if (ascending) {
+        if (res.data.length == 0) throw redirect(303, "/dashboard/orders");
+        latest = res.data.length < 25;
+        res.data.reverse();
+    }
 
     return {
         orders: res.data,
+        latest,
     };
 };
