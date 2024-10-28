@@ -59,7 +59,7 @@
         <textarea
             {name}
             {value}
-            rows="8"
+            rows="6"
             on:change={startcheck}
             on:input={oninput}
         ></textarea>
@@ -98,6 +98,7 @@
     }
     textarea {
         resize: vertical;
+        min-height: 4rem;
     }
     /* Remove the number input arrows */
     /* Chrome, Safari, Edge, Opera */
