@@ -4,6 +4,7 @@
     import type { PageData } from "./$types";
     import * as Order from "$lib/components/order";
     import DefineIcons from "$lib/icons/DefineIcons.svelte";
+    import { goto } from "$app/navigation";
 
     let newOrder: null | ReturnType<typeof Order.empty> = null;
     export let data: PageData;
@@ -64,6 +65,7 @@
             orders.splice(0, 0, e.detail);
             data.orders = orders;
             newOrder = null;
+            if (location.search) goto("/dashboard/orders");
         }}
     />
 </Modal>
