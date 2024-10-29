@@ -41,11 +41,6 @@
             </div>
             <hr />
             <ul>
-                {#if data.person.is_president}
-                    <li>
-                        <a href="/dashboard/requests" use:current>Requests</a>
-                    </li>
-                {/if}
                 {#if data.person.chief_of}
                     {@const s = data.person.chief_of}
                     <li>
