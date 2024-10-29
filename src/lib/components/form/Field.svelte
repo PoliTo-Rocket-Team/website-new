@@ -7,13 +7,17 @@
     export let schema: Schema;
     export let label: string;
     export let name: string = label2name(label);
-    export let type: "text" | "number" | "textarea";
+    export let type: "text" | "number" | "textarea" | "file";
+    export let accept: string = "";
+    export let placeholder: string = "";
     export let null_on_empty = false;
     export let resetter: SignalSub | undefined = undefined;
 
     $: isnum = type === "number";
     let skip = true;
     let errors: string[] = [];
+    let file: File | null = null;
+
     async function oninput(this: HTMLInputElement | HTMLTextAreaElement) {
         if (skip) return;
         const v =
@@ -24,6 +28,13 @@
                   : this.value;
         errors = await getErrs(schema, v);
     }
+
+    async function onfileinput(this: HTMLInputElement) {
+        if (skip) return;
+        file = this.files ? this.files[0] : null;
+        errors = await getErrs(schema, file);
+    }
+
     async function startcheck(this: HTMLInputElement | HTMLTextAreaElement) {
         if (skip) errors = await getErrs(schema, this.value);
         skip = false;
@@ -37,6 +48,7 @@
                 // need to set value to something different from "" since it's not binded
                 value = undefined;
                 value = "";
+                file = null;
             })
         );
 </script>
@@ -47,18 +59,23 @@
         <textarea
             {name}
             {value}
-            rows="8"
+            rows="6"
             on:change={startcheck}
             on:input={oninput}
         ></textarea>
+    {:else if type === "file"}
+        <input type="file" {name} on:change={onfileinput} />
     {:else}
         <input
             {type}
             {name}
             {value}
+            {accept}
+            {placeholder}
             autocomplete="off"
             on:input={oninput}
             on:change={startcheck}
+            class="input-field"
         />
     {/if}
     <ul class="error">
@@ -81,5 +98,18 @@
     }
     textarea {
         resize: vertical;
+        min-height: 4rem;
+    }
+    /* Remove the number input arrows */
+    /* Chrome, Safari, Edge, Opera */
+    .input-field::-webkit-outer-spin-button,
+    .input-field::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    .input-field[type="number"] {
+        -moz-appearance: textfield;
     }
 </style>
