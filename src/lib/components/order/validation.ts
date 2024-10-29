@@ -40,7 +40,7 @@ const supportedFileTypes = [
 export const fields = {
     name: yup.string().label("Item name").required().max(30),
     description: yup.string().label("Long description").required().min(10),
-    price: yup.number().label("Price").required().integer().moreThan(0),
+    price: yup.number().label("Price").required().positive(),
     quantity: yup.number().required().integer().moreThan(0).label("Quantity"),
     reason: yup.string().label("Reason for purchase").required().min(10),
     requester: yup.number().required().min(1).integer(),

@@ -10,6 +10,7 @@
     export let type: "text" | "number" | "textarea" | "file";
     export let accept: string = "";
     export let placeholder: string = "";
+    export let step: string = "";
     export let null_on_empty = false;
     export let resetter: SignalSub | undefined = undefined;
 
@@ -72,6 +73,7 @@
             {value}
             {accept}
             {placeholder}
+            {step}
             autocomplete="off"
             on:input={oninput}
             on:change={startcheck}

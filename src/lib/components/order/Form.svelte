@@ -63,10 +63,11 @@
             <Field
                 label="Price*"
                 type="number"
-                placeholder="0€"
+                placeholder="0.00€"
                 schema={fields.price}
                 name="price"
                 resetter={resetter.sub}
+                step="0.01"
             />
             <Field
                 label="Quantity"
