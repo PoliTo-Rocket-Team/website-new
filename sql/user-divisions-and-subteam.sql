@@ -52,6 +52,6 @@ begin
   where (
     divisions.lead = person
     or
-    divisions.subteam = (select _st.id from _st)
+    divisions.subteam in (select _st.id from _st)
   );
 end $$;
