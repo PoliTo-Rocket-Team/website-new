@@ -31,7 +31,13 @@
         if (open) history.back();
         else goto($page.url, { state: { navbar: true } });
     }
-    afterNavigate(() => (open = history.state.navbar === true));
+    afterNavigate(() => {
+        open = history.state.navbar === true;
+        const pageContent = document.getElementById("page-content");
+        if (pageContent) {
+            pageContent.scrollTo(0, 0);
+        }
+    });
 
     let lastY = 0;
     let down = lastY > 100;
