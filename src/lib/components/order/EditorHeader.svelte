@@ -34,7 +34,7 @@
     summary {
         padding: 0.8rem 1rem;
         display: grid;
-        grid-template-columns: 2fr 1fr 12rem 1.5rem 0.3rem;
+        grid-template-columns: 2fr 1fr minmax(12rem, 1fr) 1.5rem 0.3rem;
         align-items: center;
         column-gap: 1.5rem;
         white-space: nowrap;
@@ -42,6 +42,8 @@
     }
     .price {
         text-align: right;
+        text-overflow: ellipsis;
+        overflow: hidden;
     }
     .op {
         opacity: 0.5;

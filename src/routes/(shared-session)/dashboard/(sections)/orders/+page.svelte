@@ -110,7 +110,7 @@
     h3 {
         padding: 1rem;
         display: grid;
-        grid-template-columns: 2fr 1fr 12rem 3.3rem;
+        grid-template-columns: 2fr 1fr minmax(12rem, 1fr) 3.3rem;
         column-gap: 1.5rem;
     }
     p {
