@@ -50,34 +50,32 @@
     use:enhance={submit}
 >
     <input type="hidden" name="requester" value={requester.id} />
+    <Field
+        label="Item Name*"
+        type="text"
+        name="name"
+        schema={fields.name}
+        value={data.name}
+        resetter={resetter.sub}
+    />
     <div class="split">
         <Field
-            label="Item Name*"
-            type="text"
-            name="name"
-            schema={fields.name}
-            value={data.name}
+            label="Price*"
+            type="number"
+            placeholder="0.00€"
+            schema={fields.price}
+            name="price"
+            resetter={resetter.sub}
+            step="0.01"
+        />
+        <Field
+            label="Quantity"
+            type="number"
+            schema={fields.quantity}
+            name="quantity"
+            value={data.quantity}
             resetter={resetter.sub}
         />
-        <div>
-            <Field
-                label="Price*"
-                type="number"
-                placeholder="0.00€"
-                schema={fields.price}
-                name="price"
-                resetter={resetter.sub}
-                step="0.01"
-            />
-            <Field
-                label="Quantity"
-                type="number"
-                schema={fields.quantity}
-                name="quantity"
-                value={data.quantity}
-                resetter={resetter.sub}
-            />
-        </div>
     </div>
     <Field
         label="Description*"
