@@ -9,6 +9,78 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
+      "2021-2022": {
+        Row: {
+          first_name: string
+          id: number
+          last_name: string
+          subteam: string
+          team_role: string
+        }
+        Insert: {
+          first_name: string
+          id?: number
+          last_name: string
+          subteam: string
+          team_role: string
+        }
+        Update: {
+          first_name?: string
+          id?: number
+          last_name?: string
+          subteam?: string
+          team_role?: string
+        }
+        Relationships: []
+      }
+      "2022-2023": {
+        Row: {
+          first_name: string
+          id: number
+          last_name: string
+          subteam: string
+          team_role: string
+        }
+        Insert: {
+          first_name: string
+          id?: number
+          last_name: string
+          subteam: string
+          team_role: string
+        }
+        Update: {
+          first_name?: string
+          id?: number
+          last_name?: string
+          subteam?: string
+          team_role?: string
+        }
+        Relationships: []
+      }
+      "2023-2024": {
+        Row: {
+          first_name: string
+          id: number
+          last_name: string
+          subteam: string
+          team_role: string
+        }
+        Insert: {
+          first_name: string
+          id?: number
+          last_name: string
+          subteam: string
+          team_role: string
+        }
+        Update: {
+          first_name?: string
+          id?: number
+          last_name?: string
+          subteam?: string
+          team_role?: string
+        }
+        Relationships: []
+      }
       advisors: {
         Row: {
           first_name: string
@@ -183,18 +255,21 @@ export type Database = {
       members: {
         Row: {
           first_name: string
+          id: number
           last_name: string
           linkedin: string | null
           title_name: string | null
         }
         Insert: {
           first_name: string
+          id?: number
           last_name: string
           linkedin?: string | null
           title_name?: string | null
         }
         Update: {
           first_name?: string
+          id?: number
           last_name?: string
           linkedin?: string | null
           title_name?: string | null
@@ -424,6 +499,7 @@ export type Database = {
           end: string | null
           id: number
           name: string
+          project_manager: number | null
           title_name: string
         }
         Insert: {
@@ -434,6 +510,7 @@ export type Database = {
           end?: string | null
           id?: number
           name: string
+          project_manager?: number | null
           title_name: string
         }
         Update: {
@@ -444,6 +521,7 @@ export type Database = {
           end?: string | null
           id?: number
           name?: string
+          project_manager?: number | null
           title_name?: string
         }
         Relationships: [
