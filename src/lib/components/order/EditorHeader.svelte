@@ -8,16 +8,20 @@
     export let requester: { first_name: string; last_name: string };
     export let status: Database["public"]["Enums"]["request_status"];
 
+    const fmt = new Intl.NumberFormat("en-UK", {
+        style: "currency",
+        currency: "EUR",
+    });
 </script>
 
 <summary>
     <h3>{name}</h3>
     <span class="requester">{requester.first_name} {requester.last_name}</span>
     <span class="price">
-        {price}€
+        {fmt.format(price)}
         {#if quantity > 1}
             <span class="op">&#10005;</span>{quantity}<span class="op">=</span
-            >{price * quantity}€
+            >{fmt.format(price * quantity)}
         {/if}
     </span>
     <Icon
