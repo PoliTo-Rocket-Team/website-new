@@ -25,7 +25,7 @@
 
 <style>
     :global(.alternate:nth-of-type(even) > .timeline-content) {
-        text-align: right;
+        text-align: left;
     }
 
     :global(.alternate:nth-of-type(odd) > .timeline-opposite-content) {

@@ -1,7 +1,7 @@
 [
     {
         "date": "October 2021",
-        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "imageSrc": "Founders.jpg",
         "title": "The Founders",
         "description": "A group of 2nd year Bachelor’s students at Politecnico di Torino, inspired by the remarkable achievement of American student rocketry clubs, embarked on the ambitious project of developing and launching a sounding rocket from scratch. Led by Fabio Meloni, the 1st President and Chief Engineer (CE) of <a href='/projects/Cavour'>Project Cavour</a>, the founding team included Cristian Manfredi, the future coordinator for <a href='/projects/Efesto'>Project Efesto</a> and 3rd President; Mattia Saba, the future mission analysis lead for Cavour and <a href='/projects/VES'>VES</a> ; and Salvatore Lagrasta, the future Cavour avionics lead.",
         "longerText": "HELLOOOOOO",
@@ -14,46 +14,31 @@
     },
     {
         "date": "Winter 2021-22",
-        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "imageSrc": "",
         "title": "The First Months",
         "description": "The group laid the groundwork and crafted the initial design for what would evolve into <a href='/projects/Cavour'>Project Cavour</a>. The <a href='/about/past-teams'>Founders</a> presented the project to establish a dedicated student team for rocket engineering to Professor Alfonso Pagani, who staunchly supported the initiative. New important members joined, such as Luca Loiodice, future design and additive manufacturing lead; Federico Guglielmi, the future IT manager; and Pierluigi Mercadante, future coordinator for <a href='/projects/Efesto'>Project Efesto</a>.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Fabio Meloni; Founder - President, Chief Engineer",
-            "Cristian Manfredi; Co-Founder - Propulsion Coordinator",
-            "Mattia Saba; Co-Founder - Lead Mission Analyst",
-            "Salvatore Lagrasta; Co-Founder - Avionics Lead Engineer"
-        ]
+        "previousLeads": [""]
     },
     {
         "date": "April 14, 2022",
-        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "imageSrc": "FirstExpansion.jpg",
         "title": "The First Expansion",
         "description": "The proposal for the formation of a recognized student team was formally submitted to Politecnico di Torino’s budget and projects commission on April 14th, 2022. The Team expanded further with the inclusion of a dozen members, including Edoardo Viglietti, the future CE of <a href='/projects/VES'>Project VES</a>; Luca Santoro, the future chief technologist during 2022-2023; Elena Dilorenzo, future chief operating officer and 2nd president, and Francesca Bracaglia and Flora Punzi, respectively the aerostructures and FEA leads during 2022-2023.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Fabio Meloni; Founder - President, Chief Engineer",
-            "Cristian Manfredi; Co-Founder - Propulsion Coordinator",
-            "Mattia Saba; Co-Founder - Lead Mission Analyst",
-            "Salvatore Lagrasta; Co-Founder - Avionics Lead Engineer"
-        ]
+        "previousLeads": [""]
     },
     {
         "date": "June 7, 2022",
-        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "imageSrc": "Approval.jpg",
         "title": "The Approval",
         "description": "The proposal for the creation of a rocketry student team received approval and funding from Politecnico di Torino on Tuesday, June 7th, 2022. The founders christened the team PoliTo Rocket Team, the sounding rocket project <a href='/projects/Cavour'>Project Cavour</a> and selected Fabio Meloni as the inaugural President.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Fabio Meloni; Founder - President, Chief Engineer",
-            "Cristian Manfredi; Co-Founder - Propulsion Coordinator",
-            "Mattia Saba; Co-Founder - Lead Mission Analyst",
-            "Salvatore Lagrasta; Co-Founder - Avionics Lead Engineer"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "September 2022",
-        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "imageSrc": "team photo end2023.jpg",
         "title": "Academic Year 2022-2023",
         "description": "The academic year (a.y.) 2022-2023 marked a significant expansion for the PoliTo Rocket Team. In fall 2022 the Team opened its first general recruitment window, attracting hundreds of applications and selecting around 15% of them. By the end of the a.y. the Team boasted to around 90 active members. The executive management of the Team in 2022-2023 comprised Fabio Meloni (President), Elena Dilorenzo (Chief Operating Officer), and Luca Santoro (Chief Technologist & Head of Strategy).",
         "longerText": "HELLOOOOOO",
@@ -66,68 +51,43 @@
     },
     {
         "date": "October 2022",
-        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "imageSrc": "",
         "title": "The Selection for the 2023 Spaceport America Cup",
         "description": "<a href='/projects/Cavour'>Project Cavour</a>, directed by CE Fabio Meloni, achieved the distinction of being the first Italian project selected for the <a href='https://spaceportamericacup.com/portfolio-item/2023-spaceport-america-cup/#tab-id-4'>2023 Spaceport America Cup</a> (SA CUP), the world’s largest rocketry intercollegiate competition.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Fabio Meloni; Founder - 1st President, Chief Engineer (Cavour)",
-            "Luca Santoro; Chief Technologist & Head of Strategy",
-            "Elena Dilorenzo; Chief Operating Officer",
-            "Matteo Crachi; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "November 2022",
-        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "imageSrc": "",
         "title": "The Start of Liquid Propulsion Research",
         "description": "Along with the work of the sounding rocket <a href='/projects/Cavour'>Cavour</a>, in the fall of 2022 the Team established <a href='/projects/Efesto'>Project Efesto</a> under the lead of CE Matteo Crachi, to research and develop Italy’s first student-made bi-liquid rocket engine with a focus on sustainability.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Fabio Meloni; Founder - 1st President, Chief Engineer (Cavour)",
-            "Luca Santoro; Chief Technologist & Head of Strategy",
-            "Elena Dilorenzo; Chief Operating Officer",
-            "Matteo Crachi; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "April 29, 2023",
-        "imageSrc": "https://www.politorocketteam.it/_app/immutable/assets/8.efa2b8a5.jpg",
+        "imageSrc": "FirstLaunch.jpg",
         "title": "The First Launch",
         "description": "The Cavour rocket completed its design phase in early 2023 and underwent assembly and testing in April 2023, culminating in a successful <a href='https://www.instagram.com/p/CroYBp9t8Sr/?igshid=ZWIzMWE5ZmU3Zg==' target='_blank' rel='noreferrer' title='See the video'>test launch</a> in Germany at 19:53:42 CET. This launch marked a historic moment for the Team, as it was the first launch of a rocket made by students of Politecnico di Torino, concluding with the perfect recovery and subsequent reuse of the rocket.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Fabio Meloni; Founder - 1st President, Chief Engineer (Cavour)",
-            "Luca Santoro; Chief Technologist & Head of Strategy",
-            "Elena Dilorenzo; Chief Operating Officer",
-            "Matteo Crachi; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "June 2023",
-        "imageSrc": "June2023.jpg",
+        "imageSrc": "SAC23.jpg",
         "title": "The 2023 Spaceport America Cup",
         "description": "The academic year concluded at the end of June 2023, with Project Cavour competing in the <a href='https://spaceportamericacup.com/portfolio-item/2023-spaceport-america-cup/#tab-id-4'>2023 Spaceport America Cup</a> , in the 10k-feet apogee with COTS solid propulsion category. Cavour was the first Italian rocket participating, and it was successfully launched and recovered at Spaceport America, in New Mexico, USA. Despite having only one year of experience and being at its first participation in a competition, the Team achieved an important world ranking of 20th overall out of the 158 participating universities and 13th in the 10k ft apogee AGL with COTS propulsion category. The Team also won the prestigious Technical Award for Innovation for the design and optimization of its 3D-printed structural components.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Fabio Meloni; Founder - 1st President, Chief Engineer (Cavour)",
-            "Luca Santoro; Chief Technologist & Head of Strategy",
-            "Elena Dilorenzo; Chief Operating Officer",
-            "Matteo Crachi; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "August 2023",
-        "imageSrc": ".jpg",
+        "imageSrc": "",
         "title": "Academic Year 2023-2024",
         "description": " In the summer of 2023, former President Fabio Meloni graduated and passed on the torch to Elena Dilorenzo, former Chief Operating Officer, and the job of CE of <a href='/projects/Cavour'>Project Cavour</a> to Edoardo Viglietti, former FEA lead. Andrea Pantano, former logistics lead, was promoted to COO. The Team conducted its second general recruitment, expanding to around 130 members.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Elena Dilorenzo; 2nd President",
-            "Andrea Pantano; Chief Operating Officer",
-            "Edoardo Viglietti; Chief Engineer (VES)",
-            "Matteo Crachi; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "October 2023",
@@ -135,42 +95,27 @@
         "title": "The 2023 European Rocketry Challenge",
         "description": " The a.y. started with the Team’s participation in the <a href='https://previous-editions.euroc.pt/'> European Rocketry Challenge</a> with Project Cavour. It was the first participation of a team from Politecnico di Torino. Launched from Portugal alongside Europe’s top teams, the rocket experienced a recovery failure on its third launch in approximately six months. Despite this setback, the Team received the ANACOM award and achieved a commendable final ranking of 8th/20 teams. Despite being the Team’s first participation at EuRoC, Cavour achieved an overall score larger than some of Europe’s most experienced teams",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Elena Dilorenzo; 2nd President",
-            "Andrea Pantano; Chief Operating Officer",
-            "Edoardo Viglietti; Chief Engineer (VES)",
-            "Matteo Crachi; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "October 2023",
-        "imageSrc": ".jpg",
+        "imageSrc": "VES.jpg",
         "title": "The 2nd Rocket",
         "description": "After the conclusion of Project Cavour, a new project was started under CE Edoardo Viglietti for a competition rocket, named <a href='/projects/VES'>Vittorio Emanuele II</a>  (VES), with the goal of launching a solid-propelled rocket with a 9 km target apogee.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Elena Dilorenzo; 2nd President",
-            "Andrea Pantano; Chief Operating Officer",
-            "Edoardo Viglietti; Chief Engineer (VES)",
-            "Matteo Crachi; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "Winter-Spring 2024",
-        "imageSrc": ".jpg",
+        "imageSrc": "",
         "title": "Working with a Burden",
         "description": "During the a.y., a restructuring in the university department created large delays in the procurements for parts and components, and the Team was unable to assemble and test the rocket before the Spaceport America Cup 2024. Nonetheless, the Team managed to complete the VES rocket during the summer.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Elena Dilorenzo; 2nd President",
-            "Andrea Pantano; Chief Operating Officer",
-            "Edoardo Viglietti; Chief Engineer (VES)",
-            "Matteo Crachi; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "July 2024",
-        "imageSrc": ".jpg",
+        "imageSrc": "",
         "title": "Academic Year 2024-2025",
         "description": "Before the start of the new a.y., the 2nd president Elena Dilorenzo graduated, and selected Cristian Manfredi, one of PRT's co-founders, as the 3rd president. Giovanni Del Vecchio became the new COO, and Marco Delogu the new CE of <a href='/projects/Efesto'>Project Efesto</a>.",
         "longerText": "HELLOOOOOO",
@@ -183,16 +128,11 @@
     },
     {
         "date": "September 2024",
-        "imageSrc": ".jpg",
+        "imageSrc": "",
         "title": "Test Launch in the Netherlands",
         "description": "Rocketry activities were opened in September 2024 with the test launch of VES in the Netherlands, along with some teams from Delft Aerospace Rocket Engineering. The Team was unable to perform the test launch due to problems with the CO2 cartridges of the recovery ejection system, however the valuable launch operations experience acquired helped to further prepare the rocket for the launch at EuRoC 2024.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Cristian Manfredi; Co-Founder - 3rd President",
-            "Giovanni Del Vecchio; Chief Operating Officer",
-            "Marco Donà; Chief Engineer (NRP)",
-            "Marco Delogu; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "October 2024",
@@ -200,24 +140,14 @@
         "title": "The 2024 European Rocketry Challenge",
         "description": "The Team's second participation in the <a href='https://previous-editions.euroc.pt/'> European Rocketry Challenge</a> delivered excellent results. Rocket VES was launched during the second available window, achieving a nominal flight with good apogee precision in the 3 km apogee category with COTS solid propulsion category. However, a minor recovery failure occurred during descent, and the rocket was recovered intact and in good conditions. The Team opted to participate in the 3km category, and not in the 9 km as previously decided, due to the shortage of large COTS solid grains. With VES, the Team ranked 6th out of 20 teams, receiving again a larger score than some of Europe’s most experienced teams and improving on the 2023 performance. Afterwards, most of the VES manpower was transferred to a new rocket competition project, while some members remained to prepare VES for its final launch at the 2025 Spaceport America Cup.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Cristian Manfredi; Co-Founder - 3rd President",
-            "Giovanni Del Vecchio; Chief Operating Officer",
-            "Marco Donà; Chief Engineer (NRP)",
-            "Marco Delogu; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     },
     {
         "date": "November 2024",
-        "imageSrc": ".jpg",
+        "imageSrc": "",
         "title": "The 3rd Rocket",
         "description": " Following EuRoC, a New Rocket Project was started under the leadership of CE Marco Dona for the design and development of a new competition rocket for EuRoC 2025.",
         "longerText": "HELLOOOOOO",
-        "previousLeads": [
-            "Cristian Manfredi; Co-Founder - 3rd President",
-            "Giovanni Del Vecchio; Chief Operating Officer",
-            "Marco Donà; Chief Engineer (NRP)",
-            "Marco Delogu; Chief Engineer (Efesto)"
-        ]
+        "previousLeads": [" "]
     }
 ]

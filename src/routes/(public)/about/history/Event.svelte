@@ -1,9 +1,17 @@
 <script lang="ts">
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
-
     import { getContext } from "svelte";
     import type { Writable } from "svelte/store";
+    import {
+        Timeline,
+        TimelineItem,
+        TimelineSeparator,
+        TimelineDot,
+        TimelineConnector,
+        TimelineContent,
+        TimelineOppositeContent,
+    } from "svelte-vertical-timeline";
 
     export let data: any[];
 
@@ -63,7 +71,7 @@
             el.offsetTop +
                 el.offsetHeight / 2 -
                 content.scrollTop -
-                (content.clientHeight * 4) / 9
+                content.clientHeight * 0.5
         );
     }
 
@@ -86,55 +94,91 @@
 
 <svelte:window on:scroll={nearestArticle} />
 
-<div class="events" bind:this={content} use:observe>
-    {#each data as event, i}
-        <article
-            bind:this={articles[i]}
-            class:selected={centeredEventIndex === i}
-        >
-            <h3>{event.date}</h3>
-            <div class="image">
+<div class="timeline-container" bind:this={content} use:observe>
+    <Timeline position="alternate">
+        {#each data as event, i}
+            <article
+                bind:this={articles[i]}
+                class:selected={centeredEventIndex === i}
+            >
+                <TimelineItem>
+                    <TimelineContent>
+                        <div class="sideContent">
+                            <h2>{event.title}</h2>
+                            <time>{event.date}</time>
+                            <div class="description"></div>
+                            {#each event.previousLeads as lead}
+                                <h6 class="lead">{lead}</h6>
+                            {/each}
+                        </div>
+                    </TimelineContent>
+
+                    <TimelineSeparator>
+                        <TimelineDot
+                            style="background-color: hsl(19, 85%, 55%); height: 1rem; width: 1rem; border: solid 2px hsl(19, 85%, 55%);"
+                        />
+                        <TimelineConnector />
+                    </TimelineSeparator>
+
+                    <TimelineContent>
+                        <div class="image">
+                            <img
+                                src={`/img/history_page/${event.imageSrc}`}
+                                alt={event.title}
+                            />
+                            <p>{@html event.description}</p>
+                        </div>
+                    </TimelineContent>
+                </TimelineItem>
+            </article>
+
+            <div class="mobile">
+                <h2>{event.title}</h2>
+                <time>{event.date}</time>
+                <div class="description"></div>
+
                 <img
-                    src="/img/history_page/{event.imageSrc}"
+                    src={`/img/history_page/${event.imageSrc}`}
                     alt={event.title}
                 />
                 <p>{@html event.description}</p>
             </div>
-        </article>
-    {/each}
+        {/each}
+    </Timeline>
 </div>
 
 <style>
-    h3 {
-        text-align: center;
+    .sideContent {
+        width: 30ch;
+        text-align: right;
+    }
+    h2 {
+        color: var(--primary-color);
+        margin-bottom: 0;
+    }
+    .lead {
+        font-style: italic;
+        padding: 0.2rem;
+        color: gray;
+    }
+    time {
+        color: var(--accent-text);
+        font-style: italic;
         margin-bottom: 1rem;
+        display: block;
+        font-weight: bold;
     }
-
-    article {
+    .timeline-container {
         display: flex;
-        flex-direction: column;
-        opacity: 0.4;
-        transition: opacity 0.1s ease;
-        margin-bottom: 5rem;
-        cursor: pointer;
-        position: relative;
-        z-index: 0;
-        height: 70vh;
         padding: 2rem;
-        overflow-y: hidden;
-        width: 100%;
-        height: auto;
-        align-items: center;
+        text-align: left;
+        align-items: flex-start;
     }
 
-    article:global(.selected) {
-        opacity: 1;
-        cursor: auto;
-    }
-
-    @media (min-width: 51rem) {
-        .events {
-            min-width: 90ch;
+    /* Large screens */
+    @media (min-width: 768px) {
+        .mobile {
+            display: none;
         }
         article.selected .image {
             height: 70vh;
@@ -146,7 +190,7 @@
 
         img {
             width: 100%;
-            height: 50vh;
+            height: 60vh;
             display: block;
             margin: 0 auto;
             clip-path: inset(50% 0);
@@ -200,9 +244,36 @@
                 transform 0.15s ease-out,
                 opacity 0.15s ease-out;
         }
+        .timeline-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: flex-start;
+        }
+
+        .image img {
+            width: 100%;
+            object-fit: cover;
+            clip-path: inset(50% 0);
+            transition:
+                transform 0.3s ease,
+                opacity 0.3s ease;
+        }
     }
 
-    @media (max-width: 50rem) {
+    /* Small screens */
+    @media (max-width: 767px) {
+        .mobile {
+            margin-bottom: 6rem;
+        }
+        article {
+            padding-bottom: 5rem;
+            display: none;
+        }
+        .lead {
+            display: none;
+        }
+
         img {
             width: 100%;
             display: block;
