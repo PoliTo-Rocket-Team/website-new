@@ -86,9 +86,6 @@ function generateUniqueString(length: number): string {
     return result;
 }
 
-const uniqueString = generateUniqueString(8);
-const newFileName = `${uniqueString}_quote`;
-
 type SaveResult =
     | { data: null; errors: string[] }
     | { data: Omit<OrdersData, "requester">; errors: [] };
@@ -129,7 +126,7 @@ export async function save(
 
         if (quote?.name) {
             const file = quote as File;
-
+            const newFileName = `${generateUniqueString(8)}_${file.name}`;
             const { data: uploadData, error: uploadError } =
                 await supabase.storage
                     .from("quotes")
