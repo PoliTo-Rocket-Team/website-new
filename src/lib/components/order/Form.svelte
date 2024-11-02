@@ -9,6 +9,7 @@
     import type { SupabaseClient } from "@supabase/supabase-js";
     import type { Database } from "$lib/supabase";
     import { browser } from "$app/environment";
+    import Loading from "$lib/Loading.svelte";
 
     const dispatch = createEventDispatcher<{
         cancel: void;
@@ -26,9 +27,11 @@
     };
 
     let errors: string[] = [];
+    let submitting = false;
 
     const submit: SubmitFunction = async ({ cancel, formData }) => {
         cancel();
+        submitting = true;
         const res = await save(formData, supabase);
         console.log(res.errors);
         errors = res.errors;
@@ -39,6 +42,7 @@
             // Dispatch event with proper typing
             dispatch("saved", savedData);
         }
+        submitting = false;
     };
     const resetter = signal();
 </script>
@@ -110,15 +114,21 @@
     </ul>
 
     <div class="btns">
-        <button
-            type="reset"
-            class="btn btn--low"
-            on:click={() => {
-                resetter.notify();
-                dispatch("cancel");
-            }}>Cancel</button
-        >
-        <button type="submit" class="btn">Save</button>
+        {#if submitting}
+            <Loading>
+                <span class="btn">Loading...</span>
+            </Loading>
+        {:else}
+            <button
+                type="reset"
+                class="btn btn--low"
+                on:click={() => {
+                    resetter.notify();
+                    dispatch("cancel");
+                }}>Cancel</button
+            >
+            <button type="submit" class="btn">Save</button>
+        {/if}
     </div>
 </form>
 
