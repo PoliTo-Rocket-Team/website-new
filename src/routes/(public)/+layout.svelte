@@ -33,10 +33,7 @@
     }
     afterNavigate(() => {
         open = history.state.navbar === true;
-        const pageContent = document.getElementById("page-content");
-        if (pageContent) {
-            pageContent.scrollTo(0, 0);
-        }
+        content && content.scrollTo(0, 0);
     });
 
     let lastY = 0;
