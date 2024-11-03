@@ -14,6 +14,7 @@
     onMount(() => (ww = document.body.clientWidth - 2));
 
     export let data;
+    
 
     function getAngle(i: number) {
         return ((i / (data.subteams.length - 1)) * 2 - 1) * Math.PI * 0.3;
@@ -87,14 +88,15 @@
             {/each}
         </div>
     </section>
+
     <section>
         <HTabbed
             expand={ww + "px"}
             data={data.subteams}
             let:name
             let:chief
-            let:coordinator1
-            let:coordinator2
+            let:project_manager
+            
             let:leads
         >
             <div class="lead-panel">
@@ -108,32 +110,20 @@
                         img={getImg(chief.id4pp, chief.last_name)}
                         highlight
                     />
-                    {#if coordinator1}
+                    {#if project_manager}
                         <Lead
-                            firstname={coordinator1.first_name}
-                            lastname={coordinator1.last_name}
-                            linkedin={coordinator1.linkedin}
-                            role="Coordinator"
+                            firstname={project_manager.first_name}
+                            lastname={project_manager.last_name}
+                            linkedin={project_manager.linkedin}
+                            role="Project Manager"
                             img={getImg(
-                                coordinator1.id4pp,
-                                coordinator1.last_name
+                                project_manager.id4pp,
+                                project_manager.last_name
                             )}
                             highlight
                         />
                     {/if}
-                    {#if coordinator2}
-                        <Lead
-                            firstname={coordinator2.first_name}
-                            lastname={coordinator2.last_name}
-                            linkedin={coordinator2.linkedin}
-                            role="Coordinator"
-                            img={getImg(
-                                coordinator2.id4pp,
-                                coordinator2.last_name
-                            )}
-                            highlight
-                        />
-                    {/if}
+
                     {#each leads as lead}
                         <Lead
                             firstname={lead.first_name}

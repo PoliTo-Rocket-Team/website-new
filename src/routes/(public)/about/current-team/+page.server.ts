@@ -13,13 +13,13 @@ interface CompleteSubteam {
     name: string;
     code: string;
     chief: Person & { title: string };
-    coordinator1: Person | null;
-    coordinator2: Person | null;
+    project_manager: Person | null;
+    
     leads: (Person & { acting: boolean; division: string })[];
 }
 
 export const load: PageServerLoad = async ({ locals }) => {
-    const res = await locals.supabase.rpc("get_complete_subteams");
+    const res = await locals.supabase.rpc("get_complete_subteams2");
     if (res.error)
         throw error(500, {
             details: res.error.details,
