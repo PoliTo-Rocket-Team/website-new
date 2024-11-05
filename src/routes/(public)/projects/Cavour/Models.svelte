@@ -14,19 +14,6 @@
 
     const I = writable(0);
 
-    let isMobile = false;
-
-    onMount(() => {
-        const handleResize = () => {
-            isMobile = window.innerWidth < 768; // adjust this breakpoint as needed
-        };
-
-        handleResize(); // check on mount
-        window.addEventListener("resize", handleResize);
-
-        return () => window.removeEventListener("resize", handleResize);
-    });
-
     function squish<T>(arr: T[]) {
         const res: SpannedValue<T>[] = [[arr[0], 1]];
         const len = arr.length;
@@ -130,75 +117,29 @@
         </div>
     </svelte:fragment>
     <div class="scrollable" slot="true">
-        {#if isMobile}
-            <div class="mobile-cards">
-                {#each models as model, index}
-                    <div class="model-card">
-                        <h2 class="model-title">{model}</h2>
-                        {#each fields as field, fieldIndex}
-                            <div class="field">
-                                <h3>{field.name}</h3>
-                                <div class="values">
-                                    {#if field.values.length > 1}
-                                        <div class="value">
-                                            {field.values[index]}
-                                            {#if field.unit}
-                                                <span
-                                                    class="unit"
-                                                    class:low={!field.unit}
-                                                >
-                                                    {field.unit}
-                                                </span>
-                                            {/if}
-                                        </div>
-                                    {:else}
-                                        <div class="value">
-                                            {field.values[0]}
-                                            {#if field.unit}
-                                                <span
-                                                    class="unit"
-                                                    class:low={!field.unit}
-                                                >
-                                                    {field.unit}
-                                                </span>
-                                            {/if}
-                                        </div>
-                                    {/if}
-                                </div>
-                            </div>
-                        {/each}
-                    </div>
-                {/each}
-            </div>
-        {:else}
-            <table>
+        <table>
+            <tr>
+                <td class="no-border"></td>
+                <th scope="col">CVR 100-75-3</th>
+                <th scope="col">CVR 100-75-4</th>
+                <th scope="col">CVR 100-54-6</th>
+                <th scope="col">Unit</th>
+            </tr>
+            {#each fields as f, i}
+                {@const unit = units[i]}
                 <tr>
-                    <td class="no-border"></td>
-                    <th scope="col">CVR 100-75-3</th>
-                    <th scope="col">CVR 100-75-4</th>
-                    <th scope="col">CVR 100-54-6</th>
-                    <th scope="col">Unit</th>
+                    <th scope="row">{f.name}</th>
+                    {#each squish(f.values) as sq}
+                        <td colspan={sq[1]}>{sq[0]}</td>
+                    {/each}
+                    {#if unit}
+                        <td rowspan={unit[1]} class:low={!unit[0]}>
+                            {unit[0] || "/"}
+                        </td>
+                    {/if}
                 </tr>
-                {#each fields as f, i}
-                    {@const unit = units[i]}
-                    <tr>
-                        <th scope="row" data-label="Field">{f.name}</th>
-                        {#each squish(f.values) as sq}
-                            <td data-label="Value" colspan={sq[1]}>{sq[0]}</td>
-                        {/each}
-                        {#if unit}
-                            <td
-                                rowspan={unit[1]}
-                                class:low={!unit[0]}
-                                data-label="Unit"
-                            >
-                                {unit[0] || "/"}
-                            </td>
-                        {/if}
-                    </tr>
-                {/each}
-            </table>
-        {/if}
+            {/each}
+        </table>
     </div>
 </SmoothContidional>
 
@@ -265,49 +206,5 @@
     }
     .low {
         opacity: 0.4;
-    }
-
-    .mobile-cards {
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
-
-    .model-card {
-        border: 1px solid #8883;
-        padding: 1rem;
-        border-radius: 5px;
-        background-color: --var;
-    }
-
-    .model-title {
-        font-size: 1.5rem;
-        margin-bottom: 0.5rem;
-        color: --var;
-        text-align: center;
-    }
-
-    .field {
-        margin-top: 1rem;
-    }
-
-    .field h3 {
-        margin-bottom: 0.5rem;
-    }
-
-    .values {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.5rem;
-    }
-
-    .value {
-        display: inline-flex;
-        align-items: center; /* Center align the value and unit */
-    }
-
-    .unit {
-        margin-left: 0.5rem; /* Space between value and unit */
-        font-weight: normal; /* Optional: make unit less prominent */
     }
 </style>
