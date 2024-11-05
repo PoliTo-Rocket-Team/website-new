@@ -190,7 +190,7 @@
 
         img {
             width: 100%;
-            height: 60vh;
+            height: 70vh;
             display: block;
             margin: 0 auto;
             clip-path: inset(50% 0);

@@ -14,7 +14,7 @@
     },
     {
         "date": "Winter 2021-22",
-        "imageSrc": "",
+        "imageSrc": "First Months.jpg",
         "title": "The First Months",
         "description": "The group laid the groundwork and crafted the initial design for what would evolve into <a href='/projects/Cavour'>Project Cavour</a>. The <a href='/about/past-teams'>Founders</a> presented the project to establish a dedicated student team for rocket engineering to Professor Alfonso Pagani, who staunchly supported the initiative. New important members joined, such as Luca Loiodice, future design and additive manufacturing lead; Federico Guglielmi, the future IT manager; and Pierluigi Mercadante, future coordinator for <a href='/projects/Efesto'>Project Efesto</a>.",
         "longerText": "HELLOOOOOO",
@@ -51,7 +51,7 @@
     },
     {
         "date": "October 2022",
-        "imageSrc": "",
+        "imageSrc": "Selection.jpg",
         "title": "The Selection for the 2023 Spaceport America Cup",
         "description": "<a href='/projects/Cavour'>Project Cavour</a>, directed by CE Fabio Meloni, achieved the distinction of being the first Italian project selected for the <a href='https://spaceportamericacup.com/portfolio-item/2023-spaceport-america-cup/#tab-id-4'>2023 Spaceport America Cup</a> (SA CUP), the world’s largest rocketry intercollegiate competition.",
         "longerText": "HELLOOOOOO",
@@ -59,7 +59,7 @@
     },
     {
         "date": "November 2022",
-        "imageSrc": "",
+        "imageSrc": "Research.jpg",
         "title": "The Start of Liquid Propulsion Research",
         "description": "Along with the work of the sounding rocket <a href='/projects/Cavour'>Cavour</a>, in the fall of 2022 the Team established <a href='/projects/Efesto'>Project Efesto</a> under the lead of CE Matteo Crachi, to research and develop Italy’s first student-made bi-liquid rocket engine with a focus on sustainability.",
         "longerText": "HELLOOOOOO",
@@ -83,7 +83,7 @@
     },
     {
         "date": "August 2023",
-        "imageSrc": "",
+        "imageSrc": "2023_24.JPG",
         "title": "Academic Year 2023-2024",
         "description": " In the summer of 2023, former President Fabio Meloni graduated and passed on the torch to Elena Dilorenzo, former Chief Operating Officer, and the job of CE of <a href='/projects/Cavour'>Project Cavour</a> to Edoardo Viglietti, former FEA lead. Andrea Pantano, former logistics lead, was promoted to COO. The Team conducted its second general recruitment, expanding to around 130 members.",
         "longerText": "HELLOOOOOO",
@@ -107,7 +107,7 @@
     },
     {
         "date": "Winter-Spring 2024",
-        "imageSrc": "",
+        "imageSrc": "working.jpg",
         "title": "Working with a Burden",
         "description": "During the a.y., a restructuring in the university department created large delays in the procurements for parts and components, and the Team was unable to assemble and test the rocket before the Spaceport America Cup 2024. Nonetheless, the Team managed to complete the VES rocket during the summer.",
         "longerText": "HELLOOOOOO",
@@ -115,7 +115,7 @@
     },
     {
         "date": "July 2024",
-        "imageSrc": "",
+        "imageSrc": "2024_2025.jpg",
         "title": "Academic Year 2024-2025",
         "description": "Before the start of the new a.y., the 2nd president Elena Dilorenzo graduated, and selected Cristian Manfredi, one of PRT's co-founders, as the 3rd president. Giovanni Del Vecchio became the new COO, and Marco Delogu the new CE of <a href='/projects/Efesto'>Project Efesto</a>.",
         "longerText": "HELLOOOOOO",
@@ -128,7 +128,7 @@
     },
     {
         "date": "September 2024",
-        "imageSrc": "",
+        "imageSrc": "Netherlands.jpg",
         "title": "Test Launch in the Netherlands",
         "description": "Rocketry activities were opened in September 2024 with the test launch of VES in the Netherlands, along with some teams from Delft Aerospace Rocket Engineering. The Team was unable to perform the test launch due to problems with the CO2 cartridges of the recovery ejection system, however the valuable launch operations experience acquired helped to further prepare the rocket for the launch at EuRoC 2024.",
         "longerText": "HELLOOOOOO",
@@ -144,9 +144,9 @@
     },
     {
         "date": "November 2024",
-        "imageSrc": "",
+        "imageSrc": "3rd_rocket.jpg",
         "title": "The 3rd Rocket",
-        "description": " Following EuRoC, a New Rocket Project was started under the leadership of CE Marco Dona for the design and development of a new competition rocket for EuRoC 2025.",
+        "description": " Following EuRoC, a New Rocket Project was started under the leadership of CE Marco Donà for the design and development of a new competition rocket for EuRoC 2025.",
         "longerText": "HELLOOOOOO",
         "previousLeads": [" "]
     }
