@@ -312,10 +312,11 @@
         grid-template-columns: repeat(3, 1fr);
         gap: 2.5rem;
     }
-    .card {
-        min-width: 25ch;
-    }
-    @media (max-width: 70rem) {
+
+    @media (max-width: 50rem) {
+        .cards {
+            grid-template-columns: 1fr;
+        }
         :global(.scrollable) {
             overflow-x: scroll;
             padding-left: var(--pad);
