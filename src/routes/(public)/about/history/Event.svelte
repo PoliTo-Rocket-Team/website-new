@@ -1,4 +1,5 @@
 <script lang="ts">
+    import "@fontsource/plus-jakarta-sans/700-italic.css"
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
     import { getContext } from "svelte";
@@ -166,7 +167,7 @@
         font-style: italic;
         margin-bottom: 1rem;
         display: block;
-        font-weight: bold;
+        font-weight: 700;
     }
     .timeline-container {
         display: flex;
