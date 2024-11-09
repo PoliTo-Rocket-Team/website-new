@@ -185,7 +185,7 @@
             z-index: 1;
         }
         article.selected .image {
-            height: 70vh;
+            height: min(40rem, 70vh);
         }
         article.selected .image img {
             clip-path: inset(0);
@@ -194,7 +194,7 @@
 
         img {
             width: 100%;
-            height: 70vh;
+            height: min(40rem, 70vh);
             display: block;
             margin: 0 auto;
             clip-path: inset(50% 0);
