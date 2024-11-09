@@ -55,7 +55,7 @@
 >
     <input type="hidden" name="requester" value={requester.id} />
     <Field
-        label="Item Name*"
+        label="Item name *"
         type="text"
         name="name"
         schema={fields.name}
@@ -64,9 +64,9 @@
     />
     <div class="split">
         <Field
-            label="Price*"
+            label="Price (€) without IVA *"
             type="number"
-            placeholder="0.00€"
+            placeholder="0.00"
             schema={fields.price}
             name="price"
             resetter={resetter.sub}
@@ -82,7 +82,7 @@
         />
     </div>
     <Field
-        label="Description*"
+        label="Description *"
         type="textarea"
         name="description"
         schema={fields.description}
@@ -90,7 +90,7 @@
         resetter={resetter.sub}
     />
     <Field
-        label="Reason*"
+        label="Reason *"
         type="textarea"
         name="reason"
         schema={fields.reason}
@@ -100,7 +100,7 @@
 
     <!-- File Upload Section -->
     <Field
-        label="Upload Quote"
+        label="Upload a quote"
         type="file"
         name="quote"
         schema={fields.quote}
