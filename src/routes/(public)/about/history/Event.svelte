@@ -173,12 +173,16 @@
         padding: 2rem;
         text-align: left;
         align-items: flex-start;
+        isolation: isolate;
     }
 
     /* Large screens */
     @media (min-width: 768px) {
         .mobile {
             display: none;
+        }
+        article {
+            z-index: 1;
         }
         article.selected .image {
             height: 70vh;
@@ -203,7 +207,6 @@
             width: 40rem;
             place-self: center;
             position: relative;
-            isolation: isolate;
             overflow: hidden;
         }
         .image img {
