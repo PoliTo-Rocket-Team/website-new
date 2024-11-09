@@ -86,7 +86,7 @@
     const url_regexp =
         /^(?:https:\/\/)?(?:www\.)?linkedin\.(?:it|com)\/in\/([\w-]+)\/?(?:\?.*)?$/;
     const username_regexp = /^[\w-]+$/;
-    let linkedin = data.person.linkedin;
+    let linkedin: string | null = data.person.linkedin;
 
     function checkLinkdinId(this: HTMLInputElement) {
         const match = url_regexp.exec(this.value);
