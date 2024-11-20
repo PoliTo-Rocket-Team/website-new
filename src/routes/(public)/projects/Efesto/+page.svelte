@@ -157,7 +157,120 @@
     </li>
 </ul>
 
-<style>
+<h2
+    class="m-top"
+    style="margin-bottom: 1.8rem; text-align:center; margin-top: 4em"
+>
+    Specs
+</h2>
+
+<div>
+    <table>
+        <tr>
+            <th scope="col">Oxidizer</th>
+            <th scope="col">Fuel</th>
+            <th scope="col">Cycle</th>
+            <th scope="col">Targer Thrust</th>
+        </tr>
+        <tr>
+            <td>Nitrous Oxide (N2O)</td>
+            <td>Ethanol</td>
+            <td>Pressure-fed</td>
+            <td>5 kN</td>
+        </tr>
+    </table>
+</div>
+
+<h2
+    class="m-top"
+    style="margin-bottom: 1.8rem; text-align:center; margin-top: 4em"
+>
+    Systems
+</h2>
+<p>
+    The purpose of the Efesto project is to develop the liquid system needed for
+    the first bi-liquid project of PoliTo Rocket Team. The project is working on
+    5 different lines:
+</p>
+<div>
+    <table class="sys-tbl">
+        <tr>
+            <th scope="col">TCA</th>
+            <th scope="col">Thrust Chambe Assembly</th>
+        </tr>
+        <tr>
+            <td>EC</td>
+            <td>Engine Cycle</td>
+        </tr>
+        <tr>
+            <td>LSA</td>
+            <td>Liquid System Architecture</td>
+        </tr>
+        <tr>
+            <td>TB</td>
+            <td>Test Bench</td>
+        </tr>
+        <tr>
+            <td>ECS</td>
+            <td>Engine Control Strategy</td>
+        </tr>
+    </table>
+</div>
+
+<h2
+    class="m-top"
+    style="margin-bottom: 1.8rem; text-align:center; margin-top: 4em"
+>
+    Thrust Chamber Assembly
+</h2>
+<div class="two-column">
+    <div>
+        <p>
+            The Thrust Chamber Assembly (TCA) division is responsible for the
+            development of the components of the thrust chamber. Innovative
+            additive manufacturing techniques allow us to push the limits of
+            manufacturing in order to improve performances and reduce costs. The
+            actual design of the engine includes two main components, the
+            injector head and the combustion chamber, joined by a bolted
+            connection. The design of the injector head has been presented at
+            the 26th ESA PAC Symposium on European Rocket and Balloon Programmes
+            and Related Research in Luzern on May 2024
+        </p>
+    </div>
+    <img src="/img/ESA_PAC.png" alt="ESA PAC Symposium logo" class="float" />
+</div>
+<img src="/img/EFS.jpg" alt="Efesto Injector Head" class="float" />
+<h2
+    class="m-top"
+    style="margin-bottom: 1.8rem; text-align:center; margin-top: 4em"
+>
+    Engine Cycle
+</h2>
+<div class="two-column">
+    <p>
+        The engine cycle division is developing a proprietary tool, named
+        RocketForge, to manage all the engine aspects. An in-house calibrated
+        software is essential in order to fast improve with the engine design
+        and to quickly provide new reliable engine configurations. The division
+        is also responsible for the engine cycle definition and for the support
+        to the test data processing.
+    </p>
+
+    <img src="/img/RF.jpg" alt="RocketForge tool main page" class="float" />
+</div>
+<h2
+    class="m-top"
+    style="margin-bottom: 1.8rem; text-align:center; margin-top: 4em"
+>
+    Engine Control Strategy
+</h2>
+<p>
+    Power is nothing without control, therefore the ECS division works on the
+    development of the hardware/software system to control the valves and obtain
+    the sensor readings needed to precisely control the valve system.
+</p>
+
+<style lang="scss">
     h2 {
         position: relative;
         padding-top: 1.2rem;
@@ -191,5 +304,53 @@
         .split {
             grid-template-columns: 1fr 1fr;
         }
+    }
+
+    table {
+        border-collapse: collapse;
+        font-size: 1.1rem;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2rem;
+    }
+    th,
+    td {
+        padding: 0.6em 1em;
+        border: 1px solid #8883;
+    }
+    th {
+        text-align: left;
+        font-weight: 500;
+        width: max-content;
+        white-space: nowrap;
+    }
+    td {
+        text-align: center;
+    }
+    .sys-tbl th,
+    .sys-tbl td {
+        /* padding: 1em 2em; */
+        padding-right: 10em;
+        border: 1px solid #8883;
+        text-align: left;
+    }
+
+    $contour: 1px;
+    img.float {
+        display: block;
+        max-width: 100%;
+        margin-bottom: 1rem;
+        filter: drop-shadow($contour $contour 0 var(--light-bg-0))
+            drop-shadow($contour (-$contour) 0 var(--light-bg-0))
+            drop-shadow(-$contour $contour 0 var(--light-bg-0))
+            drop-shadow(-$contour (-$contour) 0 var(--light-bg-0));
+    }
+
+    .two-column {
+        display: flex;
+        justify-content: center;
+    }
+    .two-column p {
+        margin: 2em 3em;
     }
 </style>
