@@ -69,8 +69,8 @@
             Liquid propulsion is a relatively new concept for Italy, originated
             thanks to AVIO's M10 engine development. In order to provide support
             to the Italian liquid rocket engine initiative, Polito Rocket Team's
-            Project Efesto is developing the first Italian pressure-fed LOX
-            Methane Liquid Rocket Engine.
+            Project Efesto is developing the first Italian pressure-fed Liquid
+            Rocket Engine.
         </p>
     </div>
 </div>
@@ -146,13 +146,6 @@
             The regenerative pressure-fed engine cycle can provide great results
             with more straightforward design efforts in comparison to more
             complex engine cycles, such as e-pump-fed or open engine cycles
-        </p>
-    </li>
-    <li class="card">
-        <h3 class="smudge">Green</h3>
-        <p>
-            LOX/bio-CH4 is the optimum compromise for power requirements,
-            environment care, and modern trend
         </p>
     </li>
 </ul>
