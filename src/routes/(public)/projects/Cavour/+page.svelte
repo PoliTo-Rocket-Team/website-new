@@ -61,25 +61,6 @@
         </p>
     </div>
     <div>
-        <h2 class="m-top smudge">Current and Future plans</h2>
-        <p>
-            Cavour has been completely designed, constructed, ground-tested, and
-            launched. Two twin prototypes have been built and the functionality
-            of their integrated systems has been validated.
-        </p>
-        <p>
-            In October 2023 Cavour will fly again in Portugal, representing for
-            the first time ever the Politecnico di Torino at the European
-            Rocketry Challenge, during its 2023 edition.
-        </p>
-        <p>
-            Project Cavour will evolve towards a future reusable rocket with a
-            larger payload capacity, capable of conducting scientific
-            experiments inexpensively and reliably at an even higher precise
-            apogee.
-        </p>
-    </div>
-    <div>
         <h2 class="m-top smudge">Technical characteristics</h2>
         <p>
             Cavour is a single stage rocket with a solid COTS motor and an
