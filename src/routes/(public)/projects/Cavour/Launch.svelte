@@ -10,8 +10,8 @@
     import Carousel from "./Carousel.svelte";
 
     export let name: string;
-    export let date: string;
-    export let images: string[];
+    export let date: string | null = null;
+    export let images: string[] = [];
 
     // import type { MiddleScreenPool } from "$lib/visibility";
     // export let pool: MiddleScreenPool;
@@ -22,7 +22,9 @@
     <div class="title">
         <div>
             <h3>{name}</h3>
+            {#if date}
             <span>{formatter.format(Date.parse(date))}</span>
+            {/if}
         </div>
     </div>
     <div class="desc">
