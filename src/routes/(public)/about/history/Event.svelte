@@ -1,5 +1,4 @@
 <script lang="ts">
-    import "@fontsource/plus-jakarta-sans/700-italic.css"
     import { browser } from "$app/environment";
     import { frameThrottle } from "$lib/timing";
     import { getContext } from "svelte";
@@ -114,7 +113,7 @@
                         </div>
                     </TimelineContent>
 
-                    <TimelineSeparator>
+                    <TimelineSeparator style="height: 30rem;">
                         <TimelineDot
                             style="background-color: hsl(19, 85%, 55%); height: 1rem; width: 1rem; border: solid 2px hsl(19, 85%, 55%);"
                         />
@@ -167,14 +166,13 @@
         font-style: italic;
         margin-bottom: 1rem;
         display: block;
-        font-weight: 700;
+        font-weight: bold;
     }
     .timeline-container {
         display: flex;
         padding: 2rem;
         text-align: left;
         align-items: flex-start;
-        isolation: isolate;
     }
 
     /* Large screens */
@@ -182,24 +180,23 @@
         .mobile {
             display: none;
         }
-        article {
-            z-index: 1;
-        }
         article.selected .image {
-            height: min(40rem, 70vh);
+            opacity: 1;
+            height: 70vh;
         }
         article.selected .image img {
             clip-path: inset(0);
-            transform: scale(1);
+            transform: scale(
+                1
+            ); /*can't change because it's the size of the image*/
         }
 
         img {
             width: 100%;
-            height: min(40rem, 70vh);
+            height: 70vh;
             display: block;
             margin: 0 auto;
             clip-path: inset(50% 0);
-            transform: scale(0.3);
             object-fit: contain;
             position: absolute;
         }
@@ -208,10 +205,17 @@
             width: 40rem;
             place-self: center;
             position: relative;
+            isolation: isolate;
             overflow: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease-out;
         }
         .image img {
-            transition: height 0.3s ease;
+            height: 70vh;
+            transition:
+                clip-path 0.5s ease,
+                transform 0.5s ease,
+                opacity 0.5s ease;
         }
 
         .image:hover img {
@@ -230,8 +234,8 @@
             opacity: 1;
             transform: translateY(0);
             transition:
-                transform 0.15s ease-out,
-                opacity 0.15s ease-in;
+                transform 0.5s ease-out,
+                opacity 0.5s ease-in;
             z-index: 1;
         }
 
