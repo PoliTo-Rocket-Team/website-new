@@ -4,6 +4,13 @@
     import Models from "./Models.svelte";
     let model_view = "showcase";
 
+    const euroc = Object.values(
+        import.meta.glob("/src/img/ves/euroc24/*.{jpg,png}", {
+            as: "url",
+            eager: true,
+        })
+    );
+
 </script>
 
 <svelte:head>
@@ -78,7 +85,7 @@
     </div>
 </section>
 <section>
-<Launch name="European Rocketry Challenge">
+<Launch name="European Rocketry Challenge" date="2024-10-12" images={euroc}>
     <p>
         VES was launched on October 12 at 14:19 (UTC+1) at Santa Margarida Military Camp, Portugal. The flight was nominal, reaching an apogee of approximately 3160m with a maximum speed of 259m/s and a maximum acceleration of 8.5G.
     </p>

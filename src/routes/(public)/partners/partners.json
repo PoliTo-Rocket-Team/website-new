@@ -25,8 +25,7 @@
         "link": "https://www.sophiahightech.com/",
         "localTheme": null,
         "texts": [
-            "Sòphia High Tech, certified according to the Quality Standard AS/EN9100, operates in the Aerospace field, focusing on the design, development and production of metal alloy components using Additive Manufacturing and CNC Machining.",
-            "Sòphia uses the most advanced technological processes: to produce complex components in shape and geometry, Sòphia uses Additive Manufacturing (SLM), according to ECSS-Q-ST-70-80C.",
+            "Sòphia High Tech, certified according to the Quality Standard AS/EN9100, operates in the Aerospace field, focusing on the design, development and production of metal alloy components using Additive Manufacturing and CNC Machining. Sòphia uses the most advanced technological processes: to produce complex components in shape and geometry, Sòphia uses Additive Manufacturing (SLM), according to ECSS-Q-ST-70-80C.",
             "Sophia High Tech supports the team in the development of project Efesto by providing state-of-the-art equipment, which will be crucial for the success of the project."
         ]
     },
@@ -71,6 +70,28 @@
             "Explorer cases supports the team by providing its cases for the safe and practical transport of our equipment."
         ]
     },
+    {
+        "name": "Ansys",
+        "link": "https://www.ansys.com/",
+        "img": "Ansys.png",
+        "localTheme": "dark",
+        "texts": [
+            "With more than 50 years of experience, Ansys is the world reference in engineering simulation. Its solutions are used by market leaders in all industries to revolutionize design, enabling engineers to explore and predict how products will perform in the real world.",
+            "Reducing prototype costs and production time, improving quality, reducing risk, accelerating innovation across all industries to push the boundaries the predictive power of Ansys simulation is at your fingertips."
+        ]
+    },
+    {
+        "name": "ESSS",
+        "link": "https://www.esss.com/",
+        "img": "Esss.png",
+        "localTheme": null,
+        "texts": [
+            "ESSS is a leading engineering solutions and scientific software company specializing in advanced simulations for industries such as aerospace, automotive, and energy.",
+            "It offers tools for finite element analysis, computational fluid dynamics and multiphysics simulations, enabling companies to optimize design processes, reduce costs and improve efficiency.",
+            "With dedicated consulting and training, ESSS supports innovation and helps customers achieve new standards of competitiveness."
+        ]
+    },
+    
     {
         "name": "JEToP",
         "img": "JEToP.png",
