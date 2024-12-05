@@ -89,7 +89,7 @@
                 We are the rocket engineering student team of Politecnico di
                 Torino, entirely dedicated to the research, design, and
                 construction of rocket engines and experimental rockets with
-                scientific payload capability. We are a group of more than 150
+                scientific payload capability. We are a group of more than 120
                 undergraduate, graduate and doctoral engineering students with
                 great plans for the future.
             </p>
@@ -101,32 +101,11 @@
         </div>
     </section>
     <section aria-labelledby="spac">
-        <h2 id="spac">PRT at the European Rocketry Challenge!</h2>
-        <div class="blur-behind">
-            <img
-                src="/img/EUROC.png"
-                alt="European Rocketry Challenge logo"
-                class="float"
-            />
-            <p>
-                PoliTo Rocket Team was the first team from Politecnico di Torino to compete at the European Rocketry Challenge (<a href="https://euroc.pt/">EuRoC</a>) in October 2023, launching the <a href="https://www.politorocketteam.it/projects/Cavour">Cavour</a> rocket and winning the ANACOM award!
-            </p>
-
-            <p>
-                We competed again in 2024 with <a href="https://www.politorocketteam.it/projects/VES">Project VES</a>, our biggest rocket. The Vittorio Emanuele II Rocket (VES) was launched on October 12 at 14:19 (UTC+1). The flight was nominal, reaching an apogee of approximately 3160m. The drogue parachute deployed at apogee, reducing the rocket’s descent velocity to about 30m/s. The main parachute separation was successful; however the upper and lower rocket sections, each equipped with their own parachute, were separated during the descent. Both sections were located and recovered, and VES is now back in Turin ready to be reused.
-            </p>
-
-            <p>
-                With VES, the Team was at its 2nd EuRoC participation and ranked 4th out of 20 for vehicle quality, and 6th out of 20 participating teams and out of 55 total teams in the general ranking. PRT received a larger score than some of Europe’s most experienced teams, and improved on the 2023 performance. It was also the highest score ever from a team from Politecnico di Torino.
-            </p>
-        </div>
-    </section>
-    <section aria-labelledby="spac">
         <h2 id="spac">New Mexico: mission accomplished</h2>
         <div class="blur-behind">
             <img
                 src="/img/Spaceport-America-Cup.png"
-                alt="Spaceport America Cup logo"
+                alt="Spaceport America Cup"
                 class="float"
             />
             <p>
@@ -156,11 +135,11 @@
                 (3,000 and 9,100 m).
             </p>
             <p>
-                PoliTo Rocket Team competed with the <a
+                PoliTo Rocket Team has competed with the <a
                     href="/projects/Cavour">Cavour rocket</a
                 > in the 10 ft apogee AGL COTS category with a target apogee of around
                 3km.The Team ranked 13th in its category and 20th overall with 119
-                teams participating and over 150 total teams. PRT also won the prestigious Dr. Gil Moore Technical Award for Innovation, one of the few technical awards, for its extensive use of 3D-printed internal components!
+                teams participating.
             </p>
         </div>
     </section>
@@ -172,7 +151,17 @@
             </div>
             <div class="timeline__body">
                 <Event year={2021} month={10} ch={45} title="The beginning"
-                    >Inspired by American and European rocketry teams, a group of friends started designing an experimental
+                    >Inspired by <a
+                        href="https://www.uscrpl.com/"
+                        target="_blank"
+                        rel="noreferrer">USCRPL</a
+                    >
+                    and
+                    <a
+                        href="https://www.skywarder.eu/blog/"
+                        target="_blank"
+                        rel="noreferrer">Skyward Experimental Rocketry</a
+                    >, a group of friends started designing an experimental
                     sounding rocket.</Event
                 >
                 <Event
@@ -203,7 +192,7 @@
                     ch={35}
                     title="First Cavour launch"
                 >
-                    Germany, 19:53:42 CET: test launch successful! First launch of a rocket built by students of Politecnico di Torino
+                    Germany, 19:53:42 CET: test launch successful
                     <a
                         href="https://www.instagram.com/p/CroYBp9t8Sr/?igshid=ZWIzMWE5ZmU3Zg=="
                         target="_blank"
@@ -251,28 +240,15 @@
                         href="https://euroc.pt/"
                         target="_blank"
                         rel="noreferrer">EuRoC</a
-                    >, Europe’s major rocket engineering competition, winning the ANACOM award.
+                    >, Europe’s major rocket engineering competition.
                 </Event>
                 <Event
                     year={2024}
                     month={10}
                     ch={45}
                     title="2024 European Rocketry Challenge"
-                    >At our second participation we launched <a href="https://www.politorocketteam.it/projects/VES">VES </a>, our biggest rocket, improving our past year performance, ranking 4th in Europe for for vehicle design and 6th overall.
-                </Event>
-                <Event
-                    year={2024}
-                    month={10}
-                    ch={45}
-                    title="International Astronautical Congress 2024"
-                    >At the world’s largest IAC, held in Milan, PRT showcased its projects and students presented multiple technical papers. PRT won the Geography, Generation and Gender+ award at the Student Challenge.
-                </Event>
-                <Event
-                    year={2025}
-                    month={6}
-                    ch={45}
-                    title="International Rocket Engineering Competition 2025"
-                    >With an evolution of <a href="https://www.politorocketteam.it/projects/VES">Project VES </a>, we aim to represent Italy and Politecnico di Torino once again at the world's largest rocketry competition, and aim for the Italian altitude record!
+                    >With <a href="/projects/VES">Project VES</a> we intend to reach
+                    9km and supersonic speeds!
                 </Event>
             </div>
         </div>

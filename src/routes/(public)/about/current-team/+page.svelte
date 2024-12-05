@@ -54,10 +54,11 @@
         <div class="stop-growth">
             <hr class="subtle" />
             <p>
-                During the 2024-2025 Academic Year, the Team is composed of more
-                than 150 between undergraduate students and graduate students.
-                The Team members come from almost all courses of Politecnico di
-                Torino, and from more than 30 different countries.
+                During the 2023-2024 Academic Year, the Team is composed of more
+                than 120 between undergraduate students and graduate students.
+                Most of the Team members come from the aerospace, mechanical,
+                electronic and computer engineering courses of Politecnico di
+                Torino.
             </p>
         </div>
     </div>
