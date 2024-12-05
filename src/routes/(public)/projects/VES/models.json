@@ -1,0 +1,60 @@
+{
+    "models": ["VES 130-98-6", "VES 130-98-4", "VES 130-75-4"],
+    "fields": [
+        {
+            "name": "Diameter",
+            "unit": "mm",
+            "values": [134, 134, 134]
+        },
+        {
+            "name": "Length",
+            "unit": "mm",
+            "values": [3650, 3420, 3420]
+        },
+        {
+            "name": "Operating empty weight",
+            "unit": "kg",
+            "values": [21.61, 21.11, 21.11]
+        },
+        {
+            "name": "Wet mass",
+            "unit": "kg",
+            "values": [33.39, 25.81, 23.56]
+        },
+        {
+            "name": "Payload",
+            "values": [2, 1, 1],
+            "unit": "kg"
+        },
+        {
+            "name": "Motor model",
+            "unit": null,
+            "values": ["O5500X", "CTI M1790", "CTI L2375"]
+        },
+        {
+            "name": "Liftoff Thrust-Weight ratio",
+            "unit": null,
+            "values": [20.79, 6.09, 10.5]
+        },
+        {
+            "name": "Maximum thrust",
+            "values": [7552, 2022, 2798],
+            "unit": "N"
+        },
+        {
+            "name": "Maximum speed",
+            "values": [626.5, 259, 180],
+            "unit": "m/s"
+        },
+        {
+            "name": "Maximum Acceleration",
+            "values": [25.3, 8.5, 10.1],
+            "unit": "G"
+        },
+        {
+            "name": "Target apogee",
+            "values": [9000, 3000, 1700],
+            "unit": "m"
+        }
+    ]
+}
