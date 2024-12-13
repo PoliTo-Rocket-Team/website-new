@@ -10,6 +10,7 @@
     import ThemeSelector from "$lib/ThemeSelector.svelte";
 
     const aboutCombo: ComboRoute[] = [
+        { url: "our-university", name: "Our university" },
         { url: "mission-vision", name: "Mission" },
         { url: "current-team", name: "The Team" },
         { url: "past-teams", name: "Past Teams" },
@@ -147,13 +148,7 @@
                         href="/">Home</a
                     >
                 </li>
-                <li>
-                    <a
-                        data-sveltekit-replacestate={open || null}
-                        class="nav-entry"
-                        href="/university">Our University</a
-                    >
-                </li>
+
                 <li>
                     <LinkCombo
                         replace={open}
