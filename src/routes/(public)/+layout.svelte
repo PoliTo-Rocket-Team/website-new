@@ -148,6 +148,13 @@
                     >
                 </li>
                 <li>
+                    <a
+                        data-sveltekit-replacestate={open || null}
+                        class="nav-entry"
+                        href="/university">Our University</a
+                    >
+                </li>
+                <li>
                     <LinkCombo
                         replace={open}
                         base="about"

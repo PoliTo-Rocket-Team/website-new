@@ -1,15 +1,5 @@
 [
     {
-        "name": "Politecnico di Torino",
-        "link": "https://www.polito.it/",
-        "img": "poli.svg",
-        "localTheme": "dark",
-        "texts": [
-            "Politecnico di Torino (Polytechnic University of Turin) is the oldest public technical university of Italy, located in Turin. Consistently ranked as one of the best universities in Italy and in Europe, as of 2022 PoliTo is ranked by QS World University Rankings 33rd among the engineering and technology universities in the world.",
-            "Politecnico's Department of Mechanical and Aerospace Engineering (DIMEAS) is the main financial partner of the Team."
-        ]
-    },
-    {
         "name": "Mul2 Research Group",
         "img": "mul2_ter.png",
         "link": "http://www.mul2.polito.it/",
@@ -91,7 +81,7 @@
             "With dedicated consulting and training, ESSS supports innovation and helps customers achieve new standards of competitiveness."
         ]
     },
-    
+
     {
         "name": "JEToP",
         "img": "JEToP.png",
