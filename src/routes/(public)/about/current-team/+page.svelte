@@ -34,6 +34,18 @@
 
         return comparison;
     });
+    import { theme } from "$lib/theme";
+
+    let currentTheme: string | null = null;
+
+    const unsubscribe = theme.subscribe(value => {
+        currentTheme = value;
+    });
+
+    import { onDestroy } from "svelte";
+    onDestroy(() => {
+        unsubscribe();
+    });
 </script>
 
 <svelte:window
@@ -63,6 +75,17 @@
     </div>
 
     <section>
+        <div class="polito-logo">
+            <a href="https://www.polito.it/" target="_blank">
+                <img
+                    src={currentTheme === "dark"
+                        ? "/img/sponsors/poli.svg"
+                        : "/img/sponsors/poli-dark.svg"}
+                    alt="Politecnico di Torino logo"
+                />
+            </a>
+        </div>
+        <div class="vert-dashed-line" />
         <div class="executive-view">
             <Chief
                 firstname={p.first_name}
@@ -253,6 +276,26 @@
         /* border: 2px solid red; */
     }
 
+    .polito-logo {
+        width: 16rem;
+        margin: 0;
+        display: block;
+    }
+
+    .vert-dashed-line {
+        width: 2px;
+        height: 100px;
+        margin: 0 auto 2rem;
+        display: none;
+        background: repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 4px,
+            #999c 4px,
+            #999c 8px
+        );
+    }
+
     @media (min-width: 50rem) {
         .executive-view {
             min-height: 43rem;
@@ -269,6 +312,22 @@
             grid-template-columns: repeat(auto-fit, 36rem);
             gap: 3.5rem;
         }
+        .polito-logo {
+            margin: 0 auto;
+            width: 20rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .polito-logo img {
+            width: 35rem;
+            margin: 0;
+        }
+
+        .vert-dashed-line {
+            display: block;
+        }
     }
 
     @media (min-width: 85rem) {
@@ -276,6 +335,7 @@
             max-width: 85rem;
             margin-left: auto;
             margin-right: auto;
+            margin-top: 6rem;
         }
         h2 {
             text-align: center;

@@ -13,6 +13,7 @@
         { url: "mission-vision", name: "Mission" },
         { url: "current-team", name: "The Team" },
         { url: "past-teams", name: "Past Teams" },
+        { url: "our-university", name: "Our university" }
     ];
     const projectsCombo: ComboRoute[] = [
         { url: "Cavour", name: "Cavour" },
@@ -147,6 +148,7 @@
                         href="/">Home</a
                     >
                 </li>
+
                 <li>
                     <LinkCombo
                         replace={open}
