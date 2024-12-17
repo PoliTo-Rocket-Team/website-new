@@ -228,6 +228,10 @@
             object-fit: cover;
             z-index: -1;
             filter: blur(3px);
+            transition:
+                opacity 1s ease-out,
+                filter 1s ease-out,
+                transform 1s ease-out;
         }
 
         .image:hover p {
