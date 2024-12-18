@@ -136,6 +136,7 @@
         filter: blur(2px) brightness(50%);
         z-index: 0;
         object-fit: cover;
+        pointer-events: none;
     }
 
     /* Content Layer */
