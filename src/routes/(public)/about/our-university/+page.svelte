@@ -96,17 +96,14 @@
         position: relative;
         z-index: 1;
         color: white;
-        padding: 2rem;
     }
 
     .text-cols {
         column-width: 35ch;
         column-gap: 4rem;
-        text-align: left;
     }
 
     p {
-        margin-bottom: 1rem;
         break-inside: avoid;
     }
 
@@ -124,9 +121,6 @@
             color: var(--text-color);
         }
 
-        h1 {
-            font-size: 3.2rem;
-        }
         .hero-section {
             display: none;
         }
