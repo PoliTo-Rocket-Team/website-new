@@ -199,6 +199,7 @@
             clip-path: inset(50% 0);
             object-fit: contain;
             position: absolute;
+            pointer-events: none;
         }
         .image {
             height: 0;
