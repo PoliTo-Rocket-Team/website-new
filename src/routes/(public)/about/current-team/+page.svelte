@@ -91,7 +91,7 @@
                 firstname={p.first_name}
                 lastname={p.last_name}
                 linkedin={p.linkedin}
-                role="President"
+                role="Team Leader"
                 img={getImg(p.id4pp, p.last_name)}
                 angle={0}
                 president

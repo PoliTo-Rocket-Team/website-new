@@ -30,13 +30,14 @@
         <h1>Politecnico di Torino</h1>
         <div class="text-cols">
             <p>
-                The <a href="https://www.polito.it/">Politecnico di Torino</a> is
-                the first engineering school in Italy, founded in 1859 as the "Scuola
-                di Applicazione per gli Ingegneri" (School of Application for Engineers).
-                Over 160 years, it has evolved into one of Europe’s premier technical
-                universities, recognized for its rigorous academic standards and
-                excellence in the fields of engineering, architecture, design, and
-                urban planning.
+                The <a href="https://www.polito.it/" target="_blank"
+                    >Politecnico di Torino</a
+                > is the first engineering school in Italy, founded in 1859 as the
+                "Scuola di Applicazione per gli Ingegneri" (School of Application
+                for Engineers). Over 160 years, it has evolved into one of Europe’s
+                premier technical universities, recognized for its rigorous academic
+                standards and excellence in the fields of engineering, architecture,
+                design, and urban planning.
             </p>
             <p>
                 The university is committed to fostering innovation and
@@ -76,7 +77,7 @@
         position: relative;
         width: 100%;
         height: 100%;
-        overflow: hidden;
+        /* overflow: hidden; */
     }
 
     .background-video {
@@ -95,35 +96,36 @@
         display: block;
         position: relative;
         z-index: 1;
-        color: white;
-        padding: 2rem;
+        color: white
     }
 
     .text-cols {
         column-width: 35ch;
         column-gap: 4rem;
-        text-align: left;
     }
 
     p {
-        margin-bottom: 1rem;
         break-inside: avoid;
     }
 
     a {
         color: #ffa500;
-        text-decoration: underline;
     }
 
     .accent-text {
         color: var(--accent-fig, #ffa500);
         font-weight: 500;
     }
+
     @media (max-width: 50rem) {
 
         h1 {
             font-size: 3.2rem;
         }
+        .content {
+            color: var(--text-col);
+        }
+
         .hero-section {
             display: none;
         }

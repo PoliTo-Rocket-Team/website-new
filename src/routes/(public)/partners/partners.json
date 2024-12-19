@@ -1,15 +1,5 @@
 [
     {
-        "name": "Mul2 Research Group",
-        "img": "mul2_ter.png",
-        "link": "http://www.mul2.polito.it/",
-        "localTheme": null,
-        "texts": [
-            "Mul2 Research Group is a research project within Politecnico di Torino's Dept. of Mechanical and Aerospace Engineering, devoted to the development of advanced structural models for MULSs with particular attention given to the multifield analysis and the fluid-structure interactions.",
-            "Mul2 provides material support, with 3D printers and 3D printing materials, along with technical support for the additive manufacturing processes."
-        ]
-    },
-    {
         "name": "Sòphia High Tech",
         "img": ["Logo_SHT_scontornatoDARK.png", "logo_sophia_biancoLIGHT.png"],
         "link": "https://www.sophiahightech.com/",
@@ -81,12 +71,22 @@
             "With dedicated consulting and training, ESSS supports innovation and helps customers achieve new standards of competitiveness."
         ]
     },
-
+    
     {
         "name": "JEToP",
         "img": "JEToP.png",
         "localTheme": "dark",
         "link": "https://www.jetop.com/",
         "texts": null
+    },
+    {
+        "name": "Mul2 Research Group",
+        "img": "mul2_ter.png",
+        "link": "http://www.mul2.polito.it/",
+        "localTheme": null,
+        "texts": [
+            "Mul2 Research Group is a research project within Politecnico di Torino's Dept. of Mechanical and Aerospace Engineering, devoted to the development of advanced structural models for MULSs with particular attention given to the multifield analysis and the fluid-structure interactions.",
+            "Mul2 provides material support, with 3D printers and 3D printing materials, along with technical support for the additive manufacturing processes."
+        ]
     }
 ]
