@@ -120,6 +120,9 @@
         font-weight: 500;
     }
     @media (max-width: 50rem) {
+        .content {
+            color: var(--text-color);
+        }
 
         h1 {
             font-size: 3.2rem;
