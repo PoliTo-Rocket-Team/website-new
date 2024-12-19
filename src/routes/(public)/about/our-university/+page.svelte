@@ -95,7 +95,7 @@
         display: block;
         position: relative;
         z-index: 1;
-        color: white;
+        color: var(--text-col);
     }
 
     .text-cols {
@@ -116,11 +116,13 @@
         color: var(--accent-fig, #ffa500);
         font-weight: 500;
     }
-    @media (max-width: 50rem) {
+    @media (min-width: 768px) {
         .content {
-            color: var(--text-color);
+            color: white;
         }
+    }
 
+    @media (max-width: 50rem) {
         .hero-section {
             display: none;
         }
