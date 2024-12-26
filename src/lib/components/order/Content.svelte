@@ -51,13 +51,7 @@
     <p>
         {#each p.split(/((?:https?:\/\/)?(?:www\.)?[^\s]+\.[^\s]+)/g) as segment}
             {#if segment.match(/^(?:https?:\/\/)?(?:www\.)?\S+\.[^\s]+$/)}
-                <a
-                    href={segment.startsWith("http")
-                        ? segment
-                        : `https://${segment}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <a href={segment} target="_blank" rel="noopener noreferrer">
                     {segment.length > 40
                         ? segment.substring(0, 40) + "..."
                         : segment}
