@@ -44,17 +44,21 @@
         signedUrl = data.signedUrl;
         window.open(signedUrl, "_blank");
     }
+
+    const urlRegex = /^(?:(?:https?:\/\/)?(?:www\.)?(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(?:\/[^\s]*)?$)/i;
 </script>
 
 <h4>Description</h4>
 {#each paragraphs as p}
     <p>
-        {#each p.split(/((?:https?:\/\/)?(?:www\.)?[^\s]+\.[^\s]+)/g) as segment}
-            {#if segment.match(/^(?:https?:\/\/)?(?:www\.)?\S+\.[^\s]+$/)}
-                <a href={segment} target="_blank" rel="noopener noreferrer">
-                    {segment.length > 40
-                        ? segment.substring(0, 40) + "..."
-                        : segment}
+        {#each p.split(/(\b(?:(?:https?:\/\/)?(?:www\.)?(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(?:\/[^\s]*)?)\b)/gi) as segment}
+            {#if segment.match(urlRegex)}
+                <a
+                    href={segment.startsWith('http') ? segment : `https://${segment}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {segment.length > 40 ? segment.substring(0, 40) + "..." : segment}
                 </a>
                 <br />
             {:else}
