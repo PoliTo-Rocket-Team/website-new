@@ -48,7 +48,26 @@
 
 <h4>Description</h4>
 {#each paragraphs as p}
-    <p>{p}</p>
+    <p>
+        {#each p.split(/((?:https?:\/\/)?(?:www\.)?[^\s]+\.[^\s]+)/g) as segment}
+            {#if segment.match(/^(?:https?:\/\/)?(?:www\.)?\S+\.[^\s]+$/)}
+                <a
+                    href={segment.startsWith("http")
+                        ? segment
+                        : `https://${segment}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {segment.length > 40
+                        ? segment.substring(0, 40) + "..."
+                        : segment}
+                </a>
+                <br />
+            {:else}
+                {segment}
+            {/if}
+        {/each}
+    </p>
 {/each}
 <h4>Reason</h4>
 {#each reasonParagraphs as p}
@@ -58,7 +77,7 @@
 {#if quoteName}
     <h4>Quote</h4>
 
-    <button class="btn" on:click={generateSignedUrl}>Download Quote</button>
+    <button class="btn" on:click={generateSignedUrl}>{quoteName}</button>
 {/if}
 
 {#if createdAt}
