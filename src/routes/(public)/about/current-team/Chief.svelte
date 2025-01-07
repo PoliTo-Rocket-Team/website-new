@@ -3,7 +3,7 @@
     import "@fontsource/plus-jakarta-sans/600.css";
     import { normalize } from "./mail";
 
-    export let img: string | null | undefined = undefined;
+    export let img: string | null = null;
     export let angle: number;
     export let firstname: string;
     export let lastname: string;
@@ -13,7 +13,9 @@
 
     $: mail = president
         ? "president@politorocketteam.it"
-        : `${normalize(firstname)}.${normalize(lastname)}@politorocketteam.it`;
+        : `${normalize(firstname.toLowerCase())}.${normalize(
+        lastname.toLowerCase()
+    )}@politorocketteam.it`;
 </script>
 
 <div
@@ -42,7 +44,9 @@
         <span class="name">{firstname} {lastname}</span>
         <span class="role">{role}</span>
         <div class="socials">
-            <IconLink icon="LinkedIn" id={linkedin} />
+            {#if linkedin}
+                <IconLink icon="LinkedIn" id={linkedin} />
+            {/if}
             <IconLink icon="Email" id={mail} />
         </div>
     </div>
