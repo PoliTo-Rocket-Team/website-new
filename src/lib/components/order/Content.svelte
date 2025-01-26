@@ -44,11 +44,28 @@
         signedUrl = data.signedUrl;
         window.open(signedUrl, "_blank");
     }
+
+    const urlRegex = /^(?:(?:https?:\/\/)?(?:www\.)?(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(?:\/[^\s]*)?$)/i;
 </script>
 
 <h4>Description</h4>
 {#each paragraphs as p}
-    <p>{p}</p>
+    <p>
+        {#each p.split(/(\b(?:(?:https?:\/\/)?(?:www\.)?(?:[a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(?:\/[^\s]*)?)\b)/gi) as segment}
+            {#if segment.match(urlRegex)}
+                <a
+                    href={segment.startsWith('http') ? segment : `https://${segment}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    {segment.length > 40 ? segment.substring(0, 40) + "..." : segment}
+                </a>
+                <br />
+            {:else}
+                {segment}
+            {/if}
+        {/each}
+    </p>
 {/each}
 <h4>Reason</h4>
 {#each reasonParagraphs as p}
@@ -58,7 +75,7 @@
 {#if quoteName}
     <h4>Quote</h4>
 
-    <button class="btn" on:click={generateSignedUrl}>Download Quote</button>
+    <button class="btn" on:click={generateSignedUrl}>{quoteName}</button>
 {/if}
 
 {#if createdAt}

@@ -126,7 +126,7 @@ export async function save(
 
         if (quote?.name) {
             const file = quote as File;
-            const newFileName = `${generateUniqueString(8)}_${file.name}`;
+            const newFileName = `${file.name}_${generateUniqueString(8)}`;
             const { data: uploadData, error: uploadError } =
                 await supabase.storage
                     .from("quotes")

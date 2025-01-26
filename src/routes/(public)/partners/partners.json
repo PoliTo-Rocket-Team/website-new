@@ -71,7 +71,7 @@
             "With dedicated consulting and training, ESSS supports innovation and helps customers achieve new standards of competitiveness."
         ]
     },
-    
+
     {
         "name": "JEToP",
         "img": "JEToP.png",
@@ -87,6 +87,17 @@
         "texts": [
             "Mul2 Research Group is a research project within Politecnico di Torino's Dept. of Mechanical and Aerospace Engineering, devoted to the development of advanced structural models for MULSs with particular attention given to the multifield analysis and the fluid-structure interactions.",
             "Mul2 provides material support, with 3D printers and 3D printing materials, along with technical support for the additive manufacturing processes."
+        ]
+    },
+    {
+        "name": "Astrospace",
+        "img": "astrospace.png",
+        "link": "https://www.astrospace.it/",
+        "localTheme": "light",
+        "texts": [
+            "Astrospace is an innovative startup dedicated to sharing humanity's journey through space. Through social media, the ORBIT platform, and an information portal, it provides updates on space exploration, astronomy, and the space economy. Additionally, it creates books, merchandise, and organizes community events to inspire and engage enthusiasts.",
+
+            "Astrospace supports teams by offering discounted access to the ORBIT platform and promoting activities such as scientific communication, outreach, event organization, and more through collaborative efforts."
         ]
     }
 ]
