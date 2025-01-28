@@ -1,5 +1,40 @@
 [
     {
+        "date": "2024-11-22",
+        "title": "Cassini Hackathon",
+        "body": "The team proudly participated in the 8th CASSINI Hackathon 'Defence and Security', sponsored in collaboration with Fondazione E. Amaldi and EUSPA. This event fostered innovation in space technologies, challenging participants to tackle geospatial intelligence, drone security operations, and space maneuver simulations. Acting as a sponsor, the team was able to connect with students and graduates, mentors and experts, creating a dynamic ecosystem for groundbreaking ideas. The hackathon highlighted the power of collaboration to drive innovation in Europe’s defence and security sectors.",
+        "img": "posts/IRESS1.jpeg",
+        "url": "https://www.linkedin.com/posts/fondazione-e-amaldi_defis-euspace-europeanleagueofeconomycooperation-activity-7269678120851382273-jt43?utm_source=share&utm_medium=member_desktop"
+    },
+    {
+        "date": "2024-10-14",
+        "title": "IAC24 - Milan",
+        "body": "The team attended the 75th International Aeronautical Congress in Milan, showcasing our rocket components and the Cavour rocket at the largest IAC in history. During the event, we participated in the Student Team Challenge, presenting a paper on the sustainable design of our liquid rocket engine Efesto, earning the Geography, Generation, Gender award for our commitment to inclusivity. Additionally, we presented a paper on the innovative structure of Cavour’s fins, highlighting our dedication to engineering excellence and innovation.",
+        "img": "posts/IAC.jpg",
+        "url": "https://www.instagram.com/p/DCJ3SWOCRaU/?img_index=1"
+    },
+    {
+        "date": "2024-7-11",
+        "title": "PLD Award",
+        "body": "Competing among Italy's finest university rocketry teams, we proudly demonstrated exceptional dedication, skills, and teamwork to win the PLD Space Program Management Challenge at IRESS 2024. This prestigious competition tested the management and leadership capabilities through the evaluation of innovative rocket launcher projects. A heartfelt thank you to PLD Space and all collaborators for this incredible opportunity, which marks a significant milestone in our journey toward excellence in space exploration and innovation.",
+        "img": "posts/PLD-Challenge.jpeg",
+        "url": "https://www.linkedin.com/posts/pld-space_spacetalent-activity-7216740388290629632-WDmu?utm_source=share&utm_medium=member_desktop"
+    },
+    {
+        "date": "2024-5-7",
+        "title": "2nd IRESS - Padova ",
+        "body": "The second edition of IRESS, the Italian Rocket Engineering Students Summit, took place in Padova. Our team was deeply honored to participate in this event, which we proudly initiated in 2023. It was inspiring to witness the dedication and exceptional efforts of Team Thrust from Padova in organizing such a remarkable gathering, attended by numerous distinguished guests. A fantastic opportunity to exchange ideas and strengthen the space community among Italian students!",
+        "img": "posts/IRESS-2024.jpeg",
+        "url": "https://www.instagram.com/p/C5-p8pCtJIy/"
+    },
+    {
+        "date": "2024-5-19",
+        "title": "FormNext Expo - Frankfurt",
+        "body": "The Design & Additive Manufacturing Division recently attended FormNext Expo in Frankfurt, Germany, the world’s leading event for additive manufacturing and industrial 3D printing. The exhibition showcased cutting-edge advancements and fostered collaboration among industry leaders and innovators. Our team engaged with experts, gaining valuable insights into emerging technologies. Particular attention was drawn to the innovative design of Cavour’s fins assembly, which sparked significant interest and highlighted our commitment to excellence in aerospace engineering. ",
+        "img": "posts/FormNext.JPG",
+        "url": "https://www.instagram.com/p/CzgVPXVtBLq/?img_index=1"
+    },
+    {
         "date": "2023-5-2",
         "title": "IRESS",
         "body": "The event brought together rocket teams from major Italian universities, promoting collaboration and networking among students, professionals, and industry leaders in the field of Rocket and Space Engineering. The summit provided a platform for students to showcase their projects, share ideas, and discuss the realities and challenges of this field. ",
