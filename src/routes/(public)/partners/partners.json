@@ -10,13 +10,14 @@
         ]
     },
     {
-        "name": "BETA CAE Systems",
-        "link": "https://www.beta-cae.com/",
-        "img": "BETA_CAE_Systems.svg",
+        "name": "Siemens",
+        "img": "siemens.png",
+        "link": "https://www.siemens.com/it/it.html",
         "localTheme": "light",
         "texts": [
-            "BETA CAE Systems transformed CAE by introducing revolutionary automation software tools and practices into Simulation and Analysis processes almost 30 years ago. Today, BETA CAE Systems is a world leader of Engineering Simulation, thanks to their softwares deployed in the Aerospace, Defense, Automotive, Biomechanics, Electronics, Energy and other Industries.",
-            "BETA CAE Systems provides material support with the ANSA and META software suites, as well as technical support to the Team."
+            "Siemens is one of the world's largest industrial conglomerates, operating in several sectors including energy, aerospace, and digital services. Siemens PLM software represents a comprehensive suite of tools designed to manage and optimize the entire lifecycle of a product, from conception through production to the end of its useful life. These tools enable integration between the various modules, ensuring smooth management of data and activities.",
+
+            "Siemens provides a comprehensive suite of software that will be critical for the Team to take its activities forward."
         ]
     },
     {
@@ -100,15 +101,15 @@
             "Astrospace supports teams by offering discounted access to the ORBIT platform and promoting activities such as scientific communication, outreach, event organization, and more through collaborative efforts."
         ]
     },
+
     {
-        "name": "Siemens",
-        "img": "siemens.png",
-        "link": "https://www.siemens.com/it/it.html",
+        "name": "BETA CAE Systems",
+        "link": "https://www.beta-cae.com/",
+        "img": "BETA_CAE_Systems.svg",
         "localTheme": "light",
         "texts": [
-            "Siemens is one of the world's largest industrial conglomerates, operating in several sectors including energy, aerospace, and digital services. Siemens PLM software represents a comprehensive suite of tools designed to manage and optimize the entire lifecycle of a product, from conception through production to the end of its useful life. These tools enable integration between the various modules, ensuring smooth management of data and activities.",
-
-            "Siemens provides a comprehensive suite of software that will be critical for the Team to take its activities forward."
+            "BETA CAE Systems transformed CAE by introducing revolutionary automation software tools and practices into Simulation and Analysis processes almost 30 years ago. Today, BETA CAE Systems is a world leader of Engineering Simulation, thanks to their softwares deployed in the Aerospace, Defense, Automotive, Biomechanics, Electronics, Energy and other Industries.",
+            "BETA CAE Systems provides material support with the ANSA and META software suites, as well as technical support to the Team."
         ]
     }
 ]
