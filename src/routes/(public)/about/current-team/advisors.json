@@ -21,14 +21,6 @@
         "img": "/members/Loiodice.jpg"
     },
     {
-        "firstname": "Matteo",
-        "lastname": "Crachi",
-        "linkedin": "matteo-crachi-37a060161",
-        "role": "Efesto",
-        "img": "https://xhppdswwlhomojrlakdk.supabase.co/storage/v1/object/public/people-pics/8-Crachi.jpeg",
-        "mail": null
-    },
-    {
         "firstname": "Francesca",
         "lastname": "Bracaglia",
         "linkedin": "francesca bracaglia",
@@ -48,14 +40,6 @@
         "lastname": "Pezzolato",
         "linkedin": "lorenzopezzolato",
         "role": "Additive Manufacturing",
-        "img": null,
-        "mail": null
-    },
-    {
-        "firstname": "Marco Romano",
-        "lastname": "Delogu",
-        "linkedin": "marco-romano-delogu-637165225",
-        "role": "Thrust Chamber Assembly",
         "img": null,
         "mail": null
     }
