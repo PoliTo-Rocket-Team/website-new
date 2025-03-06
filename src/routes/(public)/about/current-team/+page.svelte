@@ -157,13 +157,15 @@
                         />
                     {/if}
                     {#each leads as lead}
-                        <Lead
-                            firstname={lead.first_name}
-                            lastname={lead.last_name}
-                            linkedin={lead.linkedin}
-                            role={lead.division}
-                            img={getImg(lead.id4pp, lead.last_name)}
-                        />
+                        {#if lead.id4pp !== coordinator1?.id4pp && lead.id4pp !== coordinator2?.id4pp}
+                            <Lead
+                                firstname={lead.first_name}
+                                lastname={lead.last_name}
+                                linkedin={lead.linkedin}
+                                role={lead.division}
+                                img={getImg(lead.id4pp, lead.last_name)}
+                            />
+                        {/if}
                     {/each}
                 </ul>
             </div>
