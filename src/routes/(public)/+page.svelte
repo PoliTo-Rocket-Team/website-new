@@ -338,7 +338,7 @@
                         href="https://www.politorocketteam.it/projects/VES"
                         >Project VES
                     </a>, we aim to represent Italy and Politecnico di Torino
-                    once again at the world's largest rocketry competition, and
+                    once again at the world's largest rocketry competition, <a href='https://www.soundingrocket.org/' target="_blank"> IREC</a>, and
                     aim for the Italian altitude record!
                 </Event>
             </div>
