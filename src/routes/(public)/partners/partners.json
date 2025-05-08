@@ -21,6 +21,17 @@
         ]
     },
     {
+        "name": "EvoMisure",
+        "img": "evomisure.svg",
+        "link": "https://www.evomisure.it/",
+        "localTheme": "light",
+        "texts": [
+            "EvoMisure, founded in 2016, aims to provide turnkey measurement solutions, customized for aerodynamic applications. It supplies probes for velocity and pressure measurements,  customized and flexible rakes, suitable for both wind tunnel testing and real-world applications. EvoMisure sensors enable companies to implement precise and reliable measurement systems.",
+
+            "EvoMisure is supporting the Polito Rocket Team with the development of a wind tunnel test. The ease of use of their sensors, compact design, and low weight make them ideal for future flight tests as well."
+        ]
+    },
+    {
         "name": "ASSOCAM Scuola Camerana",
         "link": "https://www.scuolacamerana.it/",
         "img": "Camerana.png",
@@ -88,6 +99,17 @@
         "texts": [
             "Mul2 Research Group is a research project within Politecnico di Torino's Dept. of Mechanical and Aerospace Engineering, devoted to the development of advanced structural models for MULSs with particular attention given to the multifield analysis and the fluid-structure interactions.",
             "Mul2 provides material support, with 3D printers and 3D printing materials, along with technical support for the additive manufacturing processes."
+        ]
+    },
+    {
+        "name": "Magicar",
+        "img": "magicar.jpg",
+        "link": null,
+        "localTheme": null,
+        "texts": [
+            "Distinguished by outstanding professionalism and dedication, Carrozzeria Magicar of Fossano (CN) is an example of the commitment and passion of the Italian and Piedmontese entrepreneurship.",
+
+            "We are proud to have Magicar as a partner in the Vittorio Emanuele II (VES) project, where their expertise plays a key role in designing and crafting the vehicle's livery. Their support brings quality and character to a project that celebrates innovation and heritage."
         ]
     },
     {
