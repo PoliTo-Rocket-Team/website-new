@@ -58,12 +58,14 @@
                     {#each texts as t}
                         <p>{t}</p>
                     {/each}
-                    <a
-                        class="main--link"
-                        href={link}
-                        target="_blank"
-                        on:click={preventNav}>Visit their website</a
-                    >
+                    {#if link}
+                        <a
+                            class="main--link"
+                            href={link}
+                            target="_blank"
+                            on:click={preventNav}>Visit their website</a
+                        >
+                    {/if}
                 </div>
             {:else}
                 <div class="img-wrapper" data-theme={localTheme}>
