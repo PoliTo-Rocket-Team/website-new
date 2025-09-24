@@ -16,8 +16,18 @@
     export let data;
 
     function getAngle(i: number) {
-        return ((i / (data.subteams.length - 1)) * 2 - 1) * Math.PI * 0.3;
+        return ((i / (data.subteams.length - 1)) * 2 - 1) * Math.PI * 0.32;
     }
+
+    function getRadius(i: number) {
+        // Alternate between outer and inner circles
+        // i=0 (first chief) -> outer circle (36rem) - bigger
+        // i=1 (second chief) -> inner circle (22rem) - smaller
+        // i=2 (third chief) -> outer circle (36rem) - bigger
+        // i=3 (fourth chief) -> inner circle (22rem) - smaller
+        return i % 2 === 0 ? 40 : 26;
+    }
+
     function getImg(id: number | null, lastname: string) {
         return !id ? null : `${data.ppBucket}${id}-${normalize(lastname)}.jpeg`;
     }
@@ -104,6 +114,7 @@
                     linkedin={c.linkedin}
                     role={c.title}
                     angle={getAngle(i)}
+                    radius={getRadius(i)}
                     img={getImg(c.id4pp, c.last_name)}
                 />
             {/each}
@@ -120,7 +131,7 @@
             let:leads
         >
             <div class="lead-panel">
-                <h2 class="center">{name} Leads</h2>
+                <h2 class="center">{name} Department</h2>
                 <ul class="lead-list">
                     <Lead
                         firstname={chief.first_name}
@@ -275,6 +286,7 @@
     .executive-view {
         position: relative;
         --radius: 26rem;
+        margin-bottom: 20rem;
         /* border: 2px solid red; */
     }
 
