@@ -5,6 +5,7 @@
 
     export let img: string | null = null;
     export let angle: number;
+    export let radius: number = 26; // Default radius in rem
     export let firstname: string;
     export let lastname: string;
     export let role: string;
@@ -14,8 +15,8 @@
     $: mail = president
         ? "president@politorocketteam.it"
         : `${normalize(firstname.toLowerCase())}.${normalize(
-        lastname.toLowerCase()
-    )}@politorocketteam.it`;
+              lastname.toLowerCase()
+          )}@politorocketteam.it`;
 </script>
 
 <div
@@ -24,6 +25,7 @@
     style:--cos={Math.sin(angle)}
     style:--sin={Math.cos(angle)}
     style:--tilt="{-angle}rad"
+    style:--radius="{radius}rem"
 >
     <div class="img">
         {#if img}
@@ -57,7 +59,7 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        margin-bottom: var(--pad);
+        margin-bottom: 10rem;
     }
     .img {
         width: 7.2rem;
