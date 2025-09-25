@@ -5,7 +5,7 @@
 
     export let img: string | null = null;
     export let angle: number;
-    export let radius: number = 26; // Default radius in rem
+    // export let radius: number = 26; // Default radius in rem
     export let firstname: string;
     export let lastname: string;
     export let role: string;
@@ -25,7 +25,7 @@
     style:--cos={Math.sin(angle)}
     style:--sin={Math.cos(angle)}
     style:--tilt="{-angle}rad"
-    style:--radius="{radius}rem"
+    
 >
     <div class="img">
         {#if img}

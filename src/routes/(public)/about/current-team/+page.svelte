@@ -15,17 +15,72 @@
 
     export let data;
 
-    function getAngle(i: number) {
-        return ((i / (data.subteams.length - 1)) * 2 - 1) * Math.PI * 0.32;
-    }
+    // Transform subteams: separate operations, R&D from others
+    let operationsSubteam = data.subteams.find(
+        s =>
+            s.name.toLowerCase().includes("operations") ||
+            s.code.toLowerCase() === "ops"
+    );
+    let researchDevelopmentSubteam = data.subteams.find(
+        s =>
+            s.name.toLowerCase().includes("research") ||
+            s.name.toLowerCase().includes("development") ||
+            s.code.toLowerCase() === "r&d"
+    );
+    let nonOperationsSubteams = data.subteams.filter(
+        s =>
+            !s.name.toLowerCase().includes("operations") &&
+            s.code.toLowerCase() !== "ops" &&
+            !s.name.toLowerCase().includes("research") &&
+            !s.name.toLowerCase().includes("development") &&
+            s.code.toLowerCase() !== "r&d"
+    );
 
-    function getRadius(i: number) {
-        // Alternate between outer and inner circles
-        // i=0 (first chief) -> outer circle (36rem) - bigger
-        // i=1 (second chief) -> inner circle (22rem) - smaller
-        // i=2 (third chief) -> outer circle (36rem) - bigger
-        // i=3 (fourth chief) -> inner circle (22rem) - smaller
-        return i % 2 === 0 ? 40 : 26;
+    // Find propulsion subteam to get coordinators data
+    let propulsionSubteam = data.subteams.find(
+        s =>
+            s.name.toLowerCase().includes("propulsion") ||
+            s.code.toLowerCase() === "pro"
+    );
+
+    // Create a new "Divisions" subteam from non-operations subteams
+    let divisionsSubteam = {
+        name: "",
+        code: "",
+        chief: {
+            first_name: propulsionSubteam!.coordinator1!.first_name,
+            last_name: propulsionSubteam!.coordinator1!.last_name,
+            linkedin: propulsionSubteam!.coordinator1!.linkedin,
+            id4pp: propulsionSubteam!.coordinator1!.id4pp,
+            title: "Chief Engineer",
+        },
+        coordinator1: {
+            first_name: propulsionSubteam!.coordinator2!.first_name,
+            last_name: propulsionSubteam!.coordinator2!.last_name,
+            linkedin: propulsionSubteam!.coordinator2!.linkedin,
+            id4pp: propulsionSubteam!.coordinator2!.id4pp,
+            title: "Project Manager",
+        },
+        coordinator2: null,
+        // Convert non-operations subteams chiefs to leads
+        leads: nonOperationsSubteams.map(subteam => ({
+            first_name: subteam.chief.first_name,
+            last_name: subteam.chief.last_name,
+            linkedin: subteam.chief.linkedin,
+            id4pp: subteam.chief.id4pp,
+            acting: false,
+            division: `Head of ${subteam.name} Department`,
+        })),
+    };
+
+    // Final transformed subteams array
+    let transformedSubteams = [divisionsSubteam];
+    if (operationsSubteam) transformedSubteams.push(operationsSubteam);
+    if (researchDevelopmentSubteam)
+        transformedSubteams.push(researchDevelopmentSubteam);
+
+    function getAngle(i: number) {
+        return ((i / (transformedSubteams.length - 1)) * 2 - 1) * Math.PI * 0.3;
     }
 
     function getImg(id: number | null, lastname: string) {
@@ -106,24 +161,34 @@
                 angle={0}
                 president
             />
-            {#each data.subteams as s, i}
+            {#each transformedSubteams as s, i}
                 {@const c = s.chief}
                 <Chief
                     firstname={c.first_name}
                     lastname={c.last_name}
                     linkedin={c.linkedin}
                     role={c.title}
-                    angle={getAngle(i)}
-                    radius={getRadius(i)}
+                    angle={getAngle(i+ 0.4)}
                     img={getImg(c.id4pp, c.last_name)}
                 />
+                {#if s.coordinator1}
+                    {@const c2 = s.coordinator1}
+                    <Chief
+                        firstname={c2.first_name}
+                        lastname={c2.last_name}
+                        linkedin={c2.linkedin}
+                        role={c2.title}
+                        angle={getAngle(i - 0.35)}
+                        img={getImg(c2.id4pp, c2.last_name)}
+                    />
+                {/if}
             {/each}
         </div>
     </section>
     <section>
         <HTabbed
             expand={ww + "px"}
-            data={data.subteams}
+            data={transformedSubteams}
             let:name
             let:chief
             let:coordinator1
@@ -131,7 +196,7 @@
             let:leads
         >
             <div class="lead-panel">
-                <h2 class="center">{name} Department</h2>
+                <h2 class="center">{name} Departments</h2>
                 <ul class="lead-list">
                     <Lead
                         firstname={chief.first_name}
@@ -146,7 +211,7 @@
                             firstname={coordinator1.first_name}
                             lastname={coordinator1.last_name}
                             linkedin={coordinator1.linkedin}
-                            role="Coordinator"
+                            role="Project Manager"
                             img={getImg(
                                 coordinator1.id4pp,
                                 coordinator1.last_name
@@ -159,7 +224,7 @@
                             firstname={coordinator2.first_name}
                             lastname={coordinator2.last_name}
                             linkedin={coordinator2.linkedin}
-                            role="Coordinator"
+                            role="Project Manager"
                             img={getImg(
                                 coordinator2.id4pp,
                                 coordinator2.last_name
@@ -286,7 +351,7 @@
     .executive-view {
         position: relative;
         --radius: 26rem;
-        margin-bottom: 20rem;
+        /* margin-bottom: 20rem; */
         /* border: 2px solid red; */
     }
 
