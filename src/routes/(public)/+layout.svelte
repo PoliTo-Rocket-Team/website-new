@@ -61,7 +61,7 @@
 <div class="nav-container">
     <nav id="page-nav" class:hide class:down>
         <div class="max-width-wrapper">
-            <a href="/" data-umami-event="Logo Click" class="logo">
+            <a href="/" data-umami-event="Logo Button on navbar" class="logo">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 100 118.2842712"
@@ -168,7 +168,7 @@
                     <a
                         data-sveltekit-replacestate={open || null}
                         class="nav-entry"
-                        data-umami-event="OutreachPage"
+                        data-umami-event="Outreach Button"
                         href="/outreach">Outreach</a
                     >
                 </li>
@@ -176,7 +176,7 @@
                     <a
                         data-sveltekit-replacestate={open || null}
                         class="nav-entry"
-                        data-umami-event="PartnersPage"
+                        data-umami-event="Partners Button"
                         href="/partners">Partners</a
                     >
                 </li>
@@ -184,7 +184,7 @@
                     <a
                         data-sveltekit-replacestate={open || null}
                         class="nav-entry"
-                        data-umami-event="ApplyPage"
+                        data-umami-event="Apply Button on navbar"
                         href="/apply">Apply</a
                     >
                 </li>
