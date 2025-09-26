@@ -26,6 +26,7 @@
             Building rockets does not come easy. If you wish to become our
             partner with financial, technical, or material support, or with any
             other service provision, contact us at <a
+                data-umami-event="Contact email link on partners page"
                 href="mailto:info@politorocketteam.it"
                 >info@politorocketteam.it</a
             >

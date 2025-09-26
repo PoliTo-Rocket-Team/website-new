@@ -21,7 +21,9 @@
         <div class="body">
             <slot />
         </div>
-        <a href={url} class="cta" target="_blank" rel="noopener">See more</a>
+        <a href={url} 
+        data-umami-event="See more button for: {title}"
+        class="cta" target="_blank" rel="noopener">See more</a>
     </div>
 </article>
 

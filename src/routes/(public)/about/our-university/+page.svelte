@@ -30,7 +30,7 @@
         <h1>Politecnico di Torino</h1>
         <div class="text-cols">
             <p>
-                The <a href="https://www.polito.it/" target="_blank"
+                The <a data-umami-event="Polito link on our university page" href="https://www.polito.it/" target="_blank"
                     >Politecnico di Torino</a
                 > is the first engineering school in Italy, founded in 1859 as the
                 "Scuola di Applicazione per gli Ingegneri" (School of Application

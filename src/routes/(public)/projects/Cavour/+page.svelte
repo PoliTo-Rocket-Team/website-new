@@ -53,7 +53,7 @@
             Rocket Team's first project is named after him.
         </p>
         <p>
-            In accord with the Team's <a href="/about/mission-vision"
+            In accord with the Team's <a data-umami-event="Mission & Vision link on cavour page" href="/about/mission-vision"
                 >Mission & Vision</a
             >, Cavour's design is simple and pragmatic, thought to draw the way
             for future projects. It is also the first rocket of the

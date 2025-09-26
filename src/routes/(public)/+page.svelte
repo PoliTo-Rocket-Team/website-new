@@ -120,9 +120,9 @@
                 great plans for the future.
             </p>
             <div class="btns">
-                <a href="/projects" class="btn">Our Projects</a>
-                <a href="/about/mission-vision" class="btn">Mission & Vision</a>
-                <a href="/about/current-team" class="btn">The Team</a>
+                <a href="/projects" class="btn" data-umami-event="Our Projects">Our Projects</a>
+                <a href="/about/mission-vision" class="btn" data-umami-event="Mission & Vision">Mission & Vision</a>
+                <a href="/about/current-team" class="btn" data-umami-event="The Team">The Team</a>
             </div>
         </div>
     </section>
@@ -347,10 +347,11 @@
     <section aria-labelledby="contact-title">
         <h2 id="contact-title">Get in touch</h2>
         <div class="blur-behind">
-            <p>
+            <p >
                 We are eager to get in touch with you! Whether you want to join
                 us, become our partner, or simply know something more about us,
                 feel free to write us an email: <a
+                    data-umami-event="Email Link on homepage"
                     href="mailto:info@politorocketteam.it"
                     >info@politorocketteam.it</a
                 >
@@ -361,6 +362,7 @@
             </p>
             <div class="socials">
                 <a
+                    data-umami-event="Instagram Link on homepage"
                     href="https://instagram.com/politorocketteam?igshid=YmMyMTA2M2Y="
                     target="_blank"
                     rel="noreferrer"
@@ -425,6 +427,7 @@
                     </svg>
                 </a>
                 <a
+                    data-umami-event="Linkedin Link on homepage"
                     href="https://www.linkedin.com/company/politorocketteam"
                     target="_blank"
                     rel="noreferrer"
@@ -449,6 +452,7 @@
                     </svg>
                 </a>
                 <a
+                    data-umami-event="Twitter Link on homepage"
                     href="https://twitter.com/PoliTo_RT"
                     target="_blank"
                     rel="noreferrer"

@@ -10,7 +10,7 @@
 <li>
     {#if linkedin}
         <div class="float">
-            <IconLink icon="LinkedIn" id={linkedin} />
+            <IconLink fullName="{first_name} {last_name}"  icon="LinkedIn" id={linkedin} />
         </div>
     {/if}
     <span class="name">{first_name} {last_name}</span>

@@ -15,9 +15,10 @@
 </script>
 
 <Wrapper>
-    <Header role={name} {subteam} {division} {code} slot="header" />
+    <Header 
+    role={name} {subteam} {division} {code} slot="header" />
     <svelte:fragment slot="content">
-        <Content {description} {required} {desirable} {form} />
+        <Content name={name} {description} {required} {desirable} {form} />
         <Disclaimer />
     </svelte:fragment>
 </Wrapper>

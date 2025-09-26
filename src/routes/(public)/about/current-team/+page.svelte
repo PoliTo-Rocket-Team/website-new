@@ -45,7 +45,7 @@
 
     // Create a new "Divisions" subteam from non-operations subteams
     let divisionsSubteam = {
-        name: "",
+        name: "Amerigo Vespucci Departments",
         code: "",
         chief: {
             first_name: propulsionSubteam!.coordinator1!.first_name,
@@ -168,7 +168,7 @@
                     lastname={c.last_name}
                     linkedin={c.linkedin}
                     role={c.title}
-                    angle={getAngle(i+ 0.4)}
+                    angle={getAngle(i + 0.4)}
                     img={getImg(c.id4pp, c.last_name)}
                 />
                 {#if s.coordinator1}
@@ -196,7 +196,14 @@
             let:leads
         >
             <div class="lead-panel">
-                <h2 class="center">{name} Departments</h2>
+                {#if !name.toLowerCase().includes("department") && !name
+                        .toLowerCase()
+                        .includes("departments")}
+                    <h2 class="center">{name} Department</h2>
+                {:else}
+                    <h2 class="center">{name}</h2>
+                {/if}
+
                 <ul class="lead-list">
                     <Lead
                         firstname={chief.first_name}

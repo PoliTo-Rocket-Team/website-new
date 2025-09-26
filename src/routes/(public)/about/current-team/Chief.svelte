@@ -47,9 +47,9 @@
         <span class="role">{role}</span>
         <div class="socials">
             {#if linkedin}
-                <IconLink icon="LinkedIn" id={linkedin} />
+                <IconLink fullName="{firstname} {lastname}" icon="LinkedIn" id={linkedin} />
             {/if}
-            <IconLink icon="Email" id={mail} />
+            <IconLink fullName="{firstname} {lastname}" icon="Email" id={mail} />
         </div>
     </div>
 </div>
