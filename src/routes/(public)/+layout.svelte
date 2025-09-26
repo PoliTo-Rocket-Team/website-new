@@ -13,7 +13,7 @@
         { url: "mission-vision", name: "Mission" },
         { url: "current-team", name: "The Team" },
         { url: "past-teams", name: "Past Teams" },
-        { url: "our-university", name: "Our university" }
+        { url: "our-university", name: "Our university" },
     ];
     const projectsCombo: ComboRoute[] = [
         { url: "Cavour", name: "Cavour" },
@@ -61,7 +61,7 @@
 <div class="nav-container">
     <nav id="page-nav" class:hide class:down>
         <div class="max-width-wrapper">
-            <a href="/" class="logo">
+            <a href="/" data-umami-event="Logo Button on navbar" class="logo">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 100 118.2842712"
@@ -145,6 +145,7 @@
                     <a
                         data-sveltekit-replacestate={open || null}
                         class="nav-entry"
+                        data-umami-event="Home Button"
                         href="/">Home</a
                     >
                 </li>
@@ -167,6 +168,7 @@
                     <a
                         data-sveltekit-replacestate={open || null}
                         class="nav-entry"
+                        data-umami-event="Outreach Button"
                         href="/outreach">Outreach</a
                     >
                 </li>
@@ -174,6 +176,7 @@
                     <a
                         data-sveltekit-replacestate={open || null}
                         class="nav-entry"
+                        data-umami-event="Partners Button"
                         href="/partners">Partners</a
                     >
                 </li>
@@ -181,6 +184,7 @@
                     <a
                         data-sveltekit-replacestate={open || null}
                         class="nav-entry"
+                        data-umami-event="Apply Button on navbar"
                         href="/apply">Apply</a
                     >
                 </li>

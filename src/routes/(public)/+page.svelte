@@ -92,7 +92,7 @@
 </header>
 <main bind:this={main}>
     <section aria-labelledby="identity-title">
-        <div class="logos blur-behind" >
+        <div class="logos blur-behind">
             <a href="https://www.polito.it/" target="_blank">
                 <img
                     src={currentTheme === "dark"
@@ -120,10 +120,56 @@
                 great plans for the future.
             </p>
             <div class="btns">
-                <a href="/projects" class="btn">Our Projects</a>
-                <a href="/about/mission-vision" class="btn">Mission & Vision</a>
-                <a href="/about/current-team" class="btn">The Team</a>
+                <a
+                    href="/projects"
+                    class="btn"
+                    data-umami-event="Our Projects link on homepage"
+                    >Our Projects</a
+                >
+                <a
+                    href="/about/mission-vision"
+                    class="btn"
+                    data-umami-event="Mission & Vision link on homepage"
+                    >Mission & Vision</a
+                >
+                <a
+                    href="/about/current-team"
+                    class="btn"
+                    data-umami-event="The Team link on homepage">The Team</a
+                >
             </div>
+        </div>
+    </section>
+    <section aria-labelledby="spac">
+        <h2 id="spac">Pointing high in Texas!</h2>
+        <div class="blur-behind">
+            <img
+                src="/img/IREC-2025logo.png"
+                alt="International Rocket Engineering Competition logo"
+                class="float irec-image"
+            />
+            <p>
+                PoliTo Rocket Team competed at the International Rocket
+                Engineering Competition <a
+                    href="https://www.soundingrocket.org/2025-irec.html"
+                    target="_blank">(IREC)</a
+                > in June 2025, winning 1st place in “Design and Build quality”!
+            </p>
+
+            <p>
+                Our first supersonic rocket, VES Mark II, aimed for an apogee of
+                9,000 m and a maximum speed of Mach 1.8. Unfortunately, its
+                launch attempt ended in a CATO (Catastrophic Aborted Take-Off)
+                caused by a faulty commercially purchased Aerotech O5500-PS
+                solid rocket motor.
+            </p>
+
+            <p>
+                Despite the setback, Project VES made its mark in the Texas
+                desert, earning 1st place for Design and Build Quality and
+                ranking 16th for the Technical Report among over 140
+                participating universities.
+            </p>
         </div>
     </section>
     <section aria-labelledby="spac">
@@ -147,26 +193,24 @@
             <p>
                 We competed again in 2024 with <a
                     href="https://www.politorocketteam.it/projects/VES"
-                    >Project VES</a
-                >, our biggest rocket. The Vittorio Emanuele II Rocket (VES) was
-                launched on October 12 at 14:19 (UTC+1). The flight was nominal,
+                    >Project VES.</a
+                > The rocket was
+                launched on October 12 at 14:19 (UTC+1) from Portugal. The flight was nominal,
                 reaching an apogee of approximately 3160m. The drogue parachute
                 deployed at apogee, reducing the rocket’s descent velocity to
                 about 30m/s. The main parachute separation was successful;
-                however the upper and lower rocket sections, each equipped with
-                their own parachute, were separated during the descent. Both
-                sections were located and recovered, and VES is now back in
-                Turin ready to be reused.
+                however, the upper and lower rocket sections, each equipped with
+                its own parachute, were separated during the descent. Both
+                sections were located and recovered, and VES went back to
+                Turin, ready to be reused.
             </p>
 
             <p>
                 With VES, the Team was at its 2nd EuRoC participation and ranked
-                4th out of 20 for vehicle quality, and 6th out of 20
-                participating teams and out of 55 total teams in the general
+                4th out of 20 for vehicle quality, 6th out of 20
+                participating teams, and out of 55 total teams in the general
                 ranking. PRT received a larger score than some of Europe’s most
-                experienced teams, and improved on the 2023 performance. It was
-                also the highest score ever from a team from Politecnico di
-                Torino.
+                experienced teams improving on the 2023 performance.
             </p>
         </div>
     </section>
@@ -179,7 +223,7 @@
                 class="float"
             />
             <p>
-                PoliTo Rocket Team was the first Italian rocketry team to have
+                PoliTo Rocket Team was the first Italian rocketry team to
                 participated at the <a
                     href="https://spaceportamericacup.com/"
                     target="_blank"
@@ -192,7 +236,7 @@
                 22nd from the launchpad B2 from the Vertical Launch Area of
                 Spaceport America, at 9:20 local time. The launch was a success!
                 The flight was nominal and the rocket was recovered in good
-                conditions and it can be reused
+                conditions and it can be reused. 
             </p>
 
             <p>
@@ -207,8 +251,8 @@
             <p>
                 PoliTo Rocket Team competed with the <a href="/projects/Cavour"
                     >Cavour rocket</a
-                > in the 10 ft apogee AGL COTS category with a target apogee of around
-                3km.The Team ranked 13th in its category and 20th overall with 119
+                > in the 10000 ft apogee AGL COTS category with a target apogee of around
+                3km.The Team ranked 13th in its category and 20th overall, with 119
                 teams participating and over 150 total teams. PRT also won the prestigious
                 Dr. Gil Moore Technical Award for Innovation, one of the few technical
                 awards, for its extensive use of 3D-printed internal components!
@@ -338,8 +382,10 @@
                         href="https://www.politorocketteam.it/projects/VES"
                         >Project VES
                     </a>, we aim to represent Italy and Politecnico di Torino
-                    once again at the world's largest rocketry competition, <a href='https://www.soundingrocket.org/' target="_blank"> IREC</a>, and
-                    aim for the Italian altitude record!
+                    once again at the world's largest rocketry competition,
+                    <a href="https://www.soundingrocket.org/" target="_blank">
+                        IREC</a
+                    >, and aim for the Italian altitude record!
                 </Event>
             </div>
         </div>
@@ -349,8 +395,9 @@
         <div class="blur-behind">
             <p>
                 We are eager to get in touch with you! Whether you want to join
-                us, become our partner, or simply know something more about us,
+                us, become our partner, or simply know more about us,
                 feel free to write us an email: <a
+                    data-umami-event="Email Link on homepage"
                     href="mailto:info@politorocketteam.it"
                     >info@politorocketteam.it</a
                 >
@@ -361,6 +408,7 @@
             </p>
             <div class="socials">
                 <a
+                    data-umami-event="Instagram Link on homepage"
                     href="https://instagram.com/politorocketteam?igshid=YmMyMTA2M2Y="
                     target="_blank"
                     rel="noreferrer"
@@ -425,6 +473,7 @@
                     </svg>
                 </a>
                 <a
+                    data-umami-event="Linkedin Link on homepage"
                     href="https://www.linkedin.com/company/politorocketteam"
                     target="_blank"
                     rel="noreferrer"
@@ -449,6 +498,7 @@
                     </svg>
                 </a>
                 <a
+                    data-umami-event="Twitter Link on homepage"
                     href="https://twitter.com/PoliTo_RT"
                     target="_blank"
                     rel="noreferrer"
@@ -746,12 +796,12 @@
     }
 
     .logos {
-            margin: 3rem auto;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+        margin: 3rem auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 
     .logos img {
         width: 16rem;
@@ -766,8 +816,6 @@
         header button {
             margin-bottom: 1.5rem;
         }
-
-       
     }
     @media (min-width: 50rem) {
         canvas {
@@ -783,7 +831,7 @@
             padding-left: 0.5ch;
             // column-gap: max(1rem, 3vw);
         }
-        
+
         .logos {
             flex-direction: row;
         }

@@ -47,14 +47,15 @@
         <h2 class="smudge">Name and design</h2>
         <p>
             Camillo Benso, Count of Cavour, was one of the leading figures of
-            the Italian Unification and the main promoter of Italy’s industrial
-            and scientific development. He was born in Turin in 1810, and died
-            in Turin in 1861, being the first prime minister of Italy. PoliTo
+            Italian Unification and the main promoter of Italy’s industrial and
+            scientific development. He was born in Turin in 1810 and died in
+            Turin in 1861, being the first prime minister of Italy. PoliTo
             Rocket Team's first project is named after him.
         </p>
         <p>
-            In accord with the Team's <a href="/about/mission-vision"
-                >Mission & Vision</a
+            In accord with the Team's <a
+                data-umami-event="Mission & Vision link on cavour page"
+                href="/about/mission-vision">Mission & Vision</a
             >, Cavour's design is simple and pragmatic, thought to draw the way
             for future projects. It is also the first rocket of the
             <em>Founding Fathers</em> series.
@@ -94,7 +95,7 @@
             <h2 class="smudge">Cost-effective <br />and durable</h2>
             <p>
                 Cavour is the first rocket of the Team, and it must be proven
-                that with the least possible budget the group is capable of
+                that with the least possible budget, the group is capable of
                 designing and manufacturing a durable rocket which can sustain a
                 high-powered flight while fulfilling the mission objectives.
             </p>
@@ -190,7 +191,7 @@
         </p>
         <p>
             Due to the launch site apogee limitation, Cavour had to be launched
-            with a small and less powerful K-class COTS CTI solid motor, that
+            with a small and less powerful K-class COTS CTI solid motor, which
             provided a maximum thrust of 1120.8N. The rocket reached an apogee
             of 1331.2m, staying under the launch site vertical limit. Cavour
             flew with a maximum velocity of 162.7 m/s, around Mach 0.5, with a
@@ -198,7 +199,7 @@
         </p>
         <p>
             The drogue pilot parachute was deployed at apogee, while the main
-            parachute was deployed at high altitudes earlier than anticipated
+            parachute was deployed at high altitudes earlier than anticipated,
             probably due to the malfunctioning of a COTS TD-2 tether, which will
             be investigated. The rocket descended to the ground with a velocity
             of 6.9 m/s and landed softly on the German green grass. Cavour
@@ -242,16 +243,15 @@
     </Launch>
     <Launch name="European Rocketry Challenge" date="2023-10-13" images={euroc}>
         <p>
-            On Friday, October 13rd, at 14:45 (UTC+1), Cavour rocket was
+            On Friday, October 13th, at 14:45 (UTC+1), the Cavour rocket was
             launched for the 3rd time in this year from the launch rail at Santa
             Margarida Military Camp, Portugal.
         </p>
         <p>
             Cavour completed the boost and coast phase nominally, reaching an
             apogee of about 2800m with a maximum speed of 266m/s and a maximum
-            acceleration of 14G. After this phase, Cavour descended hitting the
-            ground at 75m/s, due to an undefined failure of one of the rocket's
-            systems.
+            acceleration of 14G. After this phase, Cavour descended, hitting the
+            ground at 75m/s, due to a recovery system’s failure. 
         </p>
         <p>
             Overall, Cavour's mission at EuRoC ‘23 was a success, being able to

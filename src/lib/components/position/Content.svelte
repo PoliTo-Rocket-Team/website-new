@@ -3,6 +3,8 @@
     export let required: string[] | null;
     export let desirable: string[];
     export let form: string | null;
+    export let name: string | undefined = undefined;
+    export let division: string | undefined = undefined;
 
     $: paragraphs = description.split("\n\n");
 </script>
@@ -30,6 +32,9 @@
 
 {#if form}
     <a
+        data-umami-event={name
+            ? `Apply Button for ${name} position on ${division}`
+            : undefined}
         class="btn"
         href="https://forms.gle/{form}"
         target="_blank"

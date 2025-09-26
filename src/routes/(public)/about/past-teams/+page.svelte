@@ -28,6 +28,7 @@
                             {#if member.linkedin}
                                 <div class="socials">
                                     <IconLink
+                                            fullName={member.name}
                                         icon="LinkedIn"
                                         id={member.linkedin}
                                     />
@@ -51,7 +52,8 @@
             <ul class="no-list">
                 <li class="member">
                     <div class="socials">
-                        <IconLink icon="LinkedIn" id="fabioski01" />
+                        <IconLink 
+                        fullName="Fabio Meloni" icon="LinkedIn" id="fabioski01" />
                     </div>
                     <span class="name">Fabio Meloni</span>
                     <span class="title">Founder</span>
@@ -61,7 +63,8 @@
                 </li>
                 <li class="member">
                     <div class="socials">
-                        <IconLink icon="LinkedIn" id="luca-santoro-b16699151" />
+                        <IconLink 
+                        fullName="Luca Santoro" icon="LinkedIn" id="luca-santoro-b16699151" />
                     </div>
                     <span class="name">Luca Santoro</span>
                     <span class="desc"
@@ -71,6 +74,7 @@
                 <li class="member">
                     <div class="socials">
                         <IconLink
+                            fullName="Elena Dilorenzo"
                             icon="LinkedIn"
                             id="elena-dilorenzo-294b5a20b"
                         />
@@ -80,7 +84,8 @@
                 </li>
                 <li class="member">
                     <div class="socials">
-                        <Icon icon="LinkedIn" id="gregorio-torchia-6514b8210" />
+                        <Icon 
+                        fullName="Gregorio Torchia" icon="LinkedIn" id="gregorio-torchia-6514b8210" />
                     </div>
                     <span class="name">Gregorio Torchia</span>
                     <span class="desc">Legal Advisor</span>
@@ -95,15 +100,15 @@
                 </li>
                 <li class="member">
                     <div class="socials">
-                        <IconLink icon="LinkedIn" id="giacomo-luccisano" />
+                        <IconLink fullName="Giacomo Luccisano" icon="LinkedIn" id="giacomo-luccisano" />
                     </div>
                     <span class="name">Giacomo Luccisano</span>
                     <span class="desc">Avionics Engineer</span>
                 </li>
                 <li class="member">
                     <div class="socials">
-                        <IconLink icon="GitHub" id="Fedesky25" />
-                        <IconLink icon="LinkedIn" id="fedesky25" />
+                        <IconLink fullName="Federico Guglielmi" icon="GitHub" id="Fedesky25" />
+                        <IconLink fullName="Federico Guglielmi" icon="LinkedIn" id="fedesky25" />
                     </div>
                     <span class="name">Federico Guglielmi</span>
                     <span class="desc">Avionics Engineer & IT Manager</span>
@@ -114,6 +119,7 @@
                 <li class="member">
                     <div class="socials">
                         <IconLink
+                            fullName="Cristian Manfredi"
                             icon="LinkedIn"
                             id="cristian-manfredi-478b82194"
                         />
@@ -125,6 +131,7 @@
                 <li class="member">
                     <div class="socials">
                         <IconLink
+                            fullName="Pier Luigi Mercadante"
                             icon="LinkedIn"
                             id="pier-luigi-mercadante-b43125234"
                         />
@@ -156,6 +163,7 @@
                 <li class="member">
                     <div class="socials">
                         <IconLink
+                                fullName="Francesca Bracaglia"
                             icon="LinkedIn"
                             id="francesca-bracaglia-a1000b214"
                         />
@@ -165,7 +173,9 @@
                 </li>
                 <li class="member">
                     <div class="socials">
-                        <IconLink icon="LinkedIn" id="luca-loiodice-01l10" />
+                        <IconLink 
+                        fullName="Luca Loiodice"
+                        icon="LinkedIn" id="luca-loiodice-01l10" />
                     </div>
                     <span class="name">Luca Loiodice</span>
                     <span class="desc"
@@ -174,7 +184,9 @@
                 </li>
                 <li class="member">
                     <div class="socials">
-                        <IconLink icon="LinkedIn" id="fpunzi" />
+                        <IconLink 
+                        fullName="Flora Punzi"
+                        icon="LinkedIn" id="fpunzi" />
                     </div>
                     <span class="name">Flora Punzi</span>
                     <span class="desc">Senior FEA Analyst & Counselor</span>
@@ -185,7 +197,9 @@
                 </li>
                 <li class="member">
                     <div class="socials">
-                        <IconLink icon="LinkedIn" id="edoardoviglietti" />
+                        <IconLink 
+                        fullName="Edoardo Viglietti"
+                        icon="LinkedIn" id="edoardoviglietti" />
                     </div>
                     <span class="name">Edoardo Viglietti</span>
                     <span class="desc">Structural Engineer & FEM Analyst</span>
@@ -202,6 +216,7 @@
                             </svg>
                         </a> -->
                         <IconLink
+                            fullName="Mohammad Yousefi"
                             icon="LinkedIn"
                             id="mohammad-yousefi-1804ba189"
                         />

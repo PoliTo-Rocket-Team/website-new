@@ -3,9 +3,11 @@
     import IconCmp from "./Icon.svelte";
     export let icon: LinkedIcon;
     export let id: string;
+    export let fullName: string;
 </script>
 
 <a
+    data-umami-event={`${fullName} ${icon} icon button`}
     href="{paths[icon]}{id}"
     target="_blank"
     rel="noreferrer"

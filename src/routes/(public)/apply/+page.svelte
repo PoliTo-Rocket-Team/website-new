@@ -25,7 +25,9 @@
             Here you can find our Open Positions and some Frequently Asked
             Questions about our recruitment process or about the Team. If you
             still have some questions, don’t hesitate to reach out to us on
-            social media or at <a href="mailto:recruitment@politorocketteam.it"
+            social media or at <a 
+            data-umami-event="Recruitment email link on apply page"
+            href="mailto:recruitment@politorocketteam.it"
                 >recruitment@politorocketteam.it</a
             >
         </p>
@@ -35,7 +37,7 @@
             <h2 id="positions">Open positions</h2>
             <div class="position-labels on-lg" aria-hidden="true">
                 <span>Role</span>
-                <span>Subteam</span>
+                <span>Department</span>
                 <span>Division</span>
                 <div class="code-label"><span>Code</span></div>
             </div>

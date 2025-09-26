@@ -1,5 +1,5 @@
 {
-    "models": ["VES 130-98-6", "VES 130-98-4", "VES 130-75-4"],
+    "models": ["VES Mark II", "VES Mark I", "VES Test Version"],
     "fields": [
         {
             "name": "Diameter",

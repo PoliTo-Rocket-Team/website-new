@@ -120,9 +120,9 @@
         <table>
             <tr>
                 <td class="no-border"></td>
-                <th scope="col">VES 130-98-6</th>
-                <th scope="col">VES 130-98-4</th>
-                <th scope="col">VES 130-75-4</th>
+                <th scope="col">VES Mark II</th>
+                <th scope="col">VES Mark I</th>
+                <th scope="col">VES Test Version</th>
                 <th scope="col">Unit</th>
             </tr>
             {#each fields as f, i}

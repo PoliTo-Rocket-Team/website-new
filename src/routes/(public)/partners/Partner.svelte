@@ -60,6 +60,7 @@
                     {/each}
                     {#if link}
                         <a
+                            data-umami-event="Visit partner website button for: {name}"
                             class="main--link"
                             href={link}
                             target="_blank"

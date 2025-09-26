@@ -7,10 +7,10 @@
     export let division: string;
 </script>
 
-<summary>
+<summary data-umami-event={`Header for ${role} position on ${division}`}>
     <h3>{role}</h3>
     <div class="code">{code}</div>
-    <div><span class="on-sm">Subteam: </span>{subteam}</div>
+    <div><span class="on-sm">Department: </span>{subteam}</div>
     <div><span class="on-sm">Division: </span>{division}</div>
 </summary>
 

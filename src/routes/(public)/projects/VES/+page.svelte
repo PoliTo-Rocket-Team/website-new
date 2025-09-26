@@ -1,6 +1,6 @@
 <script>
     import "@fontsource/plus-jakarta-sans/400-italic.css";
-    import Launch from "../Cavour/Launch.svelte"
+    import Launch from "../Cavour/Launch.svelte";
     import Models from "./Models.svelte";
     let model_view = "showcase";
 
@@ -10,7 +10,12 @@
             eager: true,
         })
     );
-
+    const irec = Object.values(
+        import.meta.glob("/src/img/ves/irec2025/*.{JPG,png}", {
+            as: "url",
+            eager: true,
+        })
+    );
 </script>
 
 <svelte:head>
@@ -31,8 +36,8 @@
         </p>
         <p>
             The project is named after the first King of Italy, born in Turin in
-            1820. Vittorio Emanuele II, although already King of Sardinia and
-            Piedmont, fought tirelessly for a united Italy.
+            1820. Vittorio Emanuele II, who, although already King of Sardinia
+            and Piedmont, fought tirelessly for a united Italy.
         </p>
         <p>
             His unwavering determination to never settle for mere
@@ -50,59 +55,36 @@
     <div>
         <h2 class="smudge">Technical characteristics</h2>
         <p>
-            VES is a single-stage rocket featuring a solid Commercial Off-The-Shelf (COTS) motor and an internal diameter of 130 mm (5.11 in). A key technical objective of the project is to enable the team to gain hands-on experience in developing Student Researched and Developed (SRAD) onboard systems. These include the ejection recovery system, flight computer, ground station, and, in particular, an airbrakes system.
+            VES is a single-stage rocket featuring a solid Commercial
+            Off-The-Shelf (COTS) motor and an internal diameter of 130mm. A key
+            technical objective of the project is to enable the team to gain
+            hands-on experience in developing Student Researched and Developed
+            (SRAD) onboard systems. These include the ejection recovery system,
+            flight computer, ground station, and, in particular, an airbrakes
+            system.
         </p>
         <p>
-            The ultimate goal will be a launch targeting an apogee of 9km, sustaining supersonic speeds. 
-        </p>
-
-        <!-- <ul class="list">
-            <li>Target apogee of 10000 m</li>
-            <li>Able to sustain Supersonic regime</li>
-            <li>Integrated and innovative Airbrakes system</li>
-            <li>
-                CO2-based <abbr title="Student Researched and Developed"
-                    >SRAD</abbr
-                > recovery system
-            </li>
-            <li>Advanced Avionics and Cubesat-type Payload subsystem</li>
-        </ul>
-        <p>
-            The ultimate goal will be the participation to EuRoC 2024 in the 9
-            km COTS Category.
-        </p>
-
-        <p>
-            The development of the VES will pave the way for any project of the
-            team, and in particular for the future integration of the Efesto
-            engine within a launch vehicle.
+            Two versions of the rocket with radical changes have been iterated:
+            the Mark I developed during the 2023-24 academic year and launched
+            at the 2024 European Rocketry Challenge with a 3000m apogee, and the
+            supersonic Mark II version, developed during the 2024-25 academic
+            year for the International Rocket Engineering Competition 2025 with
+            a target apogee of 9000m.
         </p>
         <p>
-            With these prospects, the Vittorio Emanuele II Project stands out as
-            one of the most stimulating student-led projects in the field of
-            rocketry.
-        </p> -->
+            A configuration of the VES rocket was designed for a test campaign
+            conducted at the ASK 't Harde range in the Netherlands, scheduled a
+            month before the European competition. Conducted in collaboration
+            with the Delft Aerospace Rocket Engineering team, the campaign
+            provided invaluable guidance and facilitated the resolution of
+            critical design flaws.
+        </p>
     </div>
 </section>
 <section>
-<Launch name="European Rocketry Challenge" date="2024-10-12" images={euroc}>
-    <p>
-        VES was launched on October 12 at 14:19 (UTC+1) at Santa Margarida Military Camp, Portugal. The flight was nominal, reaching an apogee of approximately 3160m with a maximum speed of 259m/s and a maximum acceleration of 8.5G.
-    </p>
-    <p>
-        The drogue parachute deployed, reducing the rocket’s descent velocity to about 30m/s. The main parachute separation was successful; the parachute did not have enough time to fully inflate due to a failure in the drogue system’s shock cord. As a result, the rocket split into two sections for recovery, each equipped with a parachute. VES returned home with some minor airframe damage but was ready for future launches.
-    </p>
-    <p>
-        Due to the shortage of commercial solid motors, VES was only able to participate in the competition in the solid-3km COTS category. The rocket secured 6th place out of 25 European teams participating and finished second in its flight category. 
-    </p>
-    <p>
-        A month before the competition, the VES project underwent a test campaign at the ASK 't Harde range in the Netherlands. Conducted in collaboration with the Delft Aerospace Rocket Engineering team, the campaign provided invaluable guidance and facilitated the resolution of critical design flaws.
-    </p>
-</Launch>
-<section>
     <h2 class="center-lg">
         <div class="smudge">
-            Models
+            Versions
             <div class="switch" aria-hidden="true">
                 <label>
                     <span>showcase</span>
@@ -155,7 +137,48 @@
     </h2>
     <Models view={model_view} />
 </section>
-
+<section>
+    <h2 class="m-top center-lg">
+        <span class="smudge">Launch History</span>
+    </h2>
+    <Launch name="European Rocketry Challenge" date="2024-10-12" images={euroc}>
+        <p>
+            VES Mark I was launched on October 12 at 14:19 (UTC+1) at Santa
+            Margarida Military Camp, Portugal. The flight was nominal, reaching
+            an apogee of approximately 3160m with a maximum speed of 259m/s and
+            a maximum acceleration of 8.5G.
+        </p>
+        <p>
+            The drogue parachute deployed, reducing the rocket’s descent
+            velocity to about 30m/s. The main parachute separation was
+            successful; the parachute did not have enough time to fully inflate
+            due to a failure in the drogue system’s shock cord. As a result, the
+            rocket split into two sections for recovery, each equipped with a
+            parachute. VES returned home with some minor airframe damage but was
+            ready for future launches.
+        </p>
+        <p>
+            The project secured 6th place out of 25 European teams participating
+            and finished second in its flight category.
+        </p>
+    </Launch>
+    <section>
+        <Launch
+            name="International Rocket Engineering Competition"
+            date="2025-07-13"
+            images={irec}
+        >
+            <p>
+                On July 13th, 2025, in Midland, Texas, VES Mark II attempted its supersonic launch targeting 9000m. Unfortunately, a CATO (Catastrophic Aborted Take-Off) occurred after ignition due to a malfunctioning COTS motor, likely stemming from a manufacturer's defect.
+            </p>
+            <p>
+                VES used a COTS O5500X-PS motor from Aerotech. The failure was traced to the epoxy used to seal the motor’s forward closure, which didn't contain internal pressure, ejecting it together with a grain of propellant into the rocket’s interior. This damaged the upper motor retention flange and the section of the body tube it was attached to. Despite the failure, most of the rocket was recovered in excellent condition, including the avionics, recovery systems, parachutes, nose cone, upper body tube, and mechanical interfaces.
+            </p>
+            <p>
+                The solidity of the project was still demonstrated by an exceptional 1st place in the "Design and Build Quality" category, as well as a 16th place for the project's Technical Report submitted, out of over 140 participating universities.
+            </p>
+        </Launch>
+    </section>
 </section>
 
 <style>
@@ -172,7 +195,7 @@
             break-inside: avoid;
         }
     }
-    
+
     h2.center-lg {
         font-size: var(--fs-70);
     }
@@ -189,7 +212,7 @@
             justify-content: center;
         }
     }
-    
+
     @media (max-width: 70rem) {
         :global(.scrollable) {
             overflow-x: scroll;
