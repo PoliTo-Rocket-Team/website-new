@@ -48,7 +48,7 @@
             <li>
                 <a
                     data-sveltekit-replacestate={replace || null}
-                    data-umami-event={`${route.name} Page`}
+                    data-umami-event={`${route.name} Button`}
                     href="/{base}/{route.url}"
                     on:click={close}>{route.name}</a
                 >

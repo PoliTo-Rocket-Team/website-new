@@ -30,7 +30,7 @@
             innovation, with the study of next-generation space exploration
             technologies in a student-driven context. The Team wants to provide
             students with the possibility to complete the theoretical knowledge
-            learnt in the classroom with projects that involve considerable
+            learned in the classroom with projects that involve considerable
             challenges and solid results. That is why we believe that
             Politecnico students must have a solid understanding of the
             challenges associated with space exploration and the systems

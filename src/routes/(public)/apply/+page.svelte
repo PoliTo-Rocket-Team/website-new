@@ -37,7 +37,7 @@
             <h2 id="positions">Open positions</h2>
             <div class="position-labels on-lg" aria-hidden="true">
                 <span>Role</span>
-                <span>Subteam</span>
+                <span>Department</span>
                 <span>Division</span>
                 <div class="code-label"><span>Code</span></div>
             </div>

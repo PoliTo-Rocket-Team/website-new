@@ -7,7 +7,7 @@
 </script>
 
 <a
-    data-umami-event={`${fullName} ${icon} icon`}
+    data-umami-event={`${fullName} ${icon} icon button`}
     href="{paths[icon]}{id}"
     target="_blank"
     rel="noreferrer"
