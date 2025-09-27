@@ -18,7 +18,7 @@
     <Header 
     role={name} {subteam} {division} {code} slot="header" />
     <svelte:fragment slot="content">
-        <Content name={name} division={division} {description} required={required} desirable={desirable} form={form} />
+        <Content {code} {description} required={required} desirable={desirable} form={form} />
         <Disclaimer />
     </svelte:fragment>
 </Wrapper>
