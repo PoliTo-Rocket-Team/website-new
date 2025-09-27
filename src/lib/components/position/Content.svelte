@@ -36,7 +36,7 @@
             ? `Apply Button for ${name} position on ${division}`
             : undefined}
         class="btn"
-        href="https://forms.gle/{form}"
+        href={`https://forms.gle/${form}`}
         target="_blank"
         rel="noreferrer">Apply</a
     >
