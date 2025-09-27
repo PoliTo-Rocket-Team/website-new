@@ -8,21 +8,20 @@
 
     function handleKey(event: KeyboardEvent) {
         if (event.key === "Enter" || event.key === " ") {
-            trackSummaryClick();
         }
     }
 
-    function trackSummaryClick() {
-        if ((window as any).umami) {
-            (window as any).umami?.track(
-                `Header for ${role} position on ${division}`
-            );
-        }
+    function handleClick(event: MouseEvent) {
+        trackSummaryClick(event);
+    }
+
+    function trackSummaryClick(event: MouseEvent | KeyboardEvent) {
+        (window as any).umami?.track(`Header-${code}`);
     }
 </script>
 
 <summary
-    on:click={trackSummaryClick}
+    on:click={handleClick}
     on:keydown={handleKey}
     tabindex="0"
     role="button"
