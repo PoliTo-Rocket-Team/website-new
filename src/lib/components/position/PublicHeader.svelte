@@ -5,9 +5,28 @@
     export let code: string;
     export let subteam: string;
     export let division: string;
+
+    function handleKey(event: KeyboardEvent) {
+        if (event.key === "Enter" || event.key === " ") {
+            trackSummaryClick();
+        }
+    }
+
+    function trackSummaryClick() {
+        if ((window as any).umami) {
+            (window as any).umami?.track(
+                `Header for ${role} position on ${division}`
+            );
+        }
+    }
 </script>
 
-<summary data-umami-event={`Header for ${role} position on ${division}`}>
+<summary
+    on:click={trackSummaryClick}
+    on:keydown={handleKey}
+    tabindex="0"
+    role="button"
+>
     <h3>{role}</h3>
     <div class="code">{code}</div>
     <div><span class="on-sm">Department: </span>{subteam}</div>

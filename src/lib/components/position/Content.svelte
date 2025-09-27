@@ -6,6 +6,20 @@
     export let name: string | undefined = undefined;
     export let division: string | undefined = undefined;
 
+    function trackClick(event: MouseEvent) {
+        if (!name) return; // no tracking if name is undefined
+
+        event.preventDefault(); 
+        (window as any).umami?.track(
+            `Apply Button for ${name} position on ${division}`
+        );
+
+        // open Google Form after short delay to let umami track the event
+        setTimeout(() => {
+            window.open(`https://forms.gle/${form}`, "_blank", "noreferrer");
+        }, 200);
+    }
+
     $: paragraphs = description.split("\n\n");
 </script>
 
@@ -32,13 +46,12 @@
 
 {#if form}
     <a
-        data-umami-event={name
-            ? `Apply Button for ${name} position on ${division}`
-            : undefined}
+        on:click={trackClick}
         class="btn"
         href={`https://forms.gle/${form}`}
         target="_blank"
-        rel="noreferrer">Apply</a
+        rel="noreferrer"
+        style="text-decoration: none">Apply</a
     >
 {:else}
     <span>(No google form is linked)</span>
