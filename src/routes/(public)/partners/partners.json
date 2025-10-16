@@ -32,6 +32,15 @@
         ]
     },
     {
+        "name": "Altium",
+        "link": "https://www.altium.com/",
+        "img": "altium.png",
+        "localTheme": "null",
+        "texts": [
+            "Altium is one of the world's leading companies in the development of electronic design software, offering advanced tools for the creation of PCBs and complex systems. Through its Education program, Altium supports the PoliTo Rocket Team by providing professional licenses for Altium Designer, allowing members to design advanced electronic circuits and acquire fundamental skills in the field of electronic engineering, which are essential for the development of our rocket's onboard systems."
+        ]
+    },
+    {
         "name": "ASSOCAM Scuola Camerana",
         "link": "https://www.scuolacamerana.it/",
         "img": "Camerana.png",
@@ -39,16 +48,6 @@
         "texts": [
             "ASSOCAM Scuola Camerana, is a Turin-based organisation rooted in the city's industrial fabric that has been providing post-diploma training since 1959. It brings together experienced technicians and teachers, as well as a large number of laboratories and machinery for students. In particular, it is a training agency of Unione Industriali and Camera di Commercio of Turin with a focus on technological training applied to industrial processes.",
             "Assocam Scuola Camerana provides the team with the necessary mechanical machining and components for its activities."
-        ]
-    },
-    {
-        "name": "TekRevolution",
-        "link": "https://www.tekrevolution.it/",
-        "img": "Tek.svg",
-        "localTheme": "dark",
-        "texts": [
-            "TekRevolution is an esteemed Italian engineering company, renowned for their meticulous understanding of technical needs and delivery of exceptional results. The company operates in different industrial sectors, thanks to its multidisciplinary team of highly qualified experts. They have extensive experience in technology integration and project management.",
-            "TekRevolution provides technical support to the Team. The company lends their expertise and training to ensure the success of our groundbreaking projects."
         ]
     },
     {
