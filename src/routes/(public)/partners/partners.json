@@ -34,7 +34,7 @@
     {
         "name": "Altium",
         "link": "https://www.altium.com/",
-        "img": "altium.png",
+        "img": ["altium-dark.png", "altium-light.png"],
         "localTheme": "null",
         "texts": [
             "Altium is one of the world's leading companies in the development of electronic design software, offering advanced tools for the creation of PCBs and complex systems. Through its Education program, Altium supports the PoliTo Rocket Team by providing professional licenses for Altium Designer, allowing members to design advanced electronic circuits and acquire fundamental skills in the field of electronic engineering, which are essential for the development of our rocket's onboard systems."
