@@ -49,5 +49,19 @@
         "role": "Additive Manufacturing",
         "img": null,
         "mail": null
+    },{
+        "firstname": "Matteo",
+        "lastname": "Postinghel",
+        "linkedin": "matteo-postinghel",
+        "role": "Communication and Brand Strategy Advisor",
+        "img": "/members/postinghel.jpeg",
+        "mail": "matteopostinghel@icloud.com"
+    },{
+        "firstname": "Edoardo Walter",
+        "lastname": "Bignami",
+        "linkedin": "edoardo-bignami-68527920a",
+        "role": "Communication and Brand Strategy Advisor",
+        "img": "/members/bignami.jpeg",
+        "mail": "edo.bigna@gmail.com"
     }
 ]
